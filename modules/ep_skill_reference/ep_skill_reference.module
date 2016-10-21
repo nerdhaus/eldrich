@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains ep.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ep_skill_reference_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ep module.
+    case 'help.page.ep':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Reference field for EP Skills with extra properties for skill values.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

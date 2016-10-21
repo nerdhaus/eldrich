@@ -1,0 +1,9 @@
+name: Custom Import
+type: module
+description: Eldrich Black data import
+core: 8.x
+package: Eclipse Phase
+dependencies:
+- ep_schema
+- migrate_plus
+- migrate_source_csv

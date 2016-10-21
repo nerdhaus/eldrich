@@ -1,0 +1,45 @@
+id: gear_taxonomy
+migration_group: eldrich
+label: 'Taxonomy hierarchy for purchasable gear'
+
+source:
+  plugin: csv
+  path: 'modules/custom/ep/ep_import/data/gear-taxonomy.csv'
+  header_row_count: 1
+
+  # Columns to be returned, basically a list of table header cell values.
+  column_names:
+    0:
+      title: Title
+    1:
+      parent: Parent
+    2:
+      description: Description
+    3:
+      book: book
+    4:
+      page: Page
+  keys:
+    - title
+    - parent
+
+destination:
+  plugin: entity:taxonomy_term
+
+process:
+  name: title
+
+  description: description
+
+  vid:
+    plugin: default_value
+    default_value: gear
+
+  parent:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration
+      migration: gear_taxonomy

@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains ep.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ep_complex_values_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ep module.
+    case 'help.page.ep_complex_values':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Fields to store complex value types for Eclipse Phase') . '</p>';
+      return $output;
+
+    default:
+  }
+}

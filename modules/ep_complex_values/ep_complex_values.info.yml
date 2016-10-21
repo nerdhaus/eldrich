@@ -1,0 +1,5 @@
+name: Eclipse Phase Complex Values
+type: module
+description: Fields to store complex value types for Eclipse Phase
+core: 8.x
+package: Eclipse Phase

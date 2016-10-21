@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains ep.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ep_statblock_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ep module.
+    case 'help.page.ep':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom field to store Eclipse Phase character stats') . '</p>';
+      return $output;
+
+    default:
+  }
+}

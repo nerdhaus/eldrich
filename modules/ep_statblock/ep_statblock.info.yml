@@ -1,0 +1,7 @@
+name: Eclipse Phase Stat Block
+type: module
+description: Custom field to store Eclipse Phase character stats
+core: 8.x
+package: Eclipse Phase
+dependencies:
+  - ep_complex_values

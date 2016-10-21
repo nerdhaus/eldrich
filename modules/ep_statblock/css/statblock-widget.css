@@ -1,0 +1,7 @@
+.stat-block-widget input {
+  width: 100%;
+}
+
+.stat-block-formatter td, .stat-block-formatter th {
+  text-align: center;
+}

@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains ep_schema.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ep_schema_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ep_schema module.
+    case 'help.page.ep_schema':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Entity types and bundles for the Eldrich Black site') . '</p>';
+      return $output;
+
+    default:
+  }
+}

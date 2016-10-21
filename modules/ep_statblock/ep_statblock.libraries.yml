@@ -1,0 +1,9 @@
+statblock-widget:
+  version: 1.x
+  css:
+    component:
+      css/statblock-widget.css: {}
+  js:
+    js/statblock-widget.js: {}
+  dependencies:
+    - core/jquery

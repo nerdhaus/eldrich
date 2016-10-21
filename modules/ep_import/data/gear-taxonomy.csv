@@ -1,0 +1,63 @@
+Title,Parent,Description,Book,Page
+Personal Augmentations,,"Almost all citizens of the solar system, whether human, AI, or uplifted animal, use various forms of biological, cybernetic, or nanotechnological augmentation. The following is a list of the most common types.
+
+Unless otherwise noted, any bonuses from personal augmentations are both compatible and cumulative with bonuses from other enhancements. ",EP,300
+Standard Augmentations,Personal Augmentations,,EP,300
+Bioware,Personal Augmentations,,EP,301
+Enhanced Senses,Bioware,,EP,
+Mental Augmentations,Bioware,,EP,
+Physical Augmentations,Bioware,,EP,
+Cyberware,Personal Augmentations,,EP,306
+Enhanced Senses,Cyberware,,EP,
+Mental Augmentations,Cyberware,,EP,
+Physical Augmentations,Cyberware,,EP,
+Nanoware,Personal Augmentations,,EP,308
+Cosmetic Mods,Personal Augmentations,,EP,309
+Robotic Enhancements,Personal Augmentations,,EP,310
+Armor,Robotic Enhancements,,EP,
+Mobility Systems,Robotic Enhancements,,EP,
+Physical Modifications,Robotic Enhancements,,EP,
+Sensors,Robotic Enhancements,,EP,
+Armor,,"Modern personal armor systems have advanced from the high-modulus polyethylene thermoplastics and aramid fabrics of the early 21st century. Armor in Eclipse Phase is derived from biotech, in the form of organoweave  bers and crystalline-grown plates, and nanotech, in the form of shock-absorbing fuller- ene (p. 298) materials. Occasionally other materials are used, such as metallic glass plates or shear-resistant  uids that harden against impacts. Such armor protects against (armor-piercing) bullets and kinetic impacts as well as bladed weapons and piercing sharp objects. They also insulate against both the explosive heating of energy weapons and electrical shocks. While such armor protects against bullets, the layers of material catch the bullet and redistribute its kinetic energy across the body, which can still result in severe blunt force trauma.",EP,312
+Armor Mods,Armor,,EP,313
+Communications,,"The oldest and most widespread communications technology still in regular use is radio. Every habitat and world inhabited by transhumanity is awash in radio traf c, with humans, machines, and uplifts all constantly communicating with one another. The smallest radios are no larger than a speck of dust and have a range of no more than 20 meters, while the largest are the size of a truck and have a range of many thousands of miles. Radios large and small are ubiquitous and almost all devices contain at least short-range radios so they may interact with the mesh. Most morphs are equipped with basic mesh inserts (p. 300) that include an implanted radio. For radio ranges, see p. 299.",EP,313
+Covert and Espionage,,"These technologies allow characters to acquire pro- tected information and to gain access to places that others try to keep them out of. Many of these devices are mesh-capable and equipped with radios, see p. 299 for radio ranges.",EP,315
+Substances,,"In Eclipse Phase, the transhuman desire to enhance the body and mind—especially with chemicals—merges right into humanity’s popular pastime of recreational substance abuse. Drugs of all kinds, whether they be chemical, nano-based, or electronic, are not only popular but widespread. While advances in biotechnology have eliminated many of the side effects that once plagued drug users, transhuman bodies remain complicated environments, and so side effects (especially with long-term use) are still a factor.",EP,317
+Drugs,Substances,,EP,318
+Nanodrugs,Substances,,EP,321
+Narcoalgorithms,Substances,,EP,323
+Chemicals,Substances,,EP,323
+Toxins,Substances,,EP,324
+Nanotoxins,Substances,,EP,324
+Pathogens,Substances,,EP,324
+Psi Drugs,Substances,,EP,325
+Everyday Technology,,The following devices are all exceptionally common and can be acquired in almost any habitat. Almost everyone in Eclipse Phase either owns these devices or knows several people who do.,EP,
+Nanotechnology,,"Nanotechnology is the precise manipulation of matter at the atomic level, typically using millions of micro- scale nanomachines. Nanotechnology transformed manufacturing, enabling new techniques and materi- als. The advent of nanofabrication—building objects from the molecular level up—transformed economies, allowing people to simply manufacture whatever they needed from raw materials. Nanotechnology is still a growing  eld, however, and has its limitations. While the TITANs unleashed self-replicating nanoswarms with the ability to transform or destroy anything through the power of geometric growth, such technol- ogy remains far beyond transhumanity’s grasp.",EP,
+Basic Nanotech,Nanotechnology,,EP,
+Advanced Nanotech,Nanotechnology,,EP,
+Pets,,These partially uplifted and bioengineered animals have rudimentary intelligence and limited communication skills. They make for fine companions and helpers.,EP,
+Scavenger Tech,,"This technology is often employed by gatecrashers, space scavengers, and Firewall teams during missions. ",EP,
+Services,,,EP,
+Software,,"For information on using software, see The Mesh chapter, p. 234",EP,
+Programs,Software,,EP,
+AIs and Muses,Software,,EP,
+Scorchers,Software,,EP,
+Skillsofts,Software,,EP,
+Survival Gear,,"The following gear is often critical to the survival of soldiers, spies, criminals, gatecrashers, emergency service personnel, and others who regularly venture into unsafe or unfamiliar regions.",EP,
+Vacsuum Suits,Survival Gear,,EP,
+Weapons,,"A wide range of weapons are available in Eclipse Phase, from the primitive to the technologically advanced.",EP,
+Melee Weapons,Weapons,,EP,
+Kinetic Weapons,Weapons,,EP,
+Beam Weapons,Weapons,,EP,
+Seekers,Weapons,,EP,
+Grenades and Seekers,Weapons,,EP,
+Spray Weapons,Weapons,,EP,
+Exotic Ranged Weapons,Weapons,,EP,
+Weapon Accessories,Weapons,,EP,
+Robots and Vehicles,,"The following is a small selection of the many vehicles in use in the solar system. Almost all of the vehicles in current use, including all of the vehicles listed here, have built-in AIs capable of piloting the vehicle under almost all circumstances. In most cases, passengers simply state their destination and the vehicle takes them there. Manual piloting is primarily used in emergencies or by people who prefer the exotic thrill of controlling their own vehicle.",EP,
+Aircraft,Robots and Vehicles,,EP,
+Exoskeletons,Robots and Vehicles,,EP,
+Groundcraft,Robots and Vehicles,,EP,
+Personal Vehicles,Robots and Vehicles,,EP,
+Robots,Robots and Vehicles,,EP,
+Spacecraft,Robots and Vehicles,,EP,
