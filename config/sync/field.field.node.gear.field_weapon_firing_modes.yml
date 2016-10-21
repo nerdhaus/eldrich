@@ -1,0 +1,28 @@
+uuid: c4214e2b-6d5c-44a1-b78b-84a8a90622cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.firing_modes
+    - field.storage.node.field_weapon_firing_modes
+    - node.type.gear
+id: node.gear.field_weapon_firing_modes
+field_name: field_weapon_firing_modes
+entity_type: node
+bundle: gear
+label: 'Weapon Firing Modes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:lookup'
+  handler_settings:
+    target_bundles:
+      firing_modes: firing_modes
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

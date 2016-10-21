@@ -1,0 +1,27 @@
+uuid: 8813a193-47b8-4489-83e0-620d89532f14
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - options
+id: component.field_addiction_type
+field_name: field_addiction_type
+entity_type: component
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: m
+      label: Mental
+    -
+      value: p
+      label: Physical
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: d442f601-7c18-48cc-aea3-a85285681a9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.substance_delivery
+    - field.storage.lookup.field_weight
+id: lookup.substance_delivery.field_weight
+field_name: field_weight
+entity_type: lookup
+bundle: substance_delivery
+label: Weight
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

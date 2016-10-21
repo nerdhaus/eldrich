@@ -1,0 +1,9 @@
+uuid: 79e0718a-b77f-450d-bec6-4001dbf47ddf
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: eN3j9UnCOp7KFPBZFXpzrmTssjuMPso4dGwCgRcx8Ik
+id: employment_status
+label: 'Employment status'
+options: "'Full Time': 'Full Time'\n'Part Time': 'Part Time'\n'Military': 'Military'\nUnemployed: Unemployed\nRetired: Retired\n"

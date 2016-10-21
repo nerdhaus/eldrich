@@ -1,0 +1,21 @@
+uuid: 3ec30c00-3915-4c2d-a5c4-93949945d98d
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - entity_reference_override
+    - node
+id: component.field_derangements
+field_name: field_derangements
+entity_type: component
+type: entity_reference_override
+settings:
+  target_type: node
+module: entity_reference_override
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

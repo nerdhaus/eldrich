@@ -1,0 +1,19 @@
+uuid: 495c1943-57ee-492f-9ea7-eaaabe031b6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_specializations
+    - node.type.skill
+id: node.skill.field_specializations
+field_name: field_specializations
+entity_type: node
+bundle: skill
+label: Specializations
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

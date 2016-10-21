@@ -1,0 +1,21 @@
+uuid: e6e092cf-d0dd-423d-ae2e-51b85adbe514
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.faction
+  module:
+    - text
+id: node.faction.field_description
+field_name: field_description
+entity_type: node
+bundle: faction
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

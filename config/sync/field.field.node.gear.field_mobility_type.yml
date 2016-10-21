@@ -1,0 +1,29 @@
+uuid: f5cda99a-9268-493d-a302-e35083f87d9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.mobility_type
+    - field.storage.node.field_mobility_type
+    - node.type.gear
+id: node.gear.field_mobility_type
+field_name: field_mobility_type
+entity_type: node
+bundle: gear
+label: 'Mobility Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:lookup'
+  handler_settings:
+    target_bundles:
+      mobility_type: mobility_type
+    sort:
+      field: field_weight
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

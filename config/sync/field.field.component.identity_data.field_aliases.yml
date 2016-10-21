@@ -1,0 +1,19 @@
+uuid: c095e28b-581a-4f02-8b1d-c30d8e12ddf6
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.identity_data
+    - field.storage.component.field_aliases
+id: component.identity_data.field_aliases
+field_name: field_aliases
+entity_type: component
+bundle: identity_data
+label: Aliases
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

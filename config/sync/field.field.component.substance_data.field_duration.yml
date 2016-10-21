@@ -1,0 +1,23 @@
+uuid: 0fa30388-d72a-4296-b9a3-a1ac7657751a
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.substance_data
+    - field.storage.component.field_duration
+id: component.substance_data.field_duration
+field_name: field_duration
+entity_type: component
+bundle: substance_data
+label: Duration
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

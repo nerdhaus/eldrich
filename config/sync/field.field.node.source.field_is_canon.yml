@@ -1,0 +1,23 @@
+uuid: 1d81e81c-2489-449e-aa05-84781dfc5e41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_canon
+    - node.type.source
+id: node.source.field_is_canon
+field_name: field_is_canon
+entity_type: node
+bundle: source
+label: 'Canon material'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'This source is part of the official Eclipse Phase canon'
+  off_label: 'This source contains unofficial or "homebrew" material'
+field_type: boolean

@@ -1,0 +1,20 @@
+uuid: 95fb424b-f021-4668-91c4-21a6860137ae
+langcode: en
+status: true
+dependencies:
+  module:
+    - ep_skill_reference
+    - node
+id: node.field_skills
+field_name: field_skills
+entity_type: node
+type: skill_reference
+settings:
+  target_type: node
+module: ep_skill_reference
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: b6d99d14-843d-4bf6-a2c6-31bda6064845
+langcode: en
+status: true
+dependencies:
+  module:
+    - ep_complex_values
+    - node
+id: node.field_speed
+field_name: field_speed
+entity_type: node
+type: mobility_speed
+settings: {  }
+module: ep_complex_values
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

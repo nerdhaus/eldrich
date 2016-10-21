@@ -1,0 +1,20 @@
+uuid: c8d221d2-4845-469f-a6d7-1536d5828e5f
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: component.field_duration
+field_name: field_duration
+entity_type: component
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

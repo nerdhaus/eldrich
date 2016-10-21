@@ -1,0 +1,9 @@
+uuid: b6a7d0bd-2e0d-4e9a-9091-99c9ec952b97
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: VUu3_vmCXS-tPhOE2ZWvL8fdPL_iCVavOp_S-1HO0IU
+id: time_zones
+label: 'Time zones'
+options: ''

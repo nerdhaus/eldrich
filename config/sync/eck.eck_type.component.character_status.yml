@@ -1,0 +1,9 @@
+uuid: 8625e26d-192d-4b4c-8bc3-eab0fd8f2c4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.component
+name: 'Character Status'
+type: character_status
+description: ''

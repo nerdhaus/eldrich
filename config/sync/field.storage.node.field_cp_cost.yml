@@ -1,0 +1,20 @@
+uuid: 66784652-2bbb-472e-a053-a9cb29e1a661
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_cp_cost
+field_name: field_cp_cost
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

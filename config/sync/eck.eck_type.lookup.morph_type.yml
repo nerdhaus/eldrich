@@ -1,0 +1,9 @@
+uuid: a49e1f43-2d73-44da-b158-65918ec48cb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+name: 'Morph Type'
+type: morph_type
+description: ''

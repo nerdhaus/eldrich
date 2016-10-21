@@ -1,0 +1,18 @@
+uuid: ad919063-396c-47bd-995f-b2651807470a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.network
+id: node.network.title
+field_name: title
+entity_type: node
+bundle: network
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

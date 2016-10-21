@@ -1,0 +1,39 @@
+uuid: 3c21fb02-32b6-427b-a7a0-1a515cb52e65
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.derangement_magnitude
+    - field.field.lookup.derangement_magnitude.field_description
+    - field.field.lookup.derangement_magnitude.field_weight
+  module:
+    - text
+id: lookup.derangement_magnitude.default
+targetEntityType: lookup
+bundle: derangement_magnitude
+mode: default
+content:
+  field_description:
+    weight: -1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_weight:
+    weight: -2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  id: true
+  langcode: true

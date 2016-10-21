@@ -1,0 +1,28 @@
+uuid: 0b25c858-6280-40c3-8f18-f6ed49be2f37
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.identity_data
+    - field.storage.node.field_identity
+    - node.type.character
+id: node.character.field_identity
+field_name: field_identity
+entity_type: node
+bundle: character
+label: Identity
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:component'
+  handler_settings:
+    target_bundles:
+      identity_data: identity_data
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

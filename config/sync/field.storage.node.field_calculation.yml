@@ -1,0 +1,21 @@
+uuid: d985d08e-023f-4d9e-9b33-bfc21f82b3f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_calculation
+field_name: field_calculation
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

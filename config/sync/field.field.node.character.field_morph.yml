@@ -1,0 +1,28 @@
+uuid: 637e8daf-0910-4c47-a93f-6f4389d9bf13
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_morph
+    - node.type.character
+    - node.type.gear
+id: node.character.field_morph
+field_name: field_morph
+entity_type: node
+bundle: character
+label: Morph
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      gear: gear
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

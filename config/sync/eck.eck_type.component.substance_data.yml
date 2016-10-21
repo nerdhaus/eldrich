@@ -1,0 +1,9 @@
+uuid: 00e38004-244e-46cc-a457-0ede937d66e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.component
+name: 'Substance Data'
+type: substance_data
+description: ''

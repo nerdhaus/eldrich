@@ -1,0 +1,36 @@
+uuid: 5de14241-93f9-43c2-a8ef-42c88f318125
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.psi
+    - field.field.lookup.psi.field_description
+    - field.field.lookup.psi.field_weight
+  module:
+    - text
+id: lookup.psi.default
+targetEntityType: lookup
+bundle: psi
+mode: default
+content:
+  field_description:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_weight:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

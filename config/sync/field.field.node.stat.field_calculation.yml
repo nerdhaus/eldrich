@@ -1,0 +1,19 @@
+uuid: fab7b16f-93d9-44a1-802f-31038d81e5e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_calculation
+    - node.type.stat
+id: node.stat.field_calculation
+field_name: field_calculation
+entity_type: node
+bundle: stat
+label: Calculation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

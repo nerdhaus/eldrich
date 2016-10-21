@@ -1,0 +1,21 @@
+uuid: 6a0df28b-35f9-4c76-a046-fe58c8c5e160
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.morph_type
+    - field.storage.lookup.field_description
+  module:
+    - text
+id: lookup.morph_type.field_description
+field_name: field_description
+entity_type: lookup
+bundle: morph_type
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

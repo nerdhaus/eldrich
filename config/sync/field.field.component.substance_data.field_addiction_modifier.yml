@@ -1,0 +1,23 @@
+uuid: 046c6759-3dc3-4344-a581-3ce7d0ff076a
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.substance_data
+    - field.storage.component.field_addiction_modifier
+id: component.substance_data.field_addiction_modifier
+field_name: field_addiction_modifier
+entity_type: component
+bundle: substance_data
+label: 'Addiction Modifier'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

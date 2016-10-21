@@ -1,0 +1,33 @@
+uuid: 5141a9b7-f598-458e-a5aa-105f0177f59a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.character
+  module:
+    - user
+id: node.character.teaser
+targetEntityType: node
+bundle: character
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_augmentations: true
+  field_blueprints: true
+  field_description: true
+  field_gear: true
+  field_identity: true
+  field_image: true
+  field_morph: true
+  field_muse: true
+  field_player: true
+  field_psi_sleights: true
+  field_quotation: true
+  field_skills: true
+  field_source: true
+  field_stats: true
+  field_status: true
+  field_traits: true

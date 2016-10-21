@@ -1,0 +1,20 @@
+uuid: 0ecbb4d9-7000-474c-9a97-e891fb0a28fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - node
+id: node.field_muse
+field_name: field_muse
+entity_type: node
+type: entity_reference
+settings:
+  target_type: component
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

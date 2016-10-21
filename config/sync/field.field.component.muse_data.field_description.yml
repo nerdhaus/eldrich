@@ -1,0 +1,21 @@
+uuid: 2e80e851-2c15-4815-8e78-315cc27ad40b
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.muse_data
+    - field.storage.component.field_description
+  module:
+    - text
+id: component.muse_data.field_description
+field_name: field_description
+entity_type: component
+bundle: muse_data
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

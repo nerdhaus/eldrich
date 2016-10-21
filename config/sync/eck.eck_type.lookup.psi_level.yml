@@ -1,0 +1,9 @@
+uuid: 40e3ec14-26e7-4e31-a071-cc0fb61824c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+name: 'Psi Level'
+type: psi_level
+description: ''

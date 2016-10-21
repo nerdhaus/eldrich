@@ -1,0 +1,9 @@
+uuid: ed4d97dc-1d3b-46e1-a369-3d94bedf2bd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+name: 'Substance type'
+type: substance_type
+description: ''

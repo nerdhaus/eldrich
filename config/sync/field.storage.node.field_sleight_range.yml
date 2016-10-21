@@ -1,0 +1,20 @@
+uuid: 36c333e4-c65c-4fb9-a844-06669b5cb7c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - node
+id: node.field_sleight_range
+field_name: field_sleight_range
+entity_type: node
+type: entity_reference
+settings:
+  target_type: lookup
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

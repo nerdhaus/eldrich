@@ -1,0 +1,22 @@
+uuid: 5cd8e336-fa43-46ed-a8b7-04e4024689c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.faction
+id: node.faction.promote
+field_name: promote
+entity_type: node
+bundle: faction
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

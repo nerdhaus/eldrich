@@ -1,0 +1,187 @@
+uuid: e0746817-ab6a-457e-9549-6d2032822588
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.gear.field_armor_value
+    - field.field.node.gear.field_category
+    - field.field.node.gear.field_cost
+    - field.field.node.gear.field_description
+    - field.field.node.gear.field_linked_gear
+    - field.field.node.gear.field_linked_skill
+    - field.field.node.gear.field_mobility_type
+    - field.field.node.gear.field_skills
+    - field.field.node.gear.field_source
+    - field.field.node.gear.field_speed
+    - field.field.node.gear.field_stats
+    - field.field.node.gear.field_substance_delivery_mode
+    - field.field.node.gear.field_substance_stats
+    - field.field.node.gear.field_substance_type
+    - field.field.node.gear.field_traits
+    - field.field.node.gear.field_weapon_area_effect
+    - field.field.node.gear.field_weapon_clip_size
+    - field.field.node.gear.field_weapon_damage
+    - field.field.node.gear.field_weapon_damage_type
+    - field.field.node.gear.field_weapon_firing_modes
+    - field.field.node.gear.field_weapon_range
+    - node.type.gear
+  module:
+    - entity_reference_override
+    - entity_reference_quantity
+    - ep_complex_values
+    - ep_skill_reference
+    - ep_statblock
+    - text
+    - user
+id: node.gear.default
+targetEntityType: node
+bundle: gear
+mode: default
+content:
+  field_armor_value:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: armor_text
+  field_category:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_cost:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  field_description:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_linked_gear:
+    weight: 112
+    label: above
+    settings:
+      override_action: title
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_override_label
+  field_linked_skill:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_mobility_type:
+    weight: 115
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_skills:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: skill_reference_label
+  field_source:
+    weight: 120
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  field_speed:
+    weight: 116
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: mobility_speed_formatter
+  field_stats:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+  field_substance_delivery_mode:
+    weight: 114
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_substance_stats:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_substance_type:
+    weight: 113
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_traits:
+    weight: 121
+    label: above
+    settings:
+      override_action: title
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_override_label
+  field_weapon_area_effect:
+    weight: 118
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_weapon_clip_size:
+    weight: 110
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_weapon_damage:
+    weight: 119
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: damage_text
+  field_weapon_damage_type:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_weapon_firing_modes:
+    weight: 109
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_weapon_range:
+    weight: 117
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: weapon_range_formatter
+  links:
+    weight: 100
+hidden: {  }

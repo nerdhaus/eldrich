@@ -1,0 +1,21 @@
+uuid: 0c596345-ffb9-4c4f-a0f1-b5073dbc75a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_usage
+    - node.type.skill
+  module:
+    - text
+id: node.skill.field_usage
+field_name: field_usage
+entity_type: node
+bundle: skill
+label: 'When you use it'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

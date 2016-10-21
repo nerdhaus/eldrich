@@ -1,0 +1,21 @@
+uuid: 23a3a47f-5069-446d-b2b6-0d312caee4ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_quotation
+field_name: field_quotation
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,9 @@
+uuid: 01f85e78-39d0-4387-90a4-6b0d4a5f963d
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+name: 'Skill Category'
+type: skill_category
+description: ''

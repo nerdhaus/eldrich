@@ -1,0 +1,29 @@
+uuid: 570ea1d5-6c12-47f4-b761-3e3fdb25a2e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_psi_sleights
+    - node.type.character
+    - node.type.sleight
+id: node.character.field_psi_sleights
+field_name: field_psi_sleights
+entity_type: node
+bundle: character
+label: 'Psi Sleights'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      sleight: sleight
+    sort:
+      field: field_sleight_level
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

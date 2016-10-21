@@ -1,0 +1,10 @@
+uuid: 40547000-2d48-4d6d-b6e8-d28fc9b5deb4
+langcode: en
+status: true
+dependencies: {  }
+id: lookup
+label: 'Lookup Table'
+created: false
+changed: false
+uid: false
+title: true

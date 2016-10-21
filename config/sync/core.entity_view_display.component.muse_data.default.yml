@@ -1,0 +1,48 @@
+uuid: f8abf3ed-3c0e-4cf6-82ce-efe3b0243fed
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.muse_data
+    - field.field.component.muse_data.field_description
+    - field.field.component.muse_data.field_name
+    - field.field.component.muse_data.field_skills
+    - field.field.component.muse_data.field_stats
+  module:
+    - ep_skill_reference
+    - ep_statblock
+    - text
+id: component.muse_data.default
+targetEntityType: component
+bundle: muse_data
+mode: default
+content:
+  field_description:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_name:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_skills:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: skill_reference_label
+  field_stats:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+hidden:
+  id: true
+  langcode: true

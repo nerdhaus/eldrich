@@ -1,0 +1,9 @@
+uuid: 103b735b-639e-44e3-8ac0-7c36ff6dfad6
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.component
+name: 'Identity Data'
+type: identity_data
+description: ''

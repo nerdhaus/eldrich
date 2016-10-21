@@ -1,0 +1,21 @@
+uuid: 291d65ba-c177-462d-8ad9-f388fb134b74
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.skill_category
+    - field.storage.lookup.field_description
+  module:
+    - text
+id: lookup.skill_category.field_description
+field_name: field_description
+entity_type: lookup
+bundle: skill_category
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

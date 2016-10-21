@@ -1,0 +1,83 @@
+uuid: ec9a29ef-09fa-4a7b-a035-dbdf54a783b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.stat.field_aptitude_ranges
+    - field.field.node.stat.field_calculation
+    - field.field.node.stat.field_code
+    - field.field.node.stat.field_description
+    - field.field.node.stat.field_is_aptitude
+    - field.field.node.stat.field_is_ego_stat
+    - field.field.node.stat.field_weight
+    - node.type.stat
+  module:
+    - text
+    - user
+id: node.stat.default
+targetEntityType: node
+bundle: stat
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_aptitude_ranges:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_calculation:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_code:
+    weight: 108
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_description:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_is_aptitude:
+    weight: 105
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_is_ego_stat:
+    weight: 106
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_weight:
+    weight: 107
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  links:
+    weight: 100
+hidden: {  }

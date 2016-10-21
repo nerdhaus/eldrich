@@ -1,0 +1,36 @@
+uuid: 61a2848e-b41d-44d4-89d0-3dd931064aa9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.source.field_description
+    - field.field.node.source.field_home_page
+    - field.field.node.source.field_is_canon
+    - field.field.node.source.field_purchase_links
+    - field.field.node.source.field_source_type
+    - node.type.source
+  module:
+    - user
+id: node.source.teaser
+targetEntityType: node
+bundle: source
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_description: true
+  field_home_page: true
+  field_is_canon: true
+  field_purchase_links: true
+  field_source_type: true

@@ -1,0 +1,93 @@
+uuid: aa0ef170-d46b-4f46-895b-a84a5805dfc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.trait.field_allowed_morphs
+    - field.field.node.trait.field_cp_cost
+    - field.field.node.trait.field_description
+    - field.field.node.trait.field_ego_trait
+    - field.field.node.trait.field_morph_trait
+    - field.field.node.trait.field_skills
+    - field.field.node.trait.field_source
+    - field.field.node.trait.field_stats
+    - node.type.trait
+  module:
+    - entity_reference_quantity
+    - ep_skill_reference
+    - ep_statblock
+    - text
+    - user
+id: node.trait.default
+targetEntityType: node
+bundle: trait
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_allowed_morphs:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_cp_cost:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_description:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_ego_trait:
+    weight: 106
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_morph_trait:
+    weight: 107
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_skills:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: skill_reference_label
+  field_source:
+    weight: 109
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  field_stats:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+  links:
+    weight: 100
+hidden: {  }

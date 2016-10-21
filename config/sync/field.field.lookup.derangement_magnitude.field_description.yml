@@ -1,0 +1,21 @@
+uuid: bb3c76dd-a9ce-480e-8c80-c036e69a36b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.derangement_magnitude
+    - field.storage.lookup.field_description
+  module:
+    - text
+id: lookup.derangement_magnitude.field_description
+field_name: field_description
+entity_type: lookup
+bundle: derangement_magnitude
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

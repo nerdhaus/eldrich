@@ -1,0 +1,23 @@
+uuid: d88e2304-4fde-403a-9dad-c54e22aa07ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.firing_modes
+    - field.storage.lookup.field_weight
+id: lookup.firing_modes.field_weight
+field_name: field_weight
+entity_type: lookup
+bundle: firing_modes
+label: Weight
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

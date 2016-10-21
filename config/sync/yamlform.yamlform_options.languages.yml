@@ -1,0 +1,9 @@
+uuid: ba08c36d-568a-410d-a5e8-50e134a19039
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ZloOSnjtKw7Y4BoYgPwkv4llJA2e7mQ8mFPVYp_n9wQ
+id: languages
+label: Languages
+options: ''

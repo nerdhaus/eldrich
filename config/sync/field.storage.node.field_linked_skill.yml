@@ -1,0 +1,19 @@
+uuid: 53c96f4c-e56d-4fd3-b522-ef13901b9d02
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_linked_skill
+field_name: field_linked_skill
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

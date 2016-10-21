@@ -1,0 +1,20 @@
+uuid: f6f01258-b914-4ff6-9401-1e6513329422
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - node
+id: node.field_identity
+field_name: field_identity
+entity_type: node
+type: entity_reference
+settings:
+  target_type: component
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

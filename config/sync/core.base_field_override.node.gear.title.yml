@@ -1,0 +1,18 @@
+uuid: 398e28b1-cc4a-449f-855a-3a896d952506
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.gear
+id: node.gear.title
+field_name: title
+entity_type: node
+bundle: gear
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

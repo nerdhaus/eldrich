@@ -1,0 +1,9 @@
+uuid: 586ddcb1-da6b-4426-bbe4-53dc7d957377
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+name: 'Psi Duration'
+type: psi
+description: ''

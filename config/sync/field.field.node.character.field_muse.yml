@@ -1,0 +1,28 @@
+uuid: 285885a7-e1fd-4e34-8c07-555196726ecb
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.muse_data
+    - field.storage.node.field_muse
+    - node.type.character
+id: node.character.field_muse
+field_name: field_muse
+entity_type: node
+bundle: character
+label: Muse
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:component'
+  handler_settings:
+    target_bundles:
+      muse_data: muse_data
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

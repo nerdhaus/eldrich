@@ -1,0 +1,9 @@
+uuid: b987b5a3-6b03-41a2-adf4-cca78a4dda65
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+name: 'Psi Range'
+type: psi_range
+description: ''

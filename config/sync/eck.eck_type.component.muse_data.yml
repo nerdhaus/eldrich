@@ -1,0 +1,9 @@
+uuid: ea974bd1-c4de-4af7-a109-db98113f4e3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.component
+name: 'Muse Data'
+type: muse_data
+description: ''

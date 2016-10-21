@@ -1,0 +1,20 @@
+uuid: 2eeb7020-f9dc-4e60-be7e-5825bf1f27f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.network
+  module:
+    - user
+id: node.network.teaser
+targetEntityType: node
+bundle: network
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_description: true
+  field_source: true
+  field_symbol: true

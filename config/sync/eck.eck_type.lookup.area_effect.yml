@@ -1,0 +1,9 @@
+uuid: 6b62b9d0-13a2-4e3a-bb61-6e3632a59bc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+name: 'Area Effect'
+type: area_effect
+description: ''

@@ -1,0 +1,21 @@
+uuid: 9485cf30-49ca-4381-aca5-bb590e11d4f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_quantity
+    - node
+    - taxonomy
+id: taxonomy_term.field_source
+field_name: field_source
+entity_type: taxonomy_term
+type: entity_reference_quantity
+settings:
+  target_type: node
+module: entity_reference_quantity
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

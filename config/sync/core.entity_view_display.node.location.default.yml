@@ -1,0 +1,33 @@
+uuid: 596f780f-4e41-496a-ac13-e7e4dcf2f7ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.location.field_description
+    - field.field.node.location.field_source
+    - node.type.location
+  module:
+    - entity_reference_quantity
+    - text
+    - user
+id: node.location.default
+targetEntityType: node
+bundle: location
+mode: default
+content:
+  field_description:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_source:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  links:
+    weight: 100
+hidden: {  }

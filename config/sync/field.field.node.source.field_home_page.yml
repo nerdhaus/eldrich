@@ -1,0 +1,23 @@
+uuid: 48dd4ef6-1f1a-4482-bf2b-203a268f2e0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_home_page
+    - node.type.source
+  module:
+    - link
+id: node.source.field_home_page
+field_name: field_home_page
+entity_type: node
+bundle: source
+label: 'Home Page'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

@@ -1,0 +1,139 @@
+settings:
+  default_page_base_path: form
+  default_form_closed_message: 'Sorry...This form is closed to new submissions.'
+  default_form_submit_label: Submit
+  default_form_exception_message: 'Unable to display this form. Please contact the site administrator.'
+  default_form_confidential_message: 'This form is confidential. You must <a href="[site:login-url]/logout?destination=[current-page:url:relative]">Log out</a> to submit it.'
+  default_form_novalidate: false
+  default_form_details_toggle: true
+  default_wizard_prev_button_label: '< Previous Page'
+  default_wizard_next_button_label: 'Next Page >'
+  default_preview_next_button_label: Preview
+  default_preview_prev_button_label: '< Previous'
+  default_wizard_start_label: Start
+  default_wizard_complete_label: Complete
+  default_preview_message: 'Please review your submission. Your submission is not complete until you press the "Submit" button!'
+  default_draft_button_label: 'Save Draft'
+  default_draft_saved_message: 'Submission saved. You may return to this form later and it will restore the current values.'
+  default_draft_loaded_message: 'A partially-completed form was found. Please complete the remaining portions.'
+  default_confirmation_message: 'New submission added to [yamlform:title].'
+  default_limit_total_message: 'No more submissions are permitted.'
+  default_limit_user_message: 'No more submissions are permitted.'
+export:
+  delimiter: ','
+  header_format: label
+  header_prefix: true
+  header_prefix_label_delimiter: ': '
+  header_prefix_key_delimiter: __
+  entity_reference_format: link
+  options_format: compact
+  options_item_format: label
+batch:
+  default_batch_export_size: 500
+  default_batch_update_size: 500
+  default_batch_delete_size: 500
+elements:
+  wrapper_classes: "container-inline clearfix\nform--inline clearfix\nmessages messages--error\nmessages messages--warning\nmessages messages--status\n"
+  classes: "container-inline clearfix\nform--inline clearfix\nmessages messages--error\nmessages messages--warning\nmessages messages--status\n"
+  allowed_tags: admin
+  file_public: true
+  default_description_display: ''
+  default_max_filesize: ''
+  default_file_extensions: 'gif jpg png bmp eps tif pict psd txt rtf html odf pdf doc docx ppt pptx xls xlsx xml avi mov mp3 ogg wav bz2 dmg gz jar rar sit svg tar zip'
+  default_google_maps_api_key: AIzaSyALfB3DSht4ApU6B_7gJQzuHTn6JraPs8Q
+  types:
+    captcha: captcha
+    checkbox: checkbox
+    checkboxes: checkboxes
+    color: color
+    container: container
+    date: date
+    datelist: datelist
+    datetime: datetime
+    details: details
+    email: email
+    entity_autocomplete: entity_autocomplete
+    fieldset: fieldset
+    hidden: hidden
+    item: item
+    label: label
+    language_select: language_select
+    machine_name: machine_name
+    managed_file: managed_file
+    number: number
+    password: password
+    password_confirm: password_confirm
+    processed_text: processed_text
+    radios: radios
+    range: range
+    search: search
+    select: select
+    table: table
+    tableselect: tableselect
+    tel: tel
+    text_format: text_format
+    textarea: textarea
+    textfield: textfield
+    url: url
+    value: value
+    yamlform_address: yamlform_address
+    yamlform_autocomplete: yamlform_autocomplete
+    yamlform_checkboxes_other: yamlform_checkboxes_other
+    yamlform_codemirror: yamlform_codemirror
+    yamlform_contact: yamlform_contact
+    yamlform_creditcard: yamlform_creditcard
+    yamlform_creditcard_number: yamlform_creditcard_number
+    yamlform_element: yamlform_element
+    yamlform_email_confirm: yamlform_email_confirm
+    yamlform_email_multiple: yamlform_email_multiple
+    yamlform_entity_checkboxes: yamlform_entity_checkboxes
+    yamlform_entity_radios: yamlform_entity_radios
+    yamlform_entity_select: yamlform_entity_select
+    yamlform_flexbox: yamlform_flexbox
+    yamlform_likert: yamlform_likert
+    yamlform_location: yamlform_location
+    yamlform_markup: yamlform_markup
+    yamlform_message: yamlform_message
+    yamlform_name: yamlform_name
+    yamlform_radios_other: yamlform_radios_other
+    yamlform_rating: yamlform_rating
+    yamlform_select_other: yamlform_select_other
+    yamlform_signature: yamlform_signature
+    yamlform_tableselect_sort: yamlform_tableselect_sort
+    yamlform_time: yamlform_time
+    yamlform_toggle: yamlform_toggle
+    yamlform_wizard_page: yamlform_wizard_page
+format:
+  checkboxes: ''
+  color: ''
+  date: ''
+  datelist: ''
+  datetime: ''
+  email: ''
+  entity_autocomplete: ''
+  language_select: ''
+  managed_file: ''
+  password_confirm: ''
+  select: ''
+  tableselect: ''
+  tel: ''
+  text_format: ''
+  url: ''
+mail:
+  default_from_mail: '[site:mail]'
+  default_from_name: '[site:name]'
+  default_subject: 'Form submission from: [yamlform-submission:source-entity]'
+  default_body_text: "Submitted on [yamlform-submission:created]\nSubmitted by: [yamlform-submission:user]\n\nSubmitted values are:\n[yamlform-submission:values]\n"
+  default_body_html: "<p>Submitted on [yamlform-submission:created]</p>\n<p>Submitted by: [yamlform-submission:user]</p>\n<p>Submitted values are:</p>\n[yamlform-submission:values]"
+test:
+  types: "checkbox:\n  - true\ncolor:\n  - '#ffffcc'\n  - '#ffffcc'\n  - '#ccffff'\ndate:\n  - '1942-06-18'\n  - '1940-07-07'\n  - '1943-02-25'\n  - '1940-10-09'\ndatetime:\n  - '1942-06-18'\n  - '1940-07-07'\n  - '1943-02-25'\n  - '1940-10-09'\ndatelist:\n  - '1942-06-18'\n  - '1940-07-07'\n  - '1943-02-25'\n  - '1940-10-09'\nemail:\n  - 'example@example.com'\n  - 'test@test.com'\n  - 'random@random.com'\nlanguage_select:\n  - en\nmachine_name:\n  - 'loremipsum'\n  - 'oratione'\n  - 'dixisset'\ntel:\n  - '123-456-7890'\n  - '098-765-4321'\ntextarea:\n  - 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Negat esse eam, inquit, propter se expetendam. Primum Theophrasti, Strato, physicum se voluit; Id mihi magnum videtur. Itaque mihi non satis videmini considerare quod iter sit naturae quaeque progressio. Quare hoc videndum est, possitne nobis hoc ratio philosophorum dare. Est enim tanti philosophi tamque nobilis audacter sua decreta defendere.'\n  - 'Huius, Lyco, oratione locuples, rebus ipsis ielunior. Duo Reges: constructio interrete. Sed haec in pueris; Sed utrum hortandus es nobis, Luci, inquit, an etiam tua sponte propensus es? Sapiens autem semper beatus est et est aliquando in dolore; Immo videri fortasse. Paulum, cum regem Persem captum adduceret, eodem flumine invectio? Et ille ridens: Video, inquit, quid agas;'\n  - 'Quae cum dixisset, finem ille. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Progredientibus autem aetatibus sensim tardeve potius quasi nosmet ipsos cognoscimus. Gloriosa ostentatio in constituendo summo bono. Qui-vere falsone, quaerere mittimus-dicitur oculis se privasse; Duarum enim vitarum nobis erunt instituta capienda. Comprehensum, quod cognitum non habet? Qui enim existimabit posse se miserum esse beatus non erit. Causa autem fuit huc veniendi ut quosdam hinc libros promerem. Nunc omni virtuti vitium contrario nomine opponitur.'\ntext_format:\n  - value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Negat esse eam, inquit, propter se expetendam. Primum Theophrasti, Strato, physicum se voluit; Id mihi magnum videtur. Itaque mihi non satis videmini considerare quod iter sit naturae quaeque progressio. Quare hoc videndum est, possitne nobis hoc ratio philosophorum dare. Est enim tanti philosophi tamque nobilis audacter sua decreta defendere.</p>'\n  - value: '<p>Huius, Lyco, oratione locuples, rebus ipsis ielunior. Duo Reges: constructio interrete. Sed haec in pueris; Sed utrum hortandus es nobis, Luci, inquit, an etiam tua sponte propensus es? Sapiens autem semper beatus est et est aliquando in dolore; Immo videri fortasse. Paulum, cum regem Persem captum adduceret, eodem flumine invectio? Et ille ridens: Video, inquit, quid agas;</p>'\n  - value: '<p>Quae cum dixisset, finem ille. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Progredientibus autem aetatibus sensim tardeve potius quasi nosmet ipsos cognoscimus. Gloriosa ostentatio in constituendo summo bono. Qui-vere falsone, quaerere mittimus-dicitur oculis se privasse; Duarum enim vitarum nobis erunt instituta capienda. Comprehensum, quod cognitum non habet? Qui enim existimabit posse se miserum esse beatus non erit. Causa autem fuit huc veniendi ut quosdam hinc libros promerem. Nunc omni virtuti vitium contrario nomine opponitur.</p>'\nurl:\n  - 'http://example.com'\n  - 'http://test.com'\nyamlform_creditcard_number:\n  - '4111111111111111'\nyamlform_email_confirm:\n  - 'example@example.com'\n  - 'test@test.com'\n  - 'random@random.com'\nyamlform_email_multiple:\n  - 'example@example.com, test@test.com, random@random.com'\nyamlform_location:\n  - value: 'The White House, 1600 Pennsylvania Ave NW, Washington, DC 20500, USA'\n  - value: 'London SW1A 1AA, United Kingdom'\n  - value: 'Moscow, Russia, 10307'\nyamlform_time:\n  - '09:00'\n  - '17:00'\n"
+  names: "first_name:\n  - 'John'\n  - 'Paul'\n  - 'Ringo'\n  - 'George'\nlast_name:\n  - 'Lennon'\n  - 'McCartney'\n  - 'Starr'\n  - 'Harrison'\naddress:\n  - '10 Main Street'\n  - '11 Brook Alley Road. APT 1'\nzip:\n  - '11111'\n  - '12345'\n  - '12345-6789'\nphone:\n  - '123-456-7890'\n  - '098-765-4321'\ncity:\n  - 'Springfield'\n  - 'Pleasantville'\n  - 'Hill Valley'\nurl:\n  - 'http://example.com'\n  - 'http://test.com'\ndefault:\n  - 'Loremipsum'\n  - 'Oratione'\n  - 'Dixisset'"
+ui:
+  details_save: true
+  dialog_disabled: false
+  html_editor_disabled: false
+  video_display: dialog
+langcode: en
+third_party_settings: {  }
+_core:
+  default_config_hash: 3LGZRB0FinhpQ4crEic1RwwMdj79FqlibclTN-6GBsk

@@ -1,0 +1,21 @@
+uuid: 2c649f00-029d-4625-bae2-1008abd4415e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.derangement
+  module:
+    - text
+id: node.derangement.field_description
+field_name: field_description
+entity_type: node
+bundle: derangement
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

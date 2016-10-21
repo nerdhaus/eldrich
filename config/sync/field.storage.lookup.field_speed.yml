@@ -1,0 +1,19 @@
+uuid: a048075b-eb75-4803-8338-b8acdd540b72
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - ep_complex_values
+id: lookup.field_speed
+field_name: field_speed
+entity_type: lookup
+type: mobility_speed
+settings: {  }
+module: ep_complex_values
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,28 @@
+uuid: cc59924b-f73d-4c67-a1b8-fda132d484e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.identity_data
+    - field.storage.component.field_faction
+    - node.type.faction
+id: component.identity_data.field_faction
+field_name: field_faction
+entity_type: component
+bundle: identity_data
+label: Faction
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      faction: faction
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

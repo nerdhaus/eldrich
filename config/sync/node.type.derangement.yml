@@ -1,0 +1,18 @@
+uuid: 9907010d-1c5d-4615-a505-ee2be7680429
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Derangement
+type: derangement
+description: 'A temporary psychological effect triggered by stress and trauma. Covers both derangement and long-term disorders.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

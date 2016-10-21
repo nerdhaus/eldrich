@@ -1,0 +1,9 @@
+uuid: 5398f4ca-9af4-418a-9fe3-0f0e4ecca75f
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+name: 'Substance Delivery'
+type: substance_delivery
+description: ''

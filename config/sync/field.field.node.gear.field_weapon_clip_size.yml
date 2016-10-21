@@ -1,0 +1,23 @@
+uuid: eeee9cc7-87d1-4646-a79b-07a5ab39e17d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weapon_clip_size
+    - node.type.gear
+id: node.gear.field_weapon_clip_size
+field_name: field_weapon_clip_size
+entity_type: node
+bundle: gear
+label: 'Weapon Clip Size'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

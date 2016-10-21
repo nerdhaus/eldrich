@@ -1,0 +1,42 @@
+uuid: a830146f-c30a-4c63-88d2-add06ab75a1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.trait.field_allowed_morphs
+    - field.field.node.trait.field_cp_cost
+    - field.field.node.trait.field_description
+    - field.field.node.trait.field_ego_trait
+    - field.field.node.trait.field_morph_trait
+    - field.field.node.trait.field_skills
+    - field.field.node.trait.field_source
+    - field.field.node.trait.field_stats
+    - node.type.trait
+  module:
+    - user
+id: node.trait.teaser
+targetEntityType: node
+bundle: trait
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_allowed_morphs: true
+  field_cp_cost: true
+  field_description: true
+  field_ego_trait: true
+  field_morph_trait: true
+  field_skills: true
+  field_source: true
+  field_stats: true

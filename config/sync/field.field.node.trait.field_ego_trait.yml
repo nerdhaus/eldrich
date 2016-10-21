@@ -1,0 +1,23 @@
+uuid: 8604e1fc-c9d5-4bf7-ad55-6d800f05f689
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ego_trait
+    - node.type.trait
+id: node.trait.field_ego_trait
+field_name: field_ego_trait
+entity_type: node
+bundle: trait
+label: 'Ego Trait'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Trait applies to egos'
+  off_label: 'Trait does not apply to egos'
+field_type: boolean

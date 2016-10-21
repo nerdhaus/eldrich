@@ -1,0 +1,9 @@
+uuid: 2bfc5fba-d879-461b-b26a-8f2a94503423
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+name: 'Source Type'
+type: source_type
+description: ''

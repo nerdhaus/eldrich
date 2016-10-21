@@ -1,0 +1,36 @@
+uuid: a08fe9ce-a62c-44a4-a9d0-1c4bcf1e8e37
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.morph_type
+    - field.field.lookup.morph_type.field_description
+    - field.field.lookup.morph_type.field_weight
+  module:
+    - text
+id: lookup.morph_type.default
+targetEntityType: lookup
+bundle: morph_type
+mode: default
+content:
+  field_description:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_weight:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

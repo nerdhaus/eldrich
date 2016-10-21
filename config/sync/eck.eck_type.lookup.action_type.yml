@@ -1,0 +1,9 @@
+uuid: 5e278763-e91d-4d60-bdcc-704669780463
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+name: 'Action Type'
+type: action_type
+description: ''

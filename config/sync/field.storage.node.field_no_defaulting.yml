@@ -1,0 +1,18 @@
+uuid: 0fccf075-7f24-4503-be72-f6a0f9fff161
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_no_defaulting
+field_name: field_no_defaulting
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
