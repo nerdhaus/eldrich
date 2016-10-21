@@ -4,7 +4,7 @@ label: 'Taxonomy hierarchy for purchasable gear'
 
 source:
   plugin: csv
-  path: 'modules/custom/ep/ep_import/data/gear-taxonomy.csv'
+  path: 'modules/custom/ep_import/data/gear-taxonomy.csv'
   header_row_count: 1
 
   # Columns to be returned, basically a list of table header cell values.
