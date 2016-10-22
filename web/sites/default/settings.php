@@ -764,3 +764,6 @@ $databases['default']['default'] = array (
 );
 $settings['install_profile'] = 'standard';
 $config_directories['sync'] = '../config/sync';
+
+// Coerce all sites to use a single shared uuid.
+$config['system.site'] = 'AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo';
