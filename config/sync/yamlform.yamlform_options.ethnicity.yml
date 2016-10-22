@@ -1,9 +1,0 @@
-uuid: 3b2ceafc-1fbd-41a4-84b5-53a6dc1c7e95
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: z55QoUcFZ7h2acK-0ClT2IT8pVBUMOZrX8lev4IzLw8
-id: ethnicity
-label: Ethnicity
-options: "Caucasian: Caucasian\n'Latino/Hispanic': 'Latino/Hispanic'\n'Middle Eastern': 'Middle Eastern'\nAfrican: African\nCaribbean: Caribbean\n'South Asian': 'South Asian'\n'East Asian': 'East Asian'\nMixed: Mixed\n"

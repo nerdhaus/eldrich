@@ -1,9 +1,0 @@
-uuid: 0eaeaf10-52b3-4ea8-ac1a-37966f8587d4
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: XzSzSXbcF21mzPzbRGEi-v1P8-o489s72JT9KZbwC1c
-id: likert_comparison
-label: 'Likert: Comparison'
-options: "1: Strongly Disagree\n2: Disagree\n3: Neutral\n4: Agree\n5: Strongly Agree\n"

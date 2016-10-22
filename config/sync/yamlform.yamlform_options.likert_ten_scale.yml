@@ -1,9 +1,0 @@
-uuid: 234fb82b-afb9-4db5-92ff-860ecee70bd9
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: XIR2owQGX0wRX1WF5fllXN0KO-P32Jb8HVRFKG5OLqo
-id: likert_ten_scale
-label: 'Likert: Ten Scale'
-options: "1: 1\n2: 2\n3: 3\n4: 4\n5: 5\n6: 6\n7: 7\n8: 8\n9: 9\n10: 10\n"

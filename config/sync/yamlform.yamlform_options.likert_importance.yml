@@ -1,9 +1,0 @@
-uuid: 50e22f09-b2ac-45fe-bc1e-05febe1c0aad
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: A2xarMuZW6OPxFRChF1JP7wjE3EXbZhozmTjnlwUDpQ
-id: likert_importance
-label: 'Likert: Importance'
-options: "1: Not at all Important\n2: Somewhat Important\n3: Neutral\n4: Important\n5: Very Important\n"

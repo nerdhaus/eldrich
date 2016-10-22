@@ -1,9 +1,0 @@
-uuid: 0525d309-bdc2-406a-9aa1-7a1e320d8006
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: bNowU_WqEthgHQ8zjvWpDNHLklibv0lvmPCCu4plVDo
-id: relationship
-label: Relationship
-options: "Parent: Parent\n'Significant Other': 'Significant Other'\nSibling: Sibling\nChild: Child\nFriend: Friend\n"

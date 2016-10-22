@@ -1,9 +1,0 @@
-uuid: b3ac8ab9-c58c-4efc-a53e-8c507174ec41
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: usblpjlvFxXlxQ2nCePEvx-AnnjTc_SRdZwYMli3pHw
-id: country_names
-label: 'Country names'
-options: ''
