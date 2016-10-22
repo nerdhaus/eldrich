@@ -6,8 +6,6 @@ dependencies:
     - help
   theme:
     - seven
-_core:
-  default_config_hash: NU5A_49mwLHfs5xFzMFrZ850w9pgUolxMS9NNF3vv4c
 id: seven_help
 theme: seven
 region: help
