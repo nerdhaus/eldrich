@@ -3,3 +3,12 @@ type: module
 description: Eldrich Black entity schema
 core: 8.x
 package: Eclipse Phase
+dependencies:
+- eck
+- field_group
+- entity_reference_override
+- entity_reference_quantity
+- ep_skill_reference
+- ep_statblock
+- ep_complex_values
+- inline_entity_form
