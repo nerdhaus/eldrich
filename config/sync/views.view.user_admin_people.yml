@@ -4,9 +4,7 @@ status: true
 dependencies:
   module:
     - user
-_core:
-  default_config_hash: 7kCByILhEFqBK9eFmxHNVbEq2z3-pl-cwWjDnzLn67I
-id: user_admin_people
+ id: user_admin_people
 label: People
 module: user
 description: 'Find and manage people interacting with your site.'

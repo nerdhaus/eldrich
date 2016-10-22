@@ -7,9 +7,7 @@ dependencies:
   module:
     - node
     - user
-_core:
-  default_config_hash: SRH1EhxAiIRj01P9xYv0h_LfIfWxjll0Yq-eDfjziFI
-id: archive
+ id: archive
 label: Archive
 module: node
 description: 'All content, by month.'

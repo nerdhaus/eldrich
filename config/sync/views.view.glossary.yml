@@ -7,9 +7,7 @@ dependencies:
   module:
     - node
     - user
-_core:
-  default_config_hash: '-pCFOVfbt__jaohFffTLnVavh4OBC6CjREAnchiRomQ'
-id: glossary
+ id: glossary
 label: Glossary
 module: node
 description: 'All content, by letter.'
