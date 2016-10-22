@@ -7,7 +7,9 @@ dependencies:
     - field.field.block_content.basic.body
   module:
     - text
- id: block_content.basic.default
+_core:
+  default_config_hash: zCrrHAjrsQgWjBXBsshAZjND21czBy8sH_L5v_xDKSA
+id: block_content.basic.default
 targetEntityType: block_content
 bundle: basic
 mode: default

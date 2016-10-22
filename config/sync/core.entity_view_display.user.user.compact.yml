@@ -9,7 +9,9 @@ dependencies:
   module:
     - image
     - user
- id: user.user.compact
+_core:
+  default_config_hash: C3k_McOy8bL8rTnIjspy5OfFdgqV1z6OdGZaI-tO5eM
+id: user.user.compact
 targetEntityType: user
 bundle: user
 mode: compact

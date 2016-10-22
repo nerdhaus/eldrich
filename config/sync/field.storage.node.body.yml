@@ -5,7 +5,9 @@ dependencies:
   module:
     - node
     - text
- id: node.body
+_core:
+  default_config_hash: EBUo7qOWqaiZaQ_RC9sLY5IoDKphS34v77VIHSACmVY
+id: node.body
 field_name: body
 entity_type: node
 type: text_with_summary

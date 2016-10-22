@@ -7,7 +7,9 @@ dependencies:
     - field.field.comment.comment.comment_body
   module:
     - text
- id: comment.comment.default
+_core:
+  default_config_hash: ooVjelXSXbiQtp-hYb7LS44vR5UO-Kqu4vf484ggR8w
+id: comment.comment.default
 targetEntityType: comment
 bundle: comment
 mode: default

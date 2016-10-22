@@ -8,7 +8,9 @@ dependencies:
     - system
   theme:
     - bartik
- id: bartik_tools
+_core:
+  default_config_hash: NeHSoqm4XFqA7_0bDmR429ZZQt3LRbZMNRJTMsFyOfI
+id: bartik_tools
 theme: bartik
 region: sidebar_first
 weight: 0

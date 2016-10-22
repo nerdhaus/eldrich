@@ -5,7 +5,9 @@ dependencies:
   module:
     - node
     - user
- id: content_recent
+_core:
+  default_config_hash: tDcmzGfShE0XJbfwJzyA6lJTUYC6X4iVu887dgoFfDg
+id: content_recent
 label: 'Recent content'
 module: node
 description: 'Recent content.'

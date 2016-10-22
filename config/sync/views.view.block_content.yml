@@ -5,7 +5,9 @@ dependencies:
   module:
     - block_content
     - user
- id: block_content
+_core:
+  default_config_hash: msYnighLW1IbiBfyQbwbQwb2cU-5LECiFryt60k0Nfk
+id: block_content
 label: 'Custom block library'
 module: views
 description: 'Find and manage custom blocks.'

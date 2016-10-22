@@ -6,7 +6,9 @@ dependencies:
     - system
   theme:
     - seven
- id: seven_breadcrumbs
+_core:
+  default_config_hash: WWu2OQswgCztl9OeXjD1stexIEMZsSgPMYIdC-JHx9c
+id: seven_breadcrumbs
 theme: seven
 region: breadcrumb
 weight: 0

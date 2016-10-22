@@ -4,7 +4,9 @@ status: true
 dependencies:
   module:
     - user
- id: who_s_new
+_core:
+  default_config_hash: o_8fSWHZOVIbydZACGsSX09DtuJhqkRmNOzcVj-4bQI
+id: who_s_new
 label: 'Who''s new'
 module: user
 description: 'Shows a list of the newest user accounts on the site.'
