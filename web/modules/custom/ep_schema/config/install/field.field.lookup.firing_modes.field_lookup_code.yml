@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.firing_modes
+    - field.storage.lookup.field_lookup_code
+id: lookup.firing_modes.field_lookup_code
+field_name: field_lookup_code
+entity_type: lookup
+bundle: firing_modes
+label: 'Lookup Code'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

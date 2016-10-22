@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.identity_data
+    - field.storage.component.field_gender_identity
+id: component.identity_data.field_gender_identity
+field_name: field_gender_identity
+entity_type: component
+bundle: identity_data
+label: 'Gender Identity'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.character_status
+    - field.storage.component.field_derangements
+    - node.type.derangement
+  module:
+    - entity_reference_override
+id: component.character_status.field_derangements
+field_name: field_derangements
+entity_type: component
+bundle: character_status
+label: Derangements
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      derangement: derangement
+    sort:
+      field: field_derangement_level
+      direction: ASC
+    auto_create: 0
+    auto_create_bundle: ''
+  override_label: Notes
+field_type: entity_reference_override

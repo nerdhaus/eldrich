@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_speed
+    - node.type.gear
+  module:
+    - ep_complex_values
+id: node.gear.field_speed
+field_name: field_speed
+entity_type: node
+bundle: gear
+label: 'Movement Speed'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: mobility_speed

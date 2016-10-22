@@ -1,0 +1,127 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.skill.field_description
+    - field.field.node.skill.field_example_fields
+    - field.field.node.skill.field_is_field
+    - field.field.node.skill.field_linked_aptitude
+    - field.field.node.skill.field_no_defaulting
+    - field.field.node.skill.field_skill_type
+    - field.field.node.skill.field_source
+    - field.field.node.skill.field_specializations
+    - field.field.node.skill.field_usage
+    - node.type.skill
+  module:
+    - entity_reference_quantity
+    - path
+    - text
+id: node.skill.default
+targetEntityType: node
+bundle: skill
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 31
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  field_description:
+    weight: 10
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_example_fields:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_is_field:
+    weight: 9
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_linked_aptitude:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_no_defaulting:
+    weight: 8
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_skill_type:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_source:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_reference_quantity_select
+  field_specializations:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_usage:
+    weight: 11
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  path:
+    type: path
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

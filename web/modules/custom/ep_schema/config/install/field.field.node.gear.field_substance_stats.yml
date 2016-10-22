@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.substance_data
+    - field.storage.node.field_substance_stats
+    - node.type.gear
+id: node.gear.field_substance_stats
+field_name: field_substance_stats
+entity_type: node
+bundle: gear
+label: 'Substance Stats'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:component'
+  handler_settings:
+    target_bundles:
+      substance_data: substance_data
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

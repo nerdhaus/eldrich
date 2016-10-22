@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: lookup
+label: 'Lookup Table'
+created: false
+changed: false
+uid: false
+title: true

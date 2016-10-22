@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.damage_type
+    - field.storage.node.field_weapon_damage_type
+    - node.type.gear
+id: node.gear.field_weapon_damage_type
+field_name: field_weapon_damage_type
+entity_type: node
+bundle: gear
+label: 'Weapon Damage Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:lookup'
+  handler_settings:
+    target_bundles:
+      damage_type: damage_type
+    sort:
+      field: field_weight
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

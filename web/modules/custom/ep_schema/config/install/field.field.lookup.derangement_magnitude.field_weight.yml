@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.derangement_magnitude
+    - field.storage.lookup.field_weight
+id: lookup.derangement_magnitude.field_weight
+field_name: field_weight
+entity_type: lookup
+bundle: derangement_magnitude
+label: Weight
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

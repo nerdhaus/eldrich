@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.faction
+  module:
+    - user
+id: node.faction.teaser
+targetEntityType: node
+bundle: faction
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_description: true
+  field_source: true

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_aptitude
+    - node.type.stat
+id: node.stat.field_is_aptitude
+field_name: field_is_aptitude
+entity_type: node
+bundle: stat
+label: 'Stat is a core aptitude'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'This stat is a core aptitude'
+  off_label: 'This is a secondary stat'
+field_type: boolean

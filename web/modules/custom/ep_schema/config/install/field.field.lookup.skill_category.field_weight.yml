@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.skill_category
+    - field.storage.lookup.field_weight
+id: lookup.skill_category.field_weight
+field_name: field_weight
+entity_type: lookup
+bundle: skill_category
+label: Weight
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

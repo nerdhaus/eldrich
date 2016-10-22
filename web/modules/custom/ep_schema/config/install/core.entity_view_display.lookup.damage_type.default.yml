@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.damage_type
+    - field.field.lookup.damage_type.field_description
+    - field.field.lookup.damage_type.field_weight
+  module:
+    - text
+id: lookup.damage_type.default
+targetEntityType: lookup
+bundle: damage_type
+mode: default
+content:
+  field_description:
+    weight: -4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_weight:
+    weight: -3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  id: true
+  langcode: true

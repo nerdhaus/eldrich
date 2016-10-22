@@ -1,0 +1,68 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.character_status
+    - field.field.component.character_status.field_damage
+    - field.field.component.character_status.field_derangements
+    - field.field.component.character_status.field_description
+    - field.field.component.character_status.field_stress
+    - field.field.component.character_status.field_traumas
+    - field.field.component.character_status.field_wounds
+  module:
+    - entity_reference_override
+    - text
+id: component.character_status.default
+targetEntityType: component
+bundle: character_status
+mode: default
+content:
+  field_damage:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_derangements:
+    weight: 5
+    label: above
+    settings:
+      override_action: title
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_override_label
+  field_description:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_stress:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_traumas:
+    weight: 4
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_wounds:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+hidden:
+  id: true
+  langcode: true

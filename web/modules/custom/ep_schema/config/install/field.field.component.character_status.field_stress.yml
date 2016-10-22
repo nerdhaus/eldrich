@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.character_status
+    - field.storage.component.field_stress
+id: component.character_status.field_stress
+field_name: field_stress
+entity_type: component
+bundle: character_status
+label: Stress
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

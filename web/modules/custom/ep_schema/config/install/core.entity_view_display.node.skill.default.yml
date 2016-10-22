@@ -1,0 +1,97 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.skill.field_description
+    - field.field.node.skill.field_example_fields
+    - field.field.node.skill.field_is_field
+    - field.field.node.skill.field_linked_aptitude
+    - field.field.node.skill.field_no_defaulting
+    - field.field.node.skill.field_skill_type
+    - field.field.node.skill.field_source
+    - field.field.node.skill.field_specializations
+    - field.field.node.skill.field_usage
+    - node.type.skill
+  module:
+    - entity_reference_quantity
+    - text
+    - user
+id: node.skill.default
+targetEntityType: node
+bundle: skill
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_description:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_example_fields:
+    weight: 109
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_is_field:
+    weight: 108
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_linked_aptitude:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_no_defaulting:
+    weight: 106
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_skill_type:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_source:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  field_specializations:
+    weight: 107
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_usage:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  links:
+    weight: 100
+hidden: {  }
