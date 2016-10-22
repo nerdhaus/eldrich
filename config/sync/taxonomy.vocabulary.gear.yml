@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: Gear
-vid: gear
-description: ''
-hierarchy: 0
-weight: 0

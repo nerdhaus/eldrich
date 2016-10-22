@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.lookup
-name: 'Substance type'
-type: substance_type
-description: ''
