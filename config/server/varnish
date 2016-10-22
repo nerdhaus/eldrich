@@ -1,0 +1,27 @@
+# Configuration file for varnish
+#
+# /etc/init.d/varnish expects the variables $DAEMON_OPTS, $NFILES and $MEMLOCK
+# to be set from this shell script fragment.
+#
+# Note: If systemd is installed, this file is obsolete and ignored.  Please see 
+# /usr/share/doc/varnish/examples/varnish.systemd-drop-in.conf
+
+# Should we start varnishd at boot?  Set to "no" to disable.
+START=yes
+
+# Maximum number of open files (for ulimit -n)
+NFILES=131072
+
+# Maximum locked memory size (for ulimit -l)
+# Used for locking the shared memory log in memory.  If you increase log size,
+# you need to increase this number as well
+MEMLOCK=82000
+
+# Content server on localhost:8080.  Use a 256M memory cache.
+#
+DAEMON_OPTS="-a :8080 \
+             -T localhost:6082 \
+	         -b localhost:80 \
+	         -u varnish -g varnish \
+             -S /etc/varnish/secret \
+	         -s malloc,256M"
