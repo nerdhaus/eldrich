@@ -52,9 +52,9 @@ echo -e "\e[7m Apache installed \e[27m"
   # Create the database, clean up after Apache, install front end requirements.
   mysql -uroot -proot -e "create database eldrich;"
 
-  if [ -f "/vagrant/initial.sql" ]
+  if [ -f "/vagrant/initial.sql.gz" ]
   then
-    mysql -uroot -proot eldrich < /vagrant/initial.sql
+    mysql -uroot -proot eldrich < /vagrant/initial.sql.gz
     echo -e "\e[7m Database imported \e[27m"
   fi
 
@@ -65,9 +65,6 @@ echo 'xdebug.remote_enable=on' >> /etc/php/mods-available/xdebug.ini
 echo 'xdebug.remote_connect_back=on' >> /etc/php/mods-available/xdebug.ini
 echo 'html_errors=1' >> /etc/php/mods-available/xdebug.ini
 echo 'xdebug.extended_info=1' >> /etc/php/mods-available/xdebug.ini
-
-mkdir /vagrant/config
-mkdir /vagrant/config/sync
 
 echo 'max_execution_time = 300' >> /etc/php/apache2/php.ini
 sudo service apache2 restart
@@ -83,15 +80,21 @@ sudo a2enconf fqdn
 SCRIPT
 
 $composer = <<COMPOSER
-cd /vagrant/www
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >> ~/.profile
-composer global require drush/drush
+
+cd /vagrant
 
 curl https://drupalconsole.com/installer -L -o drupal.phar
 sudo mv drupal.phar /usr/local/bin/drupal
 sudo chmod +x /usr/local/bin/drupal
+
 drupal init --override
+
+cd drupal
+composer global require drush/drush
+
+ln -s /vagrant/modules /vagrant/drupal/modules/custom
 
 echo -e "\e[7m Composer, Drupal Console, and Drush installed \e[27m"
 echo -e "\e[7m Go forth and Nerd \e[27m"
