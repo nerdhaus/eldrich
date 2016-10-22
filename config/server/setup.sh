@@ -39,6 +39,10 @@ sudo rm /etc/apache2/ports.conf
 sudo ln -s /vagrant/config/server/ports.conf /etc/apache2/ports.conf
 sudo ln -s /vagrant/config/server/drupal.conf /etc/apache2/sites-available/drupal.conf
 
+echo 'SetEnv DB_NAME "eldrich"' >> /vagrant/environment.inc
+echo 'SetEnv DB_USER "root"' >> /vagrant/environment.inc
+echo 'SetEnv DB_PASS "root"' >> /vagrant/environment.inc
+
 sudo a2dissite 000-default.conf
 sudo a2ensite drupal.conf
 sudo a2enmod rewrite

@@ -753,9 +753,9 @@ $settings['file_scan_ignore_directories'] = [
 #   include __DIR__ . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'eldrich',
-  'username' => 'eldrich',
-  'password' => 'immanent-smog-owns',
+  'database' => getenv('DB_NAME'),
+  'username' => getenv('DB_USER'),
+  'password' => getenv('DB_PASS'),
   'prefix' => '',
   'host' => 'localhost',
   'port' => '3306',
@@ -763,4 +763,4 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 $settings['install_profile'] = 'standard';
-$config_directories['sync'] = 'sites/default/files/config_Z6ixXVgRfZO-QIS0bs78uaTMa1nfbeVutUv_6ojzoEmslnu_Z0saUsPP0Cd7MmzZai_0dwmhVA/sync';
+$config_directories['sync'] = '../config/sync';
