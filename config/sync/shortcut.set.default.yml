@@ -2,7 +2,5 @@ uuid: 2c20313a-fb0b-4334-8830-9c14e60ae878
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
 id: default
 label: Default

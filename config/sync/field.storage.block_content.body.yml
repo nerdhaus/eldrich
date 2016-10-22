@@ -5,8 +5,6 @@ dependencies:
   module:
     - block_content
     - text
-_core:
-  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
 id: block_content.body
 field_name: body
 entity_type: block_content

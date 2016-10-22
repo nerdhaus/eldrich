@@ -4,8 +4,6 @@ status: false
 dependencies:
   module:
     - user
-_core:
-  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
 id: user.full
 label: 'User account'
 targetEntityType: user

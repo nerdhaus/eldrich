@@ -4,8 +4,6 @@ status: true
 dependencies:
   module:
     - user
-_core:
-  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
 id: who_s_online
 label: 'Who''s online block'
 module: user
