@@ -8,6 +8,9 @@ echo 'export DB_NAME="eldrich"' >> ~/.profile
 echo 'export DB_USER="root"' >> ~/.profile
 echo 'export DB_PASS="root"' >> ~/.profile
 
-cd /vagrant web
+cd /vagrant
 composer install
 composer update
+
+cp /vagrant/web/sites/example.settings.local.php /vagrant/web/sites/default/settings.local.php
+echo /vagrant/config/server/dev-database.txt >> /vagrant/web/sites/default/settings.local.php
