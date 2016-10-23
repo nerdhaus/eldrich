@@ -17,3 +17,4 @@ web/sites/*/files
 .idea
 
 /environment.inc
+web/sites/default/settings.local.php
