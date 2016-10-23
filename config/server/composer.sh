@@ -13,4 +13,4 @@ composer install
 composer update
 
 cp /vagrant/web/sites/example.settings.local.php /vagrant/web/sites/default/settings.local.php
-echo /vagrant/config/server/dev-database.txt >> /vagrant/web/sites/default/settings.local.php
+cat /vagrant/config/server/dev-database.txt >> /vagrant/web/sites/default/settings.local.php
