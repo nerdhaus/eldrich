@@ -1,0 +1,20 @@
+uuid: 21b24a3e-a332-45a9-9ad4-8c53b458bc9e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: NAEeMNG1TptHx2mxw5Fr3dtJd1fSkv9XeN02V7wgjrU
+name: Trait
+type: trait
+description: 'A unique quality or quirk applied to a specific Eclipse Phase character.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

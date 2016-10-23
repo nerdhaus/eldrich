@@ -1,0 +1,20 @@
+uuid: 380ea477-cd0c-4ec1-b369-217220344cfa
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: EisR5-qm2fRE5o1jEAsCLougdBov5WqW2xcCgDaoBDM
+name: Character
+type: character
+description: 'An NPC or Player Character in an Eclipse Phase game'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

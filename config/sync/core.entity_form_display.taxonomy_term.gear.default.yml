@@ -1,0 +1,46 @@
+uuid: db8dead1-2f59-4365-9c22-4283b6f2b178
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.gear.field_source
+    - taxonomy.vocabulary.gear
+  module:
+    - entity_reference_quantity
+    - path
+    - text
+_core:
+  default_config_hash: 3rdeGT75D7J3BgzYORr7AojKS1o9EO-ZhZqPQCCrryc
+id: taxonomy_term.gear.default
+targetEntityType: taxonomy_term
+bundle: gear
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_source:
+    weight: 31
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_quantity_autocomplete
+  name:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

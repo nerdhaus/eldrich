@@ -1,0 +1,22 @@
+uuid: 3b1f7ce1-3076-42f3-bb03-f0c2f58a2b20
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+_core:
+  default_config_hash: d0MJZf-uRstiuVqs_dSgQh_iCTwNYVQ8AtvWnHC00Ck
+id: lookup.field_weight
+field_name: field_weight
+entity_type: lookup
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

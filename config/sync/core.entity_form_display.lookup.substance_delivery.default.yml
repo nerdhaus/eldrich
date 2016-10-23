@@ -1,0 +1,38 @@
+uuid: 0dc7b737-c8b4-432b-9694-6804f7f6cc5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.substance_delivery
+    - field.field.lookup.substance_delivery.field_description
+    - field.field.lookup.substance_delivery.field_weight
+  module:
+    - text
+_core:
+  default_config_hash: nlMq-6mTvUsb3vQxsqCvVkKIVzpMLGUCvWtGOu1xZ3k
+id: lookup.substance_delivery.default
+targetEntityType: lookup
+bundle: substance_delivery
+mode: default
+content:
+  field_description:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_weight:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,22 @@
+uuid: 6e28029c-51cc-47b2-a132-76731b57501f
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+_core:
+  default_config_hash: rJaFxPXtDuCZbchyYbIx-NMOw8HFmltdUFAIR1GSwKc
+id: component.field_credits
+field_name: field_credits
+entity_type: component
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

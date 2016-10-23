@@ -1,0 +1,23 @@
+uuid: 956b5de7-d851-41e2-bb04-b4fa2b06ef6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stats
+    - node.type.character
+  module:
+    - ep_statblock
+_core:
+  default_config_hash: 0kyJ8H1SMv1AspEOr8_b-1MsugyV-Je2KW9Btso3kCQ
+id: node.character.field_stats
+field_name: field_stats
+entity_type: node
+bundle: character
+label: Stats
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: stat_block

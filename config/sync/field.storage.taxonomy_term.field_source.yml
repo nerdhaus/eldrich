@@ -1,0 +1,23 @@
+uuid: 9ef9f5ba-1431-4222-a8ba-2bfb096f5a39
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_quantity
+    - node
+    - taxonomy
+_core:
+  default_config_hash: hZM-okjECBLv-v7IzDpgjiLp7B2mZcOq8VJy1gf0mdQ
+id: taxonomy_term.field_source
+field_name: field_source
+entity_type: taxonomy_term
+type: entity_reference_quantity
+settings:
+  target_type: node
+module: entity_reference_quantity
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: 2e5ac3e7-fe9e-44d2-91ac-7e46644ef7e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.faction
+  module:
+    - text
+_core:
+  default_config_hash: 60f-sPS8U6K3oqjQkUdfbcdMhniJE_PePtPXVZ01zB0
+id: node.faction.field_description
+field_name: field_description
+entity_type: node
+bundle: faction
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

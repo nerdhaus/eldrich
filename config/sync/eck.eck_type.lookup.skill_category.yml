@@ -1,0 +1,11 @@
+uuid: 4a282b28-d338-4ebc-bb02-6d4d0e6a61a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+_core:
+  default_config_hash: '-BAnooyBfgUusBV8PObw0Oy9TFKA2hlAnRwUzA-HEnA'
+name: 'Skill Category'
+type: skill_category
+description: ''

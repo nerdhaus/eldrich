@@ -1,0 +1,22 @@
+uuid: 8434ede8-18a6-470f-90d5-c1139317c181
+langcode: en
+status: true
+dependencies:
+  module:
+    - ep_skill_reference
+    - node
+_core:
+  default_config_hash: EhDmXIzyDBJwFbzXJGqB8_jfQNyw8QIf-i_Bw_YCKyw
+id: node.field_skills
+field_name: field_skills
+entity_type: node
+type: skill_reference
+settings:
+  target_type: node
+module: ep_skill_reference
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

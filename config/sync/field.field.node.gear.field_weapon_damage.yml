@@ -1,0 +1,23 @@
+uuid: 03e3855d-b138-4fe1-9ee2-f086049ccd77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weapon_damage
+    - node.type.gear
+  module:
+    - ep_complex_values
+_core:
+  default_config_hash: KXVixQ-Ov2xy5VHQS8Gm5TjdWM4GdXYjEQzOSUHXX2c
+id: node.gear.field_weapon_damage
+field_name: field_weapon_damage
+entity_type: node
+bundle: gear
+label: 'Weapon Damage'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: damage_value

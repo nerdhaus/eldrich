@@ -1,0 +1,53 @@
+uuid: 41ea18fc-1c34-43c1-b257-14bf2cfd4b82
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.substance_data
+    - field.field.component.substance_data.field_addiction_modifier
+    - field.field.component.substance_data.field_addiction_type
+    - field.field.component.substance_data.field_duration
+    - field.field.component.substance_data.field_onset_time
+    - field.field.component.substance_data.field_substance_delivery
+    - field.field.component.substance_data.field_substance_type
+_core:
+  default_config_hash: MAO8s_u-iwJY8oxawGlbucGW5YAtwzdtm1Y8xrrZIoQ
+id: component.substance_data.default
+targetEntityType: component
+bundle: substance_data
+mode: default
+content:
+  field_addiction_modifier:
+    weight: 12
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_addiction_type:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_duration:
+    weight: 13
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_onset_time:
+    weight: 11
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_substance_delivery:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_substance_type:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+hidden: {  }

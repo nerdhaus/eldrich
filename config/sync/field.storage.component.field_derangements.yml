@@ -1,0 +1,23 @@
+uuid: b336dfd6-1eb7-4e98-84b8-780fb6a9840f
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - entity_reference_override
+    - node
+_core:
+  default_config_hash: VoTv2NDIttAtfkSHkZaX1Denco2xX1cDc17dkoOuUl8
+id: component.field_derangements
+field_name: field_derangements
+entity_type: component
+type: entity_reference_override
+settings:
+  target_type: node
+module: entity_reference_override
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

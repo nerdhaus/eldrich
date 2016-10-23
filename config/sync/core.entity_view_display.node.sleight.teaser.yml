@@ -1,0 +1,44 @@
+uuid: e4474bf5-ab52-49b5-a71d-4a2c0696431d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.sleight.field_action_type
+    - field.field.node.sleight.field_description
+    - field.field.node.sleight.field_psi_skill
+    - field.field.node.sleight.field_sleight_duration
+    - field.field.node.sleight.field_sleight_level
+    - field.field.node.sleight.field_sleight_range
+    - field.field.node.sleight.field_source
+    - field.field.node.sleight.field_strain
+    - node.type.sleight
+  module:
+    - user
+_core:
+  default_config_hash: Y6CwP8kAs0C_P3QOwwif2MUeC4K8Is02LGMdXnZOQZs
+id: node.sleight.teaser
+targetEntityType: node
+bundle: sleight
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_action_type: true
+  field_description: true
+  field_psi_skill: true
+  field_sleight_duration: true
+  field_sleight_level: true
+  field_sleight_range: true
+  field_source: true
+  field_strain: true

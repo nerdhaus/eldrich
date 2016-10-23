@@ -1,0 +1,21 @@
+uuid: 7978435b-004c-4ec4-baf6-c1b0121c3f00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_example_fields
+    - node.type.skill
+_core:
+  default_config_hash: t6OLR3W5f7pI6TpIjyMFkFgAKsrCE61QWESsD5zpmdY
+id: node.skill.field_example_fields
+field_name: field_example_fields
+entity_type: node
+bundle: skill
+label: 'Example Fields'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

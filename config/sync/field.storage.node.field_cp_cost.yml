@@ -1,0 +1,22 @@
+uuid: 604cda4b-24db-4290-b3af-7bd6d374d991
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: vuY2GW7TOGsS493ATRQWaDYljKwLJ4wFkL9vawQAFZw
+id: node.field_cp_cost
+field_name: field_cp_cost
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

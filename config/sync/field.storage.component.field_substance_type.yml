@@ -1,0 +1,21 @@
+uuid: d67dbf38-040f-48e1-bd5d-a82e973aaa63
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+_core:
+  default_config_hash: j68fKjnVB6GFy3Uq6bAqEALsWD6-U66znd1CXzqAsDc
+id: component.field_substance_type
+field_name: field_substance_type
+entity_type: component
+type: entity_reference
+settings:
+  target_type: lookup
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

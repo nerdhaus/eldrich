@@ -1,0 +1,25 @@
+uuid: b0b91ab0-1c28-442b-8e4d-e840b0ccad85
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.skill_category
+    - field.storage.lookup.field_weight
+_core:
+  default_config_hash: bqf1tPnq7pWUvz6_07IpUQ5ULnAH3S80AoVPNy_AQZg
+id: lookup.skill_category.field_weight
+field_name: field_weight
+entity_type: lookup
+bundle: skill_category
+label: Weight
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

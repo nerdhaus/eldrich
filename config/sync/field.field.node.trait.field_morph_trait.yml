@@ -1,0 +1,25 @@
+uuid: 52d4157f-3a5d-464d-88e9-e3ba0975df06
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_morph_trait
+    - node.type.trait
+_core:
+  default_config_hash: MJNqRPLNCiHqnWNrNDRcas68Yy-5wfOrdNaWK-6eBdA
+id: node.trait.field_morph_trait
+field_name: field_morph_trait
+entity_type: node
+bundle: trait
+label: 'Morph Trait'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Trait applies to morphs'
+  off_label: 'Trait does not apply to morphs'
+field_type: boolean

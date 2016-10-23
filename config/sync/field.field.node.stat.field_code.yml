@@ -1,0 +1,21 @@
+uuid: bfc5f49a-da57-4a63-bf9f-a86e1146a5ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_code
+    - node.type.stat
+_core:
+  default_config_hash: y89JgOt3jVrI5QQQuymwoCOYV2DPn5b-l8g_-Fg2a40
+id: node.stat.field_code
+field_name: field_code
+entity_type: node
+bundle: stat
+label: Code
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

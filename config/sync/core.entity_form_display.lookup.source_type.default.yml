@@ -1,0 +1,38 @@
+uuid: 20a73a65-2b12-4c16-9884-35ee5b35aff5
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.source_type
+    - field.field.lookup.source_type.field_description
+    - field.field.lookup.source_type.field_weight
+  module:
+    - text
+_core:
+  default_config_hash: gHTjmQl8vVUQCkWS673cFKU9_DgzkaF0eAsXlG6hyjc
+id: lookup.source_type.default
+targetEntityType: lookup
+bundle: source_type
+mode: default
+content:
+  field_description:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_weight:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

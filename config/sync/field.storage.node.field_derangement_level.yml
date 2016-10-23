@@ -1,0 +1,22 @@
+uuid: 20c6abff-f06c-455b-af14-1764aebc06c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - node
+_core:
+  default_config_hash: LiRSrOrIKwG50cdlph-rHHedul5Xe8f7WQsyhML0z3Y
+id: node.field_derangement_level
+field_name: field_derangement_level
+entity_type: node
+type: entity_reference
+settings:
+  target_type: lookup
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

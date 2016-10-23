@@ -1,0 +1,31 @@
+uuid: da571ad3-9be9-4978-985b-aef371a2c9ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.psi_range
+    - field.storage.node.field_sleight_range
+    - node.type.sleight
+_core:
+  default_config_hash: XEuD2Lr_-WMxDD9GX3vUhCZMGNVEmmR1RradWLVC4Uo
+id: node.sleight.field_sleight_range
+field_name: field_sleight_range
+entity_type: node
+bundle: sleight
+label: 'Sleight Range'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:lookup'
+  handler_settings:
+    target_bundles:
+      psi_range: psi_range
+    sort:
+      field: field_weight
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

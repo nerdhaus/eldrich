@@ -1,0 +1,30 @@
+uuid: e12b02f4-b8d1-4ac0-8033-0c550f6d6ee6
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.substance_data
+    - eck.eck_type.lookup.substance_delivery
+    - field.storage.component.field_substance_delivery
+_core:
+  default_config_hash: ClvXFEVLu5Pyty5nfZxMNTDlIlr2s3OOiWt2PoDGIGs
+id: component.substance_data.field_substance_delivery
+field_name: field_substance_delivery
+entity_type: component
+bundle: substance_data
+label: 'Delivery Mechanism'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:lookup'
+  handler_settings:
+    target_bundles:
+      substance_delivery: substance_delivery
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

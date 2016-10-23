@@ -1,0 +1,38 @@
+uuid: cff93a6b-2c96-457a-a800-99c1eced6c15
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.area_effect
+    - field.field.lookup.area_effect.field_description
+    - field.field.lookup.area_effect.field_weight
+  module:
+    - text
+_core:
+  default_config_hash: d3OHIgubDJWj3Ehiz2giCS4Szhg090VYyiuOSlas8ro
+id: lookup.area_effect.default
+targetEntityType: lookup
+bundle: area_effect
+mode: default
+content:
+  field_description:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_weight:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

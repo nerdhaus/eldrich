@@ -1,0 +1,41 @@
+uuid: e045a4ec-52f7-44fc-87b8-9d0da2c1b005
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.psi_level
+    - field.field.lookup.psi_level.field_description
+    - field.field.lookup.psi_level.field_weight
+  module:
+    - text
+_core:
+  default_config_hash: 1Ke2Trs3C5GcQadenisEIGroV4bmD0Qg65tY37i3xoQ
+id: lookup.psi_level.default
+targetEntityType: lookup
+bundle: psi_level
+mode: default
+content:
+  field_description:
+    weight: -4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_weight:
+    weight: -3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  id: true
+  langcode: true

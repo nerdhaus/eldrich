@@ -1,0 +1,23 @@
+uuid: 4db14890-1eec-4b9d-9cfe-b18aa38d2aae
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.vla
+    - field.storage.lookup.field_value_type
+  module:
+    - options
+_core:
+  default_config_hash: hMXdqXPm_gVyABvG1mb49rJTquTpwLag7YkYKJ3y8DI
+id: lookup.vla.field_value_type
+field_name: field_value_type
+entity_type: lookup
+bundle: vla
+label: 'Value Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

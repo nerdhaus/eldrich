@@ -1,0 +1,36 @@
+uuid: a565216b-ea0a-46ee-88d3-30df1b784a0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.derangement.field_derangement_level
+    - field.field.node.derangement.field_description
+    - field.field.node.derangement.field_source
+    - field.field.node.derangement.field_usage
+    - node.type.derangement
+  module:
+    - user
+_core:
+  default_config_hash: 0aGZRnNlFmfL-Wxi69IlmYTqnWAa3gARJfz5T2U0rjs
+id: node.derangement.teaser
+targetEntityType: node
+bundle: derangement
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_derangement_level: true
+  field_description: true
+  field_source: true
+  field_usage: true

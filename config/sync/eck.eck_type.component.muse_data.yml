@@ -1,0 +1,11 @@
+uuid: 2ec5db6f-e6a7-4a30-89f6-76363d6f2af8
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.component
+_core:
+  default_config_hash: iMD_s8yi-25KTfskwaUbaW15pxBa-_r-lOHja-Klc9U
+name: 'Muse Data'
+type: muse_data
+description: ''

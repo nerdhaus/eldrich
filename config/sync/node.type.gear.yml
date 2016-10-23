@@ -1,0 +1,20 @@
+uuid: 6f6d0855-3f57-49e4-9d97-7b771fab3231
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: BAB38kt1WRnbHHcxMK8l3YtVTtcQS6vo4OjD-pnbmnk
+name: Gear
+type: gear
+description: 'Purchase-able gear that belongs to a character.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

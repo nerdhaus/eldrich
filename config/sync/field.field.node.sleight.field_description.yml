@@ -1,0 +1,23 @@
+uuid: 63b112b9-bff9-40a5-9b5f-af8bf6d20ac3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.sleight
+  module:
+    - text
+_core:
+  default_config_hash: 4Bhl1uCWmH0Ry6b_dyiEmdmHTkH1tG4EanJ67kSjca4
+id: node.sleight.field_description
+field_name: field_description
+entity_type: node
+bundle: sleight
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,11 @@
+uuid: 565be4c6-17c0-48ba-988e-4d52fba25b4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+_core:
+  default_config_hash: 7MmvOyavznK5WJJkAHOskXBIiigNiNYJIlMfITFQ1T8
+name: 'Psi Level'
+type: psi_level
+description: ''

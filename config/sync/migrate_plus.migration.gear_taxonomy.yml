@@ -1,0 +1,45 @@
+uuid: 3370debf-442a-4a5b-a7a1-9a534dd1be17
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7Q4xraUy2ty-Q2BPDyOxQF-WscuF7SK0lSjz8QzS-tM
+id: gear_taxonomy
+migration_tags: null
+migration_group: eldrich
+label: 'Taxonomy hierarchy for purchasable gear'
+source:
+  plugin: csv
+  path: modules/custom/ep_import/data/gear-taxonomy.csv
+  header_row_count: 1
+  column_names:
+    -
+      title: Title
+    -
+      parent: Parent
+    -
+      description: Description
+    -
+      book: book
+    -
+      page: Page
+  keys:
+    - title
+    - parent
+process:
+  name: title
+  description: description
+  vid:
+    plugin: default_value
+    default_value: gear
+  parent:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration
+      migration: gear_taxonomy
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies: null

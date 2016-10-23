@@ -1,0 +1,21 @@
+uuid: 6ad40361-ab05-456c-8bd9-a8e123c6f61b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: aE1wGSKaD57kk1u7QsntOwmKQoRtEIalBbDxzSv1I_k
+id: node.field_morph
+field_name: field_morph
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

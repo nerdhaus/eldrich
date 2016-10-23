@@ -1,0 +1,11 @@
+uuid: 87a30b8d-f2f2-4249-91ae-1b79ea60c7b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+_core:
+  default_config_hash: epATH7KY8RellnhUHUecxL1Wv27WBktwmRM12-djXZk
+name: 'Area Effect'
+type: area_effect
+description: ''

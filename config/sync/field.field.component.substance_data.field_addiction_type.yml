@@ -1,0 +1,23 @@
+uuid: cce2f4a8-f190-4259-9a02-4eb3dff0691d
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.substance_data
+    - field.storage.component.field_addiction_type
+  module:
+    - options
+_core:
+  default_config_hash: PJ4YVf6gwFk5ydItrCI4k5DWTTcpb7kxxDpwuyrYPvY
+id: component.substance_data.field_addiction_type
+field_name: field_addiction_type
+entity_type: component
+bundle: substance_data
+label: 'Addiction Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

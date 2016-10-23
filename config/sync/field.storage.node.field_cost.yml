@@ -1,0 +1,23 @@
+uuid: 45565e91-9dc9-43ae-b16d-e92ebe1a8fd0
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - entity_reference_quantity
+    - node
+_core:
+  default_config_hash: bjoqoASFFl9A4wB-t3f4UADJzi5E_POBNeqVOcwt3qc
+id: node.field_cost
+field_name: field_cost
+entity_type: node
+type: entity_reference_quantity
+settings:
+  target_type: lookup
+module: entity_reference_quantity
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

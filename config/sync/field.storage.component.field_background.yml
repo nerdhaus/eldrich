@@ -1,0 +1,23 @@
+uuid: 25e795d1-cc8f-48b9-b2a2-dac78baf8167
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+_core:
+  default_config_hash: FSH_zYiZFUyOOcZIBO2tVlBUulTp1pWbBQrtFuEcdzo
+id: component.field_background
+field_name: field_background
+entity_type: component
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,22 @@
+uuid: ebf74741-cea6-449a-9aa6-dcfc408dd3fd
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - node
+_core:
+  default_config_hash: kEof-ejo5zC1noDxtADebYwwZYqVZc_WU3nmYpLmW0w
+id: node.field_skill_type
+field_name: field_skill_type
+entity_type: node
+type: entity_reference
+settings:
+  target_type: lookup
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

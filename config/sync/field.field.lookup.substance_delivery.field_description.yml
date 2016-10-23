@@ -1,0 +1,23 @@
+uuid: 0207ffbb-777f-429c-8294-36664fd29f34
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.substance_delivery
+    - field.storage.lookup.field_description
+  module:
+    - text
+_core:
+  default_config_hash: JMCKbOBLBii4PJJOmE_ma0m-TOKX3mEPLKdQNpWLPFs
+id: lookup.substance_delivery.field_description
+field_name: field_description
+entity_type: lookup
+bundle: substance_delivery
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

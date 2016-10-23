@@ -1,0 +1,21 @@
+uuid: 90c9dba4-6bdb-48eb-b062-13eb22d1c03e
+langcode: en
+status: true
+dependencies:
+  module:
+    - ep_complex_values
+    - node
+_core:
+  default_config_hash: YS9YtGK35kMUD6yPNOPJWHqjRkwPBZuHWiepIiw_IMk
+id: node.field_speed
+field_name: field_speed
+entity_type: node
+type: mobility_speed
+settings: {  }
+module: ep_complex_values
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

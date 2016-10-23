@@ -1,0 +1,20 @@
+uuid: a09ed9d1-0898-4a36-bc8c-2f1cd02582f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: KkbGu-vU19ruWge181iXlTAe25xR-n1P7Ct8-2IC478
+name: Skill
+type: skill
+description: 'A learnable, trainable skill in the Eclipse Phase game system.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

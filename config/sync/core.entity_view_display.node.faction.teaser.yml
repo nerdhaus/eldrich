@@ -1,0 +1,27 @@
+uuid: e729ef5a-a939-4143-80d9-e283a90f80b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.faction.field_concerns
+    - field.field.node.faction.field_description
+    - field.field.node.faction.field_parent_faction
+    - field.field.node.faction.field_source
+    - node.type.faction
+  module:
+    - user
+_core:
+  default_config_hash: wbtbk34aqqgljWjaIFgghTFzRqxfHhfnzAoDP2udtgA
+id: node.faction.teaser
+targetEntityType: node
+bundle: faction
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_concerns: true
+  field_description: true
+  field_parent_faction: true
+  field_source: true

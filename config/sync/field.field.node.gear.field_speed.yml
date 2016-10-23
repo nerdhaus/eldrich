@@ -1,0 +1,23 @@
+uuid: b4ca3fd9-a623-412f-98dd-12dbb6d51671
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_speed
+    - node.type.gear
+  module:
+    - ep_complex_values
+_core:
+  default_config_hash: oNrpAeVG72kYyLv9vzotbmWpV5I6c9TMk1SrzoE1QwU
+id: node.gear.field_speed
+field_name: field_speed
+entity_type: node
+bundle: gear
+label: 'Movement Speed'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: mobility_speed

@@ -1,0 +1,11 @@
+uuid: 2421158c-d00a-4baf-972c-a83b28dac9e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+_core:
+  default_config_hash: mGoLqIxQeQgr23AL82xWjr4GhgrLpmoIIoy6ORpyJ1M
+name: 'Firing Mode'
+type: firing_modes
+description: ''

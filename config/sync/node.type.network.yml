@@ -1,0 +1,20 @@
+uuid: 30c5f6c8-57a2-41e1-8228-6c1fd666fc44
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: nHq4EQZYsEZUwoh5Izo2Y912f830YY4gq0U01bXevKg
+name: Network
+type: network
+description: 'A social reputation network used by Eclipse Phase characters'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

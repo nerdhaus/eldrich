@@ -1,0 +1,29 @@
+uuid: 90deb1e4-19e2-4783-99ea-0326e0668167
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - options
+_core:
+  default_config_hash: UezXcqyOTrzK1G1lNhz2X1CD0YHjdlnCp7P5Y4AXZeY
+id: component.field_addiction_type
+field_name: field_addiction_type
+entity_type: component
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: m
+      label: Mental
+    -
+      value: p
+      label: Physical
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

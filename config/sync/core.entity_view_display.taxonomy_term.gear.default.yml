@@ -1,0 +1,31 @@
+uuid: 6759af4c-33d0-45c3-93bd-2d6c360946ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.gear.field_source
+    - taxonomy.vocabulary.gear
+  module:
+    - entity_reference_quantity
+    - text
+_core:
+  default_config_hash: r5MO9lLV8Yck5m3kpb0gPxGsd6Z0hXbm5n0TH6dcqfk
+id: taxonomy_term.gear.default
+targetEntityType: taxonomy_term
+bundle: gear
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_source:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+hidden: {  }

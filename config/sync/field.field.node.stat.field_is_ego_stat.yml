@@ -1,0 +1,25 @@
+uuid: f3387cd1-3a69-4d61-aea4-cf373fd545cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_ego_stat
+    - node.type.stat
+_core:
+  default_config_hash: '-tEgL_YQ36rwsIw4r38lGZYmQQIC6Av7Ni2uZZBViNM'
+id: node.stat.field_is_ego_stat
+field_name: field_is_ego_stat
+entity_type: node
+bundle: stat
+label: 'Stat is Ego-based'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'This stat is derived from a character''s Ego.'
+  off_label: 'This stat is derived from a character''s Morph.'
+field_type: boolean

@@ -1,0 +1,11 @@
+uuid: d397646c-f27b-4d89-bc1d-4fe5af3a5f7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+_core:
+  default_config_hash: d1n6xAzVMxx4DPtSiZSrQaoakR8MQfeji_9xWPy8Osk
+name: 'Derangement Magnitude'
+type: derangement_magnitude
+description: ''

@@ -1,0 +1,25 @@
+uuid: 8c5d184a-2faa-471a-bf82-4b35d9b106b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.damage_type
+    - field.storage.lookup.field_weight
+_core:
+  default_config_hash: 7Vk4jYH4wPBWFg_IZ0duTN6G5500K857Ik6xlVb7nYM
+id: lookup.damage_type.field_weight
+field_name: field_weight
+entity_type: lookup
+bundle: damage_type
+label: Weight
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

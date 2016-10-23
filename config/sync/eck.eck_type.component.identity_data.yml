@@ -1,0 +1,11 @@
+uuid: 7301d799-7fcf-4dac-8b6e-b76fbe52c330
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.component
+_core:
+  default_config_hash: 69Tvm38CuptXBw1-3lXhK6w1JY4dybbkWOmPd5FUEM0
+name: 'Identity Data'
+type: identity_data
+description: ''

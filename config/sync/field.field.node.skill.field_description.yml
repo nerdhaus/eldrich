@@ -1,0 +1,23 @@
+uuid: f9251f51-1c32-48ee-b8df-f7458d536e92
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.skill
+  module:
+    - text
+_core:
+  default_config_hash: DqYdiwoCLZ4sgpazgJpr57dJqiP0mN2rvyZMksYOloA
+id: node.skill.field_description
+field_name: field_description
+entity_type: node
+bundle: skill
+label: 'What it is'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

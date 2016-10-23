@@ -1,0 +1,23 @@
+uuid: 69d22295-da1d-4712-a056-87c1e740c8df
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.mobility_type
+    - field.storage.lookup.field_description
+  module:
+    - text
+_core:
+  default_config_hash: hWouCrKhbTqNVxwq3yuuldibd-qeeqztFUwcomU_1HI
+id: lookup.mobility_type.field_description
+field_name: field_description
+entity_type: lookup
+bundle: mobility_type
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

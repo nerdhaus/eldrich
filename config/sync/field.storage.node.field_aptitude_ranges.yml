@@ -1,0 +1,23 @@
+uuid: 90b778df-ab9b-4912-b06a-0f3841030362
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: gheQ08WEVx7vavdIqT_sleE_PHE7rbvFtfZbWBGwe0Y
+id: node.field_aptitude_ranges
+field_name: field_aptitude_ranges
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 6
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

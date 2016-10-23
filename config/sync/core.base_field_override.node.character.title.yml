@@ -1,0 +1,20 @@
+uuid: d5292f49-f76d-4aaf-acac-15d528ba843d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.character
+_core:
+  default_config_hash: UY935yWOkiH1TxRjXwfBegB9BhG50IIM67cMooqdneU
+id: node.character.title
+field_name: title
+entity_type: node
+bundle: character
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

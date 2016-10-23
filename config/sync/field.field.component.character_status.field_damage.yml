@@ -1,0 +1,27 @@
+uuid: 26e0d261-b48d-432f-952e-fface157142b
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.character_status
+    - field.storage.component.field_damage
+_core:
+  default_config_hash: 1jj5iN3CkIOXVESwLYMHNu9k8cWlO-3cjQdAaxufzCY
+id: component.character_status.field_damage
+field_name: field_damage
+entity_type: component
+bundle: character_status
+label: Damage
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,25 @@
+uuid: aea2bf7a-e1e3-4091-b87f-c0eeb35ce438
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.firing_modes
+    - field.storage.lookup.field_weight
+_core:
+  default_config_hash: CQHo7kx36VBt5N6NujqlaXbYTaNmV6G6UTAYw_55b1s
+id: lookup.firing_modes.field_weight
+field_name: field_weight
+entity_type: lookup
+bundle: firing_modes
+label: Weight
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

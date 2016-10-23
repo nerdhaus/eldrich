@@ -1,0 +1,25 @@
+uuid: c3f82b01-18d1-41bb-99d7-c4e21dfd149c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.identity_data
+    - field.storage.component.field_credits
+_core:
+  default_config_hash: ymHxHJtB9895-dtCxkuIS_g073jHXXjzilYqgiOcepA
+id: component.identity_data.field_credits
+field_name: field_credits
+entity_type: component
+bundle: identity_data
+label: Credits
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

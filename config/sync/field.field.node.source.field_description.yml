@@ -1,0 +1,23 @@
+uuid: 090d8b5e-ae84-4561-9485-0e4735abf7fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.source
+  module:
+    - text
+_core:
+  default_config_hash: P8BeuG6QC5qGjJNJ6SLmXAKtbmS1cbL0gdX8iS0ntwA
+id: node.source.field_description
+field_name: field_description
+entity_type: node
+bundle: source
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

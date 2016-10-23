@@ -1,0 +1,21 @@
+uuid: 41b11b13-bc22-4374-8f67-4342f933621d
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.identity_data
+    - field.storage.component.field_aliases
+_core:
+  default_config_hash: rLRCo5UEsOEo3Lm1GNP-euseO_2f6bMpr3xCkGf24mk
+id: component.identity_data.field_aliases
+field_name: field_aliases
+entity_type: component
+bundle: identity_data
+label: Aliases
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

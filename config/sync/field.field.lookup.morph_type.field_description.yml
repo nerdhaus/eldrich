@@ -1,0 +1,23 @@
+uuid: ca931b17-ce56-4162-95bc-26c229c24f27
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.morph_type
+    - field.storage.lookup.field_description
+  module:
+    - text
+_core:
+  default_config_hash: S4VGz-OzWc_Eplmr3TfgSL5tG8SBEQmsKlIH8XtxQXY
+id: lookup.morph_type.field_description
+field_name: field_description
+entity_type: lookup
+bundle: morph_type
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

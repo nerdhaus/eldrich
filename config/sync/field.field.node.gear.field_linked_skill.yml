@@ -1,0 +1,30 @@
+uuid: b002fed6-cfda-43bf-8af9-2521b72cf4c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_linked_skill
+    - node.type.gear
+    - node.type.skill
+_core:
+  default_config_hash: fHELqnQ7sJvS_BeIVfum0qPTHYQr4uDT8jrLMFPy-Jw
+id: node.gear.field_linked_skill
+field_name: field_linked_skill
+entity_type: node
+bundle: gear
+label: 'Linked Skill'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      skill: skill
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

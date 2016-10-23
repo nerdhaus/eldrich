@@ -1,0 +1,25 @@
+uuid: 30a3d37a-c4b3-4d0b-95fc-9907b3ee6f70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.stat
+_core:
+  default_config_hash: _Q50BEuKn4blV2PQESvRU4vcatWwW78u4tQwH4zxMdE
+id: node.stat.field_weight
+field_name: field_weight
+entity_type: node
+bundle: stat
+label: Weight
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

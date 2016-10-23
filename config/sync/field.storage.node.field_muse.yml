@@ -1,0 +1,22 @@
+uuid: 12fd07b1-d1af-4812-8e14-bff7bc54fa92
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - node
+_core:
+  default_config_hash: 7qOj5H5nNvoNYWxb-GtIRvH1rHO4M7NnsgIQLB4kejI
+id: node.field_muse
+field_name: field_muse
+entity_type: node
+type: entity_reference
+settings:
+  target_type: component
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

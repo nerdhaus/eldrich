@@ -1,0 +1,31 @@
+uuid: 7715a0f0-ed1d-4838-a678-9f3a73265b56
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.substance_data
+    - eck.eck_type.lookup.substance_type
+    - field.storage.component.field_substance_type
+_core:
+  default_config_hash: d2_T3MRSH8IsnQj6h-trYnVdcypzbJ8_P9ogsoxM0qg
+id: component.substance_data.field_substance_type
+field_name: field_substance_type
+entity_type: component
+bundle: substance_data
+label: 'Substance Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:lookup'
+  handler_settings:
+    target_bundles:
+      substance_type: substance_type
+    sort:
+      field: field_weight
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,32 @@
+uuid: 2fc870c3-c6b6-4738-9d0d-5ecca4d38d97
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.muse_data
+    - field.storage.component.field_skills
+    - node.type.skill
+  module:
+    - ep_skill_reference
+_core:
+  default_config_hash: yaVsXJuAaNHekrAO6A7L3soPR1so5fR4V7K2EYz0TEo
+id: component.muse_data.field_skills
+field_name: field_skills
+entity_type: component
+bundle: muse_data
+label: Skills
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      skill: skill
+    sort:
+      field: _none
+    auto_create: 0
+    auto_create_bundle: ''
+field_type: skill_reference

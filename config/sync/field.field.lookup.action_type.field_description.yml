@@ -1,0 +1,23 @@
+uuid: be3e2e7a-32c0-403f-9d2e-be2569fe3097
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.action_type
+    - field.storage.lookup.field_description
+  module:
+    - text
+_core:
+  default_config_hash: 6lpDLZpptDVGV6YaR_tNJBxTfLqtC-35-GQVJkPDupo
+id: lookup.action_type.field_description
+field_name: field_description
+entity_type: lookup
+bundle: action_type
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

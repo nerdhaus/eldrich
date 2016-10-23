@@ -1,0 +1,23 @@
+uuid: 0ec9cb96-1818-40f7-b146-67a381d98ade
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.location.field_description
+    - field.field.node.location.field_source
+    - node.type.location
+  module:
+    - user
+_core:
+  default_config_hash: Qn7LYy6p675K9O8XNqqPGxbQtgFxlmv-KPp0Or-Phjo
+id: node.location.teaser
+targetEntityType: node
+bundle: location
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_description: true
+  field_source: true

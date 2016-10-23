@@ -1,0 +1,23 @@
+uuid: 0a9e49e2-87aa-4404-adf2-f673db75d7d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stats
+    - node.type.trait
+  module:
+    - ep_statblock
+_core:
+  default_config_hash: pfEQLQ2U0KPdaTb7n-TwMr_zTXVuxFjC1yvUkckSDs8
+id: node.trait.field_stats
+field_name: field_stats
+entity_type: node
+bundle: trait
+label: Stats
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: stat_block

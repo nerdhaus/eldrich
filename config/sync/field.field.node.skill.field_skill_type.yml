@@ -1,0 +1,31 @@
+uuid: 6f81b7ee-0aa4-4960-857d-4f922c644c09
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.skill_category
+    - field.storage.node.field_skill_type
+    - node.type.skill
+_core:
+  default_config_hash: FjzA-QQPUCokMimM81NkFWslkUMpCjlX3b-Hvx5GDp8
+id: node.skill.field_skill_type
+field_name: field_skill_type
+entity_type: node
+bundle: skill
+label: 'Skill Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:lookup'
+  handler_settings:
+    target_bundles:
+      skill_category: skill_category
+    sort:
+      field: field_weight
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

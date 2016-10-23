@@ -1,0 +1,25 @@
+uuid: 89fa2a48-1e63-4100-900a-75772d56642d
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.substance_type
+    - field.storage.lookup.field_weight
+_core:
+  default_config_hash: 2IZNEMi3Kgn01NcIGEgF_dtHdbOoQb_p3A4ijH61Mb0
+id: lookup.substance_type.field_weight
+field_name: field_weight
+entity_type: lookup
+bundle: substance_type
+label: Weight
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

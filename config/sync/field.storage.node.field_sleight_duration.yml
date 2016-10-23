@@ -1,0 +1,22 @@
+uuid: bf28b36a-20b5-42cb-beee-3bf05cca1010
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - node
+_core:
+  default_config_hash: hWI97TftHL1DbYqfNVj_fb1HTh5v8wOWl-G212HjliM
+id: node.field_sleight_duration
+field_name: field_sleight_duration
+entity_type: node
+type: entity_reference
+settings:
+  target_type: lookup
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

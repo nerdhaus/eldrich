@@ -1,0 +1,32 @@
+uuid: 99f801d7-a001-495d-bfaf-57acba6bc60b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_skills
+    - node.type.gear
+    - node.type.skill
+  module:
+    - ep_skill_reference
+_core:
+  default_config_hash: eBBQqIeHRjLn9TYi8ZqeAXwBsnqzV3n3gmo8wK8EjV8
+id: node.gear.field_skills
+field_name: field_skills
+entity_type: node
+bundle: gear
+label: Skills
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      skill: skill
+    sort:
+      field: _none
+    auto_create: 0
+    auto_create_bundle: ''
+field_type: skill_reference

@@ -1,0 +1,22 @@
+uuid: f92ad770-6f40-4702-b6cc-565779f2483c
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+_core:
+  default_config_hash: xmB98QefqvH46WRuf-dzSvYtkC60bk4RP9CM5w7o3HI
+id: component.field_stress
+field_name: field_stress
+entity_type: component
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

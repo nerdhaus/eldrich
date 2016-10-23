@@ -1,0 +1,25 @@
+uuid: 0c816b0c-df2c-4ad5-97df-366a2d98d48a
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.psi
+    - field.storage.lookup.field_weight
+_core:
+  default_config_hash: HEZidIvo0JEu3GbWIft73l82g0LHs3u-ywjeFjWL5U4
+id: lookup.psi.field_weight
+field_name: field_weight
+entity_type: lookup
+bundle: psi
+label: Weight
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

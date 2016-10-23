@@ -1,0 +1,25 @@
+uuid: 67f5f472-3f00-4c2f-bbf8-6ff4b3bc19d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.action_type
+    - field.storage.lookup.field_weight
+_core:
+  default_config_hash: C_7FJ3B5HGStlJFaE2ikOjvO0i4SLFDx2a1Z0zcRp8w
+id: lookup.action_type.field_weight
+field_name: field_weight
+entity_type: lookup
+bundle: action_type
+label: Weight
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

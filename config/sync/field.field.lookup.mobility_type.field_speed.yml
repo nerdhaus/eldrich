@@ -1,0 +1,23 @@
+uuid: bbfc7481-ff2b-4fc7-b720-e70daadbbafd
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.mobility_type
+    - field.storage.lookup.field_speed
+  module:
+    - ep_complex_values
+_core:
+  default_config_hash: bbxjr-QOaNHm6D_Ho0r7twWdsZ-5y7Xr6P-rSVq5R0E
+id: lookup.mobility_type.field_speed
+field_name: field_speed
+entity_type: lookup
+bundle: mobility_type
+label: 'Default Speed'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: mobility_speed

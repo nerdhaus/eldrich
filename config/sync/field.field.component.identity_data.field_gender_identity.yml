@@ -1,0 +1,21 @@
+uuid: 846dc99e-aca8-43ae-96b3-3f5031801d1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.identity_data
+    - field.storage.component.field_gender_identity
+_core:
+  default_config_hash: wTJOnNiUiqmNrzjqpC2jfzXQV9ztd02KskQeyRTmQc4
+id: component.identity_data.field_gender_identity
+field_name: field_gender_identity
+entity_type: component
+bundle: identity_data
+label: 'Gender Identity'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: c370a670-5bfb-4f3e-9cbf-a916cd36b00a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.trait
+  module:
+    - text
+_core:
+  default_config_hash: AFv7T-SUxigmXLcbpo6Pn60CFBB7tkw4tM4D688CxpQ
+id: node.trait.field_description
+field_name: field_description
+entity_type: node
+bundle: trait
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

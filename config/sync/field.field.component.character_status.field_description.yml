@@ -1,0 +1,23 @@
+uuid: 292377ce-f511-47eb-85c9-06ddb207dabe
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.character_status
+    - field.storage.component.field_description
+  module:
+    - text
+_core:
+  default_config_hash: SUrLZkJoNXe4FKPUDIVmhm7_ngPa1drSnjdeoJb1bz0
+id: component.character_status.field_description
+field_name: field_description
+entity_type: component
+bundle: character_status
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

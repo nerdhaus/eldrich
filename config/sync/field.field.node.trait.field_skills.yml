@@ -1,0 +1,32 @@
+uuid: 07760776-8bef-41c7-aae7-9dbbf4cafcbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_skills
+    - node.type.skill
+    - node.type.trait
+  module:
+    - ep_skill_reference
+_core:
+  default_config_hash: uBw_EorVMk0vI8HMbq7HK5PRWK4mOObgWMe1NCvQ5sc
+id: node.trait.field_skills
+field_name: field_skills
+entity_type: node
+bundle: trait
+label: Skills
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      skill: skill
+    sort:
+      field: _none
+    auto_create: 0
+    auto_create_bundle: ''
+field_type: skill_reference

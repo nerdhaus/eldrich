@@ -1,0 +1,22 @@
+uuid: 8fbced5d-5de1-48d9-9db8-d3e309f3b592
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_override
+    - node
+_core:
+  default_config_hash: 7RJUS1egnX92bcRVxCTjk2noqBF6mdIY6oUPBeI0U8Y
+id: node.field_linked_gear
+field_name: field_linked_gear
+entity_type: node
+type: entity_reference_override
+settings:
+  target_type: node
+module: entity_reference_override
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

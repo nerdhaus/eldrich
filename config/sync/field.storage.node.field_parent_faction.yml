@@ -1,0 +1,21 @@
+uuid: c42724d8-3357-46da-8517-d13549e8f500
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: K8YGvmvCqIwIXR6KkgNxKf9PFxlEZVlp6SVBKsh4I8Y
+id: node.field_parent_faction
+field_name: field_parent_faction
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,12 @@
+uuid: 7d2a03e5-f084-4ba4-82e1-4ee481df60c2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Ke1JBcow3m1aDdiAInu_Ta3E5-GhA4eQsW81Zbhw7SM
+id: component
+label: Component
+created: false
+changed: false
+uid: false
+title: false

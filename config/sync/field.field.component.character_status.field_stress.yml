@@ -1,0 +1,27 @@
+uuid: f4230a1a-bd1f-442c-8f66-d59bffad4c04
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.character_status
+    - field.storage.component.field_stress
+_core:
+  default_config_hash: 9dKOeX7uFzf1qsWYvAukpcqc7tfYbXTaoLQeT5a6LmI
+id: component.character_status.field_stress
+field_name: field_stress
+entity_type: component
+bundle: character_status
+label: Stress
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

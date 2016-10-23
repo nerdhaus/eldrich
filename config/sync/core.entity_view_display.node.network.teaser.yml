@@ -1,0 +1,25 @@
+uuid: 7c874b0d-4df0-46b2-9e44-bc767c5ded76
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.network.field_description
+    - field.field.node.network.field_source
+    - field.field.node.network.field_symbol
+    - node.type.network
+  module:
+    - user
+_core:
+  default_config_hash: hh2-8tZK3mWahyzxw4paM0tno3OG6TWeSGJi9fj4RaY
+id: node.network.teaser
+targetEntityType: node
+bundle: network
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_description: true
+  field_source: true
+  field_symbol: true

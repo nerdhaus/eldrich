@@ -1,0 +1,35 @@
+uuid: 194c185e-2842-48e8-b491-053f4ade1e68
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.identity_data
+    - field.storage.component.field_reputation
+    - node.type.network
+  module:
+    - entity_reference_quantity
+_core:
+  default_config_hash: '-ds5TGFqVmVFmqAbNXiKyZo_vVboQGD8A4km9NbY8yc'
+id: component.identity_data.field_reputation
+field_name: field_reputation
+entity_type: component
+bundle: identity_data
+label: Reputation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      network: network
+    sort:
+      field: _none
+    auto_create: 0
+    auto_create_bundle: ''
+  qty_label: Quantity
+  qty_min: 0
+  qty_max: 100
+field_type: entity_reference_quantity

@@ -1,0 +1,11 @@
+uuid: 83bd0691-83c4-4dab-8583-223f88effd4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+_core:
+  default_config_hash: N4-i7j22HaEUK_KU96sFag8C-nAYKtTzv_Jmz1F9BPE
+name: 'Action Type'
+type: action_type
+description: ''

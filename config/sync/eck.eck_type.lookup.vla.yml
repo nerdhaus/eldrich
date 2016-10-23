@@ -1,0 +1,11 @@
+uuid: bce0dffd-b4b8-4d73-b5fa-e52da4c03767
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+_core:
+  default_config_hash: L-gDp6k-mJA_LvSbznbskcdzb68jah3HKM7nb9VWwbQ
+name: 'Value Levels'
+type: vla
+description: ''

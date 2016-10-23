@@ -1,0 +1,42 @@
+uuid: 057cb65c-6327-4cff-af22-af4aefd8a010
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.stat.field_aptitude_ranges
+    - field.field.node.stat.field_calculation
+    - field.field.node.stat.field_code
+    - field.field.node.stat.field_description
+    - field.field.node.stat.field_is_aptitude
+    - field.field.node.stat.field_is_ego_stat
+    - field.field.node.stat.field_weight
+    - node.type.stat
+  module:
+    - user
+_core:
+  default_config_hash: HD7pu0NPO70aqusnFgH-iFl3guU1Uou9SrkLMVfJK-8
+id: node.stat.teaser
+targetEntityType: node
+bundle: stat
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_aptitude_ranges: true
+  field_calculation: true
+  field_code: true
+  field_description: true
+  field_is_aptitude: true
+  field_is_ego_stat: true
+  field_weight: true

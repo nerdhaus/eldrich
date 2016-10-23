@@ -1,0 +1,21 @@
+uuid: ad3e37fd-59e6-4398-a53f-2777d6a1ab23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_symbol
+    - node.type.network
+_core:
+  default_config_hash: WbiP5mc0SqqvWi-zNwx3Y3N9rOLX5T3yMiXW0MaKViw
+id: node.network.field_symbol
+field_name: field_symbol
+entity_type: node
+bundle: network
+label: Symbol
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

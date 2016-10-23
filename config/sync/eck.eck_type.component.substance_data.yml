@@ -1,0 +1,11 @@
+uuid: 4d2e9aaf-c8cd-4e84-8b7c-c79c2f7cdedd
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.component
+_core:
+  default_config_hash: RQd7DPy3xSZ4rCHHdtLd1oAmqE-RH8kd_0JGlxzjoWU
+name: 'Substance Data'
+type: substance_data
+description: ''

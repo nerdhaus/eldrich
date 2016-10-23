@@ -1,0 +1,89 @@
+uuid: 24c22924-878d-4b82-ad11-d92f5bccea01
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Zbto05JHSowLq5ZY6fw3MpSZjTyLlSHDYhJOSzqTNM4
+id: lookup_tables
+migration_tags: null
+migration_group: eldrich
+label: 'Basic lookup tables for other content types'
+source:
+  plugin: csv
+  path: modules/custom/ep_import/data/data-tables.csv
+  header_row_count: 1
+  column_names:
+    -
+      title: Title
+    -
+      code: Code
+    -
+      table: Table
+    -
+      type: Type
+    -
+      weight: Weight
+    -
+      description: Description
+    -
+      speed: Speed
+  keys:
+    - title
+    - table
+  constants:
+    format: basic_html
+process:
+  type: table
+  title: title
+  field_code:
+    plugin: skip_on_empty
+    method: process
+    source: code
+  field_type:
+    plugin: skip_on_empty
+    method: process
+    source: type
+  field_weight:
+    plugin: skip_on_empty
+    method: process
+    source: weight
+  speed_array:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: speed
+    -
+      plugin: explode
+      source: some_text_field
+      delimiter: /
+  field_speed/walk:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@speed_array'
+    -
+      plugin: extract
+      index: 0
+  field_speed/run:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@speed_array'
+    -
+      plugin: extract
+      index: 1
+  field_speed/cruise:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@speed_array'
+    -
+      plugin: extract
+      index: 2
+  field_description/value:
+    plugin: skip_on_empty
+    method: process
+    source: description
+destination:
+  plugin: 'entity:lookup'
+migration_dependencies: null

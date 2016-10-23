@@ -1,0 +1,49 @@
+uuid: 8474a7e3-2bfd-4cc3-96c9-bf83e47bc482
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.muse_data
+    - field.field.component.muse_data.field_description
+    - field.field.component.muse_data.field_name
+    - field.field.component.muse_data.field_skills
+    - field.field.component.muse_data.field_stats
+  module:
+    - ep_skill_reference
+    - ep_statblock
+    - text
+_core:
+  default_config_hash: pHc3FM7oqv4UaPkSCGuIrDGlW4eC5bT23OG9vKrJ7pI
+id: component.muse_data.default
+targetEntityType: component
+bundle: muse_data
+mode: default
+content:
+  field_description:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_skills:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: skill_reference_autocomplete
+  field_stats:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+hidden: {  }

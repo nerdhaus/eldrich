@@ -1,0 +1,23 @@
+uuid: 1daa1b00-e00a-4f1d-a36c-40ecb472b1ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+_core:
+  default_config_hash: ZQp5jPPdIx2suxXFpqilnGI8zphapg6PfeJPh43GU_E
+id: lookup.field_lookup_code
+field_name: field_lookup_code
+entity_type: lookup
+type: string
+settings:
+  max_length: 5
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,59 @@
+uuid: 7bb86fc1-2a1a-4bbc-8b5e-0045fbb45f77
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.character_status
+    - field.field.component.character_status.field_damage
+    - field.field.component.character_status.field_derangements
+    - field.field.component.character_status.field_description
+    - field.field.component.character_status.field_stress
+    - field.field.component.character_status.field_traumas
+    - field.field.component.character_status.field_wounds
+  module:
+    - entity_reference_override
+    - text
+_core:
+  default_config_hash: F6SOB1hYI0RGXudm29ljZrpTWebKF4H08QuRg3p1S7E
+id: component.character_status.default
+targetEntityType: component
+bundle: character_status
+mode: default
+content:
+  field_damage:
+    weight: 0
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_derangements:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_reference_override_select
+  field_description:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_stress:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_traumas:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_wounds:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+hidden: {  }
