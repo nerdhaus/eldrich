@@ -35,13 +35,7 @@ echo 'max_execution_time = 300' >> /etc/php/7.0/apache2/php.ini
 # Apache
 sudo apt-get install -y apache2 libapache2-mod-php
 sudo echo "ServerName eldrich.local"  >> /etc/apache2/apache2.conf
-sudo rm /etc/apache2/ports.conf
-sudo ln -s /vagrant/config/server/ports.conf /etc/apache2/ports.conf
 sudo ln -s /vagrant/config/server/drupal.conf /etc/apache2/sites-available/drupal.conf
-
-echo 'SetEnv DB_NAME "eldrich"' >> /vagrant/environment.inc
-echo 'SetEnv DB_USER "root"' >> /vagrant/environment.inc
-echo 'SetEnv DB_PASS "root"' >> /vagrant/environment.inc
 
 sudo a2dissite 000-default.conf
 sudo a2ensite drupal.conf
@@ -67,5 +61,4 @@ echo 'xdebug.remote_connect_back=on' >> /etc/php/7.0/mods-available/xdebug.ini
 echo 'html_errors=1' >> /etc/php/7.0/mods-available/xdebug.ini
 echo 'xdebug.extended_info=1' >> /etc/php/7.0/mods-available/xdebug.ini
 
-sudo chmod -R 777 /vagrant/config
 sudo usermod -a -G www-data ubuntu

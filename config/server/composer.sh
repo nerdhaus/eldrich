@@ -12,5 +12,9 @@ cd /vagrant
 composer install
 composer update
 
+if [ -f "/vagrant/web/sites/default/settings.local.php" ]
+then
+else
 cp /vagrant/web/sites/example.settings.local.php /vagrant/web/sites/default/settings.local.php
 cat /vagrant/config/server/dev-database.txt >> /vagrant/web/sites/default/settings.local.php
+fi
