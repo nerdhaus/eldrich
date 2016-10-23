@@ -57,7 +57,7 @@ mysql -uroot -proot -e "create database eldrich;"
 
 if [ -f "/vagrant/initial.sql" ]
 then
-mysql -uroot -proot eldrich < /vagrant/initial.sql.gz
+mysql -uroot -proot eldrich < /vagrant/initial.sql
 echo -e "\e[7m Database imported \e[27m"
 fi
 
@@ -67,8 +67,5 @@ echo 'xdebug.remote_connect_back=on' >> /etc/php/7.0/mods-available/xdebug.ini
 echo 'html_errors=1' >> /etc/php/7.0/mods-available/xdebug.ini
 echo 'xdebug.extended_info=1' >> /etc/php/7.0/mods-available/xdebug.ini
 
-sudo chown -R www-data:www-data /vagrant
 sudo chmod -R 777 /vagrant/config
 sudo usermod -a -G www-data ubuntu
-
-sudo service apache2 restart

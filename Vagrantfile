@@ -16,6 +16,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "private_network", type: "dhcp"
   config.vm.hostname = "eldrich"
 
+  config.vm.synced_folder "./", "/vagrant", id: "vagrant-root",
+    owner: "ubuntu",
+    group: "www-data",
+    mount_options: ["dmode=775,fmode=775"]
+
   config.vm.provision "shell", path: "config/server/setup.sh"
   config.vm.provision "shell", path: "config/server/composer.sh", privileged: false
 end
