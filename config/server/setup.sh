@@ -40,9 +40,7 @@ sudo ln -s /vagrant/config/server/drupal.conf /etc/apache2/sites-available/drupa
 sudo a2dissite 000-default.conf
 sudo a2ensite drupal.conf
 sudo a2enmod rewrite
-
 sudo service apache2 restart
-# sudo service varnish restart
 
 echo -e "\e[7m LAMP stack installed \e[27m"
 
@@ -51,8 +49,8 @@ mysql -uroot -proot -e "create database eldrich;"
 
 if [ -f "/vagrant/initial.sql" ]
 then
-mysql -uroot -proot eldrich < /vagrant/initial.sql
-echo -e "\e[7m Database imported \e[27m"
+  mysql -uroot -proot eldrich < /vagrant/initial.sql
+  echo -e "\e[7m Database imported \e[27m"
 fi
 
 echo 'xdebug.max_nesting_level = 256' >> /etc/php/7.0/mods-available/xdebug.ini
