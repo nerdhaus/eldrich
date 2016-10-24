@@ -32,19 +32,24 @@ source:
     format: basic_html
 process:
   title: title
+  type:
+    plugin: default_value
+    default_value: skill
   field_type:
     plugin: entity_lookup
-    bundle: skill_type
-    entity_type: lookup_table
-    value_key: title
     source: type
-    ignore_cast: TRUE
+    value_key: code
+    bundle_key: id
+    bundle: skill_type
+    entity_type: lookup
+    ignore_case: true
   field_linked_aptitude:
     plugin: entity_lookup
     bundle: stat
     entity_type: node
+    value_key: field_code
     source: aptitude
-  field_is_field: 
+  field_is_field:
     plugin: static_map
     source: static
     map:
