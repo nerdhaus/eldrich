@@ -79,8 +79,8 @@ process:
     method: process
     source: description
   field_usage/value:
-    plugin: usage
+    plugin: skip_on_empty
     method: process
-    source: description
+    source: usage
 destination:
   plugin: 'entity:node'
