@@ -1,0 +1,67 @@
+id: stats
+migration_tags: null
+migration_group: eldrich
+label: 'Base stats'
+
+source:
+  plugin: csv
+  path: modules/custom/ep_import/data/stats.csv
+  header_row_count: 1
+  column_names:
+    -
+      title: Title
+    -
+      code: Code
+    -
+      aptitude: Aptitude
+    -
+      ego: Ego
+    -
+      description: Description
+    -
+      labels: Labels
+    -
+      calculation: Calculation
+    -
+      weight: Weight
+  keys:
+    - code
+process:
+  type:
+    plugin: default_value
+    default_value: stat
+  title: title
+  field_code:
+    plugin: skip_on_empty
+    method: process
+    source: code
+  field_is_aptitude:
+    plugin: skip_on_empty
+    method: process
+    source: aptitude
+  field_is_ego_stat:
+    plugin: skip_on_empty
+    method: process
+    source: ego
+  field_aptitude_ranges:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: labels
+    -
+      plugin: explode
+      delimiter: ,
+  field_description/value:
+    plugin: skip_on_empty
+    method: process
+    source: description
+  field_calculation:
+    plugin: skip_on_empty
+    method: process
+    source: calculation
+  field_weight:
+    plugin: skip_on_empty
+    method: process
+    source: weight
+destination:
+  plugin: 'entity:node'

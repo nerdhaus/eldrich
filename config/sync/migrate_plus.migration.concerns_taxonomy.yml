@@ -1,0 +1,20 @@
+id: concerns_taxonomy
+migration_group: eldrich
+label: 'Taxonomy for corporate focuses, memes, etc.'
+source:
+  plugin: csv
+  path: modules/custom/ep_import/data/concerns.csv
+  header_row_count: 1
+  column_names:
+    -
+      title: Title
+  keys:
+    - title
+process:
+  name: title
+  description: description
+  vid:
+    plugin: default_value
+    default_value: concerns
+destination:
+  plugin: 'entity:taxonomy_term'
