@@ -31,18 +31,21 @@ process:
     plugin: default_value
     default_value: stat
   title: title
-  field_code:
-    plugin: skip_on_empty
-    method: process
-    source: code
+  field_code: code
   field_is_aptitude:
-    plugin: skip_on_empty
-    method: process
+    plugin: static_map
     source: aptitude
+    map:
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
   field_is_ego_stat:
-    plugin: skip_on_empty
-    method: process
+    plugin: static_map
     source: ego
+    map:
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
   field_aptitude_ranges:
     -
       plugin: skip_on_empty
@@ -51,14 +54,8 @@ process:
     -
       plugin: explode
       delimiter: ,
-  field_description/value:
-    plugin: skip_on_empty
-    method: process
-    source: description
-  field_calculation:
-    plugin: skip_on_empty
-    method: process
-    source: calculation
+  field_description/value: description
+  field_calculation: calculation
   field_weight:
     plugin: skip_on_empty
     method: process

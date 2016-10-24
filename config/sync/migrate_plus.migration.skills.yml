@@ -48,14 +48,16 @@ process:
     plugin: static_map
     source: static
     map:
-      TRUE: 1
-      FALSE: 0
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
   field_no_defaulting: 
     plugin: static_map
     source: default
     map:
-      TRUE: 1
-      FALSE: 0
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
   field_exmple_fields:
     -
       plugin: skip_on_empty
@@ -81,7 +83,8 @@ process:
     method: process
     source: description
 destination:
-  plugin: 'entity:skill'
+  plugin: 'entity:node'
 migration_dependencies:
-  - stats
-  - lookup_tables
+  required:
+    - stats
+    - lookup_tables
