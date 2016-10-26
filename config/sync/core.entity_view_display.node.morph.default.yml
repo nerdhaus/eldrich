@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.morph.field_morph_type
     - field.field.node.morph.field_skills
     - field.field.node.morph.field_source
-    - field.field.node.morph.field_speed
     - field.field.node.morph.field_stats
     - field.field.node.morph.field_traits
     - node.type.morph
@@ -102,12 +101,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_quantity_label
-  field_speed:
-    weight: 107
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: mobility_speed_formatter
   field_stats:
     weight: 104
     label: above
