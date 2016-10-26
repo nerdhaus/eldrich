@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.morph.field_armor_value
     - field.field.node.morph.field_augmentations
     - field.field.node.morph.field_cost
     - field.field.node.morph.field_cp_cost
@@ -14,6 +15,7 @@ dependencies:
     - field.field.node.morph.field_source
     - field.field.node.morph.field_speed
     - field.field.node.morph.field_stats
+    - field.field.node.morph.field_traits
     - image.style.thumbnail
     - node.type.morph
   module:
@@ -35,6 +37,11 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+  field_armor_value:
+    weight: 43
+    settings: {  }
+    third_party_settings: {  }
+    type: armor_widget
   field_augmentations:
     weight: 38
     settings:
@@ -73,20 +80,14 @@ content:
     type: image_image
   field_mobility_type:
     weight: 33
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
   field_morph_type:
     weight: 35
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
   field_skills:
     weight: 36
     settings: {  }
@@ -94,12 +95,9 @@ content:
     type: skill_reference_select
   field_source:
     weight: 41
-    settings:
-      match_operator: CONTAINS
-      size: '60'
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_quantity_autocomplete
+    type: entity_reference_quantity_select
   field_speed:
     weight: 37
     settings: {  }
@@ -110,6 +108,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: stat_block_table
+  field_traits:
+    weight: 42
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
   path:
     type: path
     weight: 30

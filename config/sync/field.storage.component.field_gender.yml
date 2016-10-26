@@ -1,0 +1,21 @@
+uuid: 25fa2263-997d-4ab4-a967-4ea5130e3a25
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: component.field_gender
+field_name: field_gender
+entity_type: component
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

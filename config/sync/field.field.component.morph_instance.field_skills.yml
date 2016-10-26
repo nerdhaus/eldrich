@@ -1,0 +1,30 @@
+uuid: c94c20b2-60d8-487f-8d31-7a9f7def057e
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.morph_instance
+    - field.storage.component.field_skills
+    - node.type.skill
+  module:
+    - ep_skill_reference
+id: component.morph_instance.field_skills
+field_name: field_skills
+entity_type: component
+bundle: morph_instance
+label: Skills
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      skill: skill
+    sort:
+      field: _none
+    auto_create: 0
+    auto_create_bundle: ''
+field_type: skill_reference

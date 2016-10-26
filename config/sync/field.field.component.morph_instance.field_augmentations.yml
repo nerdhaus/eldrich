@@ -1,0 +1,31 @@
+uuid: 6e8eb9a2-3a81-4830-9670-54aa3093d363
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.morph_instance
+    - field.storage.component.field_augmentations
+    - node.type.gear
+  module:
+    - entity_reference_override
+id: component.morph_instance.field_augmentations
+field_name: field_augmentations
+entity_type: component
+bundle: morph_instance
+label: Augmentations
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      gear: gear
+    sort:
+      field: _none
+    auto_create: 0
+    auto_create_bundle: ''
+  override_label: Notes
+field_type: entity_reference_override

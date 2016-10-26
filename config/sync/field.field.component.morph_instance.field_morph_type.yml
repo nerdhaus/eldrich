@@ -1,0 +1,29 @@
+uuid: 4218dfa0-3d48-4c53-b377-e0b7ee029c17
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.morph_instance
+    - eck.eck_type.lookup.morph_type
+    - field.storage.component.field_morph_type
+id: component.morph_instance.field_morph_type
+field_name: field_morph_type
+entity_type: component
+bundle: morph_instance
+label: 'Morph Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:lookup'
+  handler_settings:
+    target_bundles:
+      morph_type: morph_type
+    sort:
+      field: field_weight
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

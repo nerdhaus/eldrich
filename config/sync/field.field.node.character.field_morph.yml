@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - eck.eck_type.component.morph_instance
     - field.storage.node.field_morph
     - node.type.character
-    - node.type.gear
 _core:
   default_config_hash: RVszYxRj5DCVxf4mgqUnzdpXouFfjsrUOA9q3fsmYJg
 id: node.character.field_morph
@@ -19,10 +19,10 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: 'default:component'
   handler_settings:
     target_bundles:
-      gear: gear
+      morph_instance: morph_instance
     sort:
       field: _none
     auto_create: false

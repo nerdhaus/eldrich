@@ -1,0 +1,31 @@
+uuid: e660adb9-2541-4227-ad2b-dd5fc63c1494
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_faction
+    - node.type.character
+    - node.type.faction
+  module:
+    - entity_reference_override
+id: node.character.field_faction
+field_name: field_faction
+entity_type: node
+bundle: character
+label: Faction
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      faction: faction
+    sort:
+      field: _none
+    auto_create: 0
+    auto_create_bundle: ''
+  override_label: Notes
+field_type: entity_reference_override

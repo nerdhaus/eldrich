@@ -1,18 +1,15 @@
-uuid: 6ad40361-ab05-456c-8bd9-a8e123c6f61b
+uuid: f9a038e5-45cd-4dec-9ad1-90d438ea4b29
 langcode: en
 status: true
 dependencies:
   module:
     - eck
-    - node
-_core:
-  default_config_hash: aE1wGSKaD57kk1u7QsntOwmKQoRtEIalBbDxzSv1I_k
-id: node.field_morph
-field_name: field_morph
-entity_type: node
+id: component.field_morph_type
+field_name: field_morph_type
+entity_type: component
 type: entity_reference
 settings:
-  target_type: component
+  target_type: lookup
 module: core
 locked: false
 cardinality: 1

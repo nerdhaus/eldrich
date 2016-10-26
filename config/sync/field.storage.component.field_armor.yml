@@ -1,0 +1,19 @@
+uuid: 4a70f1ce-df32-4735-96fd-bf3874a1cbaa
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - ep_complex_values
+id: component.field_armor
+field_name: field_armor
+entity_type: component
+type: armor_value
+settings: {  }
+module: ep_complex_values
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

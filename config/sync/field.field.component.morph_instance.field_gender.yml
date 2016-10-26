@@ -1,0 +1,19 @@
+uuid: 24127d91-195e-4d70-b2f7-4f956d54ef3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.morph_instance
+    - field.storage.component.field_gender
+id: component.morph_instance.field_gender
+field_name: field_gender
+entity_type: component
+bundle: morph_instance
+label: Gender
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.morph.field_armor_value
     - field.field.node.morph.field_augmentations
     - field.field.node.morph.field_cost
     - field.field.node.morph.field_cp_cost
@@ -14,6 +15,7 @@ dependencies:
     - field.field.node.morph.field_source
     - field.field.node.morph.field_speed
     - field.field.node.morph.field_stats
+    - field.field.node.morph.field_traits
     - node.type.morph
   module:
     - entity_reference_override
@@ -29,6 +31,12 @@ targetEntityType: node
 bundle: morph
 mode: default
 content:
+  field_armor_value:
+    weight: 113
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: armor_text
   field_augmentations:
     weight: 108
     label: above
@@ -106,6 +114,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: stat_block_table
+  field_traits:
+    weight: 112
+    label: above
+    settings:
+      override_action: title
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_override_label
   links:
     weight: 100
 hidden: {  }

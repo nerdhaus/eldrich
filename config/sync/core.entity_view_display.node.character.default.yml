@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.character.field_background
     - field.field.node.character.field_blueprints
     - field.field.node.character.field_description
+    - field.field.node.character.field_faction
     - field.field.node.character.field_gear
     - field.field.node.character.field_identity
     - field.field.node.character.field_image
@@ -34,6 +36,13 @@ targetEntityType: node
 bundle: character
 mode: default
 content:
+  field_background:
+    weight: 118
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_blueprints:
     weight: 112
     label: above
@@ -47,6 +56,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+  field_faction:
+    weight: 117
+    label: above
+    settings:
+      override_action: title
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_override_label
   field_gear:
     weight: 109
     label: above

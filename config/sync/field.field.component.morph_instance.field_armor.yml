@@ -1,0 +1,21 @@
+uuid: 50afc26f-0a37-454d-affe-82223fa15715
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.morph_instance
+    - field.storage.component.field_armor
+  module:
+    - ep_complex_values
+id: component.morph_instance.field_armor
+field_name: field_armor
+entity_type: component
+bundle: morph_instance
+label: Armor
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: armor_value
