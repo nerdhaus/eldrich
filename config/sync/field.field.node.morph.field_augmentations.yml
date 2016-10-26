@@ -1,19 +1,17 @@
-uuid: 2c633509-76f3-428c-8cf3-71da109b133e
+uuid: 9c225974-4d40-4201-8dc7-141f3ccf3b85
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_augmentations
-    - node.type.character
     - node.type.gear
+    - node.type.morph
   module:
     - entity_reference_override
-_core:
-  default_config_hash: jCncqUrN6D752PP6MR3-GTRb6PZHPD74dTxbo7uFV88
-id: node.character.field_augmentations
+id: node.morph.field_augmentations
 field_name: field_augmentations
 entity_type: node
-bundle: character
+bundle: morph
 label: Augmentations
 description: ''
 required: false

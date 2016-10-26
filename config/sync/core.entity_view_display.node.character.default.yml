@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.character.field_augmentations
     - field.field.node.character.field_blueprints
     - field.field.node.character.field_description
     - field.field.node.character.field_gear
@@ -35,14 +34,6 @@ targetEntityType: node
 bundle: character
 mode: default
 content:
-  field_augmentations:
-    weight: 108
-    label: above
-    settings:
-      override_action: title
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_override_label
   field_blueprints:
     weight: 112
     label: above

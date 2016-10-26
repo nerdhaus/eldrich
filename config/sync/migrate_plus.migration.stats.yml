@@ -1,8 +1,11 @@
+uuid: f5c3a3cd-223b-4a08-a657-72c0639e943b
+langcode: en
+status: true
+dependencies: {  }
 id: stats
 migration_tags: null
 migration_group: eldrich
 label: 'Base stats'
-
 source:
   plugin: csv
   path: modules/custom/ep_import/data/stats.csv
@@ -53,7 +56,7 @@ process:
       source: labels
     -
       plugin: explode
-      delimiter: ,
+      delimiter: ','
   field_description/value: description
   field_calculation: calculation
   field_weight:
@@ -62,3 +65,4 @@ process:
     source: weight
 destination:
   plugin: 'entity:node'
+migration_dependencies: null

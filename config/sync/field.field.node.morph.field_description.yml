@@ -1,16 +1,16 @@
-uuid: 6f186a7f-d7b0-41c1-a46b-ace45ec0f2a6
+uuid: 845ca82c-6572-4d8c-abd9-874b8bfa4a8d
 langcode: en
 status: true
 dependencies:
   config:
-    - eck.eck_type.lookup.favor_level
-    - field.storage.lookup.field_description
+    - field.storage.node.field_description
+    - node.type.morph
   module:
     - text
-id: lookup.favor_level.field_description
+id: node.morph.field_description
 field_name: field_description
-entity_type: lookup
-bundle: favor_level
+entity_type: node
+bundle: morph
 label: Description
 description: ''
 required: false

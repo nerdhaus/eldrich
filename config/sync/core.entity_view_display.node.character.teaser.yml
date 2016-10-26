@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.character.field_augmentations
     - field.field.node.character.field_blueprints
     - field.field.node.character.field_description
     - field.field.node.character.field_gear
@@ -33,7 +32,6 @@ content:
   links:
     weight: 100
 hidden:
-  field_augmentations: true
   field_blueprints: true
   field_description: true
   field_gear: true

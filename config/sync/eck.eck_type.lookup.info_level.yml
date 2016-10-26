@@ -1,8 +1,9 @@
+uuid: 72625719-6b09-44ce-8285-5062ae040963
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_entity_type.lookup
-name: 'Value Levels'
+name: 'Info Levels'
 type: info_level
 description: ''

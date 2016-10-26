@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.character.field_augmentations
     - field.field.node.character.field_blueprints
     - field.field.node.character.field_description
     - field.field.node.character.field_gear
@@ -137,14 +136,6 @@ content:
     weight: 8
     settings: {  }
     third_party_settings: {  }
-  field_augmentations:
-    weight: 9
-    settings:
-      match_operator: CONTAINS
-      size: '60'
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_override_autocomplete
   field_blueprints:
     weight: 18
     settings:

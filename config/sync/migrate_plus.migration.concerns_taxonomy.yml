@@ -1,4 +1,9 @@
+uuid: b255af41-ea59-4531-ba93-4259c876acc3
+langcode: en
+status: true
+dependencies: {  }
 id: concerns_taxonomy
+migration_tags: null
 migration_group: eldrich
 label: 'Taxonomy for corporate focuses, memes, etc.'
 source:
@@ -18,3 +23,4 @@ process:
     default_value: concerns
 destination:
   plugin: 'entity:taxonomy_term'
+migration_dependencies: null

@@ -1,0 +1,111 @@
+uuid: 0b4a4681-8501-45ab-a57f-91c0aceee4de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.morph.field_augmentations
+    - field.field.node.morph.field_cost
+    - field.field.node.morph.field_cp_cost
+    - field.field.node.morph.field_description
+    - field.field.node.morph.field_image
+    - field.field.node.morph.field_mobility_type
+    - field.field.node.morph.field_morph_type
+    - field.field.node.morph.field_skills
+    - field.field.node.morph.field_source
+    - field.field.node.morph.field_speed
+    - field.field.node.morph.field_stats
+    - node.type.morph
+  module:
+    - entity_reference_override
+    - entity_reference_quantity
+    - ep_complex_values
+    - ep_skill_reference
+    - ep_statblock
+    - image
+    - text
+    - user
+id: node.morph.default
+targetEntityType: node
+bundle: morph
+mode: default
+content:
+  field_augmentations:
+    weight: 108
+    label: above
+    settings:
+      override_action: title
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_override_label
+  field_cost:
+    weight: 109
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  field_cp_cost:
+    weight: 102
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_description:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_image:
+    weight: 110
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_mobility_type:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_morph_type:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_skills:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: skill_reference_label
+  field_source:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  field_speed:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: mobility_speed_formatter
+  field_stats:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+  links:
+    weight: 100
+hidden: {  }

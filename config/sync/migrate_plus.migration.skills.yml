@@ -1,8 +1,11 @@
+uuid: e1724833-27fc-4291-a752-cc877675e7c1
+langcode: en
+status: true
+dependencies: {  }
 id: skills
 migration_tags: null
 migration_group: eldrich
 label: 'Core skills list'
-
 source:
   plugin: csv
   path: modules/custom/ep_import/data/skills.csv
@@ -56,7 +59,7 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-  field_no_defaulting: 
+  field_no_defaulting:
     plugin: static_map
     source: default
     map:
@@ -70,7 +73,7 @@ process:
       source: fields
     -
       plugin: explode
-      delimiter: ,
+      delimiter: ','
   field_sample_specializations:
     -
       plugin: skip_on_empty
@@ -78,7 +81,7 @@ process:
       source: specializations
     -
       plugin: explode
-      delimiter: ,
+      delimiter: ','
   field_description/value:
     plugin: skip_on_empty
     method: process
@@ -89,3 +92,7 @@ process:
     source: usage
 destination:
   plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - stats
+    - lookup_tables

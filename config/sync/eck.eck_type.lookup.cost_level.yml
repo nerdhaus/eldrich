@@ -1,8 +1,9 @@
+uuid: f4b5195e-8e03-4773-b1a0-0459c3cb6fd2
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_entity_type.lookup
-name: 'Value Levels'
+name: 'Cost Levels'
 type: cost_level
 description: ''

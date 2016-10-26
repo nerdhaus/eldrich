@@ -1,8 +1,9 @@
+uuid: 95b3a191-6a29-405f-9755-6815fee92cdf
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_entity_type.lookup
-name: 'Value Levels'
+name: 'Favor Levels'
 type: favor_level
 description: ''

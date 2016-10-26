@@ -1,0 +1,9 @@
+uuid: 5736f81e-bb0e-474f-93ad-4dac1b65094b
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.component
+name: 'Morph Instance'
+type: morph_instance
+description: ''

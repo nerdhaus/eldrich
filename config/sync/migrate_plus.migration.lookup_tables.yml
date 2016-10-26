@@ -41,7 +41,7 @@ process:
     plugin: skip_on_empty
     method: process
     source: weight
-  @speed_array:
+  '@speed_array':
     -
       plugin: skip_on_empty
       method: process

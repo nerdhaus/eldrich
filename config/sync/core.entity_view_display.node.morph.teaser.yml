@@ -1,0 +1,17 @@
+uuid: 73a24511-77df-487a-bad9-ba592b68d959
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.morph
+  module:
+    - user
+id: node.morph.teaser
+targetEntityType: node
+bundle: morph
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden: {  }

@@ -1,12 +1,10 @@
-uuid: f408fb97-91ea-49fd-95b7-9aa420d48874
+uuid: facb795a-3484-4bb4-a472-091c93ed53ef
 langcode: en
 status: true
 dependencies:
   module:
     - entity_reference_override
     - node
-_core:
-  default_config_hash: _Ej-pn3DvMm-K1RGCMiplEhKG7hvlPvwVfU2XANde2U
 id: node.field_augmentations
 field_name: field_augmentations
 entity_type: node
