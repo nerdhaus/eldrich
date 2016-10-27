@@ -29,7 +29,7 @@ process:
     source: type
     value_key: title
     bundle_key: id
-    bundle: derangement_level
+    bundle: derangement_magnitude
     entity_type: lookup
     ignore_case: true
   field_description/value: description

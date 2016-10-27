@@ -41,7 +41,7 @@ process:
   field_type:
     plugin: entity_lookup
     source: type
-    value_key: code
+    value_key: title
     bundle_key: id
     bundle: skill_type
     entity_type: lookup
@@ -54,7 +54,7 @@ process:
     source: aptitude
   field_is_field:
     plugin: static_map
-    source: static
+    source: field
     map:
       'TRUE': 1
       'FALSE': 0

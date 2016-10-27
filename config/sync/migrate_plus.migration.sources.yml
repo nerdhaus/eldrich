@@ -3,7 +3,7 @@ migration_tags: null
 migration_group: eldrich
 label: 'Content sources'
 source:
-  plugin: csvn
+  plugin: csv
   path: modules/custom/ep_import/data/sources.csv
   header_row_count: 1
   column_names:
@@ -29,7 +29,7 @@ process:
   title: title
   type:
     plugin: default_value
-    default_value: skill
+    default_value: source
   field_type:
     plugin: entity_lookup
     source: type
@@ -39,10 +39,12 @@ process:
     entity_type: lookup
     ignore_case: true
   field_description/value: description
+  field_code/value: code
   field_weight:
     plugin: skip_on_empty
     method: process
     source: weight
+  field_home_page/uri: homepage
 destination:
   plugin: 'entity:node'
 migration_dependencies:

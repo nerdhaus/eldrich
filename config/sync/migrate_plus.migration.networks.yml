@@ -22,7 +22,7 @@ source:
 process:
   title: title
   type:
-    plugin: source
+    plugin: default_value
     default_value: network
   field_symbol/value:
     plugin: skip_on_empty
