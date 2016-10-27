@@ -32,6 +32,14 @@ process:
   vid:
     plugin: default_value
     default_value: gear
+  field_source/target_id:
+    plugin: entity_lookup
+    source: book
+    value_key: field_code
+    bundle_key: nid
+    bundle: source
+    entity_type: node
+  field_source/quantity: page
   parent:
     -
       plugin: skip_on_empty
