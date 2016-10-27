@@ -34,7 +34,3 @@ process:
     source: description
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - stats
-    - lookup_tables
