@@ -1,0 +1,9 @@
+uuid: 7321e632-d93b-4267-8b4e-c7340c2ac06e
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+name: 'Location Type'
+type: location_type
+description: ''

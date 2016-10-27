@@ -1,0 +1,36 @@
+uuid: 4820d5fd-adf4-4c3c-a618-26390c86e2f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.faction_type
+    - field.field.lookup.faction_type.field_description
+    - field.field.lookup.faction_type.field_weight
+  module:
+    - text
+id: lookup.faction_type.default
+targetEntityType: lookup
+bundle: faction_type
+mode: default
+content:
+  field_description:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_weight:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

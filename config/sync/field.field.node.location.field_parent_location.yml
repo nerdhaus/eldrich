@@ -1,0 +1,27 @@
+uuid: 65fac4bb-28f8-4a9f-897d-fcfd2867196a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parent_location
+    - node.type.location
+id: node.location.field_parent_location
+field_name: field_parent_location
+entity_type: node
+bundle: location
+label: 'Parent Location'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      location: location
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

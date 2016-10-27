@@ -1,0 +1,20 @@
+uuid: a10d6e97-67fe-4b30-8dd2-3c5862249dc2
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - node
+id: node.field_location_type
+field_name: field_location_type
+entity_type: node
+type: entity_reference
+settings:
+  target_type: lookup
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

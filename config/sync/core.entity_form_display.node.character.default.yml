@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.character.field_background
     - field.field.node.character.field_blueprints
+    - field.field.node.character.field_concerns
     - field.field.node.character.field_description
     - field.field.node.character.field_faction
     - field.field.node.character.field_gear
@@ -160,6 +161,14 @@ content:
     type: string_textfield
   field_blueprints:
     weight: 18
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_concerns:
+    weight: 26
     settings:
       match_operator: CONTAINS
       size: 60

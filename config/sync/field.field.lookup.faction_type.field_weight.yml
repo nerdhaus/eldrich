@@ -1,0 +1,23 @@
+uuid: f2f6bb81-1cb9-4cd9-9d99-f9b2d63a3904
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.faction_type
+    - field.storage.lookup.field_weight
+id: lookup.faction_type.field_weight
+field_name: field_weight
+entity_type: lookup
+bundle: faction_type
+label: Weight
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

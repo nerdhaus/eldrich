@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.character.field_background
     - field.field.node.character.field_blueprints
+    - field.field.node.character.field_concerns
     - field.field.node.character.field_description
     - field.field.node.character.field_faction
     - field.field.node.character.field_gear
@@ -45,6 +46,13 @@ content:
     type: string
   field_blueprints:
     weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_concerns:
+    weight: 119
     label: above
     settings:
       link: true

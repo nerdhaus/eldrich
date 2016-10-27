@@ -1,0 +1,21 @@
+uuid: 151db8e0-93ff-4959-b681-675085483b98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stat_limits
+    - node.type.morph
+  module:
+    - ep_statblock
+id: node.morph.field_stat_limits
+field_name: field_stat_limits
+entity_type: node
+bundle: morph
+label: 'Stat Limits'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: stat_block

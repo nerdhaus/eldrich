@@ -32,8 +32,10 @@ content:
   links:
     weight: 100
 hidden:
+  field_background: true
   field_blueprints: true
   field_description: true
+  field_faction: true
   field_gear: true
   field_identity: true
   field_image: true

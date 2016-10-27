@@ -1,0 +1,20 @@
+uuid: 64b7b993-bfb6-499d-afed-8d84e9fb4943
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_population
+field_name: field_population
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

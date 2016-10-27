@@ -1,0 +1,21 @@
+uuid: a8acf5f1-f2ff-4e0e-b035-b10ab9aab65b
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.faction_type
+    - field.storage.lookup.field_description
+  module:
+    - text
+id: lookup.faction_type.field_description
+field_name: field_description
+entity_type: lookup
+bundle: faction_type
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

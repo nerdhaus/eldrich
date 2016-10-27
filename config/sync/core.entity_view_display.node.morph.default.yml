@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.morph.field_morph_type
     - field.field.node.morph.field_skills
     - field.field.node.morph.field_source
+    - field.field.node.morph.field_stat_limits
     - field.field.node.morph.field_stats
     - field.field.node.morph.field_traits
     - node.type.morph
@@ -101,6 +102,12 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_quantity_label
+  field_stat_limits:
+    weight: 114
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
   field_stats:
     weight: 104
     label: above

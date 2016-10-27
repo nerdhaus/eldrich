@@ -1,0 +1,29 @@
+uuid: f78bbe58-d5f7-4489-82c3-5310a630d62b
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.location_type
+    - field.storage.node.field_location_type
+    - node.type.location
+id: node.location.field_location_type
+field_name: field_location_type
+entity_type: node
+bundle: location
+label: 'Location Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:lookup'
+  handler_settings:
+    target_bundles:
+      location_type: location_type
+    sort:
+      field: field_weight
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

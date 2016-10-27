@@ -1,0 +1,9 @@
+uuid: ebb59830-a9bd-48d9-95f1-98b1a41d647e
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+name: 'Faction Type'
+type: faction_type
+description: ''

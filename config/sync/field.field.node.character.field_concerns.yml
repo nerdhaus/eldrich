@@ -1,0 +1,28 @@
+uuid: 72538e1c-d275-44f3-a60d-fa500c8cb7c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_concerns
+    - node.type.character
+    - taxonomy.vocabulary.concerns
+id: node.character.field_concerns
+field_name: field_concerns
+entity_type: node
+bundle: character
+label: Motivations
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      concerns: concerns
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,36 @@
+uuid: f715a77e-6505-4400-91f1-a74a78f22a0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.location_type
+    - field.field.lookup.location_type.field_description
+    - field.field.lookup.location_type.field_weight
+  module:
+    - text
+id: lookup.location_type.default
+targetEntityType: lookup
+bundle: location_type
+mode: default
+content:
+  field_description:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_weight:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
