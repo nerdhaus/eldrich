@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.source.field_code
     - field.field.node.source.field_description
     - field.field.node.source.field_home_page
-    - field.field.node.source.field_purchase_links
     - field.field.node.source.field_source_type
     - field.field.node.source.field_weight
     - node.type.source
@@ -55,21 +54,11 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
-  field_purchase_links:
-    weight: 11
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
   field_source_type:
     weight: 1
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
   field_weight:
     weight: 32
     settings:

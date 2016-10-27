@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.source.field_code
     - field.field.node.source.field_description
     - field.field.node.source.field_home_page
-    - field.field.node.source.field_purchase_links
     - field.field.node.source.field_source_type
     - field.field.node.source.field_weight
     - node.type.source
@@ -42,17 +41,6 @@ content:
     type: text_default
   field_home_page:
     weight: 106
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-  field_purchase_links:
-    weight: 105
     label: above
     settings:
       trim_length: 80

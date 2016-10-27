@@ -1,3 +1,7 @@
+uuid: 339862ff-e587-4e4a-9300-f311de90fbee
+langcode: en
+status: true
+dependencies: {  }
 id: sources
 migration_tags: null
 migration_group: eldrich
@@ -27,8 +31,8 @@ source:
     content_type: source
 process:
   title: title
-  type: 'constants/content_type'
-  'field_source_type/target_id':
+  type: constants/content_type
+  field_source_type/target_id:
     plugin: entity_lookup
     source: type
     value_key: title
