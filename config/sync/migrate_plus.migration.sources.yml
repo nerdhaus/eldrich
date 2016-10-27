@@ -24,26 +24,20 @@ source:
   keys:
     - title
   constants:
-    format: basic_html
+    content_type: source
 process:
   title: title
-  type:
-    plugin: default_value
-    default_value: source
-  field_type:
+  type: 'constants/content_type'
+  'field_source_type/target_id':
     plugin: entity_lookup
     source: type
     value_key: title
     bundle_key: id
     bundle: source_type
     entity_type: lookup
-    ignore_case: true
   field_description/value: description
   field_code/value: code
-  field_weight:
-    plugin: skip_on_empty
-    method: process
-    source: weight
+  field_weight: weight
   field_home_page/uri: homepage
 destination:
   plugin: 'entity:node'
