@@ -10,21 +10,11 @@ source:
     -
       title: Title
     -
-      type: Type
+      code: Code
     -
-      aptitude: Aptitude
+      source: Source
     -
-      default: Default
-    -
-      description: Description
-    -
-      usage: Usage
-    -
-      field: Field
-    -
-      fields: Fields
-    -
-      specializations: Specializations
+      page: Page
   keys:
     - title
   constants:
@@ -32,60 +22,16 @@ source:
 process:
   title: title
   type:
-    plugin: default_value
-    default_value: skill
-  field_type:
-    plugin: entity_lookup
-    source: type
-    value_key: code
-    bundle_key: id
-    bundle: skill_type
-    entity_type: lookup
-    ignore_case: true
-  field_linked_aptitude:
-    plugin: entity_lookup
-    bundle: stat
-    entity_type: node
-    value_key: field_code
-    source: aptitude
-  field_is_field:
-    plugin: static_map
-    source: static
-    map:
-      'TRUE': 1
-      'FALSE': 0
-    default_value: 0
-  field_no_defaulting:
-    plugin: static_map
-    source: default
-    map:
-      'TRUE': 1
-      'FALSE': 0
-    default_value: 0
-  field_exmple_fields:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: fields
-    -
-      plugin: explode
-      delimiter: ','
-  field_sample_specializations:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: specializations
-    -
-      plugin: explode
-      delimiter: ','
+    plugin: source
+    default_value: network
+  field_symbol/value:
+    plugin: skip_on_empty
+    method: process
+    source: code
   field_description/value:
     plugin: skip_on_empty
     method: process
     source: description
-  field_usage/value:
-    plugin: skip_on_empty
-    method: process
-    source: usage
 destination:
   plugin: 'entity:node'
 migration_dependencies:

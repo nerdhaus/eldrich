@@ -1,0 +1,50 @@
+id: sources
+migration_tags: null
+migration_group: eldrich
+label: 'Content sources'
+source:
+  plugin: csvn
+  path: modules/custom/ep_import/data/sources.csv
+  header_row_count: 1
+  column_names:
+    -
+      title: Title
+    -
+      code: Code
+    -
+      type: Type
+    -
+      description: Description
+    -
+      homepage: Homepage
+    -
+      purchase: Default
+    -
+      weight: Weight
+  keys:
+    - title
+  constants:
+    format: basic_html
+process:
+  title: title
+  type:
+    plugin: default_value
+    default_value: skill
+  field_type:
+    plugin: entity_lookup
+    source: type
+    value_key: title
+    bundle_key: id
+    bundle: source_type
+    entity_type: lookup
+    ignore_case: true
+  field_description/value: description
+  field_weight:
+    plugin: skip_on_empty
+    method: process
+    source: weight
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - lookup_tables
