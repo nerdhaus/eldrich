@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_linked_aptitude
     - node.type.skill
-    - node.type.stat
 _core:
   default_config_hash: HsjbNrMitXdtLzxyoxxZY_IcmePAIUXZNc5s554mBag
 id: node.skill.field_linked_aptitude
@@ -19,12 +18,10 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: views
   handler_settings:
-    target_bundles:
-      stat: stat
-    sort:
-      field: _none
-    auto_create: false
-    auto_create_bundle: ''
+    view:
+      view_name: select_lists
+      display_name: aptitudes
+      arguments: {  }
 field_type: entity_reference

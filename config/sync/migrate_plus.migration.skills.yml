@@ -65,7 +65,7 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-  field_exmple_fields:
+  field_exmple_fields/value:
     -
       plugin: skip_on_empty
       method: process
@@ -73,7 +73,7 @@ process:
     -
       plugin: explode
       delimiter: ','
-  field_sample_specializations:
+  field_sample_specializations/value:
     -
       plugin: skip_on_empty
       method: process
