@@ -6,6 +6,8 @@ dependencies:
     - eck.eck_type.component.morph_instance
     - eck.eck_type.lookup.mobility_type
     - field.storage.component.field_mobility_type
+  content:
+    - 'lookup:mobility_type:4954200b-273d-4703-9c9d-1a6253ef21fd'
 id: component.morph_instance.field_mobility_type
 field_name: field_mobility_type
 entity_type: component
@@ -14,7 +16,9 @@ label: 'Mobility Type'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: 4954200b-273d-4703-9c9d-1a6253ef21fd
 default_value_callback: ''
 settings:
   handler: 'default:lookup'

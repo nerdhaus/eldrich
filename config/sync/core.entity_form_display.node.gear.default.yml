@@ -195,12 +195,9 @@ content:
       form_mode: default
       label_singular: ''
       label_plural: ''
-      allow_new: true
-      match_operator: CONTAINS
       override_labels: false
-      allow_existing: false
     third_party_settings: {  }
-    type: inline_entity_form_complex
+    type: inline_entity_form_simple
   field_substance_type:
     weight: 17
     settings: {  }

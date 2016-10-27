@@ -3,11 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.source.field_code
     - field.field.node.source.field_description
     - field.field.node.source.field_home_page
-    - field.field.node.source.field_is_canon
     - field.field.node.source.field_purchase_links
     - field.field.node.source.field_source_type
+    - field.field.node.source.field_weight
     - node.type.source
   module:
     - link
@@ -33,6 +34,13 @@ content:
     weight: 4
     settings: {  }
     third_party_settings: {  }
+  field_code:
+    weight: 33
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_description:
     weight: 8
     settings:
@@ -47,12 +55,6 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
-  field_is_canon:
-    weight: 2
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
   field_purchase_links:
     weight: 11
     settings:
@@ -68,6 +70,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_weight:
+    weight: 32
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   path:
     type: path
     weight: 7

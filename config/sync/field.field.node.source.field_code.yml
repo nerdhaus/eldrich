@@ -1,0 +1,19 @@
+uuid: b0368c39-fedb-4561-9600-58feaf1595df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_code
+    - node.type.source
+id: node.source.field_code
+field_name: field_code
+entity_type: node
+bundle: source
+label: Code
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
