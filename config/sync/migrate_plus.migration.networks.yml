@@ -38,4 +38,6 @@ process:
     source: description
 destination:
   plugin: 'entity:node'
-migration_dependencies: null
+migration_dependencies:
+  required:
+    - lookup_tables
