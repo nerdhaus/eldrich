@@ -38,12 +38,11 @@ process:
   type:
     plugin: default_value
     default_value: skill
-  field_type/target_id:
+  field_skill_type/target_id:
     plugin: entity_lookup
     source: type
     value_key: title
-    bundle_key: id
-    bundle: skill_type
+    bundle: skill_category
     entity_type: lookup
   field_linked_aptitude:
     plugin: entity_lookup
@@ -65,7 +64,7 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-  field_exmple_fields/value:
+  'field_example_fields[]/value':
     -
       plugin: skip_on_empty
       method: process
@@ -73,7 +72,7 @@ process:
     -
       plugin: explode
       delimiter: ','
-  field_sample_specializations/value:
+  'field_specializations[]/value':
     -
       plugin: skip_on_empty
       method: process

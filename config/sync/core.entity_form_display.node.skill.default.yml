@@ -59,12 +59,9 @@ content:
     type: boolean_checkbox
   field_linked_aptitude:
     weight: 6
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
   field_no_defaulting:
     weight: 8
     settings:
