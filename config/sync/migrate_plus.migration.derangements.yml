@@ -18,11 +18,13 @@ source:
     -
       description: Description
     -
-      weight: Weight
+      effects: Effects
+    -
+      book: Book
+    -
+      page: Page
   keys:
     - title
-  constants:
-    format: basic_html
 process:
   title: title
   type:
@@ -37,10 +39,16 @@ process:
     entity_type: lookup
     ignore_case: true
   field_description/value: description
-  field_weight:
-    plugin: skip_on_empty
-    method: process
-    source: weight
+  field_usage/value: effects
+  'field_source/target_id':
+    plugin: entity_lookup
+    source: type
+    value_key: field_code
+    bundle_key: type
+    bundle: book
+    entity_type: node
+    ignore_case: true
+  'field_source/quantity': page
 destination:
   plugin: 'entity:node'
 migration_dependencies:

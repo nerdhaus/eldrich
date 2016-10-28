@@ -86,6 +86,15 @@ process:
     plugin: skip_on_empty
     method: process
     source: description
+  'field_source/target_id':
+    plugin: entity_lookup
+    source: type
+    value_key: field_code
+    bundle_key: type
+    bundle: book
+    entity_type: node
+    ignore_case: true
+  'field_source/quantity': page
 destination:
   plugin: 'entity:node'
 migration_dependencies:

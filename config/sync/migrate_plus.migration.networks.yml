@@ -16,7 +16,7 @@ source:
     -
       code: Code
     -
-      source: Source
+      book: Book
     -
       page: Page
   keys:
@@ -32,10 +32,16 @@ process:
     plugin: skip_on_empty
     method: process
     source: code
-  field_description/value:
-    plugin: skip_on_empty
-    method: process
-    source: description
+  field_description/value: description
+  'field_source/target_id':
+    plugin: entity_lookup
+    source: type
+    value_key: field_code
+    bundle_key: type
+    bundle: book
+    entity_type: node
+    ignore_case: true
+  'field_source/quantity': page
 destination:
   plugin: 'entity:node'
 migration_dependencies:
