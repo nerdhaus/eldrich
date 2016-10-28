@@ -1,0 +1,23 @@
+uuid: c1ee59ed-a646-4984-9cb5-60ed1c7e4293
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_active
+    - node.type.sleight
+id: node.sleight.field_is_active
+field_name: field_is_active
+entity_type: node
+bundle: sleight
+label: 'Sleight is Active'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'This sleight must be explicitly actived'
+  off_label: 'This sleight is a passive skill'
+field_type: boolean

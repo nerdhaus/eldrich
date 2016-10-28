@@ -12,7 +12,7 @@ source:
     -
       level: Level
     -
-      type: Type
+      active: Active
     -
       action: Action
     -
@@ -36,11 +36,11 @@ process:
   type:
     plugin: default_value
     default_value: sleight
-  'field_sleight_type/target_id':
+  'field_sleight_level/target_id':
     plugin: entity_lookup
-    source: type
+    source: level
     value_key: title
-    bundle: sleight_type
+    bundle: psi_level
     bundle_key: type
     entity_type: lookup
   'field_action_type/target_id':
@@ -54,27 +54,30 @@ process:
     plugin: entity_lookup
     source: duration
     value_key: title
-    bundle: sleight_duration
-    bundle_key: type
-    entity_type: lookup
-  'field_sleight_level/target_id':
-    plugin: entity_lookup
-    source: level
-    value_key: title
-    bundle: sleight_level
+    bundle: psi_duration
     bundle_key: type
     entity_type: lookup
   'field_sleight_range/target_id':
     plugin: entity_lookup
     source: range
     value_key: title
-    bundle: sleight_range
+    bundle: psi_range
     bundle_key: type
     entity_type: lookup
   'field_psi_skill/target_id':
     plugin: entity_lookup
+    entity_type: node
     bundle: skill
+    bundle_key: type
+    value_key: title
     source: skill
+  field_is_active:
+    plugin: static_map
+    source: active
+    map:
+      'Active': 1
+      'Passive': 0
+    default_value: 0
   'field_strain/value':
     plugin: skip_on_empty
     method: process
