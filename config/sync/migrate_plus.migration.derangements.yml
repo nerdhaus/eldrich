@@ -32,7 +32,7 @@ process:
     plugin: entity_lookup
     source: type
     value_key: title
-    bundle_key: id
+    bundle_key: type
     bundle: derangement_magnitude
     entity_type: lookup
     ignore_case: true

@@ -36,7 +36,7 @@ process:
     plugin: entity_lookup
     source: type
     value_key: title
-    bundle_key: id
+    bundle_key: type
     bundle: source_type
     entity_type: lookup
   field_description/value: description
