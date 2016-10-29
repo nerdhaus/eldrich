@@ -1,0 +1,36 @@
+uuid: f028ad20-8253-4027-b808-b068fa26d790
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.psi_duration
+    - field.field.lookup.psi_duration.field_description
+    - field.field.lookup.psi_duration.field_weight
+  module:
+    - text
+id: lookup.psi_duration.default
+targetEntityType: lookup
+bundle: psi_duration
+mode: default
+content:
+  field_description:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_weight:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

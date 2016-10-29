@@ -1,18 +1,16 @@
-uuid: f749de44-81d7-4bd1-a9ea-74510f8c1484
+uuid: 19422cc4-02c7-4887-888e-d062f0f472ba
 langcode: en
 status: true
 dependencies:
   config:
-    - eck.eck_type.lookup.psi
+    - eck.eck_type.lookup.psi_duration
     - field.storage.lookup.field_description
   module:
     - text
-_core:
-  default_config_hash: gf4aALPLIPO1IPqQ1tbjisSMuHM_Ni4VuKlv8hMclzQ
-id: lookup.psi.field_description
+id: lookup.psi_duration.field_description
 field_name: field_description
 entity_type: lookup
-bundle: psi
+bundle: psi_duration
 label: Description
 description: ''
 required: false

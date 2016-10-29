@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - eck.eck_type.lookup.psi
+    - eck.eck_type.lookup.psi_duration
     - field.storage.node.field_sleight_duration
     - node.type.sleight
 _core:
@@ -22,7 +22,7 @@ settings:
   handler: 'default:lookup'
   handler_settings:
     target_bundles:
-      psi: psi
+      psi_duration: psi_duration
     sort:
       field: field_weight
       direction: ASC

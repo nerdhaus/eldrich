@@ -1,3 +1,7 @@
+uuid: 66efecea-e476-47eb-a13d-c9c940492253
+langcode: en
+status: true
+dependencies: {  }
 id: sleights
 migration_tags: null
 migration_group: eldrich
@@ -36,35 +40,35 @@ process:
   type:
     plugin: default_value
     default_value: sleight
-  'field_sleight_level/target_id':
+  field_sleight_level/target_id:
     plugin: entity_lookup
     source: level
     value_key: title
     bundle: psi_level
     bundle_key: type
     entity_type: lookup
-  'field_action_type/target_id':
+  field_action_type/target_id:
     plugin: entity_lookup
     source: action
     value_key: title
     bundle: action_type
     bundle_key: type
     entity_type: lookup
-  'field_sleight_duration/target_id':
+  field_sleight_duration/target_id:
     plugin: entity_lookup
     source: duration
     value_key: title
     bundle: psi_duration
     bundle_key: type
     entity_type: lookup
-  'field_sleight_range/target_id':
+  field_sleight_range/target_id:
     plugin: entity_lookup
     source: range
     value_key: title
     bundle: psi_range
     bundle_key: type
     entity_type: lookup
-  'field_psi_skill/target_id':
+  field_psi_skill/target_id:
     plugin: entity_lookup
     entity_type: node
     bundle: skill
@@ -75,26 +79,17 @@ process:
     plugin: static_map
     source: active
     map:
-      'Active': 1
-      'Passive': 0
+      Active: 1
+      Passive: 0
     default_value: 0
-  'field_strain/value':
+  field_strain/value:
     plugin: skip_on_empty
     method: process
     source: strain
-  'field_description/value':
+  field_description/value:
     plugin: skip_on_empty
     method: process
     source: description
-  'field_source/target_id':
-    plugin: entity_lookup
-    source: type
-    value_key: field_code
-    bundle_key: type
-    bundle: book
-    entity_type: node
-    ignore_case: true
-  'field_source/quantity': page
 destination:
   plugin: 'entity:node'
 migration_dependencies:

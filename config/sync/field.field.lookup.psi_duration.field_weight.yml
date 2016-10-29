@@ -1,16 +1,14 @@
-uuid: 0c816b0c-df2c-4ad5-97df-366a2d98d48a
+uuid: 2f79ff81-4dfc-4c44-9e22-242311de9df2
 langcode: en
 status: true
 dependencies:
   config:
-    - eck.eck_type.lookup.psi
+    - eck.eck_type.lookup.psi_duration
     - field.storage.lookup.field_weight
-_core:
-  default_config_hash: HEZidIvo0JEu3GbWIft73l82g0LHs3u-ywjeFjWL5U4
-id: lookup.psi.field_weight
+id: lookup.psi_duration.field_weight
 field_name: field_weight
 entity_type: lookup
-bundle: psi
+bundle: psi_duration
 label: Weight
 description: ''
 required: false
