@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.trait.field_allowed_morphs
     - field.field.node.trait.field_cp_cost
     - field.field.node.trait.field_description
     - field.field.node.trait.field_ego_trait
@@ -34,7 +33,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_allowed_morphs: true
   field_cp_cost: true
   field_description: true
   field_ego_trait: true

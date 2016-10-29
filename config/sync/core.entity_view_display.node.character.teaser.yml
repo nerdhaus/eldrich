@@ -32,8 +32,10 @@ content:
   links:
     weight: 100
 hidden:
+  field_augmentations: true
   field_background: true
   field_blueprints: true
+  field_concerns: true
   field_description: true
   field_faction: true
   field_gear: true
