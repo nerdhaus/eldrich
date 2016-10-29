@@ -1,4 +1,9 @@
+uuid: 6ceeac19-0689-455e-8548-f04c586791c5
+langcode: en
+status: true
+dependencies: {  }
 id: traits
+migration_tags: null
 migration_group: eldrich
 label: 'Ego and Morph Traits'
 source:
@@ -61,7 +66,10 @@ process:
     bundle_key: type
     value_key: field_code
     source: book
-  field_source/quantity: page
+  field_source/quantity:
+    plugin: skip_on_empty
+    method: process
+    source: page
 destination:
   plugin: 'entity:node'
 migration_dependencies:

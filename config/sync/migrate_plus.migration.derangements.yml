@@ -5,7 +5,7 @@ dependencies: {  }
 id: derangements
 migration_tags: null
 migration_group: eldrich
-label: 'Derangements'
+label: Derangements
 source:
   plugin: csv
   path: modules/custom/ep_import/data/derangements.csv
@@ -18,7 +18,9 @@ source:
     -
       description: Description
     -
-      weight: Weight
+      book: Book
+    -
+      page: Page
   keys:
     - title
   constants:
@@ -37,10 +39,17 @@ process:
     entity_type: lookup
     ignore_case: true
   field_description/value: description
-  field_weight:
+  field_source/target_id:
+    plugin: entity_lookup
+    entity_type: node
+    bundle: source
+    bundle_key: type
+    value_key: field_code
+    source: book
+  field_source/quantity:
     plugin: skip_on_empty
     method: process
-    source: weight
+    source: page
 destination:
   plugin: 'entity:node'
 migration_dependencies:
