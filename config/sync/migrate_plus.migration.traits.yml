@@ -1,43 +1,63 @@
-uuid: f49c0019-a0f3-4b65-b800-cf823c871321
+uuid: 6ceeac19-0689-455e-8548-f04c586791c5
 langcode: en
 status: true
 dependencies: {  }
-id: derangements
+id: traits
 migration_tags: null
 migration_group: eldrich
-label: Derangements
+label: 'Ego and Morph Traits'
 source:
   plugin: csv
-  path: modules/custom/ep_import/data/derangements.csv
+  path: modules/custom/ep_import/data/traits.csv
   header_row_count: 1
   column_names:
     -
       title: Title
     -
-      type: Type
+      cost: Cost
     -
       description: Description
+    -
+      ego: Ego
+    -
+      morph: Morph
+    -
+      skills: Skills
+    -
+      stats: Stats
     -
       book: Book
     -
       page: Page
   keys:
     - title
-  constants:
-    format: basic_html
 process:
   title: title
   type:
     plugin: default_value
-    default_value: derangement
-  field_type:
+    default_value: trait
+  field_psi_skill/target_id:
     plugin: entity_lookup
-    source: type
-    value_key: title
+    entity_type: node
+    bundle: skill
     bundle_key: type
-    bundle: derangement_magnitude
-    entity_type: lookup
-    ignore_case: true
+    value_key: title
+    source: skill
+  field_ego_trait:
+    plugin: static_map
+    source: active
+    map:
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
+  field_morph_trait:
+    plugin: static_map
+    source: active
+    map:
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
+  field_cp_cost: cost
   field_description/value: description
   field_source/target_id:
     plugin: entity_lookup
@@ -54,4 +74,5 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
+    - skills
     - lookup_tables

@@ -7,7 +7,7 @@ _core:
 id: lookup_tables
 migration_tags: null
 migration_group: eldrich
-label: 'Basic lookup tables for other content types'
+label: 'Basic lookup tables'
 source:
   plugin: csv
   path: modules/custom/ep_import/data/data-tables.csv

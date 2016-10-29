@@ -25,5 +25,6 @@ hidden:
   field_morph_type: true
   field_skills: true
   field_source: true
+  field_stat_limits: true
   field_stats: true
   field_traits: true

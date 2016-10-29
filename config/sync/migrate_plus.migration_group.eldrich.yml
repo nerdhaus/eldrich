@@ -6,7 +6,7 @@ _core:
   default_config_hash: fKjKTGuBq_nMlMspi2Bs1nG9wyy3TxtXrhpvn7ENvIg
 id: eldrich
 label: 'Eldrich Black'
-description: 'Initial content for the Eldrich Black site.'
+description: 'Eldrich Black game content.'
 source_type: csv
 module: null
 shared_configuration: null

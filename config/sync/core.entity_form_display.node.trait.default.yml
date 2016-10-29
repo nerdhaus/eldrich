@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.trait.field_allowed_morphs
     - field.field.node.trait.field_cp_cost
     - field.field.node.trait.field_description
     - field.field.node.trait.field_ego_trait
@@ -54,11 +53,6 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
-  field_allowed_morphs:
-    weight: 9
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
   field_cp_cost:
     weight: 8
     settings:

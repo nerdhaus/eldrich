@@ -90,6 +90,17 @@ process:
     plugin: skip_on_empty
     method: process
     source: description
+  field_source/target_id:
+    plugin: entity_lookup
+    entity_type: node
+    bundle: source
+    bundle_key: type
+    value_key: field_code
+    source: book
+  field_source/quantity:
+    plugin: skip_on_empty
+    method: process
+    source: page
 destination:
   plugin: 'entity:node'
 migration_dependencies:

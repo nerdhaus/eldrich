@@ -167,4 +167,5 @@ content:
     type: entity_reference_override_label
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_augmentations: true
