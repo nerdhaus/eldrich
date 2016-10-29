@@ -65,29 +65,15 @@ process:
       'FALSE': 0
     default_value: 0
   'field_example_fields[]/value':
-    -
-      plugin: skip_on_empty
-      method: process
-      source: fields
-    -
-      plugin: explode
-      delimiter: ','
+    plugin: explode
+    delimiter: ,
+    source: fields
   'field_specializations[]/value':
-    -
-      plugin: skip_on_empty
-      method: process
-      source: specializations
-    -
-      plugin: explode
-      delimiter: ','
-  field_description/value:
-    plugin: skip_on_empty
-    method: process
-    source: description
-  field_usage/value:
-    plugin: skip_on_empty
-    method: process
-    source: usage
+    plugin: explode
+    delimiter: ,
+    source: specializations
+  field_description/value: description
+  field_usage/value: usage
 destination:
   plugin: 'entity:node'
 migration_dependencies:

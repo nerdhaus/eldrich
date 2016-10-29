@@ -36,23 +36,16 @@ process:
   type:
     plugin: default_value
     default_value: trait
-  field_psi_skill/target_id:
-    plugin: entity_lookup
-    entity_type: node
-    bundle: skill
-    bundle_key: type
-    value_key: title
-    source: skill
   field_ego_trait:
     plugin: static_map
-    source: active
+    source: ego
     map:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
   field_morph_trait:
     plugin: static_map
-    source: active
+    source: morph
     map:
       'TRUE': 1
       'FALSE': 0

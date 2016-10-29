@@ -694,16 +694,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.6.0",
+            "version": "v1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "f8af318d14bdb0eff0336795b428b547bd39ccb6"
+                "reference": "b6f544a20f4807e81f7044d31e679ccbb1866dc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/f8af318d14bdb0eff0336795b428b547bd39ccb6",
-                "reference": "f8af318d14bdb0eff0336795b428b547bd39ccb6",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/b6f544a20f4807e81f7044d31e679ccbb1866dc3",
+                "reference": "b6f544a20f4807e81f7044d31e679ccbb1866dc3",
                 "shasum": ""
             },
             "require": {
@@ -760,7 +760,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-12-31 16:37:02"
+            "time": "2016-10-29 11:16:17"
         },
         {
             "name": "doctrine/collections",
@@ -1616,7 +1616,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/eck",
-                "reference": "01a8fc84dd72bf07d09e905a9ae9eaa106595ff3"
+                "reference": "54301862124e01a87355fbb594a5143fdac0857f"
             },
             "require": {
                 "drupal/core": "^8"
@@ -1627,8 +1627,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha1+19-dev",
-                    "datestamp": "1477685339"
+                    "version": "8.x-1.0-alpha1+20-dev",
+                    "datestamp": "1477731840"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1675,7 +1675,7 @@
                 "source": "http://git.drupal.org/project/eck.git",
                 "issues": "https://www.drupal.org/project/issues/eck"
             },
-            "time": "2016-10-28 20:01:58"
+            "time": "2016-10-29 09:01:39"
         },
         {
             "name": "drupal/embed",
@@ -1912,7 +1912,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_reference_quantity",
-                "reference": "77eaa83c3a53f281fd820d4921bd8604e7d7488e"
+                "reference": "ae01e0cb17eb384779d68e7decb16f4b7ac73df7"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -1924,7 +1924,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1477013939"
+                    "datestamp": "1477729140"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1942,7 +1942,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_reference_quantity"
             },
-            "time": "2016-10-21 01:35:58"
+            "time": "2016-10-29 08:18:12"
         },
         {
             "name": "drupal/entity_reference_revisions",
@@ -1955,7 +1955,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/entity_reference_revisions-8.x-1.0.zip",
-                "reference": null,
+                "reference": "8.x-1.0",
                 "shasum": "85d5c182208beb4358fe3943a624182f590d1e0d"
             },
             "require": {
