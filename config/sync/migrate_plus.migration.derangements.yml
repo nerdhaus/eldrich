@@ -5,7 +5,7 @@ dependencies: {  }
 id: derangements
 migration_tags: null
 migration_group: eldrich
-label: 'Content sources'
+label: 'Derangements'
 source:
   plugin: csv
   path: modules/custom/ep_import/data/derangements.csv
