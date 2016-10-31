@@ -1,0 +1,82 @@
+uuid: ce7d18d9-32ee-4bb5-b40f-45a61945c625
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.augmentation.field_allowed_morphs
+    - field.field.node.augmentation.field_armor_value
+    - field.field.node.augmentation.field_conditional
+    - field.field.node.augmentation.field_cost
+    - field.field.node.augmentation.field_description
+    - field.field.node.augmentation.field_source
+    - field.field.node.augmentation.field_stats
+    - field.field.node.augmentation.field_weapon_damage
+    - node.type.augmentation
+  module:
+    - entity_reference_quantity
+    - ep_complex_values
+    - ep_statblock
+    - text
+    - user
+id: node.augmentation.default
+targetEntityType: node
+bundle: augmentation
+mode: default
+content:
+  field_allowed_morphs:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_armor_value:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: armor_text
+  field_conditional:
+    weight: 108
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_cost:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  field_description:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_source:
+    weight: 107
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  field_stats:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+  field_weapon_damage:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: damage_text
+  links:
+    weight: 100
+hidden: {  }

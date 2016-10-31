@@ -1,0 +1,18 @@
+uuid: 6e202895-2815-420f-bd6f-5ea74ad6e6b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.augmentation
+id: node.augmentation.title
+field_name: title
+entity_type: node
+bundle: augmentation
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

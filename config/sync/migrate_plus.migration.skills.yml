@@ -66,11 +66,11 @@ process:
     default_value: 0
   'field_example_fields[]/value':
     plugin: explode
-    delimiter: ,
+    delimiter: ','
     source: fields
   'field_specializations[]/value':
     plugin: explode
-    delimiter: ,
+    delimiter: ','
     source: specializations
   field_description/value: description
   field_usage/value: usage

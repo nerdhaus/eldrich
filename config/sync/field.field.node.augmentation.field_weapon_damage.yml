@@ -1,0 +1,21 @@
+uuid: 9c8dd4e5-a7f5-43bb-947a-a99cee5e56ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weapon_damage
+    - node.type.augmentation
+  module:
+    - ep_complex_values
+id: node.augmentation.field_weapon_damage
+field_name: field_weapon_damage
+entity_type: node
+bundle: augmentation
+label: 'Weapon Damage'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: damage_value

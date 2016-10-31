@@ -1,0 +1,21 @@
+uuid: f97badff-6855-416a-8931-aa0c2b3652a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.augmentation
+  module:
+    - text
+id: node.augmentation.field_description
+field_name: field_description
+entity_type: node
+bundle: augmentation
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,17 @@
+uuid: 795307fe-9100-4234-b75a-961afeb5f45c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.weapon
+  module:
+    - user
+id: node.weapon.teaser
+targetEntityType: node
+bundle: weapon
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden: {  }

@@ -1,0 +1,115 @@
+uuid: d5d3a658-5a59-4049-abd6-f029daae2db5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.augmentation.field_allowed_morphs
+    - field.field.node.augmentation.field_armor_value
+    - field.field.node.augmentation.field_conditional
+    - field.field.node.augmentation.field_cost
+    - field.field.node.augmentation.field_description
+    - field.field.node.augmentation.field_source
+    - field.field.node.augmentation.field_stats
+    - field.field.node.augmentation.field_weapon_damage
+    - node.type.augmentation
+  module:
+    - entity_reference_quantity
+    - ep_complex_values
+    - ep_statblock
+    - path
+    - text
+id: node.augmentation.default
+targetEntityType: node
+bundle: augmentation
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  field_allowed_morphs:
+    weight: 33
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_armor_value:
+    weight: 35
+    settings: {  }
+    third_party_settings: {  }
+    type: armor_widget
+  field_conditional:
+    weight: 38
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_cost:
+    weight: 32
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_quantity_autocomplete
+  field_description:
+    weight: 31
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_source:
+    weight: 37
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_quantity_autocomplete
+  field_stats:
+    weight: 34
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+  field_weapon_damage:
+    weight: 36
+    settings: {  }
+    third_party_settings: {  }
+    type: damage_widget
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

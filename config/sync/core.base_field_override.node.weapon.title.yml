@@ -1,0 +1,18 @@
+uuid: 30f116dc-ceef-4391-a464-686ba7cc913c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.weapon
+id: node.weapon.title
+field_name: title
+entity_type: node
+bundle: weapon
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

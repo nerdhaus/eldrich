@@ -1,0 +1,23 @@
+uuid: 89838d04-a7e3-4806-b53f-117da9ad3404
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conditional
+    - node.type.augmentation
+id: node.augmentation.field_conditional
+field_name: field_conditional
+entity_type: node
+bundle: augmentation
+label: Conditional
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Augmentation is conditional, or must be activated'
+  off_label: 'Augmentation is active at all times'
+field_type: boolean

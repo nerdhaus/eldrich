@@ -1,0 +1,29 @@
+uuid: 203c9f4a-ed0d-430c-a9e4-8071d62aee16
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.area_effect
+    - field.storage.node.field_weapon_area_effect
+    - node.type.weapon
+id: node.weapon.field_weapon_area_effect
+field_name: field_weapon_area_effect
+entity_type: node
+bundle: weapon
+label: 'Area Effect'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:lookup'
+  handler_settings:
+    target_bundles:
+      area_effect: area_effect
+    sort:
+      field: field_weight
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

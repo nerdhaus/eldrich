@@ -1,0 +1,25 @@
+uuid: b4090bfd-9a8a-494b-ab9b-6ee75d26e6eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_linked_skill
+    - node.type.weapon
+id: node.weapon.field_linked_skill
+field_name: field_linked_skill
+entity_type: node
+bundle: weapon
+label: 'Linked Skill'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: select_lists
+      display_name: skills
+      arguments: {  }
+field_type: entity_reference

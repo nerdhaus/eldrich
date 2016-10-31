@@ -1,0 +1,17 @@
+uuid: 95fd2b71-d8fd-4519-a645-8613b5e57fa3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.augmentation
+  module:
+    - user
+id: node.augmentation.teaser
+targetEntityType: node
+bundle: augmentation
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden: {  }
