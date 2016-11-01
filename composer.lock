@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5b62543b7cb0b1bbb97a71b5847a8d71",
-    "content-hash": "c39777c5150b0d67a1be0ac0a0545a5f",
+    "hash": "1c2eab2214c992202f7b881aad4b954b",
+    "content-hash": "706434c3a446fd6d3ae8841569587abb",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1616,7 +1616,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/eck",
-                "reference": "54301862124e01a87355fbb594a5143fdac0857f"
+                "reference": "8c8b545022c81695ed13cc3c2511dddda31f5774"
             },
             "require": {
                 "drupal/core": "^8"
@@ -1627,8 +1627,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha1+20-dev",
-                    "datestamp": "1477731840"
+                    "version": "8.x-1.0-alpha1+23-dev",
+                    "datestamp": "1477854239"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1675,7 +1675,7 @@
                 "source": "http://git.drupal.org/project/eck.git",
                 "issues": "https://www.drupal.org/project/issues/eck"
             },
-            "time": "2016-10-29 09:01:39"
+            "time": "2016-10-30 19:01:36"
         },
         {
             "name": "drupal/embed",
@@ -1739,7 +1739,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_browser",
-                "reference": "ccc949f9bd09c032034910b57e61dbfded4d32c2"
+                "reference": "30b53f390e99de13ee312a5e5f273f8231820bff"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -1758,8 +1758,8 @@
                     "dev-8.x-1.x": "8.1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha9+17-dev",
-                    "datestamp": "1476965639"
+                    "version": "8.x-1.0-alpha10+1-dev",
+                    "datestamp": "1478023440"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1806,7 +1806,7 @@
                 "issues": "http://drupal.org/project/issues/entity_browser",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "time": "2016-10-20 12:09:32"
+            "time": "2016-11-01 17:58:21"
         },
         {
             "name": "drupal/entity_embed",
@@ -2305,6 +2305,48 @@
                 "source": "http://cgit.drupalcode.org/pathauto"
             },
             "time": "2016-10-12 14:18:39"
+        },
+        {
+            "name": "drupal/range",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/range",
+                "reference": "8b5bf301a569a5700ae8b41b83657d1b9b980490"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1-beta3+0-dev",
+                    "datestamp": "1473089339"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Taran2L",
+                    "homepage": "https://www.drupal.org/user/473438"
+                },
+                {
+                    "name": "ribel",
+                    "homepage": "https://www.drupal.org/user/1449610"
+                }
+            ],
+            "description": "Defines a numeric range field type.",
+            "homepage": "https://www.drupal.org/project/range",
+            "support": {
+                "source": "http://cgit.drupalcode.org/range"
+            },
+            "time": "2016-09-05 15:24:51"
         },
         {
             "name": "drupal/token",
@@ -6797,7 +6839,8 @@
         "drupal/field_group": 20,
         "drupal/ctools": 20,
         "drupal/migrate_source_csv": 20,
-        "drupal/pathauto": 20
+        "drupal/pathauto": 20,
+        "drupal/range": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
