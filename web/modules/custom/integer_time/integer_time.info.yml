@@ -1,0 +1,5 @@
+name: Integer Time
+type: module
+description: Store timespans in integer fields
+core: 8.x
+package: Custom

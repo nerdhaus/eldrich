@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains integer_time.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function integer_time_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the integer_time module.
+    case 'help.page.integer_time':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Store timespans in integer fields') . '</p>';
+      return $output;
+
+    default:
+  }
+}

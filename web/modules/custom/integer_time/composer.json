@@ -1,0 +1,14 @@
+{
+  "name": "drupal/integer_time",
+  "type": "drupal-module",
+  "description": "Store timespans in integer fields",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/integer_time",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/integer_time",
+    "source": "http://cgit.drupalcode.org/integer_time"
+  },
+  "require": { }
+}
