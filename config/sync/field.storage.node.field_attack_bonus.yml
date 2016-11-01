@@ -1,0 +1,20 @@
+uuid: 34ab1741-1cfc-4a3f-8f28-07b657838b63
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_attack_bonus
+field_name: field_attack_bonus
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

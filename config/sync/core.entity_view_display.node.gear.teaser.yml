@@ -8,23 +8,13 @@ dependencies:
     - field.field.node.gear.field_category
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
-    - field.field.node.gear.field_linked_gear
     - field.field.node.gear.field_linked_skill
     - field.field.node.gear.field_mobility_type
     - field.field.node.gear.field_skills
     - field.field.node.gear.field_source
     - field.field.node.gear.field_speed
     - field.field.node.gear.field_stats
-    - field.field.node.gear.field_substance_delivery_mode
-    - field.field.node.gear.field_substance_stats
-    - field.field.node.gear.field_substance_type
     - field.field.node.gear.field_traits
-    - field.field.node.gear.field_weapon_area_effect
-    - field.field.node.gear.field_weapon_clip_size
-    - field.field.node.gear.field_weapon_damage
-    - field.field.node.gear.field_weapon_damage_type
-    - field.field.node.gear.field_weapon_firing_modes
-    - field.field.node.gear.field_weapon_range
     - node.type.gear
   module:
     - user
@@ -42,20 +32,10 @@ hidden:
   field_category: true
   field_cost: true
   field_description: true
-  field_linked_gear: true
   field_linked_skill: true
   field_mobility_type: true
   field_skills: true
   field_source: true
   field_speed: true
   field_stats: true
-  field_substance_delivery_mode: true
-  field_substance_stats: true
-  field_substance_type: true
   field_traits: true
-  field_weapon_area_effect: true
-  field_weapon_clip_size: true
-  field_weapon_damage: true
-  field_weapon_damage_type: true
-  field_weapon_firing_modes: true
-  field_weapon_range: true

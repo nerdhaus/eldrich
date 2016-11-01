@@ -1,0 +1,21 @@
+uuid: 5693eac7-73b0-441d-9747-832d531c5aa6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.substance
+  module:
+    - text
+id: node.substance.field_description
+field_name: field_description
+entity_type: node
+bundle: substance
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

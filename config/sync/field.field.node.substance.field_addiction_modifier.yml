@@ -1,0 +1,23 @@
+uuid: b60ae19a-f43d-4f8f-a933-d971e8b3c11d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_addiction_modifier
+    - node.type.substance
+id: node.substance.field_addiction_modifier
+field_name: field_addiction_modifier
+entity_type: node
+bundle: substance
+label: 'Addiction Modifier'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

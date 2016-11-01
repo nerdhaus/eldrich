@@ -1,0 +1,23 @@
+uuid: 49022cbb-3818-4cd8-8a27-fd50d2b2ab6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_duration
+    - node.type.substance
+id: node.substance.field_duration
+field_name: field_duration
+entity_type: node
+bundle: substance
+label: Duration
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

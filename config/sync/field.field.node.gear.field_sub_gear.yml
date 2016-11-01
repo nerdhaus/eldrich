@@ -1,20 +1,21 @@
-uuid: 8ceab603-a902-4b89-888d-406d5285f458
+uuid: 8602988f-529a-4661-b81b-c014ec98fa5f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_linked_gear
+    - field.storage.node.field_sub_gear
+    - node.type.augmentation
     - node.type.gear
+    - node.type.substance
+    - node.type.weapon
   module:
     - entity_reference_override
-_core:
-  default_config_hash: ujLP6DhlpzMfWPIzywFUf98b3nOsdsuyUlZqJAsPce8
-id: node.gear.field_linked_gear
-field_name: field_linked_gear
+id: node.gear.field_sub_gear
+field_name: field_sub_gear
 entity_type: node
 bundle: gear
 label: 'Linked Gear'
-description: 'Modifications, augmentations, or other gear built into a given piece of equipment.'
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -23,10 +24,13 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
+      augmentation: augmentation
       gear: gear
+      substance: substance
+      weapon: weapon
     sort:
       field: _none
     auto_create: 0
-    auto_create_bundle: ''
+    auto_create_bundle: augmentation
   override_label: Notes
 field_type: entity_reference_override

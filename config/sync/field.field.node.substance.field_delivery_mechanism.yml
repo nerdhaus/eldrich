@@ -1,0 +1,21 @@
+uuid: 1394b9c8-d072-4632-b2d2-62141d1a9221
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_delivery_mechanism
+    - node.type.substance
+id: node.substance.field_delivery_mechanism
+field_name: field_delivery_mechanism
+entity_type: node
+bundle: substance
+label: 'Delivery Mechanism'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings: {  }
+field_type: entity_reference

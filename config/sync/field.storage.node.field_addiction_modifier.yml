@@ -1,0 +1,20 @@
+uuid: bf8ed7db-e150-4d8a-b7e2-65849c0d739e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_addiction_modifier
+field_name: field_addiction_modifier
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,22 @@
+uuid: 5b9e539e-6b07-4148-b8a4-76b2d4992daf
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.substance
+id: node.substance.promote
+field_name: promote
+entity_type: node
+bundle: substance
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

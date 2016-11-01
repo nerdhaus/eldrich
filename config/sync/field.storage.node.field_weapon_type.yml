@@ -1,0 +1,33 @@
+uuid: 5996df52-32fc-4a1e-806d-38aa14740eaa
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_weapon_type
+field_name: field_weapon_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: weapon
+      label: Weapon
+    -
+      value: mod
+      label: Modification
+    -
+      value: ammo
+      label: Ammunition
+    -
+      value: grenade
+      label: Grenade/Seeker
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

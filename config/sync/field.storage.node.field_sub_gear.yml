@@ -1,14 +1,12 @@
-uuid: 8fbced5d-5de1-48d9-9db8-d3e309f3b592
+uuid: ff8ba6d5-2355-4dbf-9ccf-c1336730c09d
 langcode: en
 status: true
 dependencies:
   module:
     - entity_reference_override
     - node
-_core:
-  default_config_hash: 7RJUS1egnX92bcRVxCTjk2noqBF6mdIY6oUPBeI0U8Y
-id: node.field_linked_gear
-field_name: field_linked_gear
+id: node.field_sub_gear
+field_name: field_sub_gear
 entity_type: node
 type: entity_reference_override
 settings:

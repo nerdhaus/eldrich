@@ -7,23 +7,14 @@ dependencies:
     - field.field.node.gear.field_category
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
-    - field.field.node.gear.field_linked_gear
     - field.field.node.gear.field_linked_skill
     - field.field.node.gear.field_mobility_type
     - field.field.node.gear.field_skills
     - field.field.node.gear.field_source
     - field.field.node.gear.field_speed
     - field.field.node.gear.field_stats
-    - field.field.node.gear.field_substance_delivery_mode
-    - field.field.node.gear.field_substance_stats
-    - field.field.node.gear.field_substance_type
+    - field.field.node.gear.field_sub_gear
     - field.field.node.gear.field_traits
-    - field.field.node.gear.field_weapon_area_effect
-    - field.field.node.gear.field_weapon_clip_size
-    - field.field.node.gear.field_weapon_damage
-    - field.field.node.gear.field_weapon_damage_type
-    - field.field.node.gear.field_weapon_firing_modes
-    - field.field.node.gear.field_weapon_range
     - node.type.gear
   module:
     - entity_reference_override
@@ -32,7 +23,6 @@ dependencies:
     - ep_skill_reference
     - ep_statblock
     - field_group
-    - inline_entity_form
     - path
     - text
 third_party_settings:
@@ -143,14 +133,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
-  field_linked_gear:
-    weight: 15
-    settings:
-      match_operator: CONTAINS
-      size: '60'
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_override_autocomplete
   field_linked_skill:
     weight: 19
     settings: {  }
@@ -184,25 +166,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: stat_block_table
-  field_substance_delivery_mode:
-    weight: 18
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-  field_substance_stats:
-    weight: 19
+  field_sub_gear:
+    weight: 26
     settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      override_labels: false
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
     third_party_settings: {  }
-    type: inline_entity_form_simple
-  field_substance_type:
-    weight: 17
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
+    type: entity_reference_override_autocomplete
   field_traits:
     weight: 14
     settings:
@@ -211,37 +182,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
-  field_weapon_area_effect:
-    weight: 17
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
-  field_weapon_clip_size:
-    weight: 16
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
-  field_weapon_damage:
-    weight: 14
-    settings: {  }
-    third_party_settings: {  }
-    type: damage_widget
-  field_weapon_damage_type:
-    weight: 13
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-  field_weapon_firing_modes:
-    weight: 15
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-  field_weapon_range:
-    weight: 18
-    settings: {  }
-    third_party_settings: {  }
-    type: weapon_range_widget
   path:
     type: path
     weight: 8

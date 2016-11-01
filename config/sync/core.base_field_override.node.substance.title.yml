@@ -1,0 +1,18 @@
+uuid: 8ee5e95d-6b1a-44e2-829b-df4681cac12d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.substance
+id: node.substance.title
+field_name: title
+entity_type: node
+bundle: substance
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

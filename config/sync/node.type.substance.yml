@@ -1,0 +1,18 @@
+uuid: c6e5a099-8c6c-4c96-8ef8-a6582ca2ac05
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Substance
+type: substance
+description: 'A drug, toxin, or other chemical/nanosubstance.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

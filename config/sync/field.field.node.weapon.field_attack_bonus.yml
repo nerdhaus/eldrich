@@ -1,0 +1,23 @@
+uuid: 0bf5a25a-2da3-4b30-89d1-9a74b7bab391
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attack_bonus
+    - node.type.weapon
+id: node.weapon.field_attack_bonus
+field_name: field_attack_bonus
+entity_type: node
+bundle: weapon
+label: 'Attack Bonus'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

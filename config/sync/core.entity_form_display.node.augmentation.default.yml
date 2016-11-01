@@ -8,7 +8,9 @@ dependencies:
     - field.field.node.augmentation.field_conditional
     - field.field.node.augmentation.field_cost
     - field.field.node.augmentation.field_description
+    - field.field.node.augmentation.field_mobility_type
     - field.field.node.augmentation.field_source
+    - field.field.node.augmentation.field_speed
     - field.field.node.augmentation.field_stats
     - field.field.node.augmentation.field_weapon_damage
     - node.type.augmentation
@@ -62,6 +64,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_mobility_type:
+    weight: 39
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_source:
     weight: 37
     settings:
@@ -70,6 +80,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_quantity_autocomplete
+  field_speed:
+    weight: 40
+    settings: {  }
+    third_party_settings: {  }
+    type: mobility_speed_widget
   field_stats:
     weight: 34
     settings: {  }

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.weapon.field_attack_bonus
     - field.field.node.weapon.field_cost
     - field.field.node.weapon.field_description
     - field.field.node.weapon.field_linked_skill
@@ -12,10 +13,12 @@ dependencies:
     - field.field.node.weapon.field_weapon_damage_type
     - field.field.node.weapon.field_weapon_firing_modes
     - field.field.node.weapon.field_weapon_range
+    - field.field.node.weapon.field_weapon_type
     - node.type.weapon
   module:
     - entity_reference_quantity
     - ep_complex_values
+    - options
     - text
     - user
 id: node.weapon.default
@@ -23,6 +26,14 @@ targetEntityType: node
 bundle: weapon
 mode: default
 content:
+  field_attack_bonus:
+    weight: 111
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
   field_cost:
     weight: 102
     label: above
@@ -84,6 +95,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: weapon_range_formatter
+  field_weapon_type:
+    weight: 110
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
   links:
     weight: 100
 hidden: {  }
