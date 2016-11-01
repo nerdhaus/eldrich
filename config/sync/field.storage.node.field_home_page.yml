@@ -1,12 +1,9 @@
-uuid: 03ec1a0e-20dc-4955-a1cf-f5527176a211
 langcode: en
 status: true
 dependencies:
   module:
     - link
     - node
-_core:
-  default_config_hash: HO1LvioS1d74TTipDbhrSKi8DZSGRSHAOKzqtqiogn4
 id: node.field_home_page
 field_name: field_home_page
 entity_type: node

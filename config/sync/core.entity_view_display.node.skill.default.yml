@@ -1,4 +1,3 @@
-uuid: ad8933b6-0217-4210-b533-4b813dde2d10
 langcode: en
 status: true
 dependencies:
@@ -17,8 +16,6 @@ dependencies:
     - entity_reference_quantity
     - text
     - user
-_core:
-  default_config_hash: 5X05CXXN92yXnJoXgNJnv8qIP65S5sC1AySUcAoAJiw
 id: node.skill.default
 targetEntityType: node
 bundle: skill

@@ -1,12 +1,9 @@
-uuid: 93a51b32-727b-4ff1-ad25-89f43c145032
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.component.muse_data
     - field.storage.component.field_name
-_core:
-  default_config_hash: '-FCQO_s7ic5S6vY5EruIGztmsfsDT_C6OiiS9URQQ3U'
 id: component.muse_data.field_name
 field_name: field_name
 entity_type: component

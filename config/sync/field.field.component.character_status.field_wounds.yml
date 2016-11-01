@@ -1,12 +1,9 @@
-uuid: daf2afcd-fe7c-42f4-8154-b33b7f2d84c4
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.component.character_status
     - field.storage.component.field_wounds
-_core:
-  default_config_hash: NWwKxQAr3qwdMy4AphrECjlZ7jcIsEe2adJWYM8j1XA
 id: component.character_status.field_wounds
 field_name: field_wounds
 entity_type: component

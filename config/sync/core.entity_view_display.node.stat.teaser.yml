@@ -1,4 +1,3 @@
-uuid: 057cb65c-6327-4cff-af22-af4aefd8a010
 langcode: en
 status: true
 dependencies:
@@ -14,8 +13,6 @@ dependencies:
     - node.type.stat
   module:
     - user
-_core:
-  default_config_hash: HD7pu0NPO70aqusnFgH-iFl3guU1Uou9SrkLMVfJK-8
 id: node.stat.teaser
 targetEntityType: node
 bundle: stat

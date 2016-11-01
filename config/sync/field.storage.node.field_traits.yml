@@ -1,12 +1,9 @@
-uuid: 40cf1020-f9e0-41ff-a5c6-51532ade8eac
 langcode: en
 status: true
 dependencies:
   module:
     - entity_reference_override
     - node
-_core:
-  default_config_hash: xdCkzPdTaIZyU8aJ8Ag-UWiOZoTPys7DEj7D_8JUYtQ
 id: node.field_traits
 field_name: field_traits
 entity_type: node

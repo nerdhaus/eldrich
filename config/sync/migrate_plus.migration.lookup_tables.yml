@@ -1,9 +1,6 @@
-uuid: 24c22924-878d-4b82-ad11-d92f5bccea01
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: Zbto05JHSowLq5ZY6fw3MpSZjTyLlSHDYhJOSzqTNM4
 id: lookup_tables
 migration_tags: null
 migration_group: eldrich

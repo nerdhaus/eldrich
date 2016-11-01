@@ -1,4 +1,3 @@
-uuid: 39a09b0f-3216-43c0-a1ce-edd429d5aacb
 langcode: en
 status: true
 dependencies:
@@ -13,8 +12,6 @@ dependencies:
   module:
     - entity_reference_override
     - text
-_core:
-  default_config_hash: RKHwIDqVcVKnDNzbV4LqBfiBVddGtLs5nFpQLNJRQxE
 id: component.character_status.default
 targetEntityType: component
 bundle: character_status

@@ -1,4 +1,3 @@
-uuid: 9a7a1bef-0555-4146-afe5-3fab98e44552
 langcode: en
 status: true
 dependencies:
@@ -12,8 +11,6 @@ dependencies:
     - entity_reference_quantity
     - text
     - user
-_core:
-  default_config_hash: 85i_GKV0l8IzVMpLymldePM0SNjp7rjztBx0ecnhOKo
 id: node.derangement.default
 targetEntityType: node
 bundle: derangement

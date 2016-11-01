@@ -1,11 +1,8 @@
-uuid: eb223fb6-c8d7-40e0-ae5e-2f712653ec27
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: U2tSALnXlU9Da6vpICX3J4GjHl9M4yKmAkdRiYRKe2A
 id: node.field_is_ego_stat
 field_name: field_is_ego_stat
 entity_type: node

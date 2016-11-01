@@ -1,4 +1,3 @@
-uuid: db707cb7-fc0f-403c-a5b9-42439f995e13
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - taxonomy.vocabulary.gear
   module:
     - entity_reference_quantity
-_core:
-  default_config_hash: UMv8aalGOW0upywMjWmf_8eG9FJfeeG3ww_Qq8FFE8E
 id: taxonomy_term.gear.field_source
 field_name: field_source
 entity_type: taxonomy_term

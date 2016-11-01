@@ -1,12 +1,9 @@
-uuid: bf8dc603-b4c3-4cf7-aa28-b76d36608185
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - user
-_core:
-  default_config_hash: uE8LZGCwsVelYQk-Ac2jUKyrLdYtbCXTd9cx36Efxcs
 id: node.field_player
 field_name: field_player
 entity_type: node

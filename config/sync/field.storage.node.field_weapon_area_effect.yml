@@ -1,12 +1,9 @@
-uuid: 741934df-7b9c-4243-807a-484d0aafe5b4
 langcode: en
 status: true
 dependencies:
   module:
     - eck
     - node
-_core:
-  default_config_hash: gOsr2c6gYebweyMhe2feNtMXekgkYzIkHt5APpfnyTM
 id: node.field_weapon_area_effect
 field_name: field_weapon_area_effect
 entity_type: node

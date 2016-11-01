@@ -1,11 +1,8 @@
-uuid: 5a31751c-0cb1-468c-9575-c1ee62236377
 langcode: en
 status: true
 dependencies:
   module:
     - eck
-_core:
-  default_config_hash: 0zH328wb_hzih0B0KtleivSY8fzUJWJE1iGaFtEQkls
 id: component.field_traumas
 field_name: field_traumas
 entity_type: component

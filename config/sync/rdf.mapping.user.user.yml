@@ -1,11 +1,8 @@
-uuid: 563c4fd8-86c8-4b31-848c-c4367980f6c9
 langcode: en
 status: true
 dependencies:
   module:
     - user
-_core:
-  default_config_hash: TGTlmpYAtXxjtYMFA_A0vosE2c4R5MCQwLviIA5HUM0
 id: user.user
 targetEntityType: user
 bundle: user

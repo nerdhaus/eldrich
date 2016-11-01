@@ -1,4 +1,3 @@
-uuid: 14ac7de0-5f30-4304-85e1-75f03d7a5bc2
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - field.field.lookup.psi_range.field_weight
   module:
     - text
-_core:
-  default_config_hash: QCrWg5zKIsH_r8x2kwBAQLDWp0SRUrpr1U_ou7XV-OY
 id: lookup.psi_range.default
 targetEntityType: lookup
 bundle: psi_range

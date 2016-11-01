@@ -1,11 +1,8 @@
-uuid: d6911b9c-5900-4296-a349-8cccd564c608
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_entity_type.lookup
-_core:
-  default_config_hash: EVVeZPMxOQZ0qW4xN0xHlk0x1Cuw5F4SsovKfPRA0Hk
 name: 'Damage Type'
 type: damage_type
 description: ''

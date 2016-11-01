@@ -1,12 +1,9 @@
-uuid: c756d302-6585-4078-941e-2ebd15f16601
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_cp_cost
     - node.type.trait
-_core:
-  default_config_hash: gaKxnU0asJ2E0GVUzSuW7u1jlmJ2jPP0fT7UKT7mVqo
 id: node.trait.field_cp_cost
 field_name: field_cp_cost
 entity_type: node

@@ -1,9 +1,6 @@
-uuid: ba73fc24-76a3-484b-a793-bf7016f724bb
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: u7FjlTwW5jiaMw9ZR8DVk34dGvyhHgYxDbUyVGOEhac
 id: lookup
 label: 'Lookup Table'
 created: false

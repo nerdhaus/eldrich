@@ -1,4 +1,3 @@
-uuid: b002fed6-cfda-43bf-8af9-2521b72cf4c3
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - field.storage.node.field_linked_skill
     - node.type.gear
     - node.type.skill
-_core:
-  default_config_hash: fHELqnQ7sJvS_BeIVfum0qPTHYQr4uDT8jrLMFPy-Jw
 id: node.gear.field_linked_skill
 field_name: field_linked_skill
 entity_type: node

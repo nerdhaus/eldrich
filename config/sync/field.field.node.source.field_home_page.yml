@@ -1,4 +1,3 @@
-uuid: bd21c9b9-c156-424b-ae85-a9b8fabda2e4
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - node.type.source
   module:
     - link
-_core:
-  default_config_hash: xqxPPkW7ipzH_RLQh1s0sG1YWWWiiw0_TMW2YsMfo1Y
 id: node.source.field_home_page
 field_name: field_home_page
 entity_type: node

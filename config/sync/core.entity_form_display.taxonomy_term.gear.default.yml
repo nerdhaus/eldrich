@@ -1,4 +1,3 @@
-uuid: db8dead1-2f59-4365-9c22-4283b6f2b178
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ dependencies:
     - entity_reference_quantity
     - path
     - text
-_core:
-  default_config_hash: 3rdeGT75D7J3BgzYORr7AojKS1o9EO-ZhZqPQCCrryc
 id: taxonomy_term.gear.default
 targetEntityType: taxonomy_term
 bundle: gear

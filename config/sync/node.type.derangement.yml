@@ -1,4 +1,3 @@
-uuid: 70c7d660-eb9c-4e22-9aba-a46454459bee
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-_core:
-  default_config_hash: QyFrF0u7BTiegQmiZPjp5ihS30Gri7ySFJw1__j0ysk
 name: Derangement
 type: derangement
 description: 'A temporary psychological effect triggered by stress and trauma. Covers both derangement and long-term disorders.'

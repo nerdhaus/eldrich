@@ -1,4 +1,3 @@
-uuid: 4e8a94f7-4f1e-48f7-965a-8b13241e751a
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - node.type.gear
   module:
     - ep_statblock
-_core:
-  default_config_hash: B6ibOH4jqc0TErWGcAjlZ2pd_6-GjL-AKtriQn3MK8A
 id: node.gear.field_stats
 field_name: field_stats
 entity_type: node

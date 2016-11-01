@@ -1,4 +1,3 @@
-uuid: 58282c72-622c-4627-b1d5-3faf58bb8191
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - field.field.lookup.skill_category.field_weight
   module:
     - text
-_core:
-  default_config_hash: sDiAtwL2SaioyscdVo9gGfyRIMYOVwNZAW9mH2q3Af8
 id: lookup.skill_category.default
 targetEntityType: lookup
 bundle: skill_category

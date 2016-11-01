@@ -1,4 +1,3 @@
-uuid: 392721a9-5a66-4ba4-9576-d0029ab3178a
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-_core:
-  default_config_hash: Dcl6YFfyBj9VQG-AliEWDg7thb1fIv23FoR1nWMip1M
 name: Source
 type: source
 description: 'An Eclipse Phase sourcebook or third-party product. Used to separate house rules and community add-ons from canon EP material.'

@@ -1,11 +1,8 @@
-uuid: ab35844c-ce6f-4f1f-99bc-23684a7c1238
 langcode: en
 status: true
 dependencies:
   module:
     - eck
-_core:
-  default_config_hash: aG3UzbIsuY0pvcHEjTAELZJM6UL8srL6uj1_fAQ1mVg
 id: component.field_wounds
 field_name: field_wounds
 entity_type: component

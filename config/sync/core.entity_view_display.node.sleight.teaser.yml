@@ -1,4 +1,3 @@
-uuid: e4474bf5-ab52-49b5-a71d-4a2c0696431d
 langcode: en
 status: true
 dependencies:
@@ -15,8 +14,6 @@ dependencies:
     - node.type.sleight
   module:
     - user
-_core:
-  default_config_hash: Y6CwP8kAs0C_P3QOwwif2MUeC4K8Is02LGMdXnZOQZs
 id: node.sleight.teaser
 targetEntityType: node
 bundle: sleight

@@ -1,9 +1,6 @@
-uuid: 3370debf-442a-4a5b-a7a1-9a534dd1be17
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 7Q4xraUy2ty-Q2BPDyOxQF-WscuF7SK0lSjz8QzS-tM
 id: gear_taxonomy
 migration_tags: null
 migration_group: eldrich

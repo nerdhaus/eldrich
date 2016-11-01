@@ -1,11 +1,8 @@
-uuid: 6663a508-315d-4e37-a7de-14fcf3a08694
 langcode: en
 status: true
 dependencies:
   module:
     - eck
-_core:
-  default_config_hash: GiljszzRa4oV62bWMr3AeqOTPMHIv7iSdzM4vjkURR4
 id: component.field_gender_identity
 field_name: field_gender_identity
 entity_type: component

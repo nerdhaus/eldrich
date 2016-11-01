@@ -1,4 +1,3 @@
-uuid: b640a6e9-9288-47a2-a678-b53e68d7df74
 langcode: en
 status: true
 dependencies:
@@ -99,8 +98,6 @@ third_party_settings:
         classes: ''
         id: ''
         required_fields: true
-_core:
-  default_config_hash: 6rWF6Br61fGceD4bdBFqZKZJofJoZMtqUeEDAZPy4Ak
 id: node.gear.default
 targetEntityType: node
 bundle: gear

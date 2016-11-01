@@ -1,12 +1,9 @@
-uuid: bf77fe50-bbbd-4d3e-a0ca-240714f438ca
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_no_defaulting
     - node.type.skill
-_core:
-  default_config_hash: yYrJ9ly16AlsURSSduxenQd-b464JMo80G9wFHeQU2Q
 id: node.skill.field_no_defaulting
 field_name: field_no_defaulting
 entity_type: node

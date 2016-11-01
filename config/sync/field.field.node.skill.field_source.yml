@@ -1,4 +1,3 @@
-uuid: 975b611c-f194-44f4-907a-b75689895aa4
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - node.type.source
   module:
     - entity_reference_quantity
-_core:
-  default_config_hash: sEM_-hn5jDZhhsD5BerSVLfMo5lWjdocS4ocGQEuIe4
 id: node.skill.field_source
 field_name: field_source
 entity_type: node

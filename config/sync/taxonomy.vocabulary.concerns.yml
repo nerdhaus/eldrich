@@ -1,9 +1,6 @@
-uuid: 82ac1ddb-6253-4b38-a460-586ab1d1c769
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: ZVGTP_NLe7TK04Wj9PKXkGrwnLpBO5YpI-DRSrKOZ5k
 name: Concerns
 vid: concerns
 description: 'Memes, business interests, and ideologies'

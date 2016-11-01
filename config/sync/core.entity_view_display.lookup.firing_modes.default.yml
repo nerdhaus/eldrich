@@ -1,4 +1,3 @@
-uuid: 6662abc0-da1d-45ae-aece-e50b55c2face
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ dependencies:
     - field.field.lookup.firing_modes.field_weight
   module:
     - text
-_core:
-  default_config_hash: INcFPywR_15sLJyR_H_unP4R0XYPGqev-p2Ul4mxNcQ
 id: lookup.firing_modes.default
 targetEntityType: lookup
 bundle: firing_modes

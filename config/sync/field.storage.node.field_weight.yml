@@ -1,11 +1,8 @@
-uuid: c385fda2-00ef-4b1e-90ac-a9bf80032b5e
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: QoIpBeU5nucjrjauYwt_aQtMmHHbFjGrdiZ2gdi23BE
 id: node.field_weight
 field_name: field_weight
 entity_type: node

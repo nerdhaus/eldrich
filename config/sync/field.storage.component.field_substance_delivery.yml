@@ -1,11 +1,8 @@
-uuid: 59b9c877-186a-43d0-8273-d1656456388b
 langcode: en
 status: true
 dependencies:
   module:
     - eck
-_core:
-  default_config_hash: ujpBd_zA3mnFDOspAly77Y7jhBjMaSEwXrH_r-dBJjU
 id: component.field_substance_delivery
 field_name: field_substance_delivery
 entity_type: component

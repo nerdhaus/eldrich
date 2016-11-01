@@ -1,4 +1,3 @@
-uuid: 2fc870c3-c6b6-4738-9d0d-5ecca4d38d97
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - node.type.skill
   module:
     - ep_skill_reference
-_core:
-  default_config_hash: yaVsXJuAaNHekrAO6A7L3soPR1so5fR4V7K2EYz0TEo
 id: component.muse_data.field_skills
 field_name: field_skills
 entity_type: component

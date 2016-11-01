@@ -1,4 +1,3 @@
-uuid: b4ca3fd9-a623-412f-98dd-12dbb6d51671
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - node.type.gear
   module:
     - ep_complex_values
-_core:
-  default_config_hash: oNrpAeVG72kYyLv9vzotbmWpV5I6c9TMk1SrzoE1QwU
 id: node.gear.field_speed
 field_name: field_speed
 entity_type: node

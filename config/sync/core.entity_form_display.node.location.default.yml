@@ -1,4 +1,3 @@
-uuid: 6d76b6a8-9604-4261-80a8-5da8dd8ca048
 langcode: en
 status: true
 dependencies:
@@ -13,8 +12,6 @@ dependencies:
     - entity_reference_quantity
     - path
     - text
-_core:
-  default_config_hash: 2R6KGxmh3ESHbWlgKbA4_Ae-qnkt9OELxv3KU_U6W7s
 id: node.location.default
 targetEntityType: node
 bundle: location

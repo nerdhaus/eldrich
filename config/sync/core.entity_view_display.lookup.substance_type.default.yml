@@ -1,4 +1,3 @@
-uuid: 54032228-e192-4a61-ad8c-a9fb59747b10
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - field.field.lookup.substance_type.field_weight
   module:
     - text
-_core:
-  default_config_hash: bNGgEBz3hqbzo9vPKw6M1k4j2VZ7Cpo8_Qv4qRcD_Vw
 id: lookup.substance_type.default
 targetEntityType: lookup
 bundle: substance_type

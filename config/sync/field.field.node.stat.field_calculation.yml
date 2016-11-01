@@ -1,12 +1,9 @@
-uuid: 91eb81fb-4fae-4af1-9a03-93fab0f793a3
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_calculation
     - node.type.stat
-_core:
-  default_config_hash: zllxk6iBaPssqZqK3SLML4-8jgI5n1kZPawASL47NZs
 id: node.stat.field_calculation
 field_name: field_calculation
 entity_type: node

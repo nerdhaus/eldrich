@@ -1,4 +1,3 @@
-uuid: bf2b4918-e79a-45b9-bb07-7c1eae1ee9f8
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - field.storage.node.field_psi_skill
     - node.type.skill
     - node.type.sleight
-_core:
-  default_config_hash: v2BJ6bV85RX8hMBTSsTfl0oqFHubOIJYV7SQybI0arQ
 id: node.sleight.field_psi_skill
 field_name: field_psi_skill
 entity_type: node

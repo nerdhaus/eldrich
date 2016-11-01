@@ -1,4 +1,3 @@
-uuid: 59f9f72b-358c-41ee-aa25-8c11fed658f4
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ dependencies:
     - field.field.lookup.action_type.field_weight
   module:
     - text
-_core:
-  default_config_hash: 7Hn0U57-0xkIYdsWQcYp67OKiUpYqKnB1NfMhG8WVYY
 id: lookup.action_type.default
 targetEntityType: lookup
 bundle: action_type

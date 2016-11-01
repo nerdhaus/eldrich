@@ -1,11 +1,8 @@
-uuid: 20b19526-74c0-486d-9b2a-458d3e9365bc
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: w7U-Cmb60pjYO0G4h0RDf_BBIBaoNqpXJG870X0WRdE
 id: node.field_blueprints
 field_name: field_blueprints
 entity_type: node

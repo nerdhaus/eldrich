@@ -1,4 +1,3 @@
-uuid: f9251f51-1c32-48ee-b8df-f7458d536e92
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - node.type.skill
   module:
     - text
-_core:
-  default_config_hash: DqYdiwoCLZ4sgpazgJpr57dJqiP0mN2rvyZMksYOloA
 id: node.skill.field_description
 field_name: field_description
 entity_type: node

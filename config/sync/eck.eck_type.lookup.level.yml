@@ -1,11 +1,8 @@
-uuid: 59d629b1-29ce-4911-8ad0-0e5b14f126de
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_entity_type.lookup
-_core:
-  default_config_hash: 2eH4_Emu3lYZLfpEx7sasmMKcGQ7pRX07Ts1emYvrFk
 name: Level
 type: level
 description: ''

@@ -1,12 +1,9 @@
-uuid: 400a6d8f-6ddc-4224-8547-dcdfd3a4d162
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_is_field
     - node.type.skill
-_core:
-  default_config_hash: kYl_bb558MGqH5tg3xp6Es5YpBl5mRuCoqfe9S3eHWA
 id: node.skill.field_is_field
 field_name: field_is_field
 entity_type: node

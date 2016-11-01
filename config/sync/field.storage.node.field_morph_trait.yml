@@ -1,11 +1,8 @@
-uuid: 16fe2ce3-1a72-40c8-bc95-8b0046b886e3
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: POmM7oggQtOutinbjn2O0kJYIwIhCIztdKpp1FXygLc
 id: node.field_morph_trait
 field_name: field_morph_trait
 entity_type: node

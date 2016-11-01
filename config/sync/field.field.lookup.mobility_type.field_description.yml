@@ -1,4 +1,3 @@
-uuid: 69d22295-da1d-4712-a056-87c1e740c8df
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - field.storage.lookup.field_description
   module:
     - text
-_core:
-  default_config_hash: hWouCrKhbTqNVxwq3yuuldibd-qeeqztFUwcomU_1HI
 id: lookup.mobility_type.field_description
 field_name: field_description
 entity_type: lookup

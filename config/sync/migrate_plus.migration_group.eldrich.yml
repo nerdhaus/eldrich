@@ -1,9 +1,6 @@
-uuid: 795f493d-03a5-41ea-88c4-1e6da314bc2a
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: fKjKTGuBq_nMlMspi2Bs1nG9wyy3TxtXrhpvn7ENvIg
 id: eldrich
 label: 'Eldrich Black'
 description: 'Eldrich Black game content.'

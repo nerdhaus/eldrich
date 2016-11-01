@@ -1,4 +1,3 @@
-uuid: b00a9874-afad-4b74-a193-826ba1524a72
 langcode: en
 status: true
 dependencies:
@@ -12,8 +11,6 @@ dependencies:
     - field.field.component.identity_data.field_reputation
   module:
     - entity_reference_quantity
-_core:
-  default_config_hash: t-XeU9iQkXYoQiG5Mm-DD60-7V1cZ8N-lS8_V1TYOCE
 id: component.identity_data.default
 targetEntityType: component
 bundle: identity_data

@@ -1,4 +1,3 @@
-uuid: 0bc4a65e-6dfa-4935-9311-cc922fbfd3f9
 langcode: en
 status: true
 dependencies:
@@ -140,8 +139,6 @@ third_party_settings:
         description: ''
         required_fields: true
       label: Morph
-_core:
-  default_config_hash: M_FHkTqtb0mNbIeH-2mtVoTp527WsfU5TavQzf75EuE
 id: node.character.default
 targetEntityType: node
 bundle: character

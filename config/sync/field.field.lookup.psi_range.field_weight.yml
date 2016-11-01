@@ -1,12 +1,9 @@
-uuid: 2e47cf25-5f6e-44b3-854c-080d85598f81
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.lookup.psi_range
     - field.storage.lookup.field_weight
-_core:
-  default_config_hash: a8mqqeydEb6nTlM46NOK2uZ3l5Kp-Sdk1VLL4q_EIcM
 id: lookup.psi_range.field_weight
 field_name: field_weight
 entity_type: lookup

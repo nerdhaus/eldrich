@@ -1,4 +1,3 @@
-uuid: 74e9a060-0604-4104-b2a2-8ddb4f1ee7dd
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - node.type.derangement
   module:
     - entity_reference_override
-_core:
-  default_config_hash: fuZ550yQXyFMzCg_pv_76NwBKCI0JP3saki05SrcdUk
 id: component.character_status.field_derangements
 field_name: field_derangements
 entity_type: component

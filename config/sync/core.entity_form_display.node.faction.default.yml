@@ -1,4 +1,3 @@
-uuid: 0e122365-db1e-4489-9c06-0fc89a07a7b4
 langcode: en
 status: true
 dependencies:
@@ -14,8 +13,6 @@ dependencies:
     - entity_reference_quantity
     - path
     - text
-_core:
-  default_config_hash: 3yZXa7BlIaT7GFIyDrXoAUN5NNzBM12QEOfVn-3svhs
 id: node.faction.default
 targetEntityType: node
 bundle: faction

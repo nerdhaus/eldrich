@@ -1,4 +1,3 @@
-uuid: 7c874b0d-4df0-46b2-9e44-bc767c5ded76
 langcode: en
 status: true
 dependencies:
@@ -10,8 +9,6 @@ dependencies:
     - node.type.network
   module:
     - user
-_core:
-  default_config_hash: hh2-8tZK3mWahyzxw4paM0tno3OG6TWeSGJi9fj4RaY
 id: node.network.teaser
 targetEntityType: node
 bundle: network

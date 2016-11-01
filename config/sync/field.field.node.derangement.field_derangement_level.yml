@@ -1,4 +1,3 @@
-uuid: 2585ac0b-64f2-4a51-b75e-d9e92409c2ed
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - eck.eck_type.lookup.derangement_magnitude
     - field.storage.node.field_derangement_level
     - node.type.derangement
-_core:
-  default_config_hash: ayH7yv65-lpr7ZDCqkmiuVGzjyFXrQSl1gQPnn7XhIA
 id: node.derangement.field_derangement_level
 field_name: field_derangement_level
 entity_type: node

@@ -1,4 +1,3 @@
-uuid: 072dadcf-3d89-4200-b6a3-eb56c74c7f39
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - node.type.gear
   module:
     - entity_reference_quantity
-_core:
-  default_config_hash: _Q5xCsFRNMSlaDyF5CT96VRxuhcMvwAmqC_IAw1hKDs
 id: node.gear.field_cost
 field_name: field_cost
 entity_type: node

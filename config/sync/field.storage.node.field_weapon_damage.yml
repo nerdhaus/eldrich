@@ -1,12 +1,9 @@
-uuid: 94ad46ae-c729-4246-a1d9-ae49fd9cade6
 langcode: en
 status: true
 dependencies:
   module:
     - ep_complex_values
     - node
-_core:
-  default_config_hash: N_x8r2C7eHMNefo2SgOjPElTv5vqEKgp4DeYuhwiFLU
 id: node.field_weapon_damage
 field_name: field_weapon_damage
 entity_type: node

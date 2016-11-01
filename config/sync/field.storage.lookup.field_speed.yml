@@ -1,12 +1,9 @@
-uuid: d59e05af-f991-4945-a0dd-fa5d827ca10f
 langcode: en
 status: true
 dependencies:
   module:
     - eck
     - ep_complex_values
-_core:
-  default_config_hash: '-9z266fChr6M3eythSJrBh6QcFzKU8L2mkE-nddIPDI'
 id: lookup.field_speed
 field_name: field_speed
 entity_type: lookup

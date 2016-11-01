@@ -1,11 +1,8 @@
-uuid: cd3a4756-0fc4-4538-b2af-7c6ed8d8d5c0
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: 02IC8qtFZfvsNnlH2UMWdjMFoG_NtmZonHTQlXGUMXk
 id: node.field_linked_aptitude
 field_name: field_linked_aptitude
 entity_type: node

@@ -1,4 +1,3 @@
-uuid: eb8347de-cd6b-47ba-ab09-a1b2c65aa7c0
 langcode: en
 status: true
 dependencies:
@@ -11,8 +10,6 @@ dependencies:
     - entity_reference_quantity
     - text
     - user
-_core:
-  default_config_hash: LvB2xwKQ9nAGzmyv9ibQuNHukvXOzLBFoNQDzezTYhE
 id: node.network.default
 targetEntityType: node
 bundle: network

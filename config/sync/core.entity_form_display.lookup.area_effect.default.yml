@@ -1,4 +1,3 @@
-uuid: cff93a6b-2c96-457a-a800-99c1eced6c15
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - field.field.lookup.area_effect.field_weight
   module:
     - text
-_core:
-  default_config_hash: d3OHIgubDJWj3Ehiz2giCS4Szhg090VYyiuOSlas8ro
 id: lookup.area_effect.default
 targetEntityType: lookup
 bundle: area_effect

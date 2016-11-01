@@ -1,12 +1,9 @@
-uuid: a8e260a8-eaa9-40a5-ba1c-374bf1a32f31
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - user
-_core:
-  default_config_hash: tDcmzGfShE0XJbfwJzyA6lJTUYC6X4iVu887dgoFfDg
 id: content_recent
 label: 'Recent content'
 module: node

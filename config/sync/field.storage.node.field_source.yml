@@ -1,12 +1,9 @@
-uuid: 1ad8e4f0-efc5-4e5c-984e-262063921be1
 langcode: en
 status: true
 dependencies:
   module:
     - entity_reference_quantity
     - node
-_core:
-  default_config_hash: 6pkcQj2nJVIIzp-zFfZUGBo5XWKqt8mKgiCeIhD6YOE
 id: node.field_source
 field_name: field_source
 entity_type: node

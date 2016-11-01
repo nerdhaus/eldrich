@@ -1,4 +1,3 @@
-uuid: 4eed5ab5-2997-47d3-ae36-b115a2758d63
 langcode: en
 status: true
 dependencies:
@@ -13,8 +12,6 @@ dependencies:
     - link
     - path
     - text
-_core:
-  default_config_hash: c2v-YnkLzUOwf1QRsbI4JfbFefnxqIJgGrlDOzUHNhM
 id: node.source.default
 targetEntityType: node
 bundle: source

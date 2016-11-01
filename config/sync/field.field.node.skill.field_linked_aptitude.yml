@@ -1,12 +1,9 @@
-uuid: 7bf06235-79e1-49e2-8a31-c24259be5403
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_linked_aptitude
     - node.type.skill
-_core:
-  default_config_hash: HsjbNrMitXdtLzxyoxxZY_IcmePAIUXZNc5s554mBag
 id: node.skill.field_linked_aptitude
 field_name: field_linked_aptitude
 entity_type: node

@@ -1,12 +1,9 @@
-uuid: f2c371fe-c9bd-4cc9-b72e-e140c392f24c
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_player
     - node.type.character
-_core:
-  default_config_hash: iEMh8W1kE5n4cw39ye07ipe1fDthOFHiWduSwLuOuDc
 id: node.character.field_player
 field_name: field_player
 entity_type: node

@@ -1,12 +1,9 @@
-uuid: c872895d-707a-487d-8e7a-31b687c3cc3b
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.component.substance_data
     - field.storage.component.field_addiction_modifier
-_core:
-  default_config_hash: bxqxkARCbgmY7-uSiEDTVplqjYkdQC-cdrOC40zuRWI
 id: component.substance_data.field_addiction_modifier
 field_name: field_addiction_modifier
 entity_type: component

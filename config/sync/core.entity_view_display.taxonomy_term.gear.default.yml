@@ -1,4 +1,3 @@
-uuid: 6759af4c-33d0-45c3-93bd-2d6c360946ca
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
   module:
     - entity_reference_quantity
     - text
-_core:
-  default_config_hash: r5MO9lLV8Yck5m3kpb0gPxGsd6Z0hXbm5n0TH6dcqfk
 id: taxonomy_term.gear.default
 targetEntityType: taxonomy_term
 bundle: gear

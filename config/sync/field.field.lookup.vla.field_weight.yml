@@ -1,12 +1,9 @@
-uuid: 01083119-746f-46fa-a6af-d1e8e41d14dd
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.lookup.vla
     - field.storage.lookup.field_weight
-_core:
-  default_config_hash: c7cRGUr8va1mBBNiDBZdTFUntE9ileME1TBQroIFZSA
 id: lookup.vla.field_weight
 field_name: field_weight
 entity_type: lookup

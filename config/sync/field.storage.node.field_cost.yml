@@ -1,4 +1,3 @@
-uuid: 45565e91-9dc9-43ae-b16d-e92ebe1a8fd0
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - eck
     - entity_reference_quantity
     - node
-_core:
-  default_config_hash: bjoqoASFFl9A4wB-t3f4UADJzi5E_POBNeqVOcwt3qc
 id: node.field_cost
 field_name: field_cost
 entity_type: node

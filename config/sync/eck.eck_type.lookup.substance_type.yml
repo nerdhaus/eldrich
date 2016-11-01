@@ -1,11 +1,8 @@
-uuid: 6376f348-6fa3-4ad1-bfa5-c3db4b5ab40d
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_entity_type.lookup
-_core:
-  default_config_hash: sv3cpoyjwjXFxFF6SVMjCgOPPjX3viQmT-Z4IYDrpwk
 name: 'Substance type'
 type: substance_type
 description: ''

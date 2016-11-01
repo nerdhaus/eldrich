@@ -1,4 +1,3 @@
-uuid: abaaf7f9-341d-4cbc-bca2-e83a2c1fa17f
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - field.storage.node.field_blueprints
     - node.type.character
     - node.type.gear
-_core:
-  default_config_hash: w3bxMaRytiF6xoiBc4JMPLve3WUoe1gpk5RtQtzN-8c
 id: node.character.field_blueprints
 field_name: field_blueprints
 entity_type: node

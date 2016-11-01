@@ -1,11 +1,8 @@
-uuid: 2ab9e7dd-448b-413f-b19d-e6441232aaea
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_entity_type.lookup
-_core:
-  default_config_hash: RdHvOhdC3rS-iFd7MyGXnlDpieUb0pArvaapLVZMK-o
 name: 'Morph Type'
 type: morph_type
 description: ''

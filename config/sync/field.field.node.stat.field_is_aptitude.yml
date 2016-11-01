@@ -1,12 +1,9 @@
-uuid: 91d890f4-d08c-4a86-bde7-e4cf070c85b8
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_is_aptitude
     - node.type.stat
-_core:
-  default_config_hash: tcmi_EXO_7-1Srg3fU-aOpK639E7yuQvSFjPcZx0KPI
 id: node.stat.field_is_aptitude
 field_name: field_is_aptitude
 entity_type: node

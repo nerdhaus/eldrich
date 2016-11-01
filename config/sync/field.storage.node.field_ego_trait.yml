@@ -1,11 +1,8 @@
-uuid: 7f52d304-b4fe-49d2-bd76-f30dd541d148
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: qKF-i0D1Ju8EmE-oxAcBpyjDk7_vtuZbEK4JikL9N8s
 id: node.field_ego_trait
 field_name: field_ego_trait
 entity_type: node

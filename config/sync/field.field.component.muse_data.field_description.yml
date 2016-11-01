@@ -1,4 +1,3 @@
-uuid: 5c929c83-422d-4969-86c9-c4a49ea05b6e
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - field.storage.component.field_description
   module:
     - text
-_core:
-  default_config_hash: '-qbztm_fzSuvBoOLjnuC1EauV70_7WEx0gZVjJLt1hw'
 id: component.muse_data.field_description
 field_name: field_description
 entity_type: component

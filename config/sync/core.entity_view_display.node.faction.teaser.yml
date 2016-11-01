@@ -1,4 +1,3 @@
-uuid: e729ef5a-a939-4143-80d9-e283a90f80b7
 langcode: en
 status: true
 dependencies:
@@ -11,8 +10,6 @@ dependencies:
     - node.type.faction
   module:
     - user
-_core:
-  default_config_hash: wbtbk34aqqgljWjaIFgghTFzRqxfHhfnzAoDP2udtgA
 id: node.faction.teaser
 targetEntityType: node
 bundle: faction

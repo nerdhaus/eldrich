@@ -1,12 +1,9 @@
-uuid: 32d605f2-a1e3-4499-aaff-525e017f051b
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_ego_trait
     - node.type.trait
-_core:
-  default_config_hash: DPBp9DtU0260KaqbXaSE0o4c8joh0FkEzrAFkJEKLfg
 id: node.trait.field_ego_trait
 field_name: field_ego_trait
 entity_type: node

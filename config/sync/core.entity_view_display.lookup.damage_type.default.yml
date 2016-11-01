@@ -1,4 +1,3 @@
-uuid: 4fd81bb0-35ec-4c8e-b5c6-19ed24eb5bf8
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - field.field.lookup.damage_type.field_weight
   module:
     - text
-_core:
-  default_config_hash: lt7gp52Ql63qaMD20KkdfTk5dWmDM5mUZxXBoNWi154
 id: lookup.damage_type.default
 targetEntityType: lookup
 bundle: damage_type

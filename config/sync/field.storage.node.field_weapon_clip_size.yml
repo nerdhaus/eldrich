@@ -1,11 +1,8 @@
-uuid: 949c3df6-ac61-444b-aff6-cdaa0ef09f82
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: fRyoOP8MuPJY3Yla6lRIDCvGvK1qHZhd3Vt_DMY2Vq8
 id: node.field_weapon_clip_size
 field_name: field_weapon_clip_size
 entity_type: node

@@ -1,11 +1,8 @@
-uuid: 2161f539-55b4-46f6-a64c-bbced13b9c84
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: WXzeVRGJktLZ4ZMdxtGDE1x9LVg2ok9O8va3sGU3X7s
 id: node.field_calculation
 field_name: field_calculation
 entity_type: node

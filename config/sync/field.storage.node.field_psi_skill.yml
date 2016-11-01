@@ -1,11 +1,8 @@
-uuid: 3c12a341-627b-4f54-b8b1-36fd67ff9230
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: AGssdOkv8KnRnB2IQZtXfCve9CEbpqoB06r9qTap9XY
 id: node.field_psi_skill
 field_name: field_psi_skill
 entity_type: node

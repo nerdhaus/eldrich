@@ -1,4 +1,3 @@
-uuid: 0ca68d37-807f-4c87-a746-65646caa9a5f
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - node.type.gear
   module:
     - ep_complex_values
-_core:
-  default_config_hash: F4ZhZJvDKnDyHSuUIhpcnqTp_0v1l-E5FUiAsiyhW1U
 id: node.gear.field_armor_value
 field_name: field_armor_value
 entity_type: node

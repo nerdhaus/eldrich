@@ -1,4 +1,3 @@
-uuid: 7c59744c-11d3-4c95-be87-95c8ebdde893
 langcode: en
 status: true
 dependencies:
@@ -33,8 +32,6 @@ third_party_settings:
         classes: ''
         id: ''
         required_fields: true
-_core:
-  default_config_hash: G68K_JzI0m7UEYqBvh5l_sRwFxyMJyzljgLYnEFzP_Q
 id: node.trait.default
 targetEntityType: node
 bundle: trait

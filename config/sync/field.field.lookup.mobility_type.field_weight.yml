@@ -1,12 +1,9 @@
-uuid: 936cd59f-54ca-4e47-b2b8-94e73ca05e7b
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.lookup.mobility_type
     - field.storage.lookup.field_weight
-_core:
-  default_config_hash: 60IeCd42WvKNL3oYOPuMe9JdjeVPuBV0TxVSe0JsZ2I
 id: lookup.mobility_type.field_weight
 field_name: field_weight
 entity_type: lookup

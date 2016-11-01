@@ -1,4 +1,3 @@
-uuid: 00f83301-fbf2-44d9-893a-bcb73d5676a9
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - node.type.derangement
   module:
     - text
-_core:
-  default_config_hash: GDj4JQsoYJGWcsAYJGGDxpSc6KlVfq7lmSSOhcPrnhA
 id: node.derangement.field_usage
 field_name: field_usage
 entity_type: node

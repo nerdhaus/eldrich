@@ -1,4 +1,3 @@
-uuid: a72b2a72-57b8-4fc9-a952-8bd8f7f1cee8
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - node.type.source
   module:
     - entity_reference_quantity
-_core:
-  default_config_hash: 1t0TbsN_GPRT8gtjsFHBAoe7Wi6TVkveTV-fraW7nD0
 id: node.derangement.field_source
 field_name: field_source
 entity_type: node

@@ -1,11 +1,8 @@
-uuid: 5e492001-ee94-48ab-b59c-fdcce92512d3
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.faction
-_core:
-  default_config_hash: RDS4eZ_nXrv4zbK34Ph6B7sBI73TMoPvZnzEKiHXgFQ
 id: node.faction.promote
 field_name: promote
 entity_type: node

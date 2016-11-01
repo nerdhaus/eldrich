@@ -1,12 +1,9 @@
-uuid: e0b81efd-adb9-44ed-9af7-c65d794a7f5a
 langcode: en
 status: true
 dependencies:
   module:
     - ep_statblock
     - node
-_core:
-  default_config_hash: 9SeXIldxLb_ez1_IGDPM_ZWHuaE4b0ACTL_UzONLYls
 id: node.field_stats
 field_name: field_stats
 entity_type: node

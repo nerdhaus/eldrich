@@ -1,11 +1,8 @@
-uuid: ed198271-4a8c-4077-9a66-46338e294dac
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.faction
-_core:
-  default_config_hash: FyM-gmEJZmShFwkz2ueBLzsNlR_ROYqjqznJyT_t3qY
 id: node.faction.title
 field_name: title
 entity_type: node

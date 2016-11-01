@@ -1,4 +1,3 @@
-uuid: d038cf05-3b56-4263-9b37-378f86e79a04
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - field.field.lookup.derangement_magnitude.field_weight
   module:
     - text
-_core:
-  default_config_hash: Vurw7b0z9GANYCtclXXtjO3W1LsgAXwmolebcn-Yql0
 id: lookup.derangement_magnitude.default
 targetEntityType: lookup
 bundle: derangement_magnitude

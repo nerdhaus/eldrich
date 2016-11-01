@@ -1,12 +1,9 @@
-uuid: 9adc52cf-3850-49c0-896e-2273d9e00ef8
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.component.identity_data
     - field.storage.component.field_background
-_core:
-  default_config_hash: FKeIIi49axyhkwBqcpZrmGobMbxS86a1YV0BO0uyT1Y
 id: component.identity_data.field_background
 field_name: field_background
 entity_type: component

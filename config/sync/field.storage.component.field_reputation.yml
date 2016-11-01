@@ -1,4 +1,3 @@
-uuid: 68af2a05-2189-4bdf-9496-dcb8a4e11540
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - eck
     - entity_reference_quantity
     - node
-_core:
-  default_config_hash: ThjE8JQxezIeRt4EOIRJ4BJzZSSWDszHui4KiOOFn68
 id: component.field_reputation
 field_name: field_reputation
 entity_type: component

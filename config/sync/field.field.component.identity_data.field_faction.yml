@@ -1,4 +1,3 @@
-uuid: 0e7214c8-1de2-4a8c-bef3-2e07eac4f974
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - eck.eck_type.component.identity_data
     - field.storage.component.field_faction
     - node.type.faction
-_core:
-  default_config_hash: '-0pUHBVSzbNN_-9uBaWPPRqVh1Rl6sgGEVx93ORNaiA'
 id: component.identity_data.field_faction
 field_name: field_faction
 entity_type: component

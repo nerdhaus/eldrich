@@ -1,4 +1,3 @@
-uuid: 08ec84b8-650e-4c94-b6bd-3645720d1e2d
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-_core:
-  default_config_hash: R4RARqJERohAc5uIEguCK42RWRFhegKLwQjDiUmk43s
 name: Faction
 type: faction
 description: 'An organization or group of people in the Eclipse Phase universe'

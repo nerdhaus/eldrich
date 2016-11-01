@@ -1,4 +1,3 @@
-uuid: 151b677b-be6f-46e5-9fb3-0c2cf8224372
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ dependencies:
     - field.field.lookup.vla.field_weight
   module:
     - text
-_core:
-  default_config_hash: nL-ZX1UbFFPSX48N_wgNganw-h6-bX2MNQUZ_DbL-2s
 id: lookup.vla.default
 targetEntityType: lookup
 bundle: vla

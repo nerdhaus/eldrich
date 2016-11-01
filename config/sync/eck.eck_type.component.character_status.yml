@@ -1,11 +1,8 @@
-uuid: b41730d6-c546-4ecb-a7cc-e89859242496
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_entity_type.component
-_core:
-  default_config_hash: p9NHS2W38WtOVm7wo2O6WmnBzjrVPv8EKaGLGf4veYs
 name: 'Character Status'
 type: character_status
 description: ''

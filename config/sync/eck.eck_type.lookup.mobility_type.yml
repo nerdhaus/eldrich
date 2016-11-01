@@ -1,11 +1,8 @@
-uuid: 98303ebf-c9ec-4362-8ac7-ab2cc2a7122e
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_entity_type.lookup
-_core:
-  default_config_hash: 3w8oL4JP6hXgXPxEFtNOI2o9l8f2EMq35WU8NMW97kU
 name: 'Mobility Type'
 type: mobility_type
 description: ''

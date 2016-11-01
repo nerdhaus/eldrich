@@ -1,12 +1,9 @@
-uuid: 03f0534e-bfb4-452f-a9ff-4225b1b57216
 langcode: en
 status: true
 dependencies:
   module:
     - eck
     - node
-_core:
-  default_config_hash: 36IusHNl9wEteP7S8aRZD9k6sK8s97cD66yj80B-c4U
 id: node.field_sleight_level
 field_name: field_sleight_level
 entity_type: node

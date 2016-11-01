@@ -1,4 +1,3 @@
-uuid: 42cb2b40-f50f-4fe7-8835-4ce8bcff56dc
 langcode: en
 status: true
 dependencies:
@@ -12,8 +11,6 @@ dependencies:
     - node.type.source
   module:
     - user
-_core:
-  default_config_hash: Z_Xr3Rjn_-jKgvqLaUiEaCIQdyOu2P6-6nSBRjPpGQw
 id: node.source.teaser
 targetEntityType: node
 bundle: source

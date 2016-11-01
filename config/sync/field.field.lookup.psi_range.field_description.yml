@@ -1,4 +1,3 @@
-uuid: 3000a342-cc51-42b3-a767-424e0413c790
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - field.storage.lookup.field_description
   module:
     - text
-_core:
-  default_config_hash: 1Hi15dRFF6CH0D4XyprhFgG5eiN-btYrw9yKpX04N94
 id: lookup.psi_range.field_description
 field_name: field_description
 entity_type: lookup

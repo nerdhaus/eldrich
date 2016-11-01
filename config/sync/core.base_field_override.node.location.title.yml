@@ -1,11 +1,8 @@
-uuid: 865e98c6-d24d-433a-9e48-82edf536d753
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.location
-_core:
-  default_config_hash: g_jaypFxseXyFf63n9KdG5LZLNjTDFde4wfDlhguSQI
 id: node.location.title
 field_name: title
 entity_type: node

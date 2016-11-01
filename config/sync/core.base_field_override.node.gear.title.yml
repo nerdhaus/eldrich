@@ -1,11 +1,8 @@
-uuid: 7bd1595d-9b88-46cb-ad32-46aa4f28283a
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.gear
-_core:
-  default_config_hash: XoB1VydqPMxuMnEG7_ZRW9NHG7u_71TXVjaLQ-Of0KU
 id: node.gear.title
 field_name: title
 entity_type: node

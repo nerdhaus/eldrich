@@ -1,12 +1,9 @@
-uuid: 4b45b251-6808-43e4-9920-e4a32275f0fd
 langcode: en
 status: true
 dependencies:
   module:
     - eck
     - node
-_core:
-  default_config_hash: 0q3vh3tL5YSXAmkHWjzme7N2VwD-__273ZUoItvXlEg
 id: component.field_faction
 field_name: field_faction
 entity_type: component

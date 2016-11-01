@@ -1,12 +1,9 @@
-uuid: 9ca8467e-e643-4756-b561-4a9638b6c3b2
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_quotation
     - node.type.character
-_core:
-  default_config_hash: rNJEc6bZKf3x3p-i7gSxYyaLN1NW1-WEWMEbRxjJD-4
 id: node.character.field_quotation
 field_name: field_quotation
 entity_type: node

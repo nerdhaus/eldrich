@@ -1,12 +1,9 @@
-uuid: 46c486f7-b715-4430-bb8a-7038f47b7a08
 langcode: en
 status: true
 dependencies:
   module:
     - eck
     - node
-_core:
-  default_config_hash: ZLPWGJs-Q0oF7Ok8PJn2EH3JsDdV-SHDZkpmyGpqug0
 id: node.field_weapon_damage_type
 field_name: field_weapon_damage_type
 entity_type: node

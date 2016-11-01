@@ -1,4 +1,3 @@
-uuid: 41ea18fc-1c34-43c1-b257-14bf2cfd4b82
 langcode: en
 status: true
 dependencies:
@@ -10,8 +9,6 @@ dependencies:
     - field.field.component.substance_data.field_onset_time
     - field.field.component.substance_data.field_substance_delivery
     - field.field.component.substance_data.field_substance_type
-_core:
-  default_config_hash: MAO8s_u-iwJY8oxawGlbucGW5YAtwzdtm1Y8xrrZIoQ
 id: component.substance_data.default
 targetEntityType: component
 bundle: substance_data

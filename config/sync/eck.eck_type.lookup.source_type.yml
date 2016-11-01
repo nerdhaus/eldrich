@@ -1,11 +1,8 @@
-uuid: 25f10bc6-1dec-4598-80e9-e7ba83575063
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_entity_type.lookup
-_core:
-  default_config_hash: DvunWe40zn_gnsnlCEniWqVUi39WwFHW6WMJo8oPgxM
 name: 'Source Type'
 type: source_type
 description: ''

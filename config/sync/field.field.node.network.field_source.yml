@@ -1,4 +1,3 @@
-uuid: cb312c36-bc91-4a1f-b6ed-906b62ea72ac
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - node.type.source
   module:
     - entity_reference_quantity
-_core:
-  default_config_hash: IWbBCn-DPWVDQRg16URy9CDGwtgimT0o1pFa9D4cD7k
 id: node.network.field_source
 field_name: field_source
 entity_type: node

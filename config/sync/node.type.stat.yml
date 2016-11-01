@@ -1,4 +1,3 @@
-uuid: b7fca8a5-a01c-45f1-bd1a-f95b636babcc
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-_core:
-  default_config_hash: I_x-VK3YDbV2SzqpmqZzK-mRV3ibHcOwzxTRA8GcLRU
 name: Stat
 type: stat
 description: 'A core stat for Eclipse Phase characters. Covers information on basic aptitudes, as well as calculated stats like Durability and Lucidity.'

@@ -1,4 +1,3 @@
-uuid: 2c633509-76f3-428c-8cf3-71da109b133e
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - node.type.gear
   module:
     - entity_reference_override
-_core:
-  default_config_hash: jCncqUrN6D752PP6MR3-GTRb6PZHPD74dTxbo7uFV88
 id: node.character.field_augmentations
 field_name: field_augmentations
 entity_type: node

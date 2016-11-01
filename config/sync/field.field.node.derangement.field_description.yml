@@ -1,4 +1,3 @@
-uuid: 40ab6905-b02d-442e-99cc-d049f4818bb8
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - node.type.derangement
   module:
     - text
-_core:
-  default_config_hash: iPnaJNJU1a9qT05aVlXeeoomyd0cF-v0rhxxBrWcOIQ
 id: node.derangement.field_description
 field_name: field_description
 entity_type: node

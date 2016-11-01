@@ -1,4 +1,4 @@
-uuid: c8e6270d-5929-4368-a7a3-18133ae0fbae
+uuid: 854c6240-f365-479a-95cc-68b14d98d3cb
 name: 'Eldrich Host'
 mail: jeff@eaton.fyi
 slogan: ''
@@ -10,5 +10,3 @@ admin_compact_mode: false
 weight_select_max: 100
 langcode: en
 default_langcode: en
-_core:
-  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo

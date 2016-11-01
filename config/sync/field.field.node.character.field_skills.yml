@@ -1,4 +1,3 @@
-uuid: 7ace0c57-62bb-4172-8d7a-c175d34f418e
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - node.type.skill
   module:
     - ep_skill_reference
-_core:
-  default_config_hash: fzboA3XedxAz0C2esLNNIGYwRgz92Twd_wWcfEbe47g
 id: node.character.field_skills
 field_name: field_skills
 entity_type: node

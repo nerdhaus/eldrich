@@ -1,12 +1,9 @@
-uuid: 71686132-1288-4187-aadc-680213611cdd
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.component.substance_data
     - field.storage.component.field_duration
-_core:
-  default_config_hash: A-kPGdkZYVFxgStJ6qFwoLe8Ili7KReI-oLK94IZb0U
 id: component.substance_data.field_duration
 field_name: field_duration
 entity_type: component

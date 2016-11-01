@@ -1,11 +1,8 @@
-uuid: 90fa4b68-0b65-42c1-9b36-de6dec2afdca
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_entity_type.lookup
-_core:
-  default_config_hash: eeAqlPLYuZAtqN_Qou8CPc0A0Ymp86eqHtILCm3lqpc
 name: 'Psi Range'
 type: psi_range
 description: ''

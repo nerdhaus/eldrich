@@ -1,4 +1,3 @@
-uuid: 616cb6ca-ab35-4dda-8640-53ee9458b081
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - node.type.trait
   module:
     - entity_reference_quantity
-_core:
-  default_config_hash: nonmq1tTfXhc0wWcufTwbhFyHSR9Qspu8DdNyqPHWbY
 id: node.trait.field_source
 field_name: field_source
 entity_type: node

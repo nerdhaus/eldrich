@@ -1,11 +1,8 @@
-uuid: 72fa8a78-38cc-439d-8fb6-fa6b333213c1
 langcode: en
 status: true
 dependencies:
   module:
     - user
-_core:
-  default_config_hash: o_8fSWHZOVIbydZACGsSX09DtuJhqkRmNOzcVj-4bQI
 id: who_s_new
 label: 'Who''s new'
 module: user

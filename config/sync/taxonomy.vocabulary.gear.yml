@@ -1,9 +1,6 @@
-uuid: ae6a5b1f-b158-4370-8d9c-6ed24bfb79d5
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: UzFRp8wd-vvl-n3nQOrcr8Py4Z6SHrfBeNx2YzjtWL0
 name: Gear
 vid: gear
 description: ''

@@ -1,12 +1,9 @@
-uuid: 440df90b-025a-4dfc-ac38-59dffd77818f
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.lookup.action_type
     - field.storage.lookup.field_lookup_code
-_core:
-  default_config_hash: UTHuQ1TQl9XoJEnCkQyi4HWQRotyYoZxlktZnEBOGKI
 id: lookup.action_type.field_lookup_code
 field_name: field_lookup_code
 entity_type: lookup

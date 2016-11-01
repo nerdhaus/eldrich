@@ -1,12 +1,9 @@
-uuid: 5f2898d3-dbda-4a72-828c-e554b8188ea1
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.component.character_status
     - field.storage.component.field_traumas
-_core:
-  default_config_hash: ewJiY6fW4bVMbUYXASHG95QGgqtK_Wobd5cxg343jsM
 id: component.character_status.field_traumas
 field_name: field_traumas
 entity_type: component

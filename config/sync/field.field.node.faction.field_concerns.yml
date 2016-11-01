@@ -1,4 +1,3 @@
-uuid: 471cc364-4ba3-4626-b41e-a133b0d1c1dd
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - field.storage.node.field_concerns
     - node.type.faction
     - taxonomy.vocabulary.concerns
-_core:
-  default_config_hash: TQwJ0K6JW6iySAdGDzblD2GrxM9MsBoG8pE8xckGhlQ
 id: node.faction.field_concerns
 field_name: field_concerns
 entity_type: node

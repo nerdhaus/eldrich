@@ -1,11 +1,8 @@
-uuid: 6ba896ee-3eaf-467e-a9b1-d62b421f3cae
 langcode: en
 status: true
 dependencies:
   module:
     - eck
-_core:
-  default_config_hash: BMwG2nEKCR8q6_cHSGq9I0gtUIELb6Uh6B1aYfxBmrQ
 id: component.field_duration
 field_name: field_duration
 entity_type: component

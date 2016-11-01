@@ -1,4 +1,3 @@
-uuid: bf9a0b6a-f9b5-46d7-8942-f01d4c05d56d
 langcode: en
 status: true
 dependencies:
@@ -12,8 +11,6 @@ dependencies:
     - ep_skill_reference
     - ep_statblock
     - text
-_core:
-  default_config_hash: Ga_kao6PtF2XerQpKSbwEXpmhS24hEaWpLWEyZqrWps
 id: component.muse_data.default
 targetEntityType: component
 bundle: muse_data

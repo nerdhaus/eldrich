@@ -1,4 +1,3 @@
-uuid: 5e23ebde-55ef-4935-b349-34cb8516de01
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-_core:
-  default_config_hash: rU2HRFQgCIm80qnZoW9C-HYt1u50yPcRmqJLIkdJVe4
 name: 'Psi Sleight'
 type: sleight
 description: 'A Psi ability available to characters infected by the Watts-McLeod strain of the exsurgent virus.'

@@ -1,12 +1,9 @@
-uuid: 25ce10f9-4b7a-4bb6-988d-341070450843
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_strain
     - node.type.sleight
-_core:
-  default_config_hash: PCXysWyHZeN-jqB8brS7CXNE_JJvAY_Jh3e79CE7rKk
 id: node.sleight.field_strain
 field_name: field_strain
 entity_type: node

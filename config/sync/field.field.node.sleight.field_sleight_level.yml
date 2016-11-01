@@ -1,4 +1,3 @@
-uuid: f50bddab-a134-49b1-8cc3-42b4bc509bd4
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - eck.eck_type.lookup.psi_level
     - field.storage.node.field_sleight_level
     - node.type.sleight
-_core:
-  default_config_hash: g8_DtlpU9ZqXD4fUL8udm_YwT_nRQP48rNzCLoK6t80
 id: node.sleight.field_sleight_level
 field_name: field_sleight_level
 entity_type: node

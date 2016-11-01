@@ -1,4 +1,3 @@
-uuid: 90a401c0-e6ec-4644-8bb0-160e361fd592
 langcode: en
 status: true
 dependencies:
@@ -37,8 +36,6 @@ third_party_settings:
         required_fields: true
         classes: ''
         id: ''
-_core:
-  default_config_hash: X-taCHsmQC3kfwU3k39zjuI5nQcAVUVuxV-r3uHqpao
 id: node.sleight.default
 targetEntityType: node
 bundle: sleight

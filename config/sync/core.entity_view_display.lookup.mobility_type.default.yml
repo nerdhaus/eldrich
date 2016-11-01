@@ -1,4 +1,3 @@
-uuid: 2e1afcc9-bc35-45a1-a2f8-c3bfbe93dcb4
 langcode: en
 status: true
 dependencies:
@@ -10,8 +9,6 @@ dependencies:
   module:
     - ep_complex_values
     - text
-_core:
-  default_config_hash: dTc_SCSwhFBA8Chj31qRslVZIoMd2eT2Y8NLc4DtXSg
 id: lookup.mobility_type.default
 targetEntityType: lookup
 bundle: mobility_type

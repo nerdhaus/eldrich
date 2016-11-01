@@ -1,11 +1,8 @@
-uuid: 9b0e6dfe-cdfd-42e9-abbf-e892e4a579b3
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.network
-_core:
-  default_config_hash: eBTxHYi6yoeZxayKtGuYnCHE2OggKErcaTTE8uaUt6o
 id: node.network.title
 field_name: title
 entity_type: node

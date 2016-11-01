@@ -1,11 +1,8 @@
-uuid: 20052a29-6ee7-4881-96af-f24271fd9931
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_entity_type.lookup
-_core:
-  default_config_hash: Sh_4ec8u9dbI074pXGYpQsjP7Sg9LB-OCPn2sBRCQu8
 name: 'Substance Delivery'
 type: substance_delivery
 description: ''

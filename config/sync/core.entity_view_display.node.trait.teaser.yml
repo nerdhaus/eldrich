@@ -1,4 +1,3 @@
-uuid: 0de79665-6965-48f7-8b23-84959a1e04fd
 langcode: en
 status: true
 dependencies:
@@ -14,8 +13,6 @@ dependencies:
     - node.type.trait
   module:
     - user
-_core:
-  default_config_hash: rafJp6UnznnnDRNxAOxPxr7hsA7Lw7whq19crcCLpZo
 id: node.trait.teaser
 targetEntityType: node
 bundle: trait

@@ -1,4 +1,3 @@
-uuid: ae2548c9-2538-4cdd-8ca1-7c641964d822
 langcode: en
 status: true
 dependencies:
@@ -22,8 +21,6 @@ dependencies:
     - node.type.character
   module:
     - user
-_core:
-  default_config_hash: KsywRqQ-wDhsDBstS0heyEK1dUHSMirE5FAf37yyXjs
 id: node.character.teaser
 targetEntityType: node
 bundle: character

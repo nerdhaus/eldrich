@@ -1,12 +1,9 @@
-uuid: bd539bf5-d399-4abd-b3ef-2c3e1bfbe28e
 langcode: en
 status: true
 dependencies:
   module:
     - eck
     - ep_statblock
-_core:
-  default_config_hash: SSj3joloB3yzjyM1uD8TL_fPlGnzKBmBoCaRAwFWcWA
 id: component.field_stats
 field_name: field_stats
 entity_type: component

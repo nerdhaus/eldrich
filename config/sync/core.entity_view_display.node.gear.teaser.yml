@@ -1,4 +1,3 @@
-uuid: f8ad6141-f94f-492b-a5e7-4c3213119e4b
 langcode: en
 status: true
 dependencies:
@@ -18,8 +17,6 @@ dependencies:
     - node.type.gear
   module:
     - user
-_core:
-  default_config_hash: AJ5du4gh7je-SJeXjsOlmP8lJfC25QuXq6YUv0t42T4
 id: node.gear.teaser
 targetEntityType: node
 bundle: gear

@@ -1,12 +1,9 @@
-uuid: 2504ee56-a498-4fd1-b8aa-ad1f90a9cbb7
 langcode: en
 status: true
 dependencies:
   module:
     - eck
     - node
-_core:
-  default_config_hash: 0Vnk-9yxI1dJnuFoHPchrEX4hnYUJ7pjRfg154qR2DA
 id: node.field_mobility_type
 field_name: field_mobility_type
 entity_type: node

@@ -1,12 +1,9 @@
-uuid: 4e0cf10f-c016-4958-adc8-ceccbaf49b30
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.lookup.area_effect
     - field.storage.lookup.field_weight
-_core:
-  default_config_hash: mgB_e9Vc1Mhcng5srvsiEnSiJZMzYB8fxcUDNN09LPk
 id: lookup.area_effect.field_weight
 field_name: field_weight
 entity_type: lookup

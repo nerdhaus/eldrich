@@ -1,4 +1,3 @@
-uuid: fcf069b0-b946-48f3-82cf-6398b5a45690
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - field.storage.node.field_psi_sleights
     - node.type.character
     - node.type.sleight
-_core:
-  default_config_hash: ZDnFtvLSzDR113I6Uw-6JUjvHMydmMyWYMzGXXNu5hQ
 id: node.character.field_psi_sleights
 field_name: field_psi_sleights
 entity_type: node

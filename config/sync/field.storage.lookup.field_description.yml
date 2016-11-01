@@ -1,12 +1,9 @@
-uuid: b9c5da41-f950-4999-b5d2-0ed8d5c28453
 langcode: en
 status: true
 dependencies:
   module:
     - eck
     - text
-_core:
-  default_config_hash: Zrej1ZHi9PHOQPVLgXXhMI-9YkZcwYI1N9KIkX2jwnY
 id: lookup.field_description
 field_name: field_description
 entity_type: lookup

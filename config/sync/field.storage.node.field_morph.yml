@@ -1,12 +1,9 @@
-uuid: 6ad40361-ab05-456c-8bd9-a8e123c6f61b
 langcode: en
 status: true
 dependencies:
   module:
     - eck
     - node
-_core:
-  default_config_hash: aE1wGSKaD57kk1u7QsntOwmKQoRtEIalBbDxzSv1I_k
 id: node.field_morph
 field_name: field_morph
 entity_type: node

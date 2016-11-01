@@ -1,11 +1,8 @@
-uuid: 68173f61-0ae3-46d5-a1ca-1168bf6f1273
 langcode: en
 status: true
 dependencies:
   module:
     - eck
-_core:
-  default_config_hash: JVjsour2TwMK8LX3GaocmVdBSeFS-rUt9oAfjuBbJ7I
 id: component.field_onset_time
 field_name: field_onset_time
 entity_type: component
