@@ -5,7 +5,6 @@ dependencies:
   config:
     - eck.eck_type.component.morph_instance
     - field.storage.component.field_model
-    - node.type.morph
 id: component.morph_instance.field_model
 field_name: field_model
 entity_type: component
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:node'
   handler_settings:
-    target_bundles:
-      morph: morph
+    target_bundles: {  }
     sort:
       field: _none
     auto_create: false
