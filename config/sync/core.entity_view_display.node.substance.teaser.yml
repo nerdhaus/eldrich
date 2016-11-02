@@ -1,3 +1,4 @@
+uuid: f3f5738c-e4c2-4150-bd22-7688eb29f409
 langcode: en
 status: true
 dependencies:
@@ -13,4 +14,12 @@ mode: teaser
 content:
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_addiction_modifier: true
+  field_addiction_type: true
+  field_cost: true
+  field_delivery_mechanism: true
+  field_description: true
+  field_duration: true
+  field_onset_time: true
+  field_source: true

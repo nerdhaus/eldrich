@@ -1,3 +1,4 @@
+uuid: 5c14112c-1213-4bb5-858d-b020295baf57
 langcode: en
 status: true
 dependencies:
@@ -20,5 +21,7 @@ content:
 hidden:
   field_concerns: true
   field_description: true
+  field_faction_type: true
+  field_locations: true
   field_parent_faction: true
   field_source: true

@@ -1,3 +1,4 @@
+uuid: 646d42d4-8003-41b2-b0ca-dc11315aa25d
 langcode: en
 status: true
 dependencies:
@@ -33,6 +34,7 @@ content:
 hidden:
   field_action_type: true
   field_description: true
+  field_is_active: true
   field_psi_skill: true
   field_sleight_duration: true
   field_sleight_level: true

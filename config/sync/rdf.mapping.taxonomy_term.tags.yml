@@ -1,3 +1,4 @@
+uuid: d6dd7e59-f58c-4ffb-8fb8-b7dcda5914fc
 langcode: en
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - taxonomy.vocabulary.tags
   module:
     - taxonomy
+_core:
+  default_config_hash: o5duwyS1CTHx3tYOZhuu91kspe8VQjQsnwZjAJv9njk
 id: taxonomy_term.tags
 targetEntityType: taxonomy_term
 bundle: tags
