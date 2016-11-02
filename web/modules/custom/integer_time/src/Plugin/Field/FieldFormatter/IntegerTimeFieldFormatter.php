@@ -7,6 +7,8 @@ use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Field\Plugin\Field\FieldFormatter\IntegerFormatter;
+use Drupal\Core\Datetime\DateFormatter;
 
 /**
  * Plugin implementation of the 'integer_time_field_formatter' formatter.
@@ -19,62 +21,31 @@ use Drupal\Core\Form\FormStateInterface;
  *   }
  * )
  */
-class IntegerTimeFieldFormatter extends FormatterBase {
+class IntegerTimeFieldFormatter extends IntegerFormatter {
 
   /**
    * {@inheritdoc}
    */
-  public static function defaultSettings() {
-    return [
-      // Implement default settings.
-    ] + parent::defaultSettings();
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsForm(array $form, FormStateInterface $form_state) {
-    return [
-      // Implement settings form.
-    ] + parent::settingsForm($form, $form_state);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsSummary() {
-    $summary = [];
-    // Implement settings summary.
-
-    return $summary;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function viewElements(FieldItemListInterface $items, $langcode) {
-    $elements = [];
-
-    foreach ($items as $delta => $item) {
-      $elements[$delta] = ['#markup' => $this->viewValue($item)];
+  protected function numberFormat($number) {
+    $output = '';
+    $units = array(
+      '1d|@countd' => 86400,
+      '1h|@counth' => 3600,
+      '1m|@countm' => 60,
+      '1s|@counts' => 1,
+    );
+    foreach ($units as $key => $value) {
+      $key = explode('|', $key);
+      if ($number >= $value) {
+        $output .= ($output ? ' ' : '') . $this->formatPlural(floor($number / $value), $key[0], $key[1], array(), array('langcode' => $langcode));
+        $number %= $value;
+      }
+      elseif ($output) {
+        // Break if there was previous output but not any output at this level,
+        // to avoid skipping levels and getting output like "1 year 1 second".
+        break;
+      }
     }
-
-    return $elements;
+    return $output ? $output : $this->t('0s', array(), array('langcode' => $langcode));
   }
-
-  /**
-   * Generate the output appropriate for one field item.
-   *
-   * @param \Drupal\Core\Field\FieldItemInterface $item
-   *   One field item.
-   *
-   * @return string
-   *   The textual output generated.
-   */
-  protected function viewValue(FieldItemInterface $item) {
-    // The text value has no text format assigned to it, so the user input
-    // should equal the output, including newlines.
-    return nl2br(Html::escape($item->value));
-  }
-
 }

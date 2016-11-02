@@ -5,6 +5,8 @@ namespace Drupal\integer_time\Plugin\Field\FieldWidget;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Field\Plugin\Field\FieldWidget\NumberWidget;
+use Drupal\integer_time\Plugin\Field\FieldFormatter\IntegerTimeFieldFormatter;
 
 /**
  * Plugin implementation of the 'integer_time_field_widget' widget.
@@ -17,68 +19,73 @@ use Drupal\Core\Form\FormStateInterface;
  *   }
  * )
  */
-class IntegerTimeFieldWidget extends WidgetBase {
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function defaultSettings() {
-    return [
-      'size' => 60,
-      'placeholder' => '',
-    ] + parent::defaultSettings();
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsForm(array $form, FormStateInterface $form_state) {
-    $elements = [];
-
-    $elements['size'] = [
-      '#type' => 'number',
-      '#title' => t('Size of textfield'),
-      '#default_value' => $this->getSetting('size'),
-      '#required' => TRUE,
-      '#min' => 1,
-    ];
-    $elements['placeholder'] = [
-      '#type' => 'textfield',
-      '#title' => t('Placeholder'),
-      '#default_value' => $this->getSetting('placeholder'),
-      '#description' => t('Text that will be shown inside the field until a value is entered. This hint is usually a sample value or a brief description of the expected format.'),
-    ];
-
-    return $elements;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsSummary() {
-    $summary = [];
-
-    $summary[] = t('Textfield size: @size', ['@size' => $this->getSetting('size')]);
-    if (!empty($this->getSetting('placeholder'))) {
-      $summary[] = t('Placeholder: @placeholder', ['@placeholder' => $this->getSetting('placeholder')]);
-    }
-
-    return $summary;
-  }
+class IntegerTimeFieldWidget extends NumberWidget {
 
   /**
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
-    $element['value'] = $element + [
-      '#type' => 'textfield',
-      '#default_value' => isset($items[$delta]->value) ? $items[$delta]->value : NULL,
-      '#size' => $this->getSetting('size'),
-      '#placeholder' => $this->getSetting('placeholder'),
-      '#maxlength' => $this->getFieldSetting('max_length'),
-    ];
-
-    return $element;
+    $element = parent::formElement($items, $delta, $element, $form, $form_state);
+    if ($value = isset($items[$delta]->value)) {
+      $element['type'] = 'textfield';
+      $element['default_value'] = formatNumber($value);
+    }
+    return array('value' => $element);
   }
 
+  public function massageFormValues(array $values, array $form, FormStateInterface $form_state) {
+    foreach ($values as $delta => $value) {
+      $values[$delta] = $this->parseTime($value);
+    }
+    return $values;
+  }
+
+  protected function parseTime($string) {
+    $matches = array();
+    $number = 0;
+    preg_match("/([0-9]+)([dhms])/", $string, $matches);
+    if (!empty($matches)) {
+      $string = '';
+      foreach ($matches as $match) {
+        switch ($match[2]) {
+          case 'd':
+            $number += $match[1] * 86400;
+            break;
+          case 'h':
+            $number += $match[1] * 3600;
+            break;
+          case 'm':
+            $number += $match[1] * 60;
+            break;
+          case 's':
+            $number += $match[1];
+            break;
+        }
+      }
+    }
+    return $number;
+  }
+
+  protected function formatNumber($number) {
+    $output = '';
+    $units = array(
+      '1d|@countd' => 86400,
+      '1h|@counth' => 3600,
+      '1m|@countm' => 60,
+      '1s|@counts' => 1,
+    );
+    foreach ($units as $key => $value) {
+      $key = explode('|', $key);
+      if ($number >= $value) {
+        $output .= ($output ? ' ' : '') . $this->formatPlural(floor($number / $value), $key[0], $key[1], array(), array('langcode' => $langcode));
+        $number %= $value;
+      }
+      elseif ($output) {
+        // Break if there was previous output but not any output at this level,
+        // to avoid skipping levels and getting output like "1 year 1 second".
+        break;
+      }
+    }
+    return $output ? $output : $this->t('0s', array(), array('langcode' => $langcode));
+  }
 }
