@@ -1912,7 +1912,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_reference_quantity",
-                "reference": "ae01e0cb17eb384779d68e7decb16f4b7ac73df7"
+                "reference": "1e8698e65f5e19d01f5e61b0c89c5d90802eccd9"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -1924,7 +1924,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1477729140"
+                    "datestamp": "1478045641"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1942,7 +1942,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_reference_quantity"
             },
-            "time": "2016-10-29 08:18:12"
+            "time": "2016-11-02 00:12:20"
         },
         {
             "name": "drupal/entity_reference_revisions",
