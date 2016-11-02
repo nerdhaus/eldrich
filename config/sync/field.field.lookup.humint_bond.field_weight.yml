@@ -1,0 +1,23 @@
+uuid: 8d88ada7-4a55-434a-b5a9-dc55a3a321db
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.humint_bond
+    - field.storage.lookup.field_weight
+id: lookup.humint_bond.field_weight
+field_name: field_weight
+entity_type: lookup
+bundle: humint_bond
+label: Weight
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

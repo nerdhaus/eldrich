@@ -1,0 +1,9 @@
+uuid: d996d2a7-6989-4a5e-bd40-f9fd35247922
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+name: 'Bond Levels'
+type: humint_bond
+description: ''

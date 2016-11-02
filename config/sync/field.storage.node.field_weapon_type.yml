@@ -15,14 +15,14 @@ settings:
       value: weapon
       label: Weapon
     -
-      value: mod
-      label: Modification
+      value: accessory
+      label: Accessory
     -
       value: ammo
       label: Ammunition
     -
       value: grenade
-      label: Grenade/Seeker
+      label: Grenade
   allowed_values_function: ''
 module: options
 locked: false

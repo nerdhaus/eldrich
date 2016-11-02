@@ -1,0 +1,27 @@
+uuid: 1b9d8410-c4c4-44cf-9125-14589653c4fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mods
+    - node.type.weapon
+id: node.weapon.field_mods
+field_name: field_mods
+entity_type: node
+bundle: weapon
+label: Mods
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      weapon: weapon
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

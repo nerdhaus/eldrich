@@ -1,0 +1,9 @@
+uuid: be3d6ed1-e2a3-40b2-8ba2-d78d15a43f21
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+name: 'Access Levels'
+type: humint_access
+description: ''

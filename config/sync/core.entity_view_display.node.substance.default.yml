@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.substance.field_addiction_modifier
     - field.field.node.substance.field_addiction_type
+    - field.field.node.substance.field_blueprints_available
     - field.field.node.substance.field_cost
     - field.field.node.substance.field_delivery_mechanism
     - field.field.node.substance.field_description
@@ -36,6 +37,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
+  field_blueprints_available:
+    weight: 109
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_cost:
     weight: 102
     label: above

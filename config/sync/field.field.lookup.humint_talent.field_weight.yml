@@ -1,0 +1,23 @@
+uuid: 67d34cac-ad5e-4cce-9c6a-ee9c2ddc218e
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.humint_talent
+    - field.storage.lookup.field_weight
+id: lookup.humint_talent.field_weight
+field_name: field_weight
+entity_type: lookup
+bundle: humint_talent
+label: Weight
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

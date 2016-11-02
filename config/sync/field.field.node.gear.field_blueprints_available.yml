@@ -1,0 +1,23 @@
+uuid: e171d581-74f1-4ae6-8415-b902ad1ace95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blueprints_available
+    - node.type.gear
+id: node.gear.field_blueprints_available
+field_name: field_blueprints_available
+entity_type: node
+bundle: gear
+label: 'Blueprints Available'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Blueprints are available for this item.'
+  off_label: 'Blueprints are not available for this item.'
+field_type: boolean

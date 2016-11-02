@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.weapon.field_attack_bonus
+    - field.field.node.weapon.field_blueprints_available
     - field.field.node.weapon.field_cost
     - field.field.node.weapon.field_description
     - field.field.node.weapon.field_linked_skill
+    - field.field.node.weapon.field_mods
     - field.field.node.weapon.field_weapon_area_effect
     - field.field.node.weapon.field_weapon_clip_size
     - field.field.node.weapon.field_weapon_damage
@@ -36,6 +38,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+  field_blueprints_available:
+    weight: 27
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_cost:
     weight: 7
     settings: {  }
@@ -53,6 +61,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_mods:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_weapon_area_effect:
     weight: 5
     settings: {  }

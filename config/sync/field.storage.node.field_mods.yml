@@ -1,15 +1,15 @@
-uuid: 8d17d9ea-eb1d-4ffd-81dd-28a689968fea
+uuid: dfcd8f15-cdb9-4486-950a-ddd4adb841ec
 langcode: en
 status: true
 dependencies:
   module:
-    - eck
-id: component.field_substance_delivery
-field_name: field_substance_delivery
-entity_type: component
+    - node
+id: node.field_mods
+field_name: field_mods
+entity_type: node
 type: entity_reference
 settings:
-  target_type: lookup
+  target_type: node
 module: core
 locked: false
 cardinality: -1

@@ -1,0 +1,9 @@
+uuid: 507f6048-a798-46b4-8af2-b405208ecb71
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+name: 'Talent Levels'
+type: humint_talent
+description: ''

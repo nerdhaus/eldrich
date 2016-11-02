@@ -1,0 +1,23 @@
+uuid: e2c004f7-6d53-4b46-be02-aeefc9e19ed8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blueprints_available
+    - node.type.substance
+id: node.substance.field_blueprints_available
+field_name: field_blueprints_available
+entity_type: node
+bundle: substance
+label: 'Blueprints Available'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Blueprints are available for this item.'
+  off_label: 'Blueprints are not available for this item.'
+field_type: boolean

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.gear.field_armor_value
+    - field.field.node.gear.field_blueprints_available
     - field.field.node.gear.field_category
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
@@ -114,6 +115,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
+  field_blueprints_available:
+    weight: 27
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_category:
     weight: 1
     settings: {  }

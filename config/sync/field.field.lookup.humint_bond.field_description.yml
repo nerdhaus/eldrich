@@ -1,0 +1,21 @@
+uuid: 41fd2721-b17a-4020-9705-f09589e9efdc
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.humint_bond
+    - field.storage.lookup.field_description
+  module:
+    - text
+id: lookup.humint_bond.field_description
+field_name: field_description
+entity_type: lookup
+bundle: humint_bond
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,22 @@
+uuid: 505d666e-8904-4665-a134-ea1f7a51662c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.armor
+id: node.armor.promote
+field_name: promote
+entity_type: node
+bundle: armor
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
