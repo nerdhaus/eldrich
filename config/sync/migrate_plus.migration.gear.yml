@@ -22,6 +22,8 @@ source:
     -
       minimum: Minimum
     -
+      blueprints: Blueprints
+    -
       book: Book
     -
       page: Page
@@ -39,18 +41,18 @@ process:
   field_gear_type/target_id:
     plugin: entity_lookup
     source: type
-    value_key: title
+    value_key: name
     bundle: gear
     bundle_key: vid
-    entity_type: taxonomy
+    entity_type: taxonomy_term
   field_description/value: description
   field_cost/target_id:
     plugin: entity_lookup
-    source: action
+    source: cost
     value_key: title
     bundle: cost_level
     bundle_key: type
-    entity_type: cost
+    entity_type: lookup
   field_cost/quantity:
     plugin: skip_on_empty
     method: process
@@ -66,12 +68,12 @@ process:
     plugin: skip_on_empty
     method: process
     source: page
-  field_is_active:
+  field_blueprints:
     plugin: static_map
-    source: active
+    source: blueprints
     map:
-      Active: 1
-      Passive: 0
+      'TRUE': 1
+      'FALSE': 0
     default_value: 0
   '@armor_array':
     -
@@ -101,8 +103,8 @@ process:
     plugin: static_map
     source: stackable
     map:
-      1: 0
-      0: 1
+      'TRUE': 0
+      'FALSE': 1
     default_value: 1
 destination:
   plugin: 'entity:node'
