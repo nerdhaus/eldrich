@@ -7,11 +7,11 @@ use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
 
 /**
- * Parses a simple damage string into its component parts.
+ * Parses a time string (10d 2h) into its component parts.
  *
  * @MigrateProcessPlugin(
  *   id = "integer_time",
- *   handle_multiples = TRUE
+ *   handle_multiples = FALSE
  * )
  *
  * @ingroup migration

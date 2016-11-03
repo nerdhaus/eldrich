@@ -11,7 +11,7 @@ use Drupal\migrate\Row;
  *
  * @MigrateProcessPlugin(
  *   id = "damage_string",
- *   handle_multiples = TRUE
+ *   handle_multiples = FALSE
  * )
  *
  * @ingroup migration

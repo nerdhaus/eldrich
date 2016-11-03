@@ -11,7 +11,7 @@ use Drupal\migrate\Row;
  *
  * @MigrateProcessPlugin(
  *   id = "stat_block",
- *   handle_multiples = TRUE
+ *   handle_multiples = FALSE
  * )
  *
  * @ingroup migration
@@ -22,7 +22,14 @@ abstract class StatBlockParser extends ProcessPluginBase {
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-    $results = [];
+    $raw = explode(',', $value);
+    $stats = ['cog', 'coo', 'int', 'ref', 'sav', 'som', 'wil', 'mox', 'spd', 'dur',
+    ];
+    for ($i = 0; $i++; $i < 10) {
+      if (isset($raw[$i]) && $raw[$i] !== 0) {
+        $results[$stats[$i]] = $raw[$i];
+      }
+    }
     return $results;
   }
 
