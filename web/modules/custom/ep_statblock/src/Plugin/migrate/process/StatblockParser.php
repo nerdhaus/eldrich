@@ -16,16 +16,16 @@ use Drupal\migrate\Row;
  *
  * @ingroup migration
  */
-public class StatBlockParser extends ProcessPluginBase {
+class StatBlockParser extends ProcessPluginBase {
 
   /**
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     $raw = explode(',', $value);
-    $stats = ['cog', 'coo', 'int', 'ref', 'sav', 'som', 'wil', 'mox', 'spd', 'dur',
-    ];
-    for ($i = 0; $i++; $i < 10) {
+    $stats = ['cog', 'coo', 'int', 'ref', 'sav', 'som', 'wil', 'mox', 'spd', 'dur'];
+    $results = [];
+    for ($i = 0; $i < 10; $i++) {
       if (isset($raw[$i]) && $raw[$i] !== 0) {
         $results[$stats[$i]] = $raw[$i];
       }
