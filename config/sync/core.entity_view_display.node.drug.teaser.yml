@@ -19,9 +19,13 @@ content:
   links:
     weight: 100
 hidden:
+  field_addiction_modifier: true
   field_armor: true
   field_blueprints: true
   field_cost: true
+  field_delivery_mechanism: true
   field_description: true
+  field_duration: true
   field_gear_type: true
+  field_onset_time: true
   field_source: true

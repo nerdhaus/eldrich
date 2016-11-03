@@ -64,14 +64,22 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-  'field_example_fields[]/value':
-    plugin: explode
-    delimiter: ','
-    source: fields
-  'field_specializations[]/value':
-    plugin: explode
-    delimiter: ','
-    source: specializations
+  field_example_fields:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: fields
+    -
+      plugin: explode
+      delimiter: ','
+  field_specializations:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: specializations
+    -
+      plugin: explode
+      delimiter: ','
   field_description/value: description
   field_usage/value: usage
 destination:

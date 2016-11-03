@@ -20,8 +20,16 @@ content:
     weight: 100
 hidden:
   field_armor: true
+  field_augmentations: true
   field_blueprints: true
   field_cost: true
   field_description: true
+  field_gear: true
   field_gear_type: true
+  field_linked_skill: true
+  field_mobility_system: true
+  field_movement_speed: true
+  field_passengers: true
+  field_skill_bonus: true
   field_source: true
+  field_stats: true
