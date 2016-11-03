@@ -5,7 +5,7 @@ dependencies: {  }
 id: robot
 migration_tags: null
 migration_group: eldrich_gear
-label: ''
+label: 'Robots and synth shells'
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/robots.csv
@@ -28,9 +28,17 @@ source:
     -
       page: Page
     -
+      stats: Stats
+    -
       armor: Armor
     -
-      stackable: Stackable
+      mobility: Mobility
+    -
+      speed: Speed
+    -
+      augmentations: Augmentations
+    -
+      skills: Skills
   keys:
     - title
 process:
@@ -106,6 +114,81 @@ process:
       'TRUE': 0
       'FALSE': 1
     default_value: 1
+  field_stats:
+    plugin: stat_block
+    source: stats
+  field_skills:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: skills
+    -
+      plugin: explode
+      delimiter: ,
+    -
+      plugin: skill_lookup
+      destination_field: target_id
+      entity_type: node
+      bundle: skill
+      bundle_key: type
+      value_key: title
+  field_mobility_system/target_id:
+    plugin: entity_lookup
+    source: mobility
+    value_key: title
+    bundle: mobility_type
+    bundle_key: type
+    entity_type: lookup
+  '@speed_array':
+    -
+      plugin: skip_on_empty
+      method: process
+      source: speed
+    -
+      plugin: explode
+      delimiter: /
+  field_speed/walk:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@speed_array'
+    -
+      plugin: extract
+      index: 0
+  field_speed/run:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@speed_array'
+    -
+      plugin: extract
+      index: 1
+  field_speed/cruise:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@speed_array'
+    -
+      plugin: extract
+      index: 2
+  field_augmentations:
+    plugin: entity_lookup
+    destination_field: target_id
+    source: augmentations
+    value_key: title
+    bundle: augmentation
+    bundle_key: type
+    entity_type: node
+  field_gear:
+    plugin: entity_lookup
+    destination_field: target_id
+    source: augmentations
+    value_key: title
+    bundle:
+      - gear
+      - weapon
+    bundle_key: type
+    entity_type: node
 destination:
   plugin: 'entity:node'
 migration_dependencies:

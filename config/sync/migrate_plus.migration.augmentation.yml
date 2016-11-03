@@ -5,7 +5,7 @@ dependencies: {  }
 id: augmentation
 migration_tags: null
 migration_group: eldrich_gear
-label: ''
+label: 'Augmentations and enhancements'
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/augmentations.csv

@@ -5,7 +5,7 @@ dependencies: {  }
 id: mind
 migration_tags: null
 migration_group: eldrich_gear
-label: ''
+label: 'AIs, Ego templates, etc.'
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/minds.csv

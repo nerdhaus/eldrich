@@ -5,7 +5,7 @@ dependencies: {  }
 id: vehicle
 migration_tags: null
 migration_group: eldrich_gear
-label: ''
+label: 'Vehicles, exoskeletons, and spacecraft'
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/vehicles.csv
