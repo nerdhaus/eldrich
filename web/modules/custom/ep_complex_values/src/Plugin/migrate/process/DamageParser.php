@@ -27,9 +27,9 @@ class DamageParser extends ProcessPluginBase {
     $pattern = "((?<dice>[0-9]+)d10)?((?<mod_function>[+-/*])(?<modifier>[0-9]+))?";
     $matches = preg_match($pattern, $value);
     $results = array(
-      'dice' => $matches['dice'],
-      'mod_function' => $matches['mod_function'],
-      'modifier' => $matches['modifier'],
+      'dice' => trim($matches['dice']),
+      'mod_function' => trim($matches['mod_function']),
+      'modifier' => trim($matches['modifier']),
     );
     return $results;
   }
