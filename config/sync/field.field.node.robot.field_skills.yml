@@ -1,0 +1,30 @@
+uuid: 0788139a-7cb7-48f4-adde-b183cbfab99b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_skills
+    - node.type.robot
+    - node.type.skill
+  module:
+    - ep_skill_reference
+id: node.robot.field_skills
+field_name: field_skills
+entity_type: node
+bundle: robot
+label: Skills
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      skill: skill
+    sort:
+      field: _none
+    auto_create: 0
+    auto_create_bundle: ''
+field_type: skill_reference

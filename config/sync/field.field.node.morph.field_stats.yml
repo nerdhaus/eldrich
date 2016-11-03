@@ -1,0 +1,21 @@
+uuid: c840c8f1-196d-4ba1-a60c-97aa38811afd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stats
+    - node.type.morph
+  module:
+    - ep_statblock
+id: node.morph.field_stats
+field_name: field_stats
+entity_type: node
+bundle: morph
+label: Stats
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: stat_block

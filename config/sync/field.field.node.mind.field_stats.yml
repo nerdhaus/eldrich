@@ -1,0 +1,21 @@
+uuid: 6c838808-1db1-4092-acc0-302a7a1364f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stats
+    - node.type.mind
+  module:
+    - ep_statblock
+id: node.mind.field_stats
+field_name: field_stats
+entity_type: node
+bundle: mind
+label: Stats
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: stat_block

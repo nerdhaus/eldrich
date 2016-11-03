@@ -1,0 +1,23 @@
+uuid: c88fab3e-06df-45a4-b5b0-16e910bcc71f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stat_variance
+    - node.type.morph
+id: node.morph.field_stat_variance
+field_name: field_stat_variance
+entity_type: node
+bundle: morph
+label: 'Stat Variance'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

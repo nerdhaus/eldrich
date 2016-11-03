@@ -1,0 +1,20 @@
+uuid: 2dab0abf-7749-4b88-84df-6c54115439a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - node
+id: node.field_area_effect
+field_name: field_area_effect
+entity_type: node
+type: entity_reference
+settings:
+  target_type: lookup
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,27 @@
+uuid: cdf4848e-9aa2-4ebc-8970-c9555978a72b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.augmentation.field_cost
+    - field.field.node.augmentation.field_description
+    - field.field.node.augmentation.field_gear_type
+    - field.field.node.augmentation.field_source
+    - node.type.augmentation
+  module:
+    - user
+id: node.augmentation.teaser
+targetEntityType: node
+bundle: augmentation
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_armor: true
+  field_blueprints: true
+  field_cost: true
+  field_description: true
+  field_gear_type: true
+  field_source: true

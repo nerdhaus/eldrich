@@ -1,0 +1,20 @@
+uuid: eb8943c7-0856-428f-85f5-1fe3dfcd4b8d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_magazine_size
+field_name: field_magazine_size
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

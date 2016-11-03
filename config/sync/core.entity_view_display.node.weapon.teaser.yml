@@ -1,9 +1,13 @@
-uuid: 8c705d23-747d-4d38-b30a-ccdc638efb50
+uuid: 8aa4ed88-47ff-4003-85bf-a2bcf422627c
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.weapon.field_cost
+    - field.field.node.weapon.field_description
+    - field.field.node.weapon.field_gear_type
+    - field.field.node.weapon.field_source
     - node.type.weapon
   module:
     - user
@@ -15,14 +19,9 @@ content:
   links:
     weight: 100
 hidden:
-  field_attack_bonus: true
+  field_armor: true
+  field_blueprints: true
   field_cost: true
   field_description: true
-  field_linked_skill: true
-  field_weapon_area_effect: true
-  field_weapon_clip_size: true
-  field_weapon_damage: true
-  field_weapon_damage_type: true
-  field_weapon_firing_modes: true
-  field_weapon_range: true
-  field_weapon_type: true
+  field_gear_type: true
+  field_source: true

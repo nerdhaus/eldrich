@@ -1,0 +1,21 @@
+uuid: bb4ecf28-b267-4130-8319-39262c3bb185
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - entity_reference_quantity
+    - node
+id: node.field_cost
+field_name: field_cost
+entity_type: node
+type: entity_reference_quantity
+settings:
+  target_type: lookup
+module: entity_reference_quantity
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

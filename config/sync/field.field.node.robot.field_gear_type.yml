@@ -1,0 +1,28 @@
+uuid: a458d9a0-509a-4fb9-83a4-c4d3cb6e8414
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gear_type
+    - node.type.robot
+    - taxonomy.vocabulary.gear
+id: node.robot.field_gear_type
+field_name: field_gear_type
+entity_type: node
+bundle: robot
+label: 'Gear Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      gear: gear
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,82 @@
+uuid: 67338a19-1f60-446e-8378-44831a30def5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.mind.field_blueprints
+    - field.field.node.mind.field_cost
+    - field.field.node.mind.field_description
+    - field.field.node.mind.field_gear_type
+    - field.field.node.mind.field_skills
+    - field.field.node.mind.field_source
+    - field.field.node.mind.field_stats
+    - node.type.mind
+  module:
+    - entity_reference_quantity
+    - ep_skill_reference
+    - ep_statblock
+    - text
+    - user
+id: node.mind.default
+targetEntityType: node
+bundle: mind
+mode: default
+content:
+  field_armor:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: armor_text
+  field_blueprints:
+    weight: 107
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_cost:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  field_description:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_gear_type:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_skills:
+    weight: 109
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: skill_reference_label
+  field_source:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  field_stats:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+  links:
+    weight: 100
+hidden: {  }

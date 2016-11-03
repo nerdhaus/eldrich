@@ -1,19 +1,22 @@
-uuid: bad13afd-135e-4021-9dfe-bc9e5367c0ed
+uuid: 06373e47-6d1a-4630-b1bd-4f47ca09f71a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.morph.field_armor_value
+    - field.field.node.morph.field_armor
     - field.field.node.morph.field_augmentations
+    - field.field.node.morph.field_blueprints
     - field.field.node.morph.field_cost
-    - field.field.node.morph.field_cp_cost
+    - field.field.node.morph.field_cp
     - field.field.node.morph.field_description
-    - field.field.node.morph.field_image
-    - field.field.node.morph.field_mobility_type
-    - field.field.node.morph.field_morph_type
+    - field.field.node.morph.field_gear
+    - field.field.node.morph.field_gear_type
+    - field.field.node.morph.field_mobility_system
+    - field.field.node.morph.field_movement_speed
     - field.field.node.morph.field_skills
     - field.field.node.morph.field_source
-    - field.field.node.morph.field_stat_limits
+    - field.field.node.morph.field_stat_cap
+    - field.field.node.morph.field_stat_variance
     - field.field.node.morph.field_stats
     - field.field.node.morph.field_traits
     - node.type.morph
@@ -23,7 +26,6 @@ dependencies:
     - ep_complex_values
     - ep_skill_reference
     - ep_statblock
-    - image
     - text
     - user
 id: node.morph.default
@@ -31,29 +33,38 @@ targetEntityType: node
 bundle: morph
 mode: default
 content:
-  field_armor_value:
-    weight: 113
+  field_armor:
+    weight: 108
     label: above
     settings: {  }
     third_party_settings: {  }
     type: armor_text
   field_augmentations:
-    weight: 108
+    weight: 113
     label: above
     settings:
       override_action: title
       link: true
     third_party_settings: {  }
     type: entity_reference_override_label
+  field_blueprints:
+    weight: 107
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_cost:
-    weight: 109
+    weight: 103
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_quantity_label
-  field_cp_cost:
-    weight: 102
+  field_cp:
+    weight: 115
     label: above
     settings:
       thousand_separator: ''
@@ -61,61 +72,75 @@ content:
     third_party_settings: {  }
     type: number_integer
   field_description:
-    weight: 101
+    weight: 104
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_image:
-    weight: 110
+  field_gear:
+    weight: 118
     label: above
     settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-  field_mobility_type:
-    weight: 103
-    label: above
-    settings:
+      override_action: title
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
-  field_morph_type:
-    weight: 105
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-  field_skills:
+    type: entity_reference_override_label
+  field_gear_type:
     weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_mobility_system:
+    weight: 116
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_movement_speed:
+    weight: 117
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: mobility_speed_formatter
+  field_skills:
+    weight: 112
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: skill_reference_label
   field_source:
-    weight: 111
+    weight: 105
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_quantity_label
-  field_stat_limits:
-    weight: 114
+  field_stat_cap:
+    weight: 110
     label: above
     settings: {  }
     third_party_settings: {  }
     type: stat_block_table
+  field_stat_variance:
+    weight: 111
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
   field_stats:
-    weight: 104
+    weight: 109
     label: above
     settings: {  }
     third_party_settings: {  }
     type: stat_block_table
   field_traits:
-    weight: 112
+    weight: 114
     label: above
     settings:
       override_action: title

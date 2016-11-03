@@ -1,0 +1,21 @@
+uuid: 1125c896-f88d-4b22-a4bf-ddf68baba7be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movement_speed
+    - node.type.robot
+  module:
+    - ep_complex_values
+id: node.robot.field_movement_speed
+field_name: field_movement_speed
+entity_type: node
+bundle: robot
+label: 'Movement Speed'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: mobility_speed

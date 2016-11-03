@@ -1,0 +1,21 @@
+uuid: 6d07e68c-5330-4273-92a5-5607c12ffa35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stats
+    - node.type.robot
+  module:
+    - ep_statblock
+id: node.robot.field_stats
+field_name: field_stats
+entity_type: node
+bundle: robot
+label: Stats
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: stat_block

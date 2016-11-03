@@ -1,0 +1,21 @@
+uuid: f2234548-3803-46b4-af72-556ed2e0548c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stat_cap
+    - node.type.morph
+  module:
+    - ep_statblock
+id: node.morph.field_stat_cap
+field_name: field_stat_cap
+entity_type: node
+bundle: morph
+label: 'Stat Cap'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: stat_block

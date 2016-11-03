@@ -1,20 +1,14 @@
-uuid: a8856765-c9d5-4821-a4aa-a918b84d8a74
+uuid: 098eb606-db06-4f39-b9f9-d6aea285b551
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.gear.field_armor_value
-    - field.field.node.gear.field_category
+    - field.field.node.gear.field_armor
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
-    - field.field.node.gear.field_linked_skill
-    - field.field.node.gear.field_mobility_type
-    - field.field.node.gear.field_skills
+    - field.field.node.gear.field_gear_type
     - field.field.node.gear.field_source
-    - field.field.node.gear.field_speed
-    - field.field.node.gear.field_stats
-    - field.field.node.gear.field_traits
     - node.type.gear
   module:
     - user
@@ -26,15 +20,8 @@ content:
   links:
     weight: 100
 hidden:
-  field_armor_value: true
-  field_category: true
+  field_armor: true
   field_cost: true
   field_description: true
-  field_linked_skill: true
-  field_mobility_type: true
-  field_skills: true
+  field_gear_type: true
   field_source: true
-  field_speed: true
-  field_stats: true
-  field_sub_gear: true
-  field_traits: true

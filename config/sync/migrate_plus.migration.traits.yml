@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: traits
 migration_tags: null
-migration_group: eldrich
+migration_group: eldrich_core
 label: 'Ego and Morph Traits'
 source:
   plugin: csv

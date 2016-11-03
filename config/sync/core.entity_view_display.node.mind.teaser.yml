@@ -1,0 +1,27 @@
+uuid: 5618081a-67e0-4103-912a-d722e876b3b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.mind.field_cost
+    - field.field.node.mind.field_description
+    - field.field.node.mind.field_gear_type
+    - field.field.node.mind.field_source
+    - node.type.mind
+  module:
+    - user
+id: node.mind.teaser
+targetEntityType: node
+bundle: mind
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_armor: true
+  field_blueprints: true
+  field_cost: true
+  field_description: true
+  field_gear_type: true
+  field_source: true

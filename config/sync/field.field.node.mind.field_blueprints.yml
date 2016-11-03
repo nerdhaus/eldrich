@@ -1,0 +1,23 @@
+uuid: 3e1cdc50-0c64-42ba-8f35-c682ee39b2f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blueprints
+    - node.type.mind
+id: node.mind.field_blueprints
+field_name: field_blueprints
+entity_type: node
+bundle: mind
+label: 'Blueprints Available'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

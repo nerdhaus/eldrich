@@ -1,0 +1,19 @@
+uuid: eaf6c942-cadc-46f8-a374-fa211996c84a
+langcode: en
+status: true
+dependencies:
+  module:
+    - ep_complex_values
+    - node
+id: node.field_range
+field_name: field_range
+entity_type: node
+type: weapon_range
+settings: {  }
+module: ep_complex_values
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

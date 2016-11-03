@@ -1,28 +1,18 @@
-uuid: 6295fd28-ce18-46b5-9324-f287965348ea
+uuid: f08314c6-2284-4755-9fc8-e2e509f40fb5
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.gear.field_armor_value
-    - field.field.node.gear.field_blueprints_available
-    - field.field.node.gear.field_category
+    - field.field.node.gear.field_armor
+    - field.field.node.gear.field_blueprints
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
-    - field.field.node.gear.field_linked_skill
-    - field.field.node.gear.field_mobility_type
-    - field.field.node.gear.field_skills
+    - field.field.node.gear.field_gear_type
     - field.field.node.gear.field_source
-    - field.field.node.gear.field_speed
-    - field.field.node.gear.field_stats
-    - field.field.node.gear.field_sub_gear
-    - field.field.node.gear.field_traits
     - node.type.gear
   module:
-    - entity_reference_override
     - entity_reference_quantity
     - ep_complex_values
-    - ep_skill_reference
-    - ep_statblock
     - text
     - user
 id: node.gear.default
@@ -30,14 +20,14 @@ targetEntityType: node
 bundle: gear
 mode: default
 content:
-  field_armor_value:
-    weight: 107
+  field_armor:
+    weight: 102
     label: above
     settings: {  }
     third_party_settings: {  }
     type: armor_text
-  field_blueprints_available:
-    weight: 123
+  field_blueprints:
+    weight: 107
     label: above
     settings:
       format: default
@@ -45,13 +35,6 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
-  field_category:
-    weight: 102
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
   field_cost:
     weight: 103
     label: above
@@ -60,67 +43,25 @@ content:
     third_party_settings: {  }
     type: entity_reference_quantity_label
   field_description:
-    weight: 101
+    weight: 104
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_linked_skill:
+  field_gear_type:
     weight: 106
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_mobility_type:
-    weight: 115
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-  field_skills:
+  field_source:
     weight: 105
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: skill_reference_label
-  field_source:
-    weight: 120
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
     type: entity_reference_quantity_label
-  field_speed:
-    weight: 116
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: mobility_speed_formatter
-  field_stats:
-    weight: 104
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: stat_block_table
-  field_sub_gear:
-    weight: 122
-    label: above
-    settings:
-      override_action: title
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_override_label
-  field_traits:
-    weight: 121
-    label: above
-    settings:
-      override_action: title
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_override_label
   links:
     weight: 100
 hidden: {  }

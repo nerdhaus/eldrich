@@ -1,0 +1,19 @@
+uuid: 4e5f119e-eb58-4b92-842f-5748fb13c1e1
+langcode: en
+status: true
+dependencies:
+  module:
+    - ep_complex_values
+    - node
+id: node.field_damage
+field_name: field_damage
+entity_type: node
+type: damage_value
+settings: {  }
+module: ep_complex_values
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,18 @@
+uuid: 78c804c9-48c8-4878-90b1-7d34283d41d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.robot
+id: node.robot.title
+field_name: title
+entity_type: node
+bundle: robot
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

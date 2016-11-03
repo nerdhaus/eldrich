@@ -1,0 +1,27 @@
+uuid: 0e1bde75-1fdf-4db9-9016-370aed10b625
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.drug.field_cost
+    - field.field.node.drug.field_description
+    - field.field.node.drug.field_gear_type
+    - field.field.node.drug.field_source
+    - node.type.drug
+  module:
+    - user
+id: node.drug.teaser
+targetEntityType: node
+bundle: drug
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_armor: true
+  field_blueprints: true
+  field_cost: true
+  field_description: true
+  field_gear_type: true
+  field_source: true

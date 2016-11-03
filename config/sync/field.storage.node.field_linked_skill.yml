@@ -1,0 +1,20 @@
+uuid: fd8a74f6-c0ce-486d-ba17-3ebe0bd38516
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_override
+    - node
+id: node.field_linked_skill
+field_name: field_linked_skill
+entity_type: node
+type: entity_reference_override
+settings:
+  target_type: node
+module: entity_reference_override
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

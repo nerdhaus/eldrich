@@ -1,0 +1,23 @@
+uuid: ff8df1bd-d350-4469-b6d9-a9e4a019de45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blueprints
+    - node.type.vehicle
+id: node.vehicle.field_blueprints
+field_name: field_blueprints
+entity_type: node
+bundle: vehicle
+label: 'Blueprints Available'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

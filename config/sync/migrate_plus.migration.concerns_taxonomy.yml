@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: concerns_taxonomy
 migration_tags: null
-migration_group: eldrich
+migration_group: eldrich_core
 label: 'Taxonomy for corporate focuses, memes, etc.'
 source:
   plugin: csv

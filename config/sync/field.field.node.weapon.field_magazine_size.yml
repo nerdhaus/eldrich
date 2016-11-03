@@ -1,0 +1,23 @@
+uuid: a6221b86-1fde-4c2f-a915-71c05e3826fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_magazine_size
+    - node.type.weapon
+id: node.weapon.field_magazine_size
+field_name: field_magazine_size
+entity_type: node
+bundle: weapon
+label: 'Magazine Size'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

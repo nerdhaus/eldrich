@@ -1,0 +1,121 @@
+uuid: 51e3d6a3-ca3c-4bc3-81cd-d5848e06acd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.drug.field_addiction_modifier
+    - field.field.node.drug.field_blueprints
+    - field.field.node.drug.field_cost
+    - field.field.node.drug.field_delivery_mechanism
+    - field.field.node.drug.field_description
+    - field.field.node.drug.field_duration
+    - field.field.node.drug.field_gear_type
+    - field.field.node.drug.field_onset_time
+    - field.field.node.drug.field_source
+    - node.type.drug
+  module:
+    - entity_reference_quantity
+    - path
+    - text
+id: node.drug.default
+targetEntityType: node
+bundle: drug
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  field_addiction_modifier:
+    weight: 29
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_armor:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: armor_widget
+  field_blueprints:
+    weight: 9
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_cost:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_reference_quantity_select
+  field_delivery_mechanism:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_description:
+    weight: 7
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_duration:
+    weight: 28
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_gear_type:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_onset_time:
+    weight: 27
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_source:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_reference_quantity_select
+  path:
+    type: path
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

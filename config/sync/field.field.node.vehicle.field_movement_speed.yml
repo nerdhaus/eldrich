@@ -1,0 +1,21 @@
+uuid: 49fd0719-eece-4a49-8018-0e7dc52a2265
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movement_speed
+    - node.type.vehicle
+  module:
+    - ep_complex_values
+id: node.vehicle.field_movement_speed
+field_name: field_movement_speed
+entity_type: node
+bundle: vehicle
+label: 'Movement Speed'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: mobility_speed

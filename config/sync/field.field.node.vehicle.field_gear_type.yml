@@ -1,0 +1,28 @@
+uuid: 47a3823c-8a11-4b22-8524-d62f483708d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gear_type
+    - node.type.vehicle
+    - taxonomy.vocabulary.gear
+id: node.vehicle.field_gear_type
+field_name: field_gear_type
+entity_type: node
+bundle: vehicle
+label: 'Gear Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      gear: gear
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

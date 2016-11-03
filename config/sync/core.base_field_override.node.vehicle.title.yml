@@ -1,0 +1,18 @@
+uuid: ee247ae4-89d1-43ba-a4f8-bbaee1b60f3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vehicle
+id: node.vehicle.title
+field_name: title
+entity_type: node
+bundle: vehicle
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+uuid: 0159770a-1608-404b-9aea-2684e6e8bfac
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_override
+    - node
+id: node.field_augmentations
+field_name: field_augmentations
+entity_type: node
+type: entity_reference_override
+settings:
+  target_type: node
+module: entity_reference_override
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

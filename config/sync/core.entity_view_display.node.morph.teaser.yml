@@ -1,9 +1,13 @@
-uuid: 01a7be9c-a99c-4e17-820d-59c6abea1278
+uuid: 5d53f989-8b3a-46af-b56e-3889dabbd5a9
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.morph.field_cost
+    - field.field.node.morph.field_description
+    - field.field.node.morph.field_gear_type
+    - field.field.node.morph.field_source
     - node.type.morph
   module:
     - user
@@ -15,16 +19,9 @@ content:
   links:
     weight: 100
 hidden:
-  field_armor_value: true
-  field_augmentations: true
+  field_armor: true
+  field_blueprints: true
   field_cost: true
-  field_cp_cost: true
   field_description: true
-  field_image: true
-  field_mobility_type: true
-  field_morph_type: true
-  field_skills: true
+  field_gear_type: true
   field_source: true
-  field_stat_limits: true
-  field_stats: true
-  field_traits: true

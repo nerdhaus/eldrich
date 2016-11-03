@@ -1,0 +1,18 @@
+uuid: c0b5ffc7-afa1-477b-b623-b0450563424d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Drug
+type: drug
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

@@ -1,0 +1,20 @@
+uuid: d75ef809-32e3-4134-91a3-173927d15ae5
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_override
+    - node
+id: node.field_gear
+field_name: field_gear
+entity_type: node
+type: entity_reference_override
+settings:
+  target_type: node
+module: entity_reference_override
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

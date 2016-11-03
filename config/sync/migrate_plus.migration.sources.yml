@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: sources
 migration_tags: null
-migration_group: eldrich
+migration_group: eldrich_core
 label: 'Content sources'
 source:
   plugin: csv

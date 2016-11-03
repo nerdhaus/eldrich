@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: lookup_tables
 migration_tags: null
-migration_group: eldrich
+migration_group: eldrich_core
 label: 'Basic lookup tables'
 source:
   plugin: csv

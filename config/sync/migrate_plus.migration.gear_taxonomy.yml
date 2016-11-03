@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: gear_taxonomy
 migration_tags: null
-migration_group: eldrich
+migration_group: eldrich_core
 label: 'Taxonomy hierarchy for purchasable gear'
 source:
   plugin: csv
