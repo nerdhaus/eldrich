@@ -1,0 +1,21 @@
+uuid: 355463bc-21e7-4597-b877-860f7fa56659
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stats
+    - node.type.vehicle
+  module:
+    - ep_statblock
+id: node.vehicle.field_stats
+field_name: field_stats
+entity_type: node
+bundle: vehicle
+label: Stats
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: stat_block

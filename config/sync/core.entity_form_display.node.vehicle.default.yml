@@ -3,15 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.vehicle.field_armor
+    - field.field.node.vehicle.field_augmentations
     - field.field.node.vehicle.field_blueprints
     - field.field.node.vehicle.field_cost
     - field.field.node.vehicle.field_description
+    - field.field.node.vehicle.field_gear
     - field.field.node.vehicle.field_gear_type
+    - field.field.node.vehicle.field_linked_skill
+    - field.field.node.vehicle.field_mobility_system
+    - field.field.node.vehicle.field_movement_speed
+    - field.field.node.vehicle.field_passengers
+    - field.field.node.vehicle.field_skill_bonus
     - field.field.node.vehicle.field_source
+    - field.field.node.vehicle.field_stats
     - node.type.vehicle
   module:
+    - entity_reference_override
     - entity_reference_quantity
     - ep_complex_values
+    - ep_statblock
     - path
     - text
 id: node.vehicle.default
@@ -25,10 +36,18 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_armor:
-    weight: 10
+    weight: 26
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
+  field_augmentations:
+    weight: 32
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
   field_blueprints:
     weight: 9
     settings:
@@ -47,16 +66,62 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_gear:
+    weight: 33
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
   field_gear_type:
     weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_linked_skill:
+    weight: 28
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
+  field_mobility_system:
+    weight: 30
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_movement_speed:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: mobility_speed_widget
+  field_passengers:
+    weight: 34
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_skill_bonus:
+    weight: 29
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   field_source:
     weight: 11
     settings: {  }
     third_party_settings: {  }
     type: entity_reference_quantity_select
+  field_stats:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
   path:
     type: path
     weight: 5

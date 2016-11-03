@@ -9,7 +9,10 @@ dependencies:
     - field.field.node.morph.field_cost
     - field.field.node.morph.field_cp
     - field.field.node.morph.field_description
+    - field.field.node.morph.field_gear
     - field.field.node.morph.field_gear_type
+    - field.field.node.morph.field_mobility_system
+    - field.field.node.morph.field_movement_speed
     - field.field.node.morph.field_skills
     - field.field.node.morph.field_source
     - field.field.node.morph.field_stat_cap
@@ -72,11 +75,32 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_gear:
+    weight: 36
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
   field_gear_type:
     weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_mobility_system:
+    weight: 34
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_movement_speed:
+    weight: 35
+    settings: {  }
+    third_party_settings: {  }
+    type: mobility_speed_widget
   field_skills:
     weight: 30
     settings: {  }

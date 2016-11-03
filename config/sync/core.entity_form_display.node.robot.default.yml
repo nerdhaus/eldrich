@@ -3,15 +3,25 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.robot.field_armor
+    - field.field.node.robot.field_augmentations
     - field.field.node.robot.field_blueprints
     - field.field.node.robot.field_cost
     - field.field.node.robot.field_description
+    - field.field.node.robot.field_gear
     - field.field.node.robot.field_gear_type
+    - field.field.node.robot.field_mobility_system
+    - field.field.node.robot.field_movement_speed
+    - field.field.node.robot.field_skills
     - field.field.node.robot.field_source
+    - field.field.node.robot.field_stats
     - node.type.robot
   module:
+    - entity_reference_override
     - entity_reference_quantity
     - ep_complex_values
+    - ep_skill_reference
+    - ep_statblock
     - path
     - text
 id: node.robot.default
@@ -25,10 +35,18 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_armor:
-    weight: 10
+    weight: 26
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
+  field_augmentations:
+    weight: 30
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
   field_blueprints:
     weight: 9
     settings:
@@ -47,16 +65,47 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_gear:
+    weight: 32
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
   field_gear_type:
     weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_mobility_system:
+    weight: 29
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_movement_speed:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: mobility_speed_widget
+  field_skills:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: skill_reference_select
   field_source:
     weight: 11
     settings: {  }
     third_party_settings: {  }
     type: entity_reference_quantity_select
+  field_stats:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
   path:
     type: path
     weight: 5

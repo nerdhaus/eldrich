@@ -1,0 +1,23 @@
+uuid: 85e23d0f-243d-4d40-ac1b-6fe32d5fd002
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_skill_bonus
+    - node.type.vehicle
+id: node.vehicle.field_skill_bonus
+field_name: field_skill_bonus
+entity_type: node
+bundle: vehicle
+label: 'Skill Bonus'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

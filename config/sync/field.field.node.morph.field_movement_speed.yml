@@ -1,0 +1,21 @@
+uuid: b5454639-7ab6-4724-aaa4-08c789c3dccf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movement_speed
+    - node.type.morph
+  module:
+    - ep_complex_values
+id: node.morph.field_movement_speed
+field_name: field_movement_speed
+entity_type: node
+bundle: morph
+label: 'Movement Speed'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: mobility_speed

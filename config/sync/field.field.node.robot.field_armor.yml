@@ -1,0 +1,21 @@
+uuid: c66dfdf5-db37-43ba-b8ae-61d44692ab73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_armor
+    - node.type.robot
+  module:
+    - ep_complex_values
+id: node.robot.field_armor
+field_name: field_armor
+entity_type: node
+bundle: robot
+label: Armor
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: armor_value
