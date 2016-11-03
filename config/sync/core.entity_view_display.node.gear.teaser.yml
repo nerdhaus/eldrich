@@ -1,0 +1,27 @@
+uuid: 098eb606-db06-4f39-b9f9-d6aea285b551
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.gear.field_armor
+    - field.field.node.gear.field_cost
+    - field.field.node.gear.field_description
+    - field.field.node.gear.field_gear_type
+    - field.field.node.gear.field_source
+    - node.type.gear
+  module:
+    - user
+id: node.gear.teaser
+targetEntityType: node
+bundle: gear
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_armor: true
+  field_cost: true
+  field_description: true
+  field_gear_type: true
+  field_source: true

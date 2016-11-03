@@ -1,0 +1,23 @@
+uuid: 1061f724-9d7f-4dfa-8b9c-49da7fb4454d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blueprints
+    - node.type.gear
+id: node.gear.field_blueprints
+field_name: field_blueprints
+entity_type: node
+bundle: gear
+label: 'Blueprints Available'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

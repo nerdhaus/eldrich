@@ -1,0 +1,67 @@
+uuid: f08314c6-2284-4755-9fc8-e2e509f40fb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.gear.field_armor
+    - field.field.node.gear.field_blueprints
+    - field.field.node.gear.field_cost
+    - field.field.node.gear.field_description
+    - field.field.node.gear.field_gear_type
+    - field.field.node.gear.field_source
+    - node.type.gear
+  module:
+    - entity_reference_quantity
+    - ep_complex_values
+    - text
+    - user
+id: node.gear.default
+targetEntityType: node
+bundle: gear
+mode: default
+content:
+  field_armor:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: armor_text
+  field_blueprints:
+    weight: 107
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_cost:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  field_description:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_gear_type:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_source:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  links:
+    weight: 100
+hidden: {  }
