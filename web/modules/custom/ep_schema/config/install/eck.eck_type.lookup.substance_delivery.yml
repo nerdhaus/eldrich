@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.lookup
-name: 'Substance Delivery'
-type: substance_delivery
-description: ''
