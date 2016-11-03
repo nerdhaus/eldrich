@@ -46,6 +46,11 @@ class SkillReferenceAutocompleteWidget extends EntityReferenceAutocompleteWidget
       '#placeholder' => t('Points'),
     );
 
+    $widget['target_id']['#weight'] = 0;
+    $widget['field']['#weight'] = 10;
+    $widget['points']['#weight'] = 20;
+    $widget['specialization']['#weight'] = 30;
+
     return $widget;
   }
 }
