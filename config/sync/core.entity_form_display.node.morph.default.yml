@@ -3,15 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.morph.field_armor
+    - field.field.node.morph.field_augmentations
     - field.field.node.morph.field_blueprints
     - field.field.node.morph.field_cost
+    - field.field.node.morph.field_cp
     - field.field.node.morph.field_description
     - field.field.node.morph.field_gear_type
+    - field.field.node.morph.field_skills
     - field.field.node.morph.field_source
+    - field.field.node.morph.field_stat_cap
+    - field.field.node.morph.field_stat_variance
+    - field.field.node.morph.field_stats
+    - field.field.node.morph.field_traits
     - node.type.morph
   module:
+    - entity_reference_override
     - entity_reference_quantity
     - ep_complex_values
+    - ep_skill_reference
+    - ep_statblock
     - path
     - text
 id: node.morph.default
@@ -25,10 +36,18 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_armor:
-    weight: 10
+    weight: 26
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
+  field_augmentations:
+    weight: 31
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
   field_blueprints:
     weight: 9
     settings:
@@ -40,6 +59,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: entity_reference_quantity_select
+  field_cp:
+    weight: 33
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   field_description:
     weight: 7
     settings:
@@ -52,11 +77,40 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_skills:
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+    type: skill_reference_select
   field_source:
     weight: 11
     settings: {  }
     third_party_settings: {  }
     type: entity_reference_quantity_select
+  field_stat_cap:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+  field_stat_variance:
+    weight: 29
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_stats:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+  field_traits:
+    weight: 32
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
   path:
     type: path
     weight: 5

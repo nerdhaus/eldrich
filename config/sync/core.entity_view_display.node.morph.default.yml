@@ -3,15 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.morph.field_armor
+    - field.field.node.morph.field_augmentations
     - field.field.node.morph.field_blueprints
     - field.field.node.morph.field_cost
+    - field.field.node.morph.field_cp
     - field.field.node.morph.field_description
     - field.field.node.morph.field_gear_type
+    - field.field.node.morph.field_skills
     - field.field.node.morph.field_source
+    - field.field.node.morph.field_stat_cap
+    - field.field.node.morph.field_stat_variance
+    - field.field.node.morph.field_stats
+    - field.field.node.morph.field_traits
     - node.type.morph
   module:
+    - entity_reference_override
     - entity_reference_quantity
     - ep_complex_values
+    - ep_skill_reference
+    - ep_statblock
     - text
     - user
 id: node.morph.default
@@ -20,11 +31,19 @@ bundle: morph
 mode: default
 content:
   field_armor:
-    weight: 102
+    weight: 108
     label: above
     settings: {  }
     third_party_settings: {  }
     type: armor_text
+  field_augmentations:
+    weight: 113
+    label: above
+    settings:
+      override_action: title
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_override_label
   field_blueprints:
     weight: 107
     label: above
@@ -41,6 +60,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_quantity_label
+  field_cp:
+    weight: 115
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
   field_description:
     weight: 104
     label: above
@@ -54,6 +81,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_skills:
+    weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: skill_reference_label
   field_source:
     weight: 105
     label: above
@@ -61,6 +95,34 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_quantity_label
+  field_stat_cap:
+    weight: 110
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+  field_stat_variance:
+    weight: 111
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_stats:
+    weight: 109
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+  field_traits:
+    weight: 114
+    label: above
+    settings:
+      override_action: title
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_override_label
   links:
     weight: 100
 hidden: {  }

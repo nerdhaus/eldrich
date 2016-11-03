@@ -1,0 +1,21 @@
+uuid: ac76cb4c-589d-47d7-8a57-f902c7518bc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_armor
+    - node.type.morph
+  module:
+    - ep_complex_values
+id: node.morph.field_armor
+field_name: field_armor
+entity_type: node
+bundle: morph
+label: Armor
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: armor_value

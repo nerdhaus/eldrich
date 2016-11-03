@@ -7,11 +7,14 @@ dependencies:
     - field.field.node.mind.field_cost
     - field.field.node.mind.field_description
     - field.field.node.mind.field_gear_type
+    - field.field.node.mind.field_skills
     - field.field.node.mind.field_source
+    - field.field.node.mind.field_stats
     - node.type.mind
   module:
     - entity_reference_quantity
-    - ep_complex_values
+    - ep_skill_reference
+    - ep_statblock
     - path
     - text
 id: node.mind.default
@@ -52,11 +55,21 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_skills:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: skill_reference_select
   field_source:
     weight: 11
     settings: {  }
     third_party_settings: {  }
     type: entity_reference_quantity_select
+  field_stats:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
   path:
     type: path
     weight: 5

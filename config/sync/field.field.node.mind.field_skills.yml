@@ -1,0 +1,30 @@
+uuid: 9aeb2250-0526-40bd-b81e-f75130fc7afe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_skills
+    - node.type.mind
+    - node.type.skill
+  module:
+    - ep_skill_reference
+id: node.mind.field_skills
+field_name: field_skills
+entity_type: node
+bundle: mind
+label: Skills
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      skill: skill
+    sort:
+      field: _none
+    auto_create: 0
+    auto_create_bundle: ''
+field_type: skill_reference
