@@ -1,0 +1,23 @@
+uuid: 847aaa0a-34b7-485a-a053-34418b5474c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blueprints
+    - node.type.drug
+id: node.drug.field_blueprints
+field_name: field_blueprints
+entity_type: node
+bundle: drug
+label: 'Blueprints Available'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

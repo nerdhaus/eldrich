@@ -1,0 +1,114 @@
+uuid: c7642d95-9ae8-4c23-87c5-2a36fa5b94aa
+langcode: en
+status: true
+dependencies: {  }
+id: drug
+migration_tags: null
+migration_group: eldrich_gear
+label: ''
+source:
+  plugin: csv
+  path: modules/custom/ep_import/gear/drugs.csv
+  header_row_count: 1
+  column_names:
+    -
+      title: Title
+    -
+      type: Type
+    -
+      description: Description
+    -
+      cost: Cost
+    -
+      minimum: Minimum
+    -
+      blueprints: Blueprints
+    -
+      book: Book
+    -
+      page: Page
+    -
+      armor: Armor
+    -
+      stackable: Stackable
+  keys:
+    - title
+process:
+  title: title
+  type:
+    plugin: default_value
+    default_value: drug
+  field_gear_type/target_id:
+    plugin: entity_lookup
+    source: type
+    value_key: name
+    bundle: gear
+    bundle_key: vid
+    entity_type: taxonomy_term
+  field_description/value: description
+  field_cost/target_id:
+    plugin: entity_lookup
+    source: cost
+    value_key: title
+    bundle: cost_level
+    bundle_key: type
+    entity_type: lookup
+  field_cost/quantity:
+    plugin: skip_on_empty
+    method: process
+    source: minimum
+  field_source/target_id:
+    plugin: entity_lookup
+    entity_type: node
+    bundle: source
+    bundle_key: type
+    value_key: field_code
+    source: book
+  field_source/quantity:
+    plugin: skip_on_empty
+    method: process
+    source: page
+  field_blueprints:
+    plugin: static_map
+    source: blueprints
+    map:
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
+  '@armor_array':
+    -
+      plugin: skip_on_empty
+      method: process
+      source: armor
+    -
+      plugin: explode
+      delimiter: /
+  field_armor/energy:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@armor_array'
+    -
+      plugin: extract
+      index: 0
+  field_armor/kinetic:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@armor_array'
+    -
+      plugin: extract
+      index: 1
+  field_armor/replaces:
+    plugin: static_map
+    source: stackable
+    map:
+      'TRUE': 0
+      'FALSE': 1
+    default_value: 1
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - lookup_tables
+    - sources

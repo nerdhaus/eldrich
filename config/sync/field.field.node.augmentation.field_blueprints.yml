@@ -1,0 +1,23 @@
+uuid: 4373242c-8a81-4e69-beca-3a97e17318d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blueprints
+    - node.type.augmentation
+id: node.augmentation.field_blueprints
+field_name: field_blueprints
+entity_type: node
+bundle: augmentation
+label: 'Blueprints Available'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

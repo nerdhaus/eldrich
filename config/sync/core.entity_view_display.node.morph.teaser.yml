@@ -1,0 +1,28 @@
+uuid: 5d53f989-8b3a-46af-b56e-3889dabbd5a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.morph.field_armor
+    - field.field.node.morph.field_cost
+    - field.field.node.morph.field_description
+    - field.field.node.morph.field_gear_type
+    - field.field.node.morph.field_source
+    - node.type.morph
+  module:
+    - user
+id: node.morph.teaser
+targetEntityType: node
+bundle: morph
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_armor: true
+  field_blueprints: true
+  field_cost: true
+  field_description: true
+  field_gear_type: true
+  field_source: true

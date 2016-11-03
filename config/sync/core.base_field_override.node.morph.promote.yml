@@ -1,0 +1,22 @@
+uuid: eb2611f5-3ea3-4f37-b9e7-25d240afdb80
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.morph
+id: node.morph.promote
+field_name: promote
+entity_type: node
+bundle: morph
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

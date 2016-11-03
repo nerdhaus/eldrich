@@ -1,0 +1,66 @@
+uuid: e991b28c-8f4c-4c38-b8c7-e21af8d38945
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.vehicle.field_blueprints
+    - field.field.node.vehicle.field_cost
+    - field.field.node.vehicle.field_description
+    - field.field.node.vehicle.field_gear_type
+    - field.field.node.vehicle.field_source
+    - node.type.vehicle
+  module:
+    - entity_reference_quantity
+    - ep_complex_values
+    - text
+    - user
+id: node.vehicle.default
+targetEntityType: node
+bundle: vehicle
+mode: default
+content:
+  field_armor:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: armor_text
+  field_blueprints:
+    weight: 107
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_cost:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  field_description:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_gear_type:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_source:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  links:
+    weight: 100
+hidden: {  }

@@ -1,0 +1,18 @@
+uuid: 9b2eb08a-71bd-482f-9ea5-b0fcc3b1dbb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.morph
+id: node.morph.title
+field_name: title
+entity_type: node
+bundle: morph
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

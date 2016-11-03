@@ -1,0 +1,28 @@
+uuid: a01bb78a-221a-4740-9050-2118da3b72e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gear_type
+    - node.type.augmentation
+    - taxonomy.vocabulary.gear
+id: node.augmentation.field_gear_type
+field_name: field_gear_type
+entity_type: node
+bundle: augmentation
+label: 'Gear Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      gear: gear
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

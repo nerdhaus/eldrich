@@ -1,0 +1,28 @@
+uuid: cf23fa14-f78c-4815-9dc5-e4a7525b178e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.vehicle.field_armor
+    - field.field.node.vehicle.field_cost
+    - field.field.node.vehicle.field_description
+    - field.field.node.vehicle.field_gear_type
+    - field.field.node.vehicle.field_source
+    - node.type.vehicle
+  module:
+    - user
+id: node.vehicle.teaser
+targetEntityType: node
+bundle: vehicle
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_armor: true
+  field_blueprints: true
+  field_cost: true
+  field_description: true
+  field_gear_type: true
+  field_source: true

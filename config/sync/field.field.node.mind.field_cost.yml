@@ -1,0 +1,34 @@
+uuid: 35301e4b-8f51-42ca-ba76-6d6c198706ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.cost_level
+    - field.storage.node.field_cost
+    - node.type.mind
+  module:
+    - entity_reference_quantity
+id: node.mind.field_cost
+field_name: field_cost
+entity_type: node
+bundle: mind
+label: Cost
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:lookup'
+  handler_settings:
+    target_bundles:
+      cost_level: cost_level
+    sort:
+      field: field_weight
+      direction: ASC
+    auto_create: 0
+    auto_create_bundle: ''
+  qty_min: '0'
+  qty_max: '999999'
+  qty_label: Minimum
+field_type: entity_reference_quantity

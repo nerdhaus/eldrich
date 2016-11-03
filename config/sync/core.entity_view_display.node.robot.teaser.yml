@@ -1,0 +1,28 @@
+uuid: c8446c49-07d4-4d9e-be8c-057170e1002a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.robot.field_armor
+    - field.field.node.robot.field_cost
+    - field.field.node.robot.field_description
+    - field.field.node.robot.field_gear_type
+    - field.field.node.robot.field_source
+    - node.type.robot
+  module:
+    - user
+id: node.robot.teaser
+targetEntityType: node
+bundle: robot
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_armor: true
+  field_blueprints: true
+  field_cost: true
+  field_description: true
+  field_gear_type: true
+  field_source: true
