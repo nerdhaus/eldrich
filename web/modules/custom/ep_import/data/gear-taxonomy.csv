@@ -9,7 +9,6 @@ Physical Augmentations,Personal Augmentations,,EP,
 Nanoware,Personal Augmentations,,EP,308
 Cosmetic Mods,Personal Augmentations,,EP,309
 Robotic Enhancements,Personal Augmentations,,EP,310
-Armor,Robotic Enhancements,,EP,
 Mobility Systems,Robotic Enhancements,,EP,
 Physical Modifications,Robotic Enhancements,,EP,
 Sensors,Robotic Enhancements,,EP,
@@ -35,7 +34,7 @@ Scavenger Tech,,"This technology is often employed by gatecrashers, space scaven
 Services,,,EP,
 Software,,"For information on using software, see The Mesh chapter, p. 234",EP,
 Programs,Software,,EP,
-AIs and Muses,Software,,EP,
+AIs,Software,,EP,
 Scorchers,Software,,EP,
 Skillsofts,Software,,EP,
 Survival Gear,,"The following gear is often critical to the survival of soldiers, spies, criminals, gatecrashers, emergency service personnel, and others who regularly venture into unsafe or unfamiliar regions.",EP,
