@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: skills
 migration_tags: null
-migration_group: eldrich
+migration_group: eldrich_core
 label: 'Core skills list'
 source:
   plugin: csv

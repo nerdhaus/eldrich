@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: eldrich_core
+label: 'Core data'
+description: 'Lookup tables and base data for Eldrich Black.'
+source_type: csv
+module: null
+shared_configuration: null

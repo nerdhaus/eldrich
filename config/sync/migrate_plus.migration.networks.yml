@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: networks
 migration_tags: null
-migration_group: eldrich
+migration_group: eldrich_core
 label: 'Social networks'
 source:
   plugin: csv

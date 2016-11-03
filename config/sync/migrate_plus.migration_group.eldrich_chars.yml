@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  - eldrich_gear
+  - eldrich_core
+id: eldrich_chars
+label: 'Characters'
+description: 'NPCs, creatures, etc. for Eldrich Black'
+source_type: csv
+module: null
+shared_configuration: null

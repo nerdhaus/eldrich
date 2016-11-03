@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: stats
 migration_tags: null
-migration_group: eldrich
+migration_group: eldrich_core
 label: 'Base stats'
 source:
   plugin: csv

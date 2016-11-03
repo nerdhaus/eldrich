@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: eldrich_core
+id: eldrich_gear
+label: 'Gear'
+description: 'Gear, morphs, etc. for Eldrich Black.'
+source_type: csv
+module: null
+shared_configuration: null
