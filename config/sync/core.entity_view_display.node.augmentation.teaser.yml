@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.augmentation.field_armor
     - field.field.node.augmentation.field_cost
     - field.field.node.augmentation.field_description
     - field.field.node.augmentation.field_gear_type

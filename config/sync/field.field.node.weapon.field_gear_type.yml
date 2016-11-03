@@ -1,0 +1,28 @@
+uuid: c48e0263-dde4-48b2-9ceb-1c53e49ef2ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gear_type
+    - node.type.weapon
+    - taxonomy.vocabulary.gear
+id: node.weapon.field_gear_type
+field_name: field_gear_type
+entity_type: node
+bundle: weapon
+label: 'Gear Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      gear: gear
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

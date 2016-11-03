@@ -1,12 +1,13 @@
+uuid: 9c85daa1-cc54-4e11-ab80-7adc22918282
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.drug
-id: node.drug.title
+    - node.type.weapon
+id: node.weapon.title
 field_name: title
 entity_type: node
-bundle: drug
+bundle: weapon
 label: Name
 description: ''
 required: true

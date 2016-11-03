@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.robot.field_armor
     - field.field.node.robot.field_cost
     - field.field.node.robot.field_description
     - field.field.node.robot.field_gear_type

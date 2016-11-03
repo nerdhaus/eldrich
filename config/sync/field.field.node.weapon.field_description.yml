@@ -1,0 +1,21 @@
+uuid: 2e05602e-a5b3-494c-b27b-a3232d6abd05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.weapon
+  module:
+    - text
+id: node.weapon.field_description
+field_name: field_description
+entity_type: node
+bundle: weapon
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

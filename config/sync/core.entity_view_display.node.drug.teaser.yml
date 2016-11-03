@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.drug.field_armor
     - field.field.node.drug.field_cost
     - field.field.node.drug.field_description
     - field.field.node.drug.field_gear_type

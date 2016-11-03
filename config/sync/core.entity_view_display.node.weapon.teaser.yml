@@ -1,19 +1,19 @@
-uuid: 5d53f989-8b3a-46af-b56e-3889dabbd5a9
+uuid: 8aa4ed88-47ff-4003-85bf-a2bcf422627c
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.morph.field_cost
-    - field.field.node.morph.field_description
-    - field.field.node.morph.field_gear_type
-    - field.field.node.morph.field_source
-    - node.type.morph
+    - field.field.node.weapon.field_cost
+    - field.field.node.weapon.field_description
+    - field.field.node.weapon.field_gear_type
+    - field.field.node.weapon.field_source
+    - node.type.weapon
   module:
     - user
-id: node.morph.teaser
+id: node.weapon.teaser
 targetEntityType: node
-bundle: morph
+bundle: weapon
 mode: teaser
 content:
   links:

@@ -1,12 +1,13 @@
+uuid: fc571b21-9cf7-421a-9f69-3312e177f674
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.drug
-id: node.drug.promote
+    - node.type.weapon
+id: node.weapon.promote
 field_name: promote
 entity_type: node
-bundle: drug
+bundle: weapon
 label: 'Promoted to front page'
 description: ''
 required: false
