@@ -3,15 +3,20 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.augmentation.field_armor
     - field.field.node.augmentation.field_blueprints
+    - field.field.node.augmentation.field_conditional
     - field.field.node.augmentation.field_cost
     - field.field.node.augmentation.field_description
     - field.field.node.augmentation.field_gear_type
+    - field.field.node.augmentation.field_morph_types
     - field.field.node.augmentation.field_source
+    - field.field.node.augmentation.field_stats
     - node.type.augmentation
   module:
     - entity_reference_quantity
     - ep_complex_values
+    - ep_statblock
     - path
     - text
 id: node.augmentation.default
@@ -25,12 +30,18 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_armor:
-    weight: 10
+    weight: 26
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
   field_blueprints:
     weight: 9
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_conditional:
+    weight: 27
     settings:
       display_label: true
     third_party_settings: {  }
@@ -52,11 +63,24 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_morph_types:
+    weight: 28
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_source:
     weight: 11
     settings: {  }
     third_party_settings: {  }
     type: entity_reference_quantity_select
+  field_stats:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
   path:
     type: path
     weight: 5

@@ -3,13 +3,22 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.weapon.field_additional_effects
+    - field.field.node.weapon.field_area_effect
     - field.field.node.weapon.field_blueprints
     - field.field.node.weapon.field_cost
+    - field.field.node.weapon.field_damage
     - field.field.node.weapon.field_description
+    - field.field.node.weapon.field_firing_modes
     - field.field.node.weapon.field_gear_type
+    - field.field.node.weapon.field_linked_skill
+    - field.field.node.weapon.field_magazine_size
+    - field.field.node.weapon.field_range
+    - field.field.node.weapon.field_skill_bonus
     - field.field.node.weapon.field_source
     - node.type.weapon
   module:
+    - entity_reference_override
     - entity_reference_quantity
     - ep_complex_values
     - text
@@ -19,6 +28,20 @@ targetEntityType: node
 bundle: weapon
 mode: default
 content:
+  field_additional_effects:
+    weight: 114
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_area_effect:
+    weight: 113
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_armor:
     weight: 102
     label: above
@@ -41,12 +64,25 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_quantity_label
+  field_damage:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: damage_text
   field_description:
     weight: 104
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
+  field_firing_modes:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_gear_type:
     weight: 106
     label: above
@@ -54,6 +90,36 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_linked_skill:
+    weight: 116
+    label: above
+    settings:
+      override_action: title
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_override_label
+  field_magazine_size:
+    weight: 111
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_range:
+    weight: 115
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: weapon_range_formatter
+  field_skill_bonus:
+    weight: 117
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
   field_source:
     weight: 105
     label: above

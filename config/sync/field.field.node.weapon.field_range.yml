@@ -1,0 +1,21 @@
+uuid: fb654c63-818c-4a70-8b9f-ab0fbee5ae83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_range
+    - node.type.weapon
+  module:
+    - ep_complex_values
+id: node.weapon.field_range
+field_name: field_range
+entity_type: node
+bundle: weapon
+label: Range
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: weapon_range

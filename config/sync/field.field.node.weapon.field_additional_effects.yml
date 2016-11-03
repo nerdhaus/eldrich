@@ -1,0 +1,29 @@
+uuid: 2d11442d-e418-41f4-b93a-c52147b6ad4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.damage_type
+    - field.storage.node.field_additional_effects
+    - node.type.weapon
+id: node.weapon.field_additional_effects
+field_name: field_additional_effects
+entity_type: node
+bundle: weapon
+label: 'Additional Effects'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:lookup'
+  handler_settings:
+    target_bundles:
+      damage_type: damage_type
+    sort:
+      field: field_weight
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

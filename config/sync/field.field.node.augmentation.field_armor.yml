@@ -1,0 +1,21 @@
+uuid: 249833c9-8ad8-491b-9625-6c519364b309
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_armor
+    - node.type.augmentation
+  module:
+    - ep_complex_values
+id: node.augmentation.field_armor
+field_name: field_armor
+entity_type: node
+bundle: augmentation
+label: Armor
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: armor_value
