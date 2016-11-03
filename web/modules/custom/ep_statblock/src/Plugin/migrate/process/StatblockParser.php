@@ -16,7 +16,7 @@ use Drupal\migrate\Row;
  *
  * @ingroup migration
  */
-abstract class StatBlockParser extends ProcessPluginBase {
+public class StatBlockParser extends ProcessPluginBase {
 
   /**
    * {@inheritdoc}

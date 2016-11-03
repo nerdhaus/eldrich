@@ -16,7 +16,7 @@ use Drupal\migrate\Row;
  *
  * @ingroup migration
  */
-abstract class DamageParser extends ProcessPluginBase {
+public class DamageParser extends ProcessPluginBase {
 
   /**
    * {@inheritdoc}
