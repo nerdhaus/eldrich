@@ -32,6 +32,8 @@ source:
     -
       onset: Onset
     -
+      duration: Duration
+    -
       addiction: Addiction
     -
       modifier: Modifier
@@ -94,6 +96,13 @@ process:
       bundle: substance_delivery
       bundle_key: type
       value_key: title
+  field_onset:
+    plugin: integer_time
+    source: onset
+  field_duration:
+    plugin: integer_time
+    source: duration
+  field_addiction_modifier: modifier
 destination:
   plugin: 'entity:node'
 migration_dependencies:

@@ -175,6 +175,4 @@ migration_dependencies:
   required:
     - lookup_tables
     - sources
-    - augmentation
     - gear
-    - weapon

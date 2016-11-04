@@ -177,7 +177,4 @@ migration_dependencies:
     - lookup_tables
     - sources
     - skills
-    - augmentation
     - gear
-    - weapon
-    - drug
