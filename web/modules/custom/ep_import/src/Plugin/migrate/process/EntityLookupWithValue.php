@@ -25,9 +25,6 @@ class EntityLookupWithValue extends EntityLookup {
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrateExecutable, Row $row, $destinationProperty) {
-
-    drush_print_r($this->lookupBundle);
-
     // We want to handle these nicely later.
     $this->extraKey = 'override';
     $this->delimiter = ':';
