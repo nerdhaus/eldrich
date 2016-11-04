@@ -28,17 +28,26 @@ class EntityLookupWithValue extends EntityLookup {
     // We want to handle these nicely later.
     $this->extraKey = 'override';
     $this->delimiter = ':';
+    $results = [];
 
     if (strpos($value, $this->delimiter)) {
       $values = explode($this->delimiter, $value);
-      $results = array(
-        'target_id' => parent::transform(trim($values[0]), $migrateExecutable, $row, $destinationProperty),
-        $this->extraKey => trim($values[1]),
-      );
-      return $results;
+      $title = trim($values[0]);
+      $notes = trim($values[1]);
     }
     else {
-      return parent::transform(trim($value), $migrateExecutable, $row, $destinationProperty);
+      $title = trim($value);
+      $notes = NULL;
     }
+drush_print_r($title);
+    if ($entity = parent::transform($title, $migrateExecutable, $row, $destinationProperty)) {
+      $results = array(
+        'target_id' => $entity,
+        $this->extraKey => $notes,
+      );
+      drush_print_r($results);
+    }
+    return $results;
   }
 }
+

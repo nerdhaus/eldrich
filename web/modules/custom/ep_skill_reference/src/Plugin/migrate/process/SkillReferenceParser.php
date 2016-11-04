@@ -25,10 +25,13 @@ class SkillReferenceParser extends EntityLookup {
     $matches = [];
     preg_match($pattern, $value, $matches);
 
-    if (!empty($matches['skill']) && !empty($matches['points'])) {
+    if (!empty($matches['skill'])
+      && !empty($matches['points'])
+      && $entity = parent::transform(trim($matches['skill']), $migrateExecutable, $row, $destinationProperty)) {
+
       $results = array(
         'raw_skill' => $matches['skill'],
-        'target_id' => parent::transform(trim($matches['skill']), $migrateExecutable, $row, $destinationProperty),
+        'target_id' => $entity,
         'field' => trim($matches['field']),
         'specialization' => trim($matches['specialization']),
         'points' => trim($matches['points']),

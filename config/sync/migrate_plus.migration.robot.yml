@@ -172,23 +172,35 @@ process:
       plugin: extract
       index: 2
   field_augmentations:
-    plugin: entity_lookup
-    destination_field: target_id
-    source: augmentations
-    value_key: title
-    bundle: augmentation
-    bundle_key: type
-    entity_type: node
+    -
+      plugin: skip_on_empty
+      method: process
+      source: augmentations
+    -
+      plugin: explode
+      delimiter: ,
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      bundle: augmentation
+      bundle_key: type
+      entity_type: node
   field_gear:
-    plugin: entity_lookup
-    destination_field: target_id
-    source: augmentations
-    value_key: title
-    bundle:
-      - gear
-      - weapon
-    bundle_key: type
-    entity_type: node
+    -
+      plugin: skip_on_empty
+      method: process
+      source: augmentations
+    -
+      plugin: explode
+      delimiter: ,
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      bundle: gear
+      bundle_key: type
+      entity_type: node
 destination:
   plugin: 'entity:node'
 migration_dependencies:
