@@ -142,7 +142,7 @@ process:
       bundle_key: type
       value_key: field_lookup_code
   field_magazine_size: rounds
-  '@range':
+  '@range_array':
     -
       plugin: skip_on_empty
       method: process
@@ -150,38 +150,46 @@ process:
     -
       plugin: explode
       delimiter: /
-  'field_range/short':
+  field_range/short:
     -
       plugin: skip_on_empty
       method: process
-      source: '@range'
+      source: '@range_array'
     -
       plugin: extract
       index: 0
-  'field_range/medium':
+  field_range/medium:
     -
       plugin: skip_on_empty
       method: process
-      source: '@range'
+      source: '@range_array'
     -
       plugin: extract
       index: 1
-  'field_range/long':
+  field_range/long:
     -
       plugin: skip_on_empty
       method: process
-      source: '@range'
+      source: '@range_array'
     -
       plugin: extract
       index: 2
-  'field_range/extreme':
+  field_range/extreme:
     -
       plugin: skip_on_empty
       method: process
-      source: '@range'
+      source: '@range_array'
     -
       plugin: extract
       index: 3
+  field_linked_skill:
+    plugin: entity_lookup_plus
+    destination_field: target_id
+    entity_type: node
+    bundle: skill
+    bundle_key: type
+    value_key: title
+    source: linked
   field_skill_bonus: bonus
 destination:
   plugin: 'entity:node'

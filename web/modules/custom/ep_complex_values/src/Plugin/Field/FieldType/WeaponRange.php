@@ -30,13 +30,13 @@ class WeaponRange extends FieldItemBase {
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
     // Prevent early t() calls by using the TranslatableMarkup.
     $properties['short'] = DataDefinition::create('integer')
-      ->setLabel(new TranslatableMarkup('Walking'));
+      ->setLabel(new TranslatableMarkup('Short'));
     $properties['medium'] = DataDefinition::create('integer')
-      ->setLabel(new TranslatableMarkup('Running'));
+      ->setLabel(new TranslatableMarkup('Medium'));
     $properties['long'] = DataDefinition::create('integer')
-      ->setLabel(new TranslatableMarkup('Cruising'));
+      ->setLabel(new TranslatableMarkup('Long'));
     $properties['extreme'] = DataDefinition::create('integer')
-      ->setLabel(new TranslatableMarkup('Cruising'));
+      ->setLabel(new TranslatableMarkup('Extreme'));
 
     return $properties;
   }
@@ -47,10 +47,10 @@ class WeaponRange extends FieldItemBase {
   public static function schema(FieldStorageDefinitionInterface $field_definition) {
     $schema = [
       'columns' => [
-        'short' => ['type' => 'int', 'unsigned' => TRUE, 'not null' => FALSE],
-        'medium' => ['type' => 'int', 'unsigned' => TRUE, 'not null' => FALSE],
-        'long' => ['type' => 'int', 'unsigned' => TRUE, 'not null' => FALSE],
-        'extreme' => ['type' => 'int', 'unsigned' => TRUE, 'not null' => FALSE],
+        'short' => ['type' => 'int'],
+        'medium' => ['type' => 'int'],
+        'long' => ['type' => 'int'],
+        'extreme' => ['type' => 'int'],
       ],
     ];
 
