@@ -1,0 +1,10 @@
+name: Veil
+type: theme
+description: Custom theme for Eldrich.Host
+package: Other
+core: 8.x
+libraries:
+  - veil/global-styling
+
+base theme: stable
+
