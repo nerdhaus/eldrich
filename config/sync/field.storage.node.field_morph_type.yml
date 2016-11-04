@@ -1,16 +1,16 @@
-uuid: 7d890536-0481-414e-93fc-43ff616506ec
+uuid: 286f5153-fb35-4e3a-ba13-c51a13bf4fe9
 langcode: en
 status: true
 dependencies:
   module:
+    - eck
     - node
-id: node.field_cp
-field_name: field_cp
+id: node.field_morph_type
+field_name: field_morph_type
 entity_type: node
-type: integer
+type: entity_reference
 settings:
-  unsigned: false
-  size: normal
+  target_type: lookup
 module: core
 locked: false
 cardinality: 1

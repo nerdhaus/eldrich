@@ -1,18 +1,18 @@
-uuid: 9a6e49dc-c65e-4a80-b236-757feda2d78e
+uuid: c923ee9c-4fd8-44c9-938b-7540d409534e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_cp
+    - field.storage.node.field_cp_cost
     - node.type.morph
-id: node.morph.field_cp
-field_name: field_cp
+id: node.morph.field_cp_cost
+field_name: field_cp_cost
 entity_type: node
 bundle: morph
-label: 'Creation Point Cost'
+label: 'CP Cost'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
