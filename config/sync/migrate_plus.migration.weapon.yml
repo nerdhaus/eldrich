@@ -49,11 +49,9 @@ source:
     - title
 process:
   title: title
-
   type:
     plugin: default_value
     default_value: weapon
-
   field_gear_type/target_id:
     plugin: entity_lookup
     source: type
@@ -61,9 +59,7 @@ process:
     bundle: gear
     bundle_key: vid
     entity_type: taxonomy_term
-
   field_description/value: description
-
   field_cost/target_id:
     plugin: entity_lookup
     source: cost
@@ -75,7 +71,6 @@ process:
     plugin: skip_on_empty
     method: process
     source: minimum
-
   field_source/target_id:
     plugin: entity_lookup
     entity_type: node
@@ -87,7 +82,6 @@ process:
     plugin: skip_on_empty
     method: process
     source: page
-
   field_blueprints:
     plugin: static_map
     source: blueprints
@@ -95,7 +89,6 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-
   field_additional_effects:
     -
       plugin: skip_on_empty
@@ -103,7 +96,7 @@ process:
       source: effects
     -
       plugin: explode
-      delimiter: ,
+      delimiter: ','
     -
       plugin: entity_lookup
       destination_field: target_id
@@ -111,7 +104,6 @@ process:
       bundle: damage_type
       bundle_key: type
       value_key: title
-
   field_area_effect:
     -
       plugin: skip_on_empty
@@ -119,7 +111,7 @@ process:
       source: aoe
     -
       plugin: explode
-      delimiter: ,
+      delimiter: ','
     -
       plugin: entity_lookup
       destination_field: target_id
@@ -127,16 +119,13 @@ process:
       bundle: area_effect
       bundle_key: type
       value_key: title
-
   field_damage:
     plugin: damage_string
     source: damage
-
   field_damage/ap:
     plugin: skip_on_empty
     method: process
     source: ap
-
   field_firing_modes:
     -
       plugin: skip_on_empty
@@ -144,7 +133,7 @@ process:
       source: modes
     -
       plugin: explode
-      delimiter: ,
+      delimiter: ','
     -
       plugin: entity_lookup
       destination_field: target_id
@@ -152,9 +141,7 @@ process:
       bundle: firing_modes
       bundle_key: type
       value_key: field_lookup_code
-
   field_magazine_size: rounds
-
   field_range:
     -
       plugin: skip_on_empty
@@ -168,7 +155,6 @@ process:
         - medium
         - long
         - extreme
-
   field_linked_skill:
     plugin: entity_lookup_plus
     destination_field: target_id
@@ -177,9 +163,7 @@ process:
     bundle_key: type
     value_key: title
     source: linked
-
   field_skill_bonus: bonus
-
 destination:
   plugin: 'entity:node'
 migration_dependencies:

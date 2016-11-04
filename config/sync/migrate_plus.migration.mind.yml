@@ -85,7 +85,7 @@ process:
       source: skills
     -
       plugin: explode
-      delimiter: ,
+      delimiter: ','
     -
       plugin: skill_lookup
       destination_field: target_id

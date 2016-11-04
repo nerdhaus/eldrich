@@ -124,7 +124,7 @@ process:
       source: skills
     -
       plugin: explode
-      delimiter: ,
+      delimiter: ','
     -
       plugin: skill_lookup
       destination_field: target_id
@@ -158,7 +158,7 @@ process:
       source: augmentations
     -
       plugin: explode
-      delimiter: ,
+      delimiter: ','
     -
       plugin: entity_lookup_plus
       destination_field: target_id
@@ -173,7 +173,7 @@ process:
       source: augmentations
     -
       plugin: explode
-      delimiter: ,
+      delimiter: ','
     -
       plugin: entity_lookup_plus
       destination_field: target_id
