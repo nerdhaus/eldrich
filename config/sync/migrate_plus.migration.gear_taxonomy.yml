@@ -5,7 +5,7 @@ dependencies: {  }
 id: gear_taxonomy
 migration_tags: null
 migration_group: eldrich_core
-label: 'Taxonomy hierarchy for purchasable gear'
+label: 'Taxonomy for purchasable gear'
 source:
   plugin: csv
   path: modules/custom/ep_import/data/gear-taxonomy.csv

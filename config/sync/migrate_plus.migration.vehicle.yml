@@ -87,30 +87,17 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-  '@armor_array':
+  field_armor:
     -
       plugin: skip_on_empty
       method: process
       source: armor
     -
-      plugin: explode
+      plugin: array_to_dict
       delimiter: /
-  field_armor/energy:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: '@armor_array'
-    -
-      plugin: extract
-      index: 0
-  field_armor/kinetic:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: '@armor_array'
-    -
-      plugin: extract
-      index: 1
+      keys:
+        - energy
+        - kinetic
   field_armor/replaces:
     plugin: static_map
     source: stackable
@@ -188,3 +175,6 @@ migration_dependencies:
   required:
     - lookup_tables
     - sources
+    - augmentation
+    - gear
+    - weapon

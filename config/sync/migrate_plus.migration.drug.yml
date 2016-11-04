@@ -27,10 +27,6 @@ source:
       book: Book
     -
       page: Page
-    -
-      armor: Armor
-    -
-      stackable: Stackable
   keys:
     - title
 process:
@@ -75,37 +71,6 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-  '@armor_array':
-    -
-      plugin: skip_on_empty
-      method: process
-      source: armor
-    -
-      plugin: explode
-      delimiter: /
-  field_armor/energy:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: '@armor_array'
-    -
-      plugin: extract
-      index: 0
-  field_armor/kinetic:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: '@armor_array'
-    -
-      plugin: extract
-      index: 1
-  field_armor/replaces:
-    plugin: static_map
-    source: stackable
-    map:
-      'TRUE': 0
-      'FALSE': 1
-    default_value: 1
 destination:
   plugin: 'entity:node'
 migration_dependencies:
