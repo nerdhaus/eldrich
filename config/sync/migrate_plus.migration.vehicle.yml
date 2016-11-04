@@ -47,9 +47,11 @@ source:
     - title
 process:
   title: title
+
   type:
     plugin: default_value
     default_value: vehicle
+
   field_gear_type/target_id:
     plugin: entity_lookup
     source: type
@@ -58,6 +60,7 @@ process:
     bundle_key: vid
     entity_type: taxonomy_term
   field_description/value: description
+
   field_cost/target_id:
     plugin: entity_lookup
     source: cost
@@ -69,6 +72,7 @@ process:
     plugin: skip_on_empty
     method: process
     source: minimum
+
   field_source/target_id:
     plugin: entity_lookup
     entity_type: node
@@ -80,6 +84,7 @@ process:
     plugin: skip_on_empty
     method: process
     source: page
+
   field_blueprints:
     plugin: static_map
     source: blueprints
@@ -87,6 +92,7 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
+  
   '@armor_array':
     -
       plugin: skip_on_empty
@@ -95,6 +101,7 @@ process:
     -
       plugin: explode
       delimiter: /
+  
   field_armor/energy:
     -
       plugin: skip_on_empty
@@ -103,6 +110,7 @@ process:
     -
       plugin: extract
       index: 0
+  
   field_armor/kinetic:
     -
       plugin: skip_on_empty
@@ -111,6 +119,7 @@ process:
     -
       plugin: extract
       index: 1
+  
   field_armor/replaces:
     plugin: static_map
     source: stackable
@@ -118,9 +127,11 @@ process:
       'TRUE': 0
       'FALSE': 1
     default_value: 1
+  
   field_stats:
     plugin: stat_block
     source: stats
+  
   field_linked_skill:
     plugin: entity_lookup_plus
     destination_field: target_id
@@ -129,8 +140,11 @@ process:
     bundle_key: type
     value_key: title
     source: linked
+  
   field_skill_bonus: bonus
+  
   field_passengers: passengers
+ 
   field_mobility_system/target_id:
     plugin: entity_lookup
     source: mobility
@@ -138,38 +152,20 @@ process:
     bundle: mobility_type
     bundle_key: type
     entity_type: lookup
-  '@speed_array':
+  
+  field_movement_speed:
     -
       plugin: skip_on_empty
       method: process
       source: speed
     -
-      plugin: explode
+      plugin: array_to_dict
       delimiter: /
-  field_speed/walk:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: '@speed_array'
-    -
-      plugin: extract
-      index: 0
-  field_speed/run:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: '@speed_array'
-    -
-      plugin: extract
-      index: 1
-  field_speed/cruise:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: '@speed_array'
-    -
-      plugin: extract
-      index: 2
+      keys:
+        - walk
+        - run
+        - cruise
+  
   field_augmentations:
     -
       plugin: skip_on_empty
@@ -185,6 +181,7 @@ process:
       bundle: augmentation
       bundle_key: type
       entity_type: node
+
   field_gear:
     -
       plugin: skip_on_empty

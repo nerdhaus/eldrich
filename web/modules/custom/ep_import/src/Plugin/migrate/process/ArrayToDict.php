@@ -30,7 +30,7 @@ class ArrayToDict extends ProcessPluginBase {
       $values = $value;
     }
 
-    for($i = 0; $i <= ceil(count($keys), count($values)); $i++) {
+    for($i = 0; $i < min(count($keys), count($values)); $i++) {
       $results[$keys[$i]] = trim($values[$i]);
     }
 
