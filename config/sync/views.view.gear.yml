@@ -14,9 +14,11 @@ dependencies:
     - node.type.robot
     - node.type.vehicle
     - node.type.weapon
+    - taxonomy.vocabulary.gear
   module:
     - entity_reference_quantity
     - node
+    - taxonomy
     - text
     - user
 id: gear
@@ -104,7 +106,7 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: priority-medium
+              responsive: ''
             field_description:
               sortable: false
               default_sort_order: asc
@@ -118,14 +120,14 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: priority-low
+              responsive: priority-medium
             field_cost:
               sortable: true
               default_sort_order: desc
               align: ''
               separator: ''
               empty_column: false
-              responsive: priority-medium
+              responsive: ''
             field_source:
               sortable: false
               default_sort_order: asc
@@ -536,6 +538,89 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: numeric
+        field_gear_type_target_id:
+          id: field_gear_type_target_id
+          table: node__field_gear_type
+          field: field_gear_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_gear_type_target_id_op
+            label: Type
+            description: ''
+            use_operator: false
+            operator: field_gear_type_target_id_op
+            identifier: gid
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: gear
+          hierarchy: true
+          error_message: false
+          plugin_id: taxonomy_index_tid
+        field_description_value:
+          id: field_description_value
+          table: node__field_description
+          field: field_description_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_description_value_op
+            label: Search
+            description: ''
+            use_operator: false
+            operator: field_description_value_op
+            identifier: text
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: string
       sorts:
         title:
           id: title
@@ -563,7 +648,9 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -584,7 +671,9 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
