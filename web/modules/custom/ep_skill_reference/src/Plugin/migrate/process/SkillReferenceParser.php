@@ -33,7 +33,6 @@ class SkillReferenceParser extends EntityLookup {
         'specialization' => trim($matches['specialization']),
         'points' => trim($matches['points']),
       );
-      drush_print_r($results);
     }
     return $results;
   }
