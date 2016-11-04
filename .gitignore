@@ -18,3 +18,4 @@ web/sites/*/files
 
 /environment.inc
 web/sites/default/settings.local.php
+console/log
