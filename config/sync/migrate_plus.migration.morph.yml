@@ -62,7 +62,7 @@ process:
     bundle: morph_type
     bundle_key: type
     value_key: title
-  vagrafield_description/value: description
+  field_description/value: description
   field_cost/target_id:
     plugin: entity_lookup
     source: cost
