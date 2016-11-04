@@ -89,9 +89,101 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
+  field_additional_effects:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: effects
+    -
+      plugin: explode
+      delimiter: ,
+    -
+      plugin: entity_lookup
+      destination_field: target_id
+      entity_type: lookup
+      bundle: damage_type
+      bundle_key: type
+      value_key: title
+  field_area_effect:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: aoe
+    -
+      plugin: explode
+      delimiter: ,
+    -
+      plugin: entity_lookup
+      destination_field: target_id
+      entity_type: lookup
+      bundle: area_effect
+      bundle_key: type
+      value_key: title
+  field_damage:
+    plugin: damage_string
+    source: damage
+  field_damage/ap: ap
+  field_firing_modes:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: modes
+    -
+      plugin: explode
+      delimiter: ,
+    -
+      plugin: entity_lookup
+      destination_field: target_id
+      entity_type: lookup
+      bundle: firing_modes
+      bundle_key: type
+      value_key: title
+  field_magazine_size: rounds
+  '@range':
+    -
+      plugin: skip_on_empty
+      method: process
+      source: range
+    -
+      plugin: explode
+      delimiter: /
+  'field_range/short':
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@range'
+    -
+      plugin: extract
+      index: 0
+  'field_range/medium':
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@range'
+    -
+      plugin: extract
+      index: 1
+  'field_range/long':
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@range'
+    -
+      plugin: extract
+      index: 2
+  'field_range/extreme':
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@range'
+    -
+      plugin: extract
+      index: 3
+  field_skill_bonus: bonus
 destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
     - lookup_tables
+    - skills
     - sources

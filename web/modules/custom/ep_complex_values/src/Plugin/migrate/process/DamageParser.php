@@ -24,13 +24,14 @@ class DamageParser extends ProcessPluginBase {
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     // Parse the format: SKILL NAME: FIELD NAME 99 (SPECIALIZATION STRING)
     $value = str_replace(' ', '', $value);
-    $pattern = "((?<dice>[0-9]+)d10)?((?<mod_function>[+-/*])(?<modifier>[0-9]+))?";
+    $pattern = "/((?<dice>[0-9]+)d10)?((?<mod_function>[\+\-\/\*])(?<modifier>[0-9]+))?/";
     $matches = preg_match($pattern, $value);
-    $results = array(
-      'dice' => trim($matches['dice']),
-      'mod_function' => trim($matches['mod_function']),
-      'modifier' => trim($matches['modifier']),
-    );
+    $results = [];
+    foreach (['dice', 'mod_function', 'modifier'] as $field) {
+      if (!empty($matches[$field])) {
+        $results[$field] = trim($matches[$field]);
+      }
+    }
     return $results;
   }
 
