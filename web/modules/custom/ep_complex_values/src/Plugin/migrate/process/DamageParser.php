@@ -25,13 +25,14 @@ class DamageParser extends ProcessPluginBase {
     // Parse the format: SKILL NAME: FIELD NAME 99 (SPECIALIZATION STRING)
     $value = str_replace(' ', '', $value);
     $pattern = "/((?<dice>[0-9]+)d10)?((?<mod_function>[\+\-\/\*])(?<modifier>[0-9]+))?/";
-    $matches = preg_match($pattern, $value);
+    preg_match($pattern, $value, $matches);
     $results = [];
     foreach (['dice', 'mod_function', 'modifier'] as $field) {
       if (!empty($matches[$field])) {
         $results[$field] = trim($matches[$field]);
       }
     }
+    $results['raw'] = $value;
     return $results;
   }
 

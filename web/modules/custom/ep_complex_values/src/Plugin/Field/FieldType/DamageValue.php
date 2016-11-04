@@ -99,7 +99,7 @@ class DamageValue extends FieldItemBase {
     }
 
     if (!empty($values['ap'])) {
-      $value['ap'] = (-1 * $values['ap']) . 'AP';
+      $value['ap'] = ($values['ap']) . 'AP';
     }
 
     return join(' ', $value);

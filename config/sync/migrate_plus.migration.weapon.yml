@@ -122,7 +122,10 @@ process:
   field_damage:
     plugin: damage_string
     source: damage
-  field_damage/ap: ap
+  field_damage/ap:
+    plugin: skip_on_empty
+    method: process
+    source: ap
   field_firing_modes:
     -
       plugin: skip_on_empty
@@ -137,7 +140,7 @@ process:
       entity_type: lookup
       bundle: firing_modes
       bundle_key: type
-      value_key: title
+      value_key: field_lookup_code
   field_magazine_size: rounds
   '@range':
     -
