@@ -98,4 +98,5 @@ destination:
 migration_dependencies:
   required:
     - lookup_tables
+    - skills
     - sources

@@ -198,7 +198,9 @@ process:
       plugin: entity_lookup_plus
       destination_field: target_id
       value_key: title
-      bundle: gear
+      bundle:
+        - gear
+        - weapon
       bundle_key: type
       entity_type: node
 destination:
@@ -207,3 +209,6 @@ migration_dependencies:
   required:
     - lookup_tables
     - sources
+    - skills
+    - augmentation
+    - gear
