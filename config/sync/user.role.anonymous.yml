@@ -14,3 +14,5 @@ permissions:
   - 'access comments'
   - 'access site-wide contact form'
   - 'search content'
+  - 'view any component entities'
+  - 'view any lookup entities'
