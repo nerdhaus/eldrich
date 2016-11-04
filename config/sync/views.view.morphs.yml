@@ -8,6 +8,7 @@ dependencies:
     - field.storage.node.field_morph_type
     - field.storage.node.field_source
     - node.type.morph
+    - system.menu.main
   module:
     - entity_reference_quantity
     - node
@@ -127,7 +128,7 @@ display:
               separator: ''
               empty_column: false
               responsive: priority-low
-          default: title
+          default: field_morph_type
           empty_table: false
       row:
         type: fields
@@ -246,8 +247,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: text_default
-          settings: {  }
+          type: text_trimmed
+          settings:
+            trim_length: 200
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -472,21 +474,32 @@ display:
           entity_field: type
           plugin_id: bundle
       sorts:
-        created:
-          id: created
-          table: node_field_data
-          field: created
-          order: DESC
-          entity_type: node
-          entity_field: created
-          plugin_id: date
+        field_morph_type_target_id:
+          id: field_morph_type_target_id
+          table: node__field_morph_type
+          field: field_morph_type_target_id
           relationship: none
           group_type: group
           admin_label: ''
+          order: ASC
           exposed: false
           expose:
             label: ''
-          granularity: second
+          plugin_id: standard
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
       title: Morphs
       header: {  }
       footer: {  }
@@ -515,6 +528,15 @@ display:
     display_options:
       display_extenders: {  }
       path: morphs
+      menu:
+        type: normal
+        title: Morphs
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 0
+        context: '0'
+        menu_name: main
     cache_metadata:
       max-age: 0
       contexts:
