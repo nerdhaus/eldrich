@@ -30,6 +30,7 @@ module:
   history: 0
   image: 0
   inline_entity_form: 0
+  integer_time: 0
   link: 0
   menu_ui: 0
   migrate: 0

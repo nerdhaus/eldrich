@@ -27,6 +27,14 @@ source:
       book: Book
     -
       page: Page
+    -
+      delivery: Delivery
+    -
+      onset: Onset
+    -
+      addiction: Addiction
+    -
+      modifier: Modifier
   keys:
     - title
 process:
@@ -71,6 +79,21 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
+  field_delivery_mechanism:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: modes
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup
+      destination_field: target_id
+      entity_type: lookup
+      bundle: substance_delivery
+      bundle_key: type
+      value_key: title
 destination:
   plugin: 'entity:node'
 migration_dependencies:
