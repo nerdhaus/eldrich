@@ -46,6 +46,6 @@ class IntegerTimeFieldFormatter extends IntegerFormatter {
         break;
       }
     }
-    return $output ? $output : $this->t('0s', array(), array('langcode' => $langcode));
+    return $output ? $output : NULL;
   }
 }
