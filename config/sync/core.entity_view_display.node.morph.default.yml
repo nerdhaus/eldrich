@@ -15,7 +15,7 @@ dependencies:
     - field.field.node.morph.field_morph_type
     - field.field.node.morph.field_movement_speed
     - field.field.node.morph.field_skills
-    - field.field.node.morph.field_source
+    - field.field.node.morph.field_references
     - field.field.node.morph.field_stat_cap
     - field.field.node.morph.field_stat_variance
     - field.field.node.morph.field_stats
@@ -120,7 +120,7 @@ content:
       link: true
     third_party_settings: {  }
     type: skill_reference_label
-  field_source:
+  field_references:
     weight: 105
     label: above
     settings:

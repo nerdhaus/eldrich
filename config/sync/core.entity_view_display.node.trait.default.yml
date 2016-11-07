@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.trait.field_ego_trait
     - field.field.node.trait.field_morph_trait
     - field.field.node.trait.field_skills
-    - field.field.node.trait.field_source
+    - field.field.node.trait.field_references
     - field.field.node.trait.field_stats
     - node.type.trait
   module:
@@ -67,7 +67,7 @@ content:
       link: true
     third_party_settings: {  }
     type: skill_reference_label
-  field_source:
+  field_references:
     weight: 109
     label: above
     settings:

@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.skill.field_linked_aptitude
     - field.field.node.skill.field_no_defaulting
     - field.field.node.skill.field_skill_type
-    - field.field.node.skill.field_source
+    - field.field.node.skill.field_references
     - field.field.node.skill.field_specializations
     - field.field.node.skill.field_usage
     - node.type.skill
@@ -71,7 +71,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_source:
+  field_references:
     weight: 14
     settings: {  }
     third_party_settings: {  }

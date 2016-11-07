@@ -6,7 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.derangement.field_derangement_level
     - field.field.node.derangement.field_description
-    - field.field.node.derangement.field_source
+    - field.field.node.derangement.field_references
     - field.field.node.derangement.field_usage
     - node.type.derangement
   module:
@@ -30,5 +30,5 @@ content:
 hidden:
   field_derangement_level: true
   field_description: true
-  field_source: true
+  field_references: true
   field_usage: true

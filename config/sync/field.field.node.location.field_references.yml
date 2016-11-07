@@ -1,17 +1,17 @@
-uuid: a8e0af0c-1080-4f56-af39-90ad15ab6651
+uuid: 1656f21a-9055-417a-8016-9eecfb552acb
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_source
-    - node.type.network
+    - field.storage.node.field_references
+    - node.type.location
     - node.type.source
   module:
     - entity_reference_quantity
-id: node.network.field_source
-field_name: field_source
+id: node.location.field_references
+field_name: field_references
 entity_type: node
-bundle: network
+bundle: location
 label: References
 description: ''
 required: false

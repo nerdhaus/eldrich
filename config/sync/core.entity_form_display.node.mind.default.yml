@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.mind.field_description
     - field.field.node.mind.field_gear_type
     - field.field.node.mind.field_skills
-    - field.field.node.mind.field_source
+    - field.field.node.mind.field_references
     - field.field.node.mind.field_stats
     - node.type.mind
   module:
@@ -60,7 +60,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: skill_reference_select
-  field_source:
+  field_references:
     weight: 11
     settings: {  }
     third_party_settings: {  }

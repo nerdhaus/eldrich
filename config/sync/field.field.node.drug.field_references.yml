@@ -1,21 +1,21 @@
-uuid: a68bd287-c070-441a-ac08-e042613cc5a1
+uuid: 4009f30d-c45d-42d6-b790-8e58dc745e2b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_source
+    - field.storage.node.field_references
+    - node.type.drug
     - node.type.source
-    - taxonomy.vocabulary.gear
   module:
     - entity_reference_quantity
-id: taxonomy_term.gear.field_source
-field_name: field_source
-entity_type: taxonomy_term
-bundle: gear
+id: node.drug.field_references
+field_name: field_references
+entity_type: node
+bundle: drug
 label: References
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -24,10 +24,11 @@ settings:
     target_bundles:
       source: source
     sort:
-      field: _none
+      field: field_weight
+      direction: ASC
     auto_create: 0
     auto_create_bundle: ''
+  qty_min: '0'
+  qty_max: '999'
   qty_label: Page
-  qty_min: 0
-  qty_max: 1000
 field_type: entity_reference_quantity

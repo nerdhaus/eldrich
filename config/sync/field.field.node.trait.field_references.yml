@@ -1,17 +1,17 @@
-uuid: b3228579-54b0-4c83-8393-42b2452c567b
+uuid: 49bc4478-8e4d-4753-827d-598a1366fcc1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_source
-    - node.type.mind
+    - field.storage.node.field_references
     - node.type.source
+    - node.type.trait
   module:
     - entity_reference_quantity
-id: node.mind.field_source
-field_name: field_source
+id: node.trait.field_references
+field_name: field_references
 entity_type: node
-bundle: mind
+bundle: trait
 label: References
 description: ''
 required: false
@@ -24,11 +24,10 @@ settings:
     target_bundles:
       source: source
     sort:
-      field: field_weight
-      direction: ASC
+      field: _none
     auto_create: 0
     auto_create_bundle: ''
-  qty_min: '0'
-  qty_max: '999'
   qty_label: Page
+  qty_min: 0
+  qty_max: 1000
 field_type: entity_reference_quantity

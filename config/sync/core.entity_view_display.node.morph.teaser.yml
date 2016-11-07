@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.morph.field_cost
     - field.field.node.morph.field_description
     - field.field.node.morph.field_gear_type
-    - field.field.node.morph.field_source
+    - field.field.node.morph.field_references
     - node.type.morph
   module:
     - user
@@ -32,7 +32,7 @@ hidden:
   field_morph_type: true
   field_movement_speed: true
   field_skills: true
-  field_source: true
+  field_references: true
   field_stat_cap: true
   field_stat_variance: true
   field_stats: true

@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.derangement.field_derangement_level
     - field.field.node.derangement.field_description
-    - field.field.node.derangement.field_source
+    - field.field.node.derangement.field_references
     - field.field.node.derangement.field_usage
     - node.type.derangement
   module:
@@ -36,7 +36,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_source:
+  field_references:
     weight: 105
     label: above
     settings:

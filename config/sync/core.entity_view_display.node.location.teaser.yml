@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.location.field_description
-    - field.field.node.location.field_source
+    - field.field.node.location.field_references
     - node.type.location
   module:
     - user
@@ -21,4 +21,4 @@ hidden:
   field_location_type: true
   field_parent_location: true
   field_population: true
-  field_source: true
+  field_references: true

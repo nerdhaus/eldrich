@@ -5,8 +5,8 @@ dependencies:
   module:
     - entity_reference_quantity
     - node
-id: node.field_source
-field_name: field_source
+id: node.field_references
+field_name: field_references
 entity_type: node
 type: entity_reference_quantity
 settings:

@@ -1,17 +1,17 @@
-uuid: ef9c1af0-5b3b-42e2-bc84-63cd9f69042c
+uuid: 7e3a9f6a-908f-443f-9f47-036481ad4b9d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_source
-    - node.type.weapon
+    - field.storage.node.field_references
+    - node.type.gear
     - node.type.source
   module:
     - entity_reference_quantity
-id: node.weapon.field_source
-field_name: field_source
+id: node.gear.field_references
+field_name: field_references
 entity_type: node
-bundle: weapon
+bundle: gear
 label: References
 description: ''
 required: false

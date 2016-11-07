@@ -13,7 +13,7 @@ dependencies:
     - field.field.node.robot.field_mobility_system
     - field.field.node.robot.field_movement_speed
     - field.field.node.robot.field_skills
-    - field.field.node.robot.field_source
+    - field.field.node.robot.field_references
     - field.field.node.robot.field_stats
     - node.type.robot
   module:
@@ -100,7 +100,7 @@ content:
       link: true
     third_party_settings: {  }
     type: skill_reference_label
-  field_source:
+  field_references:
     weight: 105
     label: above
     settings:

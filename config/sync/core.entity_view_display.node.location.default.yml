@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.location.field_location_type
     - field.field.node.location.field_parent_location
     - field.field.node.location.field_population
-    - field.field.node.location.field_source
+    - field.field.node.location.field_references
     - node.type.location
   module:
     - entity_reference_quantity
@@ -46,7 +46,7 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
-  field_source:
+  field_references:
     weight: 102
     label: above
     settings:

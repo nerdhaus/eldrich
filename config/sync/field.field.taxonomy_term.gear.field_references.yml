@@ -1,21 +1,21 @@
-uuid: 501b754d-6647-4239-8a1b-868dcd2f0a9d
+uuid: a68bd287-c070-441a-ac08-e042613cc5a1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_source
-    - node.type.augmentation
+    - field.storage.taxonomy_term.field_references
     - node.type.source
+    - taxonomy.vocabulary.gear
   module:
     - entity_reference_quantity
-id: node.augmentation.field_source
-field_name: field_source
-entity_type: node
-bundle: augmentation
+id: taxonomy_term.gear.field_references
+field_name: field_references
+entity_type: taxonomy_term
+bundle: gear
 label: References
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -24,11 +24,10 @@ settings:
     target_bundles:
       source: source
     sort:
-      field: field_weight
-      direction: ASC
+      field: _none
     auto_create: 0
     auto_create_bundle: ''
-  qty_min: '0'
-  qty_max: '999'
   qty_label: Page
+  qty_min: 0
+  qty_max: 1000
 field_type: entity_reference_quantity

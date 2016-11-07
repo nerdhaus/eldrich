@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.network.field_description
-    - field.field.node.network.field_source
+    - field.field.node.network.field_references
     - field.field.node.network.field_symbol
     - node.type.network
   module:
@@ -19,5 +19,5 @@ content:
     weight: 100
 hidden:
   field_description: true
-  field_source: true
+  field_references: true
   field_symbol: true

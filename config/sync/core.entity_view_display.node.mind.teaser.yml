@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.mind.field_cost
     - field.field.node.mind.field_description
     - field.field.node.mind.field_gear_type
-    - field.field.node.mind.field_source
+    - field.field.node.mind.field_references
     - node.type.mind
   module:
     - user
@@ -25,5 +25,5 @@ hidden:
   field_description: true
   field_gear_type: true
   field_skills: true
-  field_source: true
+  field_references: true
   field_stats: true

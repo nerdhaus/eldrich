@@ -6,7 +6,7 @@ dependencies:
     - field.storage.node.field_cost
     - field.storage.node.field_description
     - field.storage.node.field_gear_type
-    - field.storage.node.field_source
+    - field.storage.node.field_references
     - node.type.augmentation
     - node.type.drug
     - node.type.gear
@@ -100,7 +100,7 @@ display:
             field_description: title
             field_gear_type: field_gear_type
             field_cost: field_cost
-            field_source: field_source
+            field_references: field_references
           info:
             title:
               sortable: true
@@ -130,7 +130,7 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            field_source:
+            field_references:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -379,10 +379,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_source:
-          id: field_source
-          table: node__field_source
-          field: field_source
+        field_references:
+          id: field_references
+          table: node__field_references
+          field: field_references
           relationship: none
           group_type: group
           admin_label: ''
@@ -660,7 +660,7 @@ display:
         - 'config:field.storage.node.field_cost'
         - 'config:field.storage.node.field_description'
         - 'config:field.storage.node.field_gear_type'
-        - 'config:field.storage.node.field_source'
+        - 'config:field.storage.node.field_references'
   page_1:
     display_plugin: page
     id: page_1
@@ -692,4 +692,4 @@ display:
         - 'config:field.storage.node.field_cost'
         - 'config:field.storage.node.field_description'
         - 'config:field.storage.node.field_gear_type'
-        - 'config:field.storage.node.field_source'
+        - 'config:field.storage.node.field_references'

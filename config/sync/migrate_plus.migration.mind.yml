@@ -57,14 +57,14 @@ process:
     plugin: skip_on_empty
     method: process
     source: minimum
-  field_source/target_id:
+  field_references/target_id:
     plugin: entity_lookup
     entity_type: node
     bundle: source
     bundle_key: type
     value_key: field_code
     source: book
-  field_source/quantity:
+  field_references/quantity:
     plugin: skip_on_empty
     method: process
     source: page

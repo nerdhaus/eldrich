@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.weapon.field_cost
     - field.field.node.weapon.field_description
     - field.field.node.weapon.field_gear_type
-    - field.field.node.weapon.field_source
+    - field.field.node.weapon.field_references
     - node.type.weapon
   module:
     - user
@@ -32,4 +32,4 @@ hidden:
   field_magazine_size: true
   field_range: true
   field_skill_bonus: true
-  field_source: true
+  field_references: true

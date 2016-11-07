@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.drug.field_cost
     - field.field.node.drug.field_description
     - field.field.node.drug.field_gear_type
-    - field.field.node.drug.field_source
+    - field.field.node.drug.field_references
     - node.type.drug
   module:
     - user
@@ -28,4 +28,4 @@ hidden:
   field_duration: true
   field_gear_type: true
   field_onset_time: true
-  field_source: true
+  field_references: true

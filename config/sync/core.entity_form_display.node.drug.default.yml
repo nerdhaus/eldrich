@@ -11,7 +11,7 @@ dependencies:
     - field.field.node.drug.field_duration
     - field.field.node.drug.field_gear_type
     - field.field.node.drug.field_onset_time
-    - field.field.node.drug.field_source
+    - field.field.node.drug.field_references
     - node.type.drug
   module:
     - entity_reference_quantity
@@ -81,7 +81,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
-  field_source:
+  field_references:
     weight: 11
     settings: {  }
     third_party_settings: {  }

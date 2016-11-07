@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.faction.field_concerns
     - field.field.node.faction.field_description
     - field.field.node.faction.field_parent_faction
-    - field.field.node.faction.field_source
+    - field.field.node.faction.field_references
     - node.type.faction
   module:
     - user
@@ -24,4 +24,4 @@ hidden:
   field_faction_type: true
   field_locations: true
   field_parent_faction: true
-  field_source: true
+  field_references: true

@@ -18,7 +18,7 @@ dependencies:
     - field.field.node.weapon.field_range
     - field.field.node.weapon.field_reach
     - field.field.node.weapon.field_skill_bonus
-    - field.field.node.weapon.field_source
+    - field.field.node.weapon.field_references
     - node.type.weapon
   module:
     - entity_reference_override
@@ -149,7 +149,7 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
-  field_source:
+  field_references:
     weight: 105
     label: above
     settings:

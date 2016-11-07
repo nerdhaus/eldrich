@@ -11,7 +11,7 @@ dependencies:
     - field.field.node.sleight.field_sleight_duration
     - field.field.node.sleight.field_sleight_level
     - field.field.node.sleight.field_sleight_range
-    - field.field.node.sleight.field_source
+    - field.field.node.sleight.field_references
     - field.field.node.sleight.field_strain
     - node.type.sleight
   module:
@@ -100,7 +100,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_source:
+  field_references:
     weight: 32
     settings:
       match_operator: CONTAINS
