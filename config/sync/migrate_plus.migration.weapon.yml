@@ -45,6 +45,12 @@ source:
       effects: Effects
     -
       range: Range
+    -
+      reach: Reach
+    -
+      ammo: ammo
+    -
+      accessory: Accessory    
   keys:
     - title
 process:
@@ -164,6 +170,21 @@ process:
     value_key: title
     source: linked
   field_skill_bonus: bonus
+  field_reach: reach
+  field_ammo:
+    plugin: static_map
+    source: ammo
+    map:
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
+  field_accessory:
+    plugin: static_map
+    source: accessory
+    map:
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
 destination:
   plugin: 'entity:node'
 migration_dependencies:

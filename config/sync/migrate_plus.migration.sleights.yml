@@ -30,6 +30,8 @@ source:
     -
       description: Description
     -
+      exsurgent: Exsurgent
+    -
       book: Book
     -
       page: Page
@@ -97,6 +99,13 @@ process:
     bundle_key: type
     value_key: field_code
     source: book
+  field_exsurgent:
+    plugin: static_map
+    source: exsurgent
+    map:
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
   field_references/quantity:
     plugin: skip_on_empty
     method: process

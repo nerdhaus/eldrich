@@ -39,6 +39,8 @@ source:
       augmentations: Augmentations
     -
       skills: Skills
+    -
+      mind: Mind
   keys:
     - title
 process:
@@ -170,6 +172,13 @@ process:
         - weapon
       bundle_key: type
       entity_type: node
+  field_default_mind/target_id:
+    plugin: entity_lookup
+    source: mind
+    value_key: title
+    bundle: mind
+    bundle_key: type
+    entity_type: node
 destination:
   plugin: 'entity:node'
 migration_dependencies:
