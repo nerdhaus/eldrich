@@ -1,0 +1,51 @@
+id: npcs
+migration_tags: null
+migration_group: eldrich_chars
+label: ''
+source:
+  plugin: csv
+  path: modules/custom/ep_import/characters/npcs.csv
+  header_row_count: 1
+  column_names:
+    -
+      title: Title
+    -
+      type: Type
+    -
+      description: Description
+    -
+      book: Book
+    -
+      page: Page
+  keys:
+    - title
+process:
+  title: title
+  type:
+    plugin: default_value
+    default_value: npc
+  field_gear_type/target_id:
+    plugin: entity_lookup
+    source: type
+    value_key: name
+    bundle: gear
+    bundle_key: vid
+    entity_type: taxonomy_term
+  field_description/value: description
+  field_references/target_id:
+    plugin: entity_lookup
+    entity_type: node
+    bundle: source
+    bundle_key: type
+    value_key: field_code
+    source: book
+  field_references/quantity:
+    plugin: skip_on_empty
+    method: process
+    source: page
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - lookup_tables
+    - sources
