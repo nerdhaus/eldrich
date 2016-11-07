@@ -95,4 +95,3 @@ content:
     type: entity_reference_override_label
 hidden:
   id: true
-  langcode: true

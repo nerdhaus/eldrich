@@ -45,4 +45,3 @@ content:
     type: stat_block_table
 hidden:
   id: true
-  langcode: true

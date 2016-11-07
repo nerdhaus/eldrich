@@ -1,12 +1,12 @@
-uuid: 93f5a008-7848-4cb1-b755-49ccbe76bef1
+uuid: 08bfdff7-54e5-4899-bb8c-13dc38ef1ca6
 langcode: en
 status: true
 dependencies:
   module:
     - eck
     - node
-id: node.field_additional_effects
-field_name: field_additional_effects
+id: node.field_damage_effects
+field_name: field_damage_effects
 entity_type: node
 type: entity_reference
 settings:

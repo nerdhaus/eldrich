@@ -1,0 +1,18 @@
+uuid: 71806871-09fe-405d-9339-2660edc27939
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_exsurgent
+field_name: field_exsurgent
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

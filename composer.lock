@@ -1024,16 +1024,16 @@
         },
         {
             "name": "drupal-composer/drupal-scaffold",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal-composer/drupal-scaffold.git",
-                "reference": "617fa3a2466795b148e3255651591682f2325ede"
+                "reference": "3ad465ac853c2e52e6a808f5529859917662c256"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/617fa3a2466795b148e3255651591682f2325ede",
-                "reference": "617fa3a2466795b148e3255651591682f2325ede",
+                "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/3ad465ac853c2e52e6a808f5529859917662c256",
+                "reference": "3ad465ac853c2e52e6a808f5529859917662c256",
                 "shasum": ""
             },
             "require": {
@@ -1061,7 +1061,7 @@
                 "GPL-2.0+"
             ],
             "description": "Composer Plugin for updating the Drupal scaffold files when using drupal/core",
-            "time": "2016-08-29 16:56:02"
+            "time": "2016-11-05 10:46:44"
         },
         {
             "name": "drupal/bootstrap",
@@ -1115,16 +1115,16 @@
         },
         {
             "name": "drupal/console",
-            "version": "1.0.0-rc7",
+            "version": "1.0.0-rc8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoendrupal/DrupalConsole.git",
-                "reference": "0cd6028fb9274c580dc14fc97dd9c1d72c3f4f8e"
+                "reference": "b94ab35254d48c912fe37f190fad42f40e11243c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoendrupal/DrupalConsole/zipball/0cd6028fb9274c580dc14fc97dd9c1d72c3f4f8e",
-                "reference": "0cd6028fb9274c580dc14fc97dd9c1d72c3f4f8e",
+                "url": "https://api.github.com/repos/hechoendrupal/DrupalConsole/zipball/b94ab35254d48c912fe37f190fad42f40e11243c",
+                "reference": "b94ab35254d48c912fe37f190fad42f40e11243c",
                 "shasum": ""
             },
             "require": {
@@ -1190,20 +1190,20 @@
                 "drupal",
                 "symfony"
             ],
-            "time": "2016-11-02 19:32:18"
+            "time": "2016-11-05 07:00:11"
         },
         {
             "name": "drupal/console-core",
-            "version": "1.0.0-rc7",
+            "version": "v1.0.0-rc8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoendrupal/drupal-console-core.git",
-                "reference": "b2bdf84ba1e93a31f7228a22c1a20ef458a76b40"
+                "reference": "44d2b0e7772a7f6bf25e0ff07944d15797ffb0f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoendrupal/drupal-console-core/zipball/b2bdf84ba1e93a31f7228a22c1a20ef458a76b40",
-                "reference": "b2bdf84ba1e93a31f7228a22c1a20ef458a76b40",
+                "url": "https://api.github.com/repos/hechoendrupal/drupal-console-core/zipball/44d2b0e7772a7f6bf25e0ff07944d15797ffb0f2",
+                "reference": "44d2b0e7772a7f6bf25e0ff07944d15797ffb0f2",
                 "shasum": ""
             },
             "require": {
@@ -1269,20 +1269,20 @@
                 "drupal",
                 "symfony"
             ],
-            "time": "2016-11-02 19:26:55"
+            "time": "2016-11-05 06:47:58"
         },
         {
             "name": "drupal/console-en",
-            "version": "1.0.0-rc4",
+            "version": "1.0.0-rc7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoendrupal/drupal-console-en.git",
-                "reference": "475e19d40a498d40f5a9183e05341c8ec7d8d96d"
+                "reference": "5807dce9efd84ccb1198a926eea03b600b8a93e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoendrupal/drupal-console-en/zipball/475e19d40a498d40f5a9183e05341c8ec7d8d96d",
-                "reference": "475e19d40a498d40f5a9183e05341c8ec7d8d96d",
+                "url": "https://api.github.com/repos/hechoendrupal/drupal-console-en/zipball/5807dce9efd84ccb1198a926eea03b600b8a93e6",
+                "reference": "5807dce9efd84ccb1198a926eea03b600b8a93e6",
                 "shasum": ""
             },
             "type": "drupal-console-language",
@@ -1323,7 +1323,7 @@
                 "drupal",
                 "symfony"
             ],
-            "time": "2016-11-02 19:18:53"
+            "time": "2016-11-05 06:21:34"
         },
         {
             "name": "drupal/core",
@@ -1666,7 +1666,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/eck",
-                "reference": "8c8b545022c81695ed13cc3c2511dddda31f5774"
+                "reference": "f1ad2c06d5a46f5a6785ccec06a9e8f99173e39b"
             },
             "require": {
                 "drupal/core": "^8"
@@ -1677,8 +1677,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha1+23-dev",
-                    "datestamp": "1477854239"
+                    "version": "8.x-1.0-alpha1+33-dev",
+                    "datestamp": "1478381939"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1725,7 +1725,7 @@
                 "source": "http://git.drupal.org/project/eck.git",
                 "issues": "https://www.drupal.org/project/issues/eck"
             },
-            "time": "2016-10-30 19:01:36"
+            "time": "2016-11-05 21:36:46"
         },
         {
             "name": "drupal/embed",
@@ -2054,7 +2054,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/field_group",
-                "reference": "68020f6f4b185c5989b70272ac32177d4c42b882"
+                "reference": "fb8357b41de1f76c4be9b7f5b4bb954b9e92ee3f"
             },
             "require": {
                 "drupal/core": "*"
@@ -2065,8 +2065,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-rc4+47-dev",
-                    "datestamp": "1476311939"
+                    "version": "8.x-1.0-rc4+49-dev",
+                    "datestamp": "1478428439"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2100,7 +2100,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/field_group"
             },
-            "time": "2016-10-12 22:34:00"
+            "time": "2016-11-06 10:30:04"
         },
         {
             "name": "drupal/inline_entity_form",
@@ -2108,7 +2108,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/inline_entity_form",
-                "reference": "8227e2879c9d4c19bf6d402cbba35d59350da56b"
+                "reference": "44c5cfcedd11ed90d473734bd77d9b069c4021fa"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2122,8 +2122,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha6+13-dev",
-                    "datestamp": "1476832739"
+                    "version": "8.x-1.0-beta1+1-dev",
+                    "datestamp": "1478302143"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2157,7 +2157,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/inline_entity_form"
             },
-            "time": "2016-10-18 23:16:30"
+            "time": "2016-11-04 20:57:04"
         },
         {
             "name": "drupal/migrate_plus",

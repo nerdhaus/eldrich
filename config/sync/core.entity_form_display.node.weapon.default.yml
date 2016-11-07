@@ -3,17 +3,20 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.weapon.field_additional_effects
+    - field.field.node.weapon.field_accessory
+    - field.field.node.weapon.field_ammo
     - field.field.node.weapon.field_area_effect
     - field.field.node.weapon.field_blueprints
     - field.field.node.weapon.field_cost
     - field.field.node.weapon.field_damage
+    - field.field.node.weapon.field_damage_effects
     - field.field.node.weapon.field_description
     - field.field.node.weapon.field_firing_modes
     - field.field.node.weapon.field_gear_type
     - field.field.node.weapon.field_linked_skill
     - field.field.node.weapon.field_magazine_size
     - field.field.node.weapon.field_range
+    - field.field.node.weapon.field_reach
     - field.field.node.weapon.field_skill_bonus
     - field.field.node.weapon.field_source
     - node.type.weapon
@@ -33,14 +36,18 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
-  field_additional_effects:
-    weight: 32
+  field_accessory:
+    weight: 37
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      display_label: true
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: boolean_checkbox
+  field_ammo:
+    weight: 36
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_area_effect:
     weight: 31
     settings:
@@ -70,6 +77,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: damage_widget
+  field_damage_effects:
+    weight: 39
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_description:
     weight: 7
     settings:
@@ -109,6 +124,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: weapon_range_widget
+  field_reach:
+    weight: 38
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   field_skill_bonus:
     weight: 35
     settings:

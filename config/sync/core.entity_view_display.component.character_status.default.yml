@@ -66,4 +66,3 @@ content:
     type: number_integer
 hidden:
   id: true
-  langcode: true

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.sleight.field_action_type
     - field.field.node.sleight.field_description
+    - field.field.node.sleight.field_exsurgent
     - field.field.node.sleight.field_is_active
     - field.field.node.sleight.field_psi_skill
     - field.field.node.sleight.field_sleight_duration
@@ -41,6 +42,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+  field_exsurgent:
+    weight: 111
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_is_active:
     weight: 110
     label: above

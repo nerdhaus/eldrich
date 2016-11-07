@@ -1,16 +1,16 @@
-uuid: 2d11442d-e418-41f4-b93a-c52147b6ad4e
+uuid: 6cbcd48f-d1f0-49d6-b1f4-42b77a3edb34
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.lookup.damage_type
-    - field.storage.node.field_additional_effects
+    - field.storage.node.field_damage_effects
     - node.type.weapon
-id: node.weapon.field_additional_effects
-field_name: field_additional_effects
+id: node.weapon.field_damage_effects
+field_name: field_damage_effects
 entity_type: node
 bundle: weapon
-label: 'Additional Effects'
+label: 'Damage Effects'
 description: ''
 required: false
 translatable: false

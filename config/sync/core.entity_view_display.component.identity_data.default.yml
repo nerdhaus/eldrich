@@ -62,4 +62,3 @@ content:
     type: entity_reference_quantity_label
 hidden:
   id: true
-  langcode: true
