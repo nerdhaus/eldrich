@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.source.field_code
     - field.field.node.source.field_description
     - field.field.node.source.field_home_page
-    - field.field.node.source.field_references_type
+    - field.field.node.source.field_source_type
     - field.field.node.source.field_weight
     - node.type.source
   module:
