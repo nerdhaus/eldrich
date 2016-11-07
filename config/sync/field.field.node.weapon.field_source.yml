@@ -12,7 +12,7 @@ id: node.weapon.field_source
 field_name: field_source
 entity_type: node
 bundle: weapon
-label: Source
+label: References
 description: ''
 required: false
 translatable: true

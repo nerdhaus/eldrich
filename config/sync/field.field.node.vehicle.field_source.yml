@@ -12,7 +12,7 @@ id: node.vehicle.field_source
 field_name: field_source
 entity_type: node
 bundle: vehicle
-label: Source
+label: References
 description: ''
 required: false
 translatable: true

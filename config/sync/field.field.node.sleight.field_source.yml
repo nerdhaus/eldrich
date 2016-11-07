@@ -12,7 +12,7 @@ id: node.sleight.field_source
 field_name: field_source
 entity_type: node
 bundle: sleight
-label: Source
+label: References
 description: ''
 required: false
 translatable: true

@@ -12,7 +12,7 @@ id: taxonomy_term.gear.field_source
 field_name: field_source
 entity_type: taxonomy_term
 bundle: gear
-label: Source
+label: References
 description: ''
 required: false
 translatable: false

@@ -12,7 +12,7 @@ id: node.morph.field_source
 field_name: field_source
 entity_type: node
 bundle: morph
-label: Source
+label: References
 description: ''
 required: false
 translatable: true
