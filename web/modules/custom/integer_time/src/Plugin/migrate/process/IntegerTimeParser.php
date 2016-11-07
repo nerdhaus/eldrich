@@ -22,7 +22,20 @@ class IntegerTimeParser extends ProcessPluginBase {
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-    return $this->parseTime($value);
+    $value = str_replace('-', '–', $value); // Pedantic
+    $value = str_replace(' ', '', $value); // Scrubby
+    $multiple = strpos($value, '–'); // Should we go deeper?
+
+    if ($multiple) {
+      $segments = explode('–', $value);
+      return [
+        'from' => $this->parseTime($segments[0]),
+        'to' => $this->parseTime($segments[1]),
+      ];
+    }
+    else {
+      return $this->parseTime($value);
+    }
   }
 
   /**
