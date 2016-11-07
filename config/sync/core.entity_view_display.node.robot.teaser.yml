@@ -28,6 +28,6 @@ hidden:
   field_gear_type: true
   field_mobility_system: true
   field_movement_speed: true
-  field_skills: true
   field_references: true
+  field_skills: true
   field_stats: true

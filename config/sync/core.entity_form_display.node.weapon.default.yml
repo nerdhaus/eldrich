@@ -130,17 +130,17 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+  field_references:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_reference_quantity_select
   field_skill_bonus:
     weight: 35
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
-  field_references:
-    weight: 11
-    settings: {  }
-    third_party_settings: {  }
-    type: entity_reference_quantity_select
   path:
     type: path
     weight: 5

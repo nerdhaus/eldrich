@@ -38,7 +38,7 @@ hidden:
   field_is_field: true
   field_linked_aptitude: true
   field_no_defaulting: true
-  field_skill_type: true
   field_references: true
+  field_skill_type: true
   field_specializations: true
   field_usage: true

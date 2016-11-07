@@ -1,0 +1,16 @@
+uuid: 2c3a6a1c-e361-48ad-980c-ff54c9bc5b3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.strain
+  module:
+    - user
+id: node.strain.default
+targetEntityType: node
+bundle: strain
+mode: default
+content:
+  links:
+    weight: 100
+hidden: {  }

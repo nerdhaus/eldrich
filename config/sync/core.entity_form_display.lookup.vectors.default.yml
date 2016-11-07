@@ -1,21 +1,21 @@
-uuid: 851b271c-c3f4-45d0-8c73-82c29ce6c2e2
+uuid: aa5bfd02-5c7d-4f1f-a417-11afff1ec42c
 langcode: en
 status: true
 dependencies:
   config:
-    - eck.eck_type.lookup.damage_type
-    - field.field.lookup.damage_type.field_description
-    - field.field.lookup.damage_type.field_lookup_code
-    - field.field.lookup.damage_type.field_weight
+    - eck.eck_type.lookup.vectors
+    - field.field.lookup.vectors.field_description
+    - field.field.lookup.vectors.field_lookup_code
+    - field.field.lookup.vectors.field_weight
   module:
     - text
-id: lookup.damage_type.default
+id: lookup.vectors.default
 targetEntityType: lookup
-bundle: damage_type
+bundle: vectors
 mode: default
 content:
   field_description:
-    weight: 3
+    weight: 4
     settings:
       rows: 5
       placeholder: ''
@@ -29,7 +29,7 @@ content:
     third_party_settings: {  }
     type: string_textfield
   field_weight:
-    weight: 4
+    weight: 3
     settings:
       placeholder: ''
     third_party_settings: {  }

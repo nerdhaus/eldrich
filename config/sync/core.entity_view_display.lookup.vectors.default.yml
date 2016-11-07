@@ -1,21 +1,21 @@
-uuid: c25d7790-db4d-47f2-92b8-1aac0adbb4f9
+uuid: c3e16523-8c1e-4ae0-a6e6-fd57cc1463e7
 langcode: en
 status: true
 dependencies:
   config:
-    - eck.eck_type.lookup.substance_delivery
-    - field.field.lookup.substance_delivery.field_description
-    - field.field.lookup.substance_delivery.field_lookup_code
-    - field.field.lookup.substance_delivery.field_weight
+    - eck.eck_type.lookup.vectors
+    - field.field.lookup.vectors.field_description
+    - field.field.lookup.vectors.field_lookup_code
+    - field.field.lookup.vectors.field_weight
   module:
     - text
-id: lookup.substance_delivery.default
+id: lookup.vectors.default
 targetEntityType: lookup
-bundle: substance_delivery
+bundle: vectors
 mode: default
 content:
   field_description:
-    weight: -4
+    weight: -3
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -28,7 +28,7 @@ content:
     third_party_settings: {  }
     type: string
   field_weight:
-    weight: -3
+    weight: -4
     label: above
     settings:
       thousand_separator: ''
@@ -42,5 +42,4 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-hidden:
-  id: true
+hidden: {  }

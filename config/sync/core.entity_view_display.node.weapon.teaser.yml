@@ -19,17 +19,21 @@ content:
   links:
     weight: 100
 hidden:
+  field_accessory: true
   field_additional_effects: true
+  field_ammo: true
   field_area_effect: true
   field_armor: true
   field_blueprints: true
   field_cost: true
   field_damage: true
+  field_damage_effects: true
   field_description: true
   field_firing_modes: true
   field_gear_type: true
   field_linked_skill: true
   field_magazine_size: true
   field_range: true
-  field_skill_bonus: true
+  field_reach: true
   field_references: true
+  field_skill_bonus: true

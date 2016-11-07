@@ -65,4 +65,5 @@ content:
     type: number_integer
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_source_type: true

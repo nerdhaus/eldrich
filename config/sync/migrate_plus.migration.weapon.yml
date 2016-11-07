@@ -50,7 +50,7 @@ source:
     -
       ammo: ammo
     -
-      accessory: Accessory    
+      accessory: Accessory
   keys:
     - title
 process:

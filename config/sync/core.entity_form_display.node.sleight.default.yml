@@ -85,6 +85,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_references:
+    weight: 32
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_quantity_autocomplete
   field_sleight_duration:
     weight: 10
     settings: {  }
@@ -100,14 +108,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_references:
-    weight: 32
-    settings:
-      match_operator: CONTAINS
-      size: '60'
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_quantity_autocomplete
   field_strain:
     weight: 11
     settings:

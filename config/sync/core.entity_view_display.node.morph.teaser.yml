@@ -31,8 +31,8 @@ hidden:
   field_mobility_system: true
   field_morph_type: true
   field_movement_speed: true
-  field_skills: true
   field_references: true
+  field_skills: true
   field_stat_cap: true
   field_stat_variance: true
   field_stats: true
