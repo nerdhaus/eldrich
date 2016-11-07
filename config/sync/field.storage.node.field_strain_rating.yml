@@ -1,15 +1,16 @@
-uuid: b98868bd-08d6-47eb-9350-380fb677c1e0
+uuid: 7f1f2ad0-69f5-4624-ac15-657dec4519bf
 langcode: en
 status: true
 dependencies:
   module:
-    - eck
-id: component.field_mobility_type
-field_name: field_mobility_type
-entity_type: component
-type: entity_reference
+    - node
+id: node.field_strain_rating
+field_name: field_strain_rating
+entity_type: node
+type: integer
 settings:
-  target_type: lookup
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1

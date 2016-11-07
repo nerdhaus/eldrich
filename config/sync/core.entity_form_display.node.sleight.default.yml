@@ -8,10 +8,10 @@ dependencies:
     - field.field.node.sleight.field_exsurgent
     - field.field.node.sleight.field_is_active
     - field.field.node.sleight.field_psi_skill
+    - field.field.node.sleight.field_references
     - field.field.node.sleight.field_sleight_duration
     - field.field.node.sleight.field_sleight_level
     - field.field.node.sleight.field_sleight_range
-    - field.field.node.sleight.field_references
     - field.field.node.sleight.field_strain
     - node.type.sleight
   module:
@@ -109,7 +109,7 @@ content:
     third_party_settings: {  }
     type: options_select
   field_strain:
-    weight: 11
+    weight: 35
     settings:
       size: 60
       placeholder: ''

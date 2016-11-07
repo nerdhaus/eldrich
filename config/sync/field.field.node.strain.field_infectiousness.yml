@@ -1,0 +1,21 @@
+uuid: 64194e35-7935-4549-9823-3d541b1db48d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_infectiousness
+    - node.type.strain
+  module:
+    - text
+id: node.strain.field_infectiousness
+field_name: field_infectiousness
+entity_type: node
+bundle: strain
+label: Infectiousness
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

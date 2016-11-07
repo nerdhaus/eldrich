@@ -1,16 +1,16 @@
-uuid: e4cc7706-4f81-4c98-9e2b-e91e3596de45
+uuid: 6afa2b57-2ef5-4a34-8e9b-e51aa3a434d3
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - range
-id: node.field_duration
-field_name: field_duration
+    - text
+id: node.field_infectiousness
+field_name: field_infectiousness
 entity_type: node
-type: range_integer
+type: text_long
 settings: {  }
-module: range
+module: text
 locked: false
 cardinality: 1
 translatable: true

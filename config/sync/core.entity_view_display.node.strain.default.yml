@@ -3,14 +3,55 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.strain.field_description
+    - field.field.node.strain.field_infectiousness
+    - field.field.node.strain.field_references
+    - field.field.node.strain.field_strain_rating
+    - field.field.node.strain.field_vectors
     - node.type.strain
   module:
+    - entity_reference_quantity
+    - text
     - user
 id: node.strain.default
 targetEntityType: node
 bundle: strain
 mode: default
 content:
+  field_description:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_infectiousness:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_references:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  field_strain_rating:
+    weight: 105
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_vectors:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   links:
     weight: 100
 hidden: {  }

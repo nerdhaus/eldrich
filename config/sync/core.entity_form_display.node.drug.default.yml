@@ -10,12 +10,13 @@ dependencies:
     - field.field.node.drug.field_description
     - field.field.node.drug.field_duration
     - field.field.node.drug.field_gear_type
-    - field.field.node.drug.field_onset_time
+    - field.field.node.drug.field_onset
     - field.field.node.drug.field_references
     - node.type.drug
   module:
     - entity_reference_quantity
     - path
+    - range
     - text
 id: node.drug.default
 targetEntityType: node
@@ -65,22 +66,20 @@ content:
     third_party_settings: {  }
     type: text_textarea
   field_duration:
-    weight: 28
-    settings:
-      placeholder: ''
+    weight: 30
+    settings: {  }
     third_party_settings: {  }
-    type: number
+    type: range
   field_gear_type:
     weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_onset_time:
-    weight: 27
-    settings:
-      placeholder: ''
+  field_onset:
+    weight: 31
+    settings: {  }
     third_party_settings: {  }
-    type: number
+    type: range
   field_references:
     weight: 11
     settings: {  }

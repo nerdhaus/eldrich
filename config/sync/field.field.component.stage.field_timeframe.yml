@@ -1,17 +1,17 @@
-uuid: baaed5e5-c89e-4a38-a982-15c3d615eb86
+uuid: f667b0c2-59e4-4e33-96e6-ff4e07e0ad09
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_duration
-    - node.type.drug
+    - eck.eck_type.component.stage
+    - field.storage.component.field_timeframe
   module:
     - range
-id: node.drug.field_duration
-field_name: field_duration
-entity_type: node
-bundle: drug
-label: Duration
+id: component.stage.field_timeframe
+field_name: field_timeframe
+entity_type: component
+bundle: stage
+label: Timeframe
 description: ''
 required: false
 translatable: false

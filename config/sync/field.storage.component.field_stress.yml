@@ -1,4 +1,4 @@
-uuid: c89dea59-cb9f-47c3-9e63-1f77b4098cff
+uuid: 668eb0f2-b3c6-48cd-8fe0-b5a647eeca80
 langcode: en
 status: true
 dependencies:
@@ -7,10 +7,11 @@ dependencies:
 id: component.field_stress
 field_name: field_stress
 entity_type: component
-type: integer
+type: string
 settings:
-  unsigned: false
-  size: normal
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1

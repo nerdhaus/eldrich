@@ -8,10 +8,10 @@ dependencies:
     - field.field.node.sleight.field_exsurgent
     - field.field.node.sleight.field_is_active
     - field.field.node.sleight.field_psi_skill
+    - field.field.node.sleight.field_references
     - field.field.node.sleight.field_sleight_duration
     - field.field.node.sleight.field_sleight_level
     - field.field.node.sleight.field_sleight_range
-    - field.field.node.sleight.field_references
     - field.field.node.sleight.field_strain
     - node.type.sleight
   module:
@@ -96,7 +96,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
   field_strain:
-    weight: 107
+    weight: 112
     label: above
     settings:
       link_to_entity: false

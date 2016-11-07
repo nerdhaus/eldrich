@@ -1,17 +1,16 @@
-uuid: f7036d2f-d034-46a5-8da2-b83ceadf7a5f
+uuid: d36b76c4-a5d9-4daf-b23b-85d4fffb66d1
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_onset_time
-field_name: field_onset_time
+    - range
+id: node.field_onset
+field_name: field_onset
 entity_type: node
-type: integer
-settings:
-  unsigned: false
-  size: normal
-module: core
+type: range_integer
+settings: {  }
+module: range
 locked: false
 cardinality: 1
 translatable: true

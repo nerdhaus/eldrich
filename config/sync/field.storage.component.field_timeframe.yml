@@ -1,16 +1,16 @@
-uuid: a8709e83-6033-4c8e-ab50-5e3974ff468b
+uuid: 95d88a9c-de1f-4f59-9767-d83627a414f6
 langcode: en
 status: true
 dependencies:
   module:
     - eck
-    - ep_complex_values
-id: component.field_speed
-field_name: field_speed
+    - range
+id: component.field_timeframe
+field_name: field_timeframe
 entity_type: component
-type: mobility_speed
+type: range_integer
 settings: {  }
-module: ep_complex_values
+module: range
 locked: false
 cardinality: 1
 translatable: true

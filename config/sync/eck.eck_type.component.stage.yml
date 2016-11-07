@@ -1,9 +1,9 @@
-uuid: 9d12564e-aad3-4db0-896f-f75a0a55e4d3
+uuid: 38276c9d-a6a9-4041-8922-45742746b5a5
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_entity_type.component
-name: 'Identity Data'
-type: identity_data
+name: 'Infection Stage'
+type: stage
 description: ''

@@ -1,16 +1,16 @@
-uuid: 0431d816-5b62-4064-b39e-78b6065da90f
+uuid: 237fcc76-ce77-4e96-83a6-356fe79b5f3f
 langcode: en
 status: true
 dependencies:
   config:
-    - eck.eck_type.component.morph_instance
-    - eck.eck_type.lookup.morph_type
-    - field.storage.component.field_morph_type
-id: component.morph_instance.field_morph_type
-field_name: field_morph_type
-entity_type: component
-bundle: morph_instance
-label: 'Morph Type'
+    - eck.eck_type.lookup.vectors
+    - field.storage.node.field_vectors
+    - node.type.strain
+id: node.strain.field_vectors
+field_name: field_vectors
+entity_type: node
+bundle: strain
+label: Vectors
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:lookup'
   handler_settings:
     target_bundles:
-      morph_type: morph_type
+      vectors: vectors
     sort:
       field: field_weight
       direction: ASC

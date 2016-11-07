@@ -1,19 +1,19 @@
-uuid: 6505aa86-a0e8-4406-a1ec-24fdfb7e86de
+uuid: f555f4e8-bf72-472b-9f0d-e580492ea2e2
 langcode: en
 status: true
 dependencies:
   module:
     - eck
     - node
-id: component.field_faction
-field_name: field_faction
-entity_type: component
+id: node.field_vectors
+field_name: field_vectors
+entity_type: node
 type: entity_reference
 settings:
-  target_type: node
+  target_type: lookup
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

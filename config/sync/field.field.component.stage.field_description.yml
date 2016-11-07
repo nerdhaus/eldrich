@@ -1,20 +1,20 @@
-uuid: 30d9194e-bbbd-45a6-950d-2cbf842754ab
+uuid: 4b3f5626-d2da-45fa-80d1-691cb6ee8518
 langcode: en
 status: true
 dependencies:
   config:
-    - eck.eck_type.component.character_status
+    - eck.eck_type.component.stage
     - field.storage.component.field_description
   module:
     - text
-id: component.character_status.field_description
+id: component.stage.field_description
 field_name: field_description
 entity_type: component
-bundle: character_status
+bundle: stage
 label: Description
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
