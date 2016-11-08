@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Mind
 type: mind
-description: ''
+description: 'AIs, AGIs, and personality templates'
 help: ''
 new_revision: true
 preview_mode: 0

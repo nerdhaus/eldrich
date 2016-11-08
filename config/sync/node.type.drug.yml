@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Drug
 type: drug
-description: ''
+description: 'Mind and body altering subbstances'
 help: ''
 new_revision: true
 preview_mode: 0

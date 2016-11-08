@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Robot
 type: robot
-description: ''
+description: 'Robots and other synthetic shells used as companions and helpers'
 help: ''
 new_revision: true
 preview_mode: 0

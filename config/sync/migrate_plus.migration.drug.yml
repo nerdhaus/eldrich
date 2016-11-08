@@ -95,7 +95,7 @@ process:
       entity_type: lookup
       bundle: substance_delivery
       bundle_key: type
-      value_key: field_lookup_code
+      value_key: title
   field_onset:
     plugin: integer_time
     source: onset

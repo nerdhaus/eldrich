@@ -27,5 +27,6 @@ hidden:
   field_description: true
   field_duration: true
   field_gear_type: true
+  field_onset: true
   field_onset_time: true
   field_references: true

@@ -14,4 +14,9 @@ mode: teaser
 content:
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_description: true
+  field_infectiousness: true
+  field_references: true
+  field_strain_rating: true
+  field_vectors: true
