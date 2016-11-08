@@ -27,8 +27,6 @@ source:
       stats: Stats
     -
       book: Book
-    -
-      page: Page
   keys:
     - title
 process:
@@ -52,17 +50,13 @@ process:
     default_value: 0
   field_cp_cost: cost
   field_description/value: description
-  field_references/target_id:
-    plugin: entity_lookup
+  field_references:
+    plugin: source_with_page
     entity_type: node
     bundle: source
     bundle_key: type
     value_key: field_code
     source: book
-  field_references/quantity:
-    plugin: skip_on_empty
-    method: process
-    source: page
 destination:
   plugin: 'entity:node'
 migration_dependencies:

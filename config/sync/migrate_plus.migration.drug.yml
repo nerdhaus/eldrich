@@ -26,8 +26,6 @@ source:
     -
       book: Book
     -
-      page: Page
-    -
       delivery: Delivery
     -
       onset: Onset
@@ -63,17 +61,13 @@ process:
     plugin: skip_on_empty
     method: process
     source: minimum
-  field_references/target_id:
-    plugin: entity_lookup
+  field_references:
+    plugin: source_with_page
     entity_type: node
     bundle: source
     bundle_key: type
     value_key: field_code
     source: book
-  field_references/quantity:
-    plugin: skip_on_empty
-    method: process
-    source: page
   field_blueprints:
     plugin: static_map
     source: blueprints

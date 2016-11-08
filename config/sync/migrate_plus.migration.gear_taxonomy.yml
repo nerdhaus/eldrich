@@ -19,8 +19,6 @@ source:
       description: Description
     -
       book: book
-    -
-      page: Page
   keys:
     - title
     - parent
@@ -30,14 +28,13 @@ process:
   vid:
     plugin: default_value
     default_value: gear
-  field_references/target_id:
-    plugin: entity_lookup
+  field_references:
+    plugin: source_with_page
     source: book
     value_key: field_code
     bundle_key: nid
     bundle: source
     entity_type: node
-  field_references/quantity: page
   parent:
     -
       plugin: skip_on_empty

@@ -33,8 +33,6 @@ source:
       exsurgent: Exsurgent
     -
       book: Book
-    -
-      page: Page
   keys:
     - title
 process:
@@ -92,8 +90,8 @@ process:
     plugin: skip_on_empty
     method: process
     source: description
-  field_references/target_id:
-    plugin: entity_lookup
+  field_references:
+    plugin: source_with_page
     entity_type: node
     bundle: source
     bundle_key: type
@@ -106,10 +104,6 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-  field_references/quantity:
-    plugin: skip_on_empty
-    method: process
-    source: page
 destination:
   plugin: 'entity:node'
 migration_dependencies:
