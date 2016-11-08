@@ -17,7 +17,7 @@ process:
   title: title
   type:
     plugin: default_value
-    default_value: npc
+    default_value: pc
   field_description/value: description
 destination:
   plugin: 'entity:node'
