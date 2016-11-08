@@ -34,7 +34,10 @@ class IntegerTimeParser extends ProcessPluginBase {
       ];
     }
     else {
-      return $this->parseTime($value);
+      return [
+        'from' => $this->parseTime($value),
+        'to' => $this->parseTime($value),
+      ];
     }
   }
 
