@@ -1,0 +1,24 @@
+uuid: 3d064534-150e-45fc-bfc7-68ce60a1c86a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.creature.field_description
+    - node.type.creature
+  module:
+    - text
+    - user
+id: node.creature.default
+targetEntityType: node
+bundle: creature
+mode: default
+content:
+  field_description:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  links:
+    weight: 100
+hidden: {  }

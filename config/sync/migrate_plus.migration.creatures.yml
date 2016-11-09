@@ -1,3 +1,7 @@
+uuid: 4c0ce0d8-6873-4fbc-94cd-518b3a6014d5
+langcode: en
+status: true
+dependencies: {  }
 id: creatures
 migration_tags: null
 migration_group: eldrich_chars

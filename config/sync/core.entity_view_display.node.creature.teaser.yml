@@ -1,0 +1,17 @@
+uuid: 87ced50a-3360-4063-934a-34d5cd03e6dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.creature
+  module:
+    - user
+id: node.creature.teaser
+targetEntityType: node
+bundle: creature
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden: {  }

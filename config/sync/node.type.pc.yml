@@ -1,4 +1,4 @@
-uuid: f85cb5e2-f1ec-4ab5-80f5-71a4a7d89909
+uuid: 8a534ba5-f9a6-48a4-a5cd-315079a93565
 langcode: en
 status: true
 dependencies:
@@ -9,9 +9,9 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: Source
-type: source
-description: 'An Eclipse Phase sourcebook or pre-fab adventure.'
+name: 'Player Character'
+type: pc
+description: 'Does what it says on the tin.'
 help: ''
 new_revision: true
 preview_mode: 0
