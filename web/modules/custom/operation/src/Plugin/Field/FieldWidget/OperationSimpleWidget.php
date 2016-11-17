@@ -23,11 +23,19 @@ class OperationSimpleWidget extends NumberWidget {
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
-    $element = parent::formElement($items, $delta, $element, $form, $form_state);
-    if ($value = isset($items[$delta]->value)) {
-      $element['type'] = 'textfield';
-      $element['default_value'] = $value;
-    }
-    return array('value' => $element);
+    $widget = array(
+      '#attributes' => ['class' => ['form--inline', 'clearfix']],
+      '#theme_wrappers' => ['container'],
+    );
+    $widget['operator'] = array(
+      '#title' => t('Operation'),
+      '#type' => 'select',
+      '#options' => operation_supported_operators(),
+      '#default_value' => $items[$delta]->operator,
+    );
+    $widget['value'] = parent::formElement($items, $delta, $element, $form, $form_state);
+    $widget['value']['#weight'] = 11;
+
+    return $widget;
   }
 }

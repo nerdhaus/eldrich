@@ -22,9 +22,6 @@ class IntegerTimeParser extends ProcessPluginBase {
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-    return [
-      'operator' => '+',
-      'value' => $value,
-    ];
+    return operation_parse_string($value);
   }
 }

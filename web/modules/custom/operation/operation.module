@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains operation.module..
+ * Utility functions used across field, formatter, and widget classes.
  */
 
 function operation_parse_string($string) {
@@ -13,7 +13,7 @@ function operation_parse_string($string) {
 }
 
 
-function operation_calculate_result($input, $operation, $value, $up = TRUE) {
+function operation_calculate_result($input, $operation, $value, $mode = PHP_ROUND_HALF_UP) {
   switch ($operation) {
     case '+':
       $value = $input + $value;
@@ -35,14 +35,12 @@ function operation_calculate_result($input, $operation, $value, $up = TRUE) {
       break;
   }
 
-  if ($up) {
-    return ceil($value);
-  }
-  else {
-    return floor($value);
-  }
+  return intval(round($value, 0, $mode));
 }
 
+/**
+ * @return array
+ */
 function operation_supported_operators() {
   return [
     '+' => t('Addition'),
