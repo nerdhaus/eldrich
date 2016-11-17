@@ -1,0 +1,5 @@
+name: Operation
+type: module
+description: Operation
+core: 8.x
+package: Custom

@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains operation.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function operation_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the operation module.
+    case 'help.page.operation':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Operation') . '</p>';
+      return $output;
+
+    default:
+  }
+}
