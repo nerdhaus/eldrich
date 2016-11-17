@@ -5,20 +5,52 @@
  * Contains operation.module..
  */
 
-use Drupal\Core\Routing\RouteMatchInterface;
+function operation_parse_string($string) {
+  $string = str_replace(' ', '', $string);
+  $string = str_replace(',', '', $string);
+  $matches = [];
+  return preg_match("/(?<operator>[+-\/\*\^%=])(?<value>[0-9]+)/", $string, $matches);
+}
 
-/**
- * Implements hook_help().
- */
-function operation_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_name) {
-    // Main module help for the operation module.
-    case 'help.page.operation':
-      $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Operation') . '</p>';
-      return $output;
 
-    default:
+function operation_calculate_result($input, $operation, $value, $up = TRUE) {
+  switch ($operation) {
+    case '+':
+      $value = $input + $value;
+      break;
+    case '-':
+      $value = $input - $value;
+      break;
+    case '/':
+      $value = $input / $value;
+      break;
+    case '*':
+      $value = $input * $value;
+      break;
+    case '^':
+      $value = $input ** $value;
+      break;
+    case '%':
+      $value = $input % $value;
+      break;
   }
+
+  if ($up) {
+    return ceil($value);
+  }
+  else {
+    return floor($value);
+  }
+}
+
+function operation_supported_operators() {
+  return [
+    '+' => t('Addition'),
+    '-' => t('Subtraction'),
+    '/' => t('Division'),
+    '*' => t('Multiplication'),
+    '^' => t('Exponentiation'),
+    '%' => t('Modulo'),
+    '=' => t('Override'),
+  ];
 }

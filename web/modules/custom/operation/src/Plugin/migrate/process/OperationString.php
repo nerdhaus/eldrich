@@ -1,11 +1,30 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: jeff
- * Date: 11/16/16
- * Time: 10:55 PM
- */
-class OperationString {
+namespace Drupal\operation\Plugin\migrate\process;
 
+use Drupal\migrate\MigrateExecutableInterface;
+use Drupal\migrate\ProcessPluginBase;
+use Drupal\migrate\Row;
+
+/**
+ * Parses a number and operator string into discrete values.
+ *
+ * @MigrateProcessPlugin(
+ *   id = "operation_string",
+ *   handle_multiples = FALSE
+ * )
+ *
+ * @ingroup migration
+ */
+class IntegerTimeParser extends ProcessPluginBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
+    return [
+      'operator' => '+',
+      'value' => $value,
+    ];
+  }
 }
