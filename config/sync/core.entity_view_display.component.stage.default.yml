@@ -39,4 +39,6 @@ content:
       to_prefix_suffix: false
     third_party_settings: {  }
     type: range_integer
-hidden: {  }
+hidden:
+  id: true
+  langcode: true

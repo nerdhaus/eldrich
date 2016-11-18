@@ -3,16 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_references
+    - field.storage.node.field_source
     - node.type.location
     - node.type.source
   module:
     - entity_reference_quantity
-id: node.location.field_references
-field_name: field_references
+id: node.location.field_source
+field_name: field_source
 entity_type: node
 bundle: location
-label: References
+label: Source
 description: ''
 required: false
 translatable: true

@@ -16,7 +16,7 @@ use Drupal\Core\Field\FieldItemListInterface;
  *   }
  * )
  */
-class IntegerTimeFieldFormatter extends IntegerFormatter {
+class OperationSimpleFormatter extends IntegerFormatter {
 
   /**
    * {@inheritdoc}

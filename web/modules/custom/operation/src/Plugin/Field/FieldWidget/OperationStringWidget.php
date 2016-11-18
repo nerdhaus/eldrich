@@ -11,7 +11,7 @@ use Drupal\Core\Field\Plugin\Field\FieldWidget\NumberWidget;
  *
  * @FieldWidget(
  *   id = "operation_string_widget",
- *   label = @Translation("Default"),
+ *   label = @Translation("Text parser"),
  *   field_types = {
  *     "operation"
  *   }

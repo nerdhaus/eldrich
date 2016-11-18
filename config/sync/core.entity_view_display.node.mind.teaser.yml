@@ -26,4 +26,5 @@ hidden:
   field_gear_type: true
   field_references: true
   field_skills: true
+  field_source: true
   field_stats: true

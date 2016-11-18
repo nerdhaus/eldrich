@@ -41,4 +41,5 @@ content:
     weight: 30
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_source: true

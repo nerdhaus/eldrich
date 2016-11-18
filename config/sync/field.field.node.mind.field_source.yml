@@ -1,18 +1,18 @@
-uuid: ef9c1af0-5b3b-42e2-bc84-63cd9f69042c
+uuid: b3228579-54b0-4c83-8393-42b2452c567b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_references
-    - node.type.weapon
+    - field.storage.node.field_source
+    - node.type.mind
     - node.type.source
   module:
     - entity_reference_quantity
-id: node.weapon.field_references
-field_name: field_references
+id: node.mind.field_source
+field_name: field_source
 entity_type: node
-bundle: weapon
-label: References
+bundle: mind
+label: Source
 description: ''
 required: false
 translatable: true

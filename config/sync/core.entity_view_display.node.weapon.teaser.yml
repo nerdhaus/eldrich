@@ -37,3 +37,4 @@ hidden:
   field_reach: true
   field_references: true
   field_skill_bonus: true
+  field_source: true

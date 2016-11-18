@@ -38,4 +38,5 @@ content:
     type: string
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_source: true

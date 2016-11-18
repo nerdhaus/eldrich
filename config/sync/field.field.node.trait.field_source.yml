@@ -1,18 +1,18 @@
-uuid: 45a7a6bd-fbb3-438f-afdd-89a3a36e66cb
+uuid: 49bc4478-8e4d-4753-827d-598a1366fcc1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_references
-    - node.type.faction
+    - field.storage.node.field_source
     - node.type.source
+    - node.type.trait
   module:
     - entity_reference_quantity
-id: node.faction.field_references
-field_name: field_references
+id: node.trait.field_source
+field_name: field_source
 entity_type: node
-bundle: faction
-label: References
+bundle: trait
+label: Source
 description: ''
 required: false
 translatable: true

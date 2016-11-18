@@ -25,3 +25,4 @@ hidden:
   field_locations: true
   field_parent_faction: true
   field_references: true
+  field_source: true

@@ -51,4 +51,5 @@ content:
     type: text_default
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_source: true

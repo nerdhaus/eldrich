@@ -1,17 +1,17 @@
-uuid: 350b2ec9-128e-431e-8673-89d763e9a189
+uuid: 0d8d69e7-9050-4f4f-a1b4-f887849b4d33
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_magazine_size
+    - field.storage.node.field_damage_modifier
     - node.type.weapon
   module:
     - operation
-id: node.weapon.field_magazine_size
-field_name: field_magazine_size
+id: node.weapon.field_damage_modifier
+field_name: field_damage_modifier
 entity_type: node
 bundle: weapon
-label: 'Magazine Size'
+label: 'Damage Modifier'
 description: ''
 required: false
 translatable: false

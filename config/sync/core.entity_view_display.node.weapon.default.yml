@@ -5,11 +5,13 @@ dependencies:
   config:
     - field.field.node.weapon.field_accessory
     - field.field.node.weapon.field_ammo
+    - field.field.node.weapon.field_ap_modifier
     - field.field.node.weapon.field_area_effect
     - field.field.node.weapon.field_blueprints
     - field.field.node.weapon.field_cost
-    - field.field.node.weapon.field_damage
+    - field.field.node.weapon.field_damage_dice
     - field.field.node.weapon.field_damage_effects
+    - field.field.node.weapon.field_damage_modifier
     - field.field.node.weapon.field_description
     - field.field.node.weapon.field_firing_modes
     - field.field.node.weapon.field_gear_type
@@ -18,12 +20,13 @@ dependencies:
     - field.field.node.weapon.field_range
     - field.field.node.weapon.field_reach
     - field.field.node.weapon.field_skill_bonus
-    - field.field.node.weapon.field_references
+    - field.field.node.weapon.field_source
     - node.type.weapon
   module:
     - entity_reference_override
     - entity_reference_quantity
     - ep_complex_values
+    - operation
     - text
     - user
 id: node.weapon.default
@@ -49,6 +52,14 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+  field_ap_modifier:
+    weight: 122
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: operation_formatter
   field_area_effect:
     weight: 113
     label: above
@@ -78,12 +89,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_quantity_label
-  field_damage:
-    weight: 108
+  field_damage_dice:
+    weight: 123
     label: above
-    settings: {  }
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
     third_party_settings: {  }
-    type: damage_text
+    type: operation_formatter
   field_damage_effects:
     weight: 121
     label: above
@@ -91,6 +104,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_damage_modifier:
+    type: operation_formatter
+    weight: 0
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
   field_description:
     weight: 104
     label: above
@@ -120,13 +141,13 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_label
   field_magazine_size:
-    weight: 111
+    weight: 124
     label: above
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    type: number_integer
+    type: operation_formatter
   field_range:
     weight: 115
     label: above
@@ -158,4 +179,7 @@ content:
     type: number_integer
   links:
     weight: 100
-hidden: {  }
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_source: true

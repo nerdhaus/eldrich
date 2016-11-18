@@ -30,4 +30,5 @@ hidden:
   field_movement_speed: true
   field_references: true
   field_skills: true
+  field_source: true
   field_stats: true

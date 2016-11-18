@@ -133,4 +133,5 @@ content:
     type: stat_block_table
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_source: true

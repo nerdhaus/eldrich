@@ -42,4 +42,5 @@ hidden:
   field_sleight_duration: true
   field_sleight_level: true
   field_sleight_range: true
+  field_source: true
   field_strain: true

@@ -1,18 +1,18 @@
-uuid: 501b754d-6647-4239-8a1b-868dcd2f0a9d
+uuid: 9ce3d3c6-3b0e-4b80-9a3c-c2e45250e6fa
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_references
-    - node.type.augmentation
+    - field.storage.node.field_source
+    - node.type.robot
     - node.type.source
   module:
     - entity_reference_quantity
-id: node.augmentation.field_references
-field_name: field_references
+id: node.robot.field_source
+field_name: field_source
 entity_type: node
-bundle: augmentation
-label: References
+bundle: robot
+label: Source
 description: ''
 required: false
 translatable: true

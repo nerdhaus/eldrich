@@ -35,8 +35,7 @@ class Operation extends IntegerItem {
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
     $properties = parent::propertyDefinitions($field_definition);
     $properties['operator'] = DataDefinition::create('string')
-      ->setLabel(t('Operator'))
-      ->setRequired(TRUE);
+      ->setLabel(t('Operator'));
 
     return $properties;
   }

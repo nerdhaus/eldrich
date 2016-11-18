@@ -5,11 +5,13 @@ dependencies:
   config:
     - field.field.node.weapon.field_accessory
     - field.field.node.weapon.field_ammo
+    - field.field.node.weapon.field_ap_modifier
     - field.field.node.weapon.field_area_effect
     - field.field.node.weapon.field_blueprints
     - field.field.node.weapon.field_cost
-    - field.field.node.weapon.field_damage
+    - field.field.node.weapon.field_damage_dice
     - field.field.node.weapon.field_damage_effects
+    - field.field.node.weapon.field_damage_modifier
     - field.field.node.weapon.field_description
     - field.field.node.weapon.field_firing_modes
     - field.field.node.weapon.field_gear_type
@@ -18,12 +20,13 @@ dependencies:
     - field.field.node.weapon.field_range
     - field.field.node.weapon.field_reach
     - field.field.node.weapon.field_skill_bonus
-    - field.field.node.weapon.field_references
+    - field.field.node.weapon.field_source
     - node.type.weapon
   module:
     - entity_reference_override
     - entity_reference_quantity
     - ep_complex_values
+    - operation
     - path
     - text
 id: node.weapon.default
@@ -48,6 +51,12 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+  field_ap_modifier:
+    weight: 41
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: operation_widget
   field_area_effect:
     weight: 31
     settings:
@@ -72,11 +81,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: entity_reference_quantity_select
-  field_damage:
-    weight: 26
-    settings: {  }
+  field_damage_dice:
+    weight: 42
+    settings:
+      placeholder: ''
     third_party_settings: {  }
-    type: damage_widget
+    type: operation_widget
   field_damage_effects:
     weight: 39
     settings:
@@ -85,6 +95,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_damage_modifier:
+    weight: 40
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: operation_widget
   field_description:
     weight: 7
     settings:
@@ -114,11 +130,11 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
   field_magazine_size:
-    weight: 29
+    weight: 43
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
+    type: operation_widget
   field_range:
     weight: 33
     settings: {  }
@@ -173,4 +189,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_source: true

@@ -32,4 +32,5 @@ hidden:
   field_passengers: true
   field_references: true
   field_skill_bonus: true
+  field_source: true
   field_stats: true

@@ -40,5 +40,6 @@ hidden:
   field_no_defaulting: true
   field_references: true
   field_skill_type: true
+  field_source: true
   field_specializations: true
   field_usage: true

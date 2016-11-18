@@ -5,15 +5,15 @@ dependencies:
   module:
     - entity_reference_quantity
     - node
-id: node.field_references
-field_name: field_references
+id: node.field_source
+field_name: field_source
 entity_type: node
 type: entity_reference_quantity
 settings:
   target_type: node
 module: entity_reference_quantity
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

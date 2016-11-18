@@ -1,18 +1,18 @@
-uuid: 4009f30d-c45d-42d6-b790-8e58dc745e2b
+uuid: bff9fa4f-7a11-4ec3-9af2-06a07ab8c780
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_references
-    - node.type.drug
+    - field.storage.node.field_source
+    - node.type.vehicle
     - node.type.source
   module:
     - entity_reference_quantity
-id: node.drug.field_references
-field_name: field_references
+id: node.vehicle.field_source
+field_name: field_source
 entity_type: node
-bundle: drug
-label: References
+bundle: vehicle
+label: Source
 description: ''
 required: false
 translatable: true

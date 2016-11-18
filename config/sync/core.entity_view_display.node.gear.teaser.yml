@@ -26,3 +26,4 @@ hidden:
   field_description: true
   field_gear_type: true
   field_references: true
+  field_source: true

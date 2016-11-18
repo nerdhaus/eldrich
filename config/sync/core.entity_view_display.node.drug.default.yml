@@ -104,4 +104,5 @@ content:
     type: entity_reference_quantity_label
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_source: true
