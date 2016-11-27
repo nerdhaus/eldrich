@@ -1,65 +1,65 @@
-Name,Parent,Type,Concerns,Description,Locations,Book
-Planetary Consortium,,Political Bloc,,,,EP
-Jovian Republic,,Political Bloc,,,,EP
-Lunar-Lagrange Alliance,,Political Bloc,,,,EP
-Morningstar Constellation,,Political Bloc,,,,EP
-Autonomist Alliance,,Political Bloc,,,,EP
-Tharsis League,,Political Bloc,,,,EP
-Firewall,,Organization,,,,EP
-Project Ozma,,Organization,,,,EP
-Cognite,Planetary Consortium,Hypercorp,"Cognitive Science, Mental Implants, Psychosurgery, Nootropics","A pioneer in the field of cognitive science, Cognite (pronounced cog-neet) drives forward the cutting edge of research into understanding the transhuman mind. Well known for their mental augmentations and the original menton morph design, Cognite also specializes in psychosurgery and nootropics. Their elitist and aloof image was not aided by their scandalous involvement with the projects to raise accelerated growth children that became known as the Lost generation (p. 233), nor rumors that they engage in research involving TITAN-influenced incapacitating input attacks. Nevertheless they remain a key member in the Planetary Consortium.","Thought, Phobos",EP.70
-Comet Express,,Hypercorp,"Courier Services, Shipping, Logistics","Comet Express specializes in delivery services, interstellar logistics, supply chains, and shipping. They maintain a presence on almost every transhuman habitat in the solar system, often via local subcontractors. Despite the wonders of nanofabrication, many resources must still be imported. ComEx focuses on managing supply and trade routes and making sure physical shipments reach their destinations. For that purpose, ComEx maintains orbital hubs equipped with slingshot accelerators at strategic waypoints throughout the system and a fleet of cargo vessels and courier drones. For reasons unknown to the public, ComEx is viewed with hostility by the Jovian Republic, who have standing orders to shoot down ComEx vessels. ","Nectar, Olympus",EP.70
-Direct Action,Planetary Consortium,Hypercorp,,,,EP
-Ecologene,,Hypercorp,,,,EP
-Exotech,,Hypercorp,,,,EP
-Experia,Planetary Consortium,Hypercorp,,,,EP
-Fa Jing,Planetary Consortium,Hypercorp,,,,EP
-Gatekeeper Corporation,,Hypercorp,,,,EP
-Go-Non Group,,Hypercorp,,,,EP
-Gorgon Defense Systems,,Hypercorp,,,,EP
-Nimbus,,Hypercorp,,,,EP
-Omnicor,,Hypercorp,,,,EP
-Pathfinder,Planetary Consortium,Hypercorp,,,,EP
-Prosperity Group,Planetary Consortium,Hypercorp,,,,EP
-Skinasthesia,,Hypercorp,,,,EP
-Skinthetic,,Hypercorp,,,,EP
-Solaris,Planetary Consortium,Hypercorp,,,,EP
-Somatex,,Hypercorp,,,,EP
-Starware,,Hypercorp,,,,EP
-Stellar Intelligence,Planetary Consortium,Hypercorp,,,,EP
-Terragenesis,,Hypercorp,,,,EP
-Anarchists,Autonomist Alliance,Political Bloc,,,,EP
-Extropians,Autonomist Alliance,Political Bloc,,,,EP
-Scum,Autonomist Alliance,Political Bloc,,,,EP
-Titanian Commonwealth,Autonomist Alliance,Political Bloc,,,,EP
-Argonauts,,Ideology,,,,EP
-Barsoomians,,Ideology,,,,EP
-Bioconservatives,,Ideology,,,,EP
-Brinkers,,Ideology,,,,EP
-Exhumans,,Ideology,,,,EP
-Mercurials,,Ideology,,,,EP
-Nano-Ecologists,,Ideology,,,,EP
-Preservationists,,Ideology,,,,EP
-Reclaimers,,Ideology,,,,EP
-Socialites,,Ideology,,,,EP
-Ultimates,,Ideology,,,,EP
-Neo-Buddhism,,Ideology,,,,EP
-Technocreationists,,Ideology,,,,EP
-Xenodeism,,Ideology,,,,EP
-Intelligent Design Crew,,Gang,,,,EP
-Night Cartel,,Gang,,,,EP
-Nine Lives,,Gang,,,,EP
-Pax Familae,,Gang,,,,EP
-Pirates,,Gang,,,,EP
-Triads,,Gang,,,,EP
-14K Triad,Triads,Gang,,,,EP
-Shui Fong,Triads,Gang,,,,EP
-Sun Yee On,Triads,Gang,,,,EP
-Big Circle Gang,Triads,Gang,,,,EP
-Promethians,,Organization,,,,
-,,,,,,
-,,,,,,
-,,,,,,
-,,,,,,
-,,,,,,
-,,,,,,
+Name,Parent,Type,Concerns,Description,Locations,Book,Source
+Planetary Consortium,,Political Bloc,,,,EP,
+Jovian Republic,,Political Bloc,,,,EP,
+Lunar-Lagrange Alliance,,Political Bloc,,,,EP,
+Morningstar Constellation,,Political Bloc,,,,EP,
+Autonomist Alliance,,Political Bloc,,,,EP,
+Tharsis League,,Political Bloc,,,,EP,
+Firewall,,Organization,,,,EP,
+Project Ozma,,Organization,,,,EP,
+Cognite,Planetary Consortium,Hypercorp,"Cognitive Science, Mental Implants, Psychosurgery, Nootropics","A pioneer in the field of cognitive science, Cognite (pronounced cog-neet) drives forward the cutting edge of research into understanding the transhuman mind. Well known for their mental augmentations and the original menton morph design, Cognite also specializes in psychosurgery and nootropics. Their elitist and aloof image was not aided by their scandalous involvement with the projects to raise accelerated growth children that became known as the Lost generation (p. 233), nor rumors that they engage in research involving TITAN-influenced incapacitating input attacks. Nevertheless they remain a key member in the Planetary Consortium.","Thought, Phobos",EP.70,
+Comet Express,,Hypercorp,"Courier Services, Shipping, Logistics","Comet Express specializes in delivery services, interstellar logistics, supply chains, and shipping. They maintain a presence on almost every transhuman habitat in the solar system, often via local subcontractors. Despite the wonders of nanofabrication, many resources must still be imported. ComEx focuses on managing supply and trade routes and making sure physical shipments reach their destinations. For that purpose, ComEx maintains orbital hubs equipped with slingshot accelerators at strategic waypoints throughout the system and a fleet of cargo vessels and courier drones. For reasons unknown to the public, ComEx is viewed with hostility by the Jovian Republic, who have standing orders to shoot down ComEx vessels. ","Nectar, Olympus",EP.70,
+Direct Action,Planetary Consortium,Hypercorp,,,,EP,
+Ecologene,,Hypercorp,,,,EP,
+Exotech,,Hypercorp,,,,EP,
+Experia,Planetary Consortium,Hypercorp,,,,EP,
+Fa Jing,Planetary Consortium,Hypercorp,,,,EP,
+Gatekeeper Corporation,,Hypercorp,,,,EP,
+Go-Non Group,,Hypercorp,,,,EP,
+Gorgon Defense Systems,,Hypercorp,,,,EP,
+Nimbus,,Hypercorp,,,,EP,
+Omnicor,,Hypercorp,,,,EP,
+Pathfinder,Planetary Consortium,Hypercorp,,,,EP,
+Prosperity Group,Planetary Consortium,Hypercorp,,,,EP,
+Skinasthesia,,Hypercorp,,,,EP,
+Skinthetic,,Hypercorp,,,,EP,
+Solaris,Planetary Consortium,Hypercorp,,,,EP,
+Somatex,,Hypercorp,,,,EP,
+Starware,,Hypercorp,,,,EP,
+Stellar Intelligence,Planetary Consortium,Hypercorp,,,,EP,
+Terragenesis,,Hypercorp,,,,EP,
+Anarchists,Autonomist Alliance,Political Bloc,,,,EP,
+Extropians,Autonomist Alliance,Political Bloc,,,,EP,
+Scum,Autonomist Alliance,Political Bloc,,,,EP,
+Titanian Commonwealth,Autonomist Alliance,Political Bloc,,,,EP,
+Argonauts,,Ideology,,,,EP,
+Barsoomians,,Ideology,,,,EP,
+Bioconservatives,,Ideology,,,,EP,
+Brinkers,,Ideology,,,,EP,
+Exhumans,,Ideology,,,,EP,
+Mercurials,,Ideology,,,,EP,
+Nano-Ecologists,,Ideology,,,,EP,
+Preservationists,,Ideology,,,,EP,
+Reclaimers,,Ideology,,,,EP,
+Socialites,,Ideology,,,,EP,
+Ultimates,,Ideology,,,,EP,
+Neo-Buddhism,,Ideology,,,,EP,
+Technocreationists,,Ideology,,,,EP,
+Xenodeism,,Ideology,,,,EP,
+Intelligent Design Crew,,Gang,,,,EP,
+Night Cartel,,Gang,,,,EP,
+Nine Lives,,Gang,,,,EP,
+Pax Familae,,Gang,,,,EP,
+Pirates,,Gang,,,,EP,
+Triads,,Gang,,,,EP,
+14K Triad,Triads,Gang,,,,EP,
+Shui Fong,Triads,Gang,,,,EP,
+Sun Yee On,Triads,Gang,,,,EP,
+Big Circle Gang,Triads,Gang,,,,EP,
+Promethians,,Organization,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
