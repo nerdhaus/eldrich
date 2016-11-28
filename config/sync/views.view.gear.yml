@@ -16,7 +16,7 @@ dependencies:
     - node.type.vehicle
     - node.type.weapon
     - system.menu.main
-    - taxonomy.vocabulary.gear
+    - taxonomy.vocabulary.gear_type
   module:
     - entity_reference_quantity
     - node
@@ -466,7 +466,7 @@ display:
           value:
             augmentation: augmentation
             drug: drug
-            gear: gear
+            gear_type: gear_type
             mind: mind
             morph: morph
             robot: robot
@@ -582,7 +582,7 @@ display:
           reduce_duplicates: false
           type: select
           limit: true
-          vid: gear
+          vid: gear_type
           hierarchy: true
           error_message: false
           plugin_id: taxonomy_index_tid

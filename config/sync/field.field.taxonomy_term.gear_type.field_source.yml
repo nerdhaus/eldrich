@@ -5,10 +5,10 @@ dependencies:
   config:
     - field.storage.taxonomy_term.field_source
     - node.type.source
-    - taxonomy.vocabulary.gear
+    - taxonomy.vocabulary.gear_type
   module:
     - entity_reference_quantity
-id: taxonomy_term.gear.field_source
+id: taxonomy_term.gear_type.field_source
 field_name: field_source
 entity_type: taxonomy_term
 bundle: gear

@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      gear: gear
+      gear_type: gear_type
     sort:
       field: _none
     auto_create: false
