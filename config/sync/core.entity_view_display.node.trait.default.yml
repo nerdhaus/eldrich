@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.trait.field_ego_trait
     - field.field.node.trait.field_morph_trait
     - field.field.node.trait.field_skills
-    - field.field.node.trait.field_references
+    - field.field.node.trait.field_source
     - field.field.node.trait.field_stats
     - node.type.trait
   module:
@@ -60,7 +60,7 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
-  field_references:
+  field_source:
     weight: 109
     label: above
     settings:

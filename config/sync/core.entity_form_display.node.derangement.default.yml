@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.derangement.field_derangement_level
     - field.field.node.derangement.field_description
-    - field.field.node.derangement.field_references
+    - field.field.node.derangement.field_source
     - field.field.node.derangement.field_usage
     - node.type.derangement
   module:
@@ -42,7 +42,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
-  field_references:
+  field_source:
     weight: 32
     settings:
       match_operator: CONTAINS

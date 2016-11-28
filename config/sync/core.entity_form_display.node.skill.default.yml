@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.skill.field_linked_aptitude
     - field.field.node.skill.field_no_defaulting
     - field.field.node.skill.field_skill_type
-    - field.field.node.skill.field_references
+    - field.field.node.skill.field_source
     - field.field.node.skill.field_specializations
     - field.field.node.skill.field_usage
     - node.type.skill
@@ -66,7 +66,7 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
-  field_references:
+  field_source:
     weight: 14
     settings: {  }
     third_party_settings: {  }

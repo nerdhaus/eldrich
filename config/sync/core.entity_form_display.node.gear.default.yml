@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
     - field.field.node.gear.field_gear_type
-    - field.field.node.gear.field_references
+    - field.field.node.gear.field_source
     - node.type.gear
   module:
     - entity_reference_quantity
@@ -53,7 +53,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_references:
+  field_source:
     weight: 11
     settings: {  }
     third_party_settings: {  }

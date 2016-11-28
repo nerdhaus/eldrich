@@ -50,7 +50,7 @@ process:
     default_value: 0
   field_cp_cost: cost
   field_description/value: description
-  field_references:
+  field_source:
     plugin: source_with_page
     entity_type: node
     bundle: source

@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
     - field.field.node.gear.field_gear_type
-    - field.field.node.gear.field_references
+    - field.field.node.gear.field_source
     - node.type.gear
   module:
     - user
@@ -25,5 +25,5 @@ hidden:
   field_cost: true
   field_description: true
   field_gear_type: true
-  field_references: true
+  field_source: true
   field_source: true

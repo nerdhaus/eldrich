@@ -34,7 +34,7 @@ process:
     bundle_key: vid
     entity_type: taxonomy_term
   field_description/value: description
-  field_references:
+  field_source:
     plugin: source_with_page
     entity_type: node
     bundle: source

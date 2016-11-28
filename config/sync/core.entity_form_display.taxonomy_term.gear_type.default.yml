@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.gear.field_references
-    - taxonomy.vocabulary.gear
+    - field.field.taxonomy_term.gear.field_source
+    - taxonomy.vocabulary.gear_type
   module:
     - entity_reference_quantity
     - path
@@ -21,7 +21,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_references:
+  field_source:
     weight: 31
     settings:
       match_operator: CONTAINS

@@ -15,7 +15,7 @@ dependencies:
     - field.field.node.vehicle.field_movement_speed
     - field.field.node.vehicle.field_passengers
     - field.field.node.vehicle.field_skill_bonus
-    - field.field.node.vehicle.field_references
+    - field.field.node.vehicle.field_source
     - field.field.node.vehicle.field_stats
     - node.type.vehicle
   module:
@@ -110,7 +110,7 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
-  field_references:
+  field_source:
     weight: 105
     label: above
     settings:

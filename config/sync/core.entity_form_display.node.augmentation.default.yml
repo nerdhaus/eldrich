@@ -10,7 +10,7 @@ dependencies:
     - field.field.node.augmentation.field_description
     - field.field.node.augmentation.field_gear_type
     - field.field.node.augmentation.field_morph_types
-    - field.field.node.augmentation.field_references
+    - field.field.node.augmentation.field_source
     - field.field.node.augmentation.field_stats
     - node.type.augmentation
   module:
@@ -71,7 +71,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
-  field_references:
+  field_source:
     weight: 11
     settings: {  }
     third_party_settings: {  }

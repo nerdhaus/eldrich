@@ -28,7 +28,7 @@ process:
   vid:
     plugin: default_value
     default_value: gear
-  field_references:
+  field_source:
     plugin: source_with_page
     source: book
     value_key: field_code

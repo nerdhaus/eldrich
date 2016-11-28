@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.vehicle.field_cost
     - field.field.node.vehicle.field_description
     - field.field.node.vehicle.field_gear_type
-    - field.field.node.vehicle.field_references
+    - field.field.node.vehicle.field_source
     - node.type.vehicle
   module:
     - user
@@ -30,7 +30,7 @@ hidden:
   field_mobility_system: true
   field_movement_speed: true
   field_passengers: true
-  field_references: true
+  field_source: true
   field_skill_bonus: true
   field_source: true
   field_stats: true

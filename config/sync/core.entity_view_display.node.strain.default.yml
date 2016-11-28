@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.strain.field_description
     - field.field.node.strain.field_infectiousness
-    - field.field.node.strain.field_references
+    - field.field.node.strain.field_source
     - field.field.node.strain.field_strain_rating
     - field.field.node.strain.field_vectors
     - node.type.strain
@@ -30,7 +30,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_references:
+  field_source:
     weight: 102
     label: above
     settings:

@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_gear_type
     - node.type.mind
-    - taxonomy.vocabulary.gear
+    - taxonomy.vocabulary.gear_type
 id: node.mind.field_gear_type
 field_name: field_gear_type
 entity_type: node

@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.network.field_description
-    - field.field.node.network.field_references
+    - field.field.node.network.field_source
     - field.field.node.network.field_symbol
     - node.type.network
   module:
@@ -28,7 +28,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
-  field_references:
+  field_source:
     weight: 8
     settings: {  }
     third_party_settings: {  }

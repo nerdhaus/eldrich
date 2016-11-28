@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.augmentation.field_cost
     - field.field.node.augmentation.field_description
     - field.field.node.augmentation.field_gear_type
-    - field.field.node.augmentation.field_references
+    - field.field.node.augmentation.field_source
     - node.type.augmentation
   module:
     - user
@@ -26,6 +26,6 @@ hidden:
   field_description: true
   field_gear_type: true
   field_morph_types: true
-  field_references: true
+  field_source: true
   field_source: true
   field_stats: true

@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.sleight.field_exsurgent
     - field.field.node.sleight.field_is_active
     - field.field.node.sleight.field_psi_skill
-    - field.field.node.sleight.field_references
+    - field.field.node.sleight.field_source
     - field.field.node.sleight.field_sleight_duration
     - field.field.node.sleight.field_sleight_level
     - field.field.node.sleight.field_sleight_range
@@ -85,7 +85,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_references:
+  field_source:
     weight: 32
     settings:
       match_operator: CONTAINS

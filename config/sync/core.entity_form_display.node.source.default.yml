@@ -52,7 +52,7 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
-  field_references_type:
+  field_source_type:
     weight: 1
     settings: {  }
     third_party_settings: {  }

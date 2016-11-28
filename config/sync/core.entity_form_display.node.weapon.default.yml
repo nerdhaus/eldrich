@@ -164,7 +164,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
-  field_references:
+  field_source:
     weight: 11
     settings: {  }
     third_party_settings: {  }

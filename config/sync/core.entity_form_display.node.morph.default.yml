@@ -15,7 +15,7 @@ dependencies:
     - field.field.node.morph.field_morph_type
     - field.field.node.morph.field_movement_speed
     - field.field.node.morph.field_skills
-    - field.field.node.morph.field_references
+    - field.field.node.morph.field_source
     - field.field.node.morph.field_stat_cap
     - field.field.node.morph.field_stat_variance
     - field.field.node.morph.field_stats
@@ -110,7 +110,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_widget
-  field_references:
+  field_source:
     weight: 11
     settings: {  }
     third_party_settings: {  }

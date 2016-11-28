@@ -6,8 +6,8 @@ dependencies:
     - entity_reference_quantity
     - node
     - taxonomy
-id: taxonomy_term.field_references
-field_name: field_references
+id: taxonomy_term.field_source
+field_name: field_source
 entity_type: taxonomy_term
 type: entity_reference_quantity
 settings:

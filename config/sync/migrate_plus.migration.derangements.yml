@@ -37,7 +37,7 @@ process:
     entity_type: lookup
     ignore_case: true
   field_description/value: description
-  field_references:
+  field_source:
     plugin: source_with_page
     entity_type: node
     bundle: source

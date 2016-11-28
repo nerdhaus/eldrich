@@ -61,7 +61,7 @@ process:
     plugin: skip_on_empty
     method: process
     source: minimum
-  field_references:
+  field_source:
     plugin: source_with_page
     entity_type: node
     bundle: source

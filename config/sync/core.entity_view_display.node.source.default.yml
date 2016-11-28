@@ -48,7 +48,7 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-  field_references_type:
+  field_source_type:
     weight: 108
     label: above
     settings:

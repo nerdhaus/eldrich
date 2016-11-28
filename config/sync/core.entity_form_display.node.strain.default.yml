@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.strain.field_description
     - field.field.node.strain.field_infectiousness
-    - field.field.node.strain.field_references
+    - field.field.node.strain.field_source
     - field.field.node.strain.field_strain_rating
     - field.field.node.strain.field_vectors
     - node.type.strain
@@ -37,7 +37,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
-  field_references:
+  field_source:
     weight: 32
     settings:
       match_operator: CONTAINS
