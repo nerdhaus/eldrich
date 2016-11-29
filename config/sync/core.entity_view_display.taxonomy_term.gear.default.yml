@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.gear.field_source
+    - field.field.taxonomy_term.gear_type.field_source
     - taxonomy.vocabulary.gear_type
   module:
     - entity_reference_quantity
