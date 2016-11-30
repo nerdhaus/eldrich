@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.lookup
-name: 'Psi Level'
-type: psi_level
-description: ''

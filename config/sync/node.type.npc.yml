@@ -1,0 +1,18 @@
+uuid: cfa5f329-44ce-4bae-a5b4-4eb4fae4284d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Non-Player Character'
+type: npc
+description: 'A reusable background character, or a template for common "extras"'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

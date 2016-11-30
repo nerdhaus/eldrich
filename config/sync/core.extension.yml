@@ -30,6 +30,7 @@ module:
   history: 0
   image: 0
   inline_entity_form: 0
+  integer_time: 0
   link: 0
   menu_ui: 0
   migrate: 0
@@ -37,10 +38,12 @@ module:
   migrate_source_csv: 0
   migrate_tools: 0
   node: 0
+  operation: 0
   options: 0
   page_cache: 0
   path: 0
   quickedit: 0
+  range: 0
   rdf: 0
   search: 0
   shortcut: 0

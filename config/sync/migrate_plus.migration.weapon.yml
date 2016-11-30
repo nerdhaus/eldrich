@@ -5,7 +5,7 @@ dependencies: {  }
 id: weapon
 migration_tags: null
 migration_group: eldrich_gear
-label: ''
+label: 'Weapons, mods, and ammunition'
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/weapons.csv
@@ -26,8 +26,6 @@ source:
     -
       book: Book
     -
-      page: Page
-    -
       damage: Damage
     -
       ap: AP
@@ -45,6 +43,12 @@ source:
       effects: Effects
     -
       range: Range
+    -
+      reach: Reach
+    -
+      ammo: ammo
+    -
+      accessory: Accessory
   keys:
     - title
 process:
@@ -71,20 +75,106 @@ process:
     plugin: skip_on_empty
     method: process
     source: minimum
-  field_source/target_id:
-    plugin: entity_lookup
+  field_source:
+    plugin: source_with_page
     entity_type: node
     bundle: source
     bundle_key: type
     value_key: field_code
     source: book
-  field_source/quantity:
-    plugin: skip_on_empty
-    method: process
-    source: page
   field_blueprints:
     plugin: static_map
     source: blueprints
+    map:
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
+  field_additional_effects:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: effects
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup
+      destination_field: target_id
+      entity_type: lookup
+      bundle: damage_type
+      bundle_key: type
+      value_key: title
+  field_area_effect:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: aoe
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup
+      destination_field: target_id
+      entity_type: lookup
+      bundle: area_effect
+      bundle_key: type
+      value_key: title
+  field_damage:
+    plugin: damage_string
+    source: damage
+  field_damage/ap:
+    plugin: skip_on_empty
+    method: process
+    source: ap
+  field_firing_modes:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: modes
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup
+      destination_field: target_id
+      entity_type: lookup
+      bundle: firing_modes
+      bundle_key: type
+      value_key: field_lookup_code
+  field_magazine_size: rounds
+  field_range:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: range
+    -
+      plugin: array_to_dict
+      delimiter: /
+      keys:
+        - short
+        - medium
+        - long
+        - extreme
+  field_linked_skill:
+    plugin: entity_lookup_plus
+    destination_field: target_id
+    entity_type: node
+    bundle: skill
+    bundle_key: type
+    value_key: title
+    source: linked
+  field_skill_bonus: bonus
+  field_reach: reach
+  field_ammo:
+    plugin: static_map
+    source: ammo
+    map:
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
+  field_accessory:
+    plugin: static_map
+    source: accessory
     map:
       'TRUE': 1
       'FALSE': 0
@@ -94,4 +184,5 @@ destination:
 migration_dependencies:
   required:
     - lookup_tables
+    - skills
     - sources

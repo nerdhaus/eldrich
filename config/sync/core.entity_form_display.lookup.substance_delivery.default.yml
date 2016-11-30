@@ -5,6 +5,7 @@ dependencies:
   config:
     - eck.eck_type.lookup.substance_delivery
     - field.field.lookup.substance_delivery.field_description
+    - field.field.lookup.substance_delivery.field_lookup_code
     - field.field.lookup.substance_delivery.field_weight
   module:
     - text
@@ -20,6 +21,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_lookup_code:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_weight:
     weight: 4
     settings:

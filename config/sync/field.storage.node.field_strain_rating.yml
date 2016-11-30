@@ -1,0 +1,20 @@
+uuid: 7f1f2ad0-69f5-4624-ac15-657dec4519bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_strain_rating
+field_name: field_strain_rating
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

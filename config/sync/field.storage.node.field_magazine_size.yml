@@ -1,17 +1,18 @@
-uuid: eb8943c7-0856-428f-85f5-1fe3dfcd4b8d
+uuid: d103d20e-bfe9-4fde-9c27-cf0821b61365
 langcode: en
 status: true
 dependencies:
   module:
     - node
+    - operation
 id: node.field_magazine_size
 field_name: field_magazine_size
 entity_type: node
-type: integer
+type: operation
 settings:
   unsigned: false
   size: normal
-module: core
+module: operation
 locked: false
 cardinality: 1
 translatable: true

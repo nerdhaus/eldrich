@@ -1,0 +1,23 @@
+uuid: 90d662ff-2b43-412c-83b7-78ac4587f884
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_strain_rating
+    - node.type.strain
+id: node.strain.field_strain_rating
+field_name: field_strain_rating
+entity_type: node
+bundle: strain
+label: 'Strain Rating'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

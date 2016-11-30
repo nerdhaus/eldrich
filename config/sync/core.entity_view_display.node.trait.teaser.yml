@@ -35,6 +35,7 @@ hidden:
   field_description: true
   field_ego_trait: true
   field_morph_trait: true
+  field_source: true
   field_skills: true
   field_source: true
   field_stats: true

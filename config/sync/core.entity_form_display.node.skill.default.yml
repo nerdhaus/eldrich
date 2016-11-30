@@ -66,16 +66,16 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
-  field_skill_type:
-    weight: 7
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
   field_source:
     weight: 14
     settings: {  }
     third_party_settings: {  }
     type: entity_reference_quantity_select
+  field_skill_type:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_specializations:
     weight: 12
     settings:
@@ -122,4 +122,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_source: true

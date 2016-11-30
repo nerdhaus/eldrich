@@ -5,7 +5,7 @@ dependencies: {  }
 id: augmentation
 migration_tags: null
 migration_group: eldrich_gear
-label: ''
+label: 'Augmentations and enhancements'
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/augmentations.csv
@@ -26,11 +26,15 @@ source:
     -
       book: Book
     -
-      page: Page
+      stats: Stats
     -
       armor: Armor
     -
       stackable: Stackable
+    -
+      conditional: Conditional
+    -
+      morphs: Morphs
   keys:
     - title
 process:
@@ -57,17 +61,13 @@ process:
     plugin: skip_on_empty
     method: process
     source: minimum
-  field_source/target_id:
-    plugin: entity_lookup
+  field_source:
+    plugin: source_with_page
     entity_type: node
     bundle: source
     bundle_key: type
     value_key: field_code
     source: book
-  field_source/quantity:
-    plugin: skip_on_empty
-    method: process
-    source: page
   field_blueprints:
     plugin: static_map
     source: blueprints
@@ -75,30 +75,17 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-  '@armor_array':
+  field_armor:
     -
       plugin: skip_on_empty
       method: process
       source: armor
     -
-      plugin: explode
+      plugin: array_to_dict
       delimiter: /
-  field_armor/energy:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: '@armor_array'
-    -
-      plugin: extract
-      index: 0
-  field_armor/kinetic:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: '@armor_array'
-    -
-      plugin: extract
-      index: 1
+      keys:
+        - energy
+        - kinetic
   field_armor/replaces:
     plugin: static_map
     source: stackable
@@ -106,6 +93,31 @@ process:
       'TRUE': 0
       'FALSE': 1
     default_value: 1
+  field_conditional:
+    plugin: static_map
+    source: conditional
+    map:
+      'FALSE': 0
+      'TRUE': 1
+    default_value: 0
+  field_stats:
+    plugin: stat_block
+    source: stats
+  field_morph_types:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: morphs
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup
+      destination_field: target_id
+      entity_type: lookup
+      bundle: morph_type
+      bundle_key: type
+      value_key: title
 destination:
   plugin: 'entity:node'
 migration_dependencies:

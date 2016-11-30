@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Source
 type: source
-description: 'An Eclipse Phase sourcebook or third-party product. Used to separate house rules and community add-ons from canon EP material.'
+description: 'An Eclipse Phase sourcebook or pre-fab adventure.'
 help: ''
 new_revision: true
 preview_mode: 0

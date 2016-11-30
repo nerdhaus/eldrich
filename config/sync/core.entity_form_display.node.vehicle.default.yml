@@ -106,17 +106,17 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+  field_source:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_reference_quantity_select
   field_skill_bonus:
     weight: 29
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
-  field_source:
-    weight: 11
-    settings: {  }
-    third_party_settings: {  }
-    type: entity_reference_quantity_select
   field_stats:
     weight: 27
     settings: {  }
@@ -154,4 +154,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_source: true

@@ -30,9 +30,9 @@ source:
     -
       description: Description
     -
-      book: Book
+      exsurgent: Exsurgent
     -
-      page: Page
+      book: Book
   keys:
     - title
 process:
@@ -90,17 +90,20 @@ process:
     plugin: skip_on_empty
     method: process
     source: description
-  field_source/target_id:
-    plugin: entity_lookup
+  field_source:
+    plugin: source_with_page
     entity_type: node
     bundle: source
     bundle_key: type
     value_key: field_code
     source: book
-  field_source/quantity:
-    plugin: skip_on_empty
-    method: process
-    source: page
+  field_exsurgent:
+    plugin: static_map
+    source: exsurgent
+    map:
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
 destination:
   plugin: 'entity:node'
 migration_dependencies:

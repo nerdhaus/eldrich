@@ -1,0 +1,49 @@
+uuid: d5129804-28ab-43de-8282-f583f29c7fd2
+langcode: en
+status: true
+dependencies: {  }
+id: npcs
+migration_tags: null
+migration_group: eldrich_chars
+label: ''
+source:
+  plugin: csv
+  path: modules/custom/ep_import/characters/npcs.csv
+  header_row_count: 1
+  column_names:
+    -
+      title: Title
+    -
+      type: Type
+    -
+      description: Description
+    -
+      book: Book
+  keys:
+    - title
+process:
+  title: title
+  type:
+    plugin: default_value
+    default_value: npc
+  field_gear_type/target_id:
+    plugin: entity_lookup
+    source: type
+    value_key: name
+    bundle: gear
+    bundle_key: vid
+    entity_type: taxonomy_term
+  field_description/value: description
+  field_source:
+    plugin: source_with_page
+    entity_type: node
+    bundle: source
+    bundle_key: type
+    value_key: field_code
+    source: book
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - lookup_tables
+    - sources

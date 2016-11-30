@@ -5,12 +5,13 @@ dependencies:
   config:
     - field.field.node.sleight.field_action_type
     - field.field.node.sleight.field_description
+    - field.field.node.sleight.field_exsurgent
     - field.field.node.sleight.field_is_active
     - field.field.node.sleight.field_psi_skill
+    - field.field.node.sleight.field_source
     - field.field.node.sleight.field_sleight_duration
     - field.field.node.sleight.field_sleight_level
     - field.field.node.sleight.field_sleight_range
-    - field.field.node.sleight.field_source
     - field.field.node.sleight.field_strain
     - node.type.sleight
   module:
@@ -67,6 +68,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_exsurgent:
+    weight: 34
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_is_active:
     weight: 33
     settings:
@@ -78,6 +85,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_source:
+    weight: 32
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_quantity_autocomplete
   field_sleight_duration:
     weight: 10
     settings: {  }
@@ -93,16 +108,8 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_source:
-    weight: 32
-    settings:
-      match_operator: CONTAINS
-      size: '60'
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_quantity_autocomplete
   field_strain:
-    weight: 11
+    weight: 35
     settings:
       size: 60
       placeholder: ''
@@ -140,4 +147,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_source: true

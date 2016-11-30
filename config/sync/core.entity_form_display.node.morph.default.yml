@@ -7,11 +7,12 @@ dependencies:
     - field.field.node.morph.field_augmentations
     - field.field.node.morph.field_blueprints
     - field.field.node.morph.field_cost
-    - field.field.node.morph.field_cp
+    - field.field.node.morph.field_cp_cost
     - field.field.node.morph.field_description
     - field.field.node.morph.field_gear
     - field.field.node.morph.field_gear_type
     - field.field.node.morph.field_mobility_system
+    - field.field.node.morph.field_morph_type
     - field.field.node.morph.field_movement_speed
     - field.field.node.morph.field_skills
     - field.field.node.morph.field_source
@@ -62,8 +63,8 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: entity_reference_quantity_select
-  field_cp:
-    weight: 33
+  field_cp_cost:
+    weight: 38
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -96,21 +97,29 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_morph_type:
+    weight: 37
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_movement_speed:
     weight: 35
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_widget
-  field_skills:
-    weight: 30
-    settings: {  }
-    third_party_settings: {  }
-    type: skill_reference_select
   field_source:
     weight: 11
     settings: {  }
     third_party_settings: {  }
     type: entity_reference_quantity_select
+  field_skills:
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+    type: skill_reference_select
   field_stat_cap:
     weight: 28
     settings: {  }
@@ -167,4 +176,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_source: true

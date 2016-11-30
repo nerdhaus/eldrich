@@ -1,10 +1,12 @@
-uuid: a6221b86-1fde-4c2f-a915-71c05e3826fd
+uuid: 350b2ec9-128e-431e-8673-89d763e9a189
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_magazine_size
     - node.type.weapon
+  module:
+    - operation
 id: node.weapon.field_magazine_size
 field_name: field_magazine_size
 entity_type: node
@@ -16,8 +18,9 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  min: null
-  max: null
+  operator: ''
+  min: ''
+  max: ''
   prefix: ''
   suffix: ''
-field_type: integer
+field_type: operation

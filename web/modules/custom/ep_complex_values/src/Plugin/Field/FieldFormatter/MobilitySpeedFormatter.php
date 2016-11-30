@@ -28,7 +28,12 @@ class MobilitySpeedFormatter extends FormatterBase {
     $elements = [];
 
     foreach ($items as $delta => $item) {
-      $values = $item->getValue();
+      $raw = $item->getValue();
+      $values = [
+        'walk' => $raw['walk'],
+        'run' => $raw['run'],
+        'cruise' => $raw['cruise'],
+      ];
       $elements[$delta] = ['#markup' => join(' / ', $values)];
     }
 

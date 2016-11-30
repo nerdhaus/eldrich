@@ -1,0 +1,31 @@
+uuid: a2b8cd51-8b3c-4d4e-9d35-78c72e339960
+langcode: en
+status: true
+dependencies: {  }
+id: characters
+migration_tags: null
+migration_group: eldrich_chars
+label: ''
+source:
+  plugin: csv
+  path: modules/custom/ep_import/characters/characters.csv
+  header_row_count: 1
+  column_names:
+    -
+      title: Title
+    -
+      description: Description
+  keys:
+    - title
+process:
+  title: title
+  type:
+    plugin: default_value
+    default_value: pc
+  field_description/value: description
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - lookup_tables
+    - sources

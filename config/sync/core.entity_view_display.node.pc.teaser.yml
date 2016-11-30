@@ -1,0 +1,18 @@
+uuid: 96540e23-6507-4818-92b0-7022362c36a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.pc
+  module:
+    - user
+id: node.pc.teaser
+targetEntityType: node
+bundle: pc
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_description: true

@@ -1,0 +1,26 @@
+uuid: 7ff7b354-f97f-489c-ba0b-b5cde113647c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_damage_dice
+    - node.type.weapon
+  module:
+    - operation
+id: node.weapon.field_damage_dice
+field_name: field_damage_dice
+entity_type: node
+bundle: weapon
+label: 'Damage Dice'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  operator: ''
+  min: ''
+  max: ''
+  prefix: ''
+  suffix: ''
+field_type: operation

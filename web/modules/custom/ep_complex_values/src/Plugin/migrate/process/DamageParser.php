@@ -16,7 +16,7 @@ use Drupal\migrate\Row;
  *
  * @ingroup migration
  */
-abstract class DamageParser extends ProcessPluginBase {
+class DamageParser extends ProcessPluginBase {
 
   /**
    * {@inheritdoc}
@@ -24,13 +24,15 @@ abstract class DamageParser extends ProcessPluginBase {
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     // Parse the format: SKILL NAME: FIELD NAME 99 (SPECIALIZATION STRING)
     $value = str_replace(' ', '', $value);
-    $pattern = "((?<dice>[0-9]+)d10)?((?<mod_function>[+-/*])(?<modifier>[0-9]+))?";
-    $matches = preg_match($pattern, $value);
-    $results = array(
-      'dice' => $matches['dice'],
-      'mod_function' => $matches['mod_function'],
-      'modifier' => $matches['modifier'],
-    );
+    $pattern = "/((?<dice>[0-9]+)d10)?((?<mod_function>[\+\-\/\*])(?<modifier>[0-9]+))?/";
+    preg_match($pattern, $value, $matches);
+    $results = [];
+    foreach (['dice', 'mod_function', 'modifier'] as $field) {
+      if (!empty($matches[$field])) {
+        $results[$field] = trim($matches[$field]);
+      }
+    }
+    $results['raw'] = $value;
     return $results;
   }
 

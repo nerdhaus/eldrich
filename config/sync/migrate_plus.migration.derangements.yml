@@ -19,8 +19,6 @@ source:
       description: Description
     -
       book: Book
-    -
-      page: Page
   keys:
     - title
   constants:
@@ -39,17 +37,13 @@ process:
     entity_type: lookup
     ignore_case: true
   field_description/value: description
-  field_source/target_id:
-    plugin: entity_lookup
+  field_source:
+    plugin: source_with_page
     entity_type: node
     bundle: source
     bundle_key: type
     value_key: field_code
     source: book
-  field_source/quantity:
-    plugin: skip_on_empty
-    method: process
-    source: page
 destination:
   plugin: 'entity:node'
 migration_dependencies:

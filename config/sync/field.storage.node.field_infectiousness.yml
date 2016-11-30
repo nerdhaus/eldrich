@@ -1,0 +1,19 @@
+uuid: 6afa2b57-2ef5-4a34-8e9b-e51aa3a434d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_infectiousness
+field_name: field_infectiousness
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

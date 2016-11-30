@@ -1,0 +1,21 @@
+uuid: 3da95960-1e27-4227-a841-46bb7e402bf3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - operation
+id: node.field_ap_modifier
+field_name: field_ap_modifier
+entity_type: node
+type: operation
+settings:
+  unsigned: false
+  size: normal
+module: operation
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

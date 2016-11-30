@@ -1,9 +1,0 @@
-uuid: d5f2247e-d140-4af8-92cc-05b7fb818e1b
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.lookup
-name: 'Value Levels'
-type: vla
-description: ''

@@ -21,7 +21,11 @@ content:
 hidden:
   field_armor: true
   field_blueprints: true
+  field_conditional: true
   field_cost: true
   field_description: true
   field_gear_type: true
+  field_morph_types: true
   field_source: true
+  field_source: true
+  field_stats: true

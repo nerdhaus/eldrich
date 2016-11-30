@@ -1,0 +1,23 @@
+uuid: c923ee9c-4fd8-44c9-938b-7540d409534e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cp_cost
+    - node.type.morph
+id: node.morph.field_cp_cost
+field_name: field_cp_cost
+entity_type: node
+bundle: morph
+label: 'CP Cost'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

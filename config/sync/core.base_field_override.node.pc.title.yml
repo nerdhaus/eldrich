@@ -1,0 +1,18 @@
+uuid: 37a7a82e-3469-4f78-b7c8-f0e6c2cb9ec2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.pc
+id: node.pc.title
+field_name: title
+entity_type: node
+bundle: pc
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

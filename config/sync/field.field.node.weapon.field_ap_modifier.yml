@@ -1,0 +1,26 @@
+uuid: 77d0ad29-ba92-4141-8876-6c961905685e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ap_modifier
+    - node.type.weapon
+  module:
+    - operation
+id: node.weapon.field_ap_modifier
+field_name: field_ap_modifier
+entity_type: node
+bundle: weapon
+label: 'AP Modifier'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  operator: ''
+  min: ''
+  max: ''
+  prefix: ''
+  suffix: ''
+field_type: operation

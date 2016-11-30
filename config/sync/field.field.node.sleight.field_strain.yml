@@ -1,4 +1,4 @@
-uuid: 7efa3c8e-2db1-45b2-aee1-dcd99996f18d
+uuid: 023471b1-3422-4c9e-ba01-77b9b87d182a
 langcode: en
 status: true
 dependencies:
@@ -13,9 +13,7 @@ label: Strain
 description: ''
 required: false
 translatable: false
-default_value:
-  -
-    value: '1d10 / 2'
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: string

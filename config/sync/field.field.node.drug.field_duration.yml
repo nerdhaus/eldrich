@@ -1,10 +1,12 @@
-uuid: 8d9ec3db-0ebf-4027-83ee-6c764464f1b3
+uuid: baaed5e5-c89e-4a38-a982-15c3d615eb86
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_duration
     - node.type.drug
+  module:
+    - range
 id: node.drug.field_duration
 field_name: field_duration
 entity_type: node
@@ -18,6 +20,10 @@ default_value_callback: ''
 settings:
   min: null
   max: null
-  prefix: ''
-  suffix: ''
-field_type: integer
+  from:
+    prefix: ''
+    suffix: ''
+  to:
+    prefix: ''
+    suffix: ''
+field_type: range_integer

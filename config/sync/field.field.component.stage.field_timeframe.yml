@@ -1,0 +1,29 @@
+uuid: f667b0c2-59e4-4e33-96e6-ff4e07e0ad09
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.stage
+    - field.storage.component.field_timeframe
+  module:
+    - range
+id: component.stage.field_timeframe
+field_name: field_timeframe
+entity_type: component
+bundle: stage
+label: Timeframe
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  from:
+    prefix: ''
+    suffix: ''
+  to:
+    prefix: ''
+    suffix: ''
+field_type: range_integer

@@ -10,11 +10,12 @@ dependencies:
     - field.field.node.drug.field_description
     - field.field.node.drug.field_duration
     - field.field.node.drug.field_gear_type
-    - field.field.node.drug.field_onset_time
+    - field.field.node.drug.field_onset
     - field.field.node.drug.field_source
     - node.type.drug
   module:
     - entity_reference_quantity
+    - range
     - text
     - user
 id: node.drug.default
@@ -66,13 +67,16 @@ content:
     third_party_settings: {  }
     type: text_default
   field_duration:
-    weight: 110
+    weight: 112
     label: above
     settings:
+      range_separator: '-'
       thousand_separator: ''
-      prefix_suffix: true
+      range_combine: true
+      from_prefix_suffix: false
+      to_prefix_suffix: false
     third_party_settings: {  }
-    type: number_integer
+    type: range_integer
   field_gear_type:
     weight: 106
     label: above
@@ -80,14 +84,17 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_onset_time:
-    weight: 109
+  field_onset:
+    weight: 113
     label: above
     settings:
+      range_separator: '-'
       thousand_separator: ''
-      prefix_suffix: true
+      range_combine: true
+      from_prefix_suffix: false
+      to_prefix_suffix: false
     third_party_settings: {  }
-    type: number_integer
+    type: range_integer
   field_source:
     weight: 105
     label: above
@@ -97,4 +104,5 @@ content:
     type: entity_reference_quantity_label
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_source: true

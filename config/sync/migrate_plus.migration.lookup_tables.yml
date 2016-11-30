@@ -31,7 +31,7 @@ source:
 process:
   type: table
   title: title
-  field_code:
+  field_lookup_code:
     plugin: skip_on_empty
     method: process
     source: code

@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Augmentation
 type: augmentation
-description: ''
+description: 'Body modifications and enhancements'
 help: ''
 new_revision: true
 preview_mode: 0

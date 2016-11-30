@@ -1,0 +1,29 @@
+uuid: 0d8846d5-675d-4030-a471-71079204abcc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_onset
+    - node.type.drug
+  module:
+    - range
+id: node.drug.field_onset
+field_name: field_onset
+entity_type: node
+bundle: drug
+label: 'Onset Time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  from:
+    prefix: ''
+    suffix: ''
+  to:
+    prefix: ''
+    suffix: ''
+field_type: range_integer

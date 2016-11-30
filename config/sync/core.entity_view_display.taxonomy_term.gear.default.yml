@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.gear.field_source
-    - taxonomy.vocabulary.gear
+    - field.field.taxonomy_term.gear_type.field_source
+    - taxonomy.vocabulary.gear_type
   module:
     - entity_reference_quantity
     - text
@@ -26,4 +26,5 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_quantity_label
-hidden: {  }
+hidden:
+  field_source: true

@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.lookup
-name: 'Morph Type'
-type: morph_type
-description: ''

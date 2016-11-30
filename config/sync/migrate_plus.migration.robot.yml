@@ -5,7 +5,7 @@ dependencies: {  }
 id: robot
 migration_tags: null
 migration_group: eldrich_gear
-label: ''
+label: 'Robots and synth shells'
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/robots.csv
@@ -26,11 +26,19 @@ source:
     -
       book: Book
     -
-      page: Page
+      stats: Stats
     -
       armor: Armor
     -
-      stackable: Stackable
+      mobility: Mobility
+    -
+      speed: Speed
+    -
+      augmentations: Augmentations
+    -
+      skills: Skills
+    -
+      mind: Mind
   keys:
     - title
 process:
@@ -57,17 +65,13 @@ process:
     plugin: skip_on_empty
     method: process
     source: minimum
-  field_source/target_id:
-    plugin: entity_lookup
+  field_source:
+    plugin: source_with_page
     entity_type: node
     bundle: source
     bundle_key: type
     value_key: field_code
     source: book
-  field_source/quantity:
-    plugin: skip_on_empty
-    method: process
-    source: page
   field_blueprints:
     plugin: static_map
     source: blueprints
@@ -75,30 +79,17 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-  '@armor_array':
+  field_armor:
     -
       plugin: skip_on_empty
       method: process
       source: armor
     -
-      plugin: explode
+      plugin: array_to_dict
       delimiter: /
-  field_armor/energy:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: '@armor_array'
-    -
-      plugin: extract
-      index: 0
-  field_armor/kinetic:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: '@armor_array'
-    -
-      plugin: extract
-      index: 1
+      keys:
+        - energy
+        - kinetic
   field_armor/replaces:
     plugin: static_map
     source: stackable
@@ -106,9 +97,87 @@ process:
       'TRUE': 0
       'FALSE': 1
     default_value: 1
+  field_stats:
+    plugin: stat_block
+    source: stats
+  field_skills:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: skills
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: skill_lookup
+      destination_field: target_id
+      entity_type: node
+      bundle: skill
+      bundle_key: type
+      value_key: title
+  field_mobility_system/target_id:
+    plugin: entity_lookup
+    source: mobility
+    value_key: title
+    bundle: mobility_type
+    bundle_key: type
+    entity_type: lookup
+  field_movement_speed:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: speed
+    -
+      plugin: array_to_dict
+      delimiter: /
+      keys:
+        - walk
+        - run
+        - cruise
+  field_augmentations:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: augmentations
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      bundle: augmentation
+      bundle_key: type
+      entity_type: node
+  field_gear:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: augmentations
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      bundle:
+        - gear
+        - weapon
+      bundle_key: type
+      entity_type: node
+  field_default_mind/target_id:
+    plugin: entity_lookup
+    source: mind
+    value_key: title
+    bundle: mind
+    bundle_key: type
+    entity_type: node
 destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
     - lookup_tables
     - sources
+    - skills
+    - gear

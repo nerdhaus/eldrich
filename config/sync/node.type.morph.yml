@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Morph
 type: morph
-description: ''
+description: 'Meatsacks, synth shells, and virtual servers for transhuman minds.'
 help: ''
 new_revision: true
 preview_mode: 0

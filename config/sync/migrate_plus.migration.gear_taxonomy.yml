@@ -5,7 +5,7 @@ dependencies: {  }
 id: gear_taxonomy
 migration_tags: null
 migration_group: eldrich_core
-label: 'Taxonomy hierarchy for purchasable gear'
+label: 'Taxonomy for purchasable gear'
 source:
   plugin: csv
   path: modules/custom/ep_import/data/gear-taxonomy.csv
@@ -19,8 +19,6 @@ source:
       description: Description
     -
       book: book
-    -
-      page: Page
   keys:
     - title
     - parent
@@ -30,14 +28,13 @@ process:
   vid:
     plugin: default_value
     default_value: gear
-  field_source/target_id:
-    plugin: entity_lookup
+  field_source:
+    plugin: source_with_page
     source: book
     value_key: field_code
     bundle_key: nid
     bundle: source
     entity_type: node
-  field_source/quantity: page
   parent:
     -
       plugin: skip_on_empty

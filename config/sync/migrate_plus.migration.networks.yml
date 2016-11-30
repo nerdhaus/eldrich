@@ -17,8 +17,6 @@ source:
       code: Code
     -
       source: Source
-    -
-      page: Page
   keys:
     - title
   constants:

@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_gear_type
     - node.type.vehicle
-    - taxonomy.vocabulary.gear
+    - taxonomy.vocabulary.gear_type
 id: node.vehicle.field_gear_type
 field_name: field_gear_type
 entity_type: node
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      gear: gear
+      gear_type: gear_type
     sort:
       field: _none
     auto_create: false

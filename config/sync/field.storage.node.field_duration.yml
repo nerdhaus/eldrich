@@ -1,17 +1,16 @@
-uuid: 1a6b946e-9842-4408-9896-873e5dad1f2c
+uuid: e4cc7706-4f81-4c98-9e2b-e91e3596de45
 langcode: en
 status: true
 dependencies:
   module:
     - node
+    - range
 id: node.field_duration
 field_name: field_duration
 entity_type: node
-type: integer
-settings:
-  unsigned: false
-  size: normal
-module: core
+type: range_integer
+settings: {  }
+module: range
 locked: false
 cardinality: 1
 translatable: true

@@ -5,7 +5,7 @@ dependencies: {  }
 id: mind
 migration_tags: null
 migration_group: eldrich_gear
-label: ''
+label: 'AIs, Ego templates, etc.'
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/minds.csv
@@ -26,11 +26,9 @@ source:
     -
       book: Book
     -
-      page: Page
+      stats: Stats
     -
-      armor: Armor
-    -
-      stackable: Stackable
+      skills: Skills
   keys:
     - title
 process:
@@ -57,17 +55,13 @@ process:
     plugin: skip_on_empty
     method: process
     source: minimum
-  field_source/target_id:
-    plugin: entity_lookup
+  field_source:
+    plugin: source_with_page
     entity_type: node
     bundle: source
     bundle_key: type
     value_key: field_code
     source: book
-  field_source/quantity:
-    plugin: skip_on_empty
-    method: process
-    source: page
   field_blueprints:
     plugin: static_map
     source: blueprints
@@ -75,40 +69,28 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-  '@armor_array':
+  field_stats:
+    plugin: stat_block
+    source: stats
+  field_skills:
     -
       plugin: skip_on_empty
       method: process
-      source: armor
+      source: skills
     -
       plugin: explode
-      delimiter: /
-  field_armor/energy:
+      delimiter: ','
     -
-      plugin: skip_on_empty
-      method: process
-      source: '@armor_array'
-    -
-      plugin: extract
-      index: 0
-  field_armor/kinetic:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: '@armor_array'
-    -
-      plugin: extract
-      index: 1
-  field_armor/replaces:
-    plugin: static_map
-    source: stackable
-    map:
-      'TRUE': 0
-      'FALSE': 1
-    default_value: 1
+      plugin: skill_lookup
+      destination_field: target_id
+      entity_type: node
+      bundle: skill
+      bundle_key: type
+      value_key: title
 destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
     - lookup_tables
+    - skills
     - sources

@@ -1,0 +1,24 @@
+uuid: 01f6d313-5fc9-424c-8814-73a984a6c222
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.npc.field_description
+    - node.type.npc
+  module:
+    - text
+    - user
+id: node.npc.default
+targetEntityType: node
+bundle: npc
+mode: default
+content:
+  field_description:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  links:
+    weight: 100
+hidden: {  }

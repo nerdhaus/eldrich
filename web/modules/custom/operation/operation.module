@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file
+ * Utility functions used across field, formatter, and widget classes.
+ */
+
+function operation_parse_string($string) {
+  $string = str_replace(' ', '', $string);
+  $string = str_replace(',', '', $string);
+  $matches = [];
+  return preg_match("/(?<operator>[+-\/\*\^%=])(?<value>[0-9]+)/", $string, $matches);
+}
+
+
+function operation_calculate_result($input, $operation, $value, $mode = PHP_ROUND_HALF_UP) {
+  switch ($operation) {
+    case '+':
+      $value = $input + $value;
+      break;
+    case '-':
+      $value = $input - $value;
+      break;
+    case '/':
+      $value = $input / $value;
+      break;
+    case '*':
+      $value = $input * $value;
+      break;
+    case '^':
+      $value = $input ** $value;
+      break;
+    case '%':
+      $value = $input % $value;
+      break;
+  }
+
+  return intval(round($value, 0, $mode));
+}
+
+/**
+ * @return array
+ */
+function operation_supported_operators() {
+  return [
+    '+' => t('Addition'),
+    '-' => t('Subtraction'),
+    '/' => t('Division'),
+    '*' => t('Multiplication'),
+    '^' => t('Exponentiation'),
+    '%' => t('Modulo'),
+    '=' => t('Override'),
+  ];
+}

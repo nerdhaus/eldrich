@@ -1,0 +1,23 @@
+uuid: 062fb6b9-ae69-46bf-8e7d-d24de08c4645
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exsurgent
+    - node.type.sleight
+id: node.sleight.field_exsurgent
+field_name: field_exsurgent
+entity_type: node
+bundle: sleight
+label: Exsurgent
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

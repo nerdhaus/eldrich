@@ -1,0 +1,18 @@
+uuid: 7802a6f1-71ac-453c-a2bd-e7bf653e6e13
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.npc
+  module:
+    - user
+id: node.npc.teaser
+targetEntityType: node
+bundle: npc
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_description: true

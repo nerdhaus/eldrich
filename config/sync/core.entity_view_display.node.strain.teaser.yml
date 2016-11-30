@@ -1,0 +1,22 @@
+uuid: 7eff8e23-eca5-4976-ba11-5f08ebd91db6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.strain
+  module:
+    - user
+id: node.strain.teaser
+targetEntityType: node
+bundle: strain
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_description: true
+  field_infectiousness: true
+  field_source: true
+  field_strain_rating: true
+  field_vectors: true

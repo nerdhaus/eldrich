@@ -1,0 +1,18 @@
+uuid: 853d49cf-bad3-4385-9e44-8274065c75bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.strain
+id: node.strain.title
+field_name: title
+entity_type: node
+bundle: strain
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,33 @@
+uuid: a68bd287-c070-441a-ac08-e042613cc5a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_source
+    - node.type.source
+    - taxonomy.vocabulary.gear_type
+  module:
+    - entity_reference_quantity
+id: taxonomy_term.gear_type.field_source
+field_name: field_source
+entity_type: taxonomy_term
+bundle: gear
+label: Source
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      source: source
+    sort:
+      field: _none
+    auto_create: 0
+    auto_create_bundle: ''
+  qty_label: Page
+  qty_min: 0
+  qty_max: 1000
+field_type: entity_reference_quantity
