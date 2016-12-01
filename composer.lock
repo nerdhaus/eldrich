@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c37f44ebc7c7802ae73cfe41d5dd06a6",
-    "content-hash": "05514e51459574d6d9eaf949e9e71a55",
+    "hash": "f4906a47f93af9fbba1e8eb14ecedd86",
+    "content-hash": "9f5417f380996208a3d55dd5fc5759e9",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1066,17 +1066,17 @@
         },
         {
             "name": "drupal/bootstrap",
-            "version": "3.0.0",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/bootstrap",
-                "reference": "8.x-3.0"
+                "reference": "8.x-3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.0.zip",
-                "reference": "8.x-3.0",
-                "shasum": "fa6eff02094233833423e47594653f689b91b65b"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.1.zip",
+                "reference": null,
+                "shasum": "12efa571153c47c8634066d51f76e19dc9f7db5c"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -1087,8 +1087,8 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.0",
-                    "datestamp": "1477680084"
+                    "version": "8.x-3.1",
+                    "datestamp": "1480430583"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1586,11 +1586,10 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/devel",
-                "reference": "225e765433f45da8ed81f62daa13390e4067e61f"
+                "reference": "22a8f0e1d5dc778c0cca08b0ab44cb94b9b015f3"
             },
             "require": {
-                "drupal/core": "~8.0",
-                "symfony/stopwatch": "2.4.*"
+                "drupal/core": "~8.0"
             },
             "suggest": {
                 "symfony/var-dumper": "Pretty print complex values better with var-dumper available"
@@ -1601,8 +1600,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha1+32-dev",
-                    "datestamp": "1480244880"
+                    "version": "8.x-1.0-alpha1+33-dev",
+                    "datestamp": "1480408380"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1660,7 +1659,7 @@
                 "issues": "http://drupal.org/project/devel",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "time": "2016-11-27 11:05:32"
+            "time": "2016-11-29 08:27:57"
         },
         {
             "name": "drupal/eck",
@@ -1791,7 +1790,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_browser",
-                "reference": "a890cca9765a5a31724aab2ae241200b1568dace"
+                "reference": "ff1f64f5e3e158f6d9c14341ebaf8bb28089180a"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -1811,8 +1810,8 @@
                     "dev-8.x-1.x": "8.1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta1+12-dev",
-                    "datestamp": "1480090980"
+                    "version": "8.x-1.0-beta2+1-dev",
+                    "datestamp": "1480329480"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1859,7 +1858,7 @@
                 "issues": "http://drupal.org/project/issues/entity_browser",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "time": "2016-11-25 16:21:26"
+            "time": "2016-11-28 10:34:10"
         },
         {
             "name": "drupal/entity_embed",
@@ -2063,12 +2062,18 @@
             }
         },
         {
-            "name": "drupal/field_group",
-            "version": "dev-1.x",
+            "name": "drupal/entity_reference_views_select",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/field_group",
-                "reference": "98ac2ef75716191320672d5b07081adf8a55b2dd"
+                "url": "https://git.drupal.org/project/entity_reference_views_select",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/entity_reference_views_select-8.x-1.1.zip",
+                "reference": null,
+                "shasum": "762fc09044b2a86ab1a415adb45bcc2b83314238"
             },
             "require": {
                 "drupal/core": "*"
@@ -2079,8 +2084,49 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-rc4+55-dev",
-                    "datestamp": "1480286880"
+                    "version": "8.x-1.1",
+                    "datestamp": "1462746239"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "bertrama",
+                    "homepage": "https://www.drupal.org/user/343472"
+                },
+                {
+                    "name": "el1_1el",
+                    "homepage": "https://www.drupal.org/user/1795292"
+                }
+            ],
+            "description": "Entity Reference Views displayed as a select list, checkboxes or radio buttons in forms",
+            "homepage": "https://www.drupal.org/project/entity_reference_views_select",
+            "support": {
+                "source": "http://cgit.drupalcode.org/entity_reference_views_select"
+            }
+        },
+        {
+            "name": "drupal/field_group",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/field_group",
+                "reference": "acd3aaef1d0c9822b81ce7fdff8a12ef3844b4e1"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-rc6+0-dev",
+                    "datestamp": "1480365484"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2114,7 +2160,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/field_group"
             },
-            "time": "2016-11-27 22:44:54"
+            "time": "2016-11-28 20:35:38"
         },
         {
             "name": "drupal/inline_entity_form",
@@ -2528,16 +2574,16 @@
         },
         {
             "name": "drush/drush",
-            "version": "8.1.7",
+            "version": "8.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drush-ops/drush.git",
-                "reference": "0a79c9c5c1c368afc36c583612ec882eec3be285"
+                "reference": "838c36d80bea7f78f1ae3e7f7479d60b7361c0fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drush-ops/drush/zipball/0a79c9c5c1c368afc36c583612ec882eec3be285",
-                "reference": "0a79c9c5c1c368afc36c583612ec882eec3be285",
+                "url": "https://api.github.com/repos/drush-ops/drush/zipball/838c36d80bea7f78f1ae3e7f7479d60b7361c0fd",
+                "reference": "838c36d80bea7f78f1ae3e7f7479d60b7361c0fd",
                 "shasum": ""
             },
             "require": {
@@ -2629,7 +2675,7 @@
             ],
             "description": "Drush is a command line shell and scripting interface for Drupal, a veritable Swiss Army knife designed to make life easier for those of us who spend some of our working hours hacking away at the command prompt.",
             "homepage": "http://www.drush.org",
-            "time": "2016-10-24 21:42:22"
+            "time": "2016-11-30 07:01:02"
         },
         {
             "name": "easyrdf/easyrdf",
@@ -5036,53 +5082,6 @@
             "time": "2016-11-03 07:52:58"
         },
         {
-            "name": "symfony/stopwatch",
-            "version": "v2.4.10",
-            "target-dir": "Symfony/Component/Stopwatch",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/Stopwatch.git",
-                "reference": "95a08e3cc2be672f16eb1602e3040141fdc00c7d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Stopwatch/zipball/95a08e3cc2be672f16eb1602e3040141fdc00c7d",
-                "reference": "95a08e3cc2be672f16eb1602e3040141fdc00c7d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Component\\Stopwatch\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                }
-            ],
-            "description": "Symfony Stopwatch Component",
-            "homepage": "http://symfony.com",
-            "time": "2014-09-22 08:51:05"
-        },
-        {
             "name": "symfony/translation",
             "version": "v2.8.14",
             "source": {
@@ -5438,16 +5437,16 @@
         },
         {
             "name": "webflo/drupal-finder",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webflo/drupal-finder.git",
-                "reference": "c5bf606cc0087eb197d4741b2e56b74abe00757e"
+                "reference": "4bd98f7e7b1d30e284e55f51d5d0c8712f676348"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webflo/drupal-finder/zipball/c5bf606cc0087eb197d4741b2e56b74abe00757e",
-                "reference": "c5bf606cc0087eb197d4741b2e56b74abe00757e",
+                "url": "https://api.github.com/repos/webflo/drupal-finder/zipball/4bd98f7e7b1d30e284e55f51d5d0c8712f676348",
+                "reference": "4bd98f7e7b1d30e284e55f51d5d0c8712f676348",
                 "shasum": ""
             },
             "require-dev": {
@@ -5471,7 +5470,7 @@
                 }
             ],
             "description": "Helper class to locate a Drupal installation from a given path.",
-            "time": "2016-11-24 19:58:26"
+            "time": "2016-11-28 18:50:45"
         },
         {
             "name": "webmozart/assert",
@@ -7012,16 +7011,16 @@
         },
         {
             "name": "symfony/browser-kit",
-            "version": "v3.1.7",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/browser-kit.git",
-                "reference": "901319a31c9b3cee7857b4aeeb81b5d64dfa34fc"
+                "reference": "34348c2691ce6254e8e008026f4c5e72c22bb318"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/901319a31c9b3cee7857b4aeeb81b5d64dfa34fc",
-                "reference": "901319a31c9b3cee7857b4aeeb81b5d64dfa34fc",
+                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/34348c2691ce6254e8e008026f4c5e72c22bb318",
+                "reference": "34348c2691ce6254e8e008026f4c5e72c22bb318",
                 "shasum": ""
             },
             "require": {
@@ -7038,7 +7037,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -7065,7 +7064,54 @@
             ],
             "description": "Symfony BrowserKit Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-06 11:02:40"
+            "time": "2016-10-13 13:35:11"
+        },
+        {
+            "name": "symfony/stopwatch",
+            "version": "v2.4.10",
+            "target-dir": "Symfony/Component/Stopwatch",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Stopwatch.git",
+                "reference": "95a08e3cc2be672f16eb1602e3040141fdc00c7d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Stopwatch/zipball/95a08e3cc2be672f16eb1602e3040141fdc00c7d",
+                "reference": "95a08e3cc2be672f16eb1602e3040141fdc00c7d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Stopwatch\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Stopwatch Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-09-22 08:51:05"
         }
     ],
     "aliases": [],
