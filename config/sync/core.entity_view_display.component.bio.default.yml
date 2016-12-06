@@ -1,0 +1,47 @@
+uuid: dbe6e9ea-7d1e-4fa4-bc5d-047c6ac73f7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.bio
+    - field.field.component.bio.field_background
+    - field.field.component.bio.field_credits
+    - field.field.component.bio.field_faction
+    - field.field.component.bio.field_rep
+  module:
+    - entity_reference_quantity
+id: component.bio.default
+targetEntityType: component
+bundle: bio
+mode: default
+content:
+  field_background:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_credits:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_faction:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_rep:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+hidden: {  }

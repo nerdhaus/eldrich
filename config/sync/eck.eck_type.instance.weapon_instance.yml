@@ -1,0 +1,9 @@
+uuid: 56f51b27-db70-4da9-b8fc-1d4097d0fe10
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.instance
+name: Weapon
+type: weapon_instance
+description: 'A specific weapon, with its mods, ammo, and ammo mods.'

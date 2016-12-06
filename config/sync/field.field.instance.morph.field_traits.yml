@@ -1,0 +1,28 @@
+uuid: 5aff056c-aa00-4ce7-9d0f-18d1258f9dd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.instance.morph
+    - field.storage.instance.field_traits
+  module:
+    - entity_reference_override
+id: instance.morph.field_traits
+field_name: field_traits
+entity_type: instance
+bundle: morph
+label: Traits
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: select_lists
+      display_name: morph_traits
+      arguments: {  }
+  override_label: Notes
+field_type: entity_reference_override

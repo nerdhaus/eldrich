@@ -38,7 +38,6 @@ hidden:
   field_exsurgent: true
   field_is_active: true
   field_psi_skill: true
-  field_source: true
   field_sleight_duration: true
   field_sleight_level: true
   field_sleight_range: true

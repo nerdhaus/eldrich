@@ -1,0 +1,19 @@
+uuid: 9064f78d-4c54-427e-884e-12882ae41ca1
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - text
+id: component.field_attribution_notes
+field_name: field_attribution_notes
+entity_type: component
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

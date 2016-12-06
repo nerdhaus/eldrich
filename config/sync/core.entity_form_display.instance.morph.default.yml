@@ -1,0 +1,69 @@
+uuid: 6ff3b8b0-65ef-4bee-90ab-6f392b6c3869
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.instance.morph
+    - field.field.instance.morph.field_augmentations
+    - field.field.instance.morph.field_mobility_system
+    - field.field.instance.morph.field_movement_speed
+    - field.field.instance.morph.field_skills
+    - field.field.instance.morph.field_stats
+    - field.field.instance.morph.field_traits
+  module:
+    - entity_reference_override
+    - ep_complex_values
+    - ep_skill_reference
+    - ep_statblock
+id: instance.morph.default
+targetEntityType: instance
+bundle: morph
+mode: default
+content:
+  field_augmentations:
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
+  field_mobility_system:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_movement_speed:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: mobility_speed_widget
+  field_skills:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: skill_reference_select
+  field_stats:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+  field_traits:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,21 @@
+uuid: 3c9054f3-88e4-4685-bd4b-cf7be652a5fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - entity_reference_quantity
+    - node
+id: component.field_attribution_citations
+field_name: field_attribution_citations
+entity_type: component
+type: entity_reference_quantity
+settings:
+  target_type: node
+module: entity_reference_quantity
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,41 @@
+uuid: 6d6057e1-72ad-452a-a8d4-225912d55e37
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.attribution
+    - field.field.component.attribution.field_attribution_citations
+    - field.field.component.attribution.field_attribution_link
+    - field.field.component.attribution.field_attribution_notes
+  module:
+    - entity_reference_quantity
+    - link
+    - text
+id: component.attribution.default
+targetEntityType: component
+bundle: attribution
+mode: default
+content:
+  field_attribution_citations:
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_quantity_autocomplete
+  field_attribution_link:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_attribution_notes:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+hidden: {  }

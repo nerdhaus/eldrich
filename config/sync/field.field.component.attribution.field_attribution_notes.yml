@@ -1,0 +1,21 @@
+uuid: 8e2efbf3-d8bc-462a-9cb7-55d9fd3b8659
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.attribution
+    - field.storage.component.field_attribution_notes
+  module:
+    - text
+id: component.attribution.field_attribution_notes
+field_name: field_attribution_notes
+entity_type: component
+bundle: attribution
+label: Notes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

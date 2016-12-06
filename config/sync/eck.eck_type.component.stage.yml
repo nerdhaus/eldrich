@@ -1,9 +1,0 @@
-uuid: 38276c9d-a6a9-4041-8922-45742746b5a5
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.component
-name: 'Infection Stage'
-type: stage
-description: ''

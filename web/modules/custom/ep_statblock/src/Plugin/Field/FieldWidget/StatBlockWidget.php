@@ -34,6 +34,7 @@ class StatBlockWidget extends WidgetBase {
       'mox' => t('Moxie'),
       'spd' => t('Speed'),
       'dur' => t('Durability'),
+      'synthetic' => t('Synthetic'),
     ];
 
     foreach ($properties as $key => $title) {
@@ -43,6 +44,11 @@ class StatBlockWidget extends WidgetBase {
         '#default_value' => $items[$delta]->{$key},
       );
     }
+    $element['synthetic'] = array(
+      '#type' => 'checkbox',
+      '#title' => $title,
+      '#default_value' => $items[$delta]->synthetic,
+    );
 
     return $element;
   }

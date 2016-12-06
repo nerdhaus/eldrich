@@ -46,13 +46,13 @@ class StatBlockTableWidget extends WidgetBase {
       ]
     ];
 
-    $widget = [
+    $widget['#attached']['library'][] = 'ep_statblock/statblock-widget';
+    $widget['table'] = [
       '#type' => 'table',
       '#sticky' => FALSE,
       '#no_striping' => TRUE,
       '#attributes' => ['class' => ['stat-block-widget']],
     ];
-    $widget['#attached']['library'][] = 'ep_statblock/statblock-widget';
 
     $row = [];
     foreach ($properties[0] as $key => $title) {
@@ -62,7 +62,7 @@ class StatBlockTableWidget extends WidgetBase {
         '#default_value' => $items[$delta]->{$key},
       );
     }
-    $widget[] = $row;
+    $widget['table'][] = $row;
 
     $row = [];
     foreach ($properties[1] as $key => $title) {
@@ -76,7 +76,12 @@ class StatBlockTableWidget extends WidgetBase {
         $row[$key]['#attributes']['class'][] = 'calculated';
       }
     }
-    $widget[] = $row;
+    $widget['table'][] = $row;
+    $widget['synthetic'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Synthetic body'),
+      '#default_value' => $items[$delta]->synthetic,
+    ];
 
     return $widget;
   }
@@ -86,22 +91,21 @@ class StatBlockTableWidget extends WidgetBase {
    */
   public function massageFormValues(array $values, array $form, FormStateInterface $form_state) {
     foreach ($values as $delta => $value) {
-      if (is_array($value[0])) {
-        foreach ($value[0] as $key => $subvalue) {
-          if (!empty($subvalue)) {
-            $values[$delta][$key] = $subvalue;
+      if (is_array($value['table'][0])) {
+        foreach ($value['table'][0] as $key => $data) {
+          if (!empty($data)) {
+            $values[$delta][$key] = $data;
           }
         }
       }
-      if (is_array($value[1])) {
-        foreach ($value[1] as $key => $subvalue) {
-          if (!empty($subvalue)) {
-            $values[$delta][$key] = $subvalue;
+      if (is_array($value['table'][1])) {
+        foreach ($value['table'][1] as $key => $data) {
+          if (!empty($data)) {
+            $values[$delta][$key] = $data;
           }
         }
       }
-      unset($values[$delta][0]);
-      unset($values[$delta][1]);
+      unset($values[$delta]['table']);
     }
     return $values;
   }

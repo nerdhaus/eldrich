@@ -1,0 +1,9 @@
+uuid: 2a5b1e6c-db57-4a18-a873-6e31d4b276f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.component
+name: Status
+type: status
+description: 'Ephemeral details about a character''s state, including stress and damage.'

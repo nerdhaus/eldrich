@@ -1,0 +1,21 @@
+uuid: b5bab5f9-0f63-406f-b539-8792a82b3dc2
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - entity_reference_override
+    - node
+id: instance.field_traits
+field_name: field_traits
+entity_type: instance
+type: entity_reference_override
+settings:
+  target_type: node
+module: entity_reference_override
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

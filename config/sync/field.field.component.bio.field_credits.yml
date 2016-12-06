@@ -1,0 +1,23 @@
+uuid: fd5eb3b1-0ac0-489a-ae84-94c9d82141f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.bio
+    - field.storage.component.field_credits
+id: component.bio.field_credits
+field_name: field_credits
+entity_type: component
+bundle: bio
+label: Credits
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

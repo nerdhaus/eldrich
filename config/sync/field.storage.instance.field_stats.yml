@@ -1,0 +1,19 @@
+uuid: 92505e7a-1c49-4520-a514-0fdcde5dbaca
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - ep_statblock
+id: instance.field_stats
+field_name: field_stats
+entity_type: instance
+type: stat_block
+settings: {  }
+module: ep_statblock
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

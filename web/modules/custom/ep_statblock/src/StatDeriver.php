@@ -45,7 +45,7 @@ class StatDeriver extends TypedData {
         break;
       case 'dr':
         if (!is_null($item->dur)) {
-          return round($item->dur * 1.5);
+          return round($item->dur * ($item->synthetic ? 2 : 1.5));
         }
         break;
       case 'db':

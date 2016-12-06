@@ -20,5 +20,4 @@ content:
 hidden:
   field_description: true
   field_source: true
-  field_source: true
   field_symbol: true
