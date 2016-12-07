@@ -7,6 +7,7 @@ dependencies:
     - field.field.component.status.field_damage
     - field.field.component.status.field_derangements
     - field.field.component.status.field_notes
+    - field.field.component.status.field_rez_points
     - field.field.component.status.field_stress
     - field.field.component.status.field_trauma
     - field.field.component.status.field_wounds
@@ -36,6 +37,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+  field_rez_points:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   field_stress:
     weight: 0
     settings:
