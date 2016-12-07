@@ -27,7 +27,7 @@ process:
   description: description
   vid:
     plugin: default_value
-    default_value: gear
+    default_value: gear_type
   attribution/field_source:
     plugin: source_with_page
     entity_type: node
