@@ -20,7 +20,6 @@ class SourceWithPage extends EntityLookup {
    */
   public function transform($value, MigrateExecutableInterface $migrateExecutable, Row $row, $destinationProperty) {
     $results = [];
-
     if (strpos($value, '.')) {
       $values = explode('.', $value);
       $title = trim($values[0]);
