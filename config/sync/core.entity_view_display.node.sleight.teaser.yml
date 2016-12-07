@@ -34,6 +34,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_action_type: true
+  field_attribution: true
   field_description: true
   field_exsurgent: true
   field_is_active: true

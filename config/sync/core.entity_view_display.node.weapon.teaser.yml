@@ -41,6 +41,7 @@ hidden:
   field_ap_modifier: true
   field_area_effect: true
   field_armor: true
+  field_attribution: true
   field_blueprints: true
   field_cost: true
   field_damage: true

@@ -24,10 +24,12 @@ content:
     weight: 100
 hidden:
   field_armor: true
+  field_attribution: true
   field_blueprints: true
   field_conditional: true
   field_cost: true
   field_description: true
   field_gear_type: true
   field_morph_types: true
+  field_special_effect: true
   field_stats: true

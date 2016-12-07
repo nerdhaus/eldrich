@@ -37,7 +37,7 @@ process:
     entity_type: lookup
     ignore_case: true
   field_description/value: description
-  attribution/field_source:
+  attribution/field_attribution_citations:
     plugin: source_with_page
     entity_type: node
     bundle: source
@@ -49,7 +49,7 @@ process:
     entity_type: component
     bundle: attribution
     bundle_key: type
-    source: @attribution
+    source: '@attribution'
 destination:
   plugin: 'entity:node'
 migration_dependencies:

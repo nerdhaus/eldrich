@@ -34,7 +34,7 @@ process:
     plugin: skip_on_empty
     method: process
     source: description
-  attribution/field_source:
+  attribution/field_attribution_citations:
     plugin: source_with_page
     entity_type: node
     bundle: source
@@ -46,7 +46,7 @@ process:
     entity_type: component
     bundle: attribution
     bundle_key: type
-    source: @attribution
+    source: '@attribution'
 destination:
   plugin: 'entity:node'
 migration_dependencies:

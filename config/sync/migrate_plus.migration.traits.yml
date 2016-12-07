@@ -53,7 +53,7 @@ process:
   field_cp_cost: cost
   field_description/value: description
   field_special_effect/value: effect
-  attribution/field_source:
+  attribution/field_attribution_citations:
     plugin: source_with_page
     entity_type: node
     bundle: source
@@ -65,7 +65,7 @@ process:
     entity_type: component
     bundle: attribution
     bundle_key: type
-    source: @attribution
+    source: '@attribution'
 destination:
   plugin: 'entity:node'
 migration_dependencies:

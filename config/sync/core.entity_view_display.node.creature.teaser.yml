@@ -15,4 +15,15 @@ content:
   links:
     weight: 100
 hidden:
+  field_armor: true
+  field_attribution: true
+  field_augmentations: true
   field_description: true
+  field_equipped_weapons: true
+  field_gear: true
+  field_mobility_system: true
+  field_movement_speed: true
+  field_skills: true
+  field_stats: true
+  field_strain: true
+  field_traits: true

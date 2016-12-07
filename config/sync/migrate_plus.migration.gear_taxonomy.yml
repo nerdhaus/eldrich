@@ -28,19 +28,12 @@ process:
   vid:
     plugin: default_value
     default_value: gear_type
-  attribution/field_source:
-    plugin: source_with_page
-    entity_type: node
-    bundle: source
-    bundle_key: type
-    value_key: field_code
-    source: book
-  field_attribution:
+  field_source:
     plugin: reference_factory
     entity_type: component
     bundle: attribution
     bundle_key: type
-    source: @attribution
+    source: '@attribution'
   parent:
     -
       plugin: skip_on_empty

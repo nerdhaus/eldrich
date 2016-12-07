@@ -30,9 +30,11 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_attribution: true
   field_cp_cost: true
   field_description: true
   field_ego_trait: true
   field_morph_trait: true
   field_skills: true
+  field_special_effect: true
   field_stats: true

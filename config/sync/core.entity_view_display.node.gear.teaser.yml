@@ -19,6 +19,7 @@ content:
   links:
     weight: 100
 hidden:
+  field_attribution: true
   field_blueprints: true
   field_cost: true
   field_description: true

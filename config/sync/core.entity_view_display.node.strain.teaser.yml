@@ -15,8 +15,10 @@ content:
   links:
     weight: 100
 hidden:
+  field_attribution: true
   field_description: true
   field_infectiousness: true
   field_source: true
+  field_stages: true
   field_strain_rating: true
   field_vectors: true

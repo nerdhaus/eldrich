@@ -1,0 +1,44 @@
+uuid: ab440b69-6ed5-4572-b1bf-f4b06101412b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.gear_type.field_source
+    - taxonomy.vocabulary.gear_type
+  module:
+    - entity_reference_quantity
+    - path
+    - text
+id: taxonomy_term.gear_type.default
+targetEntityType: taxonomy_term
+bundle: gear_type
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_source:
+    weight: 31
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_quantity_autocomplete
+  name:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

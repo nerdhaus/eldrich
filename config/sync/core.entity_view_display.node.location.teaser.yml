@@ -19,6 +19,7 @@ content:
   links:
     weight: 100
 hidden:
+  field_attribution: true
   field_description: true
   field_location_type: true
   field_parent_location: true

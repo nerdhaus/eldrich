@@ -17,5 +17,6 @@ content:
   links:
     weight: 100
 hidden:
+  field_attribution: true
   field_description: true
   field_symbol: true
