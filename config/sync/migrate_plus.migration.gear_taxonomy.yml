@@ -27,6 +27,7 @@ process:
   description: description
   vid:
     plugin: default_value
+<<<<<<< 4614654d5045faa0cf90aa7f86bd7152cfb63e4d
     default_value: gear_type
   field_source:
     plugin: reference_factory
@@ -34,6 +35,16 @@ process:
     bundle: attribution
     bundle_key: type
     source: '@attribution'
+=======
+    default_value: gear
+  field_attribution:
+    plugin: source_with_page
+    source: book
+    value_key: field_code
+    bundle_key: nid
+    bundle: source
+    entity_type: node
+>>>>>>> Attributes tweaked
   parent:
     -
       plugin: skip_on_empty
