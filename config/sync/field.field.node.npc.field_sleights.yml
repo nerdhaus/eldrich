@@ -1,0 +1,25 @@
+uuid: e5d37992-7c8d-4263-83b4-5c07561b21dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sleights
+    - node.type.npc
+id: node.npc.field_sleights
+field_name: field_sleights
+entity_type: node
+bundle: npc
+label: Sleights
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: select_lists
+      display_name: sleights
+      arguments: {  }
+field_type: entity_reference

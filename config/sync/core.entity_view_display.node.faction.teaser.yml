@@ -6,8 +6,9 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.faction.field_concerns
     - field.field.node.faction.field_description
+    - field.field.node.faction.field_faction_type
+    - field.field.node.faction.field_locations
     - field.field.node.faction.field_parent_faction
-    - field.field.node.faction.field_source
     - node.type.faction
   module:
     - user
@@ -24,4 +25,3 @@ hidden:
   field_faction_type: true
   field_locations: true
   field_parent_faction: true
-  field_source: true

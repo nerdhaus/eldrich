@@ -1,0 +1,23 @@
+uuid: 7bc04b5f-adef-4b80-a072-566c6a05b320
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_uses_mods
+    - node.type.weapon
+id: node.weapon.field_uses_mods
+field_name: field_uses_mods
+entity_type: node
+bundle: weapon
+label: 'Uses Mods'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

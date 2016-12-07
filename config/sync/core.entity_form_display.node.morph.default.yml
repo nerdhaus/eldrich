@@ -4,18 +4,17 @@ status: true
 dependencies:
   config:
     - field.field.node.morph.field_armor
+    - field.field.node.morph.field_attribution
     - field.field.node.morph.field_augmentations
     - field.field.node.morph.field_blueprints
     - field.field.node.morph.field_cost
     - field.field.node.morph.field_cp_cost
     - field.field.node.morph.field_description
-    - field.field.node.morph.field_gear
     - field.field.node.morph.field_gear_type
     - field.field.node.morph.field_mobility_system
     - field.field.node.morph.field_morph_type
     - field.field.node.morph.field_movement_speed
     - field.field.node.morph.field_skills
-    - field.field.node.morph.field_source
     - field.field.node.morph.field_stat_cap
     - field.field.node.morph.field_stat_variance
     - field.field.node.morph.field_stats
@@ -44,6 +43,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
+  field_attribution:
+    weight: 39
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_augmentations:
     weight: 31
     settings:
@@ -76,14 +83,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
-  field_gear:
-    weight: 36
-    settings:
-      match_operator: CONTAINS
-      size: '60'
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_override_autocomplete
   field_gear_type:
     weight: 6
     settings: {  }
@@ -115,11 +114,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: skill_reference_select
-  field_source:
-    weight: 11
-    settings: {  }
-    third_party_settings: {  }
-    type: entity_reference_quantity_select
   field_stat_cap:
     weight: 28
     settings: {  }
@@ -176,5 +170,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_source: true
+hidden: {  }

@@ -1,0 +1,21 @@
+uuid: 6babb34b-ea7c-42c5-8b00-2b51ac4c0c8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stats
+    - node.type.npc
+  module:
+    - ep_statblock
+id: node.npc.field_stats
+field_name: field_stats
+entity_type: node
+bundle: npc
+label: Stats
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: stat_block

@@ -1,0 +1,28 @@
+uuid: a56a80a5-46a6-4019-b51f-531d4d3167ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.attribution
+    - field.storage.node.field_attribution
+    - node.type.strain
+id: node.strain.field_attribution
+field_name: field_attribution
+entity_type: node
+bundle: strain
+label: Attribution
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:component'
+  handler_settings:
+    target_bundles:
+      attribution: attribution
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

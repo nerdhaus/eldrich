@@ -3,12 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.network.field_attribution
     - field.field.node.network.field_description
-    - field.field.node.network.field_source
     - field.field.node.network.field_symbol
     - node.type.network
   module:
-    - entity_reference_quantity
     - text
     - user
 id: node.network.default
@@ -16,19 +15,19 @@ targetEntityType: node
 bundle: network
 mode: default
 content:
+  field_attribution:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_description:
     weight: 101
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_source:
-    weight: 102
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_quantity_label
   field_symbol:
     weight: 103
     label: above
@@ -38,5 +37,4 @@ content:
     type: string
   links:
     weight: 100
-hidden:
-  field_source: true
+hidden: {  }

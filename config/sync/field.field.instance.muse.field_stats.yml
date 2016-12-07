@@ -1,0 +1,21 @@
+uuid: c58b2133-7db3-4a07-82ab-ec55d3c93e30
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.instance.muse
+    - field.storage.instance.field_stats
+  module:
+    - ep_statblock
+id: instance.muse.field_stats
+field_name: field_stats
+entity_type: instance
+bundle: muse
+label: Stats
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: stat_block

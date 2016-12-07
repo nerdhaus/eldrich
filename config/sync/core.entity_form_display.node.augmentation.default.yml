@@ -4,13 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.augmentation.field_armor
+    - field.field.node.augmentation.field_attribution
     - field.field.node.augmentation.field_blueprints
     - field.field.node.augmentation.field_conditional
     - field.field.node.augmentation.field_cost
     - field.field.node.augmentation.field_description
     - field.field.node.augmentation.field_gear_type
     - field.field.node.augmentation.field_morph_types
-    - field.field.node.augmentation.field_source
+    - field.field.node.augmentation.field_special_effect
     - field.field.node.augmentation.field_stats
     - node.type.augmentation
   module:
@@ -34,6 +35,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
+  field_attribution:
+    weight: 30
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_blueprints:
     weight: 9
     settings:
@@ -71,11 +80,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
-  field_source:
-    weight: 11
-    settings: {  }
+  field_special_effect:
+    weight: 31
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_quantity_select
+    type: string_textfield
   field_stats:
     weight: 29
     settings: {  }
@@ -113,5 +124,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_source: true
+hidden: {  }

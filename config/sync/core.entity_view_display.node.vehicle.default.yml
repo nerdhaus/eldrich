@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.vehicle.field_armor
+    - field.field.node.vehicle.field_attribution
     - field.field.node.vehicle.field_augmentations
     - field.field.node.vehicle.field_blueprints
     - field.field.node.vehicle.field_cost
@@ -15,7 +16,6 @@ dependencies:
     - field.field.node.vehicle.field_movement_speed
     - field.field.node.vehicle.field_passengers
     - field.field.node.vehicle.field_skill_bonus
-    - field.field.node.vehicle.field_source
     - field.field.node.vehicle.field_stats
     - node.type.vehicle
   module:
@@ -36,6 +36,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_text
+  field_attribution:
+    weight: 117
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_augmentations:
     weight: 114
     label: above
@@ -118,13 +125,6 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
-  field_source:
-    weight: 105
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_quantity_label
   field_stats:
     weight: 109
     label: above
@@ -133,5 +133,4 @@ content:
     type: stat_block_table
   links:
     weight: 100
-hidden:
-  field_source: true
+hidden: {  }

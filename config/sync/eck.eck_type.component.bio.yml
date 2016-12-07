@@ -1,9 +1,0 @@
-uuid: 67a818fb-1c92-46d3-81bd-fd46a3d4c6e3
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.component
-name: Bio
-type: bio
-description: 'Background, faction affiliation, reputation, and cash assets for a given character.'

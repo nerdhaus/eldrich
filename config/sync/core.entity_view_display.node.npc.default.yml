@@ -3,9 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.npc.field_attribution
     - field.field.node.npc.field_description
+    - field.field.node.npc.field_equipped_armor
+    - field.field.node.npc.field_equipped_weapons
+    - field.field.node.npc.field_gear
+    - field.field.node.npc.field_identity
+    - field.field.node.npc.field_morph
+    - field.field.node.npc.field_quote
+    - field.field.node.npc.field_skills
+    - field.field.node.npc.field_sleights
+    - field.field.node.npc.field_stats
+    - field.field.node.npc.field_traits
     - node.type.npc
   module:
+    - entity_reference_override
+    - ep_skill_reference
+    - ep_statblock
     - text
     - user
 id: node.npc.default
@@ -13,12 +27,90 @@ targetEntityType: node
 bundle: npc
 mode: default
 content:
+  field_attribution:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_description:
     weight: 101
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
+  field_equipped_armor:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_equipped_weapons:
+    weight: 109
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_gear:
+    weight: 111
+    label: above
+    settings:
+      override_action: title
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_override_label
+  field_identity:
+    weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_morph:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_quote:
+    weight: 113
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_skills:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: skill_reference_label
+  field_sleights:
+    weight: 107
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_stats:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+  field_traits:
+    weight: 108
+    label: above
+    settings:
+      override_action: title
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_override_label
   links:
     weight: 100
 hidden: {  }

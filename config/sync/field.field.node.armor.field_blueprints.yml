@@ -1,0 +1,23 @@
+uuid: 6cbafcc5-eb0c-45d2-9c36-0767c0cd5098
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blueprints
+    - node.type.armor
+id: node.armor.field_blueprints
+field_name: field_blueprints
+entity_type: node
+bundle: armor
+label: 'Blueprints Available'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

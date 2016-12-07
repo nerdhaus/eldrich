@@ -1,0 +1,33 @@
+uuid: e5240e9c-5a4d-4720-87e1-78f000c42dfc
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.identity
+    - field.storage.component.field_rep
+    - node.type.network
+  module:
+    - entity_reference_quantity
+id: component.identity.field_rep
+field_name: field_rep
+entity_type: component
+bundle: identity
+label: 'Network Rep'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      network: network
+    sort:
+      field: _none
+    auto_create: 0
+    auto_create_bundle: ''
+  qty_min: '0'
+  qty_max: '99'
+  qty_label: Rep
+field_type: entity_reference_quantity

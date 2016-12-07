@@ -1,0 +1,28 @@
+uuid: edf2ebe2-51aa-4e5b-ba84-c9eb0f8e104e
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.stage
+    - field.storage.node.field_stages
+    - node.type.strain
+id: node.strain.field_stages
+field_name: field_stages
+entity_type: node
+bundle: strain
+label: Stages
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:component'
+  handler_settings:
+    target_bundles:
+      stage: stage
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

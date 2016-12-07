@@ -1,0 +1,28 @@
+uuid: 12f2e1ec-da56-4350-a4b2-a017a275362b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gear
+    - node.type.npc
+  module:
+    - entity_reference_override
+id: node.npc.field_gear
+field_name: field_gear
+entity_type: node
+bundle: npc
+label: Gear
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: select_lists
+      display_name: gear
+      arguments: {  }
+  override_label: Notes
+field_type: entity_reference_override

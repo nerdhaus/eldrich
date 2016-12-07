@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.skill.field_linked_aptitude
     - field.field.node.skill.field_no_defaulting
     - field.field.node.skill.field_skill_type
-    - field.field.node.skill.field_source
     - field.field.node.skill.field_specializations
     - field.field.node.skill.field_usage
     - node.type.skill
@@ -39,6 +38,5 @@ hidden:
   field_linked_aptitude: true
   field_no_defaulting: true
   field_skill_type: true
-  field_source: true
   field_specializations: true
   field_usage: true

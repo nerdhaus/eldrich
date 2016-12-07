@@ -1,0 +1,19 @@
+uuid: 5040b5a9-d0d5-4d84-9fe9-cfd3014013cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_special_effect
+    - node.type.weapon
+id: node.weapon.field_special_effect
+field_name: field_special_effect
+entity_type: node
+bundle: weapon
+label: 'Special Effect'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

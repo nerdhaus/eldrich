@@ -1,0 +1,31 @@
+uuid: 90262571-aa98-4908-8020-75a360ce25e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_traits
+    - node.type.creature
+    - node.type.trait
+  module:
+    - entity_reference_override
+id: node.creature.field_traits
+field_name: field_traits
+entity_type: node
+bundle: creature
+label: Traits
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      trait: trait
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+  override_label: Notes
+field_type: entity_reference_override

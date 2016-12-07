@@ -3,13 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.derangement.field_attribution
     - field.field.node.derangement.field_derangement_level
     - field.field.node.derangement.field_description
-    - field.field.node.derangement.field_source
     - field.field.node.derangement.field_usage
     - node.type.derangement
   module:
-    - entity_reference_quantity
     - text
     - user
 id: node.derangement.default
@@ -23,6 +22,13 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_attribution:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_derangement_level:
     weight: 104
     label: above
@@ -36,13 +42,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_source:
-    weight: 105
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_quantity_label
   field_usage:
     weight: 103
     label: above
@@ -51,5 +50,4 @@ content:
     type: text_default
   links:
     weight: 100
-hidden:
-  field_source: true
+hidden: {  }

@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.trait.field_ego_trait
     - field.field.node.trait.field_morph_trait
     - field.field.node.trait.field_skills
-    - field.field.node.trait.field_source
     - field.field.node.trait.field_stats
     - node.type.trait
   module:
@@ -36,5 +35,4 @@ hidden:
   field_ego_trait: true
   field_morph_trait: true
   field_skills: true
-  field_source: true
   field_stats: true

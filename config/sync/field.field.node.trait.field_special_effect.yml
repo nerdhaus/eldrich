@@ -1,0 +1,19 @@
+uuid: 3d01c924-15d2-4015-bdf2-4dd77f73c494
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_special_effect
+    - node.type.trait
+id: node.trait.field_special_effect
+field_name: field_special_effect
+entity_type: node
+bundle: trait
+label: 'Special Effect'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

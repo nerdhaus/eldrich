@@ -6,6 +6,7 @@ dependencies:
     - eck.eck_type.instance.morph
     - field.field.instance.morph.field_augmentations
     - field.field.instance.morph.field_mobility_system
+    - field.field.instance.morph.field_model
     - field.field.instance.morph.field_movement_speed
     - field.field.instance.morph.field_skills
     - field.field.instance.morph.field_stats
@@ -30,6 +31,14 @@ content:
     type: entity_reference_override_autocomplete
   field_mobility_system:
     weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_model:
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60

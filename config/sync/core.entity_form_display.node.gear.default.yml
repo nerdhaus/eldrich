@@ -3,11 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.gear.field_attribution
     - field.field.node.gear.field_blueprints
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
     - field.field.node.gear.field_gear_type
-    - field.field.node.gear.field_source
     - node.type.gear
   module:
     - entity_reference_quantity
@@ -23,6 +23,14 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
+  field_attribution:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_blueprints:
     weight: 9
     settings:
@@ -46,11 +54,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_source:
-    weight: 11
-    settings: {  }
-    third_party_settings: {  }
-    type: entity_reference_quantity_select
   path:
     type: path
     weight: 5
@@ -83,5 +86,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_source: true
+hidden: {  }
