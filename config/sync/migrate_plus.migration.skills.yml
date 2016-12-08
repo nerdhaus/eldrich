@@ -29,8 +29,9 @@ source:
       fields: Fields
     -
       specializations: Specializations
-  keys:
-    - title
+  ids:
+    title:
+      type: string
   constants:
     format: basic_html
 process:

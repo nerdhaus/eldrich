@@ -25,8 +25,9 @@ source:
       purchase: Default
     -
       weight: Weight
-  keys:
-    - title
+  ids:
+    title:
+      type: string
   constants:
     content_type: source
 process:

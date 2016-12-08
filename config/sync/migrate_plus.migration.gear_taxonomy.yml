@@ -19,9 +19,11 @@ source:
       description: Description
     -
       book: book
-  keys:
-    - title
-    - parent
+  ids:
+    title:
+      type: string
+    parent:
+      type: string
 process:
   name: title
   description: description

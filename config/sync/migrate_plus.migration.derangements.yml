@@ -21,8 +21,9 @@ source:
       usage: Usage
     -
       book: Book
-  keys:
-    - title
+  ids:
+    title:
+      type: string
   constants:
     format: basic_html
 process:

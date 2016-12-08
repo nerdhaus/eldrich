@@ -23,8 +23,9 @@ source:
       rating: Rating
     -
       book: Book
-  keys:
-    - title
+  ids:
+    title:
+      type: string
   constants:
     format: basic_html
 process:

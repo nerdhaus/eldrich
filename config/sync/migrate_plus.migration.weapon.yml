@@ -59,8 +59,9 @@ source:
       uses_ammo: 'Uses Ammo'
     -
       uses_mods: 'Uses Mods'
-  keys:
-    - title
+  ids:
+    title:
+      type: string
 process:
   title: title
   type:

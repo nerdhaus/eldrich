@@ -25,8 +25,9 @@ source:
       locations: Locations
     -
       book: Book
-  keys:
-    - title
+  ids:
+    title:
+      type: string
   constants:
     content_type: faction
 process:

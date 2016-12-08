@@ -13,8 +13,9 @@ source:
   column_names:
     -
       title: Title
-  keys:
-    - title
+  ids:
+    title:
+      type: string
 process:
   name: title
   description: description

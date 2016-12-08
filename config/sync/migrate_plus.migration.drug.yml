@@ -35,8 +35,9 @@ source:
       addiction: Addiction
     -
       modifier: Modifier
-  keys:
-    - title
+  ids:
+    title:
+      type: string
 process:
   title: title
   type:

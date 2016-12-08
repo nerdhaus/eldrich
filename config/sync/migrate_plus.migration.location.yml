@@ -23,8 +23,9 @@ source:
       population: Population
     -
       book: Book
-  keys:
-    - title
+  ids:
+    title:
+      type: string
   constants:
     content_type: location
 process:

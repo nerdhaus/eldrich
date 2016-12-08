@@ -23,9 +23,11 @@ source:
       description: Description
     -
       speed: Speed
-  keys:
-    - title
-    - table
+  ids:
+    title:
+      type: string
+    table:
+      type: string
   constants:
     format: basic_html
 process:

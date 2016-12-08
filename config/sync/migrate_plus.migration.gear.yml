@@ -25,8 +25,9 @@ source:
       blueprints: Blueprints
     -
       book: Book
-  keys:
-    - title
+  ids:
+    title:
+      type: string
 process:
   title: title
   type:
