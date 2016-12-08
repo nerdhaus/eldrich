@@ -90,11 +90,7 @@ process:
     plugin: skip_on_empty
     method: process
     source: description
-<<<<<<< 4614654d5045faa0cf90aa7f86bd7152cfb63e4d
   attribution/field_attribution_citations:
-=======
-  field_attribution:
->>>>>>> Attributes tweaked
     plugin: source_with_page
     entity_type: node
     bundle: source
