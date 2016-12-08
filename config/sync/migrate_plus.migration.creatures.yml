@@ -34,7 +34,7 @@ process:
     plugin: entity_lookup
     source: type
     value_key: name
-    bundle: gear
+    bundle: gear_type
     bundle_key: vid
     entity_type: taxonomy_term
   field_description/value: description

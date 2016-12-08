@@ -8,7 +8,7 @@ migration_group: eldrich_core
 label: Locations
 source:
   plugin: csv
-  path: modules/custom/ep_import/data/factions.csv
+  path: modules/custom/ep_import/data/locations.csv
   header_row_count: 1
   column_names:
     -
@@ -58,6 +58,7 @@ process:
     plugin: reference_factory
     entity_type: component
     bundle: attribution
+    value_key: title
     bundle_key: type
     source: '@attribution'
 destination:

@@ -14,6 +14,8 @@ source:
     -
       title: Title
     -
+      short: 'Short Title'
+    -
       type: Type
     -
       description: Description
@@ -26,7 +28,7 @@ source:
     -
       book: Book
     -
-      special_effect: effects
+      special_effect: 'Special Effects'
     -
       dice: 'Damage Dice'
     -
@@ -68,12 +70,12 @@ process:
     plugin: entity_lookup
     source: type
     value_key: name
-    bundle: gear
+    bundle: gear_type
     bundle_key: vid
     entity_type: taxonomy_term
   field_description/value: description
-  field_special_effect/value: effects
-  field_cost/target_id:
+  field_special_effect/value: special_effects
+  field_cost:
     plugin: entity_lookup
     source: cost
     value_key: title
@@ -105,22 +107,22 @@ process:
       'FALSE': 0
     default_value: 0
   field_damage_dice:
-    - plugin: operation_string
-    - source: dice
+    plugin: operation_string
+    source: dice
   field_damage_modifier:
-    - plugin: operation_string
-    - source: dmg
+    plugin: operation_string
+    source: dmg
   field_ap_modifier:
-    - plugin: operation_string
-    - source: ap
+    plugin: operation_string
+    source: ap
   field_magazine_size:
-    - plugin: operation_string
-    - source: rounds
+    plugin: operation_string
+    source: rounds
   field_damage_effects:
     -
       plugin: skip_on_empty
       method: process
-      source: effects
+      source: damage_effects
     -
       plugin: explode
       delimiter: ','
