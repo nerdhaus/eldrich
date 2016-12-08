@@ -149,6 +149,5 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - tables
-    - sources
-    - gear
+    - augmentations
+    - weapons

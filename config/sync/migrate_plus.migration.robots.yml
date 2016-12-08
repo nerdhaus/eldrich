@@ -5,7 +5,7 @@ dependencies: {  }
 id: robots
 migration_tags: null
 migration_group: eldrich_gear
-label: 'Robots'
+label: Robots
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/robots.csv

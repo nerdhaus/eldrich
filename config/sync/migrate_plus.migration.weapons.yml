@@ -163,7 +163,6 @@ process:
       bundle: modes
       bundle_key: type
       value_key: field_lookup_code
-  field_magazine_size: rounds
   field_range:
     -
       plugin: skip_on_empty

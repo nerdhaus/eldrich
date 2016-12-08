@@ -8,7 +8,7 @@ migration_group: eldrich_gear
 label: Armor
 source:
   plugin: csv
-  path: modules/custom/ep_import/gear/misc.csv
+  path: modules/custom/ep_import/gear/armor.csv
   header_row_count: 1
   column_names:
     -
@@ -50,7 +50,7 @@ process:
     bundle_key: vid
     entity_type: taxonomy_term
   field_description/value: description
-  field_special_effect/value: description
+  field_special_effect/value: effect
   field_cost/target_id:
     plugin: entity_lookup
     source: cost

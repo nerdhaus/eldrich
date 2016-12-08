@@ -5,7 +5,7 @@ dependencies: {  }
 id: creatures
 migration_tags: null
 migration_group: eldrich_chars
-label: 'Creatures'
+label: Creatures
 source:
   plugin: csv
   path: modules/custom/ep_import/characters/creatures.csv
