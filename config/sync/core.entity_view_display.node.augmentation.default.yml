@@ -10,9 +10,11 @@ dependencies:
     - field.field.node.augmentation.field_cost
     - field.field.node.augmentation.field_description
     - field.field.node.augmentation.field_gear_type
+    - field.field.node.augmentation.field_mobility_system
     - field.field.node.augmentation.field_morph_types
     - field.field.node.augmentation.field_special_effect
     - field.field.node.augmentation.field_stats
+    - field.field.node.augmentation.field_weapon
     - node.type.augmentation
   module:
     - entity_reference_quantity
@@ -76,6 +78,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_mobility_system:
+    weight: 114
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_morph_types:
     weight: 110
     label: above
@@ -96,6 +105,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: stat_block_table
+  field_weapon:
+    weight: 115
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   links:
     weight: 100
 hidden: {  }
