@@ -43,11 +43,14 @@ content:
   field_attribution:
     weight: 34
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      override_labels: false
+      collapsed: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: inline_entity_form_simple
   field_augmentations:
     weight: 30
     settings:

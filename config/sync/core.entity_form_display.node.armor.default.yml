@@ -16,6 +16,7 @@ dependencies:
   module:
     - entity_reference_quantity
     - ep_complex_values
+    - inline_entity_form
     - path
     - text
 id: node.armor.default
@@ -25,45 +26,45 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 2
     settings: {  }
     third_party_settings: {  }
   field_armor:
-    weight: 31
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
   field_attribution:
-    weight: 38
+    weight: 14
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      override_labels: false
+      collapsed: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: inline_entity_form_simple
   field_blueprints:
-    weight: 33
+    weight: 11
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
   field_cost:
-    weight: 35
-    settings:
-      match_operator: CONTAINS
-      size: '60'
-      placeholder: ''
+    weight: 10
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_quantity_autocomplete
+    type: entity_reference_quantity_select
   field_description:
-    weight: 32
+    weight: 8
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
   field_gear_type:
-    weight: 34
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
@@ -71,51 +72,51 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_is_mod:
-    weight: 37
+    weight: 12
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
   field_special_effect:
-    weight: 39
+    weight: 9
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
   field_uses_mods:
-    weight: 40
+    weight: 13
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
   path:
     type: path
-    weight: 30
+    weight: 5
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 3
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 4
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60

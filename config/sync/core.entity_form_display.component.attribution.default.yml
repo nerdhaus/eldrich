@@ -17,22 +17,19 @@ bundle: attribution
 mode: default
 content:
   field_attribution_citations:
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      size: '60'
-      placeholder: ''
+    weight: 0
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_quantity_autocomplete
+    type: entity_reference_quantity_select
   field_attribution_link:
-    weight: 4
+    weight: 1
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
   field_attribution_notes:
-    weight: 3
+    weight: 2
     settings:
       rows: 5
       placeholder: ''

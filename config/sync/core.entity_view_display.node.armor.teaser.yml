@@ -23,3 +23,4 @@ hidden:
   field_gear_type: true
   field_is_mod: true
   field_special_effect: true
+  field_uses_mods: true

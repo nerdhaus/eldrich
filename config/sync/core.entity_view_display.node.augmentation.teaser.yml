@@ -30,6 +30,8 @@ hidden:
   field_cost: true
   field_description: true
   field_gear_type: true
+  field_mobility_system: true
   field_morph_types: true
   field_special_effect: true
   field_stats: true
+  field_weapon: true
