@@ -29,21 +29,12 @@ process:
     plugin: default_value
     default_value: gear_type
   field_source:
-    plugin: reference_factory
-    entity_type: component
-    bundle: attribution
-    bundle_key: type
-    source: '@attribution'
-=======
-    default_value: gear
-  field_attribution:
     plugin: source_with_page
     source: book
     value_key: field_code
     bundle_key: nid
     bundle: source
     entity_type: node
->>>>>>> Attributes tweaked
   parent:
     -
       plugin: skip_on_empty
