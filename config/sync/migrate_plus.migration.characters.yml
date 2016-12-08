@@ -27,5 +27,6 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
-    - sources
+    - augmentations
+    - armor
+    - gear

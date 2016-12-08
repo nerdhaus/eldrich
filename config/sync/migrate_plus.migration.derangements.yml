@@ -21,9 +21,8 @@ source:
       usage: Usage
     -
       book: Book
-  ids:
-    title:
-      type: string
+  keys:
+    - title
   constants:
     format: basic_html
 process:
@@ -58,4 +57,4 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
+    - tables

@@ -17,9 +17,8 @@ source:
       code: Code
     -
       source: Source
-  ids:
-    title:
-      type: string
+  keys:
+    - title
 process:
   title: title
   type:
@@ -47,4 +46,4 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
+    - tables

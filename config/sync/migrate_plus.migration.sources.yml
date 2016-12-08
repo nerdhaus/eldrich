@@ -25,9 +25,8 @@ source:
       purchase: Default
     -
       weight: Weight
-  ids:
-    title:
-      type: string
+  keys:
+    - title
   constants:
     content_type: source
 process:
@@ -48,4 +47,4 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
+    - tables

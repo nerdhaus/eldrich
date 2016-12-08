@@ -2,10 +2,10 @@ uuid: c7642d95-9ae8-4c23-87c5-2a36fa5b94aa
 langcode: en
 status: true
 dependencies: {  }
-id: drug
+id: drugs
 migration_tags: null
 migration_group: eldrich_gear
-label: ''
+label: Drugs
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/drugs.csv
@@ -35,9 +35,8 @@ source:
       addiction: Addiction
     -
       modifier: Modifier
-  ids:
-    title:
-      type: string
+  keys:
+    - title
 process:
   title: title
   type:
@@ -108,5 +107,5 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
+    - tables
     - sources

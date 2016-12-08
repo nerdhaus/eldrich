@@ -2,10 +2,10 @@ uuid: 16f6dcae-5b86-4b97-9ded-82551b9eff64
 langcode: en
 status: true
 dependencies: {  }
-id: gear_taxonomy
+id: gear_types
 migration_tags: null
 migration_group: eldrich_core
-label: 'Taxonomy for purchasable gear'
+label: 'Gear Types'
 source:
   plugin: csv
   path: modules/custom/ep_import/data/gear-taxonomy.csv
@@ -19,11 +19,9 @@ source:
       description: Description
     -
       book: book
-  ids:
-    title:
-      type: string
-    parent:
-      type: string
+  keys:
+    - title
+    - parent
 process:
   name: title
   description: description
@@ -47,4 +45,6 @@ process:
       migration: gear_taxonomy
 destination:
   plugin: 'entity:taxonomy_term'
-migration_dependencies: null
+migration_dependencies:
+  required:
+    - sources

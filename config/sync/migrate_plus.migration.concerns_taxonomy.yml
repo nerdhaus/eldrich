@@ -2,10 +2,10 @@ uuid: 4f3eb37b-3a27-4dd8-b512-e8ae6f83f1e1
 langcode: en
 status: true
 dependencies: {  }
-id: concerns_taxonomy
+id: concerns
 migration_tags: null
 migration_group: eldrich_core
-label: 'Taxonomy for corporate focuses, memes, etc.'
+label: 'Memes and motivations'
 source:
   plugin: csv
   path: modules/custom/ep_import/data/concerns.csv
@@ -13,9 +13,8 @@ source:
   column_names:
     -
       title: Title
-  ids:
-    title:
-      type: string
+  keys:
+    - title
 process:
   name: title
   description: description

@@ -2,10 +2,10 @@ uuid: 8e0e329e-ea6b-4ff1-baae-ba0a63d4ff1b
 langcode: en
 status: true
 dependencies: {  }
-id: weapon
+id: weapons
 migration_tags: null
 migration_group: eldrich_gear
-label: 'Weapons, mods, and ammunition'
+label: 'Weapons, mods, ammo'
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/weapons.csv
@@ -59,9 +59,8 @@ source:
       uses_ammo: 'Uses Ammo'
     -
       uses_mods: 'Uses Mods'
-  ids:
-    title:
-      type: string
+  keys:
+    - title
 process:
   title: title
   type:
@@ -220,6 +219,6 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
+    - tables
     - skills
     - sources

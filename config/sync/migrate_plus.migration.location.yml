@@ -2,7 +2,7 @@ uuid: 05cc2c84-8752-4906-9fb0-52bbec4dde5e
 langcode: en
 status: true
 dependencies: {  }
-id: location
+id: locations
 migration_tags: null
 migration_group: eldrich_core
 label: Locations
@@ -23,9 +23,8 @@ source:
       population: Population
     -
       book: Book
-  ids:
-    title:
-      type: string
+  keys:
+    - title
   constants:
     content_type: location
 process:
@@ -66,4 +65,4 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
+    - tables

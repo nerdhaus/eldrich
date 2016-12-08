@@ -2,10 +2,10 @@ uuid: 8b484917-38b2-4c72-a645-05663a673748
 langcode: en
 status: true
 dependencies: {  }
-id: strain
+id: strains
 migration_tags: null
 migration_group: eldrich_core
-label: Strain
+label: Strains
 source:
   plugin: csv
   path: modules/custom/ep_import/data/strains.csv
@@ -23,9 +23,8 @@ source:
       rating: Rating
     -
       book: Book
-  ids:
-    title:
-      type: string
+  keys:
+    - title
   constants:
     format: basic_html
 process:
@@ -59,4 +58,4 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
+    - tables

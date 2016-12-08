@@ -2,7 +2,7 @@ uuid: 3c560c91-b7a7-4cce-9f49-747a202fc36d
 langcode: en
 status: true
 dependencies: {  }
-id: morph
+id: morphs
 migration_tags: null
 migration_group: eldrich_gear
 label: 'Morphs and Eidelons'
@@ -45,9 +45,8 @@ source:
       traits: Traits
     -
       cp: 'Creation Points'
-  ids:
-    title:
-      type: string
+  keys:
+    - title
 process:
   title: title
   type:
@@ -210,5 +209,4 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
-    - sources
+    - augmentations

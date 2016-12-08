@@ -29,9 +29,8 @@ source:
       stats: Stats
     -
       book: Book
-  ids:
-    title:
-      type: string
+  keys:
+    - title
 process:
   title: title
   type:
@@ -72,4 +71,4 @@ destination:
 migration_dependencies:
   required:
     - skills
-    - lookup_tables
+    - tables

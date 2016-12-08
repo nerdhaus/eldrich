@@ -5,7 +5,7 @@ dependencies: {  }
 id: gear
 migration_tags: null
 migration_group: eldrich_gear
-label: 'Miscellaneous gear'
+label: 'Generic gear'
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/misc.csv
@@ -25,9 +25,8 @@ source:
       blueprints: Blueprints
     -
       book: Book
-  ids:
-    title:
-      type: string
+  keys:
+    - title
 process:
   title: title
   type:
@@ -94,5 +93,5 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
+    - tables
     - sources

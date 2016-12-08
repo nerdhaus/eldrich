@@ -5,7 +5,7 @@ dependencies: {  }
 id: skills
 migration_tags: null
 migration_group: eldrich_core
-label: 'Core skills list'
+label: 'Core skills'
 source:
   plugin: csv
   path: modules/custom/ep_import/data/skills.csv
@@ -29,9 +29,8 @@ source:
       fields: Fields
     -
       specializations: Specializations
-  ids:
-    title:
-      type: string
+  keys:
+    - title
   constants:
     format: basic_html
 process:
@@ -88,4 +87,4 @@ destination:
 migration_dependencies:
   required:
     - stats
-    - lookup_tables
+    - tables

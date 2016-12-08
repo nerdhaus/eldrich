@@ -2,10 +2,10 @@ uuid: 1cd4a807-5f60-4a1b-8366-da099e52efdb
 langcode: en
 status: true
 dependencies: {  }
-id: mind
+id: minds
 migration_tags: null
 migration_group: eldrich_gear
-label: 'AIs, Ego templates, etc.'
+label: 'AIs and Ego templates'
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/minds.csv
@@ -29,9 +29,8 @@ source:
       stats: Stats
     -
       skills: Skills
-  ids:
-    title:
-      type: string
+  keys:
+    - title
 process:
   title: title
   type:
@@ -96,8 +95,4 @@ process:
       value_key: title
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - lookup_tables
-    - skills
-    - sources
+migration_dependencies: null

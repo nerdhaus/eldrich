@@ -35,9 +35,8 @@ source:
       mod: Mod
     -
       moddable: Moddable
-  ids:
-    title:
-      type: string
+  keys:
+    - title
 process:
   title: title
   type:
@@ -115,7 +114,4 @@ process:
       'FALSE': 0
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - lookup_tables
-    - sources
+migration_dependencies: null

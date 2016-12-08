@@ -5,7 +5,7 @@ dependencies: {  }
 id: creatures
 migration_tags: null
 migration_group: eldrich_chars
-label: ''
+label: 'Creatures'
 source:
   plugin: csv
   path: modules/custom/ep_import/characters/creatures.csv
@@ -23,9 +23,8 @@ source:
       minimum: Minimum
     -
       book: Book
-  ids:
-    title:
-      type: string
+  keys:
+    - title
 process:
   title: title
   type:
@@ -67,5 +66,5 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
-    - sources
+    - weapons
+    - augmentations

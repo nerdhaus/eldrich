@@ -2,7 +2,7 @@ uuid: e391bd2f-0158-4666-a8de-00a19bf74d6b
 langcode: en
 status: true
 dependencies: {  }
-id: faction
+id: factions
 migration_tags: null
 migration_group: eldrich_core
 label: Factions
@@ -25,9 +25,8 @@ source:
       locations: Locations
     -
       book: Book
-  ids:
-    title:
-      type: string
+  keys:
+    - title
   constants:
     content_type: faction
 process:
@@ -82,5 +81,5 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
-    - location
+    - tables
+    - locations

@@ -2,7 +2,7 @@ uuid: 8bebd216-9f1d-45bf-8b85-1db5ddaaadd6
 langcode: en
 status: true
 dependencies: {  }
-id: augmentation
+id: augmentations
 migration_tags: null
 migration_group: eldrich_gear
 label: 'Augmentations and enhancements'
@@ -41,9 +41,8 @@ source:
       conditional: Conditional
     -
       morphs: Morphs
-  ids:
-    title:
-      type: string
+  keys:
+    - title
 process:
   title: title
   type:
@@ -150,5 +149,4 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
-    - sources
+    - weapons

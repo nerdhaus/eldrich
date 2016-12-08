@@ -2,10 +2,10 @@ uuid: aaa81950-72d6-4bbd-8fc9-e7ed72c69cfc
 langcode: en
 status: true
 dependencies: {  }
-id: robot
+id: robots
 migration_tags: null
 migration_group: eldrich_gear
-label: 'Robots and synth shells'
+label: 'Robots'
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/robots.csv
@@ -41,9 +41,8 @@ source:
       skills: Skills
     -
       mind: Mind
-  ids:
-    title:
-      type: string
+  keys:
+    - title
 process:
   title: title
   type:
@@ -187,7 +186,7 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
-    - sources
-    - skills
     - gear
+    - augmentations
+    - weapons
+    - minds

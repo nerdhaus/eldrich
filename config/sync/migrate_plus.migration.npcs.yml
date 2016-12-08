@@ -5,7 +5,7 @@ dependencies: {  }
 id: npcs
 migration_tags: null
 migration_group: eldrich_chars
-label: ''
+label: 'NPCs'
 source:
   plugin: csv
   path: modules/custom/ep_import/characters/npcs.csv
@@ -19,9 +19,8 @@ source:
       description: Description
     -
       book: Book
-  ids:
-    title:
-      type: string
+  keys:
+    - title
 process:
   title: title
   type:
@@ -52,5 +51,6 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
-    - sources
+    - gear
+    - augmentations
+    - armor

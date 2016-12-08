@@ -2,10 +2,10 @@ uuid: 38696a73-4f31-4a91-bba1-8904655218e4
 langcode: en
 status: true
 dependencies: {  }
-id: vehicle
+id: vehicles
 migration_tags: null
 migration_group: eldrich_gear
-label: 'Vehicles, exoskeletons, and spacecraft'
+label: 'Vehicles and spacecraft'
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/vehicles.csv
@@ -41,9 +41,8 @@ source:
       speed: speed
     -
       gear: Gear
-  ids:
-    title:
-      type: string
+  keys:
+    - title
 process:
   title: title
   type:
@@ -150,6 +149,6 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
+    - tables
     - sources
     - gear
