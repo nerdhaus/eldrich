@@ -104,19 +104,19 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
- field_damage_dice:
-   - plugin: operation_string
-   - source: dice
- field_damage_modifier:
-   - plugin: operation_string
-   - source: dmg
- field_ap_modifier:
-   - plugin: operation_string
-   - source: ap
- field_magazine_size:
-   - plugin: operation_string
-   - source: rounds
- field_damage_effects:
+  field_damage_dice:
+    - plugin: operation_string
+    - source: dice
+  field_damage_modifier:
+    - plugin: operation_string
+    - source: dmg
+  field_ap_modifier:
+    - plugin: operation_string
+    - source: ap
+  field_magazine_size:
+    - plugin: operation_string
+    - source: rounds
+  field_damage_effects:
     -
       plugin: skip_on_empty
       method: process
