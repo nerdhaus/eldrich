@@ -1,45 +1,69 @@
-uuid: 952bd50a-5a48-42c5-90eb-27acdb8fcad2
 langcode: en
 status: true
 dependencies: {  }
-id: derangements
+id: faction
 migration_tags: null
 migration_group: eldrich_core
-label: Derangements
+label: 'Factions'
 source:
   plugin: csv
-  path: modules/custom/ep_import/data/derangements.csv
+  path: modules/custom/ep_import/data/factions.csv
   header_row_count: 1
   column_names:
     -
       title: Title
     -
+      parent: Parent
+    -
       type: Type
     -
       description: Description
     -
-      usage: Usage
+      concerns: Concerns
+    -
+      locations: Locations
     -
       book: Book
   keys:
     - title
   constants:
-    format: basic_html
+    content_type: faction
 process:
   title: title
-  type:
-    plugin: default_value
-    default_value: derangement
-  field_derangement_level:
+  field_parent_faction:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration
+      migration: faction
+  type: constants/content_type
+  field_faction_type/target_id:
     plugin: entity_lookup
     source: type
     value_key: title
     bundle_key: type
-    bundle: derangement_magnitude
+    bundle: faction_type
     entity_type: lookup
-    ignore_case: true
   field_description/value: description
-  field_usage/value: usage
+  field_concerns: NULL
+  field_faction_type: NULL
+  field_locations:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: locations
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      bundle: location
+      bundle_key: type
+      entity_type: node
   attribution/field_attribution_citations:
     plugin: source_with_page
     entity_type: node

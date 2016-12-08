@@ -1,24 +1,25 @@
-uuid: 952bd50a-5a48-42c5-90eb-27acdb8fcad2
 langcode: en
 status: true
 dependencies: {  }
-id: derangements
+id: strain
 migration_tags: null
 migration_group: eldrich_core
-label: Derangements
+label: Strain
 source:
   plugin: csv
-  path: modules/custom/ep_import/data/derangements.csv
+  path: modules/custom/ep_import/data/strains.csv
   header_row_count: 1
   column_names:
     -
       title: Title
     -
-      type: Type
-    -
       description: Description
     -
-      usage: Usage
+      vectors: Vectors
+    -
+      infectiousness: Infectiousness
+    -
+      rating: Rating
     -
       book: Book
   keys:
@@ -29,17 +30,16 @@ process:
   title: title
   type:
     plugin: default_value
-    default_value: derangement
-  field_derangement_level:
+    default_value: strain
+  field_description/value: description
+  field_vectors/target_id:
     plugin: entity_lookup
-    source: type
+    source: vectors
     value_key: title
     bundle_key: type
-    bundle: derangement_magnitude
+    bundle: vector
     entity_type: lookup
-    ignore_case: true
-  field_description/value: description
-  field_usage/value: usage
+  field_infectiousness/value: infectiousness
   attribution/field_attribution_citations:
     plugin: source_with_page
     entity_type: node

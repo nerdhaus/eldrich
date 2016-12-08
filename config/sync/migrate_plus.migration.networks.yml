@@ -19,8 +19,6 @@ source:
       source: Source
   keys:
     - title
-  constants:
-    format: basic_html
 process:
   title: title
   type:
@@ -30,10 +28,7 @@ process:
     plugin: skip_on_empty
     method: process
     source: code
-  field_description/value:
-    plugin: skip_on_empty
-    method: process
-    source: description
+  field_description/value: description
   attribution/field_attribution_citations:
     plugin: source_with_page
     entity_type: node
