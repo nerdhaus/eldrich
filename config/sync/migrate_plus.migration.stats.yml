@@ -28,7 +28,7 @@ source:
     -
       weight: Weight
   keys:
-    code
+    - code
 process:
   type:
     plugin: default_value
