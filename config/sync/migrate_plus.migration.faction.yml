@@ -1,10 +1,11 @@
+uuid: e391bd2f-0158-4666-a8de-00a19bf74d6b
 langcode: en
 status: true
 dependencies: {  }
 id: faction
 migration_tags: null
 migration_group: eldrich_core
-label: 'Factions'
+label: Factions
 source:
   plugin: csv
   path: modules/custom/ep_import/data/factions.csv
@@ -47,8 +48,8 @@ process:
     bundle: faction_type
     entity_type: lookup
   field_description/value: description
-  field_concerns: NULL
-  field_faction_type: NULL
+  field_concerns: null
+  field_faction_type: null
   field_locations:
     -
       plugin: skip_on_empty

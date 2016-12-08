@@ -26,7 +26,7 @@ source:
     -
       book: Book
     -
-      stats: stats
+      durability: durability
     -
       linked: linked
     -
@@ -40,7 +40,7 @@ source:
     -
       speed: speed
     -
-      augmentations: Augmentations
+      gear: Gear
   keys:
     - title
 process:
@@ -67,13 +67,19 @@ process:
     plugin: skip_on_empty
     method: process
     source: minimum
-  field_attribution:
+  attribution/field_attribution_citations:
     plugin: source_with_page
     entity_type: node
     bundle: source
     bundle_key: type
     value_key: field_code
     source: book
+  field_attribution:
+    plugin: reference_factory
+    entity_type: component
+    bundle: attribution
+    bundle_key: type
+    source: '@attribution'
   field_blueprints:
     plugin: static_map
     source: blueprints
@@ -92,16 +98,7 @@ process:
       keys:
         - energy
         - kinetic
-  field_armor/replaces:
-    plugin: static_map
-    source: stackable
-    map:
-      'TRUE': 0
-      'FALSE': 1
-    default_value: 1
-  field_stats:
-    plugin: stat_block
-    source: stats
+  field_stats/dur: durability
   field_linked_skill:
     plugin: entity_lookup_plus
     destination_field: target_id
@@ -131,26 +128,11 @@ process:
         - walk
         - run
         - cruise
-  field_augmentations:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: augmentations
-    -
-      plugin: explode
-      delimiter: ','
-    -
-      plugin: entity_lookup_plus
-      destination_field: target_id
-      value_key: title
-      bundle: augmentation
-      bundle_key: type
-      entity_type: node
   field_gear:
     -
       plugin: skip_on_empty
       method: process
-      source: augmentations
+      source: gear
     -
       plugin: explode
       delimiter: ','

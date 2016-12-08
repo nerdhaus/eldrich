@@ -28,6 +28,8 @@ source:
     -
       stats: Stats
     -
+      durability: Durability
+    -
       armor: Armor
     -
       mobility: Mobility
@@ -106,6 +108,7 @@ process:
   field_stats:
     plugin: stat_block
     source: stats
+  field_stats/dur: durability
   field_skills:
     -
       plugin: skip_on_empty

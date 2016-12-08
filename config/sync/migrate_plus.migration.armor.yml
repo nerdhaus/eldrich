@@ -1,11 +1,11 @@
-uuid: 7be70e5e-ace6-4e0a-88ed-cb7d567a1050
+uuid: 7c3e1b0f-1c57-41e6-ae0c-7752569ddbf5
 langcode: en
 status: true
 dependencies: {  }
-id: gear
+id: armor
 migration_tags: null
 migration_group: eldrich_gear
-label: 'Miscellaneous gear'
+label: Armor
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/misc.csv
@@ -25,13 +25,23 @@ source:
       blueprints: Blueprints
     -
       book: Book
+    -
+      effect: Effect
+    -
+      armor: Armor
+    -
+      replaces: Replaces
+    -
+      mod: Mod
+    -
+      moddable: Moddable
   keys:
     - title
 process:
   title: title
   type:
     plugin: default_value
-    default_value: gear
+    default_value: armor
   field_gear_type/target_id:
     plugin: entity_lookup
     source: type
@@ -40,6 +50,7 @@ process:
     bundle_key: vid
     entity_type: taxonomy_term
   field_description/value: description
+  field_special_effect/value: description
   field_cost/target_id:
     plugin: entity_lookup
     source: cost
@@ -84,11 +95,23 @@ process:
         - kinetic
   field_armor/replaces:
     plugin: static_map
-    source: stackable
+    source: replaces
     map:
-      'TRUE': 0
-      'FALSE': 1
-    default_value: 1
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
+  field_is_mod:
+    plugin: static_map
+    source: mod
+    map:
+      'TRUE': 1
+      'FALSE': 0
+  field_uses_mods:
+    plugin: static_map
+    source: moddable
+    map:
+      'TRUE': 1
+      'FALSE': 0
 destination:
   plugin: 'entity:node'
 migration_dependencies:

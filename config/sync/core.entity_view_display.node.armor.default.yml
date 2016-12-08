@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.armor.field_gear_type
     - field.field.node.armor.field_is_mod
     - field.field.node.armor.field_special_effect
+    - field.field.node.armor.field_uses_mods
     - node.type.armor
   module:
     - entity_reference_quantity
@@ -80,6 +81,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_uses_mods:
+    weight: 110
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   links:
     weight: 100
 hidden: {  }

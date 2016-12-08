@@ -26,29 +26,37 @@ source:
     -
       book: Book
     -
-      damage: Damage
+      special_effect: effects
+    -
+      dice: 'Damage Dice'
+    -
+      dmg: 'Damage Bonus'
     -
       ap: AP
     -
-      bonus: Bonus
+      atk: 'Attack Bonus'
     -
       modes: Modes
     -
       rounds: Rounds
     -
-      linked: Linked
+      skill: Skill
     -
       aoe: AoE
     -
-      effects: Effects
+      damage_effects: 'Damage Effects'
     -
       range: Range
     -
       reach: Reach
     -
-      ammo: ammo
+      is_ammo: 'Is Ammo'
     -
-      accessory: Accessory
+      is_mod: 'Is Mod'
+    -
+      uses_ammo: 'Uses Ammo'
+    -
+      uses_mods: 'Uses Mods'
   keys:
     - title
 process:
@@ -64,6 +72,7 @@ process:
     bundle_key: vid
     entity_type: taxonomy_term
   field_description/value: description
+  field_special_effect/value: effects
   field_cost/target_id:
     plugin: entity_lookup
     source: cost
@@ -75,13 +84,19 @@ process:
     plugin: skip_on_empty
     method: process
     source: minimum
-  field_attribution:
+  attribution/field_attribution_citations:
     plugin: source_with_page
     entity_type: node
     bundle: source
     bundle_key: type
     value_key: field_code
     source: book
+  field_attribution:
+    plugin: reference_factory
+    entity_type: component
+    bundle: attribution
+    bundle_key: type
+    source: '@attribution'
   field_blueprints:
     plugin: static_map
     source: blueprints
@@ -89,7 +104,19 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-  field_additional_effects:
+ field_damage_dice:
+   - plugin: operation_string
+   - source: dice
+ field_damage_modifier:
+   - plugin: operation_string
+   - source: dmg
+ field_ap_modifier:
+   - plugin: operation_string
+   - source: ap
+ field_magazine_size:
+   - plugin: operation_string
+   - source: rounds
+ field_damage_effects:
     -
       plugin: skip_on_empty
       method: process
@@ -101,7 +128,7 @@ process:
       plugin: entity_lookup
       destination_field: target_id
       entity_type: lookup
-      bundle: damage_type
+      bundle: damage_effects
       bundle_key: type
       value_key: title
   field_area_effect:
@@ -119,13 +146,6 @@ process:
       bundle: area_effect
       bundle_key: type
       value_key: title
-  field_damage:
-    plugin: damage_string
-    source: damage
-  field_damage/ap:
-    plugin: skip_on_empty
-    method: process
-    source: ap
   field_firing_modes:
     -
       plugin: skip_on_empty
@@ -138,7 +158,7 @@ process:
       plugin: entity_lookup
       destination_field: target_id
       entity_type: lookup
-      bundle: firing_modes
+      bundle: modes
       bundle_key: type
       value_key: field_lookup_code
   field_magazine_size: rounds
@@ -165,16 +185,30 @@ process:
     source: linked
   field_skill_bonus: bonus
   field_reach: reach
-  field_ammo:
+  field_is_ammo:
     plugin: static_map
-    source: ammo
+    source: is_ammo
     map:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-  field_accessory:
+  field_is_mod:
     plugin: static_map
-    source: accessory
+    source: is_mod
+    map:
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
+  field_uses_ammo:
+    plugin: static_map
+    source: uses_ammo
+    map:
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
+  field_uses_mods:
+    plugin: static_map
+    source: uses_mods
     map:
       'TRUE': 1
       'FALSE': 0

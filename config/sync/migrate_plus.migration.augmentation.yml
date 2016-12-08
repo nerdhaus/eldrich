@@ -26,11 +26,17 @@ source:
     -
       book: Book
     -
+      effect: Effect
+    -
       stats: Stats
     -
       armor: Armor
     -
-      stackable: Stackable
+      replaces: Replaces
+    -
+      weapon: Weapon
+    -
+      movement: Movement
     -
       conditional: Conditional
     -
@@ -50,6 +56,7 @@ process:
     bundle_key: vid
     entity_type: taxonomy_term
   field_description/value: description
+  field_special_effect/value: effect
   field_cost/target_id:
     plugin: entity_lookup
     source: cost
@@ -94,10 +101,10 @@ process:
         - kinetic
   field_armor/replaces:
     plugin: static_map
-    source: stackable
+    source: replaces
     map:
-      'TRUE': 0
-      'FALSE': 1
+      'TRUE': 1
+      'FALSE': 0
     default_value: 1
   field_conditional:
     plugin: static_map
