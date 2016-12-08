@@ -36,7 +36,7 @@ source:
     -
       weapon: Weapon
     -
-      movement: Movement
+      mobility: Mobility
     -
       conditional: Conditional
     -
@@ -131,6 +131,20 @@ process:
       bundle: morph_type
       bundle_key: type
       value_key: title
+  field_mobility_system/target_id:
+    plugin: entity_lookup
+    source: mobility
+    value_key: title
+    bundle: mobility_type
+    bundle_key: type
+    entity_type: lookup
+  field_weapon/target_id:
+    plugin: entity_lookup
+    source: weapon
+    value_key: title
+    bundle: weapon
+    bundle_key: type
+    entity_type: node
 destination:
   plugin: 'entity:node'
 migration_dependencies:
