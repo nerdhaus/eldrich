@@ -3,13 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.component.field_attribution_citations
     - field.storage.node.field_cost
     - field.storage.node.field_description
     - field.storage.node.field_morph_type
-    - field.storage.node.field_source
     - node.type.morph
     - system.menu.main
   module:
+    - eck
     - entity_reference_quantity
     - node
     - text
@@ -388,14 +389,14 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_source:
-          id: field_source
-          table: node__field_source
-          field: field_source
-          relationship: none
+        field_attribution_citations:
+          id: field_attribution_citations
+          table: component__field_attribution_citations
+          field: field_attribution_citations
+          relationship: field_attribution
           group_type: group
           admin_label: ''
-          label: Source
+          label: Citations
           exclude: false
           alter:
             alter_text: false
@@ -504,7 +505,16 @@ display:
       header: {  }
       footer: {  }
       empty: {  }
-      relationships: {  }
+      relationships:
+        field_attribution:
+          id: field_attribution
+          table: node__field_attribution
+          field: field_attribution
+          relationship: none
+          group_type: group
+          admin_label: 'field_attribution: Component'
+          required: false
+          plugin_id: standard
       arguments: {  }
       display_extenders: {  }
     cache_metadata:
@@ -516,10 +526,10 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.component.field_attribution_citations'
         - 'config:field.storage.node.field_cost'
         - 'config:field.storage.node.field_description'
         - 'config:field.storage.node.field_morph_type'
-        - 'config:field.storage.node.field_source'
   page_1:
     display_plugin: page
     id: page_1
@@ -546,7 +556,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.component.field_attribution_citations'
         - 'config:field.storage.node.field_cost'
         - 'config:field.storage.node.field_description'
         - 'config:field.storage.node.field_morph_type'
-        - 'config:field.storage.node.field_source'
