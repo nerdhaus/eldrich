@@ -74,24 +74,6 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-  field_armor:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: armor
-    -
-      plugin: array_to_dict
-      delimiter: /
-      keys:
-        - energy
-        - kinetic
-  field_armor/replaces:
-    plugin: static_map
-    source: stackable
-    map:
-      'TRUE': 0
-      'FALSE': 1
-    default_value: 1
 destination:
   plugin: 'entity:node'
 migration_dependencies:
