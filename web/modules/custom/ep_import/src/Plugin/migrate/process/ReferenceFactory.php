@@ -3,8 +3,13 @@
 namespace Drupal\ep_import\Plugin\migrate\process;
 
 use Drupal\migrate\MigrateExecutableInterface;
-use Drupal\migrate_plus\Plugin\migrate\process\EntityGenerate;
 use Drupal\migrate\Row;
+use Drupal\migrate\ProcessPluginBase;
+use Drupal\Core\Entity\EntityManagerInterface;
+use Drupal\migrate\Plugin\MigrationInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
 
 /**
  * This plugin generates complex entities within the process plugin.
@@ -12,54 +17,37 @@ use Drupal\migrate\Row;
  * @MigrateProcessPlugin(
  *   id = "reference_factory"
  * )
- *
- * @see EntityGenerate
- *
- * All the configuration from the lookup plugin applies here. In its most
- * simple form, this plugin needs no configuration. If there are fields on the
- * generated entity that are required or need some default value, that can be
- * provided via a default_values configuration option.
- *
- * Example usage with default_values configuration:
- * @code
- * destination:
- *   plugin: 'entity:node'
- * process:
- *   type:
- *     plugin: default_value
- *     default_value: page
- *   field_reference:
- *     plugin: reference_factory
- *     source: values
- *     default_values:
- *       description: Default description
- *       field_long_description: Default long description
- * @endcode
  */
-class ReferenceFactory extends EntityGenerate {
+class ReferenceFactory extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+
+  /** @var \Drupal\Core\Entity\EntityManagerInterface */
+  protected $entityManager;
 
   /**
-   * Fabricate an entity.
-   *
-   * This is intended to be extended by implementing classes to provide for more
-   * dynamic default values, rather than just static ones.
-   *
-   * @param $value
-   *   Primary value to use in creation of the entity.
-   *
-   * @return array
-   *   Entity value array.
+   * {@inheritdoc}
    */
-  protected function entity($value) {
-    if (!is_array(($value))) {
-      return parent::entity($value);
-    }
+  public function __construct(array $configuration, $pluginId, $pluginDefinition, EntityManagerInterface $entityManager) {
+    parent::__construct($configuration, $pluginId, $pluginDefinition);
+    $this->entityManager = $entityManager;
+  }
 
-    $entity_values = $value;
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $pluginId, $pluginDefinition, MigrationInterface $migration = NULL) {
+    return new static(
+      $configuration,
+      $pluginId,
+      $pluginDefinition,
+      $container->get('entity.manager')
+    );
+  }
 
-    if ($this->lookupBundleKey) {
-      $entity_values[$this->lookupBundleKey] = $this->lookupBundle;
-    }
+  /**
+   * {@inheritdoc}
+   */
+  public function transform($value, MigrateExecutableInterface $migrateExecutable, Row $row, $destinationProperty) {
+    $entity_values = array_combine($this->configuration['keys'], $value);
 
     // Gather any static default values for properties/fields.
     if (isset($this->configuration['default_values']) && is_array($this->configuration['default_values'])) {
@@ -70,10 +58,11 @@ class ReferenceFactory extends EntityGenerate {
       }
     }
 
-    return $entity_values;
-  }
+    $entity = $this->entityManager
+      ->getStorage($this->configuration['entity_type'])
+      ->create($entity_values);
+    $entity->save();
 
-  protected function query($value) {
-    return NULL;
+    return $entity->id();
   }
 }

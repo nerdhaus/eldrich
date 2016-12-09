@@ -40,7 +40,7 @@ process:
     ignore_case: true
   field_description/value: description
   field_usage/value: usage
-  attribution/field_attribution_citations:
+  citation:
     plugin: source_with_page
     entity_type: node
     bundle: source
@@ -50,9 +50,12 @@ process:
   field_attribution:
     plugin: reference_factory
     entity_type: component
-    bundle: attribution
-    bundle_key: type
-    source: '@attribution'
+    source:
+      - '@citation'
+    keys:
+      - field_attribution_citations
+    default_values:
+      type: attribution
 destination:
   plugin: 'entity:node'
 migration_dependencies:

@@ -68,7 +68,7 @@ process:
     plugin: skip_on_empty
     method: process
     source: minimum
-  attribution/field_attribution_citations:
+  citation:
     plugin: source_with_page
     entity_type: node
     bundle: source
@@ -78,9 +78,12 @@ process:
   field_attribution:
     plugin: reference_factory
     entity_type: component
-    bundle: attribution
-    bundle_key: type
-    source: '@attribution'
+    source:
+      - '@citation'
+    keys:
+      - field_attribution_citations
+    default_values:
+      type: attribution
   field_blueprints:
     plugin: static_map
     source: blueprints
