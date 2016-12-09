@@ -47,7 +47,7 @@ process:
     entity_type: lookup
   field_description/value: description
   field_population: population
-  attribution/field_attribution_citations:
+  citation:
     plugin: source_with_page
     entity_type: node
     bundle: source
@@ -57,10 +57,12 @@ process:
   field_attribution:
     plugin: reference_factory
     entity_type: component
-    bundle: attribution
-    value_key: title
-    bundle_key: type
-    source: '@attribution'
+    source:
+      - '@citation'
+    keys:
+      - field_attribution_citations
+    default_values:
+      type: attribution
 destination:
   plugin: 'entity:node'
 migration_dependencies:

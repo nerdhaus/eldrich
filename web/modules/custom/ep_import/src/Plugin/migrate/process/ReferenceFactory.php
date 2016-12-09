@@ -47,6 +47,10 @@ class ReferenceFactory extends ProcessPluginBase implements ContainerFactoryPlug
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrateExecutable, Row $row, $destinationProperty) {
+    if (empty($value)) {
+      return NULL;
+    }
+
     $entity_values = array_combine($this->configuration['keys'], $value);
 
     // Gather any static default values for properties/fields.
