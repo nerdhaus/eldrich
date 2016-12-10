@@ -40,7 +40,8 @@
         "drupal/range": "1.x-dev",
         "drupal/bootstrap": "^3.0",
         "drupal/replicate": "1.x-dev",
-        "drupal/entity_reference_views_select": "^1.1"
+        "drupal/entity_reference_views_select": "^1.1",
+        "drupal/google_analytics": "^2.1"
     },
     "require-dev": {
         "behat/mink": "~1.7",
