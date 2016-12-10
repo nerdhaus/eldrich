@@ -73,4 +73,4 @@ process:
   field_description/value: description
 destination:
   plugin: 'entity:node'
-migration_dependencies: NULL
+migration_dependencies: null

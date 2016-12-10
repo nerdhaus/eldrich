@@ -34,11 +34,13 @@ hidden:
   field_blueprints: true
   field_cost: true
   field_description: true
+  field_equipped_weapons: true
   field_gear: true
   field_gear_type: true
   field_linked_skill: true
   field_mobility_system: true
   field_movement_speed: true
   field_passengers: true
+  field_short_name: true
   field_skill_bonus: true
   field_stats: true

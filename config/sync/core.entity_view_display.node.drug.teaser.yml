@@ -34,3 +34,4 @@ hidden:
   field_gear_type: true
   field_onset: true
   field_onset_time: true
+  field_short_name: true

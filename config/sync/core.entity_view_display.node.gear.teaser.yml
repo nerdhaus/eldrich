@@ -24,3 +24,4 @@ hidden:
   field_cost: true
   field_description: true
   field_gear_type: true
+  field_short_name: true

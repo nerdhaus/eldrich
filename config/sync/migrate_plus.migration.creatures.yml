@@ -55,7 +55,7 @@ process:
   field_creature_type/target_id:
     plugin: entity_lookup
     source: type
-    value_key: name
+    value_key: title
     bundle: creature_type
     bundle_key: type
     entity_type: lookup
@@ -175,4 +175,4 @@ process:
   field_stress/value: stress
 destination:
   plugin: 'entity:node'
-migration_dependencies: NULL
+migration_dependencies: null

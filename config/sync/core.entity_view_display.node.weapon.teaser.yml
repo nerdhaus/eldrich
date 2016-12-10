@@ -57,6 +57,7 @@ hidden:
   field_magazine_size: true
   field_range: true
   field_reach: true
+  field_short_name: true
   field_skill_bonus: true
   field_special_effect: true
   field_uses_ammo: true
