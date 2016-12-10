@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.mind.field_cost
     - field.field.node.mind.field_description
     - field.field.node.mind.field_gear_type
+    - field.field.node.mind.field_short_name
     - field.field.node.mind.field_skills
     - field.field.node.mind.field_stats
     - node.type.mind
@@ -64,6 +65,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_short_name:
+    weight: 111
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_skills:
     weight: 109
     label: above

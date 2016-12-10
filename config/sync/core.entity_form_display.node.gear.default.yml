@@ -8,9 +8,11 @@ dependencies:
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
     - field.field.node.gear.field_gear_type
+    - field.field.node.gear.field_short_name
     - node.type.gear
   module:
     - entity_reference_quantity
+    - inline_entity_form
     - path
     - text
 id: node.gear.default
@@ -57,6 +59,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_short_name:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   path:
     type: path
     weight: 5

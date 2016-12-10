@@ -12,9 +12,11 @@ dependencies:
     - field.field.node.drug.field_duration
     - field.field.node.drug.field_gear_type
     - field.field.node.drug.field_onset
+    - field.field.node.drug.field_short_name
     - node.type.drug
   module:
     - entity_reference_quantity
+    - inline_entity_form
     - path
     - range
     - text
@@ -91,6 +93,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: range
+  field_short_name:
+    weight: 33
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   path:
     type: path
     weight: 5

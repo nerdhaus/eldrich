@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.augmentation.field_gear_type
     - field.field.node.augmentation.field_mobility_system
     - field.field.node.augmentation.field_morph_types
+    - field.field.node.augmentation.field_short_name
     - field.field.node.augmentation.field_special_effect
     - field.field.node.augmentation.field_stats
     - field.field.node.augmentation.field_weapon
@@ -20,6 +21,7 @@ dependencies:
     - entity_reference_quantity
     - ep_complex_values
     - ep_statblock
+    - inline_entity_form
     - path
     - text
 id: node.augmentation.default
@@ -93,6 +95,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_short_name:
+    weight: 34
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_special_effect:
     weight: 31
     settings:

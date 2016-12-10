@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.weapon.field_magazine_size
     - field.field.node.weapon.field_range
     - field.field.node.weapon.field_reach
+    - field.field.node.weapon.field_short_name
     - field.field.node.weapon.field_skill_bonus
     - field.field.node.weapon.field_special_effect
     - field.field.node.weapon.field_uses_ammo
@@ -30,6 +31,7 @@ dependencies:
     - entity_reference_quantity
     - ep_complex_values
     - field_group
+    - inline_entity_form
     - operation
     - path
     - text
@@ -178,6 +180,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+  field_short_name:
+    weight: 52
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_skill_bonus:
     weight: 18
     settings:

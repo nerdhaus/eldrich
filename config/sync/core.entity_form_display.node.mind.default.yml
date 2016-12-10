@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.mind.field_cost
     - field.field.node.mind.field_description
     - field.field.node.mind.field_gear_type
+    - field.field.node.mind.field_short_name
     - field.field.node.mind.field_skills
     - field.field.node.mind.field_stats
     - node.type.mind
@@ -15,6 +16,7 @@ dependencies:
     - entity_reference_quantity
     - ep_skill_reference
     - ep_statblock
+    - inline_entity_form
     - path
     - text
 id: node.mind.default
@@ -66,6 +68,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_short_name:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_skills:
     weight: 27
     settings: {  }

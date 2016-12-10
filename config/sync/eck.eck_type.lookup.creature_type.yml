@@ -1,0 +1,9 @@
+uuid: af27f764-1e9a-4150-847e-e49aac575fa5
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.lookup
+name: 'Creature Type'
+type: creature_type
+description: ''
