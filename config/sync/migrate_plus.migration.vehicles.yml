@@ -43,6 +43,8 @@ source:
       speed: speed
     -
       gear: Gear
+    -
+      weapons: Weapons
   keys:
     - title
 process:
@@ -105,6 +107,9 @@ process:
         - energy
         - kinetic
   field_stats/dur: durability
+  field_stats/synthetic:
+    plugin: default_value
+    default_value: 1
   field_linked_skill:
     plugin: entity_lookup_plus
     destination_field: target_id

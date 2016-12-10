@@ -43,6 +43,8 @@ source:
       skills: Skills
     -
       mind: Mind
+    -
+      weapons: Weapons
   keys:
     - title
 process:
@@ -115,6 +117,9 @@ process:
     plugin: stat_block
     source: stats
   field_stats/dur: durability
+  field_stats/synthetic:
+    plugin: default_value
+    default_value: 1
   field_skills:
     -
       plugin: skip_on_empty
