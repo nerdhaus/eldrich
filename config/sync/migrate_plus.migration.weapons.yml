@@ -63,6 +63,7 @@ source:
     - title
 process:
   title: title
+  field_short_title: short
   type:
     plugin: default_value
     default_value: weapon

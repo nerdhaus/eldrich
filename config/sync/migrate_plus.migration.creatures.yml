@@ -12,17 +12,39 @@ source:
   header_row_count: 1
   column_names:
     -
-      title: Title
+      title: title
     -
-      type: Type
+      type: type
     -
-      description: Description
+      description: description
     -
-      cost: Cost
+      cost: cost
     -
-      minimum: Minimum
+      minimum: minimum
     -
-      book: Book
+      book: book
+    -
+      stats: stats
+    -
+      synth: synth
+    -
+      skills: skills
+    -
+      armor: armor
+    -
+      mobility: mobility
+    -
+      movement: movement
+    -
+      augmentations: augmentations
+    -
+      traits: traits
+    -
+      sleights: sleights
+    -
+      weapons: weapons
+    -
+      stress: stress
   keys:
     - title
 process:
@@ -67,7 +89,4 @@ process:
       type: attribution
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - weapons
-    - augmentations
+migration_dependencies: NULL
