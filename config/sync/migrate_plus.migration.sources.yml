@@ -34,8 +34,8 @@ source:
 process:
   title: title
   type: constants/content_type
-  field_source_type/target_id:
-    plugin: entity_lookup
+  field_source_type:
+    plugin: entity_lookup_plus
     source: type
     value_key: title
     bundle_key: type

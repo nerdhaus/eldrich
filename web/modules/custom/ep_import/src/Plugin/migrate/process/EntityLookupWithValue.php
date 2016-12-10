@@ -21,13 +21,24 @@ class EntityLookupWithValue extends EntityLookup {
   /** @var string */
   protected $delimiter;
 
+  /** @var string */
+  protected $lookupValueKey;
+
   /**
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrateExecutable, Row $row, $destinationProperty) {
     // We want to handle these nicely later.
-    $this->extraKey = 'override';
-    $this->delimiter = ':';
+    if ($this->extraKey = $this->configuration['extra_value_key') {}
+    else {
+      $this->extraKey = 'override';
+    }
+
+    if ($this->delimiter = $this->configuration['delimiter') {}
+    else {
+      $this->delimiter = ':';
+    }
+
     $results = [];
 
     if (strpos($value, $this->delimiter)) {
@@ -45,6 +56,16 @@ class EntityLookupWithValue extends EntityLookup {
         'target_id' => $entity,
         $this->extraKey => $notes,
       );
+    }
+    elseif (!empty($this->configuration['fallback_value_key'])) {
+      // Didn't find a match, try for the short name.
+      $this->lookupValueKey = $this->configuration['fallback_value_key'];
+      if ($entity = parent::transform($title, $migrateExecutable, $row, $destinationProperty)) {
+        $results = array(
+          'target_id' => $entity,
+          $this->extraKey => $notes,
+        );
+      }
     }
     return $results;
   }

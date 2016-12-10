@@ -42,36 +42,36 @@ process:
   type:
     plugin: default_value
     default_value: sleight
-  field_sleight_level/target_id:
-    plugin: entity_lookup
+  field_sleight_level:
+    plugin: entity_lookup_plus
     source: level
     value_key: title
     bundle: psi_level
     bundle_key: type
     entity_type: lookup
-  field_action_type/target_id:
-    plugin: entity_lookup
+  field_action_type:
+    plugin: entity_lookup_plus
     source: action
     value_key: title
     bundle: action_type
     bundle_key: type
     entity_type: lookup
-  field_sleight_duration/target_id:
-    plugin: entity_lookup
+  field_sleight_duration:
+    plugin: entity_lookup_plus
     source: duration
     value_key: title
     bundle: psi_duration
     bundle_key: type
     entity_type: lookup
-  field_sleight_range/target_id:
-    plugin: entity_lookup
+  field_sleight_range:
+    plugin: entity_lookup_plus
     source: range
     value_key: title
     bundle: psi_range
     bundle_key: type
     entity_type: lookup
-  field_psi_skill/target_id:
-    plugin: entity_lookup
+  field_psi_skill:
+    plugin: entity_lookup_plus
     entity_type: node
     bundle: skill
     bundle_key: type

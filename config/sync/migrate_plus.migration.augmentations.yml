@@ -51,8 +51,8 @@ process:
   type:
     plugin: default_value
     default_value: augmentation
-  field_gear_type/target_id:
-    plugin: entity_lookup
+  field_gear_type:
+    plugin: entity_lookup_plus
     source: type
     value_key: name
     bundle: gear_type
@@ -60,8 +60,8 @@ process:
     entity_type: taxonomy_term
   field_description/value: description
   field_special_effect/value: effect
-  field_cost/target_id:
-    plugin: entity_lookup
+  field_cost:
+    plugin: entity_lookup_plus
     source: cost
     value_key: title
     bundle: cost_level
@@ -131,21 +131,21 @@ process:
       plugin: explode
       delimiter: ','
     -
-      plugin: entity_lookup
+      plugin: entity_lookup_plus
       destination_field: target_id
       entity_type: lookup
       bundle: morph_type
       bundle_key: type
       value_key: title
-  field_mobility_system/target_id:
-    plugin: entity_lookup
+  field_mobility_system:
+    plugin: entity_lookup_plus
     source: mobility
     value_key: title
     bundle: mobility_type
     bundle_key: type
     entity_type: lookup
-  field_weapon/target_id:
-    plugin: entity_lookup
+  field_weapon:
+    plugin: entity_lookup_plus
     source: weapon
     value_key: title
     bundle: weapon

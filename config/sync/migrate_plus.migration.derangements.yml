@@ -31,7 +31,7 @@ process:
     plugin: default_value
     default_value: derangement
   field_derangement_level:
-    plugin: entity_lookup
+    plugin: entity_lookup_plus
     source: type
     value_key: title
     bundle_key: type

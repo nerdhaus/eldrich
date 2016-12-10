@@ -38,14 +38,14 @@ process:
   type:
     plugin: default_value
     default_value: skill
-  field_skill_type/target_id:
-    plugin: entity_lookup
+  field_skill_type:
+    plugin: entity_lookup_plus
     source: type
     value_key: title
     bundle: skill_category
     entity_type: lookup
   field_linked_aptitude:
-    plugin: entity_lookup
+    plugin: entity_lookup_plus
     bundle: stat
     entity_type: node
     value_key: field_code

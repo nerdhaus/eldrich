@@ -40,8 +40,8 @@ process:
       plugin: migration
       migration: faction
   type: constants/content_type
-  field_faction_type/target_id:
-    plugin: entity_lookup
+  field_faction_type:
+    plugin: entity_lookup_plus
     source: type
     value_key: title
     bundle_key: type

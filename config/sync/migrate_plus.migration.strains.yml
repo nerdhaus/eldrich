@@ -33,8 +33,8 @@ process:
     plugin: default_value
     default_value: strain
   field_description/value: description
-  field_vectors/target_id:
-    plugin: entity_lookup
+  field_vectors:
+    plugin: entity_lookup_plus
     source: vectors
     value_key: title
     bundle_key: type

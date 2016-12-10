@@ -42,16 +42,16 @@ process:
   type:
     plugin: default_value
     default_value: drug
-  field_gear_type/target_id:
-    plugin: entity_lookup
+  field_gear_type:
+    plugin: entity_lookup_plus
     source: type
     value_key: name
     bundle: gear_type
     bundle_key: vid
     entity_type: taxonomy_term
   field_description/value: description
-  field_cost/target_id:
-    plugin: entity_lookup
+  field_cost:
+    plugin: entity_lookup_plus
     source: cost
     value_key: title
     bundle: cost_level
@@ -93,7 +93,7 @@ process:
       plugin: explode
       delimiter: ','
     -
-      plugin: entity_lookup
+      plugin: entity_lookup_plus
       destination_field: target_id
       entity_type: lookup
       bundle: substance_delivery

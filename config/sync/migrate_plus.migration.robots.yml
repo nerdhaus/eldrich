@@ -53,16 +53,16 @@ process:
   type:
     plugin: default_value
     default_value: robot
-  field_gear_type/target_id:
-    plugin: entity_lookup
+  field_gear_type:
+    plugin: entity_lookup_plus
     source: type
     value_key: name
     bundle: gear_type
     bundle_key: vid
     entity_type: taxonomy_term
   field_description/value: description
-  field_cost/target_id:
-    plugin: entity_lookup
+  field_cost:
+    plugin: entity_lookup_plus
     source: cost
     value_key: title
     bundle: cost_level
@@ -135,8 +135,8 @@ process:
       bundle: skill
       bundle_key: type
       value_key: title
-  field_mobility_system/target_id:
-    plugin: entity_lookup
+  field_mobility_system:
+    plugin: entity_lookup_plus
     source: mobility
     value_key: title
     bundle: mobility_type
@@ -166,6 +166,7 @@ process:
       plugin: entity_lookup_plus
       destination_field: target_id
       value_key: title
+      fallback_value_key: field_short_name
       bundle: augmentation
       bundle_key: type
       entity_type: node
@@ -181,15 +182,17 @@ process:
       plugin: entity_lookup_plus
       destination_field: target_id
       value_key: title
+      fallback_value_key: field_short_name
       bundle:
         - gear
         - weapon
       bundle_key: type
       entity_type: node
-  field_default_mind/target_id:
-    plugin: entity_lookup
+  field_default_mind:
+    plugin: entity_lookup_plus
     source: mind
     value_key: title
+    fallback_value_key: field_short_name
     bundle: mind
     bundle_key: type
     entity_type: node

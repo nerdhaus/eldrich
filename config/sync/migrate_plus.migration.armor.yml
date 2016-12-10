@@ -45,8 +45,8 @@ process:
   type:
     plugin: default_value
     default_value: armor
-  field_gear_type/target_id:
-    plugin: entity_lookup
+  field_gear_type:
+    plugin: entity_lookup_plus
     source: type
     value_key: name
     bundle: gear_type
@@ -54,8 +54,8 @@ process:
     entity_type: taxonomy_term
   field_description/value: description
   field_special_effect/value: effect
-  field_cost/target_id:
-    plugin: entity_lookup
+  field_cost:
+    plugin: entity_lookup_plus
     source: cost
     value_key: title
     bundle: cost_level
