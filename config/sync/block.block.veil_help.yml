@@ -1,0 +1,22 @@
+uuid: 77d4fa02-dd49-4118-8934-9edf7a90618e
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - veil
+_core:
+  default_config_hash: MhtNdV__HKRTab0ZPjkPNfYL4Ng4UPBucDLoC7Rg5Eo
+id: veil_help
+theme: veil
+region: help
+weight: -7
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

@@ -7,10 +7,11 @@ dependencies:
     - field.storage.node.field_cost
     - field.storage.node.field_description
     - field.storage.node.field_gear_type
+    - node.type.armor
     - node.type.augmentation
     - node.type.drug
+    - node.type.gear
     - node.type.mind
-    - node.type.morph
     - node.type.robot
     - node.type.vehicle
     - node.type.weapon
@@ -464,11 +465,11 @@ display:
           admin_label: ''
           operator: in
           value:
+            armor: armor
             augmentation: augmentation
             drug: drug
-            gear_type: gear_type
+            gear: gear
             mind: mind
-            morph: morph
             robot: robot
             vehicle: vehicle
             weapon: weapon

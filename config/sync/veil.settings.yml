@@ -1,0 +1,29 @@
+schemas:
+  bootstrap: 8000
+  veil: 8000
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: 'http://eldrich.local/themes/contrib/bootstrap/favicon.ico'
+  use_default: 0
+features:
+  comment_user_picture: 0
+  comment_user_verification: 0
+  favicon: 1
+  node_user_picture: 0
+logo:
+  path: ''
+  url: ''
+  use_default: 0
+region_wells:
+  sidebar_first: ''
+  sidebar_second: well
+  content: ''
+  header: ''
+  primary_menu: ''
+  secondary_menu: ''
+  footer: ''
+  highlighted: ''
+  help: ''
+  breadcrumb: ''
+table: ''

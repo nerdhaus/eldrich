@@ -1,0 +1,22 @@
+uuid: ecddf359-f71c-4bad-be9e-3fd86a2b8d59
+langcode: en
+status: true
+dependencies:
+  theme:
+    - veil
+_core:
+  default_config_hash: qHdtze2DZ2mFfaJadxjZz6epm92_SN9SAFY4yJGl8Fo
+id: veil_local_tasks
+theme: veil
+region: header
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

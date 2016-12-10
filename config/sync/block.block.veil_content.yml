@@ -1,0 +1,22 @@
+uuid: 1e00c275-d1c7-4f3c-83e3-c710c050d196
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - veil
+_core:
+  default_config_hash: fNNLN48MSGSLiqwIFywCuxH2Dk_IxDbaP0kYhg_IPrg
+id: veil_content
+theme: veil
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }
