@@ -1,0 +1,10 @@
+uuid: d1b982f5-832d-4374-8299-4dfbd0099760
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.catalog
+label: Catalog
+targetEntityType: node
+cache: true

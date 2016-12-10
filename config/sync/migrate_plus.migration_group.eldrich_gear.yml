@@ -1,7 +1,7 @@
 uuid: 3aaa4682-2b2f-42b8-836a-297eda5c5352
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 id: eldrich_gear
 label: Gear
 description: 'Gear, morphs, etc. for Eldrich Black.'

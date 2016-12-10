@@ -47,8 +47,8 @@ content:
       label_singular: ''
       label_plural: ''
       collapsible: true
+      collapsed: true
       override_labels: false
-      collapsed: false
     third_party_settings: {  }
     type: inline_entity_form_simple
   field_augmentations:
