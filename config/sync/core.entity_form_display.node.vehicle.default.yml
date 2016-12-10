@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.vehicle.field_blueprints
     - field.field.node.vehicle.field_cost
     - field.field.node.vehicle.field_description
+    - field.field.node.vehicle.field_equipped_weapons
     - field.field.node.vehicle.field_gear
     - field.field.node.vehicle.field_gear_type
     - field.field.node.vehicle.field_linked_skill
@@ -23,6 +24,7 @@ dependencies:
     - entity_reference_quantity
     - ep_complex_values
     - ep_statblock
+    - inline_entity_form
     - path
     - text
 id: node.vehicle.default
@@ -36,12 +38,12 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_armor:
-    weight: 26
+    weight: 10
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
   field_attribution:
-    weight: 35
+    weight: 20
     settings:
       form_mode: default
       label_singular: ''
@@ -52,7 +54,7 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_simple
   field_augmentations:
-    weight: 32
+    weight: 16
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -77,8 +79,22 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_equipped_weapons:
+    weight: 19
+    settings:
+      match_operator: CONTAINS
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
   field_gear:
-    weight: 33
+    weight: 17
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -91,7 +107,7 @@ content:
     third_party_settings: {  }
     type: options_select
   field_linked_skill:
-    weight: 28
+    weight: 12
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -99,32 +115,29 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
   field_mobility_system:
-    weight: 30
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    weight: 14
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
   field_movement_speed:
-    weight: 31
+    weight: 15
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_widget
   field_passengers:
-    weight: 34
+    weight: 18
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
   field_skill_bonus:
-    weight: 29
+    weight: 13
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
   field_stats:
-    weight: 27
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: stat_block_table

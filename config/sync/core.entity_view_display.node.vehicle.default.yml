@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.vehicle.field_blueprints
     - field.field.node.vehicle.field_cost
     - field.field.node.vehicle.field_description
+    - field.field.node.vehicle.field_equipped_weapons
     - field.field.node.vehicle.field_gear
     - field.field.node.vehicle.field_gear_type
     - field.field.node.vehicle.field_linked_skill
@@ -73,6 +74,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+  field_equipped_weapons:
+    weight: 118
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_gear:
     weight: 115
     label: above

@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.robot.field_cost
     - field.field.node.robot.field_default_ai
     - field.field.node.robot.field_description
+    - field.field.node.robot.field_equipped_weapons
     - field.field.node.robot.field_gear
     - field.field.node.robot.field_gear_type
     - field.field.node.robot.field_mobility_system
@@ -80,6 +81,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+  field_equipped_weapons:
+    weight: 117
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_gear:
     weight: 114
     label: above
