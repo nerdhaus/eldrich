@@ -18,6 +18,7 @@ hidden:
   field_armor: true
   field_attribution: true
   field_augmentations: true
+  field_creature_type: true
   field_description: true
   field_equipped_weapons: true
   field_gear: true

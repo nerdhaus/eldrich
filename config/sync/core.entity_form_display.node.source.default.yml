@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.source.field_code
     - field.field.node.source.field_description
     - field.field.node.source.field_home_page
+    - field.field.node.source.field_is_canon
     - field.field.node.source.field_source_type
     - field.field.node.source.field_weight
     - node.type.source
@@ -52,6 +53,12 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+  field_is_canon:
+    weight: 34
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_source_type:
     weight: 1
     settings: {  }
