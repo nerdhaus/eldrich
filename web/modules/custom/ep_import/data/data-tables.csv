@@ -132,3 +132,13 @@ Basilisk Hack,B,vector,,"A character exposed to a basilisk hack deployed for sen
 Biological Pathogen,P,vector,,"Exsurgent bionanobots are transmitted like other pathogens, via dermal, inhalation, injection, or oral methods (p. 317, EP). Chance/random exposure in a contaminated area occurs on a failed MOX x 10 Test.
 
 Exposed biomorphs must make an Opposed Test, pitting their Durability vs. the pathogen’s Infection Rating. Toxin filters and medichines provide a +30 bonus. If the pathogen wins, they are infected.",
+AI,,creature_type,1,,
+Alien,,creature_type,2,,
+Asynch,,creature_type,3,,
+Exhuman,,creature_type,4,,
+Exsurgent,,creature_type,5,,
+Neogeneti,,creature_type,6,,
+Smart Animal,,creature_type,7,,
+Tech,,creature_type,8,,
+TITAN,,creature_type,9,,
+Xenofauna,,creature_type,10,,
