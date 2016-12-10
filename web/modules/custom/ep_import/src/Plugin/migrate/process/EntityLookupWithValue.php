@@ -29,12 +29,12 @@ class EntityLookupWithValue extends EntityLookup {
    */
   public function transform($value, MigrateExecutableInterface $migrateExecutable, Row $row, $destinationProperty) {
     // We want to handle these nicely later.
-    if ($this->extraKey = $this->configuration['extra_value_key') {}
+    if ($this->extraKey = $this->configuration['extra_value_key']) {}
     else {
       $this->extraKey = 'override';
     }
 
-    if ($this->delimiter = $this->configuration['delimiter') {}
+    if ($this->delimiter = $this->configuration['delimiter']) {}
     else {
       $this->delimiter = ':';
     }
