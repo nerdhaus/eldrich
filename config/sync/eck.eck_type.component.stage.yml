@@ -1,9 +1,9 @@
-uuid: 38276c9d-a6a9-4041-8922-45742746b5a5
+uuid: 021437e7-7733-48f0-93f6-d902462d641b
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_entity_type.component
-name: 'Infection Stage'
+name: Stage
 type: stage
-description: ''
+description: 'A specific stage in the incubation of an Exsurgent viral strain.'

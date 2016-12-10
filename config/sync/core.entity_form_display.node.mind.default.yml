@@ -3,18 +3,20 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.mind.field_attribution
     - field.field.node.mind.field_blueprints
     - field.field.node.mind.field_cost
     - field.field.node.mind.field_description
     - field.field.node.mind.field_gear_type
+    - field.field.node.mind.field_short_name
     - field.field.node.mind.field_skills
-    - field.field.node.mind.field_source
     - field.field.node.mind.field_stats
     - node.type.mind
   module:
     - entity_reference_quantity
     - ep_skill_reference
     - ep_statblock
+    - inline_entity_form
     - path
     - text
 id: node.mind.default
@@ -32,6 +34,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
+  field_attribution:
+    weight: 28
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      collapsed: true
+      override_labels: false
+    third_party_settings: {  }
+    type: inline_entity_form_simple
   field_blueprints:
     weight: 9
     settings:
@@ -55,11 +68,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_source:
-    weight: 11
-    settings: {  }
+  field_short_name:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_quantity_select
+    type: string_textfield
   field_skills:
     weight: 27
     settings: {  }
@@ -102,5 +117,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_source: true
+hidden: {  }

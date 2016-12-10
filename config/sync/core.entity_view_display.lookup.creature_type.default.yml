@@ -1,0 +1,28 @@
+uuid: b0b9fa40-df15-4590-abe8-96a29e86e073
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.lookup.creature_type
+    - field.field.lookup.creature_type.field_description
+  module:
+    - text
+id: lookup.creature_type.default
+targetEntityType: lookup
+bundle: creature_type
+mode: default
+content:
+  field_description:
+    weight: -4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden: {  }

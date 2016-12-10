@@ -1,0 +1,26 @@
+uuid: 4f3eb37b-3a27-4dd8-b512-e8ae6f83f1e1
+langcode: en
+status: true
+dependencies: {  }
+id: concerns
+migration_tags: null
+migration_group: eldrich_core
+label: 'Memes and motivations'
+source:
+  plugin: csv
+  path: modules/custom/ep_import/data/concerns.csv
+  header_row_count: 1
+  column_names:
+    -
+      title: Title
+  keys:
+    - title
+process:
+  name: title
+  description: description
+  vid:
+    plugin: default_value
+    default_value: concerns
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies: null

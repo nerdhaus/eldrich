@@ -1,0 +1,23 @@
+uuid: 50513cc7-58f1-437a-b917-7192bb9d3ea7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_ammo
+    - node.type.weapon
+id: node.weapon.field_is_ammo
+field_name: field_is_ammo
+entity_type: node
+bundle: weapon
+label: 'Is Ammo'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

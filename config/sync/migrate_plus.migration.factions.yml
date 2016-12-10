@@ -1,0 +1,87 @@
+uuid: e391bd2f-0158-4666-a8de-00a19bf74d6b
+langcode: en
+status: true
+dependencies: {  }
+id: factions
+migration_tags: null
+migration_group: eldrich_core
+label: Factions
+source:
+  plugin: csv
+  path: modules/custom/ep_import/data/factions.csv
+  header_row_count: 1
+  column_names:
+    -
+      title: Title
+    -
+      parent: Parent
+    -
+      type: Type
+    -
+      description: Description
+    -
+      concerns: Concerns
+    -
+      locations: Locations
+    -
+      book: Book
+  keys:
+    - title
+  constants:
+    content_type: faction
+process:
+  title: title
+  field_parent_faction:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration
+      migration: faction
+  type: constants/content_type
+  field_faction_type/target_id:
+    plugin: entity_lookup
+    source: type
+    value_key: title
+    bundle_key: type
+    bundle: faction_type
+    entity_type: lookup
+  field_description/value: description
+  field_locations:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: locations
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      bundle: location
+      bundle_key: type
+      entity_type: node
+  citation:
+    plugin: source_with_page
+    entity_type: node
+    bundle: source
+    bundle_key: type
+    value_key: field_code
+    source: book
+  field_attribution:
+    plugin: reference_factory
+    entity_type: component
+    source:
+      - '@citation'
+    keys:
+      - field_attribution_citations
+    default_values:
+      type: attribution
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - tables
+    - locations

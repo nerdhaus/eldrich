@@ -1,0 +1,29 @@
+uuid: 3c688f25-1dc2-4181-b02c-40edab5a55b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.status
+    - field.storage.component.field_derangements
+    - node.type.derangement
+id: component.status.field_derangements
+field_name: field_derangements
+entity_type: component
+bundle: status
+label: Derangements
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      derangement: derangement
+    sort:
+      field: field_derangement_level
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

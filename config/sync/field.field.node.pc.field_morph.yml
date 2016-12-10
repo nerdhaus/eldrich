@@ -1,0 +1,28 @@
+uuid: e86320f7-33b0-4768-acc4-9091a3a5820b
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.instance.morph
+    - field.storage.node.field_morph
+    - node.type.pc
+id: node.pc.field_morph
+field_name: field_morph
+entity_type: node
+bundle: pc
+label: Morph
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:instance'
+  handler_settings:
+    target_bundles:
+      morph: morph
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

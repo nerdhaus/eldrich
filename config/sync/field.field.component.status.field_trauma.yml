@@ -1,0 +1,23 @@
+uuid: 7e33e04f-ca25-46bc-bdf5-2f5597efcd02
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.status
+    - field.storage.component.field_trauma
+id: component.status.field_trauma
+field_name: field_trauma
+entity_type: component
+bundle: status
+label: Trauma
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

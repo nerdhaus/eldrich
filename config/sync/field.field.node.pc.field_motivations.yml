@@ -1,0 +1,28 @@
+uuid: 3c5cba5b-3002-4a5e-9046-fc6d1e9e8813
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_motivations
+    - node.type.pc
+    - taxonomy.vocabulary.concerns
+id: node.pc.field_motivations
+field_name: field_motivations
+entity_type: node
+bundle: pc
+label: Motivations
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      concerns: concerns
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

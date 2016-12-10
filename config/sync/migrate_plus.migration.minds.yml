@@ -1,0 +1,104 @@
+uuid: 1cd4a807-5f60-4a1b-8366-da099e52efdb
+langcode: en
+status: true
+dependencies: {  }
+id: minds
+migration_tags: null
+migration_group: eldrich_gear
+label: 'AIs and Ego templates'
+source:
+  plugin: csv
+  path: modules/custom/ep_import/gear/minds.csv
+  header_row_count: 1
+  column_names:
+    -
+      title: Title
+    -
+      short: 'Short Title'
+    -
+      type: Type
+    -
+      description: Description
+    -
+      cost: Cost
+    -
+      minimum: Minimum
+    -
+      blueprints: Blueprints
+    -
+      book: Book
+    -
+      stats: Stats
+    -
+      skills: Skills
+  keys:
+    - title
+process:
+  title: title
+  field_short_title: short
+  type:
+    plugin: default_value
+    default_value: mind
+  field_gear_type/target_id:
+    plugin: entity_lookup
+    source: type
+    value_key: name
+    bundle: gear_type
+    bundle_key: vid
+    entity_type: taxonomy_term
+  field_description/value: description
+  field_cost/target_id:
+    plugin: entity_lookup
+    source: cost
+    value_key: title
+    bundle: cost_level
+    bundle_key: type
+    entity_type: lookup
+  field_cost/quantity:
+    plugin: skip_on_empty
+    method: process
+    source: minimum
+  citation:
+    plugin: source_with_page
+    entity_type: node
+    bundle: source
+    bundle_key: type
+    value_key: field_code
+    source: book
+  field_attribution:
+    plugin: reference_factory
+    entity_type: component
+    source:
+      - '@citation'
+    keys:
+      - field_attribution_citations
+    default_values:
+      type: attribution
+  field_blueprints:
+    plugin: static_map
+    source: blueprints
+    map:
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
+  field_stats:
+    plugin: stat_block
+    source: stats
+  field_skills:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: skills
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: skill_lookup
+      destination_field: target_id
+      entity_type: node
+      bundle: skill
+      bundle_key: type
+      value_key: title
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

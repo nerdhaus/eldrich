@@ -1,0 +1,20 @@
+uuid: e9bb673c-074e-41af-8071-aeaa9cf61372
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: component.field_damage
+field_name: field_damage
+entity_type: component
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

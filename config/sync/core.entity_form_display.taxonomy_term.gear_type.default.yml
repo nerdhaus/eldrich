@@ -1,4 +1,4 @@
-uuid: 0a9d30ba-dee8-4b46-b13c-13ee0ad851b4
+uuid: ab440b69-6ed5-4572-b1bf-f4b06101412b
 langcode: en
 status: true
 dependencies:
@@ -9,9 +9,9 @@ dependencies:
     - entity_reference_quantity
     - path
     - text
-id: taxonomy_term.gear.default
+id: taxonomy_term.gear_type.default
 targetEntityType: taxonomy_term
-bundle: gear
+bundle: gear_type
 mode: default
 content:
   description:
@@ -41,5 +41,4 @@ content:
     weight: 30
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_source: true
+hidden: {  }

@@ -1,0 +1,28 @@
+uuid: 0e31bf5e-d31f-4ab7-92f3-f21a5a71f4a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.instance.muse
+    - field.storage.node.field_muse
+    - node.type.pc
+id: node.pc.field_muse
+field_name: field_muse
+entity_type: node
+bundle: pc
+label: Muse
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:instance'
+  handler_settings:
+    target_bundles:
+      muse: muse
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

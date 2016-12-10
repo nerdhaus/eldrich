@@ -1,0 +1,21 @@
+uuid: 8917bdf3-3792-42bd-ac56-fb23c059a411
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.instance.morph
+    - field.storage.instance.field_stats
+  module:
+    - ep_statblock
+id: instance.morph.field_stats
+field_name: field_stats
+entity_type: instance
+bundle: morph
+label: Stats
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: stat_block

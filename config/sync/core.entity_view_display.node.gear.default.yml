@@ -3,16 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.gear.field_armor
+    - field.field.node.gear.field_attribution
     - field.field.node.gear.field_blueprints
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
     - field.field.node.gear.field_gear_type
-    - field.field.node.gear.field_source
+    - field.field.node.gear.field_short_name
     - node.type.gear
   module:
     - entity_reference_quantity
-    - ep_complex_values
     - text
     - user
 id: node.gear.default
@@ -20,12 +19,13 @@ targetEntityType: node
 bundle: gear
 mode: default
 content:
-  field_armor:
-    weight: 102
+  field_attribution:
+    weight: 108
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    type: armor_text
+    type: entity_reference_label
   field_blueprints:
     weight: 107
     label: above
@@ -55,14 +55,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_source:
-    weight: 105
+  field_short_name:
+    weight: 109
     label: above
     settings:
-      link: true
+      link_to_entity: false
     third_party_settings: {  }
-    type: entity_reference_quantity_label
+    type: string
   links:
     weight: 100
-hidden:
-  field_source: true
+hidden: {  }

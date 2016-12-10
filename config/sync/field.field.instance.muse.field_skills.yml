@@ -1,0 +1,27 @@
+uuid: 7f4509b4-9172-465c-a33b-8c31ecb047c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.instance.muse
+    - field.storage.instance.field_skills
+  module:
+    - ep_skill_reference
+id: instance.muse.field_skills
+field_name: field_skills
+entity_type: instance
+bundle: muse
+label: Skills
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: select_lists
+      display_name: skills
+      arguments: {  }
+field_type: skill_reference

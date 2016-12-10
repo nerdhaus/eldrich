@@ -1,0 +1,103 @@
+uuid: 6ca990bf-3524-45ec-8932-140e78350b6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.armor.field_armor
+    - field.field.node.armor.field_attribution
+    - field.field.node.armor.field_blueprints
+    - field.field.node.armor.field_cost
+    - field.field.node.armor.field_description
+    - field.field.node.armor.field_gear_type
+    - field.field.node.armor.field_is_mod
+    - field.field.node.armor.field_short_name
+    - field.field.node.armor.field_special_effect
+    - field.field.node.armor.field_uses_mods
+    - node.type.armor
+  module:
+    - entity_reference_quantity
+    - ep_complex_values
+    - text
+    - user
+id: node.armor.default
+targetEntityType: node
+bundle: armor
+mode: default
+content:
+  field_armor:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: armor_text
+  field_attribution:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_blueprints:
+    weight: 103
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_cost:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  field_description:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_gear_type:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_is_mod:
+    weight: 107
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_short_name:
+    weight: 111
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_special_effect:
+    weight: 109
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_uses_mods:
+    weight: 110
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  links:
+    weight: 100
+hidden: {  }

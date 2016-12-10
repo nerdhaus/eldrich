@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.mind.field_blueprints
     - field.field.node.mind.field_cost
     - field.field.node.mind.field_description
     - field.field.node.mind.field_gear_type
-    - field.field.node.mind.field_source
+    - field.field.node.mind.field_skills
+    - field.field.node.mind.field_stats
     - node.type.mind
   module:
     - user
@@ -20,11 +22,11 @@ content:
     weight: 100
 hidden:
   field_armor: true
+  field_attribution: true
   field_blueprints: true
   field_cost: true
   field_description: true
   field_gear_type: true
-  field_source: true
+  field_short_name: true
   field_skills: true
-  field_source: true
   field_stats: true

@@ -1,0 +1,28 @@
+uuid: 81d9ae3d-8b94-4eb3-8ce3-e6645636ec90
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sleights
+    - node.type.pc
+    - node.type.sleight
+id: node.pc.field_sleights
+field_name: field_sleights
+entity_type: node
+bundle: pc
+label: Sleights
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      sleight: sleight
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

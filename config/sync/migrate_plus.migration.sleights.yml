@@ -30,6 +30,8 @@ source:
     -
       description: Description
     -
+      effect: Effect
+    -
       exsurgent: Exsurgent
     -
       book: Book
@@ -82,21 +84,24 @@ process:
       Active: 1
       Passive: 0
     default_value: 0
-  field_strain/value:
-    plugin: skip_on_empty
-    method: process
-    source: strain
-  field_description/value:
-    plugin: skip_on_empty
-    method: process
-    source: description
-  field_source:
+  field_strain/value: strain
+  field_description/value: description
+  citation:
     plugin: source_with_page
     entity_type: node
     bundle: source
     bundle_key: type
     value_key: field_code
     source: book
+  field_attribution:
+    plugin: reference_factory
+    entity_type: component
+    source:
+      - '@citation'
+    keys:
+      - field_attribution_citations
+    default_values:
+      type: attribution
   field_exsurgent:
     plugin: static_map
     source: exsurgent
@@ -109,4 +114,4 @@ destination:
 migration_dependencies:
   required:
     - skills
-    - lookup_tables
+    - tables

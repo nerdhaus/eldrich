@@ -29,3 +29,18 @@ function ep_import_help($route_name, RouteMatchInterface $route_match) {
 function ep_import_migrate_prepare_row(Row $row, MigrateSourceInterface $source, MigrationInterface $migration) {
 //  drush_print_r($row);
 }
+
+
+function ep_import_purge_ecks() {
+  // list of types and the fields they're linked from
+  $targets = [
+    'component' => [],
+    'instance' => [],
+  ];
+
+  $ids = [];
+
+  $controller = \Drupal::entityManager()->getStorage($entity_type);
+  $entities = $controller->loadMultiple($ids);
+  $controller->delete($entities);
+}

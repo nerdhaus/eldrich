@@ -1,0 +1,64 @@
+uuid: 8b484917-38b2-4c72-a645-05663a673748
+langcode: en
+status: true
+dependencies: {  }
+id: strains
+migration_tags: null
+migration_group: eldrich_core
+label: Strains
+source:
+  plugin: csv
+  path: modules/custom/ep_import/data/strains.csv
+  header_row_count: 1
+  column_names:
+    -
+      title: Title
+    -
+      description: Description
+    -
+      vectors: Vectors
+    -
+      infectiousness: Infectiousness
+    -
+      rating: Rating
+    -
+      book: Book
+  keys:
+    - title
+  constants:
+    format: basic_html
+process:
+  title: title
+  type:
+    plugin: default_value
+    default_value: strain
+  field_description/value: description
+  field_vectors/target_id:
+    plugin: entity_lookup
+    source: vectors
+    value_key: title
+    bundle_key: type
+    bundle: vector
+    entity_type: lookup
+  field_infectiousness/value: infectiousness
+  citation:
+    plugin: source_with_page
+    entity_type: node
+    bundle: source
+    bundle_key: type
+    value_key: field_code
+    source: book
+  field_attribution:
+    plugin: reference_factory
+    entity_type: component
+    source:
+      - '@citation'
+    keys:
+      - field_attribution_citations
+    default_values:
+      type: attribution
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - tables

@@ -5,45 +5,73 @@ dependencies: {  }
 id: npcs
 migration_tags: null
 migration_group: eldrich_chars
-label: ''
+label: NPCs
 source:
   plugin: csv
   path: modules/custom/ep_import/characters/npcs.csv
   header_row_count: 1
   column_names:
     -
-      title: Title
+      name: name
     -
-      type: Type
+      based_on: based_on
     -
-      description: Description
+      book: book
     -
-      book: Book
+      background: background
+    -
+      faction: faction
+    -
+      motivations: motivations
+    -
+      quote: quote
+    -
+      description: description
+    -
+      stats: stats
+    -
+      morph: morph
+    -
+      skills: skills
+    -
+      augmentations: augmentations
+    -
+      traits: traits
+    -
+      sleights: sleights
+    -
+      gear: gear
+    -
+      weapons: weapons
+    -
+      armor: armor
+    -
+      credits: credits
+    -
+      rep: rep
   keys:
-    - title
+    - name
 process:
-  title: title
+  title: name
   type:
     plugin: default_value
     default_value: npc
-  field_gear_type/target_id:
-    plugin: entity_lookup
-    source: type
-    value_key: name
-    bundle: gear
-    bundle_key: vid
-    entity_type: taxonomy_term
-  field_description/value: description
-  field_source:
+  citation:
     plugin: source_with_page
     entity_type: node
     bundle: source
     bundle_key: type
     value_key: field_code
     source: book
+  field_attribution:
+    plugin: reference_factory
+    entity_type: component
+    source:
+      - '@citation'
+    keys:
+      - field_attribution_citations
+    default_values:
+      type: attribution
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - lookup_tables
-    - sources
+migration_dependencies: null

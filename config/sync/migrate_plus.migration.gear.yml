@@ -5,7 +5,7 @@ dependencies: {  }
 id: gear
 migration_tags: null
 migration_group: eldrich_gear
-label: 'Miscellaneous gear'
+label: 'Generic gear'
 source:
   plugin: csv
   path: modules/custom/ep_import/gear/misc.csv
@@ -13,6 +13,8 @@ source:
   column_names:
     -
       title: Title
+    -
+      short: 'Short Title'
     -
       type: Type
     -
@@ -25,14 +27,11 @@ source:
       blueprints: Blueprints
     -
       book: Book
-    -
-      armor: Armor
-    -
-      stackable: Stackable
   keys:
     - title
 process:
   title: title
+  field_short_title: short
   type:
     plugin: default_value
     default_value: gear
@@ -40,7 +39,7 @@ process:
     plugin: entity_lookup
     source: type
     value_key: name
-    bundle: gear
+    bundle: gear_type
     bundle_key: vid
     entity_type: taxonomy_term
   field_description/value: description
@@ -55,13 +54,22 @@ process:
     plugin: skip_on_empty
     method: process
     source: minimum
-  field_source:
+  citation:
     plugin: source_with_page
     entity_type: node
     bundle: source
     bundle_key: type
     value_key: field_code
     source: book
+  field_attribution:
+    plugin: reference_factory
+    entity_type: component
+    source:
+      - '@citation'
+    keys:
+      - field_attribution_citations
+    default_values:
+      type: attribution
   field_blueprints:
     plugin: static_map
     source: blueprints
@@ -69,27 +77,9 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-  field_armor:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: armor
-    -
-      plugin: array_to_dict
-      delimiter: /
-      keys:
-        - energy
-        - kinetic
-  field_armor/replaces:
-    plugin: static_map
-    source: stackable
-    map:
-      'TRUE': 0
-      'FALSE': 1
-    default_value: 1
 destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
+    - tables
     - sources

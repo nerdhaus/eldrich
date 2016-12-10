@@ -1,0 +1,31 @@
+uuid: 2d60a893-aec0-4755-88a4-adbac2496bd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_owned_blueprints
+    - node.type.gear
+    - node.type.pc
+  module:
+    - entity_reference_override
+id: node.pc.field_owned_blueprints
+field_name: field_owned_blueprints
+entity_type: node
+bundle: pc
+label: Blueprints
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      gear: gear
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+  override_label: Notes
+field_type: entity_reference_override

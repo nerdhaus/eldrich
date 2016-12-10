@@ -1,0 +1,20 @@
+uuid: b7ca4d42-9fd3-484b-a252-5cd109a03422
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - node
+id: instance.field_weapon_mods
+field_name: field_weapon_mods
+entity_type: instance
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

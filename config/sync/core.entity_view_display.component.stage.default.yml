@@ -1,11 +1,12 @@
-uuid: 7b78e32e-d324-45f8-b702-77bc949cf999
+uuid: fb2abc32-85e4-40e2-b32a-4d70b685ead1
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.component.stage
     - field.field.component.stage.field_description
-    - field.field.component.stage.field_stress
+    - field.field.component.stage.field_stage
+    - field.field.component.stage.field_stress_incurred
     - field.field.component.stage.field_timeframe
   module:
     - range
@@ -16,13 +17,20 @@ bundle: stage
 mode: default
 content:
   field_description:
-    weight: 0
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_stress:
-    weight: 2
+  field_stage:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_stress_incurred:
+    weight: 0
     label: above
     settings:
       link_to_entity: false
@@ -39,6 +47,4 @@ content:
       to_prefix_suffix: false
     third_party_settings: {  }
     type: range_integer
-hidden:
-  id: true
-  langcode: true
+hidden: {  }

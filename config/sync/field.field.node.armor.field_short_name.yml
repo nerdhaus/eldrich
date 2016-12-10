@@ -1,0 +1,19 @@
+uuid: 39091c5e-17fa-49e8-8b31-9b9cf5d31205
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_name
+    - node.type.armor
+id: node.armor.field_short_name
+field_name: field_short_name
+entity_type: node
+bundle: armor
+label: 'Short Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,43 @@
+uuid: fab450f4-175f-47a6-8239-dc04a9542c7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.attribution
+    - field.field.component.attribution.field_attribution_citations
+    - field.field.component.attribution.field_attribution_link
+    - field.field.component.attribution.field_attribution_notes
+  module:
+    - entity_reference_quantity
+    - link
+    - text
+id: component.attribution.default
+targetEntityType: component
+bundle: attribution
+mode: default
+content:
+  field_attribution_citations:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
+  field_attribution_link:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_attribution_notes:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+hidden: {  }

@@ -3,16 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.trait.field_attribution
     - field.field.node.trait.field_cp_cost
     - field.field.node.trait.field_description
     - field.field.node.trait.field_ego_trait
     - field.field.node.trait.field_morph_trait
     - field.field.node.trait.field_skills
-    - field.field.node.trait.field_source
+    - field.field.node.trait.field_special_effect
     - field.field.node.trait.field_stats
     - node.type.trait
   module:
-    - entity_reference_quantity
     - ep_skill_reference
     - ep_statblock
     - field_group
@@ -51,6 +51,17 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
+  field_attribution:
+    weight: 32
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      collapsed: true
+      override_labels: false
+    third_party_settings: {  }
+    type: inline_entity_form_simple
   field_cp_cost:
     weight: 8
     settings:
@@ -76,16 +87,18 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
-  field_source:
-    weight: 12
-    settings: {  }
-    third_party_settings: {  }
-    type: entity_reference_quantity_select
   field_skills:
     weight: 8
     settings: {  }
     third_party_settings: {  }
     type: skill_reference_select
+  field_special_effect:
+    weight: 33
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_stats:
     weight: 7
     settings: {  }
@@ -123,5 +136,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_source: true
+hidden: {  }

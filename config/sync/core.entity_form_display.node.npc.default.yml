@@ -3,11 +3,75 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.npc.field_attribution
     - field.field.node.npc.field_description
+    - field.field.node.npc.field_equipped_armor
+    - field.field.node.npc.field_equipped_weapons
+    - field.field.node.npc.field_gear
+    - field.field.node.npc.field_identity
+    - field.field.node.npc.field_morph
+    - field.field.node.npc.field_quote
+    - field.field.node.npc.field_skills
+    - field.field.node.npc.field_sleights
+    - field.field.node.npc.field_stats
+    - field.field.node.npc.field_traits
     - node.type.npc
   module:
+    - entity_reference_override
+    - ep_skill_reference
+    - ep_statblock
+    - field_group
+    - inline_entity_form
     - path
     - text
+third_party_settings:
+  field_group:
+    group_gear:
+      children:
+        - field_gear
+        - field_equipped_weapons
+        - field_equipped_armor
+      parent_name: group_details
+      weight: 19
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+      label: Gear
+    group_details:
+      children:
+        - group_abilities
+        - field_morph
+        - field_identity
+        - group_gear
+      parent_name: ''
+      weight: 14
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Details
+    group_abilities:
+      children:
+        - field_stats
+        - field_skills
+        - field_traits
+        - field_sleights
+      parent_name: group_details
+      weight: 16
+      format_type: tab
+      format_settings:
+        label: Abilities
+        formatter: open
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: Abilities
 id: node.npc.default
 targetEntityType: node
 bundle: npc
@@ -15,43 +79,148 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 2
     settings: {  }
     third_party_settings: {  }
+  field_attribution:
+    weight: 15
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      collapsed: true
+      override_labels: false
+    third_party_settings: {  }
+    type: inline_entity_form_simple
   field_description:
-    weight: 31
+    weight: 6
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_equipped_armor:
+    weight: 17
+    settings:
+      match_operator: CONTAINS
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+  field_equipped_weapons:
+    weight: 16
+    settings:
+      match_operator: CONTAINS
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+  field_gear:
+    weight: 15
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
+  field_identity:
+    weight: 18
+    settings:
+      match_operator: CONTAINS
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+  field_morph:
+    weight: 17
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      collapsed: true
+      override_labels: false
+    third_party_settings: {  }
+    type: inline_entity_form_simple
+  field_quote:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_skills:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: skill_reference_select
+  field_sleights:
+    weight: 10
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_stats:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+  field_traits:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
   path:
     type: path
-    weight: 30
+    weight: 5
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 3
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 4
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60

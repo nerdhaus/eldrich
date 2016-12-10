@@ -4,10 +4,19 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.vehicle.field_armor
+    - field.field.node.vehicle.field_augmentations
+    - field.field.node.vehicle.field_blueprints
     - field.field.node.vehicle.field_cost
     - field.field.node.vehicle.field_description
+    - field.field.node.vehicle.field_gear
     - field.field.node.vehicle.field_gear_type
-    - field.field.node.vehicle.field_source
+    - field.field.node.vehicle.field_linked_skill
+    - field.field.node.vehicle.field_mobility_system
+    - field.field.node.vehicle.field_movement_speed
+    - field.field.node.vehicle.field_passengers
+    - field.field.node.vehicle.field_skill_bonus
+    - field.field.node.vehicle.field_stats
     - node.type.vehicle
   module:
     - user
@@ -20,17 +29,18 @@ content:
     weight: 100
 hidden:
   field_armor: true
+  field_attribution: true
   field_augmentations: true
   field_blueprints: true
   field_cost: true
   field_description: true
+  field_equipped_weapons: true
   field_gear: true
   field_gear_type: true
   field_linked_skill: true
   field_mobility_system: true
   field_movement_speed: true
   field_passengers: true
-  field_source: true
+  field_short_name: true
   field_skill_bonus: true
-  field_source: true
   field_stats: true

@@ -1,0 +1,19 @@
+uuid: 6b4c539e-cb75-49a9-bd29-a73115b7430c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.stage
+    - field.storage.component.field_stress_incurred
+id: component.stage.field_stress_incurred
+field_name: field_stress_incurred
+entity_type: component
+bundle: stage
+label: Stress
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

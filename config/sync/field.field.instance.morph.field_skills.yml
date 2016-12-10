@@ -1,0 +1,27 @@
+uuid: 0727d6e6-c07d-47df-a98a-ae6aa2d21d63
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.instance.morph
+    - field.storage.instance.field_skills
+  module:
+    - ep_skill_reference
+id: instance.morph.field_skills
+field_name: field_skills
+entity_type: instance
+bundle: morph
+label: Skills
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: select_lists
+      display_name: skills
+      arguments: {  }
+field_type: skill_reference

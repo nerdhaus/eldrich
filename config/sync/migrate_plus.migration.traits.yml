@@ -18,6 +18,8 @@ source:
     -
       description: Description
     -
+      effect: Effect
+    -
       ego: Ego
     -
       morph: Morph
@@ -50,16 +52,26 @@ process:
     default_value: 0
   field_cp_cost: cost
   field_description/value: description
-  field_source:
+  field_special_effect/value: effect
+  citation:
     plugin: source_with_page
     entity_type: node
     bundle: source
     bundle_key: type
     value_key: field_code
     source: book
+  field_attribution:
+    plugin: reference_factory
+    entity_type: component
+    source:
+      - '@citation'
+    keys:
+      - field_attribution_citations
+    default_values:
+      type: attribution
 destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
     - skills
-    - lookup_tables
+    - tables

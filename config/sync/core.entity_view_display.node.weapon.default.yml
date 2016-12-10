@@ -3,10 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.weapon.field_accessory
-    - field.field.node.weapon.field_ammo
     - field.field.node.weapon.field_ap_modifier
     - field.field.node.weapon.field_area_effect
+    - field.field.node.weapon.field_attribution
     - field.field.node.weapon.field_blueprints
     - field.field.node.weapon.field_cost
     - field.field.node.weapon.field_damage_dice
@@ -15,12 +14,17 @@ dependencies:
     - field.field.node.weapon.field_description
     - field.field.node.weapon.field_firing_modes
     - field.field.node.weapon.field_gear_type
+    - field.field.node.weapon.field_is_ammo
+    - field.field.node.weapon.field_is_mod
     - field.field.node.weapon.field_linked_skill
     - field.field.node.weapon.field_magazine_size
     - field.field.node.weapon.field_range
     - field.field.node.weapon.field_reach
+    - field.field.node.weapon.field_short_name
     - field.field.node.weapon.field_skill_bonus
-    - field.field.node.weapon.field_source
+    - field.field.node.weapon.field_special_effect
+    - field.field.node.weapon.field_uses_ammo
+    - field.field.node.weapon.field_uses_mods
     - node.type.weapon
   module:
     - entity_reference_override
@@ -34,24 +38,6 @@ targetEntityType: node
 bundle: weapon
 mode: default
 content:
-  field_accessory:
-    weight: 119
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-  field_ammo:
-    weight: 118
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
   field_ap_modifier:
     weight: 122
     label: above
@@ -73,6 +59,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_text
+  field_attribution:
+    weight: 130
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_blueprints:
     weight: 107
     label: above
@@ -132,6 +125,24 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_is_ammo:
+    weight: 126
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_is_mod:
+    weight: 125
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_linked_skill:
     weight: 116
     label: above
@@ -162,13 +173,13 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
-  field_source:
-    weight: 105
+  field_short_name:
+    weight: 131
     label: above
     settings:
-      link: true
+      link_to_entity: false
     third_party_settings: {  }
-    type: entity_reference_quantity_label
+    type: string
   field_skill_bonus:
     weight: 117
     label: above
@@ -177,9 +188,33 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+  field_special_effect:
+    weight: 128
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_uses_ammo:
+    weight: 129
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_uses_mods:
+    weight: 127
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_source: true
+hidden: {  }

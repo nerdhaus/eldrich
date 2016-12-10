@@ -1,0 +1,23 @@
+uuid: cde550d4-2976-4bbd-b2df-b377ca50da32
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.status
+    - field.storage.component.field_wounds
+id: component.status.field_wounds
+field_name: field_wounds
+entity_type: component
+bundle: status
+label: Wounds
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

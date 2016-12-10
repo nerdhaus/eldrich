@@ -8,7 +8,7 @@ migration_group: eldrich_core
 label: 'Content sources'
 source:
   plugin: csv
-  path: modules/custom/ep_import/data/sources.csv
+  path: modules/custom/ep_import/data/books.csv
   header_row_count: 1
   column_names:
     -
@@ -47,4 +47,4 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
+    - tables

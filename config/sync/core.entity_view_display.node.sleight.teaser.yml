@@ -9,10 +9,10 @@ dependencies:
     - field.field.node.sleight.field_exsurgent
     - field.field.node.sleight.field_is_active
     - field.field.node.sleight.field_psi_skill
-    - field.field.node.sleight.field_source
     - field.field.node.sleight.field_sleight_duration
     - field.field.node.sleight.field_sleight_level
     - field.field.node.sleight.field_sleight_range
+    - field.field.node.sleight.field_strain
     - node.type.sleight
   module:
     - user
@@ -34,13 +34,12 @@ content:
     third_party_settings: {  }
 hidden:
   field_action_type: true
+  field_attribution: true
   field_description: true
   field_exsurgent: true
   field_is_active: true
   field_psi_skill: true
-  field_source: true
   field_sleight_duration: true
   field_sleight_level: true
   field_sleight_range: true
-  field_source: true
   field_strain: true

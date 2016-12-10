@@ -1,0 +1,43 @@
+uuid: 61ccbaee-eab5-4fce-ab24-6c87641fdad4
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.instance.muse
+    - field.field.instance.muse.field_description
+    - field.field.instance.muse.field_skills
+    - field.field.instance.muse.field_stats
+  module:
+    - ep_skill_reference
+    - ep_statblock
+    - text
+id: instance.muse.default
+targetEntityType: instance
+bundle: muse
+mode: default
+content:
+  field_description:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_skills:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: skill_reference_select
+  field_stats:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

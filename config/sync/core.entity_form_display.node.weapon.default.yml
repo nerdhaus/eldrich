@@ -3,10 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.weapon.field_accessory
-    - field.field.node.weapon.field_ammo
     - field.field.node.weapon.field_ap_modifier
     - field.field.node.weapon.field_area_effect
+    - field.field.node.weapon.field_attribution
     - field.field.node.weapon.field_blueprints
     - field.field.node.weapon.field_cost
     - field.field.node.weapon.field_damage_dice
@@ -15,18 +14,24 @@ dependencies:
     - field.field.node.weapon.field_description
     - field.field.node.weapon.field_firing_modes
     - field.field.node.weapon.field_gear_type
+    - field.field.node.weapon.field_is_ammo
+    - field.field.node.weapon.field_is_mod
     - field.field.node.weapon.field_linked_skill
     - field.field.node.weapon.field_magazine_size
     - field.field.node.weapon.field_range
     - field.field.node.weapon.field_reach
+    - field.field.node.weapon.field_short_name
     - field.field.node.weapon.field_skill_bonus
-    - field.field.node.weapon.field_source
+    - field.field.node.weapon.field_special_effect
+    - field.field.node.weapon.field_uses_ammo
+    - field.field.node.weapon.field_uses_mods
     - node.type.weapon
   module:
     - entity_reference_override
     - entity_reference_quantity
     - ep_complex_values
     - field_group
+    - inline_entity_form
     - operation
     - path
     - text
@@ -57,18 +62,6 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
-  field_accessory:
-    weight: 8
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-  field_ammo:
-    weight: 7
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
   field_ap_modifier:
     weight: 44
     settings:
@@ -88,6 +81,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
+  field_attribution:
+    weight: 51
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      collapsed: true
+      override_labels: false
+    third_party_settings: {  }
+    type: inline_entity_form_simple
   field_blueprints:
     weight: 19
     settings:
@@ -139,6 +143,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_is_ammo:
+    weight: 47
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_is_mod:
+    weight: 46
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_linked_skill:
     weight: 17
     settings:
@@ -164,17 +180,38 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
-  field_source:
-    weight: 11
-    settings: {  }
+  field_short_name:
+    weight: 52
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_quantity_select
+    type: string_textfield
   field_skill_bonus:
     weight: 18
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+  field_special_effect:
+    weight: 49
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_uses_ammo:
+    weight: 50
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_uses_mods:
+    weight: 48
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   path:
     type: path
     weight: 5
@@ -207,5 +244,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_source: true
+hidden: {  }

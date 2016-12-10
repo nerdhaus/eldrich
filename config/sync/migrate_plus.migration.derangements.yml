@@ -18,6 +18,8 @@ source:
     -
       description: Description
     -
+      usage: Usage
+    -
       book: Book
   keys:
     - title
@@ -28,7 +30,7 @@ process:
   type:
     plugin: default_value
     default_value: derangement
-  field_type:
+  field_derangement_level:
     plugin: entity_lookup
     source: type
     value_key: title
@@ -37,15 +39,25 @@ process:
     entity_type: lookup
     ignore_case: true
   field_description/value: description
-  field_source:
+  field_usage/value: usage
+  citation:
     plugin: source_with_page
     entity_type: node
     bundle: source
     bundle_key: type
     value_key: field_code
     source: book
+  field_attribution:
+    plugin: reference_factory
+    entity_type: component
+    source:
+      - '@citation'
+    keys:
+      - field_attribution_citations
+    default_values:
+      type: attribution
 destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - lookup_tables
+    - tables

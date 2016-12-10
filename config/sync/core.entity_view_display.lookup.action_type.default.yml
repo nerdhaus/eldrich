@@ -44,4 +44,3 @@ content:
     third_party_settings: {  }
 hidden:
   id: true
-  langcode: true

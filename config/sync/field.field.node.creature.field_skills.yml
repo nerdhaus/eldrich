@@ -1,0 +1,27 @@
+uuid: 55e9a242-8270-479c-a992-081f8537bbff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_skills
+    - node.type.creature
+  module:
+    - ep_skill_reference
+id: node.creature.field_skills
+field_name: field_skills
+entity_type: node
+bundle: creature
+label: Skills
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: select_lists
+      display_name: skills
+      arguments: {  }
+field_type: skill_reference

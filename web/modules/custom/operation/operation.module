@@ -9,7 +9,11 @@ function operation_parse_string($string) {
   $string = str_replace(' ', '', $string);
   $string = str_replace(',', '', $string);
   $matches = [];
-  return preg_match("/(?<operator>[+-\/\*\^%=])(?<value>[0-9]+)/", $string, $matches);
+  preg_match("/(?<operator>[+-\/\*\^%=])?(?<value>[0-9]+)/", $string, $matches);
+  if (empty($matches['operator'])) {
+    $matches['operator'] = '+';
+  }
+  return $matches;
 }
 
 

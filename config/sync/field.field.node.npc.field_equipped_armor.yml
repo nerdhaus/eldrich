@@ -1,0 +1,28 @@
+uuid: 2f4adf4e-5452-437a-9a37-733072ed06bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.instance.armor_instance
+    - field.storage.node.field_equipped_armor
+    - node.type.npc
+id: node.npc.field_equipped_armor
+field_name: field_equipped_armor
+entity_type: node
+bundle: npc
+label: 'Equipped Armor'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:instance'
+  handler_settings:
+    target_bundles:
+      armor_instance: armor_instance
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

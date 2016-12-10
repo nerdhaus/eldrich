@@ -1,0 +1,18 @@
+uuid: a8209ce4-6c2a-4df0-935d-426a56f89e2f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Armor
+type: armor
+description: 'Protective clothing and gear, including mods and enhancements.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

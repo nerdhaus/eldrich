@@ -39,7 +39,8 @@
         "drupal/entity_reference_revisions": "^1.0",
         "drupal/range": "1.x-dev",
         "drupal/bootstrap": "^3.0",
-        "drupal/replicate": "1.x-dev"
+        "drupal/replicate": "1.x-dev",
+        "drupal/entity_reference_views_select": "^1.1"
     },
     "require-dev": {
         "behat/mink": "~1.7",

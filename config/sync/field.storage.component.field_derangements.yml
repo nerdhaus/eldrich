@@ -1,0 +1,20 @@
+uuid: 547f92b5-b67e-4a42-bed7-c3467d8ebc2c
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - node
+id: component.field_derangements
+field_name: field_derangements
+entity_type: component
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

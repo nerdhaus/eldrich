@@ -1,0 +1,70 @@
+uuid: 05cc2c84-8752-4906-9fb0-52bbec4dde5e
+langcode: en
+status: true
+dependencies: {  }
+id: locations
+migration_tags: null
+migration_group: eldrich_core
+label: Locations
+source:
+  plugin: csv
+  path: modules/custom/ep_import/data/locations.csv
+  header_row_count: 1
+  column_names:
+    -
+      title: Title
+    -
+      parent: Parent
+    -
+      type: Type
+    -
+      description: Description
+    -
+      population: Population
+    -
+      book: Book
+  keys:
+    - title
+  constants:
+    content_type: location
+process:
+  title: title
+  field_parent_location:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration
+      migration: location
+  type: constants/content_type
+  field_location_type/target_id:
+    plugin: entity_lookup
+    source: type
+    value_key: title
+    bundle_key: type
+    bundle: location_type
+    entity_type: lookup
+  field_description/value: description
+  field_population: population
+  citation:
+    plugin: source_with_page
+    entity_type: node
+    bundle: source
+    bundle_key: type
+    value_key: field_code
+    source: book
+  field_attribution:
+    plugin: reference_factory
+    entity_type: component
+    source:
+      - '@citation'
+    keys:
+      - field_attribution_citations
+    default_values:
+      type: attribution
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - tables

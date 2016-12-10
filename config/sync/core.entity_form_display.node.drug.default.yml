@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.drug.field_addiction_modifier
+    - field.field.node.drug.field_attribution
     - field.field.node.drug.field_blueprints
     - field.field.node.drug.field_cost
     - field.field.node.drug.field_delivery_mechanism
@@ -11,10 +12,11 @@ dependencies:
     - field.field.node.drug.field_duration
     - field.field.node.drug.field_gear_type
     - field.field.node.drug.field_onset
-    - field.field.node.drug.field_source
+    - field.field.node.drug.field_short_name
     - node.type.drug
   module:
     - entity_reference_quantity
+    - inline_entity_form
     - path
     - range
     - text
@@ -39,6 +41,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
+  field_attribution:
+    weight: 32
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      collapsed: true
+      override_labels: false
+    third_party_settings: {  }
+    type: inline_entity_form_simple
   field_blueprints:
     weight: 9
     settings:
@@ -80,11 +93,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: range
-  field_source:
-    weight: 11
-    settings: {  }
+  field_short_name:
+    weight: 33
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_quantity_select
+    type: string_textfield
   path:
     type: path
     weight: 5
@@ -117,5 +132,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_source: true
+hidden: {  }

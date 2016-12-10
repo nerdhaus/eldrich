@@ -48,6 +48,8 @@ class StatBlock extends FieldItemBase {
       ->setLabel(new TranslatableMarkup('Speed'));
     $properties['dur'] = DataDefinition::create('integer')
       ->setLabel(new TranslatableMarkup('Durability'));
+    $properties['synthetic'] = DataDefinition::create('boolean')
+      ->setLabel(new TranslatableMarkup('Synthetic'));
 
     $properties['init'] = DataDefinition::create('integer')
       ->setLabel(t('Initiative'))
@@ -117,6 +119,7 @@ class StatBlock extends FieldItemBase {
         'mox' => ['type' => 'int'],
         'spd' => ['type' => 'int'],
         'dur' => ['type' => 'int'],
+        'synthetic' => ['type' => 'int'],
       ],
     ];
 
@@ -138,6 +141,7 @@ class StatBlock extends FieldItemBase {
     $values['mox'] = mt_rand(1, 5);
     $values['spd'] = mt_rand(1, 3);
     $values['dur'] = mt_rand(30, 45);
+    $values['synth'] = mt_rand(0, 1);
     return $values;
   }
 
@@ -155,7 +159,8 @@ class StatBlock extends FieldItemBase {
       empty($this->values['wil']) &&
       empty($this->values['mox']) &&
       empty($this->values['spd']) &&
-      empty($this->values['dur'])
+      empty($this->values['dur']) &&
+      empty($this->values['synthetic'])
     ) {
       return TRUE;
     }

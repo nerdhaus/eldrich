@@ -1,0 +1,9 @@
+uuid: 84fc14e7-6a19-4fe0-a18f-8d7156037700
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.instance
+name: Morph
+type: morph
+description: 'A specific morph, complete with stats, skill bonuses, augmentations, traits, and so on.'

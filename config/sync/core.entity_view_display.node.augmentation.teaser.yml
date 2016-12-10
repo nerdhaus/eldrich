@@ -4,10 +4,14 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.augmentation.field_armor
+    - field.field.node.augmentation.field_blueprints
+    - field.field.node.augmentation.field_conditional
     - field.field.node.augmentation.field_cost
     - field.field.node.augmentation.field_description
     - field.field.node.augmentation.field_gear_type
-    - field.field.node.augmentation.field_source
+    - field.field.node.augmentation.field_morph_types
+    - field.field.node.augmentation.field_stats
     - node.type.augmentation
   module:
     - user
@@ -20,12 +24,15 @@ content:
     weight: 100
 hidden:
   field_armor: true
+  field_attribution: true
   field_blueprints: true
   field_conditional: true
   field_cost: true
   field_description: true
   field_gear_type: true
+  field_mobility_system: true
   field_morph_types: true
-  field_source: true
-  field_source: true
+  field_short_name: true
+  field_special_effect: true
   field_stats: true
+  field_weapon: true

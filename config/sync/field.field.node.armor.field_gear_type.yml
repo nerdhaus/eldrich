@@ -1,0 +1,28 @@
+uuid: 014ef298-c1d9-411b-b81f-ed054b3b769d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gear_type
+    - node.type.armor
+    - taxonomy.vocabulary.gear_type
+id: node.armor.field_gear_type
+field_name: field_gear_type
+entity_type: node
+bundle: armor
+label: 'Gear Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      gear_type: gear_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

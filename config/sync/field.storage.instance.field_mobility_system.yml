@@ -1,0 +1,19 @@
+uuid: 73edf42a-a916-44b5-becb-4e131d8469bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: instance.field_mobility_system
+field_name: field_mobility_system
+entity_type: instance
+type: entity_reference
+settings:
+  target_type: lookup
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

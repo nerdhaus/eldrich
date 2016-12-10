@@ -4,10 +4,26 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.weapon.field_ap_modifier
+    - field.field.node.weapon.field_area_effect
+    - field.field.node.weapon.field_blueprints
     - field.field.node.weapon.field_cost
+    - field.field.node.weapon.field_damage_dice
+    - field.field.node.weapon.field_damage_effects
+    - field.field.node.weapon.field_damage_modifier
     - field.field.node.weapon.field_description
+    - field.field.node.weapon.field_firing_modes
     - field.field.node.weapon.field_gear_type
-    - field.field.node.weapon.field_source
+    - field.field.node.weapon.field_is_ammo
+    - field.field.node.weapon.field_is_mod
+    - field.field.node.weapon.field_linked_skill
+    - field.field.node.weapon.field_magazine_size
+    - field.field.node.weapon.field_range
+    - field.field.node.weapon.field_reach
+    - field.field.node.weapon.field_skill_bonus
+    - field.field.node.weapon.field_special_effect
+    - field.field.node.weapon.field_uses_ammo
+    - field.field.node.weapon.field_uses_mods
     - node.type.weapon
   module:
     - user
@@ -22,19 +38,27 @@ hidden:
   field_accessory: true
   field_additional_effects: true
   field_ammo: true
+  field_ap_modifier: true
   field_area_effect: true
   field_armor: true
+  field_attribution: true
   field_blueprints: true
   field_cost: true
   field_damage: true
+  field_damage_dice: true
   field_damage_effects: true
+  field_damage_modifier: true
   field_description: true
   field_firing_modes: true
   field_gear_type: true
+  field_is_ammo: true
+  field_is_mod: true
   field_linked_skill: true
   field_magazine_size: true
   field_range: true
   field_reach: true
-  field_source: true
+  field_short_name: true
   field_skill_bonus: true
-  field_source: true
+  field_special_effect: true
+  field_uses_ammo: true
+  field_uses_mods: true

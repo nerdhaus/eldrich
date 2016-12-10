@@ -9,12 +9,10 @@ dependencies:
     - field.field.node.skill.field_linked_aptitude
     - field.field.node.skill.field_no_defaulting
     - field.field.node.skill.field_skill_type
-    - field.field.node.skill.field_source
     - field.field.node.skill.field_specializations
     - field.field.node.skill.field_usage
     - node.type.skill
   module:
-    - entity_reference_quantity
     - path
     - text
 id: node.skill.default
@@ -66,11 +64,6 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
-  field_source:
-    weight: 14
-    settings: {  }
-    third_party_settings: {  }
-    type: entity_reference_quantity_select
   field_skill_type:
     weight: 7
     settings: {  }
@@ -122,5 +115,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_source: true
+hidden: {  }

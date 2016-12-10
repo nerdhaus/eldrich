@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_skills
     - node.type.morph
-    - node.type.skill
   module:
     - ep_skill_reference
 id: node.morph.field_skills
@@ -19,12 +18,10 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: views
   handler_settings:
-    target_bundles:
-      skill: skill
-    sort:
-      field: _none
-    auto_create: 0
-    auto_create_bundle: ''
+    view:
+      view_name: select_lists
+      display_name: skills
+      arguments: {  }
 field_type: skill_reference

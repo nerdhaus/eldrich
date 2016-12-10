@@ -1,9 +1,7 @@
 uuid: ec88c9b2-a28b-437d-b00c-7b69e58a3244
 langcode: en
 status: true
-dependencies:
-  - eldrich_gear
-  - eldrich_core
+dependencies: {  }
 id: eldrich_chars
 label: Characters
 description: 'NPCs, creatures, etc. for Eldrich Black'

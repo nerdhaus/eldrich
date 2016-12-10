@@ -16,7 +16,7 @@ use Drupal\migrate\Row;
  *
  * @ingroup migration
  */
-class IntegerTimeParser extends ProcessPluginBase {
+class OperationString extends ProcessPluginBase {
 
   /**
    * {@inheritdoc}

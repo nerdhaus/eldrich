@@ -1,0 +1,27 @@
+uuid: c0cd00bd-ae71-4545-ba98-10d9454b9a1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.armor
+  module:
+    - user
+id: node.armor.teaser
+targetEntityType: node
+bundle: armor
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_armor: true
+  field_attribution: true
+  field_blueprints: true
+  field_cost: true
+  field_description: true
+  field_gear_type: true
+  field_is_mod: true
+  field_short_name: true
+  field_special_effect: true
+  field_uses_mods: true

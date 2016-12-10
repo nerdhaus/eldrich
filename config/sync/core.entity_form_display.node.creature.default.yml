@@ -3,9 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.creature.field_armor
+    - field.field.node.creature.field_attribution
+    - field.field.node.creature.field_augmentations
+    - field.field.node.creature.field_creature_type
     - field.field.node.creature.field_description
+    - field.field.node.creature.field_equipped_weapons
+    - field.field.node.creature.field_gear
+    - field.field.node.creature.field_mobility_system
+    - field.field.node.creature.field_movement_speed
+    - field.field.node.creature.field_skills
+    - field.field.node.creature.field_stats
+    - field.field.node.creature.field_strain
+    - field.field.node.creature.field_traits
     - node.type.creature
   module:
+    - entity_reference_override
+    - ep_complex_values
+    - ep_skill_reference
+    - ep_statblock
+    - inline_entity_form
     - path
     - text
 id: node.creature.default
@@ -18,6 +35,38 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+  field_armor:
+    weight: 33
+    settings: {  }
+    third_party_settings: {  }
+    type: armor_widget
+  field_attribution:
+    weight: 42
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      collapsed: true
+      override_labels: false
+    third_party_settings: {  }
+    type: inline_entity_form_simple
+  field_augmentations:
+    weight: 39
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
+  field_creature_type:
+    weight: 43
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_description:
     weight: 31
     settings:
@@ -25,6 +74,60 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_equipped_weapons:
+    weight: 36
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_gear:
+    weight: 40
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
+  field_mobility_system:
+    weight: 37
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_movement_speed:
+    weight: 32
+    settings: {  }
+    third_party_settings: {  }
+    type: mobility_speed_widget
+  field_skills:
+    weight: 35
+    settings: {  }
+    third_party_settings: {  }
+    type: skill_reference_select
+  field_stats:
+    weight: 34
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
+  field_strain:
+    weight: 41
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_traits:
+    weight: 38
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
   path:
     type: path
     weight: 30

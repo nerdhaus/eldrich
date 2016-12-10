@@ -4,16 +4,19 @@ status: true
 dependencies:
   config:
     - field.field.node.robot.field_armor
+    - field.field.node.robot.field_attribution
     - field.field.node.robot.field_augmentations
     - field.field.node.robot.field_blueprints
     - field.field.node.robot.field_cost
+    - field.field.node.robot.field_default_ai
     - field.field.node.robot.field_description
+    - field.field.node.robot.field_equipped_weapons
     - field.field.node.robot.field_gear
     - field.field.node.robot.field_gear_type
     - field.field.node.robot.field_mobility_system
     - field.field.node.robot.field_movement_speed
+    - field.field.node.robot.field_short_name
     - field.field.node.robot.field_skills
-    - field.field.node.robot.field_source
     - field.field.node.robot.field_stats
     - node.type.robot
   module:
@@ -35,6 +38,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_text
+  field_attribution:
+    weight: 116
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_augmentations:
     weight: 112
     label: above
@@ -59,12 +69,26 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_quantity_label
+  field_default_ai:
+    weight: 115
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_description:
     weight: 104
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
+  field_equipped_weapons:
+    weight: 117
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_gear:
     weight: 114
     label: above
@@ -93,13 +117,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_formatter
-  field_source:
-    weight: 105
+  field_short_name:
+    weight: 118
     label: above
     settings:
-      link: true
+      link_to_entity: false
     third_party_settings: {  }
-    type: entity_reference_quantity_label
+    type: string
   field_skills:
     weight: 113
     label: above
@@ -115,5 +139,4 @@ content:
     type: stat_block_table
   links:
     weight: 100
-hidden:
-  field_source: true
+hidden: {  }
