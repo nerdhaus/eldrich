@@ -18,6 +18,8 @@ source:
     -
       type: Type
     -
+      canon: Canon
+    -
       description: Description
     -
       homepage: Homepage
@@ -39,6 +41,13 @@ process:
     bundle_key: type
     bundle: source_type
     entity_type: lookup
+  field_is_canon:
+    plugin: static_map
+    source: canon
+    map:
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
   field_description/value: description
   field_code/value: code
   field_weight: weight
