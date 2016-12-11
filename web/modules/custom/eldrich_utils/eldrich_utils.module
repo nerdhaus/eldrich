@@ -22,3 +22,8 @@ function eldrich_utils_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+
+function eldrich_utils_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+
+}
