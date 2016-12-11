@@ -32,16 +32,16 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 2
     settings: {  }
     third_party_settings: {  }
   field_armor:
-    weight: 33
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
   field_attribution:
-    weight: 42
+    weight: 18
     settings:
       form_mode: default
       label_singular: ''
@@ -52,7 +52,7 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_simple
   field_augmentations:
-    weight: 39
+    weight: 13
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -60,30 +60,33 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
   field_creature_type:
-    weight: 43
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    weight: 17
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
   field_description:
-    weight: 31
+    weight: 6
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
   field_equipped_weapons:
-    weight: 36
+    weight: 12
     settings:
       match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: inline_entity_form_complex
   field_gear:
-    weight: 40
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -91,37 +94,34 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
   field_mobility_system:
-    weight: 37
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    weight: 9
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
   field_movement_speed:
-    weight: 32
+    weight: 10
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_widget
   field_skills:
-    weight: 35
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: skill_reference_select
   field_stats:
-    weight: 34
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: stat_block_table
   field_strain:
-    weight: 41
+    weight: 16
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
   field_traits:
-    weight: 38
+    weight: 14
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -130,31 +130,31 @@ content:
     type: entity_reference_override_autocomplete
   path:
     type: path
-    weight: 30
+    weight: 5
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 3
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 4
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60

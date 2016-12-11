@@ -42,7 +42,7 @@ process:
       source: parent
     -
       plugin: migration
-      migration: gear_taxonomy
+      migration: gear_types
 destination:
   plugin: 'entity:taxonomy_term'
 migration_dependencies:

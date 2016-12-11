@@ -4,22 +4,45 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.creature.field_armor
+    - field.field.node.creature.field_attribution
+    - field.field.node.creature.field_augmentations
+    - field.field.node.creature.field_creature_type
+    - field.field.node.creature.field_description
+    - field.field.node.creature.field_equipped_weapons
+    - field.field.node.creature.field_gear
+    - field.field.node.creature.field_mobility_system
+    - field.field.node.creature.field_movement_speed
+    - field.field.node.creature.field_skills
+    - field.field.node.creature.field_stats
+    - field.field.node.creature.field_strain
+    - field.field.node.creature.field_traits
     - node.type.creature
   module:
+    - text
     - user
 id: node.creature.teaser
 targetEntityType: node
 bundle: creature
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_creature_type:
+    type: entity_reference_label
+    weight: 1
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_description:
+    type: text_default
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_armor: true
   field_attribution: true
   field_augmentations: true
-  field_creature_type: true
-  field_description: true
   field_equipped_weapons: true
   field_gear: true
   field_mobility_system: true
@@ -28,3 +51,4 @@ hidden:
   field_stats: true
   field_strain: true
   field_traits: true
+  links: true
