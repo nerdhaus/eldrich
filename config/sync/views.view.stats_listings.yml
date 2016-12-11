@@ -529,7 +529,7 @@ display:
         type: normal
         title: Stats
         description: 'Character Abilities and Attributes'
-        expanded: true
+        expanded: false
         parent: ''
         weight: -50
         context: '0'

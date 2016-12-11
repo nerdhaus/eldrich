@@ -244,7 +244,7 @@ display:
         type: normal
         title: Gear
         description: 'Equipment and Services'
-        expanded: true
+        expanded: false
         parent: ''
         weight: -49
         context: '0'
