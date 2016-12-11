@@ -1,0 +1,114 @@
+<?php
+
+/**
+ * @file
+ * Provide a field formatter to render values as HTML or comma-separated lists.
+ */
+
+use Drupal\list_formatter\Plugin\Field\FieldFormatter\ListFormatter;
+use Drupal\Core\Template\Attribute;
+use Drupal\Component\Utility\NestedArray;
+
+/**
+ * Implements hook_help().
+ */
+function list_formatter_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#list_formatter' :
+      $output =  '<p>' . t("The text formatter module provides a new display formatter that can
+        be used on any text, number, list, or taxonomy fields.") . '</p>';
+      $output .= '<p>' . t("Go to 'Manage display' for your entity field display settings and
+        select 'List' as the formatter. Various options will then be available to either format
+        your field values as an html list or comma separated list.") . '</p>';
+      $output .= '<p>' . t("This would be mostly implemented with multi value fields.
+        E.g. A text field could be created with unlimited values. Each value will then be added to
+        the same html list. Taxonomy terms will work with comma separated auto complete lists too,
+        to give the same result. The only exceptions are textarea field, lists can be created based
+        on each line of the input.") . '</p>';
+
+    return $output;
+  }
+}
+
+/**
+ * Implements hook_field_formatter_info_alter().
+ */
+function list_formatter_field_formatter_info_alter(&$info) {
+  $list_formatter_info = ListFormatter::fieldListInfo();
+  $info['list_formatter']['field_types'] = $list_formatter_info['field_types'];
+  $info['list_formatter']['settings']['contrib'] = $list_formatter_info['settings'];
+}
+
+/**
+ * Implements hook_theme().
+ */
+function list_formatter_theme($existing, $type, $theme, $path) {
+  return array(
+    'list_formatter_comma' => [
+      'variables' => [
+        'items' => NULL,
+        'formatter' => NULL,
+        'attributes' => NULL
+      ],
+    ],
+  );
+}
+
+/**
+ * Validate that a space-separated list of values are lowercase and appropriate
+ * for use as HTML classes.
+ *
+ * @see list_formatter_field_formatter_settings_form()
+ */
+function _list_formatter_validate_class($element, &$form_state) {
+  $value = NestedArray::getValue($form_state['values'], $element['#parents']);
+  $classes = explode(' ', $value);
+  foreach ($classes as $class) {
+    if ($class != drupal_html_class($class)) {
+      form_error($element, t('List classes contain illegal characters; classes should be lowercase and may contain letters, numbers, and dashes.'));
+      return;
+    }
+  }
+}
+
+/**
+ * Theme function to render comma separated lists.
+ */
+function theme_list_formatter_comma($variables) {
+  $items = $variables['items'];
+  $formatter = $variables['formatter'];
+  $attributes = new Attribute($variables['attributes']);
+
+  // Optionally prefix the last item with 'and'.
+  $last = '';
+  if ($formatter->getSetting('comma_and') && (count($items) > 1)) {
+    $last = ' ' . t('and') . ' ' . array_pop($items);
+  }
+
+  // Default comma separator.
+  $separator = ', ';
+  //Override if we need to.
+  if ($formatter->getSetting('comma_override')) {
+    $sep = check_plain($formatter->getSetting('separator_custom'));
+    $tag = $formatter->getSetting('separator_custom_tag');
+    if ($tag) {
+      $class = $formatter->getSetting('separator_custom_class');
+      $separator = "<$tag class=\"$class\">$sep</$tag>";
+    }
+  }
+  // Generate a comma-separated list.
+  $output = implode($separator, $items) . $last;
+
+  // Optionally follow the list with a '.'.
+  if ($formatter->getSetting('comma_full_stop')) {
+    $output .= '<span class="list_formatter-fullstop">.</span>';
+  }
+
+  // Optionally wrap the list in an HTML tag.
+  $tag = $formatter->getSetting('comma_tag');
+  if (!empty($tag)) {
+    $output = "<$tag$attributes>$output</$tag>";
+  }
+
+  return $output;
+}

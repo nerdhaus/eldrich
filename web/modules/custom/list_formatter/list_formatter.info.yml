@@ -1,0 +1,13 @@
+name: 'List formatter'
+type: module
+description: 'A field formatter for rendering values as HTML or comma-separated lists.'
+# core: 8.x
+package: Fields
+dependencies:
+  - field
+
+# Information added by Drupal.org packaging script on 2016-06-03
+version: '8.x-2.x-dev'
+core: '8.x'
+project: 'list_formatter'
+datestamp: 1464942840
