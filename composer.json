@@ -44,7 +44,8 @@
         "drupal/google_analytics": "^2.1",
         "drupal/views_taxonomy_term_name_depth": "^1.2",
         "drupal/themable_forms": "^1.0@alpha",
-        "drupal/verf": "^1.0@beta"
+        "drupal/verf": "^1.0@beta",
+        "drupal/image_effects": "^1.0@alpha"
     },
     "require-dev": {
         "behat/mink": "~1.7",
