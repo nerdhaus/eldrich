@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a9be211b746ea61a3c9c1fd5e8557695",
-    "content-hash": "256cc193412465a703276e51db560878",
+    "hash": "48b0b728bde8543f4f349a3689bf9d73",
+    "content-hash": "c2bc7d1edad25871b4c3a118ebf8438c",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1327,6 +1327,65 @@
             "time": "2016-11-24 06:04:33"
         },
         {
+            "name": "drupal/contact_formatter",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/contact_formatter",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/contact_formatter-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "f8382ce1d9ee5992bb043c96347028db9003262e"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1470411844"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Caffeinated",
+                    "homepage": "https://www.drupal.org/user/2507260"
+                },
+                {
+                    "name": "albertski",
+                    "homepage": "https://www.drupal.org/user/1327432"
+                },
+                {
+                    "name": "michaelpporter",
+                    "homepage": "https://www.drupal.org/user/845350"
+                },
+                {
+                    "name": "mikeacklin",
+                    "homepage": "https://www.drupal.org/user/1198900"
+                }
+            ],
+            "description": "Field Formatter for Contact Forms",
+            "homepage": "https://www.drupal.org/project/contact_formatter",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/contact_formatter",
+                "issues": "https://www.drupal.org/project/issues/contact_formatter"
+            }
+        },
+        {
             "name": "drupal/core",
             "version": "8.2.4",
             "source": {
@@ -2173,7 +2232,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/google_analytics-8.x-2.1.zip",
-                "reference": null,
+                "reference": "8.x-2.1",
                 "shasum": "9b5c76802ca28d5072bb9bb552bbfeb660b0734a"
             },
             "require": {
@@ -2225,7 +2284,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/image_effects-8.x-1.0-alpha3.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha3",
                 "shasum": "8c130c6bb4b9a3a87ef8b92d169833230185f598"
             },
             "require": {
@@ -2471,6 +2530,69 @@
             }
         },
         {
+            "name": "drupal/paragraphs",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/paragraphs",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "4fcbd6a50f5b725a9ba66ee105d6f8a1385ff2c8"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/entity_reference_revisions": "*"
+            },
+            "suggest": {
+                "drupal/core": "Required by drupal/paragraphs_demo",
+                "drupal/diff": "Required by drupal/paragraphs",
+                "drupal/replicate": "Required by drupal/paragraphs",
+                "drupal/search_api": "Required by drupal/paragraphs_demo",
+                "drupal/search_api_db": "Required by drupal/paragraphs_demo"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1469726249"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "Frans",
+                    "homepage": "https://www.drupal.org/user/514222"
+                },
+                {
+                    "name": "jeroen.b",
+                    "homepage": "https://www.drupal.org/user/1853532"
+                },
+                {
+                    "name": "miro_dietiker",
+                    "homepage": "https://www.drupal.org/user/227761"
+                }
+            ],
+            "description": "Enables the creation of paragraphs entities. To safely uninstall, go first to Structure > Paragraphs types > Settings.",
+            "homepage": "https://www.drupal.org/project/paragraphs",
+            "support": {
+                "source": "http://cgit.drupalcode.org/paragraphs"
+            }
+        },
+        {
             "name": "drupal/pathauto",
             "version": "dev-1.x",
             "source": {
@@ -2625,7 +2747,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/themable_forms-8.x-1.0-alpha2.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha2",
                 "shasum": "3424b4b7e90670f165c60087fef94658496fd312"
             },
             "require": {
@@ -2732,7 +2854,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/verf-8.x-1.0-beta6.zip",
-                "reference": null,
+                "reference": "8.x-1.0-beta6",
                 "shasum": "64e9c2c09d4b7ef2ab02f9421d46ec02a5603bf0"
             },
             "require": {
@@ -2765,6 +2887,48 @@
             }
         },
         {
+            "name": "drupal/views_bootstrap",
+            "version": "dev-3.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/views_bootstrap",
+                "reference": "73617b8aa7e836d472c0dba2b636de7e3a1f8af6"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.x-dev",
+                    "datestamp": "1474205339"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Castelo",
+                    "homepage": "https://www.drupal.org/user/3555"
+                },
+                {
+                    "name": "mrded",
+                    "homepage": "https://www.drupal.org/user/556088"
+                }
+            ],
+            "description": "Bootstrap Components.",
+            "homepage": "https://www.drupal.org/project/views_bootstrap",
+            "support": {
+                "source": "http://cgit.drupalcode.org/views_bootstrap"
+            },
+            "time": "2016-09-18 13:25:31"
+        },
+        {
             "name": "drupal/views_taxonomy_term_name_depth",
             "version": "1.2.0",
             "source": {
@@ -2775,7 +2939,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/views_taxonomy_term_name_depth-8.x-1.2.zip",
-                "reference": null,
+                "reference": "8.x-1.2",
                 "shasum": "b23bf3018fa611c8d46683f0265c06bafb112732"
             },
             "require": {
@@ -6242,6 +6406,81 @@
             "time": "2015-06-14 21:17:01"
         },
         {
+            "name": "drupal/viewsreference",
+            "version": "1.0.0-alpha1",
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/viewsreferennce": "self.version"
+            },
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1481323083"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "New Zeal",
+                    "homepage": "https://www.drupal.org/user/93571"
+                }
+            ],
+            "description": "Enables Views to be embedded in an entity reference field",
+            "homepage": "https://www.drupal.org/project/viewsreferennce",
+            "support": {
+                "source": "http://cgit.drupalcode.org/viewsreferennce"
+            }
+        },
+        {
+            "name": "drupal/viewsreferennce",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/viewsreferennce",
+                "reference": "8.x-1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/viewsreferennce-8.x-1.0-alpha1.zip",
+                "reference": "8.x-1.0-alpha1",
+                "shasum": "fc561d86eb8ed9043a6e33c0f1fd44a2b1eb0485"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1481323083"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "New Zeal",
+                    "homepage": "https://www.drupal.org/user/93571"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/viewsreferennce",
+            "support": {
+                "source": "http://cgit.drupalcode.org/viewsreferennce"
+            }
+        },
+        {
             "name": "fabpot/goutte",
             "version": "v3.2.0",
             "source": {
@@ -7334,7 +7573,9 @@
         "drupal/replicate": 20,
         "drupal/themable_forms": 15,
         "drupal/verf": 10,
-        "drupal/image_effects": 15
+        "drupal/image_effects": 15,
+        "drupal/views_bootstrap": 20,
+        "drupal/viewsreference": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,

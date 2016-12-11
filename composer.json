@@ -45,7 +45,10 @@
         "drupal/views_taxonomy_term_name_depth": "^1.2",
         "drupal/themable_forms": "^1.0@alpha",
         "drupal/verf": "^1.0@beta",
-        "drupal/image_effects": "^1.0@alpha"
+        "drupal/image_effects": "^1.0@alpha",
+        "drupal/paragraphs": "^1.0",
+        "drupal/contact_formatter": "^1.0",
+        "drupal/views_bootstrap": "3.x-dev"
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -54,7 +57,8 @@
         "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
         "mikey179/vfsStream": "~1.2",
         "phpunit/phpunit": "~4.8",
-        "symfony/css-selector": "~2.8"
+        "symfony/css-selector": "~2.8",
+        "drupal/viewsreference": "^1.0@alpha"
     },
     "conflict": {
         "drupal/drupal": "*"
