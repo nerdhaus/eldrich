@@ -15,6 +15,7 @@ module:
   dynamic_page_cache: 0
   eck: 0
   editor: 0
+  eldrich_utils: 0
   entity_reference_override: 0
   entity_reference_quantity: 0
   ep_complex_values: 0
@@ -34,6 +35,7 @@ module:
   inline_entity_form: 0
   integer_time: 0
   link: 0
+  list_formatter: 0
   menu_ui: 0
   migrate: 0
   migrate_plus: 0

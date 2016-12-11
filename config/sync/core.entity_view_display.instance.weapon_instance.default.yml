@@ -15,37 +15,31 @@ mode: default
 content:
   field_ammo:
     weight: -2
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_ammo_mods:
     weight: -1
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_weapon:
     weight: -4
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_weapon_mods:
     weight: -3
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  title:
-    label: hidden
-    type: string
-    weight: -5
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  title: true
