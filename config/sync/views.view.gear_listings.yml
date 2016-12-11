@@ -309,51 +309,6 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-        field_gear_type_target_id:
-          id: field_gear_type_target_id
-          table: node__field_gear_type
-          field: field_gear_type_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_gear_type_target_id_op
-            label: Category
-            description: ''
-            use_operator: false
-            operator: field_gear_type_target_id_op
-            identifier: type
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: gear_type
-          hierarchy: true
-          error_message: false
-          plugin_id: taxonomy_index_tid
         field_cost_target_id:
           id: field_cost_target_id
           table: node__field_cost
@@ -393,6 +348,53 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: numeric
+        term_node_tid_depth:
+          id: term_node_tid_depth
+          table: node_field_data
+          field: term_node_tid_depth
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: term_node_tid_depth_op
+            label: Category
+            description: ''
+            use_operator: false
+            operator: term_node_tid_depth_op
+            identifier: cat
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: gear_type
+          hierarchy: true
+          error_message: true
+          depth: 3
+          entity_type: node
+          plugin_id: taxonomy_index_tid_depth
       defaults:
         filters: false
         filter_groups: false
