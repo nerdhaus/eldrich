@@ -188,7 +188,7 @@ process:
         - weapon
       bundle_key: type
       entity_type: node
-  field_default_mind:
+  field_default_ai:
     plugin: entity_lookup_plus
     source: mind
     value_key: title
