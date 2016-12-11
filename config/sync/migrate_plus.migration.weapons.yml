@@ -134,7 +134,7 @@ process:
       plugin: entity_lookup_plus
       destination_field: target_id
       entity_type: lookup
-      bundle: damage_effects
+      bundle: damage_type
       bundle_key: type
       value_key: title
   field_area_effect:
@@ -187,7 +187,7 @@ process:
     bundle: skill
     bundle_key: type
     value_key: title
-    source: linked
+    source: skill
   field_skill_bonus: bonus
   field_reach: reach
   field_is_ammo:
