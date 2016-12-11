@@ -188,7 +188,7 @@ process:
         - weapon
       bundle_key: type
       entity_type: node
-  field_default_mind:
+  field_default_ai:
     plugin: entity_lookup_plus
     source: mind
     value_key: title
@@ -196,6 +196,25 @@ process:
     bundle: mind
     bundle_key: type
     entity_type: node
+  weapons:
+    plugin: entity_lookup_plus
+    destination_field: target_id
+    delimiter: ;
+    value_key: title
+    fallback_value_key: field_short_name
+    bundle: weapon
+    bundle_key: type
+    entity_type: node
+  field_equipped_weapons:
+    plugin: reference_factory
+    entity_type: component
+    source:
+      - '@weapons'
+    keys:
+      - field_attribution_citations
+    default_values:
+      type: attribution
+
 destination:
   plugin: 'entity:node'
 migration_dependencies:
