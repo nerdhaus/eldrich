@@ -32,5 +32,6 @@ hidden:
   field_code: true
   field_description: true
   field_home_page: true
+  field_is_canon: true
   field_source_type: true
   field_weight: true
