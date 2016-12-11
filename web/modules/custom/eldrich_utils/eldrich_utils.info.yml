@@ -1,0 +1,5 @@
+name: Eldrich Utils
+type: module
+description: Formatting and data mangement helpers for Eldrich Host
+core: 8.x
+package: Custom

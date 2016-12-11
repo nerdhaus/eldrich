@@ -41,7 +41,10 @@
         "drupal/bootstrap": "^3.0",
         "drupal/replicate": "1.x-dev",
         "drupal/entity_reference_views_select": "^1.1",
-        "drupal/google_analytics": "^2.1"
+        "drupal/google_analytics": "^2.1",
+        "drupal/views_taxonomy_term_name_depth": "^1.2",
+        "drupal/themable_forms": "^1.0@alpha",
+        "drupal/verf": "^1.0@beta"
     },
     "require-dev": {
         "behat/mink": "~1.7",
