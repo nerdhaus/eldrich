@@ -29,6 +29,15 @@ class IntegerRangeTimeFieldFormatter extends DefaultRangeFormatter {
    */
   protected function numberFormat($number) {
     $output = '';
+
+    // Eclipse Phase specific special cases
+    if ($number === 0) {
+      return "Instantaneous";
+    }
+    elseif ($number === 3) {
+      return "1 Action";
+    }
+
     $units = array(
       '1d|@countd' => 86400,
       '1h|@counth' => 3600,
@@ -38,7 +47,7 @@ class IntegerRangeTimeFieldFormatter extends DefaultRangeFormatter {
     foreach ($units as $key => $value) {
       $key = explode('|', $key);
       if ($number >= $value) {
-        $output .= ($output ? ' ' : '') . $this->formatPlural(floor($number / $value), $key[0], $key[1], array(), array('langcode' => $langcode));
+        $output .= ($output ? ' ' : '') . $this->formatPlural(floor($number / $value), $key[0], $key[1], array());
         $number %= $value;
       }
       elseif ($output) {
