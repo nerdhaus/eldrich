@@ -1,0 +1,22 @@
+uuid: acd4a539-8b72-49a7-a18e-2ad51092b9b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: morph_nodes
+label: 'Morph Nodes'
+type: 'canonical_entities:node'
+pattern: 'gear/morphs/[node:title]'
+selection_criteria:
+  602da06b-66e2-45cd-91cc-bc07730c43e3:
+    id: node_type
+    bundles:
+      morph: morph
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 602da06b-66e2-45cd-91cc-bc07730c43e3
+selection_logic: and
+weight: -8
+relationships: {  }

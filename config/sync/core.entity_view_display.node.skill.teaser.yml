@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.skill.field_usage
     - node.type.skill
   module:
+    - text
     - user
 id: node.skill.teaser
 targetEntityType: node
@@ -27,16 +28,30 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-  links:
-    weight: 100
+  field_description:
+    type: text_default
+    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+  field_linked_aptitude:
+    type: entity_reference_label
+    weight: 2
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_skill_type:
+    type: entity_reference_label
+    weight: 0
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
 hidden:
-  field_description: true
   field_example_fields: true
   field_is_field: true
-  field_linked_aptitude: true
   field_no_defaulting: true
-  field_skill_type: true
   field_specializations: true
   field_usage: true
+  links: true

@@ -23,31 +23,31 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_attribution:
-    weight: 105
-    label: above
+    weight: 3
+    label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_derangement_level:
-    weight: 104
-    label: above
+    weight: 1
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_description:
-    weight: 102
-    label: above
+    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_usage:
-    weight: 103
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  links:
-    weight: 100
-hidden: {  }
+hidden:
+  links: true

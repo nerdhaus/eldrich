@@ -11,22 +11,36 @@ dependencies:
     - field.field.node.robot.field_cost
     - field.field.node.robot.field_default_ai
     - field.field.node.robot.field_description
+    - field.field.node.robot.field_equipped_weapons
     - field.field.node.robot.field_gear
     - field.field.node.robot.field_gear_type
     - field.field.node.robot.field_mobility_system
     - field.field.node.robot.field_movement_speed
+    - field.field.node.robot.field_short_name
     - field.field.node.robot.field_skills
     - field.field.node.robot.field_stats
     - node.type.robot
   module:
+    - text
     - user
 id: node.robot.teaser
 targetEntityType: node
 bundle: robot
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_description:
+    type: text_default
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_gear_type:
+    type: entity_reference_label
+    weight: 1
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
 hidden:
   field_armor: true
   field_attribution: true
@@ -34,12 +48,11 @@ hidden:
   field_blueprints: true
   field_cost: true
   field_default_ai: true
-  field_description: true
   field_equipped_weapons: true
   field_gear: true
-  field_gear_type: true
   field_mobility_system: true
   field_movement_speed: true
   field_short_name: true
   field_skills: true
   field_stats: true
+  links: true

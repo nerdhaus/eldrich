@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.stat.field_weight
     - node.type.stat
   module:
+    - text
     - user
 id: node.stat.teaser
 targetEntityType: node
@@ -26,15 +27,23 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-  links:
-    weight: 100
+  field_calculation:
+    type: string
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_description:
+    type: text_default
+    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_aptitude_ranges: true
-  field_calculation: true
   field_code: true
-  field_description: true
   field_is_aptitude: true
   field_is_ego_stat: true
   field_weight: true
+  links: true

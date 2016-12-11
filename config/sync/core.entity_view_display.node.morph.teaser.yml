@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.morph.field_armor
+    - field.field.node.morph.field_attribution
     - field.field.node.morph.field_augmentations
     - field.field.node.morph.field_blueprints
     - field.field.node.morph.field_cost
@@ -14,6 +15,7 @@ dependencies:
     - field.field.node.morph.field_mobility_system
     - field.field.node.morph.field_morph_type
     - field.field.node.morph.field_movement_speed
+    - field.field.node.morph.field_short_name
     - field.field.node.morph.field_skills
     - field.field.node.morph.field_stat_cap
     - field.field.node.morph.field_stat_variance
@@ -21,14 +23,26 @@ dependencies:
     - field.field.node.morph.field_traits
     - node.type.morph
   module:
+    - text
     - user
 id: node.morph.teaser
 targetEntityType: node
 bundle: morph
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_description:
+    type: text_default
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_morph_type:
+    type: entity_reference_label
+    weight: 1
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
 hidden:
   field_armor: true
   field_attribution: true
@@ -37,11 +51,9 @@ hidden:
   field_cost: true
   field_cp: true
   field_cp_cost: true
-  field_description: true
   field_gear: true
   field_gear_type: true
   field_mobility_system: true
-  field_morph_type: true
   field_movement_speed: true
   field_short_name: true
   field_skills: true
@@ -49,3 +61,4 @@ hidden:
   field_stat_variance: true
   field_stats: true
   field_traits: true
+  links: true

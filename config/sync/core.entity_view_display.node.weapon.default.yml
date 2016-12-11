@@ -39,16 +39,16 @@ bundle: weapon
 mode: default
 content:
   field_ap_modifier:
-    weight: 122
-    label: above
+    weight: 7
+    label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
     type: operation_formatter
   field_area_effect:
-    weight: 113
-    label: above
+    weight: 10
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
@@ -60,161 +60,113 @@ content:
     third_party_settings: {  }
     type: armor_text
   field_attribution:
-    weight: 130
-    label: above
+    weight: 15
+    label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
-  field_blueprints:
-    weight: 107
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
+    type: entity_reference_entity_view
   field_cost:
-    weight: 103
-    label: above
+    weight: 3
+    label: inline
     settings:
-      link: true
+      link: '1'
     third_party_settings: {  }
     type: entity_reference_quantity_label
   field_damage_dice:
-    weight: 123
-    label: above
+    weight: 5
+    label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
     type: operation_formatter
   field_damage_effects:
-    weight: 121
-    label: above
+    weight: 4
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_damage_modifier:
     type: operation_formatter
-    weight: 0
-    label: above
+    weight: 6
+    label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
   field_description:
-    weight: 104
+    weight: 1
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_firing_modes:
-    weight: 110
-    label: above
+    weight: 8
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_gear_type:
-    weight: 106
-    label: above
+    weight: 0
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_is_ammo:
-    weight: 126
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-  field_is_mod:
-    weight: 125
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
   field_linked_skill:
-    weight: 116
-    label: above
+    weight: 13
+    label: inline
     settings:
       override_action: title
       link: true
     third_party_settings: {  }
     type: entity_reference_override_label
   field_magazine_size:
-    weight: 124
-    label: above
+    weight: 9
+    label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
     type: operation_formatter
   field_range:
-    weight: 115
-    label: above
+    weight: 11
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: weapon_range_formatter
   field_reach:
-    weight: 120
-    label: above
+    weight: 12
+    label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
-  field_short_name:
-    weight: 131
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
   field_skill_bonus:
-    weight: 117
-    label: above
+    weight: 14
+    label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
   field_special_effect:
-    weight: 128
-    label: above
+    weight: 2
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  field_uses_ammo:
-    weight: 129
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-  field_uses_mods:
-    weight: 127
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_blueprints: true
+  field_is_ammo: true
+  field_is_mod: true
+  field_short_name: true
+  field_uses_ammo: true
+  field_uses_mods: true
+  links: true

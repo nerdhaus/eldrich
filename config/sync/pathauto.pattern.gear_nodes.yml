@@ -1,0 +1,26 @@
+uuid: e09bd3bc-afce-437e-8071-62c71aa9377f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: gear_nodes
+label: 'Gear Nodes'
+type: 'canonical_entities:node'
+pattern: 'gear/[node:title]'
+selection_criteria:
+  8cfa9242-645e-4913-bac0-81e1ac931c92:
+    id: node_type
+    bundles:
+      armor: armor
+      drug: drug
+      gear: gear
+      robot: robot
+      vehicle: vehicle
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 8cfa9242-645e-4913-bac0-81e1ac931c92
+selection_logic: and
+weight: -10
+relationships: {  }

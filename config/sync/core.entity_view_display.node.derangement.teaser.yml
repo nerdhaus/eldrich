@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.derangement.field_attribution
     - field.field.node.derangement.field_derangement_level
     - field.field.node.derangement.field_description
     - field.field.node.derangement.field_usage
     - node.type.derangement
   module:
+    - text
     - user
 id: node.derangement.teaser
 targetEntityType: node
@@ -22,12 +24,20 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-  links:
-    weight: 100
+  field_derangement_level:
+    type: entity_reference_label
+    weight: 1
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_description:
+    type: text_default
+    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_attribution: true
-  field_derangement_level: true
-  field_description: true
   field_usage: true
+  links: true

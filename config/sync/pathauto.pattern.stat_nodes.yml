@@ -1,0 +1,22 @@
+uuid: 177a2cee-e29f-46df-bb72-0206f64ae9c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: stat_nodes
+label: 'Stat Nodes'
+type: 'canonical_entities:node'
+pattern: 'stats/[node:title]'
+selection_criteria:
+  0d4b705c-b75f-475c-b649-9108acf9953c:
+    id: node_type
+    bundles:
+      stat: stat
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 0d4b705c-b75f-475c-b649-9108acf9953c
+selection_logic: and
+weight: -6
+relationships: {  }

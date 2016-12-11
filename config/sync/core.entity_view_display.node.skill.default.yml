@@ -27,37 +27,37 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_description:
-    weight: 102
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_example_fields:
-    weight: 109
+    weight: 6
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   field_is_field:
-    weight: 108
-    label: above
+    type: boolean
+    weight: 5
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    type: boolean
   field_linked_aptitude:
-    weight: 105
-    label: above
+    weight: 1
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_no_defaulting:
-    weight: 106
-    label: above
+    weight: 4
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -65,25 +65,24 @@ content:
     third_party_settings: {  }
     type: boolean
   field_skill_type:
-    weight: 104
-    label: above
+    weight: 0
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_specializations:
-    weight: 107
+    weight: 7
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   field_usage:
-    weight: 103
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  links:
-    weight: 100
-hidden: {  }
+hidden:
+  links: true

@@ -29,37 +29,29 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_action_type:
-    weight: 104
-    label: above
+    weight: 3
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_attribution:
-    weight: 113
-    label: above
+    weight: 8
+    label: hidden
     settings:
-      link: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_description:
-    weight: 102
-    label: above
+    weight: 2
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_exsurgent:
-    weight: 111
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
   field_is_active:
-    weight: 110
-    label: above
+    weight: 1
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -67,40 +59,40 @@ content:
     third_party_settings: {  }
     type: boolean
   field_psi_skill:
-    weight: 108
-    label: above
+    weight: 6
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_sleight_duration:
-    weight: 106
-    label: above
+    weight: 5
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_sleight_level:
-    weight: 103
-    label: above
+    weight: 0
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_sleight_range:
-    weight: 105
-    label: above
+    weight: 4
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_strain:
-    weight: 112
-    label: above
+    weight: 7
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  links:
-    weight: 100
-hidden: {  }
+hidden:
+  field_exsurgent: true
+  links: true

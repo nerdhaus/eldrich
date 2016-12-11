@@ -1,0 +1,10 @@
+uuid: c8d14244-8bda-47d1-ae57-f6fc437bfbad
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: instance.token
+label: Token
+targetEntityType: instance
+cache: true

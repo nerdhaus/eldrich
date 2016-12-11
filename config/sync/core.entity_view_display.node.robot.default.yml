@@ -33,20 +33,21 @@ bundle: robot
 mode: default
 content:
   field_armor:
-    weight: 108
-    label: above
+    weight: 4
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: armor_text
   field_attribution:
-    weight: 116
-    label: above
+    weight: 12
+    label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_augmentations:
-    weight: 112
+    weight: 8
     label: above
     settings:
       override_action: title
@@ -54,7 +55,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_label
   field_blueprints:
-    weight: 107
+    weight: 3
     label: above
     settings:
       format: default
@@ -63,34 +64,20 @@ content:
     third_party_settings: {  }
     type: boolean
   field_cost:
-    weight: 103
-    label: above
+    weight: 2
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_quantity_label
-  field_default_ai:
-    weight: 115
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
   field_description:
-    weight: 104
-    label: above
+    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_equipped_weapons:
-    weight: 117
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
   field_gear:
-    weight: 114
+    weight: 10
     label: above
     settings:
       override_action: title
@@ -98,45 +85,40 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_label
   field_gear_type:
-    weight: 106
-    label: above
+    weight: 1
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_mobility_system:
-    weight: 111
-    label: above
+    weight: 7
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_movement_speed:
-    weight: 110
-    label: above
+    weight: 6
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_formatter
-  field_short_name:
-    weight: 118
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
   field_skills:
-    weight: 113
+    weight: 9
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: skill_reference_label
   field_stats:
-    weight: 109
-    label: above
+    weight: 5
+    label: inline
     settings: {  }
     third_party_settings: {  }
-    type: stat_block_table
-  links:
-    weight: 100
-hidden: {  }
+    type: stat_block_simple
+hidden:
+  field_default_ai: true
+  field_equipped_weapons: true
+  field_short_name: true
+  links: true

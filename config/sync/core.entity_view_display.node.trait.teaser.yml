@@ -4,14 +4,17 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.trait.field_attribution
     - field.field.node.trait.field_cp_cost
     - field.field.node.trait.field_description
     - field.field.node.trait.field_ego_trait
     - field.field.node.trait.field_morph_trait
     - field.field.node.trait.field_skills
+    - field.field.node.trait.field_special_effect
     - field.field.node.trait.field_stats
     - node.type.trait
   module:
+    - text
     - user
 id: node.trait.teaser
 targetEntityType: node
@@ -25,16 +28,31 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-  links:
-    weight: 100
+  field_cp_cost:
+    type: number_integer
+    weight: 2
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_description:
+    type: text_default
+    weight: 0
+    label: hidden
     settings: {  }
+    third_party_settings: {  }
+  field_special_effect:
+    type: string
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
 hidden:
   field_attribution: true
-  field_cp_cost: true
-  field_description: true
   field_ego_trait: true
   field_morph_trait: true
   field_skills: true
-  field_special_effect: true
   field_stats: true
+  links: true

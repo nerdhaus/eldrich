@@ -25,22 +25,15 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
-  field_code:
-    weight: 110
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
   field_description:
-    weight: 102
-    label: above
+    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_home_page:
-    weight: 106
-    label: above
+    weight: 2
+    label: inline
     settings:
       trim_length: 80
       url_only: false
@@ -49,31 +42,15 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-  field_is_canon:
-    weight: 111
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
   field_source_type:
-    weight: 108
-    label: above
+    weight: 1
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_weight:
-    weight: 109
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-  links:
-    weight: 100
 hidden:
-  field_source_type: true
+  field_code: true
+  field_is_canon: true
+  field_weight: true
+  links: true

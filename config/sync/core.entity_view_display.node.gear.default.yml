@@ -20,48 +20,34 @@ bundle: gear
 mode: default
 content:
   field_attribution:
-    weight: 108
-    label: above
+    weight: 3
+    label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
-  field_blueprints:
-    weight: 107
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
+    type: entity_reference_entity_view
   field_cost:
-    weight: 103
-    label: above
+    weight: 2
+    label: inline
     settings:
-      link: true
+      link: '1'
     third_party_settings: {  }
     type: entity_reference_quantity_label
   field_description:
-    weight: 104
-    label: above
+    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_gear_type:
-    weight: 106
-    label: above
+    type: entity_reference_label
+    weight: 0
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
-  field_short_name:
-    weight: 109
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-  links:
-    weight: 100
-hidden: {  }
+hidden:
+  field_blueprints: true
+  field_short_name: true
+  links: true

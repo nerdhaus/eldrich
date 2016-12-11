@@ -7,10 +7,12 @@ dependencies:
     - field.field.node.source.field_code
     - field.field.node.source.field_description
     - field.field.node.source.field_home_page
+    - field.field.node.source.field_is_canon
     - field.field.node.source.field_source_type
     - field.field.node.source.field_weight
     - node.type.source
   module:
+    - text
     - user
 id: node.source.teaser
 targetEntityType: node
@@ -24,14 +26,16 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-  links:
-    weight: 100
+  field_description:
+    type: text_default
+    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_code: true
-  field_description: true
   field_home_page: true
   field_is_canon: true
   field_source_type: true
   field_weight: true
+  links: true

@@ -16,7 +16,7 @@ dependencies:
     - node.type.drug
   module:
     - entity_reference_quantity
-    - range
+    - integer_time
     - text
     - user
 id: node.drug.default
@@ -25,8 +25,8 @@ bundle: drug
 mode: default
 content:
   field_addiction_modifier:
-    weight: 111
-    label: above
+    weight: 4
+    label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
@@ -39,44 +39,36 @@ content:
     third_party_settings: {  }
     type: armor_text
   field_attribution:
-    weight: 114
-    label: above
+    weight: 7
+    label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
-  field_blueprints:
-    weight: 107
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
+    type: entity_reference_entity_view
   field_cost:
-    weight: 103
-    label: above
+    weight: 1
+    label: inline
     settings:
-      link: true
+      link: '1'
     third_party_settings: {  }
     type: entity_reference_quantity_label
   field_delivery_mechanism:
-    weight: 108
-    label: above
+    weight: 3
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_description:
-    weight: 104
-    label: above
+    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_duration:
-    weight: 112
-    label: above
+    weight: 5
+    label: inline
     settings:
       range_separator: '-'
       thousand_separator: ''
@@ -84,17 +76,17 @@ content:
       from_prefix_suffix: false
       to_prefix_suffix: false
     third_party_settings: {  }
-    type: range_integer
+    type: integer_range_time_field_formatter
   field_gear_type:
-    weight: 106
-    label: above
+    weight: 2
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_onset:
-    weight: 113
-    label: above
+    weight: 6
+    label: inline
     settings:
       range_separator: '-'
       thousand_separator: ''
@@ -102,14 +94,8 @@ content:
       from_prefix_suffix: false
       to_prefix_suffix: false
     third_party_settings: {  }
-    type: range_integer
-  field_short_name:
-    weight: 115
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-  links:
-    weight: 100
-hidden: {  }
+    type: integer_range_time_field_formatter
+hidden:
+  field_blueprints: true
+  field_short_name: true
+  links: true

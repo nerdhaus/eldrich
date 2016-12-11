@@ -1,0 +1,22 @@
+uuid: 02d38854-56f5-44ad-9274-c9ec4207e364
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: augmentation_nodes
+label: 'Augmentation Nodes'
+type: 'canonical_entities:node'
+pattern: 'gear/augmentations/[node:title]'
+selection_criteria:
+  19c5002f-ab94-4985-a453-101a144cabe9:
+    id: node_type
+    bundles:
+      augmentation: augmentation
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 19c5002f-ab94-4985-a453-101a144cabe9
+selection_logic: and
+weight: -9
+relationships: {  }

@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.drug.field_addiction_modifier
+    - field.field.node.drug.field_attribution
     - field.field.node.drug.field_blueprints
     - field.field.node.drug.field_cost
     - field.field.node.drug.field_delivery_mechanism
@@ -12,26 +13,44 @@ dependencies:
     - field.field.node.drug.field_duration
     - field.field.node.drug.field_gear_type
     - field.field.node.drug.field_onset
+    - field.field.node.drug.field_short_name
     - node.type.drug
   module:
+    - text
     - user
 id: node.drug.teaser
 targetEntityType: node
 bundle: drug
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_delivery_mechanism:
+    type: entity_reference_label
+    weight: 1
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_description:
+    type: text_default
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_gear_type:
+    type: entity_reference_label
+    weight: 2
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
 hidden:
   field_addiction_modifier: true
   field_armor: true
   field_attribution: true
   field_blueprints: true
   field_cost: true
-  field_delivery_mechanism: true
-  field_description: true
   field_duration: true
-  field_gear_type: true
   field_onset: true
   field_onset_time: true
   field_short_name: true
+  links: true
