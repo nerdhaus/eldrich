@@ -244,11 +244,12 @@ display:
         type: normal
         title: Gear
         description: 'Equipment and Services'
-        expanded: false
+        expanded: true
         parent: ''
-        weight: 0
+        weight: -49
         context: '0'
         menu_name: main
+        enabled: true
       filters:
         status:
           value: '1'
@@ -531,7 +532,7 @@ display:
         description: 'Morphs and Eidelons'
         expanded: false
         parent: 'views_view:views.gear_listings.page_gear'
-        weight: 0
+        weight: -49
         context: '0'
         menu_name: main
     cache_metadata:
@@ -619,7 +620,7 @@ display:
         description: 'Weapons and Ammo'
         expanded: false
         parent: 'views_view:views.gear_listings.page_gear'
-        weight: 0
+        weight: -50
         context: '0'
         menu_name: main
     cache_metadata:

@@ -48,10 +48,10 @@ content:
     type: entity_reference_entity_view
   field_augmentations:
     weight: 9
-    label: above
+    label: inline
     settings:
-      override_action: title
       link: true
+      override_action: suffix
     third_party_settings: {  }
     type: entity_reference_override_label
   field_cost:
@@ -69,10 +69,10 @@ content:
     type: text_default
   field_gear:
     weight: 10
-    label: above
+    label: inline
     settings:
-      override_action: title
       link: true
+      override_action: suffix
     third_party_settings: {  }
     type: entity_reference_override_label
   field_gear_type:
@@ -86,8 +86,8 @@ content:
     weight: 7
     label: inline
     settings:
-      override_action: title
       link: true
+      override_action: suffix
     third_party_settings: {  }
     type: entity_reference_override_label
   field_mobility_system:

@@ -33,13 +33,13 @@ bundle: robot
 mode: default
 content:
   field_armor:
-    weight: 4
+    weight: 3
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: armor_text
   field_attribution:
-    weight: 12
+    weight: 10
     label: hidden
     settings:
       link: true
@@ -47,22 +47,13 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_augmentations:
-    weight: 8
-    label: above
+    weight: 7
+    label: inline
     settings:
-      override_action: title
       link: true
+      override_action: suffix
     third_party_settings: {  }
     type: entity_reference_override_label
-  field_blueprints:
-    weight: 3
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
   field_cost:
     weight: 2
     label: inline
@@ -71,28 +62,28 @@ content:
     third_party_settings: {  }
     type: entity_reference_quantity_label
   field_description:
-    weight: 0
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_gear:
-    weight: 10
-    label: above
+    weight: 9
+    label: inline
     settings:
-      override_action: title
       link: true
+      override_action: suffix
     third_party_settings: {  }
     type: entity_reference_override_label
   field_gear_type:
-    weight: 1
+    weight: 0
     label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_mobility_system:
-    weight: 7
+    weight: 5
     label: inline
     settings:
       link: true
@@ -105,19 +96,20 @@ content:
     third_party_settings: {  }
     type: mobility_speed_formatter
   field_skills:
-    weight: 9
-    label: above
+    weight: 8
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: skill_reference_label
   field_stats:
-    weight: 5
+    weight: 4
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: stat_block_simple
 hidden:
+  field_blueprints: true
   field_default_ai: true
   field_equipped_weapons: true
   field_short_name: true

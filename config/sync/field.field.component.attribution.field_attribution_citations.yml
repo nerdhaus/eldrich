@@ -12,7 +12,7 @@ id: component.attribution.field_attribution_citations
 field_name: field_attribution_citations
 entity_type: component
 bundle: attribution
-label: Citations
+label: 'Appears in'
 description: ''
 required: false
 translatable: false

@@ -99,7 +99,7 @@ content:
     third_party_settings: {  }
   field_description:
     weight: 1
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
@@ -121,8 +121,8 @@ content:
     weight: 13
     label: inline
     settings:
-      override_action: title
       link: true
+      override_action: suffix
     third_party_settings: {  }
     type: entity_reference_override_label
   field_magazine_size:

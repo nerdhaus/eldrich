@@ -5,3 +5,9 @@ definitions:
     parent: ''
     weight: 0
     expanded: false
+  standard__front_page:
+    weight: -48
+    enabled: false
+    menu_name: main
+    parent: ''
+    expanded: false

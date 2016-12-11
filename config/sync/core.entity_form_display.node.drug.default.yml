@@ -65,12 +65,9 @@ content:
     type: entity_reference_quantity_select
   field_delivery_mechanism:
     weight: 26
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_buttons
   field_description:
     weight: 7
     settings:

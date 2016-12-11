@@ -38,7 +38,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_cost:
-    weight: 3
+    weight: 4
     label: inline
     settings:
       link: '1'
@@ -51,21 +51,21 @@ content:
     third_party_settings: {  }
     type: text_default
   field_gear_type:
-    weight: 4
+    weight: 0
     label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_skills:
-    weight: 2
-    label: above
+    weight: 3
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: skill_reference_label
   field_stats:
-    weight: 0
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }

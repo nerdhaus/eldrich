@@ -15,8 +15,7 @@ use Drupal\integer_time\Plugin\Field\FieldFormatter\IntegerTimeFieldFormatter;
  *   id = "integer_time_field_widget",
  *   label = @Translation("Timespan string"),
  *   field_types = {
- *     "integer",
- *     "range"
+ *     "integer"
  *   }
  * )
  */
