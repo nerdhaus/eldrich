@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_unrestricted
+    - paragraphs.paragraphs_type.blank
+  module:
+    - text
+id: paragraph.blank.field_unrestricted
+field_name: field_unrestricted
+entity_type: paragraph
+bundle: blank
+label: Unrestricted
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

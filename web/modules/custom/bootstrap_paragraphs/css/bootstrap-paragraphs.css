@@ -1,0 +1,512 @@
+/* -----------------------------------------------------------------------------
+
+  Paragraph Section CSS.
+
+  The following classes are available if the different Paragraph types
+  need their own individual styling.
+
+  .paragraph.paragraph--type--blank {}
+  .paragraph.paragraph--type--carousel {} -- Is used below
+  .paragraph.paragraph--type--columns {} -- Is used below
+  .paragraph.paragraph--type--contact {}
+  .paragraph.paragraph--type--image {}
+  .paragraph.paragraph--type--simple {}
+  .paragraph.paragraph--type--view {}
+
+----------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* Base Paragraph Styling.                                                    */
+/* -------------------------------------------------------------------------- */
+.paragraph {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.paragraph > section {
+  padding-top: 30px;
+}
+.paragraph:last-of-type {
+  padding-bottom: 30px;
+}
+.paragraph--type--columns .paragraph:last-of-type,
+.paragraph--type--carousel .paragraph:last-of-type {
+  padding-bottom: 0;
+}
+/* -------------------------------------------------------------------------- */
+/* Here we add Widths.                                                        */
+/* -------------------------------------------------------------------------- */
+/* Adds Width Element -- Tiny. */
+.paragraph.paragraph--width--tiny > section {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph.paragraph--width--tiny > section {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 768px) {
+  .paragraph.paragraph--width--tiny > section {
+    margin-left: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph.paragraph--width--tiny > section {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph.paragraph--width--tiny > section {
+    margin-left: 33.33333333%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph.paragraph--width--tiny > section {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph.paragraph--width--tiny > section {
+    margin-left: 33.33333333%;
+  }
+}
+/* Adds Width Element -- Narrow. */
+.paragraph.paragraph--width--narrow > section {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph.paragraph--width--narrow > section {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .paragraph.paragraph--width--narrow > section {
+    margin-left: 25%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph.paragraph--width--narrow > section {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph.paragraph--width--narrow > section {
+    margin-left: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph.paragraph--width--narrow > section {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph.paragraph--width--narrow > section {
+    margin-left: 25%;
+  }
+}
+/* Adds Width Element -- Medium. */
+.paragraph.paragraph--width--medium > section {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph.paragraph--width--medium > section {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+@media (min-width: 768px) {
+  .paragraph.paragraph--width--medium > section {
+    margin-left: 16.66666667%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph.paragraph--width--medium > section {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph.paragraph--width--medium > section {
+    margin-left: 16.66666667%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph.paragraph--width--medium > section {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph.paragraph--width--medium > section {
+    margin-left: 16.66666667%;
+  }
+}
+/* Adds Width Element -- Wide. */
+.paragraph.paragraph--width--wide > section {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph.paragraph--width--wide > section {
+    float: left;
+    width: 83.33333333%;
+  }
+}
+@media (min-width: 768px) {
+  .paragraph.paragraph--width--wide > section {
+    margin-left: 8.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph.paragraph--width--wide > section {
+    float: left;
+    width: 83.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph.paragraph--width--wide > section {
+    margin-left: 8.33333333%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph.paragraph--width--wide > section {
+    float: left;
+    width: 83.33333333%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph.paragraph--width--wide > section {
+    margin-left: 8.33333333%;
+  }
+}
+/* Adds Width Element -- Full. */
+.paragraph.paragraph--width--full > section {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph.paragraph--width--full > section {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph.paragraph--width--full > section {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph.paragraph--width--full > section {
+    float: left;
+    width: 100%;
+  }
+}
+/* -------------------------------------------------------------------------- */
+/* Here we add Colors.                                                        */
+/* -------------------------------------------------------------------------- */
+/* Add display so color shows */
+.paragraph.paragraph--color {
+  display: inline-block;
+}
+
+/* Adds bottom padding to fill in color. */
+.paragraph.paragraph--color section {
+  padding-bottom: 30px;
+}
+/* -------------------------------------------------------------------------- */
+/* Lets Nest paragraphs in Columns and Slideshows.                            */
+/* -------------------------------------------------------------------------- */
+/* Resets Base Paragraph Styling for Nested Paragraphs. */
+.paragraph .paragraph,
+.paragraph .paragraph .paragraph {
+  margin-left: 0;
+  margin-right: 0;
+}
+.paragraph > section .paragraph > section,
+.paragraph > section .paragraph > section .paragraph > section {
+  float: none;
+  margin-left: 0;
+  padding: 0;
+  width: auto;
+}
+/* -------------------------------------------------------------------------- */
+/* Here we can customize the different types of Paragraphs.                   */
+/* -------------------------------------------------------------------------- */
+/* Columns Paragraph. */
+/* .paragraph.paragraph--type--columns */
+/* Removes Padding on Columns (Padding is on columns inside). */
+.paragraph.paragraph--type--columns > section {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* Columns Modifiers inside of Columns Element  */
+.paragraph--type--columns__6col,
+.paragraph--type--columns__5col {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph--type--columns__6col,
+  .paragraph--type--columns__5col {
+    float: left;
+    width: 16.66666667%;
+  }
+}
+.paragraph--type--columns__4col {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph--type--columns__4col {
+    float: left;
+    width: 25%;
+  }
+}
+.paragraph--type--columns__3col {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph--type--columns__3col {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+.paragraph--type--columns__2col {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph--type--columns__2col {
+    float: left;
+    width: 50%;
+  }
+}
+.paragraph--type--columns__1col {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph--type--columns__1col {
+    float: left;
+    width: 100%;
+  }
+}
+/* These allow us to change the width on a single paragraph in a Multicolumn. */
+.paragraph--type--columns__1col .paragraph.paragraph--width--tiny > section {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--tiny > section {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 768px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--tiny > section {
+    margin-left: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--tiny > section {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--tiny > section {
+    margin-left: 33.33333333%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--tiny > section {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--tiny > section {
+    margin-left: 33.33333333%;
+  }
+}
+.paragraph--type--columns__1col .paragraph.paragraph--width--narrow > section {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--narrow > section {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--narrow > section {
+    margin-left: 25%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--narrow > section {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--narrow > section {
+    margin-left: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--narrow > section {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--narrow > section {
+    margin-left: 25%;
+  }
+}
+.paragraph--type--columns__1col .paragraph.paragraph--width--medium > section {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--medium > section {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+@media (min-width: 768px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--medium > section {
+    margin-left: 16.66666667%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--medium > section {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--medium > section {
+    margin-left: 16.66666667%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--medium > section {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--medium > section {
+    margin-left: 16.66666667%;
+  }
+}
+.paragraph--type--columns__1col .paragraph.paragraph--width--wide > section {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--wide > section {
+    float: left;
+    width: 83.33333333%;
+  }
+}
+@media (min-width: 768px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--wide > section {
+    margin-left: 8.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--wide > section {
+    float: left;
+    width: 83.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--wide > section {
+    margin-left: 8.33333333%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--wide > section {
+    float: left;
+    width: 83.33333333%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--wide > section {
+    margin-left: 8.33333333%;
+  }
+}
+.paragraph--type--columns__1col .paragraph.paragraph--width--full > section {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--full > section {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--full > section {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .paragraph--type--columns__1col .paragraph.paragraph--width--full > section {
+    float: left;
+    width: 100%;
+  }
+}
+/* Columns Paragraph. */
+/* .paragraph.paragraph--type--carousel */
+/* Adds minimum height and top padding on a paragraph in a carousel */
+.paragraph.paragraph--type--carousel > .carousel-inner > .item > .paragraph > section {
+  min-height: 420px;
+  padding-top: 30px;
+}

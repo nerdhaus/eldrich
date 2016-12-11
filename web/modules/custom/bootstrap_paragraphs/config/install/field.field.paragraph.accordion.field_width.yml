@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width
+    - paragraphs.paragraphs_type.accordion
+  module:
+    - options
+id: paragraph.accordion.field_width
+field_name: field_width
+entity_type: paragraph
+bundle: accordion
+label: Width
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: paragraph--width--medium
+default_value_callback: ''
+settings: {  }
+field_type: list_string

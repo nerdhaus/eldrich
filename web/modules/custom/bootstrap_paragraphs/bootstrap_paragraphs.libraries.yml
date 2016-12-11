@@ -1,0 +1,9 @@
+bootstrap-paragraphs:
+  css:
+    component:
+      css/bootstrap-paragraphs.css:
+        minified: false
+      css/bootstrap-paragraphs-colors.css:
+      minified: false
+  dependencies:
+    - core/jquery

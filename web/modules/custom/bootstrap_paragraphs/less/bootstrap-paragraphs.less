@@ -1,0 +1,210 @@
+/* -----------------------------------------------------------------------------
+
+  Paragraph Section CSS.
+
+  The following classes are available if the different Paragraph types
+  need their own individual styling.
+
+  .paragraph.paragraph--type--blank {}
+  .paragraph.paragraph--type--carousel {} -- Is used below
+  .paragraph.paragraph--type--columns {} -- Is used below
+  .paragraph.paragraph--type--contact {}
+  .paragraph.paragraph--type--image {}
+  .paragraph.paragraph--type--simple {}
+  .paragraph.paragraph--type--view {}
+
+----------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/* Base Paragraph Styling.                                                    */
+/* -------------------------------------------------------------------------- */
+
+.paragraph {
+  .make-row();
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.paragraph > section {
+  padding-top: @jumbotron-padding;
+}
+
+.paragraph:last-of-type {
+  padding-bottom: @jumbotron-padding;
+}
+
+.paragraph--type--columns .paragraph:last-of-type,
+.paragraph--type--carousel .paragraph:last-of-type {
+  padding-bottom: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Here we add Widths.                                                        */
+/* -------------------------------------------------------------------------- */
+
+/* Adds Width Element -- Tiny. */
+.paragraph.paragraph--width--tiny > section {
+  .make-sm-column(4);
+  .make-sm-column-offset(4);
+  .make-md-column(4);
+  .make-md-column-offset(4);
+  .make-lg-column(4);
+  .make-lg-column-offset(4);
+}
+
+/* Adds Width Element -- Narrow. */
+.paragraph.paragraph--width--narrow > section {
+  .make-sm-column(6);
+  .make-sm-column-offset(3);
+  .make-md-column(6);
+  .make-md-column-offset(3);
+  .make-lg-column(6);
+  .make-lg-column-offset(3);
+}
+
+/* Adds Width Element -- Medium. */
+.paragraph.paragraph--width--medium > section {
+  .make-sm-column(8);
+  .make-sm-column-offset(2);
+  .make-md-column(8);
+  .make-md-column-offset(2);
+  .make-lg-column(8);
+  .make-lg-column-offset(2);
+}
+
+/* Adds Width Element -- Wide. */
+.paragraph.paragraph--width--wide > section {
+  .make-sm-column(10);
+  .make-sm-column-offset(1);
+  .make-md-column(10);
+  .make-md-column-offset(1);
+  .make-lg-column(10);
+  .make-lg-column-offset(1);
+}
+
+/* Adds Width Element -- Full. */
+.paragraph.paragraph--width--full > section {
+  .make-sm-column(12);
+  .make-md-column(12);
+  .make-lg-column(12);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Here we add Colors.                                                        */
+/* -------------------------------------------------------------------------- */
+
+/* Add display so color shows */
+.paragraph.paragraph--color {
+  display: inline-block;
+}
+
+/* Adds bottom padding to fill in color. */
+.paragraph.paragraph--color section {
+  padding-bottom: @jumbotron-padding;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Lets Nest paragraphs in Columns and Slideshows.                            */
+/* -------------------------------------------------------------------------- */
+
+/* Resets Base Paragraph Styling for Nested Paragraphs. */
+.paragraph .paragraph,
+.paragraph .paragraph .paragraph {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.paragraph > section .paragraph > section,
+.paragraph > section .paragraph > section .paragraph > section {
+  float: none;
+  margin-left: 0;
+  padding: 0;
+  width: auto;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Here we can customize the different types of Paragraphs.                   */
+/* -------------------------------------------------------------------------- */
+
+/* Columns Paragraph. */
+/* .paragraph.paragraph--type--columns */
+
+/* Removes Padding on Columns (Padding is on columns inside). */
+.paragraph.paragraph--type--columns > section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Columns Modifiers inside of Columns Element  */
+.paragraph--type--columns__6col,
+.paragraph--type--columns__5col {
+  .make-sm-column(2);
+}
+
+.paragraph--type--columns__4col {
+  .make-sm-column(3);
+}
+
+.paragraph--type--columns__3col {
+  .make-sm-column(4);
+}
+
+.paragraph--type--columns__2col {
+  .make-sm-column(6);
+}
+
+.paragraph--type--columns__1col {
+  .make-sm-column(12);
+}
+
+/* These allow us to change the width on a single paragraph in a Multicolumn. */
+.paragraph--type--columns__1col .paragraph.paragraph--width--tiny > section {
+  .make-sm-column(4);
+  .make-sm-column-offset(4);
+  .make-md-column(4);
+  .make-md-column-offset(4);
+  .make-lg-column(4);
+  .make-lg-column-offset(4);
+}
+
+.paragraph--type--columns__1col .paragraph.paragraph--width--narrow > section {
+  .make-sm-column(6);
+  .make-sm-column-offset(3);
+  .make-md-column(6);
+  .make-md-column-offset(3);
+  .make-lg-column(6);
+  .make-lg-column-offset(3);
+}
+
+.paragraph--type--columns__1col .paragraph.paragraph--width--medium > section {
+  .make-sm-column(8);
+  .make-sm-column-offset(2);
+  .make-md-column(8);
+  .make-md-column-offset(2);
+  .make-lg-column(8);
+  .make-lg-column-offset(2);
+}
+
+.paragraph--type--columns__1col .paragraph.paragraph--width--wide > section {
+  .make-sm-column(10);
+  .make-sm-column-offset(1);
+  .make-md-column(10);
+  .make-md-column-offset(1);
+  .make-lg-column(10);
+  .make-lg-column-offset(1);
+}
+
+.paragraph--type--columns__1col .paragraph.paragraph--width--full > section {
+  .make-sm-column(12);
+  .make-md-column(12);
+  .make-lg-column(12);
+}
+
+/* Columns Paragraph. */
+/* .paragraph.paragraph--type--carousel */
+
+/* Adds minimum height and top padding on a paragraph in a carousel */
+.paragraph.paragraph--type--carousel > .carousel-inner > .item > .paragraph > section {
+    min-height: 420px;
+    padding-top: @jumbotron-padding;
+}

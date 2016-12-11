@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.block.field_background
+    - field.field.paragraph.block.field_block
+    - field.field.paragraph.block.field_width
+    - paragraphs.paragraphs_type.block
+id: paragraph.block.default
+targetEntityType: paragraph
+bundle: block
+mode: default
+content:
+  field_background:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_block:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_width:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+hidden:
+  created: true
+  status: true
+  uid: true

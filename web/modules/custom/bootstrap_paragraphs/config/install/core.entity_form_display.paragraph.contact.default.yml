@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact.field_background
+    - field.field.paragraph.contact.field_contact
+    - field.field.paragraph.contact.field_width
+    - paragraphs.paragraphs_type.contact
+id: paragraph.contact.default
+targetEntityType: paragraph
+bundle: contact
+mode: default
+content:
+  field_background:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_contact:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_width:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+hidden:
+  created: true
+  status: true
+  uid: true

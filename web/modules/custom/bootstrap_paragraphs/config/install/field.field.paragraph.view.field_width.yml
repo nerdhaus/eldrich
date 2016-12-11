@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width
+    - paragraphs.paragraphs_type.view
+  module:
+    - options
+id: paragraph.view.field_width
+field_name: field_width
+entity_type: paragraph
+bundle: view
+label: Width
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: paragraph--width--medium
+default_value_callback: ''
+settings: {  }
+field_type: list_string
