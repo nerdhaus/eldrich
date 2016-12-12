@@ -8,6 +8,4 @@ It’s still very much in progress, but this early alpha version supports a lot 
 If you’re new to Eclipse Phase? Take a look around. If you like the looks of it, be sure to purchase print or digital copies of Posthuman Studios’ books: their generosity and commitment to the Creative Commons is what makes this project possible."
 12/1/16 10:00 PM,Equipped Weapons and more…,"This weekend’s big update is an “equipped weapons” mechanism. A weapon, any number of mods, an ammo type, and any number of smart ammo features, can all be combined into a single “equipment” entry for a creature, robot, etc. Although it doesn’t do much at the moment, it lays the groundwork for accurate calculation of a given weapon’s damage and target skill roll in the future.
 
-When full-fledged support for NPC and Player Character records rolls out, this will make it much easier to generate quick reference cards for a given weapon, and to generate “official-looking” NPC cards that match the presentation style used in the core books.
-
-Big thanks to everyone who’s been "
+When full-fledged support for NPC and Player Character records rolls out, this will make it much easier to generate quick reference cards for a given weapon, and to generate “official-looking” NPC cards that match the presentation style used in the core books."
