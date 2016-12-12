@@ -1,0 +1,29 @@
+uuid: b00271c4-078e-45ec-a177-df89c063430a
+langcode: en
+status: true
+dependencies: {  }
+id: contributor
+label: Contributor
+weight: 4
+is_admin: null
+permissions:
+  - 'view own unpublished content'
+  - 'create armor content'
+  - 'edit any armor content'
+  - 'edit own armor content'
+  - 'create augmentation content'
+  - 'create creature content'
+  - 'create derangement content'
+  - 'create faction content'
+  - 'create gear content'
+  - 'create location content'
+  - 'create morph content'
+  - 'create network content'
+  - 'create npc content'
+  - 'create pc content'
+  - 'create sleight content'
+  - 'create robot content'
+  - 'create strain content'
+  - 'create trait content'
+  - 'create vehicle content'
+  - 'create weapon content'

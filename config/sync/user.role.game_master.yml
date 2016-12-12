@@ -1,0 +1,12 @@
+uuid: 7880a787-d808-4d9b-88fb-ec95cb103a84
+langcode: en
+status: true
+dependencies: {  }
+id: game_master
+label: 'Game Master'
+weight: 3
+is_admin: null
+permissions:
+  - 'view own unpublished content'
+  - 'create npc content'
+  - 'create pc content'

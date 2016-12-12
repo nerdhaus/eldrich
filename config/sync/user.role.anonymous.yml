@@ -17,3 +17,4 @@ permissions:
   - 'view any component entities'
   - 'view any lookup entities'
   - 'view any instance entities'
+  - 'access user profiles'

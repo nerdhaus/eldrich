@@ -157,6 +157,9 @@ process:
         - weapon
       bundle_key: type
       entity_type: node
+  field_equipped_weapons:
+    plugin: equipped_weapon
+    source: weapons
 destination:
   plugin: 'entity:node'
 migration_dependencies:
