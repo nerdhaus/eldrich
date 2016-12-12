@@ -1274,16 +1274,16 @@
         },
         {
             "name": "drupal/console-en",
-            "version": "1.0.0-rc10",
+            "version": "1.0.0-rc11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoendrupal/drupal-console-en.git",
-                "reference": "6482b4e7102d91c6a3650ed3ed1f0081ceca5e99"
+                "reference": "694f46c5dfa69efc3f8a0bdc6eab4d63c306b1b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoendrupal/drupal-console-en/zipball/6482b4e7102d91c6a3650ed3ed1f0081ceca5e99",
-                "reference": "6482b4e7102d91c6a3650ed3ed1f0081ceca5e99",
+                "url": "https://api.github.com/repos/hechoendrupal/drupal-console-en/zipball/694f46c5dfa69efc3f8a0bdc6eab4d63c306b1b6",
+                "reference": "694f46c5dfa69efc3f8a0bdc6eab4d63c306b1b6",
                 "shasum": ""
             },
             "type": "drupal-console-language",
@@ -1324,7 +1324,7 @@
                 "drupal",
                 "symfony"
             ],
-            "time": "2016-12-12 00:56:06"
+            "time": "2016-12-12 17:16:39"
         },
         {
             "name": "drupal/contact_formatter",
@@ -2034,7 +2034,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_reference_quantity",
-                "reference": "bdcf385f8be3756dac6d8e1d793a4d0ef241556b"
+                "reference": "7d539a74f3fd2203df4db7251e3d11080c6953dc"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2046,7 +2046,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1481512385"
+                    "datestamp": "1481561885"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2064,7 +2064,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_reference_quantity"
             },
-            "time": "2016-12-12 03:12:49"
+            "time": "2016-12-12 16:56:33"
         },
         {
             "name": "drupal/entity_reference_revisions",
@@ -2650,7 +2650,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/range",
-                "reference": "8b5bf301a569a5700ae8b41b83657d1b9b980490"
+                "reference": "d7ee9f3f9176bbd3bb13a93d927183afacdf54bb"
             },
             "require": {
                 "drupal/core": "*"
@@ -2661,8 +2661,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.1-beta3+0-dev",
-                    "datestamp": "1473089339"
+                    "version": "8.x-1.1-beta3+2-dev",
+                    "datestamp": "1481560684"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2684,7 +2684,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/range"
             },
-            "time": "2016-09-05 15:24:51"
+            "time": "2016-12-12 16:36:39"
         },
         {
             "name": "drupal/replicate",
