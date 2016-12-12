@@ -16,11 +16,9 @@ mode: teaser
 content:
   body:
     label: hidden
-    type: text_summary_or_trimmed
+    type: text_default
     weight: 101
-    settings:
-      trim_length: 600
+    settings: {  }
     third_party_settings: {  }
-  links:
-    weight: 100
-hidden: {  }
+hidden:
+  links: true
