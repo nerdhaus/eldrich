@@ -9,7 +9,7 @@ use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Field\Plugin\Field\FieldFormatter\IntegerFormatter;
 use Drupal\Core\Datetime\DateFormatter;
-use Drupal\range\Plugin\Field\FieldFormatter\DefaultRangeFormatter;
+use Drupal\range\Plugin\Field\FieldFormatter\RangeIntegerFormatter;
 
 /**
  * Plugin implementation of the 'integer_time_field_formatter' formatter.
@@ -22,7 +22,7 @@ use Drupal\range\Plugin\Field\FieldFormatter\DefaultRangeFormatter;
  *   }
  * )
  */
-class IntegerRangeTimeFieldFormatter extends DefaultRangeFormatter {
+class IntegerRangeTimeFieldFormatter extends RangeIntegerFormatter {
 
   /**
    * {@inheritdoc}
