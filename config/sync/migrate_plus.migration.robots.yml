@@ -49,7 +49,7 @@ source:
     - title
 process:
   title: title
-  field_short_title: short
+  field_short_name: short
   type:
     plugin: default_value
     default_value: robot
@@ -196,24 +196,9 @@ process:
     bundle: mind
     bundle_key: type
     entity_type: node
-  weapons:
-    plugin: entity_lookup_plus
-    destination_field: target_id
-    value_key: title
-    fallback_value_key: field_short_name
-    bundle: weapon
-    bundle_key: type
-    entity_type: node
-    delimiter: ;
   field_equipped_weapons:
-    plugin: reference_factory
-    entity_type: component
-    source:
-      - '@weapons'
-    keys:
-      - field_attribution_citations
-    default_values:
-      type: attribution
+    plugin: equipped_weapon
+    source: weapons
 destination:
   plugin: 'entity:node'
 migration_dependencies:

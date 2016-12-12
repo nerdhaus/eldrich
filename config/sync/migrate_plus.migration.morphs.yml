@@ -51,7 +51,7 @@ source:
     - title
 process:
   title: title
-  field_short_title: short
+  field_short_name: short
   type:
     plugin: default_value
     default_value: morph
