@@ -37,7 +37,7 @@ class StatBlockSimpleFormatter extends FormatterBase  {
 
       $elements[$delta] = [
         '#type' => 'markup',
-        '#markup' => join(', ', $output),
+        '#markup' => strtoupper(join(', ', $output)),
       ];
     }
 
