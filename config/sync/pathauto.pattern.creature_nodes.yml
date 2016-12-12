@@ -1,0 +1,22 @@
+uuid: b876cf8b-c897-4cf8-9375-5ba6b85cc576
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: creature_nodes
+label: 'Creature Nodes'
+type: 'canonical_entities:node'
+pattern: 'world/bestiary/[node:field_creature_type]/[node:title]'
+selection_criteria:
+  9c9be18c-5351-4a5a-b79e-61c9d91dd612:
+    id: node_type
+    bundles:
+      creature: creature
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 9c9be18c-5351-4a5a-b79e-61c9d91dd612
+selection_logic: and
+weight: -5
+relationships: {  }
