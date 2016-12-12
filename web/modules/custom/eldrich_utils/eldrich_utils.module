@@ -25,5 +25,14 @@ function eldrich_utils_help($route_name, RouteMatchInterface $route_match) {
 
 
 function eldrich_utils_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  // when Weapon Instances and Armor Instances are saved, title them.
+  // Weapon Pattern: Short Weapon Name (Mod Shortnames) with [Smart Ammo features] Ammo Name
 
+  if (($entity->getEntityType()->id() == 'instance') && ($entity->bundle() == 'weapon_instance')) {
+    $entity->title = $entity->field_weapon->entity->title->value;
+  }
+
+  if (($entity->getEntityType()->id() == 'instance') && ($entity->bundle() == 'armor_instance')) {
+    $entity->title = $entity->field_armor->entity->title->value;
+  }
 }
