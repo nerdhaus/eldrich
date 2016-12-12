@@ -34,34 +34,37 @@ bundle: pc
 mode: default
 content:
   field_attribution:
-    weight: 116
+    weight: 12
     label: above
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_description:
-    weight: 101
+    weight: 0
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_equipped_armor:
-    weight: 113
+    weight: 9
     label: above
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_equipped_weapons:
-    weight: 114
+    weight: 10
     label: above
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_gear:
-    weight: 107
+    weight: 5
     label: above
     settings:
       override_action: title
@@ -69,7 +72,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_label
   field_headshot:
-    weight: 118
+    weight: 14
     label: above
     settings:
       image_style: ''
@@ -77,35 +80,38 @@ content:
     third_party_settings: {  }
     type: image
   field_identity:
-    weight: 117
+    weight: 13
     label: above
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_morph:
-    weight: 102
+    weight: 1
     label: above
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_motivations:
-    weight: 120
+    weight: 16
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_muse:
-    weight: 112
+    weight: 8
     label: above
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_owned_blueprints:
-    weight: 108
+    weight: 6
     label: above
     settings:
       override_action: title
@@ -113,47 +119,47 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_label
   field_quote:
-    weight: 119
+    weight: 15
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   field_skills:
-    weight: 115
+    weight: 11
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: skill_reference_label
   field_sleights:
-    weight: 106
+    weight: 4
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_stats:
-    weight: 104
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: stat_block_table
   field_status:
-    weight: 110
+    weight: 7
     label: above
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_traits:
-    weight: 105
+    weight: 3
     label: above
     settings:
       override_action: title
       link: true
     third_party_settings: {  }
     type: entity_reference_override_label
-  links:
-    weight: 100
-hidden: {  }
+hidden:
+  links: true

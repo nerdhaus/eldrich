@@ -39,7 +39,7 @@ content:
     third_party_settings: {  }
     type: armor_text
   field_attribution:
-    weight: 12
+    weight: 13
     label: hidden
     settings:
       link: true
@@ -67,6 +67,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+  field_equipped_weapons:
+    type: entity_reference_entity_view
+    weight: 11
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
   field_gear:
     weight: 10
     label: inline
@@ -104,7 +112,7 @@ content:
     third_party_settings: {  }
     type: mobility_speed_formatter
   field_passengers:
-    weight: 11
+    weight: 12
     label: inline
     settings:
       thousand_separator: ''
@@ -127,6 +135,5 @@ content:
     type: stat_block_simple
 hidden:
   field_blueprints: true
-  field_equipped_weapons: true
   field_short_name: true
   links: true

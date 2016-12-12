@@ -69,8 +69,9 @@ content:
     label: above
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_gear:
     weight: 9
     label: inline
