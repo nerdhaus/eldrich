@@ -1274,16 +1274,16 @@
         },
         {
             "name": "drupal/console-en",
-            "version": "1.0.0-rc9",
+            "version": "1.0.0-rc10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hechoendrupal/drupal-console-en.git",
-                "reference": "8a2a490cd99f9e47ff4a3d88d88b6c5044ae20ad"
+                "reference": "6482b4e7102d91c6a3650ed3ed1f0081ceca5e99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoendrupal/drupal-console-en/zipball/8a2a490cd99f9e47ff4a3d88d88b6c5044ae20ad",
-                "reference": "8a2a490cd99f9e47ff4a3d88d88b6c5044ae20ad",
+                "url": "https://api.github.com/repos/hechoendrupal/drupal-console-en/zipball/6482b4e7102d91c6a3650ed3ed1f0081ceca5e99",
+                "reference": "6482b4e7102d91c6a3650ed3ed1f0081ceca5e99",
                 "shasum": ""
             },
             "type": "drupal-console-language",
@@ -1324,7 +1324,7 @@
                 "drupal",
                 "symfony"
             ],
-            "time": "2016-11-24 06:04:33"
+            "time": "2016-12-12 00:56:06"
         },
         {
             "name": "drupal/contact_formatter",
@@ -1645,7 +1645,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/devel",
-                "reference": "d3d4eae8cd28a42a8e119cdf578a3d8299c9261e"
+                "reference": "fb432f128ac54979ec3f000082ae963ffa3e44dc"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -1659,8 +1659,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta1+4-dev",
-                    "datestamp": "1481308384"
+                    "version": "8.x-1.0-beta1+7-dev",
+                    "datestamp": "1481456584"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1718,7 +1718,7 @@
                 "issues": "http://drupal.org/project/devel",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "time": "2016-12-09 18:30:53"
+            "time": "2016-12-11 11:41:55"
         },
         {
             "name": "drupal/eck",
@@ -2034,7 +2034,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_reference_quantity",
-                "reference": "1e8698e65f5e19d01f5e61b0c89c5d90802eccd9"
+                "reference": "bdcf385f8be3756dac6d8e1d793a4d0ef241556b"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2046,7 +2046,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1478045641"
+                    "datestamp": "1481512385"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2064,7 +2064,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_reference_quantity"
             },
-            "time": "2016-11-02 00:12:20"
+            "time": "2016-12-12 03:12:49"
         },
         {
             "name": "drupal/entity_reference_revisions",
@@ -2284,7 +2284,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/image_effects-8.x-1.0-alpha3.zip",
-                "reference": "8.x-1.0-alpha3",
+                "reference": null,
                 "shasum": "8c130c6bb4b9a3a87ef8b92d169833230185f598"
             },
             "require": {

@@ -17,9 +17,9 @@ process:
   type:
     plugin: default_value
     default_value: news
-  uid: 1
+  uid:
     plugin: default_value
-    default_value: armor
+    default_value: 1
   created:
     plugin: callback
     callable: ep_import_date
