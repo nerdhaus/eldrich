@@ -1,0 +1,10 @@
+uuid: df2f06ec-ea48-45bb-b3cb-fc41ff595f51
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: component.teaser
+label: Teaser
+targetEntityType: component
+cache: true

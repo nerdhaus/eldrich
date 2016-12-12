@@ -1,0 +1,31 @@
+id: news
+label: News
+source:
+  plugin: csv
+  path: modules/custom/ep_import/news.csv
+  header_row_count: 1
+  column_names:
+    -
+      date: Date
+    -
+      title: Title
+    -
+      body: Body
+  keys:
+    - title
+process:
+  type:
+    plugin: default_value
+    default_value: news
+  uid: 1
+    plugin: default_value
+    default_value: armor
+  created:
+    plugin: callback
+    callable: ep_import_date
+    source: date
+  title: title
+  body/value: body
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

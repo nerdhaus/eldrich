@@ -44,3 +44,12 @@ function ep_import_purge_ecks() {
   $entities = $controller->loadMultiple($ids);
   $controller->delete($entities);
 }
+
+
+function ep_import_date($value) {
+  $value = "12/9/16 7:00 AM";
+  $date = DateTime::createFromFormat('m/d/y H:i a', $value);
+  if ($date) {
+    print $date->getTimestamp();
+  }
+}
