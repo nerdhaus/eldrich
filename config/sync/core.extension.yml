@@ -12,6 +12,7 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
+  devel: 0
   dynamic_page_cache: 0
   eck: 0
   editor: 0
@@ -35,7 +36,6 @@ module:
   inline_entity_form: 0
   integer_time: 0
   link: 0
-  list_formatter: 0
   menu_ui: 0
   migrate: 0
   migrate_plus: 0
