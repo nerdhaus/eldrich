@@ -21,6 +21,10 @@ sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password passwor
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 sudo apt-get install -y mysql-server
 
+# Ruby and SASS
+sudo apt-get install ruby
+sudo su -c "gem install sass"
+
 # Varnish and memcached, our performance juicers
 # sudo apt-get install -y varnish memcached
 # sudo rm /etc/default/varnish
