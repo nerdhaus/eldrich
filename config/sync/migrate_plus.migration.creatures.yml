@@ -42,6 +42,8 @@ source:
     -
       sleights: sleights
     -
+      gear: gear
+    -
       weapons: weapons
     -
       stress: stress

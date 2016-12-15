@@ -38,11 +38,13 @@ source:
     -
       speed: Speed
     -
-      augmentations: Augmentations
-    -
       skills: Skills
     -
       mind: Mind
+    -
+      augmentations: Augmentations
+    -
+      gear: Gear
     -
       weapons: Weapons
   keys:
@@ -174,7 +176,7 @@ process:
     -
       plugin: skip_on_empty
       method: process
-      source: augmentations
+      source: gear
     -
       plugin: explode
       delimiter: ','

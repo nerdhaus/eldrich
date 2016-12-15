@@ -42,6 +42,8 @@ source:
     -
       speed: speed
     -
+      augmentations: Augmentations
+    -
       gear: Gear
     -
       weapons: Weapons
