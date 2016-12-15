@@ -56,6 +56,97 @@ process:
   type:
     plugin: default_value
     default_value: npc
+  field_description/value: description
+  field_quote/value: quote
+  field_stats:
+    plugin: stat_block
+    source: stats
+  field_skills:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: skills
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: skill_lookup
+      destination_field: target_id
+      entity_type: node
+      bundle: skill
+      bundle_key: type
+      value_key: title
+  field_augmentations:
+    plugin: entity_lookup_plus
+    destination_field: target_id
+    value_key: title
+    fallback_value_key: field_short_name
+    bundle: augmentation
+    bundle_key: type
+    entity_type: node
+    source: augmentations
+  field_traits:
+    plugin: entity_lookup_plus
+    destination_field: target_id
+    value_key: title
+    bundle: trait
+    bundle_key: type
+    entity_type: node
+    source: traits
+  field_sleights:
+    plugin: entity_lookup_plus
+    destination_field: target_id
+    value_key: title
+    bundle: sleight
+    bundle_key: type
+    entity_type: node
+    source: sleights
+
+  field_morph:
+    plugin: morph_instance
+    source:
+      - morph
+
+  rep:
+    plugin: entity_lookup_plus
+    value_key: field_code
+    bundle: network
+    bundle_key: type
+    extra_value_key: quantity
+    entity_type: node
+    source: rep
+  faction:
+    plugin: entity_lookup_plus
+    value_key: title
+    bundle: faction
+    bundle_key: type
+    entity_type: node
+    source: faction
+  field_identity:
+    plugin: reference_factory
+    entity_type: component
+    keys:
+      - field_faction
+      - field_background
+      - field_credits
+      - field_rep
+    source:
+      - @faction
+      - background
+      - credits
+      - @rep
+    default_values:
+      type: identity
+
+  field_equipped_weapons:
+    plugin: equipped_weapon
+    source: weapons
+  field_equipped_armor:
+    plugin: equipped_armor
+    source: armor
+  field_credits: credits
+  field_rep:
+
   citation:
     plugin: source_with_page
     entity_type: node
