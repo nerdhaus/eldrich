@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - eck.eck_type.component.identity
+    - field.field.component.identity.field_background
     - field.field.component.identity.field_credits
     - field.field.component.identity.field_faction
     - field.field.component.identity.field_legal_name
@@ -16,6 +17,13 @@ targetEntityType: component
 bundle: identity
 mode: default
 content:
+  field_background:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_credits:
     weight: 3
     settings:
