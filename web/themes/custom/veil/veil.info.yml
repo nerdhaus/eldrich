@@ -1,10 +1,10 @@
-name: Veil
-type: theme
-description: Custom theme for Eldrich.Host
-package: Other
 core: 8.x
-libraries:
-  - veil/global-styling
+type: theme
+base theme: bootstrap
+
+name: 'Veil'
+description: 'Custom theme for the Eldrich Host web site.'
+package: 'Bootstrap'
 
 regions:
   navigation: 'Navigation'
@@ -19,5 +19,5 @@ regions:
   page_top: 'Page top'
   page_bottom: 'Page bottom'
 
-base theme: bootstrap
-
+libraries:
+  - 'veil/global-styling'
