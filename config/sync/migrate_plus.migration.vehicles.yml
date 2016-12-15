@@ -142,23 +142,26 @@ process:
         - run
         - cruise
   field_gear:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: gear
-    -
-      plugin: explode
-      delimiter: ','
-    -
-      plugin: entity_lookup_plus
-      destination_field: target_id
-      value_key: title
-      fallback_value_key: field_short_name
-      bundle:
-        - gear
-        - weapon
-      bundle_key: type
-      entity_type: node
+    plugin: entity_lookup_plus
+    destination_field: target_id
+    value_key: title
+    fallback_value_key: field_short_name
+    bundle:
+      - gear
+      - weapon
+      - armor
+      - drug
+      - armor
+    source: gear
+  field_augmentations:
+    plugin: entity_lookup_plus
+    destination_field: target_id
+    value_key: title
+    fallback_value_key: field_short_name
+    bundle: augmentation
+    bundle_key: type
+    entity_type: node
+    source: augmentations
 destination:
   plugin: 'entity:node'
 migration_dependencies:

@@ -97,6 +97,22 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
+
+  field_default_ai:
+    plugin: entity_lookup_plus
+    source: mind
+    value_key: title
+    fallback_value_key: field_short_name
+    bundle: mind
+    bundle_key: type
+    entity_type: node
+  field_stats:
+    plugin: stat_block
+    source: stats
+  field_stats/dur: durability
+  field_stats/synthetic:
+    plugin: default_value
+    default_value: 1
   field_armor:
     -
       plugin: skip_on_empty
@@ -115,13 +131,7 @@ process:
       'TRUE': 0
       'FALSE': 1
     default_value: 1
-  field_stats:
-    plugin: stat_block
-    source: stats
-  field_stats/dur: durability
-  field_stats/synthetic:
-    plugin: default_value
-    default_value: 1
+
   field_skills:
     -
       plugin: skip_on_empty
@@ -137,6 +147,7 @@ process:
       bundle: skill
       bundle_key: type
       value_key: title
+
   field_mobility_system:
     plugin: entity_lookup_plus
     source: mobility
@@ -156,51 +167,32 @@ process:
         - walk
         - run
         - cruise
-  field_augmentations:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: augmentations
-    -
-      plugin: explode
-      delimiter: ','
-    -
-      plugin: entity_lookup_plus
-      destination_field: target_id
-      value_key: title
-      fallback_value_key: field_short_name
-      bundle: augmentation
-      bundle_key: type
-      entity_type: node
+
   field_gear:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: gear
-    -
-      plugin: explode
-      delimiter: ','
-    -
-      plugin: entity_lookup_plus
-      destination_field: target_id
-      value_key: title
-      fallback_value_key: field_short_name
-      bundle:
-        - gear
-        - weapon
-      bundle_key: type
-      entity_type: node
-  field_default_ai:
     plugin: entity_lookup_plus
-    source: mind
+    destination_field: target_id
     value_key: title
     fallback_value_key: field_short_name
-    bundle: mind
+    bundle:
+      - gear
+      - weapon
+      - armor
+      - drug
+      - armor
+    source: gear
+  field_augmentations:
+    plugin: entity_lookup_plus
+    destination_field: target_id
+    value_key: title
+    fallback_value_key: field_short_name
+    bundle: augmentation
     bundle_key: type
     entity_type: node
+    source: augmentations
   field_equipped_weapons:
     plugin: equipped_weapon
     source: weapons
+
 destination:
   plugin: 'entity:node'
 migration_dependencies:
