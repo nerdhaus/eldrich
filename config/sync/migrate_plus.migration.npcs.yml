@@ -152,70 +152,99 @@ process:
       bundle: sleight
       bundle_key: type
       entity_type: node
-  augmentations:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: traits
-    -
-      plugin: explode
-      delimiter: ','
-    -
-      plugin: entity_lookup_plus
-      destination_field: target_id
-      value_key: title
-      fallback_value_key: field_short_name
-      bundle: augmentation
-      bundle_key: type
-      entity_type: node
-      source: sleights
   field_morph:
-    plugin: morph_instance
-    keys:
+    plugin: entity_maker
+    entity_type: instance
+    source:
       - morph
-      - augmentations
       - traits
-    source:
-      - morph
-      - '@augmentations'
-      - '@field_traits'
-  rep:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: rep
-    -
-      plugin: explode
-      delimiter: ','
-    -
-      plugin: entity_lookup_plus
-      value_key: field_code
-      bundle: network
-      bundle_key: type
-      extra_value_key: quantity
-      entity_type: node
-  faction:
-    plugin: entity_lookup_plus
-    value_key: title
-    bundle: faction
-    bundle_key: type
-    entity_type: node
-    source: faction
-  field_identity:
-    plugin: reference_factory
-    entity_type: component
+      - augmentations
     keys:
-      - field_faction
-      - field_background
-      - field_credits
-      - field_rep
+      - morph
+      - traits
+      - augmentations
+    default_values:
+      type: morph_instance
+    process:
+      field_model:
+        plugin: entity_lookup_plus
+        value_key: title
+        bundle: morph
+        bundle_key: type
+        entity_type: node
+        source: morph
+      field_traits:
+      -
+        plugin: skip_on_empty
+        method: process
+        source: traits
+      -
+        plugin: explode
+        delimiter: ','
+      -
+        plugin: entity_lookup_plus
+        destination_field: target_id
+        value_key: title
+        bundle: trait
+        bundle_key: type
+        entity_type: node
+      field_augmentations:
+        -
+          plugin: skip_on_empty
+          method: process
+          source: augmentations
+        -
+          plugin: explode
+          delimiter: ','
+        -
+          plugin: entity_lookup_plus
+          destination_field: target_id
+          value_key: title
+          bundle: augmentation
+          bundle_key: type
+          entity_type: node
+  field_identity:
+    plugin: entity_maker
+    entity_type: component
     source:
-      - '@faction'
+      - name
+      - faction
       - background
+      - rep
       - credits
-      - '@rep'
+    keys:
+      - name
+      - faction
+      - background
+      - rep
+      - credits
     default_values:
       type: identity
+    process:
+      field_credits: credits
+      field_background: background
+      field_rep:
+        -
+          plugin: skip_on_empty
+          method: process
+          source: rep
+        -
+          plugin: explode
+          delimiter: ','
+        -
+          plugin: entity_lookup_plus
+          value_key: field_code
+          bundle: network
+          bundle_key: type
+          extra_value_key: quantity
+          entity_type: node
+      field_faction:
+        plugin: entity_lookup_plus
+        value_key: title
+        bundle: faction
+        bundle_key: type
+        entity_type: node
+        source: faction
   field_equipped_weapons:
     plugin: equipped_weapon
     source: weapons
