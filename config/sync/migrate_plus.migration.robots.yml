@@ -97,7 +97,6 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-
   field_default_ai:
     plugin: entity_lookup_plus
     source: mind
@@ -150,7 +149,6 @@ process:
         - walk
         - run
         - cruise
-
   field_skills:
     -
       plugin: skip_on_empty
@@ -203,7 +201,6 @@ process:
   field_equipped_weapons:
     plugin: equipped_weapon
     source: weapons
-
 destination:
   plugin: 'entity:node'
 migration_dependencies:

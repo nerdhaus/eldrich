@@ -31,46 +31,29 @@ third_party_settings:
         - field_gear
         - field_equipped_weapons
         - field_equipped_armor
-      parent_name: group_details
-      weight: 19
-      format_type: tab
-      format_settings:
-        formatter: closed
-        description: ''
-        classes: ''
-        id: ''
-        required_fields: true
-      label: Gear
-    group_details:
-      children:
-        - group_abilities
-        - field_morph
-        - field_identity
-        - group_gear
       parent_name: ''
-      weight: 14
-      format_type: tabs
+      weight: 11
+      format_type: details
       format_settings:
-        id: ''
+        open: false
+        required_fields: true
         classes: ''
-        direction: horizontal
-      label: Details
+        id: ''
+      label: Gear
     group_abilities:
       children:
         - field_stats
         - field_skills
         - field_traits
         - field_sleights
-      parent_name: group_details
-      weight: 16
-      format_type: tab
+      parent_name: ''
+      weight: 8
+      format_type: details
       format_settings:
-        label: Abilities
-        formatter: open
-        description: ''
+        open: false
         required_fields: true
-        id: ''
         classes: ''
+        id: ''
       label: Abilities
 id: node.npc.default
 targetEntityType: node
@@ -83,7 +66,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_attribution:
-    weight: 15
+    weight: 13
     settings:
       form_mode: default
       label_singular: ''
@@ -137,7 +120,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
   field_identity:
-    weight: 18
+    weight: 10
     settings:
       match_operator: CONTAINS
       form_mode: default
@@ -151,7 +134,7 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_complex
   field_morph:
-    weight: 17
+    weight: 9
     settings:
       form_mode: default
       label_singular: ''
@@ -162,7 +145,7 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_simple
   field_quote:
-    weight: 13
+    weight: 7
     settings:
       size: 60
       placeholder: ''

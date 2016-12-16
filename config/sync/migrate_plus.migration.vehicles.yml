@@ -97,7 +97,6 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-
   field_stats/dur: durability
   field_stats/synthetic:
     plugin: default_value
@@ -132,7 +131,6 @@ process:
         - walk
         - run
         - cruise
-
   field_linked_skill:
     plugin: entity_lookup_plus
     destination_field: target_id
@@ -143,7 +141,6 @@ process:
     source: linked
   field_skill_bonus: bonus
   field_passengers: passengers
-
   field_augmentations:
     -
       plugin: skip_on_empty
@@ -183,7 +180,6 @@ process:
   field_equipped_weapons:
     plugin: equipped_weapon
     source: weapons
-
 destination:
   plugin: 'entity:node'
 migration_dependencies:
