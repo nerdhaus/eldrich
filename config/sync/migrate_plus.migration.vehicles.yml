@@ -153,13 +153,13 @@ process:
       plugin: explode
       delimiter: ','
     -
-    plugin: entity_lookup_plus
-    destination_field: target_id
-    value_key: title
-    fallback_value_key: field_short_name
-    bundle: augmentation
-    bundle_key: type
-    entity_type: node
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      fallback_value_key: field_short_name
+      bundle: augmentation
+      bundle_key: type
+      entity_type: node
   field_gear:
     -
       plugin: skip_on_empty
