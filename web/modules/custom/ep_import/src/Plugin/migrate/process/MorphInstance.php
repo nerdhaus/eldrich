@@ -47,68 +47,40 @@ class MorphInstance extends ProcessPluginBase implements ContainerFactoryPluginI
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrateExecutable, Row $row, $destinationProperty) {
-    if (empty($value)) {
+    $raw = array_combine($this->configuration['keys'], $value);
+    $entity_values = $this::constructInstance($raw);
+
+    if (empty($entity_values)) {
       return NULL;
     }
-    if (!is_array($value)) {
-      $value = ['morph' => 'value'];
-    }
-    else {
-      $value = array_combine($this->configuration['keys'], $value);
-    }
-
-    return $this::constructInstance($value);
-  }
-
-  public function constructInstance($value) {
-    $morph = $this::getMorphData($value['morph']);
-    if (empty($morph)) {
-      return NULL;
-    }
-
-    $values = [
-      'type' => 'morph_instance',
-      'field_model' => $morph->id(),
-      'field_mobility_system' => $morph->field_mobility_system,
-      'field_movement_speed' => $morph->field_mobility_system,
-      'field_skills' => $morph->field_skills,
-      'field_augmentations' => empty($value['augmentations']) ? $morph->field_augmentations : $value['augmentations'],
-      'field_traits' => empty($value['traits']) ? $morph->field_traits : $value['traits'],
-    ];
-
-    drush_print_r($values);
 
     $entity = $this->entityManager
       ->getStorage('instance')
-      ->create($values);
+      ->create($entity_values);
     $entity->save();
 
     return $entity->id();
   }
 
-  public function getMorphData($value) {
-    if (empty($value)) {
+  public function constructInstance($entity_values) {
+    if (empty($entity_values['field_model']['target_id'])) {
       return NULL;
     }
 
-    $query = \Drupal::entityQuery('node');
-    $group = $query->orConditionGroup()
-      ->condition('title', $value)
-      ->condition('field_short_name.value', $value);
-    $query
-      ->condition('type', 'morph')
-      ->condition($group);
-
-    $results = $query->execute();
-
-    if (empty($results)) {
+    $morph = $this->entityManager->getStorage('node')->load($entity_values['field_model']['target_id']);
+    if (empty($morph)) {
       return NULL;
     }
 
-    $node_storage = $this->entityManager->getStorage('node');
-    if ($morph = $node_storage->load($results)) {
-      return $morph;
+    $entity_values['type'] = 'morph_instance';
+
+    foreach (['mobility_system', 'movement_speed', 'skills', 'augmentations', 'traits'] as $field) {
+      $key = 'field_' . $field;
+      if (empty($entity_values[$key])) {
+        $entity_values[$key] = $morph->{$key}->getValue();
+      }
     }
-    return NULL;
+
+    return $entity_values;
   }
 }
