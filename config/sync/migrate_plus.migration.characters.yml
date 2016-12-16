@@ -44,6 +44,8 @@ source:
     -
       gear: gear
     -
+      blueprints: blueprints
+    -
       weapons: weapons
     -
       armor: armor

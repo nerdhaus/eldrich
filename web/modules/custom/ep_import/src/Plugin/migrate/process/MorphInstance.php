@@ -50,12 +50,18 @@ class MorphInstance extends ProcessPluginBase implements ContainerFactoryPluginI
     if (empty($value)) {
       return NULL;
     }
+    if (!is_array($value)) {
+      $value = ['morph' => 'value'];
+    }
+    else {
+      $value = array_combine($this->configuration['keys'], $value);
+    }
 
     return $this::constructInstance($value);
   }
 
   public function constructInstance($value) {
-    $morph = $this::getMorphData($value);
+    $morph = $this::getMorphData($value['morph']);
     if (empty($morph)) {
       return NULL;
     }
@@ -66,9 +72,11 @@ class MorphInstance extends ProcessPluginBase implements ContainerFactoryPluginI
       'field_mobility_system' => $morph->field_mobility_system,
       'field_movement_speed' => $morph->field_mobility_system,
       'field_skills' => $morph->field_skills,
-      'field_augmentations' => $morph->field_augmentations,
-      'field_traits' => $morph->field_traits,
+      'field_augmentations' => empty($value['augmentations']) ? $morph->field_augmentations : $value['augmentations'],
+      'field_traits' => empty($value['traits']) ? $morph->field_traits : $value['traits'],
     ];
+
+    drush_print_r($values);
 
     $entity = $this->entityManager
       ->getStorage('instance')
@@ -85,8 +93,8 @@ class MorphInstance extends ProcessPluginBase implements ContainerFactoryPluginI
 
     $query = \Drupal::entityQuery('node');
     $group = $query->orConditionGroup()
-      ->condition('title', $value, $multiple ? 'IN' : NULL)
-      ->condition('field_short_name.value', $value, $multiple ? 'IN' : NULL);
+      ->condition('title', $value)
+      ->condition('field_short_name.value', $value);
     $query
       ->condition('type', 'morph')
       ->condition($group);

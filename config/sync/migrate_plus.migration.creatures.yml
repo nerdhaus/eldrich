@@ -149,6 +149,8 @@ process:
     destination_field: target_id
     value_key: title
     fallback_value_key: field_short_name
+    bundle_key: type
+    entity_type: node
     bundle:
       - gear
       - weapon
@@ -166,13 +168,13 @@ process:
     entity_type: node
     source: augmentations
   field_traits:
-      plugin: entity_lookup_plus
-      destination_field: target_id
-      value_key: title
-      bundle: trait
-      bundle_key: type
-      entity_type: node
-      source: traits
+    plugin: entity_lookup_plus
+    destination_field: target_id
+    value_key: title
+    bundle: trait
+    bundle_key: type
+    entity_type: node
+    source: traits
   field_stress/value: stress
 destination:
   plugin: 'entity:node'

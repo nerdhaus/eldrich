@@ -97,6 +97,11 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
+
+  field_stats/dur: durability
+  field_stats/synthetic:
+    plugin: default_value
+    default_value: 1
   field_armor:
     -
       plugin: skip_on_empty
@@ -108,20 +113,6 @@ process:
       keys:
         - energy
         - kinetic
-  field_stats/dur: durability
-  field_stats/synthetic:
-    plugin: default_value
-    default_value: 1
-  field_linked_skill:
-    plugin: entity_lookup_plus
-    destination_field: target_id
-    entity_type: node
-    bundle: skill
-    bundle_key: type
-    value_key: title
-    source: linked
-  field_skill_bonus: bonus
-  field_passengers: passengers
   field_mobility_system:
     plugin: entity_lookup_plus
     source: mobility
@@ -141,19 +132,27 @@ process:
         - walk
         - run
         - cruise
-  field_gear:
+
+  field_linked_skill:
     plugin: entity_lookup_plus
     destination_field: target_id
+    entity_type: node
+    bundle: skill
+    bundle_key: type
     value_key: title
-    fallback_value_key: field_short_name
-    bundle:
-      - gear
-      - weapon
-      - armor
-      - drug
-      - armor
-    source: gear
+    source: linked
+  field_skill_bonus: bonus
+  field_passengers: passengers
+
   field_augmentations:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: augmentations
+    -
+      plugin: explode
+      delimiter: ','
+    -
     plugin: entity_lookup_plus
     destination_field: target_id
     value_key: title
@@ -161,7 +160,30 @@ process:
     bundle: augmentation
     bundle_key: type
     entity_type: node
-    source: augmentations
+  field_gear:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: gear
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      fallback_value_key: field_short_name
+      bundle_key: type
+      entity_type: node
+      bundle:
+        - gear
+        - weapon
+        - armor
+        - drug
+  field_equipped_weapons:
+    plugin: equipped_weapon
+    source: weapons
+
 destination:
   plugin: 'entity:node'
 migration_dependencies:

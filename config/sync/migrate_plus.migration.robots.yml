@@ -131,23 +131,6 @@ process:
       'TRUE': 0
       'FALSE': 1
     default_value: 1
-
-  field_skills:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: skills
-    -
-      plugin: explode
-      delimiter: ','
-    -
-      plugin: skill_lookup
-      destination_field: target_id
-      entity_type: node
-      bundle: skill
-      bundle_key: type
-      value_key: title
-
   field_mobility_system:
     plugin: entity_lookup_plus
     source: mobility
@@ -168,27 +151,55 @@ process:
         - run
         - cruise
 
+  field_skills:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: skills
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: skill_lookup
+      destination_field: target_id
+      entity_type: node
+      bundle: skill
+      bundle_key: type
+      value_key: title
   field_gear:
-    plugin: entity_lookup_plus
-    destination_field: target_id
-    value_key: title
-    fallback_value_key: field_short_name
-    bundle:
-      - gear
-      - weapon
-      - armor
-      - drug
-      - armor
-    source: gear
+    -
+      plugin: skip_on_empty
+      method: process
+      source: gear
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      fallback_value_key: field_short_name
+      bundle:
+        - gear
+        - weapon
+        - armor
+        - drug
   field_augmentations:
-    plugin: entity_lookup_plus
-    destination_field: target_id
-    value_key: title
-    fallback_value_key: field_short_name
-    bundle: augmentation
-    bundle_key: type
-    entity_type: node
-    source: augmentations
+    -
+      plugin: skip_on_empty
+      method: process
+      source: augmentations
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      fallback_value_key: field_short_name
+      bundle: augmentation
+      bundle_key: type
+      entity_type: node
   field_equipped_weapons:
     plugin: equipped_weapon
     source: weapons

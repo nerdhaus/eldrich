@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * This plugin generates ArmorInstance entities.
  *
  * @MigrateProcessPlugin(
- *   id = "equipped_weapon"
+ *   id = "equipped_armor"
  * )
  */
 class EquippedArmor extends ProcessPluginBase implements ContainerFactoryPluginInterface {

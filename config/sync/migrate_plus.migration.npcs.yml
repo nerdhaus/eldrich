@@ -40,7 +40,11 @@ source:
     -
       sleights: sleights
     -
+      blueprints: blueprints
+    -
       gear: gear
+    -
+      blueprints: blueprints
     -
       weapons: weapons
     -
@@ -77,56 +81,121 @@ process:
       bundle_key: type
       value_key: title
   field_gear:
-    plugin: entity_lookup_plus
-    destination_field: target_id
-    value_key: title
-    fallback_value_key: field_short_name
-    bundle:
-      - gear
-      - weapon
-      - armor
-      - drug
-      - armor
-    source: gear
-  field_augmentations:
-    plugin: entity_lookup_plus
-    destination_field: target_id
-    value_key: title
-    fallback_value_key: field_short_name
-    bundle: augmentation
-    bundle_key: type
-    entity_type: node
-    source: augmentations
+    -
+      plugin: skip_on_empty
+      method: process
+      source: gear
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      fallback_value_key: field_short_name
+      bundle_key: type
+      entity_type: node
+      bundle:
+        - gear
+        - weapon
+        - armor
+        - drug
+        - vehicle
+        - robot
+  field_blueprints:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: blueprints
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      fallback_value_key: field_short_name
+      bundle_key: type
+      entity_type: node
+      bundle:
+        - gear
+        - weapon
+        - armor
+        - drug
+        - vehicle
+        - robot
   field_traits:
-    plugin: entity_lookup_plus
-    destination_field: target_id
-    value_key: title
-    bundle: trait
-    bundle_key: type
-    entity_type: node
-    source: traits
+    -
+      plugin: skip_on_empty
+      method: process
+      source: traits
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      bundle: trait
+      bundle_key: type
+      entity_type: node
   field_sleights:
-    plugin: entity_lookup_plus
-    destination_field: target_id
-    value_key: title
-    bundle: sleight
-    bundle_key: type
-    entity_type: node
-    source: sleights
-
+    -
+      plugin: skip_on_empty
+      method: process
+      source: sleights
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      bundle: sleight
+      bundle_key: type
+      entity_type: node
+  augmentations:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: traits
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      fallback_value_key: field_short_name
+      bundle: augmentation
+      bundle_key: type
+      entity_type: node
+      source: sleights
   field_morph:
     plugin: morph_instance
+    keys:
+      - morph
+      - augmentations
+      - traits
     source:
       - morph
-
+      - @augmentations
+      - @field_traits
   rep:
-    plugin: entity_lookup_plus
-    value_key: field_code
-    bundle: network
-    bundle_key: type
-    extra_value_key: quantity
-    entity_type: node
-    source: rep
+    -
+      plugin: skip_on_empty
+      method: process
+      source: rep
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      value_key: field_code
+      bundle: network
+      bundle_key: type
+      extra_value_key: quantity
+      entity_type: node
   faction:
     plugin: entity_lookup_plus
     value_key: title
@@ -156,7 +225,7 @@ process:
   field_equipped_armor:
     plugin: equipped_armor
     source: armor
-  field_credits: credits
+
   citation:
     plugin: source_with_page
     entity_type: node
