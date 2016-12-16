@@ -80,6 +80,7 @@ class MorphInstance extends ProcessPluginBase implements ContainerFactoryPluginI
         $entity_values[$key] = $morph->{$key}->getValue();
       }
     }
+    $entity_values['title'] = $morph->label();
 
     return $entity_values;
   }

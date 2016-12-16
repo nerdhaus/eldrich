@@ -64,10 +64,12 @@ class StatBlockTableWidget extends WidgetBase {
     }
     $widget['table'][] = $row;
 
+    $all = ($this->getSetting('display_style') == 'all');
+
     $row = [];
     foreach ($properties[1] as $key => $title) {
       $row[$key] = array(
-        '#type' => 'number',
+        '#type' => ($all) ? 'number' : 'hidden',
         '#title' => strtoupper($key),
         '#default_value' => $items[$delta]->{$key},
       );
@@ -76,9 +78,13 @@ class StatBlockTableWidget extends WidgetBase {
         $row[$key]['#attributes']['class'][] = 'calculated';
       }
     }
-    $widget['table'][] = $row;
+    if ($all) {
+      $widget['table'][] = $row;
+    } else {
+      $widget += $row;
+    }
     $widget['synthetic'] = [
-      '#type' => 'checkbox',
+      '#type' => ($all) ? 'checkbox' : 'hidden',
       '#title' => t('Synthetic body'),
       '#default_value' => $items[$delta]->synthetic,
     ];
@@ -93,20 +99,63 @@ class StatBlockTableWidget extends WidgetBase {
     foreach ($values as $delta => $value) {
       if (is_array($value['table'][0])) {
         foreach ($value['table'][0] as $key => $data) {
-          if (!empty($data)) {
-            $values[$delta][$key] = $data;
-          }
+          $values[$delta][$key] = $data;
         }
       }
-      if (is_array($value['table'][1])) {
+      if (isset($value['table'][1]) && is_array($value['table'][1])) {
         foreach ($value['table'][1] as $key => $data) {
-          if (!empty($data)) {
-            $values[$delta][$key] = $data;
-          }
+          $values[$delta][$key] = $data;
         }
       }
       unset($values[$delta]['table']);
+
+      foreach ($values[$delta] as $key => $data) {
+        if (empty($data)) {
+          unset($values[$delta][$key]);
+        }
+      }
     }
+
     return $values;
+  }
+
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsForm(array $form, FormStateInterface $form_state) {
+    $options = [
+      'all' => t('All stats'),
+      'ego' => t('Ego stats only'),
+    ];
+    $element['display_style'] = [
+      '#title' => $this->t('Stat block style'),
+      '#type' => 'select',
+      '#default_value' => $this->getSetting('display_style'),
+      '#options' => $options,
+    ];
+
+    return $element;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function defaultSettings() {
+    return array(
+        'display_style' => 'all',
+      ) + parent::defaultSettings();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsSummary() {
+    $display_style = $this->getSetting('display_style');
+    $summary = [];
+    if (!empty($display_style)) {
+      $summary[] = $this->t('Show @subset stats', ['@subset' => $display_style]);
+    }
+    return $summary;
   }
 }

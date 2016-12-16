@@ -30,7 +30,7 @@ class StatDeriver extends TypedData {
         break;
       case 'tt':
         if (!is_null($item->wil)) {
-          return ceil($item->wil * 2) / 5;
+          return ceil($item->wil * 2 / 5);
         }
         break;
       case 'ir':

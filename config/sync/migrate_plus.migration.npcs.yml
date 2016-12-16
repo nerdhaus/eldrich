@@ -40,8 +40,6 @@ source:
     -
       sleights: sleights
     -
-      blueprints: blueprints
-    -
       gear: gear
     -
       blueprints: blueprints
@@ -179,8 +177,8 @@ process:
       - traits
     source:
       - morph
-      - @augmentations
-      - @field_traits
+      - '@augmentations'
+      - '@field_traits'
   rep:
     -
       plugin: skip_on_empty
@@ -212,20 +210,18 @@ process:
       - field_credits
       - field_rep
     source:
-      - @faction
+      - '@faction'
       - background
       - credits
-      - @rep
+      - '@rep'
     default_values:
       type: identity
-
   field_equipped_weapons:
     plugin: equipped_weapon
     source: weapons
   field_equipped_armor:
     plugin: equipped_armor
     source: armor
-
   citation:
     plugin: source_with_page
     entity_type: node

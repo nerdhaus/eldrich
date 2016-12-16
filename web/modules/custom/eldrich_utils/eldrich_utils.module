@@ -35,4 +35,8 @@ function eldrich_utils_entity_presave(Drupal\Core\Entity\EntityInterface $entity
   if (($entity->getEntityType()->id() == 'instance') && ($entity->bundle() == 'armor_instance')) {
     $entity->title = $entity->field_armor->entity->title->value;
   }
+
+  if (($entity->getEntityType()->id() == 'instance') && ($entity->bundle() == 'morph_instance')) {
+    $entity->title = $entity->field_model->entity->title->value;
+  }
 }
