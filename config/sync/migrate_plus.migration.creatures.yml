@@ -42,9 +42,9 @@ source:
     -
       sleights: sleights
     -
-      gear: gear
-    -
       weapons: weapons
+    -
+      gear: gear
     -
       stress: stress
   keys:
@@ -145,36 +145,58 @@ process:
         - run
         - cruise
   field_gear:
-    plugin: entity_lookup_plus
-    destination_field: target_id
-    value_key: title
-    fallback_value_key: field_short_name
-    bundle_key: type
-    entity_type: node
-    bundle:
-      - gear
-      - weapon
-      - armor
-      - drug
-      - armor
-    source: gear
-  field_augmentations:
-    plugin: entity_lookup_plus
-    destination_field: target_id
-    value_key: title
-    fallback_value_key: field_short_name
-    bundle: augmentation
-    bundle_key: type
-    entity_type: node
-    source: augmentations
+    -
+      plugin: skip_on_empty
+      method: process
+      source: gear
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      fallback_value_key: field_short_name
+      bundle_key: type
+      entity_type: node
+      bundle:
+        - gear
+        - weapon
+        - armor
+        - drug
+        - armor
   field_traits:
-    plugin: entity_lookup_plus
-    destination_field: target_id
-    value_key: title
-    bundle: trait
-    bundle_key: type
-    entity_type: node
-    source: traits
+    -
+      plugin: skip_on_empty
+      method: process
+      source: traits
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      bundle: trait
+      bundle_key: type
+      entity_type: node
+  field_augmentations:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: traits
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      fallback_value_key: field_short_name
+      bundle: augmentation
+      bundle_key: type
+      entity_type: node
+      source: sleights
   field_stress/value: stress
 destination:
   plugin: 'entity:node'
