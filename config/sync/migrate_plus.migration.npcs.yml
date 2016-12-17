@@ -174,20 +174,20 @@ process:
         entity_type: node
         source: morph
       field_traits:
-      -
-        plugin: skip_on_empty
-        method: process
-        source: traits
-      -
-        plugin: explode
-        delimiter: ','
-      -
-        plugin: entity_lookup_plus
-        destination_field: target_id
-        value_key: title
-        bundle: trait
-        bundle_key: type
-        entity_type: node
+        -
+          plugin: skip_on_empty
+          method: process
+          source: traits
+        -
+          plugin: explode
+          delimiter: ','
+        -
+          plugin: entity_lookup_plus
+          destination_field: target_id
+          value_key: title
+          bundle: trait
+          bundle_key: type
+          entity_type: node
       field_augmentations:
         -
           plugin: skip_on_empty
@@ -239,7 +239,6 @@ process:
           value_key: field_code
           bundle: network
           bundle_key: type
-          extra_value_key: quantity
           entity_type: node
       field_faction:
         plugin: entity_lookup_plus

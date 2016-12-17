@@ -41,13 +41,12 @@ third_party_settings:
         - field_owned_blueprints
       parent_name: ''
       weight: 14
-      format_type: tab
+      format_type: details
       format_settings:
-        id: ''
-        classes: ''
-        formatter: closed
-        description: ''
+        open: false
         required_fields: true
+        classes: ''
+        id: ''
       label: Gear
     group_abilities:
       children:
@@ -71,7 +70,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
   field_attribution:
@@ -129,7 +128,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
   field_headshot:
-    weight: 6
+    weight: 7
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -138,17 +137,14 @@ content:
   field_identity:
     weight: 13
     settings:
-      match_operator: CONTAINS
       form_mode: default
       override_labels: false
       label_singular: ''
       label_plural: ''
       collapsible: false
       collapsed: false
-      allow_new: true
-      allow_existing: false
     third_party_settings: {  }
-    type: inline_entity_form_complex
+    type: inline_entity_form_simple
   field_morph:
     weight: 11
     settings:
@@ -188,7 +184,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
   field_quote:
-    weight: 7
+    weight: 1
     settings:
       size: 60
       placeholder: ''
@@ -209,7 +205,8 @@ content:
     type: entity_reference_autocomplete
   field_stats:
     weight: 9
-    settings: {  }
+    settings:
+      display_style: all
     third_party_settings: {  }
     type: stat_block_table
   field_status:
@@ -233,20 +230,20 @@ content:
     type: entity_reference_override_autocomplete
   path:
     type: path
-    weight: 5
+    weight: 6
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 3
+    weight: 4
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 5
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -257,7 +254,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 1
+    weight: 2
     settings:
       match_operator: CONTAINS
       size: 60
