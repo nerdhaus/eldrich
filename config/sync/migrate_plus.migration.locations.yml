@@ -47,7 +47,7 @@ process:
     entity_type: lookup
   field_description/value: description
   field_population: population
-  field_attribution:
+  field_attribution/target_id:
     plugin: entity_maker
     entity_type: component
     source:

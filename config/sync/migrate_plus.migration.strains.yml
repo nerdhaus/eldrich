@@ -41,7 +41,7 @@ process:
     bundle: vector
     entity_type: lookup
   field_infectiousness/value: infectiousness
-  field_attribution:
+  field_attribution/target_id:
     plugin: entity_maker
     entity_type: component
     source:

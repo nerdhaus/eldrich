@@ -40,7 +40,7 @@ process:
     ignore_case: true
   field_description/value: description
   field_usage/value: usage
-  field_attribution:
+  field_attribution/target_id:
     plugin: entity_maker
     entity_type: component
     source:

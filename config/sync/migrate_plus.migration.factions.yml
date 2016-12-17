@@ -63,7 +63,7 @@ process:
       bundle: location
       bundle_key: type
       entity_type: node
-  field_attribution:
+  field_attribution/target_id:
     plugin: entity_maker
     entity_type: component
     source:

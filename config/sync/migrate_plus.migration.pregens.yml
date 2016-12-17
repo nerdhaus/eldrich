@@ -261,7 +261,7 @@ process:
   field_equipped_armor:
     plugin: equipped_armor
     source: armor
-  field_attribution:
+  field_attribution/target_id:
     plugin: entity_maker
     entity_type: component
     source:

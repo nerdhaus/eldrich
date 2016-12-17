@@ -86,7 +86,7 @@ process:
     default_value: 0
   field_strain/value: strain
   field_description/value: description
-  field_attribution:
+  field_attribution/target_id:
     plugin: entity_maker
     entity_type: component
     source:
