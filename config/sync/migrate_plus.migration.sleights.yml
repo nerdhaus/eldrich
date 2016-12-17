@@ -86,22 +86,23 @@ process:
     default_value: 0
   field_strain/value: strain
   field_description/value: description
-  citation:
-    plugin: source_with_page
-    entity_type: node
-    bundle: source
-    bundle_key: type
-    value_key: field_code
-    source: book
   field_attribution:
-    plugin: reference_factory
+    plugin: entity_maker
     entity_type: component
     source:
-      - '@citation'
+      - book
     keys:
-      - field_attribution_citations
+      - book
     default_values:
       type: attribution
+    process:
+      field_attribution_citations:
+        plugin: source_with_page
+        entity_type: node
+        bundle: source
+        bundle_key: type
+        value_key: field_code
+        source: book
   field_exsurgent:
     plugin: static_map
     source: exsurgent
