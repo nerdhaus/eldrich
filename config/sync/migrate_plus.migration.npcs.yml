@@ -164,7 +164,7 @@ process:
       - traits
       - augmentations
     default_values:
-      type: morph_instance
+      type: morph
     process:
       field_model:
         plugin: entity_lookup_plus
@@ -221,6 +221,7 @@ process:
     default_values:
       type: identity
     process:
+      title: name
       field_credits: credits
       field_background: background
       field_rep:
