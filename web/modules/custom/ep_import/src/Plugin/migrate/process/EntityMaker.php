@@ -62,7 +62,7 @@ class EntityMaker extends ProcessPluginBase implements ContainerFactoryPluginInt
         $migrate_executable->processRow($new_row, $this->configuration['process']);
         $destination = $new_row->getDestination();
         foreach ($destination as $key => $value) {
-            $entity_values[$key] = $destination;
+            $entity_values[$key] = $value;
         }
 
         $entity = $this->entityManager
@@ -70,6 +70,7 @@ class EntityMaker extends ProcessPluginBase implements ContainerFactoryPluginInt
             ->create($entity_values);
 
         $entity->save();
+        $entity_values['id'] = $entity->id();
         return $entity->id();
     }
 

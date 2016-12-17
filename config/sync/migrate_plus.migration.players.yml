@@ -1,22 +1,23 @@
-uuid: d5129804-28ab-43de-8282-f583f29c7fd2
 langcode: en
 status: true
 dependencies: {  }
-id: npcs
+id: players
 migration_tags: null
 migration_group: eldrich_chars
-label: NPCs
+label: 'Player Characters'
 source:
   plugin: csv
-  path: modules/custom/ep_import/characters/npcs.csv
+  path: modules/custom/ep_import/characters/players.csv
   header_row_count: 1
   column_names:
     -
       name: name
     -
-      based_on: based_on
+      legal_name: legal_name
     -
-      book: book
+      player: player
+    -
+      based_on: based_on
     -
       background: background
     -
@@ -28,11 +29,13 @@ source:
     -
       description: description
     -
-      stats: stats
+      ego_stats: ego_stats
+    -
+      skills: skills
     -
       morph: morph
     -
-      skills: skills
+      morph_stats: morph_stats
     -
       augmentations: augmentations
     -
@@ -51,13 +54,25 @@ source:
       credits: credits
     -
       rep: rep
+    -
+      rez: rez
+    -
+      damage: damage
+    -
+      wounds: wounds
+    -
+      stress: stress
+    -
+      trauma: trauma
+    -
+      derangements: derangements
   keys:
     - name
 process:
   title: name
   type:
     plugin: default_value
-    default_value: npc
+    default_value: pc
   field_description/value: description
   field_quote/value: quote
   field_stats:
@@ -259,20 +274,6 @@ process:
   field_equipped_armor:
     plugin: equipped_armor
     source: armor
-  citation:
-    plugin: source_with_page
-    entity_type: node
-    bundle: source
-    bundle_key: type
-    value_key: field_code
-    source: book
-  field_attribution:
-    plugin: reference_factory
-    entity_type: component
-    source:
-      - '@citation'
-    keys:
-      - field_attribution_citations
     default_values:
       type: attribution
 destination:
