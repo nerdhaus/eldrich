@@ -152,7 +152,7 @@ process:
       bundle: sleight
       bundle_key: type
       entity_type: node
-  field_morph:
+  field_morph/target_id:
     plugin: entity_maker
     entity_type: instance
     source:
@@ -203,7 +203,7 @@ process:
           bundle: augmentation
           bundle_key: type
           entity_type: node
-  field_identity:
+  field_identity/target_id:
     plugin: entity_maker
     entity_type: component
     source:
@@ -233,6 +233,8 @@ process:
           delimiter: ','
         -
           plugin: entity_lookup_plus
+          delimiter: ':'
+          extra_value_key: quantity
           value_key: field_code
           bundle: network
           bundle_key: type
