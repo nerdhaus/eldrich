@@ -276,7 +276,6 @@ process:
         bundle_key: type
         value_key: field_code
         source: book
-
 destination:
   plugin: 'entity:node'
 migration_dependencies: null

@@ -191,8 +191,8 @@ display:
         title: Derangements
         description: 'Mental Disorders and Derangements'
         expanded: false
-        parent: 'views_view:views.stats_listings.page_stats'
-        weight: -47
+        parent: 'menu_link_content:2904fd17-e31f-491b-90f1-067f8a117bde'
+        weight: -46
         context: '0'
         menu_name: main
       relationships:
@@ -316,8 +316,8 @@ display:
         title: Skills
         description: 'Learnable skills'
         expanded: false
-        parent: 'views_view:views.stats_listings.page_stats'
-        weight: -50
+        parent: 'menu_link_content:2904fd17-e31f-491b-90f1-067f8a117bde'
+        weight: -49
         context: '0'
         menu_name: main
       filters:
@@ -467,8 +467,8 @@ display:
         title: Sleights
         description: 'Psi Sleights'
         expanded: false
-        parent: 'views_view:views.stats_listings.page_stats'
-        weight: -48
+        parent: 'menu_link_content:2904fd17-e31f-491b-90f1-067f8a117bde'
+        weight: -47
         context: '0'
         menu_name: main
       relationships:
@@ -527,14 +527,13 @@ display:
       display_description: ''
       menu:
         type: normal
-        title: Stats
+        title: 'Core Stats'
         description: 'Character Abilities and Attributes'
         expanded: false
-        parent: ''
+        parent: 'menu_link_content:2904fd17-e31f-491b-90f1-067f8a117bde'
         weight: -50
         context: '0'
         menu_name: main
-        enabled: true
       path: stats
       filters:
         status:
@@ -653,8 +652,8 @@ display:
         title: Traits
         description: 'Ego and Morph Traits'
         expanded: false
-        parent: 'views_view:views.stats_listings.page_stats'
-        weight: -49
+        parent: 'menu_link_content:2904fd17-e31f-491b-90f1-067f8a117bde'
+        weight: -48
         context: '0'
         menu_name: main
       filters:

@@ -5,6 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - node.type.creature
+    - node.type.faction
+    - node.type.npc
+    - node.type.pc
     - system.menu.main
   module:
     - node
@@ -251,7 +254,7 @@ display:
   page_1:
     display_plugin: page
     id: page_1
-    display_title: Page
+    display_title: Bestiary
     position: 1
     display_options:
       display_extenders: {  }
@@ -259,7 +262,13 @@ display:
       menu:
         type: normal
         title: Bestiary
+        description: ''
+        expanded: false
+        parent: 'menu_link_content:0c848afb-41ec-4bfd-8d5f-af8fb5b87c69'
+        weight: -49
+        context: '0'
         menu_name: main
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -272,3 +281,267 @@ display:
       tags:
         - 'config:views.view.bestiary'
         - lookup_list
+  page_2:
+    display_plugin: page
+    id: page_2
+    display_title: NPCs
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: world/npcs
+      menu:
+        type: normal
+        title: NPCs
+        description: ''
+        expanded: false
+        parent: 'menu_link_content:0c848afb-41ec-4bfd-8d5f-af8fb5b87c69'
+        weight: -48
+        context: '0'
+        menu_name: main
+      display_description: ''
+      title: NPCs
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            npc: npc
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page_3:
+    display_plugin: page
+    id: page_3
+    display_title: Factions
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: world/factions
+      menu:
+        type: normal
+        title: Factions
+        description: ''
+        expanded: false
+        parent: 'menu_link_content:0c848afb-41ec-4bfd-8d5f-af8fb5b87c69'
+        weight: -50
+        context: '0'
+        menu_name: main
+      display_description: ''
+      title: Factions
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            faction: faction
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page_4:
+    display_plugin: page
+    id: page_4
+    display_title: Charsheets
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: world/charsheets
+      menu:
+        type: normal
+        title: 'Pregens and Charsheets'
+        description: ''
+        expanded: false
+        parent: 'menu_link_content:0c848afb-41ec-4bfd-8d5f-af8fb5b87c69'
+        weight: -48
+        context: '0'
+        menu_name: main
+      display_description: ''
+      title: Charsheets
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            pc: pc
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }

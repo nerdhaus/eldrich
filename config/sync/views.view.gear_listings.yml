@@ -245,11 +245,10 @@ display:
         title: Gear
         description: 'Equipment and Services'
         expanded: false
-        parent: ''
-        weight: -49
+        parent: 'menu_link_content:a7ad3352-e37f-4337-b908-b3071076683d'
+        weight: -50
         context: '0'
         menu_name: main
-        enabled: true
       filters:
         status:
           value: '1'
@@ -531,8 +530,8 @@ display:
         title: Morphs
         description: 'Morphs and Eidelons'
         expanded: false
-        parent: 'views_view:views.gear_listings.page_gear'
-        weight: -49
+        parent: 'menu_link_content:a7ad3352-e37f-4337-b908-b3071076683d'
+        weight: -48
         context: '0'
         menu_name: main
     cache_metadata:
@@ -619,8 +618,8 @@ display:
         title: Weapons
         description: 'Weapons and Ammo'
         expanded: false
-        parent: 'views_view:views.gear_listings.page_gear'
-        weight: -50
+        parent: 'menu_link_content:a7ad3352-e37f-4337-b908-b3071076683d'
+        weight: -49
         context: '0'
         menu_name: main
     cache_metadata:
