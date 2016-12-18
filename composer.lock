@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "48b0b728bde8543f4f349a3689bf9d73",
-    "content-hash": "c2bc7d1edad25871b4c3a118ebf8438c",
+    "hash": "314840a58c0e62d19111f3a2fdf690d7",
+    "content-hash": "e7d80151ad39f964724f14e9642bdfae",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2283,7 +2283,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/image_effects-8.x-1.0-alpha3.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha3",
                 "shasum": "8c130c6bb4b9a3a87ef8b92d169833230185f598"
             },
             "require": {
@@ -2382,6 +2382,56 @@
                 "source": "http://cgit.drupalcode.org/inline_entity_form"
             },
             "time": "2016-11-14 20:32:26"
+        },
+        {
+            "name": "drupal/menu_link_config",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/menu_link_config",
+                "reference": "535353615b2488624b2eee95077f92fac0365723"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1462452558"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Hydra",
+                    "homepage": "https://www.drupal.org/user/647364"
+                },
+                {
+                    "name": "claudiu_cristea",
+                    "homepage": "https://www.drupal.org/user/2623935"
+                },
+                {
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
+                },
+                {
+                    "name": "tstoeckler",
+                    "homepage": "https://www.drupal.org/user/107158"
+                }
+            ],
+            "description": "muh",
+            "homepage": "https://www.drupal.org/project/menu_link_config",
+            "support": {
+                "source": "http://cgit.drupalcode.org/menu_link_config"
+            },
+            "time": "2016-05-05 12:20:53"
         },
         {
             "name": "drupal/migrate_plus",
@@ -7597,6 +7647,7 @@
         "drupal/verf": 10,
         "drupal/image_effects": 15,
         "drupal/views_bootstrap": 20,
+        "drupal/menu_link_config": 20,
         "drupal/viewsreference": 15
     },
     "prefer-stable": true,
