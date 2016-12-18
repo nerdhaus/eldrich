@@ -30,7 +30,8 @@ content:
     type: skill_reference_select
   field_stats:
     weight: 3
-    settings: {  }
+    settings:
+      display_style: ego
     third_party_settings: {  }
     type: stat_block_table
   title:

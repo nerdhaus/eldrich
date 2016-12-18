@@ -138,10 +138,10 @@ content:
     weight: 13
     settings:
       form_mode: default
-      override_labels: false
       label_singular: ''
       label_plural: ''
-      collapsible: false
+      collapsible: true
+      override_labels: false
       collapsed: false
     third_party_settings: {  }
     type: inline_entity_form_simple
@@ -171,8 +171,8 @@ content:
       label_singular: ''
       label_plural: ''
       collapsible: true
-      collapsed: true
       override_labels: false
+      collapsed: false
     third_party_settings: {  }
     type: inline_entity_form_simple
   field_owned_blueprints:
@@ -206,7 +206,7 @@ content:
   field_stats:
     weight: 9
     settings:
-      display_style: all
+      display_style: ego
     third_party_settings: {  }
     type: stat_block_table
   field_status:

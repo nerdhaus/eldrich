@@ -57,7 +57,8 @@ content:
     type: skill_reference_select
   field_stats:
     weight: 1
-    settings: {  }
+    settings:
+      display_style: all
     third_party_settings: {  }
     type: stat_block_table
   field_traits:

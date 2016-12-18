@@ -22,59 +22,53 @@ bundle: morph
 mode: default
 content:
   field_augmentations:
-    weight: -2
-    label: above
+    weight: 5
+    label: inline
     settings:
       override_action: title
       link: true
     third_party_settings: {  }
     type: entity_reference_override_label
   field_mobility_system:
-    weight: 2
-    label: above
+    weight: 3
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_model:
-    weight: 3
-    label: above
+    weight: 0
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_movement_speed:
-    weight: -1
-    label: above
+    weight: 2
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_formatter
   field_skills:
-    weight: 1
-    label: above
+    weight: 6
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: skill_reference_label
   field_stats:
-    weight: -4
-    label: above
+    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: stat_block_table
   field_traits:
-    weight: -3
-    label: above
+    weight: 4
+    label: inline
     settings:
       override_action: title
       link: true
     third_party_settings: {  }
     type: entity_reference_override_label
-  title:
-    label: hidden
-    type: string
-    weight: -5
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  title: true

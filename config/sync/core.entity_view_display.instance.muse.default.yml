@@ -17,28 +17,28 @@ bundle: muse
 mode: default
 content:
   field_description:
-    weight: -2
-    label: above
+    weight: 2
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_skills:
-    weight: -3
-    label: above
+    weight: 3
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: skill_reference_label
   field_stats:
-    weight: -4
+    weight: 1
     label: above
     settings: {  }
     third_party_settings: {  }
     type: stat_block_table
   title:
-    label: hidden
     type: string
-    weight: -5
+    weight: 0
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

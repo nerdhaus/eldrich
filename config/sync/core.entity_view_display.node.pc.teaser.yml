@@ -4,19 +4,47 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.pc.field_attribution
+    - field.field.node.pc.field_description
+    - field.field.node.pc.field_equipped_armor
+    - field.field.node.pc.field_equipped_weapons
+    - field.field.node.pc.field_gear
+    - field.field.node.pc.field_headshot
+    - field.field.node.pc.field_identity
+    - field.field.node.pc.field_morph
+    - field.field.node.pc.field_motivations
+    - field.field.node.pc.field_muse
+    - field.field.node.pc.field_owned_blueprints
+    - field.field.node.pc.field_quote
+    - field.field.node.pc.field_skills
+    - field.field.node.pc.field_sleights
+    - field.field.node.pc.field_stats
+    - field.field.node.pc.field_status
+    - field.field.node.pc.field_traits
     - node.type.pc
   module:
+    - text
     - user
 id: node.pc.teaser
 targetEntityType: node
 bundle: pc
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_description:
+    type: text_default
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_quote:
+    type: string
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
 hidden:
   field_attribution: true
-  field_description: true
   field_equipped_armor: true
   field_equipped_weapons: true
   field_gear: true
@@ -26,9 +54,9 @@ hidden:
   field_motivations: true
   field_muse: true
   field_owned_blueprints: true
-  field_quote: true
   field_skills: true
   field_sleights: true
   field_stats: true
   field_status: true
   field_traits: true
+  links: true
