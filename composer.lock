@@ -1644,7 +1644,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/devel",
-                "reference": "fb432f128ac54979ec3f000082ae963ffa3e44dc"
+                "reference": "065551bf817bef832aabe4bec02b667a658e9841"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -1658,8 +1658,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta1+7-dev",
-                    "datestamp": "1481456584"
+                    "version": "8.x-1.0-beta1+9-dev",
+                    "datestamp": "1481983688"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1717,7 +1717,7 @@
                 "issues": "http://drupal.org/project/devel",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "time": "2016-12-11 11:41:55"
+            "time": "2016-12-17 14:02:59"
         },
         {
             "name": "drupal/eck",
@@ -2283,7 +2283,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/image_effects-8.x-1.0-alpha3.zip",
-                "reference": "8.x-1.0-alpha3",
+                "reference": null,
                 "shasum": "8c130c6bb4b9a3a87ef8b92d169833230185f598"
             },
             "require": {

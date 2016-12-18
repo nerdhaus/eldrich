@@ -1,0 +1,14 @@
+diff --git a/field_delimiter.module b/field_delimiter.module
+index 24444ff..b4c8c40 100644
+--- a/field_delimiter.module
++++ b/field_delimiter.module
+@@ -73,7 +73,8 @@ function field_delimiter_preprocess_field(&$variables) {
+ 
+   // Modify the output if necessary.
+   if (!empty($safe_delimiter)) {
+-    $last_item_delta = end(array_keys($variables['items']));
++    $deltas = array_keys($variables['items']);
++    $last_item_delta = end($deltas);
+ 
+     foreach ($variables['items'] as $delta => &$item) {
+       if ($delta != $last_item_delta) {

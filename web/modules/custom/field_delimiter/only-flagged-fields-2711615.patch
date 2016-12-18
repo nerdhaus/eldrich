@@ -1,0 +1,16 @@
+diff --git a/field_delimiter.module b/field_delimiter.module
+index 24444ff..fad1d31 100644
+--- a/field_delimiter.module
++++ b/field_delimiter.module
+@@ -66,6 +66,11 @@ function field_delimiter_preprocess_field(&$variables) {
+   $render_display = EntityViewDisplay::collectRenderDisplay($entity, $view_mode);
+   $field_display = $render_display->getComponent($field_name);
+ 
++  if (!isset($field_display['third_party_settings']['field_delimiter'])) {
++    // No need for delimiter, when the field settings are not active.
++    return;
++  }
++
+   $delimiter = $field_display['third_party_settings']['field_delimiter']['delimiter'];
+ 
+   // Sanitize the delimiter, allow a few reasonable HTML elements.

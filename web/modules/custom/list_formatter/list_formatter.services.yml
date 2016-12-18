@@ -1,4 +1,0 @@
-services:
-  plugin.manager.list_formatter:
-    class: Drupal\list_formatter\Plugin\ListFormatterPluginManager
-    parent: default_plugin_manager

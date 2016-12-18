@@ -1,0 +1,7 @@
+field.formatter.third_party.field_delimiter:
+  type: mapping
+  label: 'Field Delimiter entity display settings'
+  mapping:
+    delimiter:
+      type: string
+      label: Class
