@@ -9,6 +9,7 @@ dependencies:
     - field.field.component.attribution.field_attribution_notes
   module:
     - entity_reference_quantity
+    - field_delimiter
     - link
     - text
 id: component.attribution.default
@@ -21,7 +22,9 @@ content:
     label: inline
     settings:
       link: '1'
-    third_party_settings: {  }
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_quantity_label
   field_attribution_link:
     weight: 1

@@ -6,6 +6,8 @@ dependencies:
     - eck.eck_type.instance.armor_instance
     - field.field.instance.armor_instance.field_armor
     - field.field.instance.armor_instance.field_armor_mods
+  module:
+    - field_delimiter
 id: instance.armor_instance.default
 targetEntityType: instance
 bundle: armor_instance
@@ -13,23 +15,19 @@ mode: default
 content:
   field_armor:
     weight: -4
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_armor_mods:
     weight: -3
-    label: above
+    label: inline
     settings:
       link: true
-    third_party_settings: {  }
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_label
-  title:
-    label: hidden
-    type: string
-    weight: -5
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  title: true

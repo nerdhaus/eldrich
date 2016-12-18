@@ -10,6 +10,7 @@ dependencies:
   module:
     - ep_skill_reference
     - ep_statblock
+    - field_delimiter
     - text
 id: instance.muse.default
 targetEntityType: instance
@@ -26,12 +27,14 @@ content:
     weight: 3
     label: inline
     settings:
-      link: true
-    third_party_settings: {  }
+      link: '1'
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: skill_reference_label
   field_stats:
     weight: 1
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: stat_block_table
