@@ -1,0 +1,15 @@
+uuid: 94ff5435-19ec-4399-8fea-6b03aec9477f
+langcode: en
+status: true
+dependencies: {  }
+id: world
+title: World
+route_name: '<front>'
+route_parameters: {  }
+options: {  }
+expanded: true
+menu_name: main
+enabled: true
+parent: ''
+weight: -35
+description: ''

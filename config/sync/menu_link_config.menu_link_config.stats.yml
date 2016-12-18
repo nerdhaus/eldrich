@@ -1,0 +1,15 @@
+uuid: 21d1a62a-7a74-4993-836a-86b3463a8a5f
+langcode: en
+status: true
+dependencies: {  }
+id: stats
+title: Stats
+route_name: '<front>'
+route_parameters: {  }
+options: {  }
+expanded: true
+menu_name: main
+enabled: true
+parent: ''
+weight: -37
+description: ''

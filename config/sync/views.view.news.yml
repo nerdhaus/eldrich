@@ -317,7 +317,7 @@ display:
         description: 'Site Updates'
         expanded: false
         parent: ''
-        weight: -37
+        weight: -38
         context: '0'
         menu_name: main
     display_plugin: page

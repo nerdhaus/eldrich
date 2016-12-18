@@ -264,7 +264,7 @@ display:
         title: Bestiary
         description: ''
         expanded: false
-        parent: 'menu_link_content:969fa191-770a-475d-a151-2b362c68a96e'
+        parent: 'menu_link_config:world'
         weight: -49
         context: '0'
         menu_name: main
@@ -294,7 +294,7 @@ display:
         title: NPCs
         description: ''
         expanded: false
-        parent: 'menu_link_content:969fa191-770a-475d-a151-2b362c68a96e'
+        parent: 'menu_link_config:world'
         weight: -48
         context: '0'
         menu_name: main
@@ -382,7 +382,7 @@ display:
         title: Factions
         description: ''
         expanded: false
-        parent: 'menu_link_content:969fa191-770a-475d-a151-2b362c68a96e'
+        parent: 'menu_link_config:world'
         weight: -50
         context: '0'
         menu_name: main
@@ -470,7 +470,7 @@ display:
         title: 'Pregens and Charsheets'
         description: ''
         expanded: false
-        parent: 'menu_link_content:969fa191-770a-475d-a151-2b362c68a96e'
+        parent: 'menu_link_config:world'
         weight: -47
         context: '0'
         menu_name: main
