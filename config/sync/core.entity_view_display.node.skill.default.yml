@@ -34,10 +34,12 @@ content:
     type: text_default
   field_example_fields:
     weight: 6
-    label: above
+    label: inline
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: string
   field_is_field:
     type: boolean
@@ -73,10 +75,12 @@ content:
     type: entity_reference_label
   field_specializations:
     weight: 7
-    label: above
+    label: inline
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: string
   field_usage:
     weight: 3

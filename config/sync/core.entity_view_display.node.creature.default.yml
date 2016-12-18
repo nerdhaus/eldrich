@@ -22,6 +22,7 @@ dependencies:
     - ep_complex_values
     - ep_skill_reference
     - ep_statblock
+    - field_delimiter
     - text
     - user
 id: node.creature.default
@@ -49,7 +50,9 @@ content:
     settings:
       link: true
       override_action: suffix
-    third_party_settings: {  }
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_override_label
   field_creature_type:
     weight: 0
@@ -76,9 +79,11 @@ content:
     weight: 9
     label: inline
     settings:
-      override_action: title
       link: true
-    third_party_settings: {  }
+      override_action: suffix
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_override_label
   field_mobility_system:
     weight: 4
@@ -97,8 +102,10 @@ content:
     weight: 6
     label: inline
     settings:
-      link: true
-    third_party_settings: {  }
+      link: '1'
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: skill_reference_label
   field_stats:
     weight: 2
@@ -119,7 +126,9 @@ content:
     settings:
       link: true
       override_action: suffix
-    third_party_settings: {  }
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_override_label
 hidden:
   links: true

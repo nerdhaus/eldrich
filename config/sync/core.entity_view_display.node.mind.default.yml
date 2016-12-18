@@ -16,6 +16,7 @@ dependencies:
     - entity_reference_quantity
     - ep_skill_reference
     - ep_statblock
+    - field_delimiter
     - text
     - user
 id: node.mind.default
@@ -61,8 +62,10 @@ content:
     weight: 3
     label: inline
     settings:
-      link: true
-    third_party_settings: {  }
+      link: '1'
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: skill_reference_label
   field_stats:
     weight: 2

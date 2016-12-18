@@ -52,7 +52,9 @@ content:
     settings:
       link: true
       override_action: suffix
-    third_party_settings: {  }
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_override_label
   field_cost:
     weight: 2
@@ -81,7 +83,9 @@ content:
     settings:
       link: true
       override_action: suffix
-    third_party_settings: {  }
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_override_label
   field_gear_type:
     weight: 0

@@ -25,6 +25,7 @@ dependencies:
     - ep_complex_values
     - ep_skill_reference
     - ep_statblock
+    - field_delimiter
     - text
     - user
 id: node.robot.default
@@ -52,7 +53,9 @@ content:
     settings:
       link: true
       override_action: suffix
-    third_party_settings: {  }
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_override_label
   field_cost:
     weight: 2
@@ -83,12 +86,14 @@ content:
       link: false
     third_party_settings: {  }
   field_gear:
-    weight: 10
+    weight: 9
     label: inline
     settings:
       link: true
       override_action: suffix
-    third_party_settings: {  }
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_override_label
   field_gear_type:
     weight: 0
@@ -111,11 +116,13 @@ content:
     third_party_settings: {  }
     type: mobility_speed_formatter
   field_skills:
-    weight: 9
+    weight: 10
     label: inline
     settings:
-      link: true
-    third_party_settings: {  }
+      link: '1'
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: skill_reference_label
   field_stats:
     weight: 4

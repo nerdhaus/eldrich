@@ -27,6 +27,7 @@ dependencies:
     - ep_complex_values
     - ep_skill_reference
     - ep_statblock
+    - field_delimiter
     - text
     - user
 id: node.morph.default
@@ -54,7 +55,9 @@ content:
     settings:
       link: true
       override_action: suffix
-    third_party_settings: {  }
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_override_label
   field_cost:
     weight: 7
@@ -98,11 +101,13 @@ content:
     third_party_settings: {  }
     type: mobility_speed_formatter
   field_skills:
-    weight: 9
+    weight: 11
     label: inline
     settings:
-      link: true
-    third_party_settings: {  }
+      link: '1'
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: skill_reference_label
   field_stat_variance:
     weight: 3
@@ -110,7 +115,9 @@ content:
     settings:
       thousand_separator: ''
       prefix_suffix: true
-    third_party_settings: {  }
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: number_integer
   field_stats:
     weight: 2
@@ -119,12 +126,14 @@ content:
     third_party_settings: {  }
     type: stat_block_simple
   field_traits:
-    weight: 11
+    weight: 9
     label: inline
     settings:
       link: true
       override_action: suffix
-    third_party_settings: {  }
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_override_label
 hidden:
   field_blueprints: true

@@ -20,6 +20,7 @@ dependencies:
     - entity_reference_override
     - ep_skill_reference
     - ep_statblock
+    - field_delimiter
     - text
     - user
 id: node.npc.default
@@ -29,20 +30,20 @@ mode: default
 content:
   field_attribution:
     weight: 11
-    label: above
+    label: hidden
     settings:
       link: true
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_description:
-    weight: 2
-    label: above
+    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_equipped_armor:
-    weight: 9
+    weight: 10
     label: above
     settings:
       link: true
@@ -50,7 +51,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_equipped_weapons:
-    weight: 8
+    weight: 9
     label: above
     settings:
       link: true
@@ -58,16 +59,18 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_gear:
-    weight: 10
-    label: above
+    weight: 8
+    label: inline
     settings:
-      override_action: title
       link: true
-    third_party_settings: {  }
+      override_action: suffix
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_override_label
   field_identity:
     weight: 4
-    label: above
+    label: hidden
     settings:
       link: true
       view_mode: default
@@ -75,45 +78,51 @@ content:
     type: entity_reference_entity_view
   field_morph:
     weight: 3
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_quote:
     weight: 0
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   field_skills:
     weight: 5
-    label: above
+    label: inline
     settings:
-      link: true
-    third_party_settings: {  }
+      link: '1'
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: skill_reference_label
   field_sleights:
     weight: 6
-    label: above
+    label: inline
     settings:
       link: true
-    third_party_settings: {  }
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_label
   field_stats:
-    weight: 1
-    label: above
+    weight: 2
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: stat_block_table
   field_traits:
     weight: 7
-    label: above
+    label: inline
     settings:
-      override_action: title
       link: true
-    third_party_settings: {  }
+      override_action: suffix
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_override_label
 hidden:
   links: true
