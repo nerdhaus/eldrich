@@ -18,7 +18,11 @@ source:
     -
       description: Description
     -
-      book: book
+      plural: Plural
+    -
+      icon: Icon
+    -
+      book: Book
   keys:
     - title
     - parent
@@ -28,6 +32,8 @@ process:
   vid:
     plugin: default_value
     default_value: gear_type
+  field_plural: plural
+  field_icon: icon
   field_source:
     plugin: source_with_page
     source: book
