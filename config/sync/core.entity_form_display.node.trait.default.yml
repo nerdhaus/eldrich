@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.trait.field_attribution
+    - field.field.node.trait.field_conditional
     - field.field.node.trait.field_cp_cost
     - field.field.node.trait.field_description
     - field.field.node.trait.field_ego_trait
@@ -16,6 +17,7 @@ dependencies:
     - ep_skill_reference
     - ep_statblock
     - field_group
+    - inline_entity_form
     - path
     - text
 third_party_settings:
@@ -62,6 +64,12 @@ content:
       override_labels: false
     third_party_settings: {  }
     type: inline_entity_form_simple
+  field_conditional:
+    weight: 34
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_cp_cost:
     weight: 8
     settings:

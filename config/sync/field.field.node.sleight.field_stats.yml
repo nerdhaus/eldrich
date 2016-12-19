@@ -1,0 +1,21 @@
+uuid: ca2732c1-f252-45fc-a0f1-15b7762de239
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stats
+    - node.type.sleight
+  module:
+    - ep_statblock
+id: node.sleight.field_stats
+field_name: field_stats
+entity_type: node
+bundle: sleight
+label: Stats
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: stat_block

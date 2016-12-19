@@ -5,17 +5,23 @@ dependencies:
   config:
     - field.field.node.sleight.field_action_type
     - field.field.node.sleight.field_attribution
+    - field.field.node.sleight.field_conditional
     - field.field.node.sleight.field_description
     - field.field.node.sleight.field_exsurgent
     - field.field.node.sleight.field_is_active
     - field.field.node.sleight.field_psi_skill
+    - field.field.node.sleight.field_skills
     - field.field.node.sleight.field_sleight_duration
     - field.field.node.sleight.field_sleight_level
     - field.field.node.sleight.field_sleight_range
+    - field.field.node.sleight.field_stats
     - field.field.node.sleight.field_strain
     - node.type.sleight
   module:
+    - ep_skill_reference
+    - ep_statblock
     - field_group
+    - inline_entity_form
     - path
     - text
 third_party_settings:
@@ -71,6 +77,12 @@ content:
       override_labels: false
     third_party_settings: {  }
     type: inline_entity_form_simple
+  field_conditional:
+    weight: 37
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_description:
     weight: 13
     settings:
@@ -95,6 +107,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_skills:
+    weight: 39
+    settings: {  }
+    third_party_settings: {  }
+    type: skill_reference_select
   field_sleight_duration:
     weight: 10
     settings: {  }
@@ -110,6 +127,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_stats:
+    weight: 38
+    settings:
+      display_style: all
+    third_party_settings: {  }
+    type: stat_block_table
   field_strain:
     weight: 35
     settings:

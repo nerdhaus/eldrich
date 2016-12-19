@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.trait.field_attribution
+    - field.field.node.trait.field_conditional
     - field.field.node.trait.field_cp_cost
     - field.field.node.trait.field_description
     - field.field.node.trait.field_ego_trait
@@ -34,6 +35,15 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+  field_conditional:
+    weight: 102
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_cp_cost:
     weight: 3
     label: inline

@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.augmentation.field_mobility_system
     - field.field.node.augmentation.field_morph_types
     - field.field.node.augmentation.field_short_name
+    - field.field.node.augmentation.field_skills
     - field.field.node.augmentation.field_special_effect
     - field.field.node.augmentation.field_stats
     - field.field.node.augmentation.field_weapon
@@ -20,6 +21,7 @@ dependencies:
   module:
     - entity_reference_quantity
     - ep_complex_values
+    - ep_skill_reference
     - ep_statblock
     - text
     - user
@@ -69,6 +71,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_skills:
+    weight: 8
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: skill_reference_label
   field_special_effect:
     weight: 5
     label: inline

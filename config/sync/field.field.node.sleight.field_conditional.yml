@@ -1,0 +1,23 @@
+uuid: 3d543e1e-e4d2-43fb-829a-f6caf0829c08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conditional
+    - node.type.sleight
+id: node.sleight.field_conditional
+field_name: field_conditional
+entity_type: node
+bundle: sleight
+label: 'Effect is conditional'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

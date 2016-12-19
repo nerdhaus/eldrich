@@ -1,0 +1,23 @@
+uuid: adffdc04-3a21-4c87-88b9-45a1da227f93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conditional
+    - node.type.trait
+id: node.trait.field_conditional
+field_name: field_conditional
+entity_type: node
+bundle: trait
+label: 'Effect is conditional'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
