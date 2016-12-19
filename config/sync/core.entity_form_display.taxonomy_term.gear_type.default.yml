@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.gear_type.field_icon
+    - field.field.taxonomy_term.gear_type.field_plural
     - field.field.taxonomy_term.gear_type.field_source
     - taxonomy.vocabulary.gear_type
   module:
@@ -21,6 +23,20 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_icon:
+    weight: 33
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_plural:
+    weight: 32
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_source:
     weight: 31
     settings:

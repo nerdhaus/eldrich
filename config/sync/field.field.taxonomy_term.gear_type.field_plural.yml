@@ -1,0 +1,19 @@
+uuid: eaccd4c0-d466-4bb2-a809-263172d46328
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_plural
+    - taxonomy.vocabulary.gear_type
+id: taxonomy_term.gear_type.field_plural
+field_name: field_plural
+entity_type: taxonomy_term
+bundle: gear_type
+label: 'Plural Form'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
