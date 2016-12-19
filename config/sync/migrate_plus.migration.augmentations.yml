@@ -30,7 +30,11 @@ source:
     -
       effect: Effect
     -
+      skills: Skills
+    -
       stats: Stats
+    -
+      conditional: Conditional
     -
       armor: Armor
     -
@@ -39,8 +43,6 @@ source:
       weapon: Weapon
     -
       mobility: Mobility
-    -
-      conditional: Conditional
     -
       morphs: Morphs
   keys:

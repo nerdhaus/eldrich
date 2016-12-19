@@ -32,6 +32,12 @@ source:
     -
       effect: Effect
     -
+      skills: Skills
+    -
+      stats: Stats
+    -
+      conditional: Conditional
+    -
       exsurgent: Exsurgent
     -
       book: Book
