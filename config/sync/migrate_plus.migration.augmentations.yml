@@ -28,6 +28,8 @@ source:
     -
       book: Book
     -
+      mobility: Mobility
+    -
       effect: Effect
     -
       skills: Skills
