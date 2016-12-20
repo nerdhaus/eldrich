@@ -117,6 +117,24 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 1
+  field_stats:
+    plugin: stat_block
+    source: stats
+  field_skills:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: skills
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: skill_lookup
+      destination_field: target_id
+      entity_type: node
+      bundle: skill
+      bundle_key: type
+      value_key: title
   field_conditional:
     plugin: static_map
     source: conditional
@@ -124,9 +142,6 @@ process:
       'FALSE': 0
       'TRUE': 1
     default_value: 0
-  field_stats:
-    plugin: stat_block
-    source: stats
   field_morph_types:
     -
       plugin: skip_on_empty

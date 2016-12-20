@@ -26,7 +26,7 @@ source:
     -
       strain: Strain
     -
-      skill: Skill
+      linked: Linked
     -
       description: Description
     -
@@ -82,13 +82,38 @@ process:
     bundle: skill
     bundle_key: type
     value_key: title
-    source: skill
+    source: linked
   field_is_active:
     plugin: static_map
     source: active
     map:
       Active: 1
       Passive: 0
+    default_value: 0
+  field_stats:
+    plugin: stat_block
+    source: stats
+  field_skills:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: skills
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: skill_lookup
+      destination_field: target_id
+      entity_type: node
+      bundle: skill
+      bundle_key: type
+      value_key: title
+  field_conditional:
+    plugin: static_map
+    source: conditional
+    map:
+      'FALSE': 0
+      'TRUE': 1
     default_value: 0
   field_strain/value: strain
   field_description/value: description

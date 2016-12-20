@@ -55,6 +55,31 @@ process:
   field_cp_cost: cost
   field_description/value: description
   field_special_effect/value: effect
+  field_stats:
+    plugin: stat_block
+    source: stats
+  field_skills:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: skills
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: skill_lookup
+      destination_field: target_id
+      entity_type: node
+      bundle: skill
+      bundle_key: type
+      value_key: title
+  field_conditional:
+    plugin: static_map
+    source: conditional
+    map:
+      'FALSE': 0
+      'TRUE': 1
+    default_value: 0
   field_attribution/target_id:
     plugin: entity_maker
     entity_type: component

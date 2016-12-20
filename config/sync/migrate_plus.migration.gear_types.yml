@@ -16,11 +16,11 @@ source:
     -
       parent: Parent
     -
-      description: Description
-    -
       plural: Plural
     -
       icon: Icon
+    -
+      description: Description
     -
       book: Book
   keys:
