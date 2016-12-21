@@ -1,0 +1,15 @@
+uuid: 6915c28a-f9b8-48d1-a1ef-3902899cbd77
+langcode: en
+status: true
+dependencies: {  }
+id: games
+label: Games
+path: /games
+title: Games
+theme: ''
+display_variant:
+  id: ''
+main_content_provider:
+  id: empty_page
+access:
+  id: none

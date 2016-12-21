@@ -239,13 +239,13 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
-      path: gear
+      path: gear/catalog
       menu:
         type: normal
         title: Gear
         description: 'Equipment and Services'
         expanded: false
-        parent: 'menu_link_config:gear'
+        parent: eldrich.gear
         weight: -50
         context: '0'
         menu_name: main
@@ -530,7 +530,7 @@ display:
         title: Morphs
         description: 'Morphs and Eidelons'
         expanded: false
-        parent: 'menu_link_config:gear'
+        parent: eldrich.gear
         weight: -48
         context: '0'
         menu_name: main
@@ -618,7 +618,7 @@ display:
         title: Weapons
         description: 'Weapons and Ammo'
         expanded: false
-        parent: 'menu_link_config:gear'
+        parent: eldrich.gear
         weight: -49
         context: '0'
         menu_name: main

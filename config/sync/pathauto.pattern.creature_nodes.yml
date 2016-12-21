@@ -7,16 +7,16 @@ dependencies:
 id: creature_nodes
 label: 'Creature Nodes'
 type: 'canonical_entities:node'
-pattern: 'world/bestiary/[node:field_creature_type]/[node:title]'
+pattern: 'world/bestiary/[node:field_creature_type]-[node:title]'
 selection_criteria:
-  9c9be18c-5351-4a5a-b79e-61c9d91dd612:
+  7395d0e4-ddcf-4b75-84ef-cde0718111f0:
     id: node_type
     bundles:
       creature: creature
     negate: false
     context_mapping:
       node: node
-    uuid: 9c9be18c-5351-4a5a-b79e-61c9d91dd612
+    uuid: 7395d0e4-ddcf-4b75-84ef-cde0718111f0
 selection_logic: and
 weight: -5
 relationships: {  }

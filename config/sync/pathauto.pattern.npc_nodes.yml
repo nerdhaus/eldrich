@@ -1,22 +1,22 @@
-uuid: 177a2cee-e29f-46df-bb72-0206f64ae9c5
+uuid: 94050f94-2393-43fe-9733-b569fef02b90
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: stat_nodes
-label: 'Stat Nodes'
+id: npc_nodes
+label: 'NPC Nodes'
 type: 'canonical_entities:node'
-pattern: 'stats/abilities/[node:title]'
+pattern: 'world/npcs/[node:title]'
 selection_criteria:
-  cfa76af8-8ba0-4f2a-bca7-56352fbf890a:
+  baf2ee8a-a7bc-46a2-9e0f-c14a204428e0:
     id: node_type
     bundles:
-      stat: stat
+      npc: npc
     negate: false
     context_mapping:
       node: node
-    uuid: cfa76af8-8ba0-4f2a-bca7-56352fbf890a
+    uuid: baf2ee8a-a7bc-46a2-9e0f-c14a204428e0
 selection_logic: and
 weight: -5
 relationships: {  }

@@ -1,0 +1,31 @@
+uuid: 2d76759a-f905-4292-9e62-4311dd6d45bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home
+    - views.view.home_page_components
+  module:
+    - block_visibility_groups
+    - views
+  theme:
+    - veil
+id: views_block__home_page_components_npc_finder
+theme: veil
+region: support
+weight: 0
+provider: null
+plugin: 'views_block:home_page_components-npc_finder'
+settings:
+  id: 'views_block:home_page_components-npc_finder'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home
+    context_mapping: {  }

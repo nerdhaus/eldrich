@@ -1,0 +1,30 @@
+# Hard-code a bunch of menu links for QuickPage entries, because Jesus Panels
+
+eldrich.stats:
+  title: 'Stats'
+  description: 'Core abilities, skills, traits, and more'
+  route_name: quick_pages.stats
+  weight: 100
+  menu_name: main
+  expanded: true
+eldrich.gear:
+  title: 'Gear'
+  description: 'A catalog of gear for your EP characters'
+  route_name: quick_pages.gear
+  weight: 120
+  menu_name: main
+  expanded: true
+eldrich.world:
+  title: 'World'
+  description: 'The world of Eclipse Phase'
+  route_name: quick_pages.world
+  weight: 130
+  menu_name: main
+  expanded: true
+eldrich.games:
+  title: 'Games'
+  description: 'Active and archived Eclipse Phase games'
+  route_name: quick_pages.games
+  weight: 140
+  menu_name: main
+  expanded: true

@@ -168,6 +168,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      title: 'Disorders and Derangements'
     cache_metadata:
       max-age: -1
       contexts:
@@ -191,7 +192,7 @@ display:
         title: Derangements
         description: 'Mental Disorders and Derangements'
         expanded: false
-        parent: 'menu_link_config:stats'
+        parent: eldrich.stats
         weight: -46
         context: '0'
         menu_name: main
@@ -316,7 +317,7 @@ display:
         title: Skills
         description: 'Learnable skills'
         expanded: false
-        parent: 'menu_link_config:stats'
+        parent: eldrich.stats
         weight: -49
         context: '0'
         menu_name: main
@@ -467,7 +468,7 @@ display:
         title: Sleights
         description: 'Psi Sleights'
         expanded: false
-        parent: 'menu_link_config:stats'
+        parent: eldrich.stats
         weight: -47
         context: '0'
         menu_name: main
@@ -520,21 +521,21 @@ display:
   page_stats:
     display_plugin: page
     id: page_stats
-    display_title: Stats
+    display_title: Abilities
     position: 1
     display_options:
       display_extenders: {  }
       display_description: ''
       menu:
         type: normal
-        title: 'Core Stats'
+        title: Abilities
         description: 'Character Abilities and Attributes'
         expanded: false
-        parent: 'menu_link_config:stats'
+        parent: eldrich.stats
         weight: -50
         context: '0'
         menu_name: main
-      path: stats
+      path: stats/abilities
       filters:
         status:
           value: '1'
@@ -652,7 +653,7 @@ display:
         title: Traits
         description: 'Ego and Morph Traits'
         expanded: false
-        parent: 'menu_link_config:stats'
+        parent: eldrich.stats
         weight: -48
         context: '0'
         menu_name: main

@@ -1,0 +1,14 @@
+{
+  "name": "drupal/eldrich",
+  "type": "drupal-module",
+  "description": "Utils, callbacks, and more",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/eldrich",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/eldrich",
+    "source": "http://cgit.drupalcode.org/eldrich"
+  },
+  "require": { }
+}

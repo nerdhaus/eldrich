@@ -1,0 +1,15 @@
+uuid: 61fae5cf-e53e-4ee9-9381-687ab46a6068
+langcode: en
+status: true
+dependencies: {  }
+id: home
+label: Home
+path: /home
+title: ''
+theme: ''
+display_variant:
+  id: ''
+main_content_provider:
+  id: empty_page
+access:
+  id: none

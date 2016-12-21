@@ -1,0 +1,7 @@
+name: Eldrich
+type: module
+description: Utils, callbacks, and more
+core: 8.x
+package: Eldrich
+dependencies:
+  - quick_pages

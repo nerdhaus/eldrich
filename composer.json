@@ -36,7 +36,6 @@
         "drupal/migrate_tools": "^3.0",
         "drupal/migrate_source_csv": "2.x-dev",
         "drupal/pathauto": "1.x-dev",
-        "drupal/entity_reference_revisions": "^1.0",
         "drupal/range": "1.x-dev",
         "drupal/bootstrap": "^3.0",
         "drupal/replicate": "1.x-dev",
@@ -46,16 +45,15 @@
         "drupal/themable_forms": "^1.0@alpha",
         "drupal/verf": "^1.0@beta",
         "drupal/image_effects": "^1.0@alpha",
-        "drupal/paragraphs": "^1.0",
         "drupal/contact_formatter": "^1.0",
         "drupal/views_bootstrap": "3.x-dev",
-        "drupal/menu_link_config": "1.x-dev",
         "drupal/search_autocomplete": "^1.1",
         "drupal/site_settings": "^1.2",
         "drupal/smart_trim": "^1.0",
         "drupal/metatag": "^1.0@beta",
+        "drupal/block_visibility_groups": "^1.1",
         "drupal/quick_pages": "^1.0@alpha",
-        "drupal/block_visibility_groups": "^1.1"
+        "drupal/layout_plugin": "^1.0@alpha"
     },
     "require-dev": {
         "behat/mink": "~1.7",

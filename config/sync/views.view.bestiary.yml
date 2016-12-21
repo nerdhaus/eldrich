@@ -6,8 +6,8 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - node.type.creature
     - node.type.faction
+    - node.type.location
     - node.type.npc
-    - node.type.pc
     - system.menu.main
   module:
     - node
@@ -264,7 +264,7 @@ display:
         title: Bestiary
         description: ''
         expanded: false
-        parent: 'menu_link_config:world'
+        parent: eldrich.world
         weight: -49
         context: '0'
         menu_name: main
@@ -294,7 +294,7 @@ display:
         title: NPCs
         description: ''
         expanded: false
-        parent: 'menu_link_config:world'
+        parent: eldrich.world
         weight: -48
         context: '0'
         menu_name: main
@@ -382,7 +382,7 @@ display:
         title: Factions
         description: ''
         expanded: false
-        parent: 'menu_link_config:world'
+        parent: eldrich.world
         weight: -50
         context: '0'
         menu_name: main
@@ -460,22 +460,22 @@ display:
   page_4:
     display_plugin: page
     id: page_4
-    display_title: Charsheets
+    display_title: Factions
     position: 1
     display_options:
       display_extenders: {  }
-      path: world/charsheets
+      path: world/locations
       menu:
         type: normal
-        title: 'Pregens and Charsheets'
+        title: Locations
         description: ''
         expanded: false
-        parent: 'menu_link_config:world'
-        weight: -47
+        parent: eldrich.world
+        weight: -50
         context: '0'
         menu_name: main
       display_description: ''
-      title: Charsheets
+      title: Locations
       defaults:
         title: false
         filters: false
@@ -501,7 +501,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            pc: pc
+            location: location
           group: 1
           exposed: false
           expose:
