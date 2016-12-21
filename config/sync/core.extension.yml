@@ -37,7 +37,6 @@ module:
   inline_entity_form: 0
   integer_time: 0
   link: 0
-  menu_link_config: 0
   menu_ui: 0
   migrate: 0
   migrate_plus: 0
@@ -48,7 +47,6 @@ module:
   options: 0
   page_cache: 0
   path: 0
-  quick_pages: 0
   quickedit: 0
   range: 0
   rdf: 0
@@ -60,7 +58,6 @@ module:
   text: 0
   token: 0
   toolbar: 0
-  tour: 0
   update: 0
   user: 0
   verf: 0
