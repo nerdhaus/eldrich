@@ -1,8 +1,0 @@
-name: Bootstrap Paragraphs
-type: module
-description: A suite of Paragraph bundles made with the Boostrap framework.
-core: 8.x
-dependencies:
-  - paragraphs
-  - contact_formatter
-  - viewsreference
