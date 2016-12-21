@@ -60,7 +60,9 @@ content:
     weight: 2
     label: inline
     settings:
-      link: true
+      location: suffix
+      template: ' (min. {{ quantity }})'
+      link: false
     third_party_settings: {  }
     type: entity_reference_quantity_label
   field_description:
