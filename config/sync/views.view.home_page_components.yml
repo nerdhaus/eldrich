@@ -606,7 +606,7 @@ display:
       display_extenders: {  }
       use_ajax: true
       link_url: /gear
-      link_display: custom_url
+      link_display: '0'
       use_more: false
       use_more_always: true
       use_more_text: 'Browse Gear'
@@ -1051,7 +1051,7 @@ display:
           items_per_page: 10
           offset: 0
       title: 'Gear Finder'
-      use_more: true
+      use_more: false
       use_more_always: true
       use_more_text: 'Browse Gear'
     cache_metadata:
@@ -1458,7 +1458,7 @@ display:
       title: 'Threat Finder'
       link_display: custom_url
       link_url: /world
-      use_more: true
+      use_more: false
       use_more_always: true
       use_more_text: 'Browse World Info'
     cache_metadata:
