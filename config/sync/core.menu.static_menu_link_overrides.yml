@@ -6,8 +6,32 @@ definitions:
     weight: 0
     expanded: false
   standard__front_page:
-    weight: -39
+    weight: -45
     menu_name: main
     parent: ''
     expanded: false
     enabled: false
+  eldrich__stats:
+    weight: -49
+    menu_name: main
+    parent: ''
+    expanded: true
+    enabled: true
+  eldrich__gear:
+    weight: -48
+    menu_name: main
+    parent: ''
+    expanded: true
+    enabled: true
+  eldrich__world:
+    weight: -47
+    menu_name: main
+    parent: ''
+    expanded: true
+    enabled: true
+  eldrich__games:
+    weight: -46
+    menu_name: main
+    parent: ''
+    enabled: true
+    expanded: true

@@ -53,7 +53,8 @@
         "drupal/metatag": "^1.0@beta",
         "drupal/block_visibility_groups": "^1.1",
         "drupal/quick_pages": "^1.0@alpha",
-        "drupal/layout_plugin": "^1.0@alpha"
+        "drupal/layout_plugin": "^1.0@alpha",
+        "drupal/config_update": "^1.2"
     },
     "require-dev": {
         "behat/mink": "~1.7",

@@ -291,7 +291,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_quantity_label
           settings:
-            link: 0
+            link: false
             quantity_output: attribute
           group_column: ''
           group_columns: {  }
@@ -355,7 +355,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_quantity_label
           settings:
-            link: 1
+            link: true
             quantity_output: attribute
           group_column: ''
           group_columns: {  }
@@ -807,7 +807,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_quantity_label
           settings:
-            link: 1
+            link: true
             quantity_output: suffix
           group_column: ''
           group_columns: {  }
@@ -1253,7 +1253,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_quantity_label
           settings:
-            link: 1
+            link: true
             quantity_output: attribute
           group_column: ''
           group_columns: {  }

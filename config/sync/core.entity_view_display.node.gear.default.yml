@@ -31,7 +31,7 @@ content:
     weight: 2
     label: inline
     settings:
-      link: '1'
+      link: true
     third_party_settings: {  }
     type: entity_reference_quantity_label
   field_description:

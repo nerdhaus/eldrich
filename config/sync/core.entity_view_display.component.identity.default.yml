@@ -57,7 +57,7 @@ content:
     weight: 4
     label: inline
     settings:
-      link: '1'
+      link: true
     third_party_settings:
       field_delimiter:
         delimiter: ', '

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e2849bea2bebedb2f39d042d98f4382c",
-    "content-hash": "c6f23874ce03798a1d01915460736758",
+    "hash": "fe696e00408a518f81abae6a64aebc5d",
+    "content-hash": "300b524a5637a04c9fff67d698ddbae6",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1162,6 +1162,56 @@
             }
         },
         {
+            "name": "drupal/config_update",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/config_update",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_update-8.x-1.2.zip",
+                "reference": null,
+                "shasum": "9490c58d1b7e58c5c08533c93d5565f356144591"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "require-dev": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1477674962"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "jhodgdon",
+                    "homepage": "https://www.drupal.org/user/155601"
+                },
+                {
+                    "name": "nedjo",
+                    "homepage": "https://www.drupal.org/user/4481"
+                }
+            ],
+            "description": "Provides basic revert and update functionality for other modules",
+            "homepage": "https://www.drupal.org/project/config_update",
+            "support": {
+                "source": "http://cgit.drupalcode.org/config_update"
+            }
+        },
+        {
             "name": "drupal/console",
             "version": "1.0.0-rc11",
             "source": {
@@ -2031,13 +2081,13 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_reference_override",
-                "reference": "06267ff6b7c0dc26eea3c7ae1b0de605eeaea769"
+                "reference": "c8477829d1579946d17f57f33b4ba7e54011f4d9"
             },
             "require": {
                 "drupal/core": "~8.0"
             },
-            "suggest": {
-                "drupal/entity_browser": "Required by drupal/entity_reference_override"
+            "require-dev": {
+                "drupal/entity_browser": "*"
             },
             "type": "drupal-module",
             "extra": {
@@ -2046,7 +2096,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1479612240"
+                    "datestamp": "1482304386"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2072,7 +2122,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_reference_override"
             },
-            "time": "2016-11-20 03:20:18"
+            "time": "2016-12-21 07:13:01"
         },
         {
             "name": "drupal/entity_reference_quantity",
@@ -2080,7 +2130,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_reference_quantity",
-                "reference": "7d539a74f3fd2203df4db7251e3d11080c6953dc"
+                "reference": "c41fc9824cae2abf20ef2b01f37e2ffb6f563c51"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2092,7 +2142,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1481561885"
+                    "datestamp": "1482304684"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2110,7 +2160,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_reference_quantity"
             },
-            "time": "2016-12-12 16:56:33"
+            "time": "2016-12-21 07:14:54"
         },
         {
             "name": "drupal/entity_reference_views_select",
@@ -3541,28 +3591,28 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "2693c101803ca78b27972d84081d027fca790a1e"
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/2693c101803ca78b27972d84081d027fca790a1e",
-                "reference": "2693c101803ca78b27972d84081d027fca790a1e",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "^4.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -3588,7 +3638,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2016-11-18 17:47:58"
+            "time": "2016-12-20 10:07:11"
         },
         {
             "name": "guzzlehttp/psr7",

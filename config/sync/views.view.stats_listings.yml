@@ -193,7 +193,7 @@ display:
         description: 'Mental Disorders and Derangements'
         expanded: false
         parent: eldrich.stats
-        weight: -46
+        weight: -45
         context: '0'
         menu_name: main
       relationships:
@@ -469,7 +469,7 @@ display:
         description: 'Psi Sleights'
         expanded: false
         parent: eldrich.stats
-        weight: -47
+        weight: -46
         context: '0'
         menu_name: main
       relationships:

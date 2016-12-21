@@ -21,7 +21,9 @@ content:
     weight: 0
     label: inline
     settings:
-      link: '1'
+      link: true
+      location: suffix
+      template: ' pg. {{ quantity }}'
     third_party_settings:
       field_delimiter:
         delimiter: ', '
