@@ -1,0 +1,9 @@
+field.formatter.settings.eldrich_citation_formatter:
+  type: field.formatter.settings.entity_reference_label
+  mapping:
+    length:
+      label: 'Show title as'
+      type: string
+    destination:
+      label: 'Link to'
+      type: string

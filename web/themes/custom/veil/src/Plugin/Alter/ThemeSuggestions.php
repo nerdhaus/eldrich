@@ -31,12 +31,8 @@ class ThemeSuggestions extends PluginBase implements AlterInterface {
 
     switch ($hook) {
       case 'block':
-        switch ($variables->element['#plugin_id']) {
-          case "views_block:home_page_components-npc_finder":
-          case "views_block:home_page_components-gear_finder":
-            // $suggestions[] = 'block__finder';
-            break;
-          }
+        $block = Block::load($variables['elements']['#id']);
+        $suggestions[] = 'block__' . $block->getRegion();
         break;
     }
   }

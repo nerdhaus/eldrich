@@ -30,19 +30,40 @@
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
+    'col-md-6',
     'clearfix',
   ]
 %}
 
 <section{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes.addClass('block-title') }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
+  <div class="panel panel-default">
+    {{ title_prefix }}
+    {% if label %}
+      <div class="panel-heading">
+        <h2{{ title_attributes.addClass('panel-title') }}>{{ label }}</h2>
+      </div>
+    {% endif %}
+    {{ title_suffix }}
 
-  {% block content %}
-    {{ content }}
-  {% endblock %}
+    {% block body %}
+    <div class="panel-body">
+      {{ content }}
+    </div>
+    {% endblock %}
+
+    {% block component %}
+      {% if component %}
+        {{ component }}
+      {% endif %}
+    {% endblock %}
+
+    {% block footer %}
+    {% if footer %}
+    <div class="panel-footer">
+      {{ footer }}
+    </div>
+    {% endif %}
+    {% endblock %}
+  </div>
 </section>
 
