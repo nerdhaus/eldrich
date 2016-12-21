@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.strain.field_vectors
     - node.type.strain
   module:
+    - field_delimiter
     - text
     - user
 id: node.strain.default
@@ -19,20 +20,21 @@ bundle: strain
 mode: default
 content:
   field_attribution:
-    weight: 107
-    label: above
+    weight: 5
+    label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_description:
-    weight: 101
-    label: above
+    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_infectiousness:
-    weight: 103
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -45,27 +47,22 @@ content:
     third_party_settings: {  }
     type: entity_reference_quantity_label
   field_stages:
-    weight: 106
-    label: above
+    weight: 4
+    label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
-  field_strain_rating:
-    weight: 105
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
+    type: entity_reference_entity_view
   field_vectors:
-    weight: 104
-    label: above
+    weight: 0
+    label: inline
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_label
-  links:
-    weight: 100
-hidden: {  }
+hidden:
+  field_strain_rating: true
+  links: true

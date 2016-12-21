@@ -63,7 +63,7 @@ content:
     label: inline
     settings:
       link: true
-      override_action: suffix
+      override_action: title-append
     third_party_settings:
       field_delimiter:
         delimiter: ', '
@@ -119,7 +119,7 @@ content:
     label: inline
     settings:
       link: true
-      override_action: suffix
+      override_action: title-append
     third_party_settings:
       field_delimiter:
         delimiter: ', '

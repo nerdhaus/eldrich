@@ -51,7 +51,7 @@ content:
     label: inline
     settings:
       link: true
-      override_action: suffix
+      override_action: title-append
     third_party_settings:
       field_delimiter:
         delimiter: ', '
@@ -65,7 +65,7 @@ content:
     type: entity_reference_quantity_label
   field_description:
     weight: 1
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
@@ -82,7 +82,7 @@ content:
     label: inline
     settings:
       link: true
-      override_action: suffix
+      override_action: title-append
     third_party_settings:
       field_delimiter:
         delimiter: ', '

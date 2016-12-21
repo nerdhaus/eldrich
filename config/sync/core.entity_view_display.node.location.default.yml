@@ -18,40 +18,39 @@ bundle: location
 mode: default
 content:
   field_attribution:
-    weight: 106
-    label: above
+    weight: 5
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_description:
-    weight: 101
-    label: above
+    weight: 2
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_location_type:
-    weight: 103
-    label: above
+    weight: 1
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_parent_location:
-    weight: 104
-    label: above
+    weight: 3
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_population:
-    weight: 105
-    label: above
+    weight: 4
+    label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
-  links:
-    weight: 100
-hidden: {  }
+hidden:
+  links: true

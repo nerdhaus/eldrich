@@ -122,7 +122,7 @@ content:
     label: inline
     settings:
       link: true
-      override_action: suffix
+      override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
   field_magazine_size:

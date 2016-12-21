@@ -28,7 +28,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_attribution:
-    weight: 5
+    weight: 6
     label: hidden
     settings:
       link: true
@@ -36,7 +36,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_conditional:
-    weight: 102
+    weight: 5
     label: above
     settings:
       format: default
@@ -53,13 +53,13 @@ content:
     third_party_settings: {  }
     type: number_integer
   field_description:
-    weight: 2
+    weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_ego_trait:
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       format: default
@@ -68,7 +68,7 @@ content:
     third_party_settings: {  }
     type: boolean
   field_morph_trait:
-    weight: 1
+    weight: 2
     label: hidden
     settings:
       format: default

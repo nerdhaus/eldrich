@@ -23,6 +23,7 @@ dependencies:
     - ep_complex_values
     - ep_skill_reference
     - ep_statblock
+    - field_delimiter
     - text
     - user
 id: node.augmentation.default
@@ -75,8 +76,10 @@ content:
     weight: 8
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: '1'
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: skill_reference_label
   field_special_effect:
     weight: 5

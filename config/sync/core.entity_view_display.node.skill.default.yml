@@ -28,7 +28,7 @@ content:
     third_party_settings: {  }
   field_description:
     weight: 2
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
@@ -84,7 +84,7 @@ content:
     type: string
   field_usage:
     weight: 3
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default

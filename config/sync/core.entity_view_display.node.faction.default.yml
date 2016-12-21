@@ -19,46 +19,50 @@ bundle: faction
 mode: default
 content:
   field_attribution:
-    weight: 107
-    label: above
+    weight: 5
+    label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_concerns:
-    weight: 103
-    label: above
+    weight: 3
+    label: inline
     settings:
       link: true
-    third_party_settings: {  }
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_label
   field_description:
-    weight: 101
-    label: above
+    weight: 2
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_faction_type:
-    weight: 105
-    label: above
+    weight: 0
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_locations:
-    weight: 106
-    label: above
+    weight: 4
+    label: inline
     settings:
       link: true
-    third_party_settings: {  }
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: entity_reference_label
   field_parent_faction:
-    weight: 104
-    label: above
+    weight: 1
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  links:
-    weight: 100
-hidden: {  }
+hidden:
+  links: true

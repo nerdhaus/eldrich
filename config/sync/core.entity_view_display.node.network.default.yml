@@ -16,25 +16,25 @@ bundle: network
 mode: default
 content:
   field_attribution:
-    weight: 104
-    label: above
+    weight: 3
+    label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_description:
-    weight: 101
-    label: above
+    weight: 2
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_symbol:
-    weight: 103
-    label: above
+    weight: 1
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  links:
-    weight: 100
-hidden: {  }
+hidden:
+  links: true
