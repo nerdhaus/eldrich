@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "578208c60ee72d9562277c057b4b99f9",
-    "content-hash": "fd90eeedad7b3b476615f1b94064457e",
+    "hash": "58ee804103f9e9ea1b5aebc0a74889ef",
+    "content-hash": "08519e007c694e626893676b8671111f",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1063,6 +1063,53 @@
             ],
             "description": "Composer Plugin for updating the Drupal scaffold files when using drupal/core",
             "time": "2016-11-05 10:46:44"
+        },
+        {
+            "name": "drupal/block_visibility_groups",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/block_visibility_groups",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/block_visibility_groups-8.x-1.1.zip",
+                "reference": null,
+                "shasum": "664732995ec5c67c6478f9c2bffaa1c0a18b95de"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1472414339"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "tedbow",
+                    "homepage": "https://www.drupal.org/user/240860"
+                }
+            ],
+            "description": "My Awesome Module",
+            "homepage": "http://drupal.org/project/block_visibility_groups",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/block_visibility_groups",
+                "issues": "http://drupal.org/project/issues/block_visibility_groups"
+            }
         },
         {
             "name": "drupal/bootstrap",
@@ -2444,7 +2491,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.0-beta11.zip",
-                "reference": null,
+                "reference": "8.x-1.0-beta11",
                 "shasum": "d73fb7ba41833bd8ccb9a661aafc47258b4c7e18"
             },
             "require": {
@@ -2746,6 +2793,49 @@
                 "source": "http://cgit.drupalcode.org/pathauto"
             },
             "time": "2016-12-06 19:47:16"
+        },
+        {
+            "name": "drupal/quick_pages",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/quick_pages",
+                "reference": "8.x-1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/quick_pages-8.x-1.0-alpha1.zip",
+                "reference": "8.x-1.0-alpha1",
+                "shasum": "4652d789d3e04b9cc05861cb458af866107fb604"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1457239739"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Chi",
+                    "homepage": "https://www.drupal.org/user/556138"
+                }
+            ],
+            "description": "Provides an administrative interface to manage page attributes.",
+            "homepage": "https://www.drupal.org/project/quick_pages",
+            "support": {
+                "source": "http://cgit.drupalcode.org/quick_pages"
+            }
         },
         {
             "name": "drupal/range",
@@ -7856,6 +7946,7 @@
         "drupal/views_bootstrap": 20,
         "drupal/menu_link_config": 20,
         "drupal/metatag": 10,
+        "drupal/quick_pages": 15,
         "drupal/viewsreference": 15
     },
     "prefer-stable": true,

@@ -53,7 +53,9 @@
         "drupal/search_autocomplete": "^1.1",
         "drupal/site_settings": "^1.2",
         "drupal/smart_trim": "^1.0",
-        "drupal/metatag": "^1.0@beta"
+        "drupal/metatag": "^1.0@beta",
+        "drupal/quick_pages": "^1.0@alpha",
+        "drupal/block_visibility_groups": "^1.1"
     },
     "require-dev": {
         "behat/mink": "~1.7",

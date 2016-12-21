@@ -1,0 +1,15 @@
+uuid: 04a000f6-340b-450f-95fe-ba51a521a758
+langcode: en
+status: true
+dependencies: {  }
+id: world
+label: World
+path: /world
+title: ''
+theme: ''
+display_variant:
+  id: ''
+main_content_provider:
+  id: empty_page
+access:
+  id: none

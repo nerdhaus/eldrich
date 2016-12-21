@@ -48,10 +48,12 @@ module:
   options: 0
   page_cache: 0
   path: 0
+  quick_pages: 0
   quickedit: 0
   range: 0
   rdf: 0
   search: 0
+  search_autocomplete: 0
   shortcut: 0
   system: 0
   taxonomy: 0

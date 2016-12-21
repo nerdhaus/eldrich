@@ -1,0 +1,15 @@
+uuid: dd60ec23-ff34-4bb9-b828-dc5010c3a80c
+langcode: en
+status: true
+dependencies: {  }
+id: gear
+label: Gear
+path: /gear
+title: ''
+theme: ''
+display_variant:
+  id: ''
+main_content_provider:
+  id: empty_page
+access:
+  id: none

@@ -46,10 +46,13 @@ content:
 hidden:
   field_action_type: true
   field_attribution: true
+  field_conditional: true
   field_exsurgent: true
   field_is_active: true
   field_psi_skill: true
+  field_skills: true
   field_sleight_duration: true
   field_sleight_range: true
+  field_stats: true
   field_strain: true
   links: true
