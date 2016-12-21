@@ -23,61 +23,61 @@ dependencies:
     - node.type.weapon
     - taxonomy.vocabulary.gear_type
   content:
-    - 'taxonomy_term:gear_type:00569fea-e5ff-42fa-8bce-48887dae9cb3'
-    - 'taxonomy_term:gear_type:05570dfd-6dbc-4be2-bd80-4d5d0a731387'
-    - 'taxonomy_term:gear_type:12a8c51b-0f6d-4c39-bdcb-5b5422b8d27e'
-    - 'taxonomy_term:gear_type:14370b9f-ca7b-40ca-9e27-cbd8c6af00f2'
-    - 'taxonomy_term:gear_type:1cb3cfaf-feb7-48fb-83c3-74931689fa1a'
-    - 'taxonomy_term:gear_type:2579a562-5dd4-4e0a-a6f2-c08d04179120'
-    - 'taxonomy_term:gear_type:28db56b8-b281-4caf-83eb-8d270dab8d89'
-    - 'taxonomy_term:gear_type:2b370bbb-ec54-4932-9de4-c22ad93b190c'
-    - 'taxonomy_term:gear_type:34cf4092-9978-4911-8572-15df582e778e'
-    - 'taxonomy_term:gear_type:36ca732d-6946-426e-8f7a-88a26546bcd9'
-    - 'taxonomy_term:gear_type:416513eb-063e-4d17-b8ac-2ddf3bf2120d'
-    - 'taxonomy_term:gear_type:455ff8b1-7862-4d30-890c-9bcb1ec19290'
-    - 'taxonomy_term:gear_type:51119540-35fb-4832-9a99-b9255d363980'
-    - 'taxonomy_term:gear_type:697733a6-de06-4503-a95b-590b291f5c0b'
-    - 'taxonomy_term:gear_type:6c3edffb-92bd-40a6-88c8-a31e7d9a8e37'
-    - 'taxonomy_term:gear_type:6dc79b90-1652-4301-a828-7e36ee014819'
-    - 'taxonomy_term:gear_type:75a90fc1-870f-4ef4-9970-d5bf4b6e62a4'
-    - 'taxonomy_term:gear_type:76204a7f-a2a3-43fe-90ed-aa2e19fc5636'
-    - 'taxonomy_term:gear_type:77beb8c4-84ab-4b41-9cf4-62913b51240a'
-    - 'taxonomy_term:gear_type:871faf47-5512-4ba4-9441-a908b4da94d0'
-    - 'taxonomy_term:gear_type:88e02112-8ce3-4451-ac48-40c2594368f3'
-    - 'taxonomy_term:gear_type:89504976-68fd-40e7-b891-579dab9a485e'
-    - 'taxonomy_term:gear_type:8a70348d-ef25-4419-8fa9-8dfd5c3fb9d7'
-    - 'taxonomy_term:gear_type:8bae3417-a6a0-4e71-903d-3eadac3e1326'
-    - 'taxonomy_term:gear_type:93abeb43-412b-4cea-bde0-66b8e9a3524f'
-    - 'taxonomy_term:gear_type:945a9b7e-5bbd-4432-a2fe-ffcf252fe869'
-    - 'taxonomy_term:gear_type:94d7c4f3-8ecc-44d1-a93b-521914a4526d'
-    - 'taxonomy_term:gear_type:9b894c8c-50c0-4bf7-837b-ca83bf10c75a'
-    - 'taxonomy_term:gear_type:9dbe8b63-0c0f-4c19-a717-0ae06e14bf6d'
-    - 'taxonomy_term:gear_type:a3e8ef57-f135-48b5-9dc8-0d22d649b719'
-    - 'taxonomy_term:gear_type:ab56ff62-bf3f-4067-bbc1-78342b42f298'
-    - 'taxonomy_term:gear_type:ab86a139-7136-4656-966a-59d1842f437f'
-    - 'taxonomy_term:gear_type:abfd6b53-03d5-4283-8905-a782f810accf'
-    - 'taxonomy_term:gear_type:acad36b7-9511-44cf-a734-b5128de430f5'
-    - 'taxonomy_term:gear_type:acf64b2a-6478-49f7-b792-5c276e9a3ae4'
-    - 'taxonomy_term:gear_type:afbbf6a4-3396-42ab-9f72-976c5e48bff0'
-    - 'taxonomy_term:gear_type:b092e6b7-a660-49be-a406-a969b314542c'
-    - 'taxonomy_term:gear_type:b0bdc746-04cc-4b3b-83e5-409e59381139'
-    - 'taxonomy_term:gear_type:b8f7356e-eba1-4940-a570-991070914dac'
-    - 'taxonomy_term:gear_type:b96a0374-1aa1-40b2-a9ec-cc0166088b5f'
-    - 'taxonomy_term:gear_type:bab0db6e-a276-49d3-bd95-3150c23ef178'
-    - 'taxonomy_term:gear_type:c02941da-0b6a-44cb-998b-e5837f0a0030'
-    - 'taxonomy_term:gear_type:c2d674cb-0aca-4260-9219-def3dd580461'
-    - 'taxonomy_term:gear_type:c66f13a8-7ae8-424f-9982-6ca1f1583a6a'
-    - 'taxonomy_term:gear_type:ca2adad2-c454-4b80-876c-2daafee0182b'
-    - 'taxonomy_term:gear_type:d2296844-6ece-47d5-8b15-804a2eba0270'
-    - 'taxonomy_term:gear_type:d340bf33-38d2-4cff-abeb-dba79ac75c5e'
-    - 'taxonomy_term:gear_type:d92858d0-4d0d-4f8c-87a3-9799aaf3082b'
-    - 'taxonomy_term:gear_type:d9a0e805-c693-41eb-9dcc-e097124e8f8c'
-    - 'taxonomy_term:gear_type:da77a02e-3979-48e2-a430-c13f34b1666b'
-    - 'taxonomy_term:gear_type:e89b3819-4c0e-4751-80aa-d3ab5b6bd92a'
-    - 'taxonomy_term:gear_type:e8c06ff9-2a8d-404f-9f9e-7c34784fae35'
-    - 'taxonomy_term:gear_type:ef0b7a48-fd17-426e-8b61-15bc42e309b5'
-    - 'taxonomy_term:gear_type:f974cdc9-f776-4dea-82c0-2166e5104e2b'
-    - 'taxonomy_term:gear_type:ffde7a3b-5486-47a7-b222-76accf759b9e'
+    - 'taxonomy_term:gear_type:00275f20-b8ca-4682-8fc0-3f9b19b80fe1'
+    - 'taxonomy_term:gear_type:031acf3d-9080-4eb3-b9d2-965e640f7c32'
+    - 'taxonomy_term:gear_type:0791d74a-0e10-423b-9fef-c64313ae87dc'
+    - 'taxonomy_term:gear_type:1a436c89-ff7d-4b75-ba20-8160f9035822'
+    - 'taxonomy_term:gear_type:2524db53-5e64-41df-b5d0-fef354fa09f5'
+    - 'taxonomy_term:gear_type:283783e4-c57b-4542-938c-795f57e8c148'
+    - 'taxonomy_term:gear_type:28f636bb-054b-4b3b-b193-2c30796b7a87'
+    - 'taxonomy_term:gear_type:2c704ac7-0777-48ca-947d-ce799d8ef08c'
+    - 'taxonomy_term:gear_type:35061695-1aea-4859-bcfe-886ad5e2004c'
+    - 'taxonomy_term:gear_type:3c64dcf0-fb65-4f95-a325-6b949bf9408a'
+    - 'taxonomy_term:gear_type:416f4af1-c29a-4c9c-bc6e-5de2f92e5eba'
+    - 'taxonomy_term:gear_type:42499268-a531-4bc5-bb48-ea31f55a4bd0'
+    - 'taxonomy_term:gear_type:44e1c3bd-4851-4d30-956a-2ce54e873220'
+    - 'taxonomy_term:gear_type:468ab848-86a7-4ed6-b2e6-16c8a377d095'
+    - 'taxonomy_term:gear_type:5697f477-05e3-4b14-9cb6-e545f96f9b57'
+    - 'taxonomy_term:gear_type:58c3f8ec-8607-478c-b7e3-16f89daa2dfe'
+    - 'taxonomy_term:gear_type:5978c36a-6b9e-4ade-a35d-ec37fa8d76c4'
+    - 'taxonomy_term:gear_type:5a096cb6-9017-49a2-9f5f-b3175f6b3446'
+    - 'taxonomy_term:gear_type:5aa185ee-66bd-4966-abf9-250735b096c8'
+    - 'taxonomy_term:gear_type:6042ef5b-4726-47c8-a102-e1e02988df2b'
+    - 'taxonomy_term:gear_type:64c28a6e-10b0-4f0f-9ec2-6b3cc634217b'
+    - 'taxonomy_term:gear_type:68e72cbf-6713-4491-af06-5215e99e969a'
+    - 'taxonomy_term:gear_type:6a5b4b64-3008-46cf-a8bc-6ec5f405442b'
+    - 'taxonomy_term:gear_type:71b10c32-f7c9-4ab4-bce7-8c49ba2fd688'
+    - 'taxonomy_term:gear_type:7bf16848-ebbd-4897-8c6b-881f0731d8a4'
+    - 'taxonomy_term:gear_type:7f154849-8c67-4a44-94c1-0046806b18a2'
+    - 'taxonomy_term:gear_type:8700964d-f57d-481b-b1e1-e483327dfa44'
+    - 'taxonomy_term:gear_type:8861a4d4-6e29-4dae-a45c-1c0af8cf9495'
+    - 'taxonomy_term:gear_type:89efc54c-017e-4b62-8ca9-f75d96aa1f8b'
+    - 'taxonomy_term:gear_type:91721f40-6584-48ed-8bc1-20ec53e9be96'
+    - 'taxonomy_term:gear_type:9ba590ba-1c7e-4a3d-b2a0-63e66eccfc0b'
+    - 'taxonomy_term:gear_type:9d641f00-801c-495b-94ba-b7bd5aebea39'
+    - 'taxonomy_term:gear_type:a089fcaf-cbad-470f-8143-841823027db6'
+    - 'taxonomy_term:gear_type:a4a6878b-ebcd-46a3-9b76-3934ebfab7a8'
+    - 'taxonomy_term:gear_type:a5e1bc6c-f035-41b7-a8ee-a286f34065b4'
+    - 'taxonomy_term:gear_type:aae49268-b7e7-40f7-b215-69ff32c9d296'
+    - 'taxonomy_term:gear_type:ab86a21c-73d1-4a2f-987a-9d03db7b5f0a'
+    - 'taxonomy_term:gear_type:b5ae9a7f-23c3-4906-aad5-12f2f2b5ef8e'
+    - 'taxonomy_term:gear_type:b5e5652a-c244-4cf4-a9e7-a1242c2b1428'
+    - 'taxonomy_term:gear_type:c1a75602-1bdb-4ba8-8970-33c320188d5d'
+    - 'taxonomy_term:gear_type:c25a2150-3da2-46bd-87a7-acf5fab4e326'
+    - 'taxonomy_term:gear_type:c7bb228c-ec3e-4838-9c0f-c16bef0faeb7'
+    - 'taxonomy_term:gear_type:c877e6ea-7159-485b-bf79-52a9e14bd0cb'
+    - 'taxonomy_term:gear_type:cf4d9d75-8c10-4561-a2b2-f63f57589184'
+    - 'taxonomy_term:gear_type:d14c929c-59e1-45e4-b32d-4cd741483aff'
+    - 'taxonomy_term:gear_type:d9499979-3f2e-4cf5-a207-c9be1f802f0d'
+    - 'taxonomy_term:gear_type:dc87554a-447a-419b-a7af-df311eb2df6c'
+    - 'taxonomy_term:gear_type:e37e6afd-55e8-44f2-a0b7-e55f851b70b6'
+    - 'taxonomy_term:gear_type:e4360247-8699-476d-bd5c-0fe9cbfb9491'
+    - 'taxonomy_term:gear_type:e6f3a148-9ac6-4207-b2eb-3394164c1172'
+    - 'taxonomy_term:gear_type:e8b4db35-15b7-404b-ac0e-9821b19390fa'
+    - 'taxonomy_term:gear_type:f28372a8-3362-45e1-9f53-07323c60a652'
+    - 'taxonomy_term:gear_type:f3cf58e8-6072-4480-b747-ebddbc66f76f'
+    - 'taxonomy_term:gear_type:f69fd45e-1d2e-4f5b-9a77-8931e98669eb'
+    - 'taxonomy_term:gear_type:f7912c31-0f2b-4084-9539-fbcbccbbbe55'
   module:
     - eck
     - entity_reference_quantity
@@ -808,7 +808,8 @@ display:
           type: entity_reference_quantity_label
           settings:
             link: true
-            quantity_output: suffix
+            location: suffix
+            template: ' p. {{ quantity }}'
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -825,6 +826,7 @@ display:
         filters: false
         filter_groups: false
         pager: false
+        title: false
       filters:
         status:
           value: '1'
@@ -1034,30 +1036,17 @@ display:
         groups:
           1: AND
       pager:
-        type: mini
+        type: some
         options:
           items_per_page: 10
           offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: ‹‹
-            next: ››
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
+      title: 'Gear Catalog'
     cache_metadata:
       max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
@@ -1254,7 +1243,8 @@ display:
           type: entity_reference_quantity_label
           settings:
             link: true
-            quantity_output: attribute
+            location: suffix
+            template: ' p. {{ quantity }}'
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1271,6 +1261,7 @@ display:
         filters: false
         filter_groups: false
         pager: false
+        title: false
       filters:
         status:
           value: '1'
@@ -1439,30 +1430,17 @@ display:
         groups:
           1: AND
       pager:
-        type: mini
+        type: some
         options:
           items_per_page: 10
           offset: 0
-          id: 1
-          total_pages: null
-          tags:
-            previous: ‹‹
-            next: ››
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
+      title: 'NPCs and Creatures'
     cache_metadata:
       max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
