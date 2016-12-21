@@ -5,16 +5,16 @@ favicon:
   mimetype: image/vnd.microsoft.icon
   path: ''
   url: 'http://eldrich.local/themes/contrib/bootstrap/favicon.ico'
-  use_default: 0
+  use_default: false
 features:
-  comment_user_picture: 0
-  comment_user_verification: 0
-  favicon: 0
-  node_user_picture: 0
+  comment_user_picture: false
+  comment_user_verification: false
+  favicon: false
+  node_user_picture: false
 logo:
   path: ''
   url: ''
-  use_default: 0
+  use_default: false
 region_wells:
   navigation: ''
   navigation_collapsible: ''
@@ -22,8 +22,10 @@ region_wells:
   highlighted: ''
   help: ''
   content: ''
-  sidebar_first: ''
-  sidebar_second: ''
+  support: ''
+  recirc: ''
   footer: ''
 breadcrumb_home: 1
+cdn_jsdelivr_theme: slate
+navbar_position: static-top
 table: ''
