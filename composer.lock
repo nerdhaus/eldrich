@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fe696e00408a518f81abae6a64aebc5d",
-    "content-hash": "300b524a5637a04c9fff67d698ddbae6",
+    "hash": "75e990f47b191dc3a24d9816ef35ca7a",
+    "content-hash": "75d5650c4e0c09135291211e7f91d713",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1065,6 +1065,85 @@
             "time": "2016-11-05 10:46:44"
         },
         {
+            "name": "drupal/block_class",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/block_class",
+                "reference": "8.x-1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/block_class-8.x-1.0-alpha1.zip",
+                "reference": null,
+                "shasum": "194cd52210ea2e0e5dbbd34fad4528d500424430"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1475623439"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron Stanush",
+                    "homepage": "https://www.drupal.org/user/89718"
+                },
+                {
+                    "name": "DYdave",
+                    "homepage": "https://www.drupal.org/user/467284"
+                },
+                {
+                    "name": "Four Kitchens",
+                    "homepage": "https://www.drupal.org/user/358502"
+                },
+                {
+                    "name": "Todd Nienkerk",
+                    "homepage": "https://www.drupal.org/user/92096"
+                },
+                {
+                    "name": "berenddeboer",
+                    "homepage": "https://www.drupal.org/user/143552"
+                },
+                {
+                    "name": "elliotttf",
+                    "homepage": "https://www.drupal.org/user/61601"
+                },
+                {
+                    "name": "mirzu",
+                    "homepage": "https://www.drupal.org/user/7710"
+                },
+                {
+                    "name": "patrickcoffeyo",
+                    "homepage": "https://www.drupal.org/user/2837945"
+                },
+                {
+                    "name": "pcoffey",
+                    "homepage": "https://www.drupal.org/user/1595818"
+                },
+                {
+                    "name": "tsmith512",
+                    "homepage": "https://www.drupal.org/user/2031446"
+                }
+            ],
+            "description": "Allows assigning classes to Blocks",
+            "homepage": "https://www.drupal.org/project/block_class",
+            "support": {
+                "source": "http://cgit.drupalcode.org/block_class"
+            }
+        },
+        {
             "name": "drupal/block_visibility_groups",
             "version": "1.1.0",
             "source": {
@@ -1172,7 +1251,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/config_update-8.x-1.2.zip",
-                "reference": null,
+                "reference": "8.x-1.2",
                 "shasum": "9490c58d1b7e58c5c08533c93d5565f356144591"
             },
             "require": {
@@ -7885,6 +7964,7 @@
         "drupal/metatag": 10,
         "drupal/quick_pages": 15,
         "drupal/layout_plugin": 15,
+        "drupal/block_class": 15,
         "drupal/viewsreference": 15
     },
     "prefer-stable": true,
