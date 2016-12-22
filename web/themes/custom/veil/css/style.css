@@ -3,5 +3,26 @@
  */
 
 .region-support .block, .region-recirc .block {
-  margin-bottom: 35px;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
+
+.form-control-inline {
+  min-width: 0;
+  width: 100%;
+  display: inline-block;
+}
+
+.col-left-spread {
+  padding-left: 0;
+}
+
+.col-right-spread {
+  padding-right: 0;
+}
+
+.col-spread {
+  padding-left: 0;
+  padding-right: 0;
+}
+
