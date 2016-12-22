@@ -24,7 +24,6 @@ class ViewsView extends PreprocessBase implements PreprocessInterface {
    * {@inheritdoc}
    */
   public function preprocessVariables(Variables $variables) {
-    // Prep node types for display.
+    $variables->style = $variables->view->style_plugin->pluginId;
   }
-
 }

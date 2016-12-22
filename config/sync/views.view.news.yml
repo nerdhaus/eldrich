@@ -272,6 +272,38 @@ display:
         - user.permissions
       max-age: -1
       tags: {  }
+  block_1:
+    display_plugin: block
+    id: block_1
+    display_title: Block
+    position: 3
+    display_options:
+      display_extenders: {  }
+      block_description: 'Latest Update'
+      pager:
+        type: some
+        options:
+          items_per_page: 1
+          offset: 0
+      defaults:
+        pager: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        link_display: false
+        link_url: false
+      use_more: true
+      use_more_always: true
+      use_more_text: 'Past Updates…'
+      link_display: page_1
+      link_url: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
   feed_1:
     display_plugin: feed
     id: feed_1

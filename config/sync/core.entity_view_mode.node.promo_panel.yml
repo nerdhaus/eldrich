@@ -1,0 +1,10 @@
+uuid: de6c4081-9664-44d6-8d74-280afac90890
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.promo_panel
+label: 'Promo Panel'
+targetEntityType: node
+cache: true

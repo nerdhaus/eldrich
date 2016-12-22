@@ -1,6 +1,6 @@
 uuid: d3bb9918-da7f-45e6-beaa-c58f116b28da
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.account
@@ -12,7 +12,7 @@ _core:
   default_config_hash: R2K_qX0ZUMbUL6ie_-S9tZVjvqmlWKlscikgeRv9vhw
 id: veil_account_menu
 theme: veil
-region: navigation_collapsible
+region: '-1'
 weight: -5
 provider: null
 plugin: 'system_menu_block:account'

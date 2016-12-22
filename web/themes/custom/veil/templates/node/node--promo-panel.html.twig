@@ -72,31 +72,32 @@ node.isPromoted() ? 'is-promoted',
 node.isSticky() ? 'is-sticky',
 not node.isPublished() ? 'is-unpublished',
 view_mode ? view_mode|clean_class,
+'panel',
+'panel-primary',
 'clearfix',
 ]
 %}
-<article{{ attributes.addClass(classes) }}>
-HELLO FRIEND
-{{ title_prefix }}
-{% if not page %}
-<h2{{ title_attributes }}>
-<a href="{{ url }}" rel="bookmark">{{ label }}</a>
-</h2>
-{% endif %}
-{{ title_suffix }}
 
-{% if display_submitted %}
-<footer>
-  {{ author_picture }}
-  <div{{ author_attributes.addClass('author') }}>
-  {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-  {{ metadata }}
+<article {{ attributes.addClass(classes) }}>
+  <div class="panel-heading">
+    {{ title_prefix }}
+    <h2{{ title_attributes.addClass('panel-title') }}><a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      {% if display_submitted %}
+      <small>{% trans %}Posted {{ date }}{% endtrans %}</small>
+      {% endif %}
+      {{ title_suffix }}
+    </h2>
   </div>
-</footer>
-{% endif %}
 
-<div{{ content_attributes.addClass('content') }}>
-{{ content }}
-</div>
+  <div{{ content_attributes.addClass('panel-body') }}>
+    {{ content|without('group_extra', 'group_footer') }}
+  </div>
 
+  {% if content.group_extra %}
+    {{ content.group_extra }}
+  {% endif %}
+
+  {% if content.group_footer %}
+    <div class="panel-footer">{{ content.group_footer }}</div>
+  {% endif %}
 </article>

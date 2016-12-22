@@ -1,0 +1,31 @@
+uuid: abe0df5f-21d0-4fcf-90e0-0508059d73f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home
+    - views.view.news
+  module:
+    - block_visibility_groups
+    - views
+  theme:
+    - veil
+id: views_block__news_block_1
+theme: veil
+region: highlighted
+weight: 0
+provider: null
+plugin: 'views_block:news-block_1'
+settings:
+  id: 'views_block:news-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home
+    context_mapping: {  }

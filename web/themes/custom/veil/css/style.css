@@ -1,3 +1,7 @@
 /**
  * Place your custom styles here.
  */
+
+.region-support .block, .region-recirc .block {
+  margin-bottom: 35px;
+}

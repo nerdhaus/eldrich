@@ -101,7 +101,6 @@
 {% block main %}
   <div role="main" class="main-container {{ container }} js-quickedit-main-content">
     <div class="row">
-
       {# Header #}
       {% if page.header %}
         {% block header %}
@@ -110,7 +109,9 @@
           </div>
         {% endblock %}
       {% endif %}
+    </div>
 
+    <div class="row">
       {# Content #}
       <section{{ content_attributes.addClass('col-sm-12') }}>
 
@@ -148,29 +149,33 @@
           {{ page.content }}
         {% endblock %}
       </section>
-
-      {# Support #}
-      {% if page.support %}
-        {% block support %}
-          <section class="row">{{ page.support }}</section>
-        {% endblock %}
-      {% endif %}
-
-      {# Supporting #}
-      {% if page.recirc %}
-        {% block recirc %}
-          <section class="row">{{ page.recirc }}</section>
-        {% endblock %}
-      {% endif %}
-
     </div>
+
+    {# Support #}
+    {% if page.support %}
+    {% block support %}
+    <div class="row">
+      {{ page.support }}
+    </div>
+    {% endblock %}
+    {% endif %}
+
+    {# Supporting #}
+    {% if page.recirc %}
+    {% block recirc %}
+    <div class="row">
+      {{ page.recirc }}
+    </div>
+    {% endblock %}
+    {% endif %}
+
   </div>
 {% endblock %}
 
 {% if page.footer %}
   {% block footer %}
     <footer class="footer {{ container }}" role="contentinfo">
-      {{ page.footer }}
+      <div class="row">{{ page.footer }}</div>
     </footer>
   {% endblock %}
 {% endif %}
