@@ -21,3 +21,4 @@ regions:
 
 libraries:
   - 'veil/global-styling'
+  - 'veil/custom-font'
