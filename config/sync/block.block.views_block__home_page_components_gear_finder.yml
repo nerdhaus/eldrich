@@ -17,7 +17,7 @@ third_party_settings:
 id: views_block__home_page_components_gear_finder
 theme: veil
 region: support
-weight: -8
+weight: -10
 provider: null
 plugin: 'views_block:home_page_components-gear_finder'
 settings:

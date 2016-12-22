@@ -1,27 +1,27 @@
-uuid: abe0df5f-21d0-4fcf-90e0-0508059d73f0
+uuid: 07084364-c0df-4eb3-ab3a-830f0aad0f8d
 langcode: en
 status: true
 dependencies:
   config:
-    - block_visibility_groups.block_visibility_group.home
-    - views.view.news
+    - views.view.related_stuff
   module:
     - block_class
     - block_visibility_groups
+    - node
     - views
   theme:
     - veil
 third_party_settings:
   block_class:
-    classes: col-sm-12
-id: views_block__news_block_1
+    classes: col-sm-6
+id: views_block__related_stuff_block_2
 theme: veil
 region: support
-weight: -11
+weight: -7
 provider: null
-plugin: 'views_block:news-block_1'
+plugin: 'views_block:related_stuff-block_2'
 settings:
-  id: 'views_block:news-block_1'
+  id: 'views_block:related_stuff-block_2'
   label: ''
   provider: views
   label_display: '0'
@@ -31,5 +31,12 @@ visibility:
   condition_group:
     id: condition_group
     negate: false
-    block_visibility_group: home
+    block_visibility_group: ''
     context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      skill: skill
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

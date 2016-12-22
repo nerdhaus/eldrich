@@ -2,11 +2,8 @@ uuid: fccb2987-efe7-4d58-bed6-84624acb9994
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:basic:efc67b2e-1e73-4cac-ade0-e5a3826bc5af'
   module:
     - block_class
-    - block_content
     - block_visibility_groups
   theme:
     - veil
