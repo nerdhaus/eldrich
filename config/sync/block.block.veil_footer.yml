@@ -1,6 +1,6 @@
 uuid: 2b43e45d-ea4b-4e6c-80a3-6f62f2560782
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.footer
@@ -12,8 +12,8 @@ _core:
   default_config_hash: h06zhb3xV9_2_3Zy9NsyylL7YBaEDlMwMEqNwAn8kMo
 id: veil_footer
 theme: veil
-region: footer
-weight: 0
+region: '-1'
+weight: -6
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

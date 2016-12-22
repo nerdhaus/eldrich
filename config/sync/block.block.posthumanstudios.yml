@@ -1,0 +1,31 @@
+uuid: fccb2987-efe7-4d58-bed6-84624acb9994
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:efc67b2e-1e73-4cac-ade0-e5a3826bc5af'
+  module:
+    - block_content
+    - block_visibility_groups
+  theme:
+    - veil
+id: posthumanstudios
+theme: veil
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:efc67b2e-1e73-4cac-ade0-e5a3826bc5af'
+settings:
+  id: 'block_content:efc67b2e-1e73-4cac-ade0-e5a3826bc5af'
+  label: 'Posthuman Studios'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

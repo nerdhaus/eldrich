@@ -11,7 +11,7 @@ _core:
 id: veil_search
 theme: veil
 region: '-1'
-weight: -6
+weight: -8
 provider: null
 plugin: search_form_block
 settings:

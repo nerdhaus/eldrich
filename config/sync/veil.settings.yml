@@ -26,6 +26,6 @@ region_wells:
   recirc: ''
   footer: ''
 breadcrumb_home: 1
-cdn_jsdelivr_theme: slate
 navbar_position: static-top
+table_responsive: '1'
 table: ''
