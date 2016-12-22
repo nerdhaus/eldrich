@@ -6,14 +6,18 @@ dependencies:
     - block_visibility_groups.block_visibility_group.home
     - views.view.news
   module:
+    - block_class
     - block_visibility_groups
     - views
   theme:
     - veil
+third_party_settings:
+  block_class:
+    classes: col-sm-12
 id: views_block__news_block_1
 theme: veil
-region: highlighted
-weight: 0
+region: support
+weight: -9
 provider: null
 plugin: 'views_block:news-block_1'
 settings:

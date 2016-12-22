@@ -30,7 +30,7 @@ class ViewsExposedForm extends FormBase {
     switch ($form['#id']) {
       case 'views-exposed-form-home-page-components-gear-finder':
       case 'views-exposed-form-home-page-components-npc-finder':
-        $form->name->addClass('input-sm');
+        $form->name->addClass('input-sm', 'col-sm-2');
         $form->name->setProperty('title_display', 'invisible');
         $form->name->setProperty('placeholder', t('Title'));
 

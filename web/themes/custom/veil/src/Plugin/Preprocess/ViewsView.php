@@ -25,5 +25,6 @@ class ViewsView extends PreprocessBase implements PreprocessInterface {
    */
   public function preprocessVariables(Variables $variables) {
     $variables->style = $variables->view->style_plugin->pluginId;
+    $variables->panel_title = $variables->view->getTitle();
   }
 }

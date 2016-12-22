@@ -44,13 +44,18 @@ dom_id ? 'js-view-dom-id-' ~ dom_id,
 ]
 %}
 <div{{ attributes.addClass(classes) }}>
-  {% if title or header %}
-  <div class="panel-heading">
   {{ title_prefix }}
-  {% if title %}
-    {{ title.addClass('panel-title') }}
+  {% if panel_title or header %}
+  <div class="panel-heading">
+  {% if panel_title %}
+    <h2 class="panel-title">
+      {% if more %}
+        <a href="{{ more['#url'] }}">{{ panel_title }}</a>
+      {% else %}
+      {{ panel_title }}
+      {% endif %}
+    </h2>
   {% endif %}
-  {{ title_suffix }}
   {% if header %}
     <div class="view-header">
       {{ header }}
@@ -58,6 +63,7 @@ dom_id ? 'js-view-dom-id-' ~ dom_id,
   {% endif %}
   </div>
   {%  endif %}
+  {{ title_suffix }}
 
   <div class="panel-body">
   {% if exposed %}
@@ -92,10 +98,6 @@ dom_id ? 'js-view-dom-id-' ~ dom_id,
 
   {% if footer %}
     <div class="panel-footer">
-      {% if more %}
-        {{ more }}
-      {% endif %}
-
       {{ footer }}
     </div>
   {% endif %}

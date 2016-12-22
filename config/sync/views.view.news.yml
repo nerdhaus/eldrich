@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.promo_panel
     - core.entity_view_mode.node.rss
-    - core.entity_view_mode.node.teaser
     - node.type.news
     - system.menu.main
   module:
@@ -215,7 +215,8 @@ display:
       row:
         type: 'entity:node'
         options:
-          view_mode: teaser
+          relationship: none
+          view_mode: default
       sorts:
         sticky:
           admin_label: ''
@@ -292,11 +293,25 @@ display:
         use_more_text: false
         link_display: false
         link_url: false
-      use_more: true
+        style: false
+        row: false
+      use_more: false
       use_more_always: true
       use_more_text: 'Past Updates…'
       link_display: page_1
       link_url: ''
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: promo_panel
     cache_metadata:
       max-age: -1
       contexts:

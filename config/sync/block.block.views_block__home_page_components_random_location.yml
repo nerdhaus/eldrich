@@ -6,10 +6,14 @@ dependencies:
     - block_visibility_groups.block_visibility_group.home
     - views.view.home_page_components
   module:
+    - block_class
     - block_visibility_groups
     - views
   theme:
     - veil
+third_party_settings:
+  block_class:
+    classes: col-md-4
 id: views_block__home_page_components_random_location
 theme: veil
 region: recirc

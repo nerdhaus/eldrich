@@ -5,10 +5,14 @@ dependencies:
   content:
     - 'block_content:basic:efc67b2e-1e73-4cac-ade0-e5a3826bc5af'
   module:
+    - block_class
     - block_content
     - block_visibility_groups
   theme:
     - veil
+third_party_settings:
+  block_class:
+    classes: col-sm-12
 id: posthumanstudios
 theme: veil
 region: footer

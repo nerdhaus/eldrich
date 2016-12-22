@@ -6,21 +6,25 @@ dependencies:
     - block_visibility_groups.block_visibility_group.home
     - views.view.home_page_components
   module:
+    - block_class
     - block_visibility_groups
     - views
   theme:
     - veil
+third_party_settings:
+  block_class:
+    classes: col-md-6
 id: views_block__home_page_components_npc_finder
 theme: veil
 region: support
-weight: 0
+weight: -7
 provider: null
 plugin: 'views_block:home_page_components-npc_finder'
 settings:
   id: 'views_block:home_page_components-npc_finder'
   label: ''
   provider: views
-  label_display: visible
+  label_display: '0'
   views_label: ''
   items_per_page: none
 visibility:

@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.card
+    - core.entity_view_mode.node.promo_panel
     - field.storage.component.field_attribution_citations
     - field.storage.node.field_cost
     - field.storage.node.field_creature_type
@@ -837,6 +837,10 @@ display:
         use_more: false
         use_more_always: false
         use_more_text: false
+        link_display: false
+        link_url: false
+        style: false
+        row: false
       filters:
         status:
           value: '1'
@@ -1051,9 +1055,55 @@ display:
           items_per_page: 10
           offset: 0
       title: 'Gear Finder'
-      use_more: false
+      use_more: true
       use_more_always: true
-      use_more_text: 'Browse Gear'
+      use_more_text: 'Browse more gear'
+      link_display: custom_url
+      link_url: gear
+      style:
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          override: true
+          sticky: false
+          caption: ''
+          summary: ''
+          description: ''
+          columns:
+            title: title
+            field_gear_type: field_gear_type
+            field_attribution_citations: field_attribution_citations
+          info:
+            title:
+              sortable: true
+              default_sort_order: asc
+              align: views-align-left
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_gear_type:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_attribution_citations:
+              align: views-align-right
+              separator: ''
+              empty_column: false
+              responsive: priority-low
+          default: title
+          empty_table: false
+      row:
+        type: fields
+        options:
+          inline: {  }
+          separator: ''
+          hide_empty: false
+          default_field_elements: true
     cache_metadata:
       max-age: 0
       contexts:
@@ -1457,10 +1507,10 @@ display:
           offset: 0
       title: 'Threat Finder'
       link_display: custom_url
-      link_url: /world
-      use_more: false
+      link_url: world/bestiary
+      use_more: true
       use_more_always: true
-      use_more_text: 'Browse World Info'
+      use_more_text: 'Browse more threats'
     cache_metadata:
       max-age: 0
       contexts:
@@ -1503,7 +1553,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: card
+          view_mode: promo_panel
       fields:
         title:
           id: title
@@ -1712,7 +1762,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: card
+          view_mode: promo_panel
       fields:
         title:
           id: title
@@ -1921,7 +1971,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: card
+          view_mode: promo_panel
       fields:
         title:
           id: title
