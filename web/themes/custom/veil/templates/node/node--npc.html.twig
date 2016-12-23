@@ -95,8 +95,22 @@ view_mode ? view_mode|clean_class,
     </footer>
   {% endif %}
 
-  <div{{ content_attributes.addClass('content') }}>
-    {{ content }}
-  </div>
+  {% if content.field_quote %}
+  <blockquote>
+    <p>{{ content.field_quote|field_value }}</p>
+  </blockquote>
+  {% endif %}
+
+  {{ content.field_description }}
+
+  {{ content.field_stats|field_value }}
+
+  <dl class="dl-horizontal">
+  {% for f in [ content.field_skills, content.field_traits, content.field_gear ] %}
+    <dt>{{ f|field_label }}</dt> <dd>{{ f|field_value|safe_join(', ') }}</dd>
+  {% endfor %}
+  </dl>
+
+  {{ content.field_equipped_weapons }}
 
 </article>
