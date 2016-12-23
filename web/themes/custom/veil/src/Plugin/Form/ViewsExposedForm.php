@@ -34,15 +34,11 @@ class ViewsExposedForm extends FormBase {
         $form->name->setProperty('placeholder', t('Title'));
         $form->cat->setProperty('title_display', 'invisible');
 
-        $form->setProperty('theme_wrappers', ['container']);
-        $form->addClass('container-fluid', $form::WRAPPER);
-        $form->addClass('row');
-
         $form->name->addClass(['input-sm', 'form-control-inline']);
         $form->cat->addClass(['input-sm', 'form-control-inline']);
         $form->actions->submit->setButtonSize('btn-sm');
 
-        $form->name->addClass(['col-xs-5', 'col-right-spread'], $form::WRAPPER);
+        $form->name->addClass(['col-xs-5', 'col-spread'], $form::WRAPPER);
         $form->cat->addClass(['col-xs-5'], $form::WRAPPER);
         $form->actions->submit->addClass(['col-xs-2'], $form::WRAPPER);
 
