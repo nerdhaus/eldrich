@@ -1,0 +1,9 @@
+{#
+Available variables:
+- type: ranged, melee, or other
+- title: the name that should be shown for the weapon instance
+- bonus: the cumulative skill bonus for this weapon instance
+- damage: the damage value
+#}
+<dt {{ attributes }}><span class="label label-danger text-uppercase">{{ type }}</span></dt>
+<dd>{{ title }}: <kbd>{{ damage }}</kbd></dd>
