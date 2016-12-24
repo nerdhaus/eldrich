@@ -31,21 +31,8 @@ use Drupal\Core\Entity\FieldableEntityInterface;
  * - entity->field_morph->field_augmentations->field_skills
 
  */
-class SkillTreeCalculator extends EldrichBaseCalculator
-{
+class SkillTreeCalculator extends EldrichBaseCalculator {
+  public static function total(FieldableEntityInterface $entity) {
 
-  /**
-   * The Twig extension under test.
-   *
-   * @var \Drupal\Core\Entity\FieldableEntityInterface
-   */
-  protected $entity;
-
-  public function __construct(FieldableEntityInterface $entity, Array $stats = [])
-  {
-      $this->entity = $entity;
   }
-
-
-
 }

@@ -37,21 +37,8 @@ use Drupal\Core\Entity\FieldableEntityInterface;
  * - entity->field_morph->field_augmentations->field_stats
  *
  */
-class StatTreeCalculator extends EldrichBaseCalculator
-{
+class StatTreeCalculator extends EldrichBaseCalculator {
+  public static function total(FieldableEntityInterface $entity) {
 
-  /**
-   * The Twig extension under test.
-   *
-   * @var \Drupal\Core\Entity\FieldableEntityInterface
-   */
-  protected $entity;
-
-  public function __construct(FieldableEntityInterface $entity)
-  {
-    $this->entity = $entity;
   }
-
-
-
 }

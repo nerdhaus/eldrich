@@ -37,18 +37,8 @@ use Drupal\Core\Entity\FieldableEntityInterface;
 class EquippedArmorCalculator extends EldrichBaseCalculator
 {
 
-  /**
-   * The Twig extension under test.
-   *
-   * @var \Drupal\Core\Entity\FieldableEntityInterface
-   */
-  protected $entity;
-
-  public function __construct(FieldableEntityInterface $entity)
+  public static function total(FieldableEntityInterface $entity)
   {
-    $this->entity = $entity;
+
   }
-
-
-
 }

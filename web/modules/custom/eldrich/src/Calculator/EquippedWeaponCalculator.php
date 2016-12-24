@@ -37,35 +37,8 @@ use Drupal\Core\Entity\FieldableEntityInterface;
  * [grenade] Sticky EMP grenade: No damage
  *           Radios w/in 10m of blast reduced to 10% range
  */
-class EquippedWeaponCalculator extends EldrichBaseCalculator
-{
+class EquippedWeaponCalculator extends EldrichBaseCalculator {
+  public static function total(FieldableEntityInterface $entity) {
 
-  /**
-   * The Twig extension under test.
-   *
-   * @var \Drupal\Core\Entity\FieldableEntityInterface
-   */
-  protected $entity;
-
-  protected $weapon;
-  protected $weapon_mods;
-  protected $ammo;
-  protected $ammo_mods;
-
-  protected $attack_bonus = 0;
-  protected $damage = [
-    'dice' => 0,
-    'ap' => 0,
-    'bonus' => 0,
-  ];
-  protected $effects;
-  protected $extras;
-
-  public function __construct(FieldableEntityInterface $entity)
-  {
-    $this->entity = $entity;
   }
-
-
-
 }
