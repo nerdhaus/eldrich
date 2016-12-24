@@ -7,8 +7,8 @@ Available variables:
 #}
 <dt {{ attributes }}><span class="label label-danger text-uppercase">{{ type }}</span></dt>
 <dd>
-  {{ entity.field_weapon|field_value }}
+  {{ entity.field_weapon|field_value }}{#
   {% if entity.field_weapon_mods %} ({{ entity.field_weapon_mods|field_value|safe_join(', ')}}){% endif %}
   {% if entity.field_ammo_mods or entity.field_ammo %} w/ {% endif %}
   {% if entity.field_ammo_mods %} {{ entity.field_ammo_mods|field_value|safe_join(' ') }}{% endif %}
-  {% if entity.field_ammo %}{{ entity.field_ammo|field_value }}{% else %}ammo{% endif %}: <kbd>{{ damage }}</kbd></dd>
+  {% if entity.field_ammo %}{{ entity.field_ammo|field_value }}{% else %}ammo{% endif %}: <kbd>{{ damage }}</kbd>#}</dd>
