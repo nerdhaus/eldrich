@@ -17,6 +17,7 @@ use Drupal\Core\Entity\FieldableEntityInterface;
  * - The linked name of the weapon
  * - The linked name(s) of any weapon mods
  * - The linked name(s) of any ammo and ammo mods
+ * - The ID of the weapon's linked skill.
  * - The category of weapon (ranged, melee, grenade so far)
  * - The numerical skill bonus from any mods/ammo/etc
  * - The cumulative (not individual) damage, in the form of:
