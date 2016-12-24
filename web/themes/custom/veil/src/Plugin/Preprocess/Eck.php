@@ -11,6 +11,11 @@ use Drupal\bootstrap\Utility\Variables;
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessInterface;
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessBase;
 use Drupal\eck\Entity\EckEntity;
+use Drupal\eldrich\Calculator\EquippedWeaponCalculator;
+use Drupal\eldrich\Calculator\SkillTreeCalculator;
+use Drupal\eldrich\Calculator\StatTreeCalculator;
+
+
 /**
  * Pre-processes variables for the "eck_entity" theme hook.
  *
@@ -27,7 +32,7 @@ class Eck extends PreprocessBase implements PreprocessInterface {
   {
     // Prep assorted ECK content types for display.
 
-    /** @var $eck \Drupal\eck\Entity\EckEntity * */
+    /** @var $eck \Drupal\eck\Entity\EckEntity **/
     if (isset($variables->entity['#component'])) {
       $this->preprocessComponent($variables->entity['#component'], $variables);
 
@@ -47,6 +52,8 @@ class Eck extends PreprocessBase implements PreprocessInterface {
           'ap' => 0,
           'bonus' => 0,
         ];
+
+
 
         $variables['title'] = $eck->label();
         $variables['type'] = 'ranged';
