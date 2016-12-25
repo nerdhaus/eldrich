@@ -152,7 +152,7 @@ process:
       entity_type: lookup
       bundle: area_effect
       bundle_key: type
-      value_key: title
+      value_key: field_code
   field_firing_modes:
     -
       plugin: skip_on_empty

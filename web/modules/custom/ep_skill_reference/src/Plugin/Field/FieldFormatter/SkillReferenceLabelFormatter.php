@@ -28,7 +28,7 @@ class SkillReferenceLabelFormatter extends EntityReferenceLabelFormatter {
     foreach ($elements as $delta => $entity) {
       $elements[$delta]['#suffix'] = '';
       if (!empty($values[$delta]['field'])) {
-        $elements[$delta]['#suffix'] .= ': ' . $values[$delta]['field'];
+        $elements[$delta]['#title'] .= ': ' . $values[$delta]['field'];
       }
       $elements[$delta]['#suffix'] .= ' ' . $values[$delta]['points'];
       if (!empty($values[$delta]['specialization'])) {

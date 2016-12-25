@@ -19,6 +19,7 @@ function operation_parse_string($string) {
 
 function operation_calculate_result($input, $operation, $value, $mode = PHP_ROUND_HALF_UP) {
   switch ($operation) {
+    case '':
     case '+':
       $value = $input + $value;
       break;
@@ -52,7 +53,7 @@ function operation_supported_operators() {
     '/' => t('Division'),
     '*' => t('Multiplication'),
     '^' => t('Exponentiation'),
-    '%' => t('Modulo'),
+    '%' => t('Percentage'),
     '=' => t('Override'),
   ];
 }

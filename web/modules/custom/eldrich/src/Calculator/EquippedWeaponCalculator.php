@@ -50,12 +50,13 @@ class EquippedWeaponCalculator extends EldrichBaseCalculator {
         'dice' => 0,
         'mod' => 0,
         'mod_operation' => '+',
+        'multiplier' => 1,
         'ap' => 0,
         'average' => 0,
+        'effects' => [],
       ],
       'rounds' => 0,
       'effects' => [],
-      'types' => [],
     ];
 
     // If we're in an ECK entity, dance around a bit.
@@ -111,41 +112,61 @@ class EquippedWeaponCalculator extends EldrichBaseCalculator {
       }
     }
 
+    if ($data['damage']['mod'] < 0) {
+      $data['damage']['mod_operation'] = '-';
+      $data['damage']['mod'] = abs($data['damage']['mod']);
+    }
+
     $avg = $data['damage']['dice'] * 5;
     $avg = operation_calculate_result($avg, $data['damage']['mod_operation'], $data['damage']['mod']);
-    $data['damage']['average'] = $avg;
+    $data['damage']['average'] = intval(round($avg * $data['damage']['multiplier']));
 
     return $data;
   }
 
   public static function accountForItem(Array &$data, EntityInterface $weapon) {
-    if (!empty($weapon->field_magazine_size)) {
+
+    if (!$weapon->field_magazine_size->isEmpty()) {
       $data['rounds'] = operation_calculate_result($data['rounds'], $weapon->field_magazine_size->operation, $weapon->field_magazine_size->value);
     }
-
-    $data['damage']['dice'] = operation_calculate_result($data['damage']['dice'], $weapon->field_damage_dice->operation, $weapon->field_damage_dice->value);
-    $data['damage']['ap'] = operation_calculate_result($data['damage']['ap'], $weapon->field_ap_modifier->operation, $weapon->field_ap_modifier->value);
+    if (!$weapon->field_damage_dice->isEmpty()) {
+      $data['damage']['dice'] = operation_calculate_result($data['damage']['dice'], $weapon->field_damage_dice->operation, $weapon->field_damage_dice->value);
+    }
+    if (!$weapon->field_ap_modifier->isEmpty()) {
+      $data['damage']['ap'] = operation_calculate_result($data['damage']['ap'], $weapon->field_ap_modifier->operation, $weapon->field_ap_modifier->value);
+    }
 
     // The mod is trickier, since in theory we could get to strange stuff like
     // DV / 2 + 3 but we don't care enough to do full math handling. If we
     // encounter a multiplication or division operator, just roll with it.
-    switch ($weapon->field_damage_modifier->operation) {
-      case '':
-      case '+':
-      case '-':
-        $data['damage']['mod'] = operation_calculate_result($data['damage']['mod'], $weapon->field_damage_modifier->operation, $weapon->field_damage_modifier->value);
-        break;
-      default:
-        $data['damage']['mod'] = $weapon->field_damage_modifier->value;
-        $data['damage']['mod_operation'] = $weapon->field_damage_modifier->operation;
+    if (!$weapon->field_damage_modifier->isEmpty()) {
+      switch ($weapon->field_damage_modifier->operation) {
+        case '':
+        case '+':
+        case '-':
+          $data['damage']['mod'] = operation_calculate_result($data['damage']['mod'], $weapon->field_damage_modifier->operation, $weapon->field_damage_modifier->value);
+          break;
+        default:
+          $data['damage']['multiplier'] = operation_calculate_result($data['damage']['multiplier'], $weapon->field_damage_modifier->operation, $weapon->field_damage_modifier->value);
+      }
     }
 
-    if (!empty($weapon->field_skill_bonus)) {
+    if (!$weapon->field_skill_bonus->isEmpty()) {
       $data['skill_bonus'] += $weapon->field_skill_bonus->value;
     }
 
-    if (!empty($weapon->field_special_effect)) {
+    if (!$weapon->field_special_effect->isEmpty()) {
       $data['effects'][] = $weapon->field_special_effect->value;
+    }
+
+    if (!$weapon->field_special_effect->isEmpty()) {
+      $data['effects'][] = $weapon->field_special_effect->value;
+    }
+
+    foreach ($weapon->field_damage_effects as $effect) {
+      if (!in_array($effect->entity->label(), $data['damage']['effects'])) {
+        $data['damage']['effects'][] = $effect->entity->label();
+      }
     }
   }
 }

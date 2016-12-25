@@ -24,13 +24,16 @@
   {% if skill_bonus %}(+{{ skill_bonus }}){% endif %}
   {% if entity.field_ammo|field_value %} w/
     {% for mod in entity.field_ammo_mods %}
-      {{ mod|field_target_entity.field_short_name|field_value }}
+      {{ mod.entity.field_short_name|field_value }}
     {% endfor %}
     {{ entity.field_ammo|field_value }}
   {% endif %}
 
-  <kbd class="damage-roll" data-average="{{ damage.average }}">DV {{ damage.dice }}d10 {% if damage.mod %}{{ damage.mod_operation }} {{ damage.mod }}{% endif %} {% if damage.ap %}{{ damage.ap }}AP{% endif %}</kbd>
+  <kbd class="damage-roll" data-average="{{ damage.average }}">
+    {% if damage.dice %}DV {{ damage.dice }}d10 {% if damage.mod %}{{ damage.mod_operation }} {{ damage.mod }}{% endif %} {% if damage.ap %}{{ damage.ap }}AP{% endif %}
+    {% else %}No damage
+    {% endif %}
+    {% if damage.effects %}+ {{ damage.effects|safe_join(' + ') }}{% endif %}
+  </kbd>
 </dd>
-{% if effects %}
-<dd>{{ effects|safe_join(' ') }}</dd>
-{% endif %}
+{% if effects %}<dd>{{ effects|safe_join(' ') }}</dd>{% endif %}
