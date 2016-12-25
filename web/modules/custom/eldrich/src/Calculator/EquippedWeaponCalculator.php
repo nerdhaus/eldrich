@@ -164,7 +164,7 @@ class EquippedWeaponCalculator extends EldrichBaseCalculator {
     }
 
     foreach ($weapon->field_damage_effects as $effect) {
-      if (!in_array($effect->entity->label(), $data['damage']['effects'])) {
+      if (!in_array($effect->entity->label(), $data['damage']['effects']) && (!in_array($effect->entity->label(), ['Kinetic','Energy','Melee']))) {
         $data['damage']['effects'][] = $effect->entity->label();
       }
     }
