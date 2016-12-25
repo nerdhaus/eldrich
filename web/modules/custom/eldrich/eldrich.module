@@ -28,7 +28,7 @@ function eldrich_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
   // Weapon Pattern: Short Weapon Name (Mod Shortnames) with [Smart Ammo features] Ammo Name
 
   if (($entity->getEntityType()->id() == 'instance')) {
-    switch ($entity->$entity->bundle()) {
+    switch ($entity->bundle()) {
       case 'weapon_instance':
         $entity->title = $entity->field_weapon->entity->label();
         break;

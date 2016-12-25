@@ -23,12 +23,10 @@ class StatBlockParser extends ProcessPluginBase {
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     $raw = explode(',', $value);
-    $stats = ['cog', 'coo', 'int', 'ref', 'sav', 'som', 'wil', 'mox', 'spd', 'dur'];
     $results = [];
-    for ($i = 0; $i < 10; $i++) {
-      if (isset($raw[$i]) && $raw[$i] !== 0) {
-        $results[$stats[$i]] = $raw[$i];
-      }
+    foreach ($raw as $pair) {
+      $kv = explode(':', $pair);
+      $results[trim($kv[0])] = $results[trim($kv[1])];
     }
     return $results;
   }
