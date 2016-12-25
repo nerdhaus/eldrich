@@ -1,14 +1,36 @@
 {#
-Available variables:
-- type: ranged, melee, or other
-- title: the name that should be shown for the weapon instance
-- bonus: the cumulative skill bonus for this weapon instance
-- damage: the damage value
+/**
+ * @file
+ * Output template for an equipped weapon entity.
+ *
+ * Available variables:
+ * - entity: The equipped weapon record in its entirety
+ * - skill_bonus: Optional numerical boost for attack rolls
+ * - category: melee, ranged, etc.
+ * - damage
+ *   - dice: The number of dice to roll
+ *   - mod: A damage modifier specific to the attack (+10, etc)
+ *   - mod_operation: Always + or /, because we're not insane
+ *   - ap: Armor Piercing power
+ *   - average: Average damage output
+ * - rounds: Numerical magazine size, if appropriate
+ * - effects: An array of strings describing special weapon effects
+ *
+ */
 #}
-<dt {{ attributes }}><span class="label label-danger text-uppercase">{{ type }}</span></dt>
+<dt {{ attributes }}><span class="label label-danger text-uppercase">{{ category }}</span></dt>
 <dd>
-  {{ entity.field_weapon|field_value }}{#
-  {% if entity.field_weapon_mods %} ({{ entity.field_weapon_mods|field_value|safe_join(', ')}}){% endif %}
-  {% if entity.field_ammo_mods or entity.field_ammo %} w/ {% endif %}
-  {% if entity.field_ammo_mods %} {{ entity.field_ammo_mods|field_value|safe_join(' ') }}{% endif %}
-  {% if entity.field_ammo %}{{ entity.field_ammo|field_value }}{% else %}ammo{% endif %}: <kbd>{{ damage }}</kbd>#}</dd>
+  {{ entity.field_weapon|field_value }}
+  {% if skill_bonus %}(+{{ skill_bonus }}){% endif %}
+  {% if entity.field_ammo|field_value %} w/
+    {% for mod in entity.field_ammo_mods %}
+      {{ mod|field_target_entity.field_short_name|field_value }}
+    {% endfor %}
+    {{ entity.field_ammo|field_value }}
+  {% endif %}
+
+  <kbd class="damage-roll" data-average="{{ damage.average }}">DV {{ damage.dice }}d10 {% if damage.mod %}{{ damage.mod_operation }} {{ damage.mod }}{% endif %} {% if damage.ap %}{{ damage.ap }}AP{% endif %}</kbd>
+</dd>
+{% if effects %}
+<dd>{{ effects|safe_join(' ') }}</dd>
+{% endif %}

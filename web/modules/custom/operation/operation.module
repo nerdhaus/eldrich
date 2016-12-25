@@ -35,7 +35,7 @@ function operation_calculate_result($input, $operation, $value, $mode = PHP_ROUN
       $value = $input ** $value;
       break;
     case '%':
-      $value = $input % $value;
+      $value = $input * 100 / $value;
       break;
   }
 
