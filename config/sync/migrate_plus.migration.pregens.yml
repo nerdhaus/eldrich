@@ -244,7 +244,7 @@ process:
           plugin: entity_lookup_plus
           delimiter: ':'
           extra_value_key: quantity
-          value_key: field_code
+          value_key: field_symbol
           bundle: network
           bundle_key: type
           entity_type: node

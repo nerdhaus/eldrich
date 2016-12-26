@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.faction.field_attribution
     - field.field.node.faction.field_concerns
     - field.field.node.faction.field_description
     - field.field.node.faction.field_faction_type
@@ -11,18 +12,30 @@ dependencies:
     - field.field.node.faction.field_parent_faction
     - node.type.faction
   module:
+    - text
     - user
 id: node.faction.teaser
 targetEntityType: node
 bundle: faction
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_description:
+    type: text_trimmed
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  field_faction_type:
+    type: entity_reference_label
+    weight: 0
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
 hidden:
   field_attribution: true
   field_concerns: true
-  field_description: true
-  field_faction_type: true
   field_locations: true
   field_parent_faction: true
+  links: true

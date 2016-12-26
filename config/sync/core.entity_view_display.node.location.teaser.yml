@@ -4,23 +4,36 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.location.field_attribution
     - field.field.node.location.field_description
     - field.field.node.location.field_location_type
     - field.field.node.location.field_parent_location
     - field.field.node.location.field_population
     - node.type.location
   module:
+    - text
     - user
 id: node.location.teaser
 targetEntityType: node
 bundle: location
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_description:
+    type: text_trimmed
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  field_location_type:
+    type: entity_reference_label
+    weight: 0
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
 hidden:
   field_attribution: true
-  field_description: true
-  field_location_type: true
   field_parent_location: true
   field_population: true
+  links: true
