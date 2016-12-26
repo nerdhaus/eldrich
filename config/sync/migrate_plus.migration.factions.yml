@@ -18,9 +18,9 @@ source:
     -
       type: Type
     -
-      description: Description
-    -
       concerns: Concerns
+    -
+      description: Description
     -
       locations: Locations
     -
