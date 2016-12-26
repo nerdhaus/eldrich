@@ -22,11 +22,12 @@ class StatBlockParser extends ProcessPluginBase {
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
+    $value = strtolower(str_replace(' ', '', $value));
     $raw = explode(',', $value);
     $results = [];
     foreach ($raw as $pair) {
       $kv = explode(':', $pair);
-      $results[trim($kv[0])] = $results[trim($kv[1])];
+      $results[$kv[0]] = $kv[1];
     }
     return $results;
   }
