@@ -32,11 +32,31 @@ function eldrich_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
       case 'weapon_instance':
         $entity->title = $entity->field_weapon->entity->label();
         break;
-      case 'weapon_instance':
+      case 'armor_instance':
         $entity->title = $entity->field_armor->entity->label();
         break;
-      case 'morph_instance':
-        $entity->title = $entity->field_model->entity->label();
+      case 'morph':
+        if (!$entity->field_model->isEmpty()) {
+          $entity->title = $entity->field_model->entity->label();
+          if ($entity->field_stats->isEmpty()) {
+            $entity->field_stats = $entity->field_model->entity->field_stats->getValue();
+          }
+          if ($entity->field_traits->isEmpty()) {
+            $entity->field_traits = $entity->field_model->entity->field_traits->getValue();
+          }
+          if ($entity->field_mobility_system->isEmpty()) {
+            $entity->field_mobility_system = $entity->field_model->entity->field_mobility_system->getValue();
+          }
+          if ($entity->field_movement_speed->isEmpty()) {
+            $entity->field_movement_speed = $entity->field_model->entity->field_movement_speed->getValue();
+          }
+          if ($entity->field_augmentations->isEmpty()) {
+            $entity->field_augmentations = $entity->field_model->entity->field_augmentations->getValue();
+          }
+          if ($entity->field_skills->isEmpty()) {
+            $entity->field_skills = $entity->field_model->entity->field_skills->getValue();
+          }
+        }
         break;
     }
   }

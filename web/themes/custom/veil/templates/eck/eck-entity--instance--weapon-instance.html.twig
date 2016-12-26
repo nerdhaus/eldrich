@@ -24,7 +24,7 @@
   {% if skill_bonus %}(+{{ skill_bonus }}){% endif %}
   {% if entity.field_ammo|field_value %} w/
     {% for mod in entity.field_ammo_mods %}
-      {{ mod.entity.field_short_name|field_value }}
+      {{ mod|field_target_entity.field_short_name|field_value }}
     {% endfor %}
     {{ entity.field_ammo|field_value }}
   {% endif %}
