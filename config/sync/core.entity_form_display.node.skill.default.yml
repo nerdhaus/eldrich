@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.skill.field_damage_bonus
     - field.field.node.skill.field_description
     - field.field.node.skill.field_example_fields
     - field.field.node.skill.field_is_field
@@ -33,6 +34,12 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
+  field_damage_bonus:
+    weight: 32
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_description:
     weight: 10
     settings:

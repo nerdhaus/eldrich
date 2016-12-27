@@ -18,7 +18,7 @@ source:
     -
       aptitude: Aptitude
     -
-      default: Default
+      no_default: 'No Defaulting'
     -
       description: Description
     -
@@ -29,6 +29,8 @@ source:
       fields: Fields
     -
       specializations: Specializations
+    -
+      damage_bonus: 'Damage Bonus'
   keys:
     - title
   constants:
@@ -59,7 +61,14 @@ process:
     default_value: 0
   field_no_defaulting:
     plugin: static_map
-    source: default
+    source: no_default
+    map:
+      'TRUE': 1
+      'FALSE': 0
+    default_value: 0
+  field_damage_bonus:
+    plugin: static_map
+    source: damage_bonus
     map:
       'TRUE': 1
       'FALSE': 0
