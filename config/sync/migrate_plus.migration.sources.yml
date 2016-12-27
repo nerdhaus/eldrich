@@ -24,7 +24,11 @@ source:
     -
       homepage: Homepage
     -
-      purchase: Default
+      image: Image
+    -
+      image: Image
+    -
+      pdf: PDF
     -
       weight: Weight
   keys:
