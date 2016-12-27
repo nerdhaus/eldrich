@@ -77,8 +77,8 @@ process:
     plugin: static_map
     source: conditional
     map:
-      'FALSE': 0
       'TRUE': 1
+      'FALSE': 0
     default_value: 0
   field_attribution/target_id:
     plugin: entity_maker

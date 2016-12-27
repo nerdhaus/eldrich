@@ -52,6 +52,20 @@ class StatBlock extends FieldItemBase {
       ->setLabel(new TranslatableMarkup('Synthetic'));
 
     $properties['init'] = DataDefinition::create('integer')
+      ->setLabel(new TranslatableMarkup('Initiative'));
+    $properties['luc'] = DataDefinition::create('integer')
+      ->setLabel(new TranslatableMarkup('Lucidity'));
+    $properties['tt'] = DataDefinition::create('integer')
+      ->setLabel(new TranslatableMarkup('Trauma Threshold'));
+    $properties['ir'] = DataDefinition::create('integer')
+      ->setLabel(new TranslatableMarkup('Insanity Rating'));
+    $properties['wt'] = DataDefinition::create('integer')
+      ->setLabel(new TranslatableMarkup('Wound Threshold'));
+    $properties['dr'] = DataDefinition::create('integer')
+      ->setLabel(new TranslatableMarkup('Death Rating'));
+
+/*
+    $properties['init'] = DataDefinition::create('integer')
       ->setLabel(t('Initiative'))
       ->setComputed(TRUE)
       ->setReadOnly(TRUE)
@@ -92,6 +106,8 @@ class StatBlock extends FieldItemBase {
       ->setReadOnly(TRUE)
       ->setClass('Drupal\ep_statblock\StatDeriver')
       ->setSetting('property', 'dr');
+*/
+
 
     $properties['db'] = DataDefinition::create('integer')
       ->setLabel(t('Damage Bonus'))
@@ -119,6 +135,12 @@ class StatBlock extends FieldItemBase {
         'mox' => ['type' => 'int'],
         'spd' => ['type' => 'int'],
         'dur' => ['type' => 'int'],
+        'init' => ['type' => 'int'],
+        'luc' => ['type' => 'int'],
+        'tt' => ['type' => 'int'],
+        'ir' => ['type' => 'int'],
+        'wt' => ['type' => 'int'],
+        'dr' => ['type' => 'int'],
         'synthetic' => ['type' => 'int'],
       ],
     ];
@@ -160,6 +182,12 @@ class StatBlock extends FieldItemBase {
       empty($this->values['mox']) &&
       empty($this->values['spd']) &&
       empty($this->values['dur']) &&
+      empty($this->values['init']) &&
+      empty($this->values['luc']) &&
+      empty($this->values['tt']) &&
+      empty($this->values['ir']) &&
+      empty($this->values['wt']) &&
+      empty($this->values['dr']) &&
       empty($this->values['synthetic'])
     ) {
       return TRUE;
