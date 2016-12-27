@@ -4,13 +4,16 @@ status: true
 dependencies:
   config:
     - field.field.node.source.field_code
+    - field.field.node.source.field_cover_art
     - field.field.node.source.field_description
     - field.field.node.source.field_home_page
     - field.field.node.source.field_is_canon
     - field.field.node.source.field_source_type
     - field.field.node.source.field_weight
+    - image.style.thumbnail
     - node.type.source
   module:
+    - image
     - link
     - path
     - text
@@ -39,6 +42,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_cover_art:
+    weight: 35
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
   field_description:
     weight: 8
     settings:
