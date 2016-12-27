@@ -38,4 +38,13 @@ class OperationSimpleWidget extends NumberWidget {
 
     return $widget;
   }
+
+  public function massageFormValues(array $values, array $form, FormStateInterface $form_state) {
+    foreach ($values as $delta => $value) {
+      $values[$delta]['value'] = $value['value']['value'];
+      $values[$delta]['operator'] = $value['operator'];
+    }
+    return $values;
+  }
+
 }
