@@ -34,6 +34,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_code: true
+  field_cover_art: true
   field_home_page: true
   field_is_canon: true
   field_source_type: true

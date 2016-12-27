@@ -137,7 +137,7 @@ process:
       entity_type: lookup
       bundle: damage_type
       bundle_key: type
-      value_key: title
+      value_key: field_lookup_code
   field_area_effect:
     -
       plugin: skip_on_empty
@@ -165,7 +165,7 @@ process:
       plugin: entity_lookup_plus
       destination_field: target_id
       entity_type: lookup
-      bundle: modes
+      bundle: firing_modes
       bundle_key: type
       value_key: field_lookup_code
   field_range:

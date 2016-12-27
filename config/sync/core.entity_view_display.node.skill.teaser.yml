@@ -49,6 +49,7 @@ content:
       link: true
     third_party_settings: {  }
 hidden:
+  field_damage_bonus: true
   field_example_fields: true
   field_is_field: true
   field_no_defaulting: true
