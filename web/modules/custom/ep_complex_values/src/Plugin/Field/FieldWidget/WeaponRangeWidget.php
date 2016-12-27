@@ -32,22 +32,22 @@ class WeaponRangeWidget extends WidgetBase {
     $element['short'] = array(
       '#type' => 'number',
       '#title' => $this->t('Short range'),
-      '#default_value' => $items[$delta]->walk,
+      '#default_value' => $items[$delta]->short,
     );
     $element['medium'] = array(
       '#type' => 'number',
       '#title' => $this->t('Medium (-10)'),
-      '#default_value' => $items[$delta]->run,
+      '#default_value' => $items[$delta]->medium,
     );
     $element['long'] = array(
       '#type' => 'number',
       '#title' => $this->t('Long (-20)'),
-      '#default_value' => $items[$delta]->cruise,
+      '#default_value' => $items[$delta]->long,
     );
     $element['extreme'] = array(
       '#type' => 'number',
       '#title' => $this->t('Extreme (-30)'),
-      '#default_value' => $items[$delta]->cruise,
+      '#default_value' => $items[$delta]->extreme,
     );
 
     return $element;
