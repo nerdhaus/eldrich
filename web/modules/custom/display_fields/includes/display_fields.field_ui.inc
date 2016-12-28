@@ -6,7 +6,7 @@ use Drupal\field\FieldConfigInterface;
 use Drupal\field_ui\FieldUI;
 use Drupal\display_fields\DisplayFields;
 use Drupal\display_fields\Entity\DisplayFieldsConfig;
-use Drupal\Component\Utility\String;
+use Drupal\Component\Utility\SafeMarkup;
 
 /**
  * Adds the Display fields to the form field_ui_display.
