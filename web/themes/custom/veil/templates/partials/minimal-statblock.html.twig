@@ -1,0 +1,41 @@
+<table class="table table-condensed table-bordered table-statblock">
+  {% set properties = ['cog', 'coo', 'int', 'ref', 'sav', 'som'] %}
+  <thead>
+  {% for property in properties %}
+    <th>{{ property|upper }}</th>
+  {% endfor %}
+  </thead>
+  <tr>
+    {% for property in properties %}
+      {% set constant = attribute(stats.total.constant, property) %}
+      {% set conditional = attribute(stats.total.conditional, property) %}
+
+      <td>
+        {{ constant }}
+        {% if (conditional and (conditional != constant)) %}
+          ({{ conditional }})
+        {% endif %}
+      </td>
+    {% endfor %}
+  </tr>
+
+  {% set properties = ['wil', 'init', 'spd', 'dur', 'wt', 'dr'] %}
+  <thead>
+  {% for property in properties %}
+    <th>{{ property|upper }}</th>
+  {% endfor %}
+  </thead>
+  <tr>
+    {% for property in properties %}
+      {% set constant = attribute(stats.total.constant, property) %}
+      {% set conditional = attribute(stats.total.conditional, property) %}
+
+      <td>
+        {{ constant }}
+        {% if (conditional and (conditional != constant)) %}
+          ({{ conditional }})
+        {% endif %}
+      </td>
+    {% endfor %}
+  </tr>
+</table>

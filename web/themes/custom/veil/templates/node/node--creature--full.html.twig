@@ -77,38 +77,14 @@ view_mode ? view_mode|clean_class,
 %}
 <article{{ attributes.addClass(classes) }}>
 
-  {{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('author') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-
-  {% if content.field_quote %}
-  <blockquote>
-    <p>{{ content.field_quote|field_value }}</p>
-  </blockquote>
-  {% endif %}
-
   {{ content.field_description }}
 
-  {{ content.field_stats|field_value }}
+  {% include directory ~ '/templates/partials/minimal-statblock.html.twig' %}
 
   <dl class="dl-horizontal">
-  {% for f in [ content.field_skills, content.field_traits, content.field_sleights, content.field_gear ] %}
-    {% if f %}<dt>{{ f|field_label }}</dt> <dd>{{ f|field_value|safe_join(', ') }}</dd>{% endif %}
-  {% endfor %}
+    {% for f in [ content.field_skills, content.field_traits, content.field_sleights, content.field_gear ] %}
+      {% if f %}<dt>{{ f|field_label }}</dt> <dd>{{ f|field_value|safe_join(', ') }}</dd>{% endif %}
+    {% endfor %}
   </dl>
 
   {{ content.field_equipped_weapons }}

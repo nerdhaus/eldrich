@@ -14,12 +14,20 @@ use Drupal\Core\Entity\FieldableEntityInterface;
  *
  * The goal is to take a given entity, walk its child fields, and produce:
  *
- * - A set dictionary of skills, keyed by skillname:fieldname, containing:
+ * - A set dictionary of skills, keyed by skill_id:fieldname, containing:
  *   - Skill Entity
  *   - Field
  *   - Specialization
- *   - Constant skill points (including stats if passed into constructor)
- *   - Conditional skill bonus points (including conditional stats if passed in)
+ *   - constant
+ *     - baseline
+ *     - points
+ *     - bonus
+ *     - total
+ *   - conditional
+ *     - baseline
+ *     - points
+ *     - bonus
+ *     - total
  *
  * - entity->field_skills
  * - entity->field_traits->field_skills
@@ -32,7 +40,25 @@ use Drupal\Core\Entity\FieldableEntityInterface;
 
  */
 class SkillTreeCalculator extends EldrichBaseCalculator {
-  public static function total(FieldableEntityInterface $entity) {
+  public static function total(FieldableEntityInterface $entity, Array $stats) {
 
   }
+
+  public static function walkTree(FieldableEntityInterface $entity, Array $stats) {
+
+    foreach ($entity->field_traits as $tr) {
+      $t = $tr->entity;
+      $ts = $tr->field_stats->getValue();
+      if ($tr->field_conditional->value == TRUE) {
+        StatTreeCalculator::addSets($stats['conditional'], $ts);
+      }
+      else {
+        StatTreeCalculator::addSets($stats['constant'], $ts);
+      }
+    }
+    $stats['total'] = $stats['baseline'];
+    StatTreeCalculator::addSets($stats['total'], $stats['constant']);
+    return $stats;
+  }
+
 }
