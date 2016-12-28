@@ -77,7 +77,7 @@ view_mode ? view_mode|clean_class,
 %}
 <article{{ attributes.addClass(classes) }}>
 
-  {% if content.field_quote %}
+  {% if not content.field_quote.isEmpty %}
   <blockquote><p>{{ content.field_quote|field_value }}</p></blockquote>
   {% endif %}
 
@@ -90,6 +90,8 @@ view_mode ? view_mode|clean_class,
     {% if f %}<dt>{{ f|field_label }}</dt> <dd>{{ f|field_value|safe_join(', ') }}</dd>{% endif %}
   {% endfor %}
   </dl>
+
+  {{ content.field_equipped_armor }}
 
   {{ content.field_equipped_weapons }}
 
