@@ -26,3 +26,19 @@
   padding-right: 0;
 }
 
+/**
+ * Statblock tables should have centered text, no margins between header and body,
+ * inverted headers, and horizontal padding between cells.
+ *
+ */
+table.table-statblock thead th {
+  text-align: center;
+  border-width: 1px;
+  color: #1c1e22;
+  background-color: #c8c8c8;
+}
+
+table.table-statblock tr td {
+  text-align: center;
+  border-width: 1px;
+}

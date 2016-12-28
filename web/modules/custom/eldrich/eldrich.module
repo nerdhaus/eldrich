@@ -36,6 +36,7 @@ function eldrich_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
         $entity->title = $entity->field_armor->entity->label();
         break;
       case 'morph':
+        // If the morph isn't populated, copy over the data from its template model.
         if (!$entity->field_model->isEmpty()) {
           $entity->title = $entity->field_model->entity->label();
           if ($entity->field_stats->isEmpty()) {
