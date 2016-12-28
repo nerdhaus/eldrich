@@ -2024,18 +2024,17 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_browser",
-                "reference": "44dda5dadc45549e91b5caff70d7d121477a794d"
+                "reference": "60fc6cc1e8a6e702fb73e7b9a185da9e4b9dcdcc"
             },
             "require": {
                 "drupal/core": "~8.0"
             },
-            "suggest": {
-                "drupal/core": "Required by drupal/entity_browser_example",
-                "drupal/ctools": "Required by drupal/entity_browser",
-                "drupal/inline_entity_form": "Required by drupal/entity_browser",
-                "drupal/media_entity": "Required by drupal/entity_browser",
-                "drupal/paragraphs": "Required by drupal/entity_browser",
-                "drupal/token": "Required by drupal/entity_browser"
+            "require-dev": {
+                "drupal/ctools": "*",
+                "drupal/inline_entity_form": "*",
+                "drupal/media_entity": "*",
+                "drupal/paragraphs": "*",
+                "drupal/token": "*"
             },
             "type": "drupal-module",
             "extra": {
@@ -2044,8 +2043,8 @@
                     "dev-8.x-1.x": "8.1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta2+2-dev",
-                    "datestamp": "1480603683"
+                    "version": "8.x-1.0-beta2+6-dev",
+                    "datestamp": "1482830884"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2092,7 +2091,7 @@
                 "issues": "http://drupal.org/project/issues/entity_browser",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "time": "2016-12-01 14:47:16"
+            "time": "2016-12-27 09:19:43"
         },
         {
             "name": "drupal/entity_embed",
@@ -2160,7 +2159,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_reference_override",
-                "reference": "c8477829d1579946d17f57f33b4ba7e54011f4d9"
+                "reference": "1b666056e7651b168de9004ba9be27501803204b"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2175,7 +2174,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1482304386"
+                    "datestamp": "1482908884"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2201,7 +2200,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_reference_override"
             },
-            "time": "2016-12-21 07:13:01"
+            "time": "2016-12-28 07:06:45"
         },
         {
             "name": "drupal/entity_reference_quantity",
