@@ -45,15 +45,13 @@ class StatTreeCalculator extends EldrichBaseCalculator {
     switch ($entity->bundle()) {
       case 'pc':
         // PCs store ego stats but reference morph stats
-        $statgroups['mind'] = StatTreeCalculator::walkTree($entity);
+        $statgroups['total'] = $statgroups['mind'] = StatTreeCalculator::walkTree($entity);
         if (!$entity->field_morph->isEmpty()) {
           $statgroups['shell'] = StatTreeCalculator::walkTree($entity->field_morph->entity);
-        }
 
-        // Copy the ego stat to 'total' and sum the morph stats in.
-        $statgroups['total'] = $statgroups['mind'];
-        foreach (['baseline', 'constant', 'conditional'] as $group) {
-          StatTreeCalculator::addSets($statgroups['total'][$group], $statgroups['shell'][$group]);
+          foreach (['baseline', 'constant', 'conditional'] as $group) {
+            StatTreeCalculator::addSets($statgroups['total'][$group], $statgroups['shell'][$group]);
+          }
         }
         StatTreeCalculator::combineTotals($statgroups);
         break;
@@ -61,32 +59,33 @@ class StatTreeCalculator extends EldrichBaseCalculator {
       case 'npc':
         // NPCs store ego and morph stats pre-summed. We still want to get
         // the conditionals for them, though.
-        $statgroups['mind'] = StatTreeCalculator::walkTree($entity);
-        if (!$entity->field_morph->isEmpty()) {
-          $statgroups['shell'] = StatTreeCalculator::walkTree($entity->field_morph->entity);
-        }
+        $statgroups['total'] = $statgroups['mind'] = StatTreeCalculator::walkTree($entity);
 
         // We fudge some stuff to constant bonuses never get rolled in.
-        $statgroups['total'] = $statgroups['mind'];
         $statgroups['total']['constant'] = $statgroups['total']['baseline'];
-        StatTreeCalculator::addSets($statgroups['total']['conditional'], $statgroups['shell']['conditional']);
-        unset($statgroups['total']['baseline']);
 
+        if (!$entity->field_morph->isEmpty()) {
+          $statgroups['shell'] = StatTreeCalculator::walkTree($entity->field_morph->entity);
+          StatTreeCalculator::addSets($statgroups['total']['conditional'], $statgroups['shell']['conditional']);
+        }
+
+        unset($statgroups['total']['baseline']);
         StatTreeCalculator::calculateProperties($statgroups['total']['constant']);
         StatTreeCalculator::calculateProperties($statgroups['total']['conditional']);
         break;
 
       case 'robot':
         // Robots are the opposite — they store shell and reference mind stats
-        $statgroups['shell'] = StatTreeCalculator::walkTree($entity);
-        if (!$entity->field_mind->isEmpty()) {
-          $statgroups['mind'] = StatTreeCalculator::walkTree($entity->field_mind->entity);
+        $statgroups['total'] = $statgroups['shell'] = StatTreeCalculator::walkTree($entity);
+
+        if (!$entity->field_default_ai->isEmpty()) {
+          $statgroups['mind'] = StatTreeCalculator::walkTree($entity->field_default_ai->entity);
+          // Copy the ego stat to 'combined' and sum the morph stats in.
+          foreach (['baseline', 'constant', 'conditional'] as $group) {
+            StatTreeCalculator::addSets($statgroups['total'][$group], $statgroups['mind'][$group]);
+          }
         }
-        // Copy the ego stat to 'combined' and sum the morph stats in.
-        $statgroups['total'] = $statgroups['shell'];
-        foreach (['baseline', 'constant', 'conditional'] as $group) {
-          StatTreeCalculator::addSets($statgroups['total'][$group], $statgroups['mind'][$group]);
-        }
+
         StatTreeCalculator::combineTotal($statgroups['total']);
         break;
 

@@ -36,6 +36,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
     if ($variables->view_mode == 'full') {
       // Things with stats and skills
       if (in_array($node->bundle(), ['npc', 'pc', 'mind', 'robot', 'creature'])) {
+        $variables['stat_style'] = 'simple';
         $variables['stats'] = StatTreeCalculator::total($node);
         $variables['skills'] = SkillTreeCalculator::total($node, $variables['stats']);
       }
