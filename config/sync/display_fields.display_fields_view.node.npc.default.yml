@@ -20,7 +20,7 @@ content:
     third_party_settings: {  }
   field_network_rep:
     type: eldrich_citation_formatter
-    weight: '5'
+    weight: '6'
     settings: {  }
     label: above
     third_party_settings: {  }

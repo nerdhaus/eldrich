@@ -25,21 +25,64 @@ dependencies:
     - entity_reference_quantity
     - ep_complex_values
     - ep_statblock
+    - field_group
     - text
     - user
+third_party_settings:
+  field_group:
+    group_attributes:
+      children:
+        - field_mobility_system
+        - field_movement_speed
+        - field_armor
+        - field_passengers
+        - field_stats
+        - field_linked_skill
+        - field_skill_bonus
+        - field_augmentations
+        - field_gear
+      parent_name: ''
+      weight: 3
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Attributes
+    group_equipped:
+      children:
+        - field_equipped_weapons
+      parent_name: ''
+      weight: 4
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Equipped
 id: node.vehicle.default
 targetEntityType: node
 bundle: vehicle
 mode: default
 content:
   field_armor:
-    weight: 4
+    weight: 9
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: armor_text
   field_attribution:
-    weight: 13
+    weight: 15
     label: hidden
     settings:
       link: true
@@ -47,7 +90,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_augmentations:
-    weight: 9
+    weight: 14
     label: inline
     settings:
       link: true
@@ -73,14 +116,14 @@ content:
     type: text_default
   field_equipped_weapons:
     type: entity_reference_entity_view
-    weight: 11
+    weight: 13
     label: above
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
   field_gear:
-    weight: 10
+    weight: 15
     label: inline
     settings:
       link: true
@@ -97,7 +140,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
   field_linked_skill:
-    weight: 7
+    weight: 12
     label: inline
     settings:
       link: true
@@ -105,20 +148,20 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_label
   field_mobility_system:
-    weight: 5
+    weight: 7
     label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_movement_speed:
-    weight: 6
+    weight: 8
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_formatter
   field_passengers:
-    weight: 12
+    weight: 10
     label: inline
     settings:
       thousand_separator: ''
@@ -126,7 +169,7 @@ content:
     third_party_settings: {  }
     type: number_integer
   field_skill_bonus:
-    weight: 8
+    weight: 13
     label: inline
     settings:
       thousand_separator: ''
@@ -134,7 +177,7 @@ content:
     third_party_settings: {  }
     type: number_integer
   field_stats:
-    weight: 3
+    weight: 11
     label: inline
     settings: {  }
     third_party_settings: {  }

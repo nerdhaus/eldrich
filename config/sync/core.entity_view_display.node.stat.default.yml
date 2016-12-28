@@ -12,8 +12,29 @@ dependencies:
     - field.field.node.stat.field_weight
     - node.type.stat
   module:
+    - field_group
     - text
     - user
+third_party_settings:
+  field_group:
+    group_attributes:
+      children:
+        - field_is_aptitude
+        - field_is_ego_stat
+        - field_calculation
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Attributes
 id: node.stat.default
 targetEntityType: node
 bundle: stat

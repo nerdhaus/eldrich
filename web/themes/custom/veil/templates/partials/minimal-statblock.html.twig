@@ -1,41 +1,23 @@
 <table class="table table-condensed table-bordered table-statblock">
-  {% set properties = ['cog', 'coo', 'int', 'ref', 'sav', 'som'] %}
-  <thead>
-  {% for property in properties %}
-    <th>{{ property|upper }}</th>
-  {% endfor %}
-  </thead>
-  <tr>
-    {% for property in properties %}
-      {% set constant = attribute(stats.total.constant, property) %}
-      {% set conditional = attribute(stats.total.conditional, property) %}
-
-      <td>
-        {{ constant ?: '—' }}
-        {% if (conditional and (conditional != constant)) %}
-          ({{ conditional }})
-        {% endif %}
-      </td>
+  {% set properties = [['cog', 'coo', 'int', 'ref', 'sav', 'som'],  ['wil', 'init', 'spd', 'dur', 'wt', 'dr'] %}
+  {% for property_group in properties %}
+    <thead>
+    {% for property in property_group %}
+      <th>{{ property|upper }}</th>
     {% endfor %}
-  </tr>
+    </thead>
+    <tr>
+      {% for property in properties %}
+        {% set constant = attribute(stats.total.constant, property) %}
+        {% set conditional = attribute(stats.total.conditional, property) %}
 
-  {% set properties = ['wil', 'init', 'spd', 'dur', 'wt', 'dr'] %}
-  <thead>
-  {% for property in properties %}
-    <th>{{ property|upper }}</th>
+        <td>
+          {{ constant ?: '—' }}
+          {% if (conditional and (conditional != constant)) %}
+            ({{ conditional }})
+          {% endif %}
+        </td>
+      {% endfor %}
+    </tr>
   {% endfor %}
-  </thead>
-  <tr>
-    {% for property in properties %}
-      {% set constant = attribute(stats.total.constant, property) %}
-      {% set conditional = attribute(stats.total.conditional, property) %}
-
-      <td>
-        {{ constant ?: '—' }}
-        {% if (conditional and (conditional != constant)) %}
-          ({{ conditional }})
-        {% endif %}
-      </td>
-    {% endfor %}
-  </tr>
 </table>

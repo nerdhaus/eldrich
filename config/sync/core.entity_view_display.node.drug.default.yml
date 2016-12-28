@@ -16,9 +16,31 @@ dependencies:
     - node.type.drug
   module:
     - entity_reference_quantity
+    - field_group
     - integer_time
     - text
     - user
+third_party_settings:
+  field_group:
+    group_attributes:
+      children:
+        - field_delivery_mechanism
+        - field_addiction_modifier
+        - field_duration
+        - field_onset
+      parent_name: ''
+      weight: 3
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Attributes
 id: node.drug.default
 targetEntityType: node
 bundle: drug
@@ -39,7 +61,7 @@ content:
     third_party_settings: {  }
     type: armor_text
   field_attribution:
-    weight: 7
+    weight: 4
     label: hidden
     settings:
       link: true
@@ -47,7 +69,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_cost:
-    weight: 1
+    weight: 2
     label: inline
     settings:
       location: suffix
@@ -63,7 +85,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
   field_description:
-    weight: 0
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -80,7 +102,7 @@ content:
     third_party_settings: {  }
     type: integer_range_time_field_formatter
   field_gear_type:
-    weight: 2
+    weight: 0
     label: inline
     settings:
       link: true

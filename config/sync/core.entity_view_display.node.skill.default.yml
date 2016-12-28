@@ -14,8 +14,33 @@ dependencies:
     - field.field.node.skill.field_usage
     - node.type.skill
   module:
+    - field_group
     - text
     - user
+third_party_settings:
+  field_group:
+    group_attributes:
+      children:
+        - field_linked_aptitude
+        - field_skill_type
+        - field_no_defaulting
+        - field_is_field
+        - field_example_fields
+        - field_specializations
+        - field_usage
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Attributes
 id: node.skill.default
 targetEntityType: node
 bundle: skill
@@ -27,23 +52,14 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
-  field_damage_bonus:
-    weight: 102
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
   field_description:
-    weight: 2
+    weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_example_fields:
-    weight: 6
+    weight: 4
     label: inline
     settings:
       link_to_entity: false
@@ -53,7 +69,7 @@ content:
     type: string
   field_is_field:
     type: boolean
-    weight: 5
+    weight: 3
     label: hidden
     settings:
       format: default
@@ -61,14 +77,14 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
   field_linked_aptitude:
-    weight: 1
+    weight: 0
     label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_no_defaulting:
-    weight: 4
+    weight: 2
     label: hidden
     settings:
       format: default
@@ -77,14 +93,14 @@ content:
     third_party_settings: {  }
     type: boolean
   field_skill_type:
-    weight: 0
+    weight: 1
     label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_specializations:
-    weight: 7
+    weight: 5
     label: inline
     settings:
       link_to_entity: false
@@ -93,10 +109,11 @@ content:
         delimiter: ', '
     type: string
   field_usage:
-    weight: 3
+    weight: 6
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
 hidden:
+  field_damage_bonus: true
   links: true

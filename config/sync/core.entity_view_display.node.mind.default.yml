@@ -15,10 +15,28 @@ dependencies:
   module:
     - entity_reference_quantity
     - ep_skill_reference
-    - ep_statblock
     - field_delimiter
+    - field_group
     - text
     - user
+third_party_settings:
+  field_group:
+    group_attributes:
+      children:
+        - field_skills
+      parent_name: ''
+      weight: 4
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Attributes
 id: node.mind.default
 targetEntityType: node
 bundle: mind
@@ -31,7 +49,7 @@ content:
     third_party_settings: {  }
     type: armor_text
   field_attribution:
-    weight: 5
+    weight: 6
     label: hidden
     settings:
       link: true
@@ -39,7 +57,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_cost:
-    weight: 4
+    weight: 5
     label: inline
     settings:
       location: suffix
@@ -69,13 +87,8 @@ content:
       field_delimiter:
         delimiter: ', '
     type: skill_reference_label
-  field_stats:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: stat_block_table
 hidden:
   field_blueprints: true
   field_short_name: true
+  field_stats: true
   links: true
