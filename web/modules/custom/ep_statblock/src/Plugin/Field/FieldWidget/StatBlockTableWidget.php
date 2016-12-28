@@ -73,10 +73,10 @@ class StatBlockTableWidget extends WidgetBase {
         '#title' => strtoupper($key),
         '#default_value' => $items[$delta]->{$key},
       );
-      if (in_array($key, ['init', 'tt', 'luc', 'ir', 'wt', 'dr'])) {
-        $row[$key]['#disabled'] = TRUE;
-        $row[$key]['#attributes']['class'][] = 'calculated';
-      }
+//      if (in_array($key, ['init', 'tt', 'luc', 'ir', 'wt', 'dr'])) {
+//        $row[$key]['#disabled'] = TRUE;
+//        $row[$key]['#attributes']['class'][] = 'calculated';
+//      }
     }
     if ($all) {
       $widget['table'][] = $row;
