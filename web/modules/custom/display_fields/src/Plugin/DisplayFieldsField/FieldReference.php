@@ -70,59 +70,116 @@ class FieldReference extends Field {
   	$current_key = reset($reference_keys);
 
   	if (count($reference_keys) == 1) {
-  	  // Render the fields.
-  	  foreach ($entities as $delta => $entity) {
-  	    if ($entity->hasField($current_key)) {
+      // Render the fields.
+      if (count($entities) == 1) {
+        $entity = reset($entities);
+        if ($entity->hasField($current_key)) {
           // Get infos about this
-  	      $field_definitions = \Drupal::entityManager()->getFieldDefinitions($entity->getEntityTypeId(), $entity->bundle());
-  	      $field_definition = $field_definitions[$current_key];
-          $plugin = \Drupal::service('plugin.manager.field.formatter')->getInstance(array(
-      	    'field_definition' => $field_definition,
-      	    'view_mode' => $view_mode,
-      	    'configuration' => !empty($display_settings) ? $display_settings : array(),
-        	));
+          $field_definitions = \Drupal::entityManager()
+            ->getFieldDefinitions($entity->getEntityTypeId(), $entity->bundle());
+          $field_definition = $field_definitions[$current_key];
+          $plugin = \Drupal::service('plugin.manager.field.formatter')
+            ->getInstance(array(
+              'field_definition' => $field_definition,
+              'view_mode' => $view_mode,
+              'configuration' => !empty($display_settings) ? $display_settings : array(),
+            ));
           if ($plugin) {
-            $build[$display_field_name][$entity->id()][$current_key] = $entity->get($current_key)->view($display_settings);
+            $build = $entity->get($current_key)->view($display_settings);
           }
           // No plugin formatter are found for this field @TODO look at FieldItem annotation 'no ui' thing..
           else {
             // @TODO.. What to do here ?
             foreach ($entity->get($current_key) as $key => $value) {
               foreach ($value->getValue() as $key_value => $value_value) {
-                $build[$display_field_name][$entity->id()][$current_key][$key_value]['#markup'] = $value_value;
+                $build[$key_value]['#markup'] = $value_value;
               }
             }
           }
-  	      $build[$display_field_name][$entity->id()]['#weight'] = $delta;
-  	    }
-  	  }
-  	  return $build;
-  	}
+        }
+      }
+      else {
+        foreach ($entities as $delta => $entity) {
+          if ($entity->hasField($current_key)) {
+            // Get infos about this
+            $field_definitions = \Drupal::entityManager()
+              ->getFieldDefinitions($entity->getEntityTypeId(), $entity->bundle());
+            $field_definition = $field_definitions[$current_key];
+            $plugin = \Drupal::service('plugin.manager.field.formatter')
+              ->getInstance(array(
+                'field_definition' => $field_definition,
+                'view_mode' => $view_mode,
+                'configuration' => !empty($display_settings) ? $display_settings : array(),
+              ));
+            if ($plugin) {
+              $build[$display_field_name][$entity->id()][$current_key] = $entity->get($current_key)
+                ->view($display_settings);
+            }
+            // No plugin formatter are found for this field @TODO look at FieldItem annotation 'no ui' thing..
+            else {
+              // @TODO.. What to do here ?
+              foreach ($entity->get($current_key) as $key => $value) {
+                foreach ($value->getValue() as $key_value => $value_value) {
+                  $build[$display_field_name][$entity->id()][$current_key][$key_value]['#markup'] = $value_value;
+                }
+              }
+            }
+            $build[$display_field_name][$entity->id()]['#weight'] = $delta;
+          }
+        }
+      }
+      return $build;
+   }
 
   	// We get here, remove a part of the reference, until we reach the end.
   	unset($reference_keys[0]);
   	$display_field['settings']['display_fields_field']['reference_key'] = implode(':', $reference_keys);
 
   	$current_keys = explode('|', $current_key);
-  	foreach ($entities as $delta => $entity) {
-  	  if ($entity->hasField($current_keys[0])) {
-  	    $loaded_entities = $entity->get($current_keys[0])->referencedEntities();
-  	    // Filter by bundle if specified.
-  	    if ($current_keys[2] != '*') {
-  	    	foreach ($loaded_entities as $delta => $loaded_entity) {
-  	    		if ($loaded_entity->bundle() != $current_keys[2]) {
-  	    			unset($loaded_entities[$delta]);
-  	    		}
-  	    	}
-  	    }
-  	    // Get only the first entity referenced if specified.
-  	    if (isset($current_keys[3]) && $current_keys[3] == 0) {
-  	      $loaded_entities = array(reset($loaded_entities));
-  	    }
-  	    $build[$display_field_name][$entity->id()] = $this->getFieldBuild($loaded_entities, $display_field, $display_settings, $parent_entity, $view_mode, $language);
-  	    $build[$display_field_name][$entity->id()]['#weight'] = $delta;
-  	  }
-  	}
+
+  	// Let's be nice with singles
+  	if (count($entities) == 1) {
+  	  $entity = reset($entities);
+      if ($entity->hasField($current_keys[0])) {
+        $loaded_entities = $entity->get($current_keys[0])
+          ->referencedEntities();
+        // Filter by bundle if specified.
+        if ($current_keys[2] != '*') {
+          foreach ($loaded_entities as $delta => $loaded_entity) {
+            if ($loaded_entity->bundle() != $current_keys[2]) {
+              unset($loaded_entities[$delta]);
+            }
+          }
+        }
+        // Get only the first entity referenced if specified.
+        if (isset($current_keys[3]) && $current_keys[3] == 0) {
+          $loaded_entities = array(reset($loaded_entities));
+        }
+        $build = $this->getFieldBuild($loaded_entities, $display_field, $display_settings, $parent_entity, $view_mode, $language);
+      }
+    }
+    else {
+      foreach ($entities as $delta => $entity) {
+        if ($entity->hasField($current_keys[0])) {
+          $loaded_entities = $entity->get($current_keys[0])
+            ->referencedEntities();
+          // Filter by bundle if specified.
+          if ($current_keys[2] != '*') {
+            foreach ($loaded_entities as $delta => $loaded_entity) {
+              if ($loaded_entity->bundle() != $current_keys[2]) {
+                unset($loaded_entities[$delta]);
+              }
+            }
+          }
+          // Get only the first entity referenced if specified.
+          if (isset($current_keys[3]) && $current_keys[3] == 0) {
+            $loaded_entities = array(reset($loaded_entities));
+          }
+          $build[$display_field_name][$entity->id()] = $this->getFieldBuild($loaded_entities, $display_field, $display_settings, $parent_entity, $view_mode, $language);
+          $build[$display_field_name][$entity->id()]['#weight'] = $delta;
+        }
+      }
+    }
 
     return $build;
   }
