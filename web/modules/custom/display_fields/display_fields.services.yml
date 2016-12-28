@@ -1,0 +1,4 @@
+services:
+  plugin.manager.display_fields:
+    class: Drupal\display_fields\Plugin\DisplayFieldsPluginManager
+    parent: default_plugin_manager

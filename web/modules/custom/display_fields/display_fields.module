@@ -1,0 +1,134 @@
+<?php
+
+
+use Drupal\display_fields\DisplayFields;
+use Drupal\display_fields\Entity\DisplayFieldsView;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityDisplayInterface;
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function display_fields_entity_view_alter(&$build, EntityInterface $entity, EntityDisplayInterface $display) {
+
+  $entity_type = $entity->getEntityTypeId();
+  $bundle = $entity->bundle();
+  $view_mode = $display->get('mode');
+  $language = $entity->language()->getId();
+
+  // Put #entity_type, #bundle and #layout on the build
+  $build['#entity_type'] = $entity_type;
+  $build['#bundle'] = $bundle;
+
+  // Add Display Fields fields.
+  $display_fields = DisplayFields::getDisplayFields($entity_type, $bundle);
+  $display_fields_display = display_fields_get_entity_view_settings($entity_type, $bundle, $view_mode);
+  $display_fields_fields = $display_fields->get('display_fields');
+  if (empty($display_fields_fields)) {
+  	return;
+  }
+
+  foreach ($display_fields_fields as $key => $display_field) {
+    $display_settings = $display_fields_display->getComponent($key);
+
+    if (empty($display_settings)) {
+    	// Hidden.
+      continue;
+    }
+    $plugin = DisplayFields::getDisplayFieldsField($display_field['plugin_id'], $entity_type, $bundle);
+    if (!$plugin) {
+    	continue;
+    }
+
+    $build[$key] = $plugin->getFieldBuild(array($entity), $display_field, $display_settings, $entity, $view_mode, $language);
+    $build[$key]['#weight'] = $display_settings['weight'];
+  }
+
+}
+
+/**
+ * Returns the display fields view settings associated to a bundle and view mode.
+ *
+ * Use this function when assigning suggested display options for a component
+ * in a given view mode. Note that they will only be actually used at render
+ * time if the view mode itself is configured to use dedicated display settings
+ * for the bundle; if not, the 'default' display is used instead.
+ *
+ * The function reads the entity view display from the current configuration, or
+ * returns a ready-to-use empty one if configuration entry exists yet for this
+ * bundle and view mode. This streamlines manipulation of display objects by
+ * always returning a consistent object that reflects the current state of the
+ * configuration.
+ *
+ * Example usage:
+ * - Set the 'body' field to be displayed and the 'field_image' field to be
+ *   hidden on article nodes in the 'default' display.
+ * @code
+ * display_fields_get_entity_view_settings('node', 'article', 'default')
+ *   ->setComponent('body', array(
+ *     'type' => 'text_summary_or_trimmed',
+ *     'settings' => array('trim_length' => '200')
+ *     'weight' => 1,
+ *   ))
+ *   ->removeComponent('field_image')
+ *   ->save();
+ * @endcode
+ *
+ * @param string $entity_type
+ *   The entity type.
+ * @param string $bundle
+ *   The bundle.
+ * @param string $view_mode
+ *   The view mode, or 'default' to retrieve the 'default' display object for
+ *   this bundle.
+ *
+ * @return \Drupal\Core\Entity\Display\EntityViewDisplayInterface
+ *   The entity view display associated to the view mode.
+ */
+function display_fields_get_entity_view_settings($entity_type, $bundle, $view_mode) {
+  // Try loading the display from configuration.
+  $display = entity_load('display_fields_view', $entity_type . '.' . $bundle . '.' . $view_mode);
+
+  // If not found, create a fresh display object. We do not preemptively create
+  // new entity_view_display configuration entries for each existing entity type
+  // and bundle whenever a new view mode becomes available. Instead,
+  // configuration entries are only created when a display object is explicitly
+  // configured and saved.
+  if (!$display) {
+    $display = entity_create('display_fields_view', array(
+      'targetEntityType' => $entity_type,
+      'bundle' => $bundle,
+      'mode' => $view_mode,
+      'status' => TRUE,
+    ));
+  }
+
+  return $display;
+}
+
+
+/**
+ * Return an options list array, of DisplayFields Field Definition.
+ * @param string $entity_type
+ * @return array
+ */
+function display_fields_get_field_types($entity_type) {
+	$options = array();
+
+	$displayFieldsFieldDefinitions = DisplayFields::getDisplayFieldsFieldDefinitions($entity_type);
+
+	foreach ($displayFieldsFieldDefinitions as $plugin_id => $plugin) {
+		$options[$plugin_id] = $plugin['title'];
+	}
+
+	return $options;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function display_fields_form_entity_view_display_edit_form_alter(&$form, FormStateInterface $form_state) {
+  $form_state->loadInclude('display_fields', 'inc', 'includes/display_fields.field_ui');
+  _display_fields_form_field_ui_display($form, $form_state);
+}

@@ -1,0 +1,18 @@
+# Schema for entity fields, specifying generic component data type information.
+
+# Schema for the base of the display fields settings format.
+display_fields_settings_base:
+  type: mapping
+  mapping:
+    field_name:
+      type: string
+      label: 'field machine name'
+    label:
+      type: string
+      label: 'Label for the overview form'
+    plugin_id:
+      type: string
+      label: 'Display field plugin ID'
+    settings:
+      type: map
+      label: 'Settings'

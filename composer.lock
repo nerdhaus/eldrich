@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f546a8f1942e3b33e2dd6f7e6bc08eba",
-    "content-hash": "9ddea6c96bf40915b2db3a5fe4713ae6",
+    "hash": "c82e53ff7ccbaa74cb3e5c1075e424e6",
+    "content-hash": "b0712177dcda418c209f5fc052657907",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1894,44 +1894,6 @@
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
             "time": "2016-12-22 20:14:08"
-        },
-        {
-            "name": "drupal/display_fields",
-            "version": "dev-1.x",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/display_fields",
-                "reference": "7fa82b89e70191be640063c35281f3cb2708a261"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.x-dev",
-                    "datestamp": "1451350439"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "delta",
-                    "homepage": "https://www.drupal.org/user/1270276"
-                }
-            ],
-            "description": "Provide pseudo fields (for display) that can be used to sync other fields and display it with another formatter.",
-            "homepage": "https://www.drupal.org/project/display_fields",
-            "support": {
-                "source": "http://cgit.drupalcode.org/display_fields"
-            },
-            "time": "2015-12-29 00:50:12"
         },
         {
             "name": "drupal/eck",
@@ -8086,7 +8048,6 @@
         "drupal/layout_plugin": 15,
         "drupal/block_class": 15,
         "drupal/ief_table_view_mode": 20,
-        "drupal/display_fields": 20,
         "drupal/viewsreference": 15
     },
     "prefer-stable": true,

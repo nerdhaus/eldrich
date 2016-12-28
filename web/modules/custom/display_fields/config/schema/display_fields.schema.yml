@@ -1,0 +1,59 @@
+# Schema for the configuration files of the display_fields module (@see core.entity_view_display schema).
+display_fields.display_fields_view.*.*.*:
+  type: config_entity
+  label: 'Entity display'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    targetEntityType:
+      type: string
+      label: 'Target entity type'
+    bundle:
+      type: string
+      label: 'Bundle'
+    mode:
+      type: string
+      label: 'View or form mode machine name'
+    content:
+      type: sequence
+      label: 'Field display formatters'
+      sequence:
+        - type: entity_view_display.field.[type]
+    hidden:
+      type: sequence
+      label: 'Field display setting'
+      sequence:
+        - type: boolean
+          label: 'Value'
+    third_party_settings:
+      type: sequence
+      label: 'Third party settings'
+      sequence:
+        - type: entity_view_display.third_party.[%key]
+
+        
+display_fields.display_fields_config.*.*:
+  type: config_entity
+  label: 'Entity type display fields'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    targetEntityType:
+      type: string
+      label: 'Target entity type'
+    bundle:
+      type: string
+      label: 'Bundle'
+    display_fields:
+      type: sequence
+      label: 'Enabled display fields'
+      sequence:
+        - type: display_fields_settings_base
