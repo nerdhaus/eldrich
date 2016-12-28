@@ -1,5 +1,5 @@
 <table class="table table-condensed table-bordered table-statblock">
-  {% set properties = [['cog', 'coo', 'int', 'ref', 'sav', 'som', 'wil', 'mox'],  ['init', 'spd', 'luc', 'tt', 'ir', 'dur', 'wt', 'dr'] %}
+  {% set properties = [['cog', 'coo', 'int', 'ref', 'sav', 'som', 'wil', 'mox'], ['init', 'spd', 'luc', 'tt', 'ir', 'dur', 'wt', 'dr']] %}
   {% for property_group in properties %}
     <thead>
     {% for property in property_group %}
@@ -7,7 +7,7 @@
     {% endfor %}
     </thead>
     <tr>
-      {% for property in properties %}
+      {% for property in property_group %}
         {% set constant = attribute(stats.total.constant, property) %}
         {% set conditional = attribute(stats.total.conditional, property) %}
 
