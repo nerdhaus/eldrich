@@ -36,6 +36,7 @@ use Drupal\Core\Entity\EntityInterface;
 class EntityArmorCalculator extends EldrichBaseCalculator {
 
   public static function total(EntityInterface $entity) {
+    return [];
     $armor = ['energy' => 0, 'kinetic' => 0];
     $effects = [];
 

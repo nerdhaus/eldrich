@@ -42,12 +42,3 @@ table.table-statblock tr td {
   text-align: center;
   border-width: 1px;
 }
-
-.dl-horizontal dd {
-  margin-left: 95px;
-}
-
-
-.dl-horizontal dt {
-  width: 80px;
-}

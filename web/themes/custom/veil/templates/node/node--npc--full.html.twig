@@ -86,7 +86,7 @@ view_mode ? view_mode|clean_class,
   {% include directory ~ '/templates/partials/simple-statblock.html.twig' %}
 
   <dl class="dl-horizontal">
-  {% for f in [ content.field_skills, content.field_traits, content.field_sleights, content.field_gear ] %}
+  {% for f in [ content.field_morph, content.field_skills, content.field_augmentations, content.field_network_rep, content.field_traits, content.field_gear, content.field_sleights ] %}
     {% if f %}<dt>{{ f|field_label }}</dt> <dd>{{ f|field_value|safe_join(', ') }}</dd>{% endif %}
   {% endfor %}
   </dl>
