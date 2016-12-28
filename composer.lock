@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0ad4b254778e27e135fa80c92d38f8dd",
-    "content-hash": "ef6b5abf76f031dcfb77eb0234e6a762",
+    "hash": "f546a8f1942e3b33e2dd6f7e6bc08eba",
+    "content-hash": "9ddea6c96bf40915b2db3a5fe4713ae6",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1075,7 +1075,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/block_class-8.x-1.0-alpha1.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha1",
                 "shasum": "194cd52210ea2e0e5dbbd34fad4528d500424430"
             },
             "require": {
@@ -1251,7 +1251,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/config_update-8.x-1.2.zip",
-                "reference": null,
+                "reference": "8.x-1.2",
                 "shasum": "9490c58d1b7e58c5c08533c93d5565f356144591"
             },
             "require": {
@@ -1295,12 +1295,12 @@
             "version": "1.0.0-rc12",
             "source": {
                 "type": "git",
-                "url": "https://github.com/hechoendrupal/DrupalConsole.git",
+                "url": "https://github.com/hechoendrupal/drupal-console.git",
                 "reference": "da0e61df3451d465334ee0f6750d557f37073165"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoendrupal/DrupalConsole/zipball/da0e61df3451d465334ee0f6750d557f37073165",
+                "url": "https://api.github.com/repos/hechoendrupal/drupal-console/zipball/da0e61df3451d465334ee0f6750d557f37073165",
                 "reference": "da0e61df3451d465334ee0f6750d557f37073165",
                 "shasum": ""
             },
@@ -1896,6 +1896,44 @@
             "time": "2016-12-22 20:14:08"
         },
         {
+            "name": "drupal/display_fields",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/display_fields",
+                "reference": "7fa82b89e70191be640063c35281f3cb2708a261"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1451350439"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "delta",
+                    "homepage": "https://www.drupal.org/user/1270276"
+                }
+            ],
+            "description": "Provide pseudo fields (for display) that can be used to sync other fields and display it with another formatter.",
+            "homepage": "https://www.drupal.org/project/display_fields",
+            "support": {
+                "source": "http://cgit.drupalcode.org/display_fields"
+            },
+            "time": "2015-12-29 00:50:12"
+        },
+        {
             "name": "drupal/eck",
             "version": "dev-1.x",
             "source": {
@@ -2393,6 +2431,45 @@
                 "source": "http://git.drupal.org/project/google_analytics.git",
                 "issues": "https://www.drupal.org/project/issues/google_analytics"
             }
+        },
+        {
+            "name": "drupal/ief_table_view_mode",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/ief_table_view_mode",
+                "reference": "1fa2171f12df2b127cbee1692b1645ba650dbc4c"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/inline_entity_form": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1474050239"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "mnico",
+                    "homepage": "https://www.drupal.org/user/1119544"
+                }
+            ],
+            "description": "Defines a view mode to set up the columns of the table for the Inline Entity Form widget.",
+            "homepage": "https://www.drupal.org/project/ief_table_view_mode",
+            "support": {
+                "source": "http://cgit.drupalcode.org/ief_table_view_mode"
+            },
+            "time": "2016-09-16 18:23:23"
         },
         {
             "name": "drupal/image_effects",
@@ -3217,7 +3294,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/twig_field_value-8.x-1.1.zip",
-                "reference": null,
+                "reference": "8.x-1.1",
                 "shasum": "793d634347eec904617e7bc3b03b75a69fceb928"
             },
             "require": {
@@ -8008,6 +8085,8 @@
         "drupal/quick_pages": 15,
         "drupal/layout_plugin": 15,
         "drupal/block_class": 15,
+        "drupal/ief_table_view_mode": 20,
+        "drupal/display_fields": 20,
         "drupal/viewsreference": 15
     },
     "prefer-stable": true,

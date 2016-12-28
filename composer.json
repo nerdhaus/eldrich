@@ -56,7 +56,9 @@
         "drupal/layout_plugin": "^1.0@alpha",
         "drupal/config_update": "^1.2",
         "drupal/block_class": "^1.0@alpha",
-        "drupal/twig_field_value": "^1.1"
+        "drupal/twig_field_value": "^1.1",
+        "drupal/ief_table_view_mode": "1.x-dev",
+        "drupal/display_fields": "1.x-dev"
     },
     "require-dev": {
         "behat/mink": "~1.7",
