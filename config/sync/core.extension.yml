@@ -16,6 +16,7 @@ module:
   datetime: 0
   dblog: 0
   devel: 0
+  display_fields: 0
   dynamic_page_cache: 0
   eck: 0
   editor: 0
@@ -50,7 +51,6 @@ module:
   page_cache: 0
   path: 0
   quick_pages: 0
-  quickedit: 0
   range: 0
   rdf: 0
   search: 0

@@ -1,0 +1,41 @@
+uuid: 7e4cf45a-31f0-4c9a-93de-455f707ca5ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: node.npc.default
+label: null
+targetEntityType: node
+bundle: npc
+mode: default
+content:
+  field_augmentations:
+    type: entity_reference_override_label
+    weight: '7'
+    settings:
+      link: '1'
+      override_action: title-append
+    label: above
+    third_party_settings: {  }
+  field_network_rep:
+    type: eldrich_citation_formatter
+    weight: '5'
+    settings: {  }
+    label: above
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_attribution: true
+  field_description: true
+  field_equipped_armor: true
+  field_equipped_weapons: true
+  field_gear: true
+  field_identity: true
+  field_morph: true
+  field_quote: true
+  field_skills: true
+  field_sleights: true
+  field_stats: true
+  field_traits: true
