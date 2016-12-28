@@ -19,16 +19,13 @@ class ArrayToDict extends ProcessPluginBase {
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-    $conf = $this->configuration;
-    $keys = $conf['keys'];
+    $delimiter = $this->configuration['delimiter'];
+    $keys = $this->configuration['keys'];
 
-    if (!is_array($value)) {
-      $delimiter = empty($conf['delimiter']) ? ',' : $conf['delimiter'];
-      $values = explode($delimiter, $value, count($keys));
-    }
-    else {
-      $values = $value;
-    }
+    $delimiter = empty($delimiter) ? ',' : $delimiter;
+    $values = explode($delimiter, $value, count($keys));
+
+    $results = [];
 
     for($i = 0; $i < min(count($keys), count($values)); $i++) {
       $results[$keys[$i]] = trim($values[$i]);
