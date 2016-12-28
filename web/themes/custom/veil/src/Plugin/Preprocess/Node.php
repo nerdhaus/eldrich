@@ -31,21 +31,50 @@ class Node extends PreprocessBase implements PreprocessInterface {
 
     /** @var NodeInterface $node */
     $node = $variables->node;
+    $variables->icon = $this->getIcon($node);
+
     if ($variables->view_mode == 'full') {
-      switch ($node->bundle()) {
-        case 'npc':
-        case 'pc':
-        case 'mind':
-        case 'robot':
-        case 'creature':
-          $variables['stats'] = StatTreeCalculator::total($node);
-          $variables['skills'] = SkillTreeCalculator::total($node, $variables['stats']);
-          break;
+      // Things with stats and skills
+      if (in_array($node->bundle(), ['npc', 'pc', 'mind', 'robot', 'creature'])) {
+        $variables['stats'] = StatTreeCalculator::total($node);
+        $variables['skills'] = SkillTreeCalculator::total($node, $variables['stats']);
       }
     }
   }
 
   public function getIcon(NodeInterface $node) {
+    $icon = NULL;
+    if (!empty($node->field_gear_type)) {
+      $icon = $node->field_gear_type->entity->field_icon->value;
+    }
+    if (empty($icon)) {
+      switch ($node->bundle()) {
+        case 'weapon':
+          $icon = 'targeted';
+          break;
+        case 'gear':
+          $icon = 'spanner';
+          break;
+        case 'creature':
+          $icon = 'scorpion';
+          break;
+        case 'npc':
+          $icon = 'meeple';
+          break;
+        case 'faction':
+          $icon = 'anarchy';
+          break;
+        case 'location':
+          $icon = 'world';
+          break;
+        case 'strain':
+          $icon = 'biohazard';
+          break;
+        default:
+          $icon = 'eclipse';
+      }
+    }
 
+    return 'icon-' . $icon;
   }
 }
