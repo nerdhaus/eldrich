@@ -34,6 +34,7 @@ module:
   file: 0
   filter: 0
   google_analytics: 0
+  ief_table_view_mode: 0
   image: 0
   inline_entity_form: 0
   integer_time: 0

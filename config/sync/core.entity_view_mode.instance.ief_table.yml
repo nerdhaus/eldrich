@@ -1,0 +1,10 @@
+uuid: 24bfe232-4fdd-4adb-a383-be6145ca505f
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: instance.ief_table
+label: ief_table
+targetEntityType: instance
+cache: true

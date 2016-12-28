@@ -1,0 +1,36 @@
+uuid: 8b3853ed-7a89-4c23-9df3-fb26e6a51ad7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.instance.ief_table
+    - eck.eck_type.instance.weapon_instance
+    - field.field.instance.weapon_instance.field_ammo
+    - field.field.instance.weapon_instance.field_ammo_mods
+    - field.field.instance.weapon_instance.field_weapon
+    - field.field.instance.weapon_instance.field_weapon_mods
+id: instance.weapon_instance.ief_table
+targetEntityType: instance
+bundle: weapon_instance
+mode: ief_table
+content:
+  field_ammo:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_weapon:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+hidden:
+  field_ammo_mods: true
+  field_weapon_mods: true
+  label: true
+  title: true
+  type: true

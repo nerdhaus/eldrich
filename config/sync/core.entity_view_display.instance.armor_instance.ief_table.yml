@@ -1,0 +1,36 @@
+uuid: f3641129-b46a-4f1c-8a8d-9b100b4fd6af
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.instance.ief_table
+    - eck.eck_type.instance.armor_instance
+    - field.field.instance.armor_instance.field_armor
+    - field.field.instance.armor_instance.field_armor_mods
+  module:
+    - field_delimiter
+id: instance.armor_instance.ief_table
+targetEntityType: instance
+bundle: armor_instance
+mode: ief_table
+content:
+  field_armor:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_armor_mods:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
+    type: entity_reference_label
+hidden:
+  label: true
+  title: true
+  type: true
