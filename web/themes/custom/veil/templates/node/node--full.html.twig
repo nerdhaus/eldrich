@@ -39,7 +39,7 @@
  */
 #}
 
-<article{{ attributes }}>
+<article{{ attributes.addClass(classes) }}>
 
   {% if content.field_quote %}
     <blockquote><p>{{ content.field_quote|field_value }}</p></blockquote>

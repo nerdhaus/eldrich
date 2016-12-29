@@ -45,7 +45,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
 
   public function getIcon(NodeInterface $node) {
     $icon = NULL;
-    if (!empty($node->field_gear_type)) {
+    if ($node->field_gear_type && !$node->field_gear_type->isEmpty()) {
       $icon = $node->field_gear_type->entity->field_icon->value;
     }
     if (empty($icon)) {

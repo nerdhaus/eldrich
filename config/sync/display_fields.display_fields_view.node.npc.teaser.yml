@@ -1,0 +1,29 @@
+uuid: 71e0435a-f5ee-47d8-b53f-d34a7648be01
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: node.npc.teaser
+label: null
+targetEntityType: node
+bundle: npc
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_attribution: true
+  field_augmentations: true
+  field_description: true
+  field_equipped_armor: true
+  field_equipped_weapons: true
+  field_gear: true
+  field_identity: true
+  field_morph: true
+  field_network_rep: true
+  field_quote: true
+  field_skills: true
+  field_sleights: true
+  field_stats: true
+  field_traits: true

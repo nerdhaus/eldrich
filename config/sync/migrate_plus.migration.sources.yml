@@ -34,8 +34,6 @@ source:
       weight: Weight
   keys:
     - title
-  constants:
-    content_type: source
 process:
   title: title
   type: constants/content_type

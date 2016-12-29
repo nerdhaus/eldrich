@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.catalog
     - node.type.armor
     - node.type.augmentation
     - node.type.drug
@@ -91,7 +91,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: catalog
       fields:
         title:
           id: title

@@ -42,3 +42,7 @@ table.table-statblock tr td {
   text-align: center;
   border-width: 1px;
 }
+
+.eldrich-icon {
+  font-size: 200%;
+}
