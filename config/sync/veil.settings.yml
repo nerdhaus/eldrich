@@ -28,4 +28,7 @@ region_wells:
 breadcrumb_home: 1
 navbar_position: static-top
 table_responsive: '1'
+breadcrumb: '1'
+image_shape: img-thumbnail
+popover_animation: 0
 table: ''

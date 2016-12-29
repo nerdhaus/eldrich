@@ -5,13 +5,17 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.source.field_code
+    - field.field.node.source.field_cover_art
     - field.field.node.source.field_description
     - field.field.node.source.field_home_page
     - field.field.node.source.field_is_canon
     - field.field.node.source.field_source_type
     - field.field.node.source.field_weight
+    - image.style.medium
     - node.type.source
   module:
+    - image
+    - link
     - text
     - user
 id: node.source.teaser
@@ -19,18 +23,46 @@ targetEntityType: node
 bundle: source
 mode: teaser
 content:
-  field_description:
-    type: text_trimmed
-    weight: 1
+  field_code:
+    type: string
+    weight: 2
     label: hidden
     settings:
-      trim_length: 400
+      link_to_entity: false
+    third_party_settings: {  }
+  field_cover_art:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+  field_description:
+    type: text_default
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_home_page:
+    type: link
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      rel: ''
+      target: ''
+      url_only: false
+      url_plain: false
+    third_party_settings: {  }
+  field_source_type:
+    type: entity_reference_label
+    weight: 4
+    label: hidden
+    settings:
+      link: false
     third_party_settings: {  }
 hidden:
-  field_code: true
-  field_cover_art: true
-  field_home_page: true
   field_is_canon: true
-  field_source_type: true
   field_weight: true
   links: true

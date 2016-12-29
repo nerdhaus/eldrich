@@ -152,6 +152,9 @@ class Node extends PreprocessBase implements PreprocessInterface {
       case 'derangement':
         $badge = $content['field_derangement_level'];
         break;
+      case 'source':
+        $badge = $content['field_source_type'];
+        break;
     }
 
     return $badge;

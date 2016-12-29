@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * Full-page display.
+ *
+ * Standard variables:
+ * - node: The node entity with limited access to object properties and methods.
+ * - label: The title of the node.
+ * - content: All node items.
+ * - metadata: Metadata for this node.
+ * - url: Direct URL of the current node.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ *
+ * Eldrich/Veil specific variables:
+ * - icon: the icon class for the item. Mostly useful for gear.
+ * - badge: the nodetype-appropriate field to feature in the title badge.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+{%
+set classes = [
+  node.bundle|clean_class,
+  node.isPromoted() ? 'is-promoted',
+  node.isSticky() ? 'is-sticky',
+  not node.isPublished() ? 'is-unpublished',
+  view_mode ? view_mode|clean_class,
+  'panel',
+  'panel-default',]
+%}
+<div class="col-md-6">
+  <div {{ attributes.addClass(classes) }}>
+    <div class="panel-body media" id="{{ content.field_code|field_raw('value') }}">
+      {% if content.field_cover_art %}
+        <div class="media-left media-top">
+          <a href="{{ content.field_home_page|field_raw('uri') }}">
+            {{ content.field_cover_art }}
+          </a>
+        </div>
+        {% endif %}
+      <div class="media-body">
+        {{ title_prefix }}
+        <h4 {{ title_attributes.addClass('media-heading') }}>
+          {% if badge %}<small class="badge pull-right">{{ badge|field_value }}</small>{% endif %}
+          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+        </h4>{{ title_suffix }}
+        {{ content.field_description }}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clearblock"></div>

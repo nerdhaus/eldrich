@@ -51,3 +51,16 @@ table.table-statblock tr td {
 div.panel.teaser {
   margin-bottom: 15px;
 }
+
+
+/* Probably should just start using SASS. */
+.views-row:nth-child(even) .clearblock:before {
+  content: " ";
+  display: table;
+}
+
+.views-row:nth-child(even) .clearblock:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
