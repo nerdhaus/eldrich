@@ -10,42 +10,63 @@ dependencies:
     - field.field.node.location.field_population
     - node.type.location
   module:
+    - field_group
     - text
     - user
+third_party_settings:
+  field_group:
+    group_attributes:
+      children:
+        - field_location_type
+        - field_parent_location
+        - field_population
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Attributes
 id: node.location.default
 targetEntityType: node
 bundle: location
 mode: default
 content:
   field_attribution:
-    weight: 5
+    weight: 2
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_description:
-    weight: 2
+    weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_location_type:
-    weight: 1
+    weight: 4
     label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_parent_location:
-    weight: 3
+    weight: 5
     label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_population:
-    weight: 4
+    weight: 6
     label: inline
     settings:
       thousand_separator: ''

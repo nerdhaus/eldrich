@@ -20,8 +20,37 @@ dependencies:
   module:
     - ep_skill_reference
     - ep_statblock
+    - field_delimiter
+    - field_group
     - text
     - user
+third_party_settings:
+  field_group:
+    group_attributes:
+      children:
+        - field_sleight_level
+        - field_is_active
+        - field_action_type
+        - field_sleight_range
+        - field_sleight_duration
+        - field_psi_skill
+        - field_strain
+        - field_stats
+        - field_skills
+        - field_conditional
+      parent_name: ''
+      weight: 3
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Attributes
 id: node.sleight.default
 targetEntityType: node
 bundle: sleight
@@ -34,14 +63,14 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_action_type:
-    weight: 3
+    weight: 2
     label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_attribution:
-    weight: 8
+    weight: 9
     label: hidden
     settings:
       view_mode: default
@@ -49,7 +78,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_conditional:
-    weight: 102
+    weight: 9
     label: above
     settings:
       format: default
@@ -73,21 +102,23 @@ content:
     third_party_settings: {  }
     type: boolean
   field_psi_skill:
-    weight: 6
+    weight: 5
     label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_skills:
-    weight: 104
-    label: above
+    weight: 8
+    label: inline
     settings:
-      link: true
-    third_party_settings: {  }
+      link: '1'
+    third_party_settings:
+      field_delimiter:
+        delimiter: ', '
     type: skill_reference_label
   field_sleight_duration:
-    weight: 5
+    weight: 4
     label: inline
     settings:
       link: true
@@ -101,20 +132,20 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
   field_sleight_range:
-    weight: 4
+    weight: 3
     label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_stats:
-    weight: 103
-    label: above
+    weight: 7
+    label: inline
     settings: {  }
     third_party_settings: {  }
-    type: stat_block_table
+    type: stat_block_simple
   field_strain:
-    weight: 7
+    weight: 6
     label: inline
     settings:
       link_to_entity: false

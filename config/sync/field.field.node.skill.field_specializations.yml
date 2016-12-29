@@ -9,7 +9,7 @@ id: node.skill.field_specializations
 field_name: field_specializations
 entity_type: node
 bundle: skill
-label: Specializations
+label: 'Example Specializations'
 description: ''
 required: false
 translatable: false

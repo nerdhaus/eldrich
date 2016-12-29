@@ -9,7 +9,7 @@ id: node.stat.field_is_ego_stat
 field_name: field_is_ego_stat
 entity_type: node
 bundle: stat
-label: 'Stat is Ego-based'
+label: Ego-Based
 description: ''
 required: false
 translatable: false

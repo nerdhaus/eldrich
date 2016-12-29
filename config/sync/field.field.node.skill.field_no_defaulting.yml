@@ -9,7 +9,7 @@ id: node.skill.field_no_defaulting
 field_name: field_no_defaulting
 entity_type: node
 bundle: skill
-label: 'No defaulting'
+label: Defaulting
 description: ''
 required: false
 translatable: false
@@ -18,6 +18,6 @@ default_value:
     value: 0
 default_value_callback: ''
 settings:
-  on_label: 'The character must have trained in this skill to use it.'
-  off_label: 'If the character doesn''t have this skill, their base aptitude may be used instead.'
+  on_label: 'The character MUST have trained in this skill to use it.'
+  off_label: 'The character''s base ability may be used if they haven''t trained in this skill.'
 field_type: boolean
