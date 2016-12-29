@@ -31,17 +31,11 @@ bundle: pc
 mode: teaser
 content:
   field_description:
-    type: text_default
+    type: text_trimmed
     weight: 1
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
-  field_quote:
-    type: string
-    weight: 0
-    label: hidden
     settings:
-      link_to_entity: false
+      trim_length: 400
     third_party_settings: {  }
 hidden:
   field_attribution: true
@@ -54,6 +48,7 @@ hidden:
   field_motivations: true
   field_muse: true
   field_owned_blueprints: true
+  field_quote: true
   field_skills: true
   field_sleights: true
   field_stats: true

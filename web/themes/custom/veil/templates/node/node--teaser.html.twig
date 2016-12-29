@@ -24,6 +24,7 @@
  *
  * Eldrich/Veil specific variables:
  * - icon: the icon class for the item. Mostly useful for gear.
+ * - badge: the nodetype-appropriate field to feature in the title badge.
  *
  * @ingroup templates
  *
@@ -39,10 +40,8 @@ set classes = [
   not node.isPublished() ? 'is-unpublished',
   view_mode ? view_mode|clean_class,
   'panel',
-  'panel-primary',
+  'panel-default',
   'clearfix',
-  'panel',
-  'panel-default'
 ]
 %}
 
@@ -54,8 +53,8 @@ set classes = [
     <div class="media-body">
       {{ title_prefix }}
       <h4 {{ title_attributes.addClass('media-heading') }}>
+        {% if badge %}<small class="badge pull-right">{{ badge|field_value }}</small>{% endif %}
         <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-        {% if content.field_cost %}<small class="badge pull-right">{{ content.field_cost|field_value }}</small>{% endif %}
       </h4>{{ title_suffix }}
       {{ content.field_description }}
     </div>

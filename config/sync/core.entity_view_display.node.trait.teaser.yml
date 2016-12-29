@@ -21,39 +21,20 @@ targetEntityType: node
 bundle: trait
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-  field_cp_cost:
-    type: number_integer
-    weight: 2
-    label: inline
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
   field_description:
-    type: text_default
-    weight: 0
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-  field_special_effect:
-    type: string
+    type: text_trimmed
     weight: 1
-    label: inline
+    label: hidden
     settings:
-      link_to_entity: false
+      trim_length: 400
     third_party_settings: {  }
 hidden:
   field_attribution: true
   field_conditional: true
+  field_cp_cost: true
   field_ego_trait: true
   field_morph_trait: true
   field_skills: true
+  field_special_effect: true
   field_stats: true
   links: true

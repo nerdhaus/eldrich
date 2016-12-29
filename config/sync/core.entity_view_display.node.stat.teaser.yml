@@ -20,28 +20,16 @@ targetEntityType: node
 bundle: stat
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-  field_calculation:
-    type: string
-    weight: 1
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_description:
-    type: text_default
-    weight: 0
+    type: text_trimmed
+    weight: 1
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 400
     third_party_settings: {  }
 hidden:
   field_aptitude_ranges: true
+  field_calculation: true
   field_code: true
   field_is_aptitude: true
   field_is_ego_stat: true

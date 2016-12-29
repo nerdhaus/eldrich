@@ -17,17 +17,10 @@ targetEntityType: node
 bundle: derangement
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
   field_derangement_level:
     type: entity_reference_label
     weight: 1
-    label: inline
+    label: hidden
     settings:
       link: false
     third_party_settings: {  }

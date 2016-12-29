@@ -12,6 +12,13 @@ targetEntityType: node
 bundle: strain
 mode: teaser
 content:
+  field_description:
+    type: text_trimmed
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 400
+    third_party_settings: {  }
   links:
     weight: 100
 hidden:

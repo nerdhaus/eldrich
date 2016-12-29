@@ -20,15 +20,15 @@ mode: teaser
 content:
   field_description:
     type: text_trimmed
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
   field_location_type:
     type: entity_reference_label
-    weight: 0
-    label: above
+    weight: 1
+    label: hidden
     settings:
       link: false
     third_party_settings: {  }

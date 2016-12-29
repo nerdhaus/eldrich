@@ -19,18 +19,12 @@ targetEntityType: node
 bundle: source
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
   field_description:
-    type: text_default
-    weight: 0
+    type: text_trimmed
+    weight: 1
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 400
     third_party_settings: {  }
 hidden:
   field_code: true

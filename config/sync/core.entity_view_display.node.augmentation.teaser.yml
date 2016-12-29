@@ -26,16 +26,26 @@ targetEntityType: node
 bundle: augmentation
 mode: teaser
 content:
-  field_description:
-    type: text_default
-    weight: 0
+  field_cost:
+    type: entity_reference_quantity_label
+    weight: 2
     label: hidden
-    settings: {  }
+    settings:
+      location: suffix
+      template: ' (min. {{ quantity }})'
+      link: false
+    third_party_settings: {  }
+  field_description:
+    type: text_trimmed
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 400
     third_party_settings: {  }
   field_gear_type:
     type: entity_reference_label
-    weight: 1
-    label: inline
+    weight: 0
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }

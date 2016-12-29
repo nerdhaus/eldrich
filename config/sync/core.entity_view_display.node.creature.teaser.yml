@@ -26,13 +26,6 @@ targetEntityType: node
 bundle: creature
 mode: teaser
 content:
-  field_creature_type:
-    type: entity_reference_label
-    weight: 1
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
   field_description:
     type: text_default
     weight: 0
@@ -43,6 +36,7 @@ hidden:
   field_armor: true
   field_attribution: true
   field_augmentations: true
+  field_creature_type: true
   field_equipped_weapons: true
   field_gear: true
   field_mobility_system: true

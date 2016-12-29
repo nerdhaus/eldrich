@@ -46,3 +46,8 @@ table.table-statblock tr td {
 .eldrich-icon {
   font-size: 200%;
 }
+
+
+div.panel.teaser {
+  margin-bottom: 15px;
+}
