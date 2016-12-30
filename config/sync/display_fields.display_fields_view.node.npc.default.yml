@@ -10,6 +10,14 @@ targetEntityType: node
 bundle: npc
 mode: default
 content:
+  augmentations:
+    type: entity_reference_override_label
+    weight: '7'
+    settings:
+      link: '1'
+      override_action: suffix
+    label: inline
+    third_party_settings: {  }
   field_augmentations:
     type: entity_reference_override_label
     weight: '7'
@@ -26,6 +34,15 @@ content:
     third_party_settings: {  }
   links:
     weight: 100
+  network_rep:
+    type: entity_reference_quantity_label
+    weight: '6'
+    settings:
+      link: '1'
+      location: suffix
+      template: ': {{ quantity }}'
+    label: inline
+    third_party_settings: {  }
 hidden:
   field_attribution: true
   field_description: true

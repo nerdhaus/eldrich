@@ -7,8 +7,8 @@ label: null
 targetEntityType: node
 bundle: npc
 display_fields:
-  field_augmentations:
-    field_name: field_augmentations
+  augmentations:
+    field_name: augmentations
     label: Augmentations
     plugin_id: reference
     settings:
@@ -20,8 +20,8 @@ display_fields:
         source_bundle: npc
         field_name: field_augmentations
         field_name_reset: Reset
-  field_network_rep:
-    field_name: field_network_rep
+  network_rep:
+    field_name: network_rep
     label: 'Network Rep'
     plugin_id: reference
     settings:
