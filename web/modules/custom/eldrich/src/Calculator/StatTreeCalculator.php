@@ -68,6 +68,7 @@ class StatTreeCalculator extends EldrichBaseCalculator {
           $statgroups['shell'] = StatTreeCalculator::walkTree($entity->field_morph->entity);
           StatTreeCalculator::addSets($statgroups['total']['conditional'], $statgroups['shell']['conditional']);
         }
+        StatTreeCalculator::addSets($statgroups['total']['conditional'], $statgroups['total']['baseline']);
 
         unset($statgroups['total']['baseline']);
         StatTreeCalculator::calculateProperties($statgroups['total']['constant']);
@@ -115,6 +116,10 @@ class StatTreeCalculator extends EldrichBaseCalculator {
         foreach ($entity->{$field} as $f) {
           $e = $f->entity;
           if ($es = $e->field_stats->getValue()) {
+            // Suddenly, deltas!
+            if (count($es) == 1) {
+              $es = reset($es);
+            }
             if ($e->field_conditional->value == TRUE) {
               StatTreeCalculator::addSets($stats['conditional'], $es);
             }
