@@ -42,7 +42,7 @@ set classes = [
   'panel',
   'panel-default',]
 %}
-<div class="col-md-6">
+<div class="col-md-6 col-sm-12">
   <div {{ attributes.addClass(classes) }}>
     <div class="panel-body media" id="{{ content.field_code|field_raw('value') }}">
       {% if content.field_cover_art %}
