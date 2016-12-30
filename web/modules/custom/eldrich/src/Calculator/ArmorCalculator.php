@@ -3,11 +3,10 @@ namespace Drupal\eldrich\Calculator;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Link;
-use Drupal\Core\Url;
 
 
 /**
- * Class EntityArmorCalculator
+ * Class ArmorCalculator
  * @package Drupal\eldrich\Calculator
  *
  * Responsible for collapsing any entity's armor into single stats.
@@ -35,7 +34,7 @@ use Drupal\Core\Url;
  * of armor. That will make order meaningful, though, and the change will merit
  * revisiting the walk order above.
  */
-class EntityArmorCalculator extends EldrichBaseCalculator {
+class ArmorCalculator {
 
   public static function total(EntityInterface $entity) {
     $data = static::defaultData();
@@ -43,7 +42,7 @@ class EntityArmorCalculator extends EldrichBaseCalculator {
     if (isset($entity->field_morph)) {
       // If we're looking at an NPC or a Character, they have a 'morph' ECK
       // instance that stores augs and other details. Total up that sub-group.
-      $data = EntityArmorCalculator::total($entity->field_morph->entity);
+      $data = ArmorCalculator::total($entity->field_morph->entity);
     }
     else if (isset($entity->field_model)) {
       // If there's a 'field_model' we're in an ECK entity. Grab its base armor

@@ -1,13 +1,12 @@
 <?php
 
 namespace Drupal\eldrich\Calculator;
-use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\Core\Field\FieldItemListInterface;
+
 use Drupal\Core\Entity\EntityInterface;
 
 
 /**
- * Class EquippedWeaponCalculator
+ * Class WeaponCalculator
  * @package Drupal\eldrich\Calculator
  *
  * Responsible for collapsing weapon clusters into single stats.
@@ -25,7 +24,8 @@ use Drupal\Core\Entity\EntityInterface;
  *   - Flag to indicate whether SOM / 10 is added
  * - The number of rounds in a magazine, if appropriate.
  * - A list of additional effects applied by the weapon/ammo/mods
- * - An average damage + AP value based on the total.
+ * - An average damage value based on the total.
+ * - An array of supported firing mode codes (SS, SA, BF, FA)
  *
  * To derive that we need to get the data from the weapon itself, walk any mods,
  * add ammo data, then walk any ammo mods. The good news is it's not as tweaky
@@ -40,7 +40,7 @@ use Drupal\Core\Entity\EntityInterface;
  * [grenade] Sticky EMP grenade: No damage
  *           Radios w/in 10m of blast reduced to 10% range
  */
-class EquippedWeaponCalculator extends EldrichBaseCalculator {
+class WeaponCalculator {
   public static function total(EntityInterface $entity) {
     $data = [
       'linked_skill' => NULL,
@@ -56,6 +56,7 @@ class EquippedWeaponCalculator extends EldrichBaseCalculator {
         'effects' => [],
       ],
       'rounds' => 0,
+      'modes' => [],
       'effects' => [],
     ];
 
@@ -67,7 +68,7 @@ class EquippedWeaponCalculator extends EldrichBaseCalculator {
       $weapon = $entity->field_weapon->entity;
     }
 
-    if (isset($weapon->field_linked_skill)) {
+    if (!$weapon->field_linked_skill->isEmpty()) {
       $data['linked_skill'] = $weapon->field_linked_skill->target_id;
       switch ($weapon->field_linked_skill->entity->label()) {
         case 'Kinetic Weapons':
@@ -95,20 +96,20 @@ class EquippedWeaponCalculator extends EldrichBaseCalculator {
       }
     }
 
-    EquippedWeaponCalculator::accountForItem($data, $weapon);
-
-    if (!empty($entity->field_weapon_mods)) {
-      foreach ($entity->field_weapon_mods as $mod) {
-        EquippedWeaponCalculator::accountForItem($data, $mod->entity);
-      }
+    foreach ($weapon->field_firing_modes as $mode) {
+      $data['modes'][$mode->entity->field_lookup_code->value] = $mode->entity->label();
     }
 
-    if (!empty($entity->field_ammo->entity)) {
-      EquippedWeaponCalculator::accountForItem($data, $entity->field_ammo->entity);
-      if (!empty($entity->field_ammo_mods)) {
-        foreach ($entity->field_ammo_mods as $ammo_mod) {
-          EquippedWeaponCalculator::accountForItem($data, $ammo_mod->entity);
-        }
+    static::accountForItem($data, $weapon);
+
+    foreach ($entity->field_weapon_mods as $mod) {
+      static::accountForItem($data, $mod->entity);
+    }
+
+    if (!$entity->field_ammo->isEmpty()) {
+      static::accountForItem($data, $entity->field_ammo->entity);
+      foreach ($entity->field_ammo_mods as $ammo_mod) {
+        static::accountForItem($data, $ammo_mod->entity);
       }
     }
 

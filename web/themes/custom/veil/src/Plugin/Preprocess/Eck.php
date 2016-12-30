@@ -11,8 +11,8 @@ use Drupal\bootstrap\Utility\Variables;
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessInterface;
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessBase;
 use Drupal\eck\Entity\EckEntity;
-use Drupal\eldrich\Calculator\EntityArmorCalculator;
-use Drupal\eldrich\Calculator\EquippedWeaponCalculator;
+use Drupal\eldrich\Calculator\ArmorCalculator;
+use Drupal\eldrich\Calculator\WeaponCalculator;
 use Drupal\eldrich\Calculator\SkillTreeCalculator;
 use Drupal\eldrich\Calculator\StatTreeCalculator;
 
@@ -48,12 +48,12 @@ class Eck extends PreprocessBase implements PreprocessInterface {
   public function preprocessInstance(EckEntity $eck, Variables $variables) {
     switch ($eck->bundle()) {
       case 'weapon_instance':
-        foreach (EquippedWeaponCalculator::total($eck) as $key => $value) {
+        foreach (WeaponCalculator::total($eck) as $key => $value) {
           $variables[$key] = $value;
         }
         break;
       case 'armor_instance':
-        foreach (EntityArmorCalculator::total($eck) as $key => $value) {
+        foreach (ArmorCalculator::total($eck) as $key => $value) {
           $variables[$key] = $value;
         }
         break;

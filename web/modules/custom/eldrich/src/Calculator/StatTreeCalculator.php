@@ -1,7 +1,7 @@
 <?php
 
 namespace Drupal\eldrich\Calculator;
-use Drupal\Core\Field\FieldItemListInterface;
+
 use Drupal\Core\Entity\FieldableEntityInterface;
 
 
@@ -24,6 +24,7 @@ use Drupal\Core\Entity\FieldableEntityInterface;
  * - total
  *   - constant (always applies)
  *   - conditional (conditionally applies)
+ * - entities (pre-built set of data about each stat)
  *
  * To derive this information, it's necessary to walk through:
  *
@@ -37,7 +38,11 @@ use Drupal\Core\Entity\FieldableEntityInterface;
  * - entity->field_morph->field_augmentations->field_stats
  *
  */
-class StatTreeCalculator extends EldrichBaseCalculator {
+class StatTreeCalculator {
+
+  /** @var array $statList */
+  private static $statList = [];
+
   public static function total(FieldableEntityInterface $entity) {
     $statgroups = ['total' => [], 'mind' => [], 'shell' => []];
 
@@ -45,57 +50,57 @@ class StatTreeCalculator extends EldrichBaseCalculator {
     switch ($entity->bundle()) {
       case 'pc':
         // PCs store ego stats but reference morph stats
-        $statgroups['total'] = $statgroups['mind'] = StatTreeCalculator::walkTree($entity);
+        $statgroups['total'] = $statgroups['mind'] = static::walkTree($entity);
         if (!$entity->field_morph->isEmpty()) {
-          $statgroups['shell'] = StatTreeCalculator::walkTree($entity->field_morph->entity);
+          $statgroups['shell'] = static::walkTree($entity->field_morph->entity);
 
           foreach (['baseline', 'constant', 'conditional'] as $group) {
-            StatTreeCalculator::addSets($statgroups['total'][$group], $statgroups['shell'][$group]);
+            static::addSets($statgroups['total'][$group], $statgroups['shell'][$group]);
           }
         }
-        StatTreeCalculator::combineTotals($statgroups);
+        static::combineTotals($statgroups);
         break;
 
       case 'npc':
         // NPCs store ego and morph stats pre-summed. We still want to get
         // the conditionals for them, though.
-        $statgroups['total'] = $statgroups['mind'] = StatTreeCalculator::walkTree($entity);
+        $statgroups['total'] = $statgroups['mind'] = static::walkTree($entity);
 
         // We fudge some stuff to constant bonuses never get rolled in.
         $statgroups['total']['constant'] = $statgroups['total']['baseline'];
 
         if (!$entity->field_morph->isEmpty()) {
-          $statgroups['shell'] = StatTreeCalculator::walkTree($entity->field_morph->entity);
-          StatTreeCalculator::addSets($statgroups['total']['conditional'], $statgroups['shell']['conditional']);
+          $statgroups['shell'] = static::walkTree($entity->field_morph->entity);
+          static::addSets($statgroups['total']['conditional'], $statgroups['shell']['conditional']);
         }
-        StatTreeCalculator::addSets($statgroups['total']['conditional'], $statgroups['total']['baseline']);
+        static::addSets($statgroups['total']['conditional'], $statgroups['total']['baseline']);
 
         unset($statgroups['total']['baseline']);
-        StatTreeCalculator::calculateProperties($statgroups['total']['constant']);
-        StatTreeCalculator::calculateProperties($statgroups['total']['conditional']);
+        static::calculateProperties($statgroups['total']['constant']);
+        static::calculateProperties($statgroups['total']['conditional']);
         break;
 
       case 'robot':
         // Robots are the opposite — they store shell and reference mind stats
-        $statgroups['total'] = $statgroups['shell'] = StatTreeCalculator::walkTree($entity);
+        $statgroups['total'] = $statgroups['shell'] = static::walkTree($entity);
 
         if (!$entity->field_default_ai->isEmpty()) {
-          $statgroups['mind'] = StatTreeCalculator::walkTree($entity->field_default_ai->entity);
+          $statgroups['mind'] = static::walkTree($entity->field_default_ai->entity);
           // Copy the ego stat to 'combined' and sum the morph stats in.
           foreach (['baseline', 'constant', 'conditional'] as $group) {
-            StatTreeCalculator::addSets($statgroups['total'][$group], $statgroups['mind'][$group]);
+            static::addSets($statgroups['total'][$group], $statgroups['mind'][$group]);
           }
         }
 
-        StatTreeCalculator::combineTotal($statgroups['total']);
+        static::combineTotal($statgroups['total']);
         break;
 
       case 'muse':
       case 'creature':
       case 'mind':
         // These are really simple — they roll everything up beforehand.
-        $statgroups['total'] = StatTreeCalculator::walkTree($entity);
-        StatTreeCalculator::combineTotal($statgroups['total']);
+        $statgroups['total'] = static::walkTree($entity);
+        static::combineTotal($statgroups['total']);
         break;
     }
 
@@ -121,10 +126,10 @@ class StatTreeCalculator extends EldrichBaseCalculator {
               $es = reset($es);
             }
             if ($e->field_conditional->value == TRUE) {
-              StatTreeCalculator::addSets($stats['conditional'], $es);
+              static::addSets($stats['conditional'], $es);
             }
             else {
-              StatTreeCalculator::addSets($stats['constant'], $es);
+              static::addSets($stats['constant'], $es);
             }
           }
         }
@@ -196,12 +201,27 @@ class StatTreeCalculator extends EldrichBaseCalculator {
 
   public static function combineTotal(Array &$statgroups) {
     // Add the baseline values to the constant and conditional sets
-    StatTreeCalculator::addSets($statgroups['constant'], $statgroups['baseline']);
-    StatTreeCalculator::addSets($statgroups['conditional'], $statgroups['baseline']);
+    static::addSets($statgroups['constant'], $statgroups['baseline']);
+    static::addSets($statgroups['conditional'], $statgroups['baseline']);
 
     // Calculate derived properties.
     unset($statgroups['baseline']);
-    StatTreeCalculator::calculateProperties($statgroups['constant']);
-    StatTreeCalculator::calculateProperties($statgroups['conditional']);
+    static::calculateProperties($statgroups['constant']);
+    static::calculateProperties($statgroups['conditional']);
+  }
+
+  private static function getStatList() {
+    if (empty(static::$statList)) {
+      $nids = \Drupal::entityQuery('node')
+        ->condition('type', 'stat')
+        ->execute();
+
+      $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nids);
+
+      foreach ($nodes as $stat) {
+        static::$statList[strtolower($stat->field_code->value)] = $stat;
+      }
+    }
+    return static::$statList;
   }
 }

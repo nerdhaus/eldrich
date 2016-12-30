@@ -10,11 +10,13 @@ use Drupal\bootstrap\Annotation\BootstrapPreprocess;
 use Drupal\bootstrap\Utility\Variables;
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessInterface;
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessBase;
+use Drupal\eldrich\Calculator\ThreatCalculator;
+use Drupal\eldrich\Calculator\WeaponCalculator;
 use Drupal\node\NodeInterface;
 
 use Drupal\eldrich\Calculator\StatTreeCalculator;
 use Drupal\eldrich\Calculator\SkillTreeCalculator;
-use Drupal\eldrich\Calculator\EntityArmorCalculator;
+use Drupal\eldrich\Calculator\ArmorCalculator;
 
 /**
  * Pre-processes variables for the "node" theme hook.
@@ -37,17 +39,29 @@ class Node extends PreprocessBase implements PreprocessInterface {
     $variables->badge = $this->getBadge($variables['content'], $node);
 
     if ($variables->view_mode == 'full') {
+      // Set up the basics here
+      $variables->stats = [];
+      $variables->skills = [];
+      $variables->armor = [];
+      $variables->weapons = [];
+
       // Things with stats and skills
       if (in_array($node->bundle(), ['npc', 'pc', 'mind', 'robot', 'creature'])) {
         $variables->stat_style = 'simple';
         $variables->stats = StatTreeCalculator::total($node);
-        $variables->skills = SkillTreeCalculator::total($node, $variables['stats']);
+        $variables->skills = SkillTreeCalculator::total($node, $variables->stats);
       }
 
-      // Things with armor
+      // Things with armor and weapons
       if (in_array($node->bundle(), ['npc', 'pc', 'vehicle', 'robot', 'creature'])) {
-        $variables->armor = EntityArmorCalculator::total($node);
+        $variables->armor = ArmorCalculator::total($node);
+
+        foreach ($node->field_equipped_weapons as $weapon) {
+          $variables->weapons[] = WeaponCalculator::total($weapon->entity);
+        }
       }
+
+      $variables->threat = ThreatCalculator::total($variables->stats, $variables->skills, $variables->armor, $variables->weapons);
     }
   }
 
