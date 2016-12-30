@@ -1,11 +1,6 @@
 schemas:
   bootstrap: 8000
   veil: 8000
-favicon:
-  mimetype: image/vnd.microsoft.icon
-  path: ''
-  url: 'http://eldrich.local/themes/contrib/bootstrap/favicon.ico'
-  use_default: false
 features:
   comment_user_picture: false
   comment_user_verification: false
@@ -31,4 +26,11 @@ table_responsive: '1'
 breadcrumb: '1'
 image_shape: img-thumbnail
 popover_animation: 0
+cdn_jsdelivr_theme: slate
+cdn_provider_import_data: ''
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: 'http://eldrich.local/themes/contrib/bootstrap/favicon.ico'
+  use_default: true
 table: ''
