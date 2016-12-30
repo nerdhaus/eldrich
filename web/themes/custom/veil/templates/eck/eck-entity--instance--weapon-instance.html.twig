@@ -27,7 +27,7 @@
   {% endif %}
 
   <kbd class="damage-roll" data-average="{{ damage.average }}">
-    {% if damage.dice %}DV {{ damage.dice }}d10 {% if damage.mod %}{{ damage.mod_operation }} {{ damage.mod }}{% endif %} {% if damage.ap %}{{ damage.ap }}AP{% endif %}
+    {% if damage.dice %}(DV {{ damage.dice }}d10 {% if damage.mod %}{{ damage.mod_operation }} {{ damage.mod }}{% endif %} {% if damage.ap %}{{ damage.ap }}AP){% endif %}
     {% else %}No damage
     {% endif %}
     {% if damage.effects %}+ {{ damage.effects|safe_join(' + ') }}{% endif %}

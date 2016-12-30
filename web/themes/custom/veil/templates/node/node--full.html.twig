@@ -51,16 +51,28 @@
     {% include directory ~ '/templates/partials/' ~ stat_style ~ '-statblock.html.twig' %}
   {% endif %}
 
-  {% if content.group_attributes or content.group_equipped %}
+  {% if content.group_attributes or content.group_equipped.field_equipped_weapon or armor %}
   <dl class="dl-horizontal">
     {% for field in content.group_attributes %}
-      <dt>{{ field|field_label }}</dt> <dd>{{ field|field_value|safe_join(', ') }}</dd>
+      <dt>{{ field|field_label }}</dt>
+      <dd>{{ field|field_value|safe_join(', ') }}</dd>
     {% endfor %}
-    {% for field in content.group_equipped %}
-      {{ field|field_value }}
-    {% endfor %}
+    {% if armor.energy or armor.kinetic %}
+      <dt>Armor</dt>
+      <dd>{{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
+        {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
+      </dd>
+      {% if armor.effects %}
+        <dd>{{ armor.effects|safe_join(', ') }}</dd>
+      {% endif %}
+    {% endif %}
+    {% if content.group_equipped.field_equipped_weapons %}
+      {{ content.group_equipped.field_equipped_weapons|field_value }}
+    {% endif %}
   </dl>
   {% endif %}
 
   {{ content.attribution }}
+
+  {{ dump(content.group_attributes) }}
 </article>

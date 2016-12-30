@@ -11,8 +11,10 @@ use Drupal\bootstrap\Utility\Variables;
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessInterface;
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessBase;
 use Drupal\node\NodeInterface;
+
 use Drupal\eldrich\Calculator\StatTreeCalculator;
 use Drupal\eldrich\Calculator\SkillTreeCalculator;
+use Drupal\eldrich\Calculator\EntityArmorCalculator;
 
 /**
  * Pre-processes variables for the "node" theme hook.
@@ -37,9 +39,14 @@ class Node extends PreprocessBase implements PreprocessInterface {
     if ($variables->view_mode == 'full') {
       // Things with stats and skills
       if (in_array($node->bundle(), ['npc', 'pc', 'mind', 'robot', 'creature'])) {
-        $variables['stat_style'] = 'simple';
-        $variables['stats'] = StatTreeCalculator::total($node);
-        $variables['skills'] = SkillTreeCalculator::total($node, $variables['stats']);
+        $variables->stat_style = 'simple';
+        $variables->stats = StatTreeCalculator::total($node);
+        $variables->skills = SkillTreeCalculator::total($node, $variables['stats']);
+      }
+
+      // Things with armor
+      if (in_array($node->bundle(), ['npc', 'pc', 'vehicle', 'robot', 'creature'])) {
+        $variables->armor = EntityArmorCalculator::total($node);
       }
     }
   }
