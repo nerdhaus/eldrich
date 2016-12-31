@@ -85,7 +85,7 @@ class WeaponCalculator {
         case 'Exotic Melee Weapons':
           $data['category'] = 'melee';
           break;
-        case 'Thrown weapons':
+        case 'Throwing weapons':
           if (strpos($weapon->entity->label(), 'Grenade')) {
             $data['category'] = 'grenade';
           }
