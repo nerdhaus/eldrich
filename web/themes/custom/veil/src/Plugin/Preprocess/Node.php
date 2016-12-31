@@ -46,14 +46,26 @@ class Node extends PreprocessBase implements PreprocessInterface {
       $variables->weapons = [];
 
       // Things with stats and skills
-      if (in_array($node->bundle(), ['npc', 'pc', 'mind', 'robot', 'creature'])) {
+      if (in_array($node->bundle(), [
+        'npc',
+        'pc',
+        'mind',
+        'robot',
+        'creature'
+      ])) {
         $variables->stat_style = 'simple';
         $variables->stats = StatTreeCalculator::total($node);
         $variables->skills = SkillTreeCalculator::total($node, $variables->stats);
       }
 
       // Things with armor and weapons
-      if (in_array($node->bundle(), ['npc', 'pc', 'vehicle', 'robot', 'creature'])) {
+      if (in_array($node->bundle(), [
+        'npc',
+        'pc',
+        'vehicle',
+        'robot',
+        'creature'
+      ])) {
         $variables->armor = ArmorCalculator::total($node);
 
         foreach ($node->field_equipped_weapons as $weapon) {
@@ -61,7 +73,13 @@ class Node extends PreprocessBase implements PreprocessInterface {
         }
       }
 
-      $variables->threat = ThreatCalculator::total($variables->stats, $variables->skills, $variables->armor, $variables->weapons);
+      if (in_array($node->bundle(), [
+        'npc',
+        'pc',
+        'creature'
+      ])) {
+        $variables->threat = ThreatCalculator::total($variables->stats, $variables->skills, $variables->armor, $variables->weapons);
+      }
     }
   }
 
