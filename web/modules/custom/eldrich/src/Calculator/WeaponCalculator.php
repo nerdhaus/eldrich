@@ -69,7 +69,7 @@ class WeaponCalculator {
     }
 
     if (!$weapon->field_linked_skill->isEmpty()) {
-      $data['linked_skill'] = $weapon->field_linked_skill->target_id;
+      $data['linked_skill'] = strtolower($weapon->field_linked_skill->entity->label());
       switch ($weapon->field_linked_skill->entity->label()) {
         case 'Kinetic Weapons':
         case 'Beam Weapons':

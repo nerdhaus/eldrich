@@ -43,12 +43,58 @@ class ThreatCalculator {
     $data['raw']['fray'] = $skills['fray']['conditional']['total'];
     $data['results']['defense'] = ($data['raw']['dur'] / 5) * ($data['raw']['fray'] / 100) + $data['raw']['armor'];
 
-    // Offense data
-    // $data['results']['offense'] = ($data['raw']['dv'] * $data['raw']['skill'] / 100) + $data['raw']['ap'];
+
+    // We want to pick the best/strongest weapon, so we'll just brute force it.
+    $tmp_weapons = [];
+    foreach ($weapons as $weapon) {
+      $tmp_weapon = [
+        'dice' => $weapon['damage']['dice'],
+        'mod' => $weapon['damage']['mod'],
+        'mod_operation' => $weapon['damage']['mod_operation'],
+        'multiplier' => $weapon['damage']['multiplier'],
+        'ap' => $weapon['damage']['ap'],
+        'skill' => $skills[$weapon['linked_skill']]['conditional']['total'] + $weapon['skill_bonus'],
+      ];
+
+      // Prefer full auto, as it's the best representative of max damage
+      // without having to change clips.
+      if (in_array('FA', array_keys($weapon['modes']))) {
+        $tmp_weapon['dice'] += 3;
+      }
+      elseif (in_array('BF', array_keys($weapon['modes']))) {
+        $tmp_weapon['dice'] += 1;
+        $tmp_weapon['multiplier'] = $tmp_weapon['multiplier'] * 2;
+      }
+      elseif (in_array('SA', array_keys($weapon['modes']))) {
+        $tmp_weapon['multiplier'] = $tmp_weapon['multiplier'] * 2;
+      }
+
+      if ($tmp_weapon['mod'] < 0) {
+        $tmp_weapon['mod_operation'] = '-';
+        $tmp_weapon['mod'] = abs($data['damage']['mod']);
+      }
+
+      $avg = $tmp_weapon['dice'] * 5;
+      $avg = operation_calculate_result($avg, $tmp_weapon['mod_operation'], $tmp_weapon['mod']);
+      $tmp_weapon['average'] = intval(round($avg * $tmp_weapon['multiplier']));
+
+      $tmp_weapons[$tmp_weapon['average']] = $tmp_weapon;
+    }
+
+    if (!empty($tmp_weapons)) {
+      krsort($tmp_weapons);
+      $chosen_weapon = array_shift($tmp_weapons);
+      $data['raw']['ap'] = $chosen_weapon['ap'];
+      $data['raw']['dv'] = $chosen_weapon['average'];
+      $data['raw']['skill'] = $chosen_weapon['skill'];
+    }
+
+
+    $data['results']['offense'] = ($data['raw']['dv'] * $data['raw']['skill'] / 100) + $data['raw']['ap'];
 
     // Total everything up
-    // $data['results']['threat'] = $data['results']['defense'] + ($data['results']['offense'] * $data['raw']['spd']);
-    // $data['rating'] = floor($data['results']['threat']);
+    $data['results']['threat'] = $data['results']['defense'] + ($data['results']['offense'] * $data['raw']['spd']);
+    $data['rating'] = floor($data['results']['threat'] / 5);
 
     return $data;
   }
