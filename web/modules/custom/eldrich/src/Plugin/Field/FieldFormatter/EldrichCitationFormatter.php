@@ -6,6 +6,9 @@ use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\Plugin\Field\FieldFormatter\EntityReferenceLabelFormatter;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\entity_reference_quantity\Plugin\Field\FieldFormatter\EntityReferenceQuantityLabelFormatter;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+
 
 /**
  * Plugin implementation of the 'entity_reference_quantity_label' formatter.
@@ -40,6 +43,7 @@ class EldrichCitationFormatter extends EntityReferenceQuantityLabelFormatter {
       '#type' => 'radios',
       '#options' => [
         'local' => t('Local page'),
+        'list' => t('Book list'),
         'remote' => t('Official home page'),
       ],
       '#title' => t('Link to'),
@@ -69,6 +73,9 @@ class EldrichCitationFormatter extends EntityReferenceQuantityLabelFormatter {
     switch ($this->getSetting('destination')) {
       case 'local':
         $destination = t('local page');
+        break;
+      case 'list':
+        $destination = t('book list');
         break;
       case 'remote':
         $destination = t('official home page');
@@ -108,16 +115,11 @@ class EldrichCitationFormatter extends EntityReferenceQuantityLabelFormatter {
         if ($destination == 'remote' && !empty($entity->field_home_page)) {
           $uri = $entity->field_home_page->uri;
         }
+        elseif ($destination == 'list') {
+          $uri = Url::fromRoute('view.bestiary.page_5', [], ['fragment' => $entity->field_code->value]);
+        }
         else {
-          try {
-            $uri = $entity->urlInfo();
-          } catch (UndefinedLinkTemplateException $e) {
-            // This exception is thrown by \Drupal\Core\Entity\Entity::urlInfo()
-            // and it means that the entity type doesn't have a link template nor
-            // a valid "uri_callback", so don't bother trying to output a link for
-            // the rest of the referenced entities.
-            $output_as_link = FALSE;
-          }
+          $uri = UrL::fromRoute('entity.node.canonical', ['node' => $entity->id()]);
         }
       }
 
