@@ -65,9 +65,6 @@
       <dd>{{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
         {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
       </dd>
-      {% if armor.effects %}
-        <dd>{{ armor.effects|safe_join(', ') }}</dd>
-      {% endif %}
     {% endif %}
     {% if content.group_equipped.field_equipped_weapons %}
       {{ content.group_equipped.field_equipped_weapons|field_value }}

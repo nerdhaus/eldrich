@@ -59,7 +59,7 @@ class EquippedArmor extends ProcessPluginBase implements ContainerFactoryPluginI
 
       $gear = [
         'armor' => [
-          'base' => $armor['gear'],
+          'base' => trim($armor['gear']),
           'mods' => $this::explim(',', $armor['mods']),
         ],
       ];

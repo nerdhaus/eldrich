@@ -80,8 +80,8 @@ class ArmorCalculator {
           $worn = static::defaultData();
         }
 
-        $worn['energy'] = $armor->field_armor->energy;
-        $worn['kinetic'] = $armor->field_armor->kinetic;
+        $worn['energy'] += $armor->field_armor->energy;
+        $worn['kinetic'] += $armor->field_armor->kinetic;
         $worn['entities'][$armor->id()] = $armor;
         if (!$armor->field_special_effect->isEmpty()) {
           $worn['effects'][] = $armor->field_special_effect->value;
@@ -89,8 +89,8 @@ class ArmorCalculator {
 
         foreach ($eq->entity->field_armor_mods as $mod) {
           $mod = $mod->entity;
-          $worn['energy'] = $mod->field_armor->energy;
-          $worn['kinetic'] = $mod->field_armor->kinetic;
+          $worn['energy'] += $mod->field_armor->energy;
+          $worn['kinetic'] += $mod->field_armor->kinetic;
           $worn['entities'][$mod->id()] = $mod;
           if (isset($mod->field_special_effect)) {
             $worn['effects'][] = $mod->field_special_effect->value;
@@ -118,7 +118,8 @@ class ArmorCalculator {
 
   public static function linkEntities(&$data) {
     foreach ($data['entities'] as $id => $entity) {
-      $data['build'][$id] = Link::createFromRoute($entity->label(), 'entity.node.canonical', ['node' => $id])->toString();
+      $linkText = $entity->field_short_name->value ?: $entity->label();
+      $data['build'][$id] = Link::createFromRoute($linkText, 'entity.node.canonical', ['node' => $id])->toString();
     }
   }
 }

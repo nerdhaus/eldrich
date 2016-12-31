@@ -20,10 +20,10 @@
 #}
 <dt {{ attributes }}><span class="label label-danger text-uppercase">{{ category }}</span></dt>
 <dd>
-  {{ entity.field_weapon|field_value }}
+  {{ build.weapon }}
   {% if skill_bonus %}(+{{ skill_bonus }}){% endif %}
-  {% if entity.field_ammo|field_value %} w/
-  {{ entity.field_ammo_mods|field_value|safe_join(' ') }} {{ entity.field_ammo|field_value }}
+  {% if build.ammo %} w/
+  {{ build.ammo_mods|safe_join(' ') }} {{ build.ammo }}
   {% endif %}
 
   <kbd class="damage-roll" data-average="{{ damage.average }}">

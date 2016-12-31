@@ -61,11 +61,11 @@ class EquippedWeapon extends ProcessPluginBase implements ContainerFactoryPlugin
 
       $gear = [
         'weapon' => [
-          'base' => $weapon['gear'],
+          'base' => trim($weapon['gear']),
           'mods' => $this::explim(',', $weapon['mods']),
         ],
         'ammo' => [
-          'base' => $ammo['gear'],
+          'base' => trim($ammo['gear']),
           'mods' => $this::explim(',', $ammo['mods']),
         ],
       ];
@@ -89,11 +89,6 @@ class EquippedWeapon extends ProcessPluginBase implements ContainerFactoryPlugin
       'field_ammo_mods' => $this::getGearIDs($values['ammo']['mods']),
     ];
 
-    if (empty($entity_values['field_weapon'])) {
-      drush_print_r($values['weapon']['base']);
-      drush_print_r(is_array($values['weapon']['base']) ? 'Array' : 'Not an array');
-      drush_print_r($entity_values);
-    }
     if (empty($entity_values['field_weapon'])) {
       return NULL;
     }

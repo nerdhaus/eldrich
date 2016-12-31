@@ -3,6 +3,7 @@
 namespace Drupal\eldrich\Calculator;
 
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Link;
 
 
 /**
@@ -13,6 +14,12 @@ use Drupal\Core\Entity\EntityInterface;
  *
  * The goal is to take a weapon_instance eck entity and produce
  * a structured array with the following information:
+ *
+ * - A presentation array, containing:
+ *   - A link to the weapon
+ *   - An array of links to the weapon mods
+ *   - A link to the weapon's ammo
+ *   - An array of links to the ammo mods
  *
  * - The ID of the weapon's linked skill.
  * - The numerical skill bonus from any mods/ammo/etc
@@ -58,6 +65,7 @@ class WeaponCalculator {
       'rounds' => 0,
       'modes' => [],
       'effects' => [],
+      'build' => [],
     ];
 
     // If we're in an ECK entity, dance around a bit.
@@ -102,13 +110,18 @@ class WeaponCalculator {
 
     static::accountForItem($data, $weapon);
 
+    $data['build']['weapon'] = static::linkEntity($weapon);
+
     foreach ($entity->field_weapon_mods as $mod) {
       static::accountForItem($data, $mod->entity);
+      $data['build']['mods'][] = static::linkEntity($mod->entity);
     }
 
     if (!$entity->field_ammo->isEmpty()) {
       static::accountForItem($data, $entity->field_ammo->entity);
+      $data['build']['ammo'] = static::linkEntity($entity->field_ammo->entity);
       foreach ($entity->field_ammo_mods as $ammo_mod) {
+        $data['build']['ammo_mods'][] = static::linkEntity($ammo_mod->entity);
         static::accountForItem($data, $ammo_mod->entity);
       }
     }
@@ -169,5 +182,10 @@ class WeaponCalculator {
         $data['damage']['effects'][] = $effect->entity->label();
       }
     }
+  }
+
+  private static function linkEntity(EntityInterface $entity) {
+    $linkText = $entity->field_short_name->value ?: $entity->label();
+    return Link::createFromRoute($linkText, 'entity.node.canonical', ['node' => $entity->id()])->toString();
   }
 }
