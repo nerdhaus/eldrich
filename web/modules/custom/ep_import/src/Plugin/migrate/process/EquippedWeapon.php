@@ -90,6 +90,11 @@ class EquippedWeapon extends ProcessPluginBase implements ContainerFactoryPlugin
     ];
 
     if (empty($entity_values['field_weapon'])) {
+      drush_print_r($values['weapon']['base']);
+      drush_print_r(is_array($values['weapon']['base']) ? 'Array' : 'Not an array');
+      drush_print_r($entity_values);
+    }
+    if (empty($entity_values['field_weapon'])) {
       return NULL;
     }
 
