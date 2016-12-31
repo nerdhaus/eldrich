@@ -36,10 +36,9 @@ third_party_settings:
         - field_augmentations
         - field_gear
         - field_strain
-        - field_armor
         - field_stats
       parent_name: ''
-      weight: 10
+      weight: 2
       format_type: html_element
       format_settings:
         id: ''
@@ -55,7 +54,7 @@ third_party_settings:
       children:
         - field_equipped_weapons
       parent_name: ''
-      weight: 11
+      weight: 3
       format_type: html_element
       format_settings:
         id: ''
@@ -72,14 +71,8 @@ targetEntityType: node
 bundle: creature
 mode: default
 content:
-  field_armor:
-    weight: 11
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    type: armor_text
   field_attribution:
-    weight: 12
+    weight: 4
     label: hidden
     settings:
       link: true
@@ -167,5 +160,6 @@ content:
         delimiter: ', '
     type: entity_reference_override_label
 hidden:
+  field_armor: true
   field_stats: true
   links: true

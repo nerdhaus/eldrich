@@ -136,8 +136,10 @@ class SkillTreeCalculator {
     $row['type'] = $skill->field_skill_type->entity->label();
     $row['no_defaulting'] = $skill->field_no_defaulting->value;
 
-    $row['constant']['baseline'] = $stats['mind']['baseline'][$row['aptitude']];
-    $row['conditional']['baseline'] = $stats['mind']['baseline'][$row['aptitude']];
+    if (!empty($stats['mind'])) {
+      $row['constant']['baseline'] = $stats['mind']['baseline'][$row['aptitude']];
+      $row['conditional']['baseline'] = $stats['mind']['baseline'][$row['aptitude']];
+    }
   }
 
   private static function initRow() {

@@ -41,6 +41,9 @@
 
 <article{{ attributes.addClass(classes) }}>
 
+  {% if threat and threat.rating %}
+    <span class="text-uppercase label label-danger pull-right">Threat: {{ threat.rating }}</span>
+  {% endif %}
   {% if content.field_quote %}
     <blockquote><p>{{ content.field_quote|field_value }}</p></blockquote>
   {% endif %}

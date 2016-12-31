@@ -16,7 +16,7 @@ use Drupal\Core\Entity\EntityInterface;
  *
  * - Durability
  * - Fray Skill
- * - Total Armor (K + E)
+ * - Total Armor (K + E) / 2
  * - DV per turn w/best weapon
  *   (x2 for SA, x2 +1d10 for BF, +3d10 for FA)
  * - AP with best weapon
@@ -39,7 +39,9 @@ class ThreatCalculator {
     // Defense data
     $data['raw']['dur'] = $stats['total']['conditional']['dur'];
     $data['raw']['spd'] = $stats['total']['conditional']['spd'];
-    $data['raw']['armor'] = $armor['energy'] + $armor['kinetic'];
+    if (!empty($armor)) {
+      $data['raw']['armor'] = floor(($armor['energy'] + $armor['kinetic']) / 2);
+    }
     $data['raw']['fray'] = $skills['fray']['conditional']['total'];
     $data['results']['defense'] = ($data['raw']['dur'] / 5) * ($data['raw']['fray'] / 100) + $data['raw']['armor'];
 
@@ -82,15 +84,15 @@ class ThreatCalculator {
     }
 
     if (!empty($tmp_weapons)) {
-      krsort($tmp_weapons);
-      $chosen_weapon = array_shift($tmp_weapons);
+      ksort($tmp_weapons);
+      $chosen_weapon = array_pop($tmp_weapons);
       $data['raw']['ap'] = $chosen_weapon['ap'];
       $data['raw']['dv'] = $chosen_weapon['average'];
       $data['raw']['skill'] = $chosen_weapon['skill'];
     }
 
 
-    $data['results']['offense'] = ($data['raw']['dv'] * $data['raw']['skill'] / 100) + $data['raw']['ap'];
+    $data['results']['offense'] = ($data['raw']['dv'] * $data['raw']['skill'] / 100) - $data['raw']['ap'];
 
     // Total everything up
     $data['results']['threat'] = $data['results']['defense'] + ($data['results']['offense'] * $data['raw']['spd']);
