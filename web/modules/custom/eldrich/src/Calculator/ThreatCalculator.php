@@ -54,9 +54,14 @@ class ThreatCalculator {
         'mod' => $weapon['damage']['mod'],
         'mod_operation' => $weapon['damage']['mod_operation'],
         'multiplier' => $weapon['damage']['multiplier'],
-        'ap' => $weapon['damage']['ap'],
-        'skill' => $skills[$weapon['linked_skill']]['conditional']['total'] + $weapon['skill_bonus'],
+        'ap' => $weapon['damage']['ap']
       ];
+      if ($weapon['linked_skill']) {
+        $tmp_weapon['skill'] = $skills[$weapon['linked_skill']]['conditional']['total'] + $weapon['skill_bonus'];
+      }
+      else {
+        $tmp_weapon['skill'] = 0;
+      }
 
       // Prefer full auto, as it's the best representative of max damage
       // without having to change clips.
