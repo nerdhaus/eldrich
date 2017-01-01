@@ -1,0 +1,21 @@
+uuid: ff50b3ce-f01d-4ba0-8ee6-a48cee05db1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_roleplay_notes
+    - node.type.npc
+  module:
+    - text
+id: node.npc.field_roleplay_notes
+field_name: field_roleplay_notes
+entity_type: node
+bundle: npc
+label: 'Roleplay Notes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

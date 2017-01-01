@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.npc.field_identity
     - field.field.node.npc.field_morph
     - field.field.node.npc.field_quote
+    - field.field.node.npc.field_roleplay_notes
     - field.field.node.npc.field_skills
     - field.field.node.npc.field_sleights
     - field.field.node.npc.field_stats
@@ -114,6 +115,12 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_roleplay_notes:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_skills:
     weight: 5
     label: inline

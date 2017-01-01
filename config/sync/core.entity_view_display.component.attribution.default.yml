@@ -8,7 +8,7 @@ dependencies:
     - field.field.component.attribution.field_attribution_link
     - field.field.component.attribution.field_attribution_notes
   module:
-    - eldrich
+    - entity_reference_quantity
     - field_delimiter
     - link
     - text
@@ -24,12 +24,10 @@ content:
       link: true
       location: suffix
       template: ' pg. {{ quantity }}'
-      destination: list
-      length: full
     third_party_settings:
       field_delimiter:
         delimiter: ', '
-    type: eldrich_citation_formatter
+    type: entity_reference_quantity_label
   field_attribution_link:
     weight: 1
     label: inline

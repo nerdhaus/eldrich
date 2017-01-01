@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.npc.field_identity
     - field.field.node.npc.field_morph
     - field.field.node.npc.field_quote
+    - field.field.node.npc.field_roleplay_notes
     - field.field.node.npc.field_skills
     - field.field.node.npc.field_sleights
     - field.field.node.npc.field_stats
@@ -32,7 +33,7 @@ third_party_settings:
         - field_equipped_weapons
         - field_equipped_armor
       parent_name: ''
-      weight: 11
+      weight: 12
       format_type: details
       format_settings:
         open: false
@@ -47,7 +48,7 @@ third_party_settings:
         - field_traits
         - field_sleights
       parent_name: ''
-      weight: 8
+      weight: 9
       format_type: details
       format_settings:
         label: Abilities
@@ -67,7 +68,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_attribution:
-    weight: 12
+    weight: 13
     settings:
       form_mode: default
       label_singular: ''
@@ -121,7 +122,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
   field_identity:
-    weight: 10
+    weight: 11
     settings:
       form_mode: default
       label_singular: ''
@@ -132,7 +133,7 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_simple
   field_morph:
-    weight: 9
+    weight: 10
     settings:
       form_mode: default
       label_singular: ''
@@ -149,6 +150,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_roleplay_notes:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
   field_skills:
     weight: 8
     settings: {  }

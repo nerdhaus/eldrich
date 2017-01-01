@@ -32,7 +32,7 @@ Creeper,Exsurgent,"Creepers are amorphous clouds of small, black bubbles that sp
 
 Though creeper clouds move slowly, crawling or floating, they sometimes construct mobility systems enabling faster movement. They can penetrate almost any material in a short amount of time, interface with electronics and implants, and convert a standard morph in a matter of minutes. They can transform into a strange matter mass that has a repulsive effect on normal matter, either as a swift attack or a sustained effect to keep hostile elements at bay. Creepers are known to act with intelligence and purpose, establishing traps and adapting to threats. It is suspected that the TITANs used them for facility manufacturing, infiltration, and command-and-control purposes.
 
-Unlike other exsurgents, creepers are not created via infection, but by transmutation through contact with an existing creeper swarm. Can be invisible, like a nanoswarm, or materialize forms with refractive metamaterials, like an invisibility cloak. Assume they have any skill they need at 40+.",,,XR.101,"COG:30, COO:15, INT:20, REF:30, SAV:15, SOM:15, WIL:30, MOX:0, SPD:2, DUR:100",FALSE,"Free Fall 50, In ltration 80, Infosec 80, Intimidation 60, Programming 80, Unarmed Combat 50 (Subdual), Fray 40, Perception 50 (Hearing/Vision)",,Walker,4/16,"360-Degree Vision, Chemical Sniffer, Electrical Sense, Enhanced Hearing, Enhanced Vision, Fractal Digits, Nanoscopic Vision, Radar, Radiation Sense, T-Ray Emitter",,,,Repulsion Wave; Matter Conversion,1d10 / 2
+Unlike other exsurgents, creepers are not created via infection, but by transmutation through contact with an existing creeper swarm. Can be invisible, like a nanoswarm, or materialize forms with refractive metamaterials, like an invisibility cloak. Assume they have any skill they need at 40+.",,,XR.101,"COG:30, COO:15, INT:20, REF:30, SAV:15, SOM:15, WIL:30, MOX:0, SPD:2, DUR:100",FALSE,"Free Fall 50, Infiltration 80, Infosec 80, Intimidation 60, Programming 80, Unarmed Combat 50 (Subdual), Fray 40, Perception 50 (Hearing/Vision)",,Walker,4/16,"360-Degree Vision, Chemical Sniffer, Electrical Sense, Enhanced Hearing, Enhanced Vision, Fractal Digits, Nanoscopic Vision, Radar, Radiation Sense, T-Ray Emitter",,,,Repulsion Wave; Matter Conversion,1d10 / 2
 Digital Exsurgent Virus,Exsurgent,"Digital strains of the Exsurgent Virus are purely information- or code- based versions of the virus. They resemble advanced computer viruses, worms, and trojans. They spread throughout the mesh, exploit holes, mimic protocols, and bypass security measures just like a skilled hacker. Digital versions of the exsurgent virus are treated as intelligent programs, using the same rules as infomorphs.
 
 As a matter of course, this exsurgent virus will seek to access any new systems it comes into contact with, hacking in and copying a version of itself. The attack is handled as an Opposed Test, each rolling COG + INT. If the exsurgent virus wins, the target is infected and will be corrupted by the virus in 10 Action Turns, minus 1 turn per 10 full points of MoS. If the target succeeded but rolled lower than the virus, they are aware that they are slowly being taken over. This immediately causes them 1d10 points of mental stress. An infected program has only one option for defending itself before the virus takes over—shutdown and reboot. It takes the AI or infomorph 1 full Action Turn to shut down. Restarting takes 3 full Action Turns (possibly longer if the gamemaster so decides), upon which the AI or infomorph must make another Opposed COG + INT Test against the virus. If this test also fails, then the virus has already embedded itself in the AI or infomorph’s code and will continue its infection. ",,,EP.364,"COG:40, COO:10, INT:40, REF:40, SAV:40, SOM:40, WIL:40, MOX:0, SPD:3",FALSE,"Hardware: Electronics 50, Infosec 70, Interfacing 60, Investigation 50, Perception 60, Programming 50",,,,,,,,,
@@ -40,9 +40,9 @@ Flesh Party,Exsurgent,,,,,,FALSE,,,,,,,,,,
 Fractal Troll,Exsurgent,,,,,,FALSE,,,,,,,,,,
 Head Wrapper,Exsurgent,,,,,,FALSE,,,,,,,,,,
 Immolator Breeder,Exsurgent,,,,,,FALSE,,,,,,,,,,
-Immolator Mother,Exsurgent,,,,,,FALSE,,,,,,,,,,
+Immolator Mother,Exsurgent,,,,"XR,GLO.24",,FALSE,,,,,,,,,,
 Jelly,Exsurgent,,,,,,FALSE,,,,,,,,,,
-Mimic Jelly,Exsurgent,,,,,,FALSE,,,,,,,,,,
+Mimic Jelly,Exsurgent,,,,"XR,MYE.20",,FALSE,,,,,,,,,,
 Mind Wrapper,Exsurgent,,,,,,FALSE,,,,,,,,,,
 Shifter,Exsurgent,,,,,,FALSE,,,,,,,,,,
 Skrik,Exsurgent,,,,,,FALSE,,,,,,,,,,
@@ -129,4 +129,7 @@ Void Crawler,Xenofauna,,,,,,FALSE,,,,,,,,,,
 Vydra,Xenofauna,,,,,,FALSE,,,,,,,,,,
 Whiplash,Xenofauna,,,,,,FALSE,,,,,,,,,,
 Zephyr,Xenofauna,,,,,,FALSE,,,,,,,,,,
-Zombie Crab,Xenofauna,,,,,stats,FALSE,,,,,,,,,,
+Zombie Crab,Xenofauna,,,,,,FALSE,,,,,,,,,,
+Carrier,Exsurgent,"Carriers are walking electronic warfare platforms created by the TITANs to intrude on systems and infect them with the exsurgent virus. Most carriers have similar stats to the one below, but each is unique in some way. In addition to being equipped to spread infection digitally, most carrier have augmentations allowing them to spread infection through other means (via biological nanovirus, nanoplague, basilisk hacks, or, rarely, all three).",,,MYE.21,"COG:30, COO:15, INT:15, REF:15, SAV:10, SOM:10, WIL:10, SPD:2, DUR:50",FALSE,"Deception 80, Fray 50, Impersonation 60, 
+Infiltration 40, Infosec 90, Interfacing 90, Perception 80, Persuasion 40, Programming 100, Unarmed Combat 50 ",,,,"Drug Gland: Exsurgent Biological Nanovirus, Enhanced Respiration, Enhanced Vision, Ghostrider Modules:3, Medichines, Mesh Inserts, Specialized Hive: Exsurgent Nanoplague,",Temperature Tolerance (Improved Cold),,,,
+Sniper Bot,Tech,,,,MWMD.28,,FALSE,"Fray 20, Infiltration 20, Kinetic Weapons 40, Perception 30, Pilot: Aircraft 30",6/6,,,,,,,Railgun Sniper Rifle,
