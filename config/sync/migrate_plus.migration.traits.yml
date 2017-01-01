@@ -80,23 +80,13 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-  field_attribution/target_id:
-    plugin: entity_maker
-    entity_type: component
-    source:
-      - book
-    keys:
-      - book
-    default_values:
-      type: attribution
-    process:
-      field_attribution_citations:
-        plugin: source_with_page
-        entity_type: node
-        bundle: source
-        bundle_key: type
-        value_key: field_code
-        source: book
+  field_sources:
+    plugin: source_with_page
+    entity_type: node
+    bundle: source
+    bundle_key: type
+    value_key: field_code
+    source: book
 destination:
   plugin: 'entity:node'
 migration_dependencies:
