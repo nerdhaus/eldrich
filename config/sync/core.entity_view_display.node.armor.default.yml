@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.armor.field_armor
+    - field.field.node.armor.field_attribution
     - field.field.node.armor.field_blueprints
     - field.field.node.armor.field_cost
     - field.field.node.armor.field_description
@@ -15,8 +16,10 @@ dependencies:
     - field.field.node.armor.field_uses_mods
     - node.type.armor
   module:
+    - eldrich
     - entity_reference_quantity
     - ep_complex_values
+    - field_delimiter
     - field_group
     - text
     - user
@@ -76,11 +79,15 @@ content:
     weight: 6
     label: above
     settings:
-      location: suffix
-      template: ' ({{ quantity }})'
       link: true
-    third_party_settings: {  }
-    type: entity_reference_quantity_label
+      location: suffix
+      template: ', page {{ quantity }}'
+      destination: list
+      length: full
+    third_party_settings:
+      field_delimiter:
+        delimiter: ''
+    type: eldrich_citation_formatter
   field_special_effect:
     weight: 3
     label: inline

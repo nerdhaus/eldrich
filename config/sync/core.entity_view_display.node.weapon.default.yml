@@ -183,11 +183,15 @@ content:
     weight: 103
     label: above
     settings:
-      location: suffix
-      template: ' ({{ quantity }})'
       link: true
-    third_party_settings: {  }
-    type: entity_reference_quantity_label
+      location: suffix
+      template: ', page {{ quantity }}'
+      destination: list
+      length: full
+    third_party_settings:
+      field_delimiter:
+        delimiter: ''
+    type: eldrich_citation_formatter
   field_special_effect:
     weight: 16
     label: inline

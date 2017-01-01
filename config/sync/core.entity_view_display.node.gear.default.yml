@@ -45,11 +45,15 @@ content:
     weight: 4
     label: above
     settings:
-      location: suffix
-      template: ' ({{ quantity }})'
       link: true
-    third_party_settings: {  }
-    type: entity_reference_quantity_label
+      location: suffix
+      template: ', page {{ quantity }}'
+      destination: list
+      length: full
+    third_party_settings:
+      field_delimiter:
+        delimiter: ''
+    type: eldrich_citation_formatter
 hidden:
   field_blueprints: true
   field_short_name: true
