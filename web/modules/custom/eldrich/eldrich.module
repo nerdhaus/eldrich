@@ -62,3 +62,33 @@ function eldrich_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
     }
   }
 }
+
+function eldrich_options_list_alter(array &$options, array $context) {
+  // Loop through options, look for a magic value, group on what's after it.
+  $grouped = $ungrouped = [];
+  $delimiter = '—';
+  foreach ($options as $key => $value) {
+    if (strpos($value, $delimiter)) {
+      $pair = explode($delimiter, $value);
+      $group = trim(end($pair));
+      $label = trim(reset($pair));
+      $grouped[$group][$key] = $label;
+    }
+    else {
+      $ungrouped[$key] = $value;
+    }
+  }
+
+  $options = [];
+  if (!empty($grouped)) {
+    if (count($grouped == 1) && empty($ungrouped)) {
+      $options += reset($grouped);
+    }
+    else {
+      $options += $grouped;
+    }
+  }
+  if (!empty($ungrouped)) {
+    $options += $ungrouped;
+  }
+}
