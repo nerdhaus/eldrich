@@ -27,3 +27,4 @@ permissions:
   - 'create trait content'
   - 'create vehicle content'
   - 'create weapon content'
+  - 'use text format basic_html'

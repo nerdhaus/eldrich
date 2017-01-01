@@ -10,3 +10,4 @@ permissions:
   - 'view own unpublished content'
   - 'create npc content'
   - 'create pc content'
+  - 'use text format basic_html'
