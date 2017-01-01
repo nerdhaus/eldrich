@@ -39,18 +39,18 @@ class ArmorCalculator {
   public static function total(EntityInterface $entity) {
     $data = static::defaultData();
 
-    if (isset($entity->field_morph)) {
+    if (!empty($entity->field_morph) && !$entity->field_morph->isEmpty()) {
       // If we're looking at an NPC or a Character, they have a 'morph' ECK
       // instance that stores augs and other details. Total up that sub-group.
       $data = ArmorCalculator::total($entity->field_morph->entity);
     }
-    else if (isset($entity->field_model)) {
+    else if (!empty($entity->field_model) && !$entity->field_model->isEmpty()) {
       // If there's a 'field_model' we're in an ECK entity. Grab its base armor
       // value.
       $data['energy'] = $entity->field_model->entity->field_armor->energy;
       $data['kinetic'] = $entity->field_model->entity->field_armor->kinetic;
     }
-    else if (isset($entity->field_armor)) {
+    else if (!empty($entity->field_armor) && !$entity->field_armor->isEmpty()) {
       // If there's a raw field_armor grab its values directly.
       $data['energy'] = $entity->field_armor->energy;
       $data['kinetic'] = $entity->field_armor->kinetic;
