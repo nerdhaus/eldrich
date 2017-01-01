@@ -121,6 +121,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_quantity_label
 hidden:
+  field_attribution: true
   field_blueprints: true
   field_short_name: true
   links: true

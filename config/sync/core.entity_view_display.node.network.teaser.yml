@@ -25,4 +25,5 @@ content:
     weight: 100
 hidden:
   field_attribution: true
+  field_sources: true
   field_symbol: true

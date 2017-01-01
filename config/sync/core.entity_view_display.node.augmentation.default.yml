@@ -137,6 +137,7 @@ content:
       link: false
     third_party_settings: {  }
 hidden:
+  field_attribution: true
   field_blueprints: true
   field_conditional: true
   field_short_name: true

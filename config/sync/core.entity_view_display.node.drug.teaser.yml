@@ -50,6 +50,7 @@ content:
 hidden:
   field_addiction_modifier: true
   field_armor: true
+  field_attribution: true
   field_blueprints: true
   field_cost: true
   field_delivery_mechanism: true

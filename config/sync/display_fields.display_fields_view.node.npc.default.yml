@@ -55,5 +55,6 @@ hidden:
   field_roleplay_notes: true
   field_skills: true
   field_sleights: true
+  field_sources: true
   field_stats: true
   field_traits: true

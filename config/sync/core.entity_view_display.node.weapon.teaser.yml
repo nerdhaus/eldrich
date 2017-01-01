@@ -81,6 +81,7 @@ hidden:
   field_reach: true
   field_short_name: true
   field_skill_bonus: true
+  field_sources: true
   field_special_effect: true
   field_uses_ammo: true
   field_uses_mods: true

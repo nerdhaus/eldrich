@@ -26,6 +26,7 @@ hidden:
   field_description: true
   field_infectiousness: true
   field_source: true
+  field_sources: true
   field_stages: true
   field_strain_rating: true
   field_vectors: true

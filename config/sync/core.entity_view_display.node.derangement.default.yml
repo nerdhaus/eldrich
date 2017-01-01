@@ -52,4 +52,5 @@ content:
     third_party_settings: {  }
     type: text_default
 hidden:
+  field_attribution: true
   links: true
