@@ -1820,7 +1820,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/devel",
-                "reference": "feac050ae891a319a7f45ca5baa8e8cfa563f447"
+                "reference": "06b62644e2747d4892f493c594450ade9345793a"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -1834,8 +1834,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta1+10-dev",
-                    "datestamp": "1482437883"
+                    "version": "8.x-1.0-beta1+11-dev",
+                    "datestamp": "1482919084"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1893,7 +1893,7 @@
                 "issues": "http://drupal.org/project/devel",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "time": "2016-12-22 20:14:08"
+            "time": "2016-12-28 09:56:42"
         },
         {
             "name": "drupal/eck",
@@ -2024,7 +2024,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_browser",
-                "reference": "60fc6cc1e8a6e702fb73e7b9a185da9e4b9dcdcc"
+                "reference": "c7a9097b1f12857a62d1f6b661ee5cb7061a0da5"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2043,8 +2043,8 @@
                     "dev-8.x-1.x": "8.1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta2+6-dev",
-                    "datestamp": "1482830884"
+                    "version": "8.x-1.0-beta2+7-dev",
+                    "datestamp": "1482914884"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2091,7 +2091,7 @@
                 "issues": "http://drupal.org/project/issues/entity_browser",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "time": "2016-12-27 09:19:43"
+            "time": "2016-12-28 08:47:19"
         },
         {
             "name": "drupal/entity_embed",
@@ -2208,7 +2208,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_reference_quantity",
-                "reference": "1d9ec046ce169399cd6e798d413553f75c36daf1"
+                "reference": "62dc172319a6fc9b5a951c310d829f2c1277b74e"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2220,7 +2220,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1482328984"
+                    "datestamp": "1483302542"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2238,7 +2238,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_reference_quantity"
             },
-            "time": "2016-12-21 14:00:02"
+            "time": "2017-01-01 20:26:42"
         },
         {
             "name": "drupal/entity_reference_views_select",
@@ -2803,7 +2803,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/pathauto",
-                "reference": "369d3fa26fecfa236457b96b556a0de139de3221"
+                "reference": "a22b9733651e995d8ba5c5a45cae0600eb4ae53d"
             },
             "require": {
                 "drupal/core": "*",
@@ -2816,8 +2816,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta1+6-dev",
-                    "datestamp": "1481053683"
+                    "version": "8.x-1.0-beta1+8-dev",
+                    "datestamp": "1483301342"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2847,7 +2847,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/pathauto"
             },
-            "time": "2016-12-06 19:47:16"
+            "time": "2017-01-01 20:08:36"
         },
         {
             "name": "drupal/quick_pages",
@@ -3182,17 +3182,17 @@
         },
         {
             "name": "drupal/token",
-            "version": "1.0.0-beta2",
+            "version": "1.0.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/token",
-                "reference": "8.x-1.0-beta2"
+                "reference": "8.x-1.0-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/token-8.x-1.0-beta2.zip",
-                "reference": "8.x-1.0-beta2",
-                "shasum": "b838318eddf46e4f382489de5516ab916257c393"
+                "url": "https://ftp.drupal.org/files/projects/token-8.x-1.0-rc1.zip",
+                "reference": null,
+                "shasum": "204b2f18a3d770589d66656aa83121d2156d0a31"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -3203,8 +3203,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta2",
-                    "datestamp": "1474367039"
+                    "version": "8.x-1.0-rc1",
+                    "datestamp": "1483290542"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
