@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.gear.field_attribution
     - field.field.node.gear.field_blueprints
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
     - field.field.node.gear.field_gear_type
     - field.field.node.gear.field_short_name
+    - field.field.node.gear.field_sources
     - node.type.gear
   module:
     - entity_reference_quantity
@@ -19,14 +19,6 @@ targetEntityType: node
 bundle: gear
 mode: default
 content:
-  field_attribution:
-    weight: 3
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
   field_cost:
     weight: 2
     label: inline
@@ -49,6 +41,15 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+  field_sources:
+    weight: 4
+    label: above
+    settings:
+      location: suffix
+      template: ' ({{ quantity }})'
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
 hidden:
   field_blueprints: true
   field_short_name: true

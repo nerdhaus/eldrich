@@ -3,14 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.faction.field_attribution
     - field.field.node.faction.field_concerns
     - field.field.node.faction.field_description
     - field.field.node.faction.field_faction_type
     - field.field.node.faction.field_locations
     - field.field.node.faction.field_parent_faction
+    - field.field.node.faction.field_sources
     - node.type.faction
   module:
+    - entity_reference_quantity
     - path
     - text
 id: node.faction.default
@@ -23,17 +24,6 @@ content:
     weight: 6
     settings: {  }
     third_party_settings: {  }
-  field_attribution:
-    weight: 26
-    settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      collapsible: true
-      collapsed: true
-      override_labels: false
-    third_party_settings: {  }
-    type: inline_entity_form_simple
   field_concerns:
     weight: 4
     settings:
@@ -70,6 +60,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_sources:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_quantity_autocomplete
   path:
     type: path
     weight: 9

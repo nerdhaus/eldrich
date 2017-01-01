@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.vehicle.field_armor
-    - field.field.node.vehicle.field_attribution
     - field.field.node.vehicle.field_augmentations
     - field.field.node.vehicle.field_blueprints
     - field.field.node.vehicle.field_cost
@@ -19,9 +18,11 @@ dependencies:
     - field.field.node.vehicle.field_passengers
     - field.field.node.vehicle.field_short_name
     - field.field.node.vehicle.field_skill_bonus
+    - field.field.node.vehicle.field_sources
     - field.field.node.vehicle.field_stats
     - node.type.vehicle
   module:
+    - entity_reference_quantity
     - text
     - user
 id: node.vehicle.teaser
@@ -54,7 +55,6 @@ content:
     third_party_settings: {  }
 hidden:
   field_armor: true
-  field_attribution: true
   field_augmentations: true
   field_blueprints: true
   field_cost: true
@@ -66,5 +66,6 @@ hidden:
   field_passengers: true
   field_short_name: true
   field_skill_bonus: true
+  field_sources: true
   field_stats: true
   links: true

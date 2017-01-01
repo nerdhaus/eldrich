@@ -3,16 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.gear.field_attribution
     - field.field.node.gear.field_blueprints
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
     - field.field.node.gear.field_gear_type
     - field.field.node.gear.field_short_name
+    - field.field.node.gear.field_sources
     - node.type.gear
   module:
     - entity_reference_quantity
-    - inline_entity_form
     - path
     - text
 id: node.gear.default
@@ -25,17 +24,6 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
-  field_attribution:
-    weight: 26
-    settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      collapsible: true
-      collapsed: true
-      override_labels: false
-    third_party_settings: {  }
-    type: inline_entity_form_simple
   field_blueprints:
     weight: 9
     settings:
@@ -66,6 +54,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_sources:
+    weight: 28
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_quantity_autocomplete
   path:
     type: path
     weight: 5

@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.morph.field_armor
-    - field.field.node.morph.field_attribution
     - field.field.node.morph.field_augmentations
     - field.field.node.morph.field_blueprints
     - field.field.node.morph.field_cost
@@ -16,6 +15,7 @@ dependencies:
     - field.field.node.morph.field_movement_speed
     - field.field.node.morph.field_short_name
     - field.field.node.morph.field_skills
+    - field.field.node.morph.field_sources
     - field.field.node.morph.field_stat_cap
     - field.field.node.morph.field_stat_variance
     - field.field.node.morph.field_stats
@@ -27,7 +27,6 @@ dependencies:
     - ep_complex_values
     - ep_skill_reference
     - ep_statblock
-    - inline_entity_form
     - path
     - text
 id: node.morph.default
@@ -45,17 +44,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
-  field_attribution:
-    weight: 39
-    settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      collapsible: true
-      collapsed: true
-      override_labels: false
-    third_party_settings: {  }
-    type: inline_entity_form_simple
   field_augmentations:
     weight: 31
     settings:
@@ -126,6 +114,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: skill_reference_select
+  field_sources:
+    weight: 41
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_quantity_autocomplete
   field_stat_cap:
     weight: 28
     settings: {  }

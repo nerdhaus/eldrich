@@ -3,13 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.mind.field_attribution
     - field.field.node.mind.field_blueprints
     - field.field.node.mind.field_cost
     - field.field.node.mind.field_description
     - field.field.node.mind.field_gear_type
     - field.field.node.mind.field_short_name
     - field.field.node.mind.field_skills
+    - field.field.node.mind.field_sources
     - field.field.node.mind.field_stats
     - node.type.mind
   module:
@@ -48,14 +48,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_text
-  field_attribution:
-    weight: 6
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
   field_cost:
     weight: 5
     label: inline
@@ -87,6 +79,15 @@ content:
       field_delimiter:
         delimiter: ', '
     type: skill_reference_label
+  field_sources:
+    weight: 103
+    label: above
+    settings:
+      location: suffix
+      template: ' ({{ quantity }})'
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
 hidden:
   field_blueprints: true
   field_short_name: true

@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.robot.field_armor
-    - field.field.node.robot.field_attribution
     - field.field.node.robot.field_augmentations
     - field.field.node.robot.field_blueprints
     - field.field.node.robot.field_cost
@@ -17,6 +16,7 @@ dependencies:
     - field.field.node.robot.field_movement_speed
     - field.field.node.robot.field_short_name
     - field.field.node.robot.field_skills
+    - field.field.node.robot.field_sources
     - field.field.node.robot.field_stats
     - node.type.robot
   module:
@@ -43,17 +43,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
-  field_attribution:
-    weight: 19
-    settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      collapsible: true
-      collapsed: true
-      override_labels: false
-    third_party_settings: {  }
-    type: inline_entity_form_simple
   field_augmentations:
     weight: 14
     settings:
@@ -137,6 +126,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: skill_reference_select
+  field_sources:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_quantity_autocomplete
   field_stats:
     weight: 11
     settings: {  }

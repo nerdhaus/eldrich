@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.robot.field_armor
-    - field.field.node.robot.field_attribution
     - field.field.node.robot.field_augmentations
     - field.field.node.robot.field_blueprints
     - field.field.node.robot.field_cost
@@ -17,6 +16,7 @@ dependencies:
     - field.field.node.robot.field_movement_speed
     - field.field.node.robot.field_short_name
     - field.field.node.robot.field_skills
+    - field.field.node.robot.field_sources
     - field.field.node.robot.field_stats
     - node.type.robot
   module:
@@ -78,14 +78,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_text
-  field_attribution:
-    weight: 5
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
   field_augmentations:
     weight: 6
     label: inline
@@ -159,6 +151,15 @@ content:
       field_delimiter:
         delimiter: ', '
     type: skill_reference_label
+  field_sources:
+    weight: 11
+    label: above
+    settings:
+      location: suffix
+      template: ' ({{ quantity }})'
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
 hidden:
   field_blueprints: true
   field_movement_speed: true

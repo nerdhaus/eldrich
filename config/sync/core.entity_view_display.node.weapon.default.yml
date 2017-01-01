@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.weapon.field_reach
     - field.field.node.weapon.field_short_name
     - field.field.node.weapon.field_skill_bonus
+    - field.field.node.weapon.field_sources
     - field.field.node.weapon.field_special_effect
     - field.field.node.weapon.field_uses_ammo
     - field.field.node.weapon.field_uses_mods
@@ -178,6 +179,15 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+  field_sources:
+    weight: 103
+    label: above
+    settings:
+      location: suffix
+      template: ' ({{ quantity }})'
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
   field_special_effect:
     weight: 16
     label: inline

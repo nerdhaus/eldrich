@@ -4,14 +4,15 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.gear.field_attribution
     - field.field.node.gear.field_blueprints
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
     - field.field.node.gear.field_gear_type
     - field.field.node.gear.field_short_name
+    - field.field.node.gear.field_sources
     - node.type.gear
   module:
+    - entity_reference_quantity
     - text
     - user
 id: node.gear.teaser
@@ -43,8 +44,8 @@ content:
       link: true
     third_party_settings: {  }
 hidden:
-  field_attribution: true
   field_blueprints: true
   field_cost: true
   field_short_name: true
+  field_sources: true
   links: true

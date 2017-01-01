@@ -3,14 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.faction.field_attribution
     - field.field.node.faction.field_concerns
     - field.field.node.faction.field_description
     - field.field.node.faction.field_faction_type
     - field.field.node.faction.field_locations
     - field.field.node.faction.field_parent_faction
+    - field.field.node.faction.field_sources
     - node.type.faction
   module:
+    - entity_reference_quantity
     - field_group
     - text
     - user
@@ -40,14 +41,6 @@ targetEntityType: node
 bundle: faction
 mode: default
 content:
-  field_attribution:
-    weight: 6
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
   field_concerns:
     weight: 2
     label: inline
@@ -86,5 +79,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_sources:
+    weight: 7
+    label: above
+    settings:
+      location: suffix
+      template: ' ({{ quantity }})'
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
 hidden:
   links: true

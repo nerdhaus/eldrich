@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.creature.field_armor
-    - field.field.node.creature.field_attribution
     - field.field.node.creature.field_augmentations
     - field.field.node.creature.field_creature_type
     - field.field.node.creature.field_description
@@ -13,12 +12,14 @@ dependencies:
     - field.field.node.creature.field_mobility_system
     - field.field.node.creature.field_movement_speed
     - field.field.node.creature.field_skills
+    - field.field.node.creature.field_sources
     - field.field.node.creature.field_stats
     - field.field.node.creature.field_strain
     - field.field.node.creature.field_traits
     - node.type.creature
   module:
     - entity_reference_override
+    - entity_reference_quantity
     - ep_complex_values
     - ep_skill_reference
     - ep_statblock
@@ -40,17 +41,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
-  field_attribution:
-    weight: 18
-    settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      collapsible: true
-      collapsed: true
-      override_labels: false
-    third_party_settings: {  }
-    type: inline_entity_form_simple
   field_augmentations:
     weight: 13
     settings:
@@ -108,6 +98,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: skill_reference_select
+  field_sources:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_quantity_autocomplete
   field_stats:
     weight: 7
     settings: {  }

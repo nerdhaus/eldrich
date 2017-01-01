@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.npc.field_attribution
     - field.field.node.npc.field_description
     - field.field.node.npc.field_equipped_armor
     - field.field.node.npc.field_equipped_weapons
@@ -14,11 +13,13 @@ dependencies:
     - field.field.node.npc.field_roleplay_notes
     - field.field.node.npc.field_skills
     - field.field.node.npc.field_sleights
+    - field.field.node.npc.field_sources
     - field.field.node.npc.field_stats
     - field.field.node.npc.field_traits
     - node.type.npc
   module:
     - entity_reference_override
+    - entity_reference_quantity
     - ep_skill_reference
     - ep_statblock
     - field_group
@@ -67,17 +68,6 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
-  field_attribution:
-    weight: 13
-    settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      collapsible: true
-      collapsed: true
-      override_labels: false
-    third_party_settings: {  }
-    type: inline_entity_form_simple
   field_description:
     weight: 7
     settings:
@@ -170,6 +160,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_sources:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_quantity_autocomplete
   field_stats:
     weight: 7
     settings:

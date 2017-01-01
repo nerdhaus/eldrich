@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.drug.field_addiction_modifier
-    - field.field.node.drug.field_attribution
     - field.field.node.drug.field_blueprints
     - field.field.node.drug.field_cost
     - field.field.node.drug.field_delivery_mechanism
@@ -14,8 +13,10 @@ dependencies:
     - field.field.node.drug.field_gear_type
     - field.field.node.drug.field_onset
     - field.field.node.drug.field_short_name
+    - field.field.node.drug.field_sources
     - node.type.drug
   module:
+    - entity_reference_quantity
     - text
     - user
 id: node.drug.teaser
@@ -49,7 +50,6 @@ content:
 hidden:
   field_addiction_modifier: true
   field_armor: true
-  field_attribution: true
   field_blueprints: true
   field_cost: true
   field_delivery_mechanism: true
@@ -57,4 +57,5 @@ hidden:
   field_onset: true
   field_onset_time: true
   field_short_name: true
+  field_sources: true
   links: true

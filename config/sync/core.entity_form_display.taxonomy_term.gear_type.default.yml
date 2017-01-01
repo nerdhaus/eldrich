@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.gear_type.field_icon
     - field.field.taxonomy_term.gear_type.field_plural
-    - field.field.taxonomy_term.gear_type.field_source
+    - field.field.taxonomy_term.gear_type.field_sources
     - taxonomy.vocabulary.gear_type
   module:
     - entity_reference_quantity
@@ -37,8 +37,8 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_source:
-    weight: 31
+  field_sources:
+    weight: 34
     settings:
       match_operator: CONTAINS
       size: '60'

@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.gear_type.field_icon
     - field.field.taxonomy_term.gear_type.field_plural
-    - field.field.taxonomy_term.gear_type.field_source
+    - field.field.taxonomy_term.gear_type.field_sources
     - taxonomy.vocabulary.gear_type
   module:
     - entity_reference_quantity
@@ -35,10 +35,12 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  field_source:
-    weight: 1
+  field_sources:
+    weight: 4
     label: above
     settings:
+      location: suffix
+      template: ' ({{ quantity }})'
       link: true
     third_party_settings: {  }
     type: entity_reference_quantity_label

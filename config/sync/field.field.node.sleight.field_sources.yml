@@ -1,0 +1,30 @@
+uuid: 8cf9a05b-c98a-4a5a-b2a2-93c19ecf908a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sources
+    - node.type.sleight
+  module:
+    - entity_reference_quantity
+id: node.sleight.field_sources
+field_name: field_sources
+entity_type: node
+bundle: sleight
+label: Sources
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: select_lists
+      display_name: sources
+      arguments: {  }
+  qty_min: '0'
+  qty_max: '999'
+  qty_label: Page
+field_type: entity_reference_quantity

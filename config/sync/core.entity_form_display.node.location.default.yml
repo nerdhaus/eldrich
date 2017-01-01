@@ -3,13 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.location.field_attribution
     - field.field.node.location.field_description
     - field.field.node.location.field_location_type
     - field.field.node.location.field_parent_location
     - field.field.node.location.field_population
+    - field.field.node.location.field_sources
     - node.type.location
   module:
+    - entity_reference_quantity
     - path
     - text
 id: node.location.default
@@ -22,17 +23,6 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
-  field_attribution:
-    weight: 26
-    settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      collapsible: true
-      collapsed: true
-      override_labels: false
-    third_party_settings: {  }
-    type: inline_entity_form_simple
   field_description:
     weight: 9
     settings:
@@ -59,6 +49,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+  field_sources:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_quantity_autocomplete
   path:
     type: path
     weight: 5

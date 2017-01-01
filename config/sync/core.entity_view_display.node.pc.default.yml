@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.pc.field_attribution
     - field.field.node.pc.field_description
     - field.field.node.pc.field_equipped_armor
     - field.field.node.pc.field_equipped_weapons
@@ -17,12 +16,14 @@ dependencies:
     - field.field.node.pc.field_quote
     - field.field.node.pc.field_skills
     - field.field.node.pc.field_sleights
+    - field.field.node.pc.field_sources
     - field.field.node.pc.field_stats
     - field.field.node.pc.field_status
     - field.field.node.pc.field_traits
     - node.type.pc
   module:
     - entity_reference_override
+    - entity_reference_quantity
     - ep_skill_reference
     - field_delimiter
     - field_group
@@ -74,14 +75,6 @@ targetEntityType: node
 bundle: pc
 mode: default
 content:
-  field_attribution:
-    weight: 11
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
   field_description:
     weight: 2
     label: hidden
@@ -190,6 +183,15 @@ content:
       field_delimiter:
         delimiter: ', '
     type: entity_reference_label
+  field_sources:
+    weight: 16
+    label: above
+    settings:
+      location: suffix
+      template: ' ({{ quantity }})'
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
   field_status:
     weight: 7
     label: above

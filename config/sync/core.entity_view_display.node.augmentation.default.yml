@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.augmentation.field_armor
-    - field.field.node.augmentation.field_attribution
     - field.field.node.augmentation.field_blueprints
     - field.field.node.augmentation.field_conditional
     - field.field.node.augmentation.field_cost
@@ -14,6 +13,7 @@ dependencies:
     - field.field.node.augmentation.field_morph_types
     - field.field.node.augmentation.field_short_name
     - field.field.node.augmentation.field_skills
+    - field.field.node.augmentation.field_sources
     - field.field.node.augmentation.field_special_effect
     - field.field.node.augmentation.field_stats
     - field.field.node.augmentation.field_weapon
@@ -62,14 +62,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_text
-  field_attribution:
-    weight: 4
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
   field_cost:
     weight: 2
     label: inline
@@ -115,6 +107,15 @@ content:
       field_delimiter:
         delimiter: ', '
     type: skill_reference_label
+  field_sources:
+    weight: 14
+    label: above
+    settings:
+      location: suffix
+      template: ' ({{ quantity }})'
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
   field_special_effect:
     weight: 13
     label: inline

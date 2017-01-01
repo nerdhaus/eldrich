@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.promo_panel
-    - field.field.node.strain.field_attribution
     - field.field.node.strain.field_description
     - field.field.node.strain.field_infectiousness
+    - field.field.node.strain.field_sources
     - field.field.node.strain.field_stages
     - field.field.node.strain.field_strain_rating
     - field.field.node.strain.field_vectors
@@ -38,14 +38,6 @@ targetEntityType: node
 bundle: strain
 mode: promo_panel
 content:
-  field_attribution:
-    weight: 5
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
   field_description:
     weight: 0
     label: hidden
@@ -62,6 +54,7 @@ content:
     type: entity_reference_quantity_label
 hidden:
   field_infectiousness: true
+  field_sources: true
   field_stages: true
   field_strain_rating: true
   field_vectors: true

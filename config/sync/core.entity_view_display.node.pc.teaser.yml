@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.pc.field_attribution
     - field.field.node.pc.field_description
     - field.field.node.pc.field_equipped_armor
     - field.field.node.pc.field_equipped_weapons
@@ -18,6 +17,7 @@ dependencies:
     - field.field.node.pc.field_quote
     - field.field.node.pc.field_skills
     - field.field.node.pc.field_sleights
+    - field.field.node.pc.field_sources
     - field.field.node.pc.field_stats
     - field.field.node.pc.field_status
     - field.field.node.pc.field_traits
@@ -38,7 +38,6 @@ content:
       trim_length: 400
     third_party_settings: {  }
 hidden:
-  field_attribution: true
   field_equipped_armor: true
   field_equipped_weapons: true
   field_gear: true
@@ -51,6 +50,7 @@ hidden:
   field_quote: true
   field_skills: true
   field_sleights: true
+  field_sources: true
   field_stats: true
   field_status: true
   field_traits: true

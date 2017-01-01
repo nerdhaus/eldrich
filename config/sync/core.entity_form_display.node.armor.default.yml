@@ -4,20 +4,19 @@ status: true
 dependencies:
   config:
     - field.field.node.armor.field_armor
-    - field.field.node.armor.field_attribution
     - field.field.node.armor.field_blueprints
     - field.field.node.armor.field_cost
     - field.field.node.armor.field_description
     - field.field.node.armor.field_gear_type
     - field.field.node.armor.field_is_mod
     - field.field.node.armor.field_short_name
+    - field.field.node.armor.field_sources
     - field.field.node.armor.field_special_effect
     - field.field.node.armor.field_uses_mods
     - node.type.armor
   module:
     - entity_reference_quantity
     - ep_complex_values
-    - inline_entity_form
     - path
     - text
 id: node.armor.default
@@ -35,17 +34,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
-  field_attribution:
-    weight: 14
-    settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      collapsible: true
-      collapsed: true
-      override_labels: false
-    third_party_settings: {  }
-    type: inline_entity_form_simple
   field_blueprints:
     weight: 11
     settings:
@@ -85,6 +73,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_sources:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_reference_quantity_select
   field_special_effect:
     weight: 9
     settings:

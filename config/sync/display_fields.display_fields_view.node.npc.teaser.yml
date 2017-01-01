@@ -23,6 +23,7 @@ hidden:
   field_morph: true
   field_network_rep: true
   field_quote: true
+  field_roleplay_notes: true
   field_skills: true
   field_sleights: true
   field_stats: true

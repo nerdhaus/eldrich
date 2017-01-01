@@ -3,14 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.strain.field_attribution
     - field.field.node.strain.field_description
     - field.field.node.strain.field_infectiousness
+    - field.field.node.strain.field_sources
     - field.field.node.strain.field_stages
     - field.field.node.strain.field_strain_rating
     - field.field.node.strain.field_vectors
     - node.type.strain
   module:
+    - entity_reference_quantity
     - inline_entity_form
     - path
     - text
@@ -24,17 +25,6 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
-  field_attribution:
-    weight: 33
-    settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      collapsible: true
-      collapsed: true
-      override_labels: false
-    third_party_settings: {  }
-    type: inline_entity_form_simple
   field_description:
     weight: 7
     settings:
@@ -51,6 +41,14 @@ content:
     type: text_textarea
   field_source:
     weight: 32
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_quantity_autocomplete
+  field_sources:
+    weight: 34
     settings:
       match_operator: CONTAINS
       size: '60'

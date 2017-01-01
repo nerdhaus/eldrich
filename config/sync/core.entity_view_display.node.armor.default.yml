@@ -4,13 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.armor.field_armor
-    - field.field.node.armor.field_attribution
     - field.field.node.armor.field_blueprints
     - field.field.node.armor.field_cost
     - field.field.node.armor.field_description
     - field.field.node.armor.field_gear_type
     - field.field.node.armor.field_is_mod
     - field.field.node.armor.field_short_name
+    - field.field.node.armor.field_sources
     - field.field.node.armor.field_special_effect
     - field.field.node.armor.field_uses_mods
     - node.type.armor
@@ -50,14 +50,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_text
-  field_attribution:
-    weight: 4
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
   field_cost:
     weight: 2
     label: inline
@@ -80,6 +72,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_sources:
+    weight: 6
+    label: above
+    settings:
+      location: suffix
+      template: ' ({{ quantity }})'
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
   field_special_effect:
     weight: 3
     label: inline

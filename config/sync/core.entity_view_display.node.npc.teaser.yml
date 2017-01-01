@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.npc.field_attribution
     - field.field.node.npc.field_description
     - field.field.node.npc.field_equipped_armor
     - field.field.node.npc.field_equipped_weapons
@@ -12,8 +11,10 @@ dependencies:
     - field.field.node.npc.field_identity
     - field.field.node.npc.field_morph
     - field.field.node.npc.field_quote
+    - field.field.node.npc.field_roleplay_notes
     - field.field.node.npc.field_skills
     - field.field.node.npc.field_sleights
+    - field.field.node.npc.field_sources
     - field.field.node.npc.field_stats
     - field.field.node.npc.field_traits
     - node.type.npc
@@ -33,15 +34,16 @@ content:
       trim_length: 400
     third_party_settings: {  }
 hidden:
-  field_attribution: true
   field_equipped_armor: true
   field_equipped_weapons: true
   field_gear: true
   field_identity: true
   field_morph: true
   field_quote: true
+  field_roleplay_notes: true
   field_skills: true
   field_sleights: true
+  field_sources: true
   field_stats: true
   field_traits: true
   links: true

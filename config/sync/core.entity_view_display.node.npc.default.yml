@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.npc.field_attribution
     - field.field.node.npc.field_description
     - field.field.node.npc.field_equipped_armor
     - field.field.node.npc.field_equipped_weapons
@@ -14,11 +13,13 @@ dependencies:
     - field.field.node.npc.field_roleplay_notes
     - field.field.node.npc.field_skills
     - field.field.node.npc.field_sleights
+    - field.field.node.npc.field_sources
     - field.field.node.npc.field_stats
     - field.field.node.npc.field_traits
     - node.type.npc
   module:
     - entity_reference_override
+    - entity_reference_quantity
     - ep_skill_reference
     - field_delimiter
     - field_group
@@ -69,14 +70,6 @@ targetEntityType: node
 bundle: npc
 mode: default
 content:
-  field_attribution:
-    weight: 4
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
   field_description:
     weight: 1
     label: hidden
@@ -139,6 +132,15 @@ content:
       field_delimiter:
         delimiter: ', '
     type: entity_reference_label
+  field_sources:
+    weight: 15
+    label: above
+    settings:
+      location: suffix
+      template: ' ({{ quantity }})'
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
   field_traits:
     weight: 8
     label: inline

@@ -1,0 +1,30 @@
+uuid: 180baa22-962f-478b-99cb-66903b3fb168
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sources
+    - node.type.drug
+  module:
+    - entity_reference_quantity
+id: node.drug.field_sources
+field_name: field_sources
+entity_type: node
+bundle: drug
+label: Sources
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: select_lists
+      display_name: sources
+      arguments: {  }
+  qty_min: '0'
+  qty_max: '999'
+  qty_label: Page
+field_type: entity_reference_quantity

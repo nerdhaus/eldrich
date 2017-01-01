@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.morph.field_armor
-    - field.field.node.morph.field_attribution
     - field.field.node.morph.field_augmentations
     - field.field.node.morph.field_blueprints
     - field.field.node.morph.field_cost
@@ -17,12 +16,14 @@ dependencies:
     - field.field.node.morph.field_movement_speed
     - field.field.node.morph.field_short_name
     - field.field.node.morph.field_skills
+    - field.field.node.morph.field_sources
     - field.field.node.morph.field_stat_cap
     - field.field.node.morph.field_stat_variance
     - field.field.node.morph.field_stats
     - field.field.node.morph.field_traits
     - node.type.morph
   module:
+    - entity_reference_quantity
     - text
     - user
 id: node.morph.teaser
@@ -55,7 +56,6 @@ content:
     third_party_settings: {  }
 hidden:
   field_armor: true
-  field_attribution: true
   field_augmentations: true
   field_blueprints: true
   field_cost: true
@@ -68,6 +68,7 @@ hidden:
   field_movement_speed: true
   field_short_name: true
   field_skills: true
+  field_sources: true
   field_stat_cap: true
   field_stat_variance: true
   field_stats: true

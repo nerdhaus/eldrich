@@ -5,13 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.armor.field_armor
-    - field.field.node.armor.field_attribution
     - field.field.node.armor.field_blueprints
     - field.field.node.armor.field_cost
     - field.field.node.armor.field_description
     - field.field.node.armor.field_gear_type
     - field.field.node.armor.field_is_mod
     - field.field.node.armor.field_short_name
+    - field.field.node.armor.field_sources
     - field.field.node.armor.field_special_effect
     - field.field.node.armor.field_uses_mods
     - node.type.armor
@@ -49,10 +49,10 @@ content:
     third_party_settings: {  }
 hidden:
   field_armor: true
-  field_attribution: true
   field_blueprints: true
   field_is_mod: true
   field_short_name: true
+  field_sources: true
   field_special_effect: true
   field_uses_mods: true
   links: true

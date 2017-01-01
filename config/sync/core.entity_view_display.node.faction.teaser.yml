@@ -4,12 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.faction.field_attribution
     - field.field.node.faction.field_concerns
     - field.field.node.faction.field_description
     - field.field.node.faction.field_faction_type
     - field.field.node.faction.field_locations
     - field.field.node.faction.field_parent_faction
+    - field.field.node.faction.field_sources
     - node.type.faction
   module:
     - text
@@ -34,8 +34,8 @@ content:
       link: false
     third_party_settings: {  }
 hidden:
-  field_attribution: true
   field_concerns: true
   field_locations: true
   field_parent_faction: true
+  field_sources: true
   links: true

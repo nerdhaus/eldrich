@@ -4,12 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.trait.field_attribution
+    - field.field.node.trait.field_conditional
     - field.field.node.trait.field_cp_cost
     - field.field.node.trait.field_description
     - field.field.node.trait.field_ego_trait
     - field.field.node.trait.field_morph_trait
     - field.field.node.trait.field_skills
+    - field.field.node.trait.field_sources
     - field.field.node.trait.field_special_effect
     - field.field.node.trait.field_stats
     - node.type.trait
@@ -29,12 +30,12 @@ content:
       trim_length: 400
     third_party_settings: {  }
 hidden:
-  field_attribution: true
   field_conditional: true
   field_cp_cost: true
   field_ego_trait: true
   field_morph_trait: true
   field_skills: true
+  field_sources: true
   field_special_effect: true
   field_stats: true
   links: true

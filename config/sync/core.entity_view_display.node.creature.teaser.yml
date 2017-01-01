@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.creature.field_armor
-    - field.field.node.creature.field_attribution
     - field.field.node.creature.field_augmentations
     - field.field.node.creature.field_creature_type
     - field.field.node.creature.field_description
@@ -14,6 +13,7 @@ dependencies:
     - field.field.node.creature.field_mobility_system
     - field.field.node.creature.field_movement_speed
     - field.field.node.creature.field_skills
+    - field.field.node.creature.field_sources
     - field.field.node.creature.field_stats
     - field.field.node.creature.field_strain
     - field.field.node.creature.field_traits
@@ -34,7 +34,6 @@ content:
     third_party_settings: {  }
 hidden:
   field_armor: true
-  field_attribution: true
   field_augmentations: true
   field_creature_type: true
   field_equipped_weapons: true
@@ -42,6 +41,7 @@ hidden:
   field_mobility_system: true
   field_movement_speed: true
   field_skills: true
+  field_sources: true
   field_stats: true
   field_strain: true
   field_traits: true

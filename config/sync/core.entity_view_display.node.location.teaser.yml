@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.location.field_attribution
     - field.field.node.location.field_description
     - field.field.node.location.field_location_type
     - field.field.node.location.field_parent_location
     - field.field.node.location.field_population
+    - field.field.node.location.field_sources
     - node.type.location
   module:
     - text
@@ -33,7 +33,7 @@ content:
       link: false
     third_party_settings: {  }
 hidden:
-  field_attribution: true
   field_parent_location: true
   field_population: true
+  field_sources: true
   links: true

@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.sleight.field_action_type
-    - field.field.node.sleight.field_attribution
     - field.field.node.sleight.field_conditional
     - field.field.node.sleight.field_description
     - field.field.node.sleight.field_exsurgent
@@ -14,10 +13,12 @@ dependencies:
     - field.field.node.sleight.field_sleight_duration
     - field.field.node.sleight.field_sleight_level
     - field.field.node.sleight.field_sleight_range
+    - field.field.node.sleight.field_sources
     - field.field.node.sleight.field_stats
     - field.field.node.sleight.field_strain
     - node.type.sleight
   module:
+    - entity_reference_quantity
     - ep_skill_reference
     - ep_statblock
     - field_delimiter
@@ -69,14 +70,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_attribution:
-    weight: 9
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_entity_view
   field_conditional:
     weight: 9
     label: above
@@ -138,6 +131,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_sources:
+    weight: 102
+    label: above
+    settings:
+      location: suffix
+      template: ' ({{ quantity }})'
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
   field_stats:
     weight: 7
     label: inline
