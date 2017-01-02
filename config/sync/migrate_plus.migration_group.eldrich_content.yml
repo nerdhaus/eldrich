@@ -1,0 +1,6 @@
+id: eldrich_content
+label: Content
+description: 'News updates, about pages, block data, etc.'
+source_type: csv
+module: null
+shared_configuration: null

@@ -4,11 +4,11 @@ status: true
 dependencies: {  }
 id: news
 migration_tags: null
-migration_group: null
+migration_group: eldrich_content
 label: News
 source:
   plugin: csv
-  path: modules/custom/ep_import/news.csv
+  path: modules/custom/ep_import/content/news.csv
   header_row_count: 1
   column_names:
     -
