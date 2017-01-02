@@ -14,7 +14,7 @@ source:
     -
       name: name
     -
-      legal_name: legal_name
+      full_name: full_name
     -
       player: player
     -
@@ -55,18 +55,6 @@ source:
       credits: credits
     -
       rep: rep
-    -
-      rez: rez
-    -
-      damage: damage
-    -
-      wounds: wounds
-    -
-      stress: stress
-    -
-      trauma: trauma
-    -
-      derangements: derangements
   keys:
     - name
 process:
@@ -78,7 +66,7 @@ process:
   field_quote/value: quote
   field_stats:
     plugin: stat_block
-    source: stats
+    source: ego_stats
   field_skills:
     -
       plugin: skip_on_empty
@@ -229,13 +217,13 @@ process:
     plugin: entity_maker
     entity_type: component
     source:
-      - name
+      - full_name
       - faction
       - background
       - rep
       - credits
     keys:
-      - name
+      - full_name
       - faction
       - background
       - rep
@@ -243,7 +231,7 @@ process:
     default_values:
       type: identity
     process:
-      title: name
+      title: full_name
       field_credits: credits
       field_background: background
       field_rep:
@@ -258,7 +246,7 @@ process:
           plugin: entity_lookup_plus
           delimiter: ':'
           extra_value_key: quantity
-          value_key: field_code
+          value_key: field_symbol
           bundle: network
           bundle_key: type
           entity_type: node
@@ -275,8 +263,13 @@ process:
   field_equipped_armor:
     plugin: equipped_armor
     source: armor
-    default_values:
-      type: attribution
+  field_sources:
+    plugin: source_with_page
+    entity_type: node
+    bundle: source
+    bundle_key: type
+    value_key: field_code
+    source: book
 destination:
   plugin: 'entity:node'
 migration_dependencies: null

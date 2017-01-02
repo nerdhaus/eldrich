@@ -33,7 +33,7 @@ use Drupal\Core\Entity\EntityInterface;
 
 class ThreatCalculator {
 
-  public static function total(Array $stats, Array $skills, Array $armor, Array $weapons) {
+  public static function total(Array $stats, Array $skills, Array $armor, Array $weapons, Array $sleights = []) {
     $data = static::getDefaults();
 
     // Defense data
