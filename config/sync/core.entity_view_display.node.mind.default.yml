@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.mind.field_stats
     - node.type.mind
   module:
+    - eldrich
     - entity_reference_quantity
     - ep_skill_reference
     - field_delimiter
@@ -25,7 +26,7 @@ third_party_settings:
       children:
         - field_skills
       parent_name: ''
-      weight: 4
+      weight: 3
       format_type: html_element
       format_settings:
         id: ''
@@ -49,7 +50,7 @@ content:
     third_party_settings: {  }
     type: armor_text
   field_cost:
-    weight: 5
+    weight: 2
     label: inline
     settings:
       location: suffix
@@ -80,7 +81,7 @@ content:
         delimiter: ', '
     type: skill_reference_label
   field_sources:
-    weight: 103
+    weight: 4
     label: above
     settings:
       link: true
