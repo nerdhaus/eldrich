@@ -22,9 +22,8 @@ dependencies:
     - field.field.node.pc.field_traits
     - node.type.pc
   module:
+    - eldrich
     - entity_reference_override
-    - entity_reference_quantity
-    - ep_skill_reference
     - field_delimiter
     - field_group
     - image
@@ -34,14 +33,10 @@ third_party_settings:
   field_group:
     group_attributes:
       children:
-        - field_motivations
-        - field_skills
-        - field_gear
-        - field_owned_blueprints
         - field_traits
         - field_sleights
       parent_name: ''
-      weight: 9
+      weight: 5
       format_type: html_element
       format_settings:
         id: ''
@@ -55,10 +50,12 @@ third_party_settings:
       label: Attributes
     group_equipped:
       children:
+        - field_gear
+        - field_owned_blueprints
         - field_equipped_armor
         - field_equipped_weapons
       parent_name: ''
-      weight: 10
+      weight: 7
       format_type: html_element
       format_settings:
         id: ''
@@ -76,13 +73,13 @@ bundle: pc
 mode: default
 content:
   field_description:
-    weight: 2
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_equipped_armor:
-    weight: 14
+    weight: 10
     label: above
     settings:
       link: true
@@ -90,7 +87,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_equipped_weapons:
-    weight: 15
+    weight: 11
     label: above
     settings:
       link: true
@@ -116,7 +113,7 @@ content:
     third_party_settings: {  }
     type: image
   field_identity:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       link: true
@@ -124,15 +121,15 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_morph:
-    weight: 4
-    label: above
+    weight: 6
+    label: hidden
     settings:
       link: true
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_motivations:
-    weight: 6
+    weight: 2
     label: inline
     settings:
       link: true
@@ -141,8 +138,8 @@ content:
         delimiter: ', '
     type: entity_reference_label
   field_muse:
-    weight: 6
-    label: above
+    weight: 8
+    label: hidden
     settings:
       link: true
       view_mode: default
@@ -160,20 +157,11 @@ content:
     type: entity_reference_override_label
   field_quote:
     weight: 1
-    label: inline
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  field_skills:
-    weight: 7
-    label: inline
-    settings:
-      link: '1'
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
-    type: skill_reference_label
   field_sleights:
     weight: 11
     label: inline
@@ -184,7 +172,7 @@ content:
         delimiter: ', '
     type: entity_reference_label
   field_sources:
-    weight: 16
+    weight: 10
     label: above
     settings:
       link: true
@@ -197,8 +185,8 @@ content:
         delimiter: ''
     type: eldrich_citation_formatter
   field_status:
-    weight: 7
-    label: above
+    weight: 9
+    label: hidden
     settings:
       link: true
       view_mode: default
@@ -215,5 +203,6 @@ content:
         delimiter: ', '
     type: entity_reference_override_label
 hidden:
+  field_skills: true
   field_stats: true
   links: true
