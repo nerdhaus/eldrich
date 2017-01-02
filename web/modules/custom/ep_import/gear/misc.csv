@@ -211,3 +211,6 @@ Survival Cold Weather gear,,Survival Gear,"Cold weather suit w/ face mask and go
 Adaptive Interface,,Xenoarcheology,Tool designed to interface with alien technology. Not for use with biotech or hyper advanced nanotech,High,,TRUE,GC.160,
 Faraday Container,,Xenoarcheology,"A Specimen Container (EP 330) that also blocks all radio, electrical, and radiation.",Low,,TRUE,GC.160,
 Scourer Swarm,Scourers,Xenoarcheology,"Microswarm for uncovering buried artifacts. Systematically removes layers of dirt, locating and cleaning foreign objects.",Moderate,,TRUE,GC.160,
+Gear,Gear,,A placeholder for found objects,,,FALSE,,
+Data,Data,,A placeholder for found objects,,,FALSE,,
+Software,Software,,A placeholder for found objects,,,FALSE,,
