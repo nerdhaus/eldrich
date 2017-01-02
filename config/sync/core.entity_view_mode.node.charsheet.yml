@@ -1,0 +1,10 @@
+uuid: 06f7e985-05b3-4553-a846-cb6afa805451
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.charsheet
+label: Charsheet
+targetEntityType: node
+cache: true

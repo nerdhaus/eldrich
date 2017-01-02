@@ -58,7 +58,9 @@ class StatTreeCalculator {
             static::addSets($statgroups['total'][$group], $statgroups['shell'][$group]);
           }
         }
-        static::combineTotals($statgroups);
+        static::combineTotal($statgroups['mind']);
+        static::combineTotal($statgroups['shell']);
+        static::combineTotal($statgroups['total']);
         break;
 
       case 'npc':
@@ -75,7 +77,6 @@ class StatTreeCalculator {
         }
         static::addSets($statgroups['total']['conditional'], $statgroups['total']['baseline']);
 
-        unset($statgroups['total']['baseline']);
         static::calculateProperties($statgroups['total']['constant']);
         static::calculateProperties($statgroups['total']['conditional']);
         break;
@@ -205,7 +206,6 @@ class StatTreeCalculator {
     static::addSets($statgroups['conditional'], $statgroups['baseline']);
 
     // Calculate derived properties.
-    unset($statgroups['baseline']);
     static::calculateProperties($statgroups['constant']);
     static::calculateProperties($statgroups['conditional']);
   }

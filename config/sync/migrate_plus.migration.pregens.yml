@@ -64,7 +64,7 @@ process:
   field_quote/value: quote
   field_stats:
     plugin: stat_block
-    source: stats
+    source: ego_stats
   field_skills:
     -
       plugin: skip_on_empty

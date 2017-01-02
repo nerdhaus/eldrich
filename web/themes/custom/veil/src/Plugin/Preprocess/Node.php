@@ -38,7 +38,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
     $variables->icon = $this->getIcon($node);
     $variables->badge = $this->getBadge($variables['content'], $node);
 
-    if ($variables->view_mode == 'full') {
+    if (in_array($variables->view_mode, ['full', 'charsheet'])) {
       // Set up the basics here
       $variables->stats = [];
       $variables->skills = [];

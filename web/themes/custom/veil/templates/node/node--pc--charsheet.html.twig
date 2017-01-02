@@ -1,0 +1,75 @@
+{#
+/**
+ * @file
+ * Full-page display.
+ *
+ * Standard variables:
+ * - node: The node entity with limited access to object properties and methods.
+ * - label: The title of the node.
+ * - content: All node items.
+ * - metadata: Metadata for this node.
+ * - url: Direct URL of the current node.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ *
+ * Eldrich/Veil specific variables:
+ * - stats: A nested collection of character attributes.
+ *   @see \Drupal\eldrich\Calculator\StatTreeCalculator for details.
+ * - skills: A nested collection of character skills.
+ *   @see \Drupal\eldrich\Calculator\SkillTreeCalculator for details.
+ * - lists: Assorted char attribute lists like sleights, traits, etc.
+ *   They're just clone of the stuff in content.field_foo, but keeping
+ *   them here allows for convenient iteration.
+ * - stat_style: contains 'minimal', 'simple', or 'full' — indicates which
+ *   sub-template should be used when showing stat table.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+<article{{ attributes.addClass(classes) }}>
+
+  {% if threat and threat.rating %}
+    <span class="text-uppercase label label-danger pull-right">Threat: {{ threat.rating }}</span>
+  {% endif %}
+  {% if content.field_quote %}
+    <blockquote><p>{{ content.field_quote|field_value }}</p></blockquote>
+  {% endif %}
+
+  {{ content.field_description }}
+
+  {% if stat_style and stats %}
+    {% include directory ~ '/templates/partials/' ~ stat_style ~ '-statblock.html.twig' %}
+  {% endif %}
+
+  {% if content.group_attributes or content.group_equipped.field_equipped_weapon or armor %}
+    <dl class="dl-horizontal">
+      {% for field in content.group_attributes %}
+        <dt>{{ field|field_label }}</dt>
+        <dd>{{ field|field_value|safe_join(', ') }}</dd>
+      {% endfor %}
+      {% if armor.energy or armor.kinetic %}
+        <dt>Armor</dt>
+        <dd>{{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
+          {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
+        </dd>
+      {% endif %}
+      {% if content.group_equipped.field_equipped_weapons %}
+        {{ content.group_equipped.field_equipped_weapons|field_value }}
+      {% endif %}
+      {% if content.field_sources %}<dt>Source:</dt><dd>{{ content.field_sources|field_value|safe_join(', ') }}</dd>{% endif %}
+    </dl>
+  {% endif %}
+</article>

@@ -1,8 +1,9 @@
-uuid: 5ae57a80-7639-4a4f-afa2-b05cc6df1344
+uuid: 58edfa1f-2afc-47ef-a8f3-643e263e926c
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.charsheet
     - field.field.node.pc.field_description
     - field.field.node.pc.field_equipped_armor
     - field.field.node.pc.field_equipped_weapons
@@ -69,10 +70,10 @@ third_party_settings:
         effect: none
         speed: fast
       label: Equipped
-id: node.pc.default
+id: node.pc.charsheet
 targetEntityType: node
 bundle: pc
-mode: default
+mode: charsheet
 content:
   field_description:
     weight: 3
