@@ -1,0 +1,26 @@
+uuid: 91e5b16d-dc50-465a-a6a2-bd62c724c778
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.inspiration.body
+    - node.type.inspiration
+  module:
+    - text
+    - user
+id: node.inspiration.teaser
+targetEntityType: node
+bundle: inspiration
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden: {  }

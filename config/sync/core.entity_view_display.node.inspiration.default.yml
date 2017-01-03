@@ -1,0 +1,37 @@
+uuid: 02eeb521-9291-467f-8771-7cee1cceca2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.inspiration.body
+    - field.field.node.inspiration.field_resource
+    - node.type.inspiration
+  module:
+    - link
+    - text
+    - user
+id: node.inspiration.default
+targetEntityType: node
+bundle: inspiration
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_resource:
+    weight: 102
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  links:
+    weight: 100
+hidden: {  }

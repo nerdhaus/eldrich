@@ -1,0 +1,22 @@
+uuid: ab078530-a7c3-48c7-a8d6-a90174d55312
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.inspiration
+  module:
+    - text
+id: node.inspiration.body
+field_name: body
+entity_type: node
+bundle: inspiration
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

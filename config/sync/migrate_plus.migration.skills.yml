@@ -35,8 +35,6 @@ source:
     - title
   constants:
     user: Factotum
-  constants:
-    format: basic_html
 process:
   uid:
     plugin: entity_lookup_plus

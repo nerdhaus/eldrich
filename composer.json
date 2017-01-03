@@ -24,7 +24,7 @@
         "drupal/console": "~1.0",
         "drupal/devel": "1.x-dev",
         "drupal/eck": "1.x-dev",
-        "drupal/embed": "1.x-dev",
+        "drupal/embed": "^1.0@RC",
         "drupal/entity_browser": "1.x-dev",
         "drupal/inline_entity_form": "1.x-dev",
         "drupal/entity_embed": "1.x-dev",
@@ -57,7 +57,9 @@
         "drupal/config_update": "^1.2",
         "drupal/block_class": "^1.0@alpha",
         "drupal/twig_field_value": "^1.1",
-        "drupal/ief_table_view_mode": "1.x-dev"
+        "drupal/ief_table_view_mode": "1.x-dev",
+        "drupal/url_embed": "^1.0@alpha",
+        "drupal/prepopulate": "^2.0@alpha"
     },
     "require-dev": {
         "behat/mink": "~1.7",

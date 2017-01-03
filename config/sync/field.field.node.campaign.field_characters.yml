@@ -1,0 +1,28 @@
+uuid: 766a282d-6952-4df2-b2df-9b4c7fb579d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_characters
+    - node.type.campaign
+    - node.type.pc
+id: node.campaign.field_characters
+field_name: field_characters
+entity_type: node
+bundle: campaign
+label: Characters
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      pc: pc
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

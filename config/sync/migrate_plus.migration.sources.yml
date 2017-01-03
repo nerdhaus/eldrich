@@ -32,8 +32,6 @@ source:
       pdf: PDF
     -
       weight: Weight
-  constants:
-    user: Factotum
   keys:
     - title
 process:
