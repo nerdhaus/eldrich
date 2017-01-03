@@ -59,7 +59,7 @@ source:
     - name
 process:
   uid:
-    plugin: EntityGenerate
+    plugin: entity_generate
     entity_type: user
     value_key: name
     source: player
