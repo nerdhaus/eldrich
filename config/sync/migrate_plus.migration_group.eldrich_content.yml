@@ -3,9 +3,4 @@ label: Content
 description: 'News updates, about pages, block data, etc.'
 source_type: csv
 module: null
-shared_configuration:
-  source:
-    constants:
-      uid: 3
-  process:
-    uid: constants/uid
+shared_configuration: null

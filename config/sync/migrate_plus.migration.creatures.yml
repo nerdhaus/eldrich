@@ -47,9 +47,16 @@ source:
       gear: gear
     -
       stress: stress
+  constants:
+    user: Factotum
   keys:
     - title
 process:
+  uid:
+    plugin: entity_lookup_plus
+    entity_type: user
+    value_key: name
+    source: constants/user
   title: title
   type:
     plugin: default_value

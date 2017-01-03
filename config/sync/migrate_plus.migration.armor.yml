@@ -37,9 +37,16 @@ source:
       mod: Mod
     -
       moddable: Moddable
+  constants:
+    user: Factotum
   keys:
     - title
 process:
+  uid:
+    plugin: entity_lookup_plus
+    entity_type: user
+    value_key: name
+    source: constants/user
   title: title
   field_short_name: short
   type:

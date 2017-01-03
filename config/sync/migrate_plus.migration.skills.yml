@@ -34,8 +34,15 @@ source:
   keys:
     - title
   constants:
+    user: Factotum
+  constants:
     format: basic_html
 process:
+  uid:
+    plugin: entity_lookup_plus
+    entity_type: user
+    value_key: name
+    source: constants/user
   title: title
   type:
     plugin: default_value

@@ -19,7 +19,14 @@ source:
       body: Body
   keys:
     - title
+  constants:
+    user: Factotum
 process:
+  uid:
+    plugin: entity_lookup_plus
+    entity_type: user
+    value_key: name
+    source: constants/user
   type:
     plugin: default_value
     default_value: news

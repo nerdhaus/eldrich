@@ -26,8 +26,14 @@ source:
   keys:
     - title
   constants:
+    user: Factotum
     content_type: location
 process:
+  uid:
+    plugin: entity_lookup_plus
+    entity_type: user
+    value_key: name
+    source: constants/user
   title: title
   field_parent_location:
     -

@@ -53,9 +53,16 @@ source:
       credits: credits
     -
       rep: rep
+  constants:
+    user: Factotum
   keys:
     - name
 process:
+  uid:
+    plugin: entity_lookup_plus
+    entity_type: user
+    value_key: name
+    source: constants/user
   title: name
   type:
     plugin: default_value

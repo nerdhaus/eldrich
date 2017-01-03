@@ -7,9 +7,4 @@ label: 'Core data'
 description: 'Lookup tables and base data for Eldrich Black.'
 source_type: csv
 module: null
-shared_configuration:
-  source:
-    constants:
-      uid: 3
-  process:
-    uid: constants/uid
+shared_configuration: null

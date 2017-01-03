@@ -58,6 +58,11 @@ source:
   keys:
     - name
 process:
+  uid:
+    plugin: EntityGenerate
+    entity_type: user
+    value_key: name
+    source: player
   title: name
   type:
     plugin: default_value

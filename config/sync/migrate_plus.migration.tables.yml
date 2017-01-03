@@ -29,6 +29,11 @@ source:
   constants:
     format: basic_html
 process:
+  uid:
+    plugin: entity_lookup_plus
+    entity_type: user
+    value_key: name
+    source: constants/user
   type: table
   title: title
   field_lookup_code:

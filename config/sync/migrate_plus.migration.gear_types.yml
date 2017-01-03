@@ -27,6 +27,11 @@ source:
     - title
     - parent
 process:
+  uid:
+    plugin: entity_lookup_plus
+    entity_type: user
+    value_key: name
+    source: constants/user
   name: title
   description: description
   vid:
