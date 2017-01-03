@@ -1,7 +1,7 @@
 {% set properties = ['cog', 'coo', 'int', 'ref', 'sav', 'som', 'wil'] %}
 <table class="table table-condensed table-bordered table-statblock">
   <thead>
-    <th></th>
+    <th class="empty"></th>
   {% for property in properties %}
     <th>{{ property|upper }}</th>
   {% endfor %}
@@ -33,7 +33,7 @@
       </td>
   {% endfor %}
   </tr>
-  <tr>
+  <tr class="summary-row">
     <td>Total</td>
     {% for property in properties %}
     {% set constant = attribute(stats.total.constant, property) %}

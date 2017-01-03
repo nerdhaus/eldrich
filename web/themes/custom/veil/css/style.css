@@ -43,6 +43,14 @@ table.table-statblock tr td {
   border-width: 1px;
 }
 
+table.table-statblock .empty {
+  background-color: transparent;
+}
+
+table.table-statblock .summary-row td {
+  border-top-width: 3px;
+}
+
 .eldrich-icon {
   font-size: 200%;
 }
