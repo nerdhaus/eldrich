@@ -203,7 +203,7 @@ class StatTreeCalculator {
     }
   }
 
-  public static function combineTotal(Array &$statgroups, Array $cap) {
+  public static function combineTotal(Array &$statgroups, Array $cap = null) {
     // Add the baseline values to the constant and conditional sets
     static::addSets($statgroups['constant'], $statgroups['baseline']);
     static::addSets($statgroups['conditional'], $statgroups['baseline']);
@@ -251,11 +251,15 @@ class StatTreeCalculator {
     return $cap;
   }
 
-  private static function enforceStatCap(Array &$statgroups, Array $cap) {
+  private static function enforceStatCap(Array &$statgroups, Array $cap = null) {
+    if (!isset($cap)) {
+      return;
+    }
+
     foreach ($statgroups as $group_key => $group) {
       foreach (['baseline', 'constant', 'conditional'] as $set) {
         foreach ($cap as $key => $value) {
-          if (key_exists($set, $statgroups[$group_key])) {
+          if (key_exists($set, $statgroups[$group_key]) && key_exists($key, $statgroups[$group_key][$set])) {
             $statgroups[$group_key][$set][$key] = min($statgroups[$group_key][$set][$key], $value);
           }
         }
