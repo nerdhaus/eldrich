@@ -22,6 +22,7 @@ use Drupal\Core\Entity\FieldableEntityInterface;
  *   - constant (bonuses that always apply)
  *   - conditional (bonuses that don't)
  * - total
+ *   - baseline (Not used, but still exists for simplicity)
  *   - constant (always applies)
  *   - conditional (conditionally applies)
  * - entities (pre-built set of data about each stat)
@@ -52,15 +53,19 @@ class StatTreeCalculator {
         // PCs store ego stats but reference morph stats
         $statgroups['total'] = $statgroups['mind'] = static::walkTree($entity);
         if (!$entity->field_morph->isEmpty()) {
+          $cap = static::getStatCap($entity->field_morph->entity);
           $statgroups['shell'] = static::walkTree($entity->field_morph->entity);
 
           foreach (['baseline', 'constant', 'conditional'] as $group) {
             static::addSets($statgroups['total'][$group], $statgroups['shell'][$group]);
           }
         }
-        static::combineTotal($statgroups['mind']);
-        static::combineTotal($statgroups['shell']);
-        static::combineTotal($statgroups['total']);
+        else {
+          $cap = static::getStatCap();
+        }
+        static::combineTotal($statgroups['mind'], $cap);
+        static::combineTotal($statgroups['shell'], $cap);
+        static::combineTotal($statgroups['total'], $cap);
         break;
 
       case 'npc':
@@ -72,11 +77,17 @@ class StatTreeCalculator {
         $statgroups['total']['constant'] = $statgroups['total']['baseline'];
 
         if (!$entity->field_morph->isEmpty()) {
-          $statgroups['shell'] = static::walkTree($entity->field_morph->entity);
+          $morph = $entity->field_morph->entity;
+          $cap = static::getStatCap($entity->field_morph->entity);
+          $statgroups['shell'] = static::walkTree($morph);
           static::addSets($statgroups['total']['conditional'], $statgroups['shell']['conditional']);
+        }
+        else {
+          $cap = static::getStatCap();
         }
         static::addSets($statgroups['total']['conditional'], $statgroups['total']['baseline']);
 
+        static::enforceStatCap($statgroups, $cap);
         static::calculateProperties($statgroups['total']['constant']);
         static::calculateProperties($statgroups['total']['conditional']);
         break;
@@ -192,18 +203,12 @@ class StatTreeCalculator {
     }
   }
 
-  public static function enforceMaxStats(Array &$a, Array $max) {
-    foreach ($a as $key => $value) {
-      if (isset($max[$key])) {
-        $a[$key] = min($a[$key], $max[$key]);
-      }
-    }
-  }
-
-  public static function combineTotal(Array &$statgroups) {
+  public static function combineTotal(Array &$statgroups, Array $cap) {
     // Add the baseline values to the constant and conditional sets
     static::addSets($statgroups['constant'], $statgroups['baseline']);
     static::addSets($statgroups['conditional'], $statgroups['baseline']);
+
+    static::enforceStatCap($statgroups, $cap);
 
     // Calculate derived properties.
     static::calculateProperties($statgroups['constant']);
@@ -223,5 +228,38 @@ class StatTreeCalculator {
       }
     }
     return static::$statList;
+  }
+
+  private static function getStatCap(FieldableEntityInterface $morph_instance = null) {
+    if (!isset($morph_instance) || $morph_instance->field_model->isEmpty()) {
+      $cap = [
+        'cog' => 30,
+        'coo' => 30,
+        'int' => 30,
+        'ref' => 30,
+        'sav' => 30,
+        'som' => 30,
+        'wil' => 30,
+      ];
+    }
+    else {
+      $cap = $morph_instance->field_model->entity->field_stats->getValue();
+    }
+    $cap['mox'] = 7;
+    $cap['spd'] = 4;
+
+    return $cap;
+  }
+
+  private static function enforceStatCap(Array &$statgroups, Array $cap) {
+    foreach ($statgroups as $group_key => $group) {
+      foreach (['baseline', 'constant', 'conditional'] as $set) {
+        foreach ($cap as $key => $value) {
+          if (key_exists($set, $statgroups[$group_key])) {
+            $statgroups[$group_key][$set][$key] = min($statgroups[$group_key][$set][$key], $value);
+          }
+        }
+      }
+    }
   }
 }
