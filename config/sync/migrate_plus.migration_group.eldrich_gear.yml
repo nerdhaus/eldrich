@@ -7,4 +7,9 @@ label: Gear
 description: 'Gear, morphs, etc. for Eldrich Black.'
 source_type: csv
 module: null
-shared_configuration: null
+shared_configuration:
+  source:
+    constants:
+      uid: 3
+  process:
+    uid: constants/uid

@@ -12,9 +12,9 @@ source:
   header_row_count: 1
   column_names:
     -
-      date: Date
-    -
       title: Title
+    -
+      date: Date
     -
       body: Body
   keys:
@@ -23,9 +23,6 @@ process:
   type:
     plugin: default_value
     default_value: news
-  uid:
-    plugin: default_value
-    default_value: 1
   created:
     plugin: callback
     callable: ep_import_date

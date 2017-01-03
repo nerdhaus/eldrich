@@ -1,0 +1,38 @@
+<?php
+
+function ep_import_install() {
+  $user = _ep_import_create_content_user();
+}
+
+/**
+ * Set up a default non-admin content owner for the site..
+ */
+function ep_import_update_8001() {
+  $user = _ep_import_create_content_user();
+
+  // Bulk-update all the nodes that bave been authored up to this point.
+  $query = \Drupal::database()->update('node');
+  $query->fields(['uid' => $user->id()]);
+  $query->execute();
+
+  return t('Created the Factotum user, assigned all content to it.');
+}
+
+function _ep_import_create_content_user() {
+  // Set up a designated account to hold all content.
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+  //Save user
+  $user = \Drupal\user\Entity\User::create(
+    [
+      'name' => 'Factotum',
+      'mail' => 'editor@eldrich.host',
+      'pass' => substr(md5(rand()), 0, 16),
+      'status' => 1,
+      'created' => 695206800,
+    ]
+  );
+
+  $user->save();
+  return $user;
+}
