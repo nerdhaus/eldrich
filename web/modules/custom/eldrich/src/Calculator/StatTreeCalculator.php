@@ -205,6 +205,7 @@ class StatTreeCalculator {
 
   public static function combineTotal(Array &$statgroups, Array $cap = null) {
     // Add the baseline values to the constant and conditional sets
+    static::addSets($statgroups['conditional'], $statgroups['constant']);
     static::addSets($statgroups['constant'], $statgroups['baseline']);
     static::addSets($statgroups['conditional'], $statgroups['baseline']);
 
@@ -243,7 +244,7 @@ class StatTreeCalculator {
       ];
     }
     else {
-      $cap = $morph_instance->field_model->entity->field_stats->getValue();
+      $cap = $morph_instance->field_model->entity->field_stat_cap->getValue();
     }
     $cap['mox'] = 7;
     $cap['spd'] = 4;

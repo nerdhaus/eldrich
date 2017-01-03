@@ -50,8 +50,8 @@
 
   {{ content.field_description }}
 
-  {% if stat_style and stats %}
-    {% include directory ~ '/templates/partials/' ~ stat_style ~ '-statblock.html.twig' %}
+  {% if stats %}
+    {% include directory ~ '/templates/partials/full-statblock.html.twig' %}
   {% endif %}
 
   {% if content.group_attributes or content.group_equipped.field_equipped_weapon or armor %}
