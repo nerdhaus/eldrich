@@ -9,6 +9,8 @@ dependencies:
     - field.field.node.npc.field_gear
     - field.field.node.npc.field_identity
     - field.field.node.npc.field_morph
+    - field.field.node.npc.field_motivations
+    - field.field.node.npc.field_owned_blueprints
     - field.field.node.npc.field_quote
     - field.field.node.npc.field_roleplay_notes
     - field.field.node.npc.field_skills
@@ -18,8 +20,8 @@ dependencies:
     - field.field.node.npc.field_traits
     - node.type.npc
   module:
+    - eldrich
     - entity_reference_override
-    - entity_reference_quantity
     - ep_skill_reference
     - field_delimiter
     - field_group
@@ -35,9 +37,10 @@ third_party_settings:
         - display_fields_augmentations
         - field_traits
         - field_gear
+        - field_owned_blueprints
         - field_sleights
       parent_name: ''
-      weight: 2
+      weight: 4
       format_type: html_element
       format_settings:
         id: ''
@@ -53,7 +56,7 @@ third_party_settings:
       children:
         - field_equipped_weapons
       parent_name: ''
-      weight: 3
+      weight: 5
       format_type: html_element
       format_settings:
         id: ''
@@ -101,6 +104,21 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_motivations:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_owned_blueprints:
+    weight: 10
+    label: above
+    settings:
+      override_action: title
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_override_label
   field_quote:
     weight: 0
     label: inline
@@ -109,7 +127,7 @@ content:
     third_party_settings: {  }
     type: string
   field_roleplay_notes:
-    weight: 5
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -124,7 +142,7 @@ content:
         delimiter: ', '
     type: skill_reference_label
   field_sleights:
-    weight: 10
+    weight: 11
     label: inline
     settings:
       link: true
@@ -133,7 +151,7 @@ content:
         delimiter: ', '
     type: entity_reference_label
   field_sources:
-    weight: 15
+    weight: 6
     label: above
     settings:
       link: true

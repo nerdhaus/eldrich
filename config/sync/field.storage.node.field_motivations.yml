@@ -1,16 +1,17 @@
-uuid: b0ba8dac-6564-4dfd-b41c-0a31a804b735
+uuid: 4d152b5f-772e-4edc-a31c-3f204a1b73c3
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
 id: node.field_motivations
 field_name: field_motivations
 entity_type: node
-type: entity_reference
+type: string
 settings:
-  target_type: taxonomy_term
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 3

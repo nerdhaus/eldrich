@@ -51,6 +51,8 @@ hidden:
   field_gear: true
   field_identity: true
   field_morph: true
+  field_motivations: true
+  field_owned_blueprints: true
   field_quote: true
   field_roleplay_notes: true
   field_skills: true

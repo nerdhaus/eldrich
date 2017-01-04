@@ -16,7 +16,6 @@ dependencies:
     - field.field.node.pc.field_quote
     - field.field.node.pc.field_skills
     - field.field.node.pc.field_sleights
-    - field.field.node.pc.field_sources
     - field.field.node.pc.field_stats
     - field.field.node.pc.field_status
     - field.field.node.pc.field_traits
@@ -24,7 +23,6 @@ dependencies:
     - node.type.pc
   module:
     - entity_reference_override
-    - entity_reference_quantity
     - ep_skill_reference
     - ep_statblock
     - field_group
@@ -147,13 +145,12 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_simple
   field_motivations:
-    weight: 8
+    weight: 26
     settings:
-      match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: string_textfield
   field_muse:
     weight: 12
     settings:
@@ -193,14 +190,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
-  field_sources:
-    weight: 26
-    settings:
-      match_operator: CONTAINS
-      size: '60'
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_quantity_autocomplete
   field_stats:
     weight: 9
     settings:

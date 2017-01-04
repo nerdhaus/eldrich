@@ -1,0 +1,28 @@
+uuid: 5977abef-e1f1-4cab-9f2b-18eda1942917
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_owned_blueprints
+    - node.type.npc
+  module:
+    - entity_reference_override
+id: node.npc.field_owned_blueprints
+field_name: field_owned_blueprints
+entity_type: node
+bundle: npc
+label: Blueprints
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: select_lists
+      display_name: blueprints
+      arguments: {  }
+  override_label: Notes
+field_type: entity_reference_override

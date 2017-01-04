@@ -11,13 +11,11 @@ dependencies:
     - field.field.node.pc.field_headshot
     - field.field.node.pc.field_identity
     - field.field.node.pc.field_morph
-    - field.field.node.pc.field_motivations
     - field.field.node.pc.field_muse
     - field.field.node.pc.field_owned_blueprints
     - field.field.node.pc.field_quote
     - field.field.node.pc.field_skills
     - field.field.node.pc.field_sleights
-    - field.field.node.pc.field_sources
     - field.field.node.pc.field_stats
     - field.field.node.pc.field_status
     - field.field.node.pc.field_traits
@@ -44,13 +42,11 @@ hidden:
   field_headshot: true
   field_identity: true
   field_morph: true
-  field_motivations: true
   field_muse: true
   field_owned_blueprints: true
   field_quote: true
   field_skills: true
   field_sleights: true
-  field_sources: true
   field_stats: true
   field_status: true
   field_traits: true

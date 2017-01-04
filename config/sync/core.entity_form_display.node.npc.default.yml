@@ -9,6 +9,8 @@ dependencies:
     - field.field.node.npc.field_gear
     - field.field.node.npc.field_identity
     - field.field.node.npc.field_morph
+    - field.field.node.npc.field_motivations
+    - field.field.node.npc.field_owned_blueprints
     - field.field.node.npc.field_quote
     - field.field.node.npc.field_roleplay_notes
     - field.field.node.npc.field_skills
@@ -133,6 +135,21 @@ content:
       override_labels: false
     third_party_settings: {  }
     type: inline_entity_form_simple
+  field_motivations:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_owned_blueprints:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
   field_quote:
     weight: 1
     settings:

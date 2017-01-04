@@ -28,27 +28,31 @@ source:
     -
       description: description
     -
-      rp_notes: 'Roleplay Notes'
+      ego_stats: ego_stats
     -
-      stats: stats
-    -
-      morph: morph
-    -
-      skills: skills
-    -
-      augmentations: augmentations
-    -
-      traits: traits
+      ego_traits: ego_traits
     -
       sleights: sleights
     -
-      gear: gear
+      skills: skills
     -
-      blueprints: blueprints
+      morph: morph
+    -
+      morph_stats: morph_stats
+    -
+      morph_traits: morph_traits
+    -
+      augmentations: augmentations
+    -
+      appearance: appearance
+    -
+      gear: gear
     -
       weapons: weapons
     -
       armor: armor
+    -
+      blueprints: blueprints
     -
       credits: credits
     -
@@ -66,13 +70,12 @@ process:
   title: name
   type:
     plugin: default_value
-    default_value: npc
+    default_value: pc
   field_description/value: description
-  field_roleplay_notes/value: rp_notes
   field_quote/value: quote
   field_stats:
     plugin: stat_block
-    source: stats
+    source: ego_stats
   field_skills:
     -
       plugin: skip_on_empty
@@ -111,7 +114,8 @@ process:
         - vehicle
         - robot
         - mind
-  field_blueprints:
+        - creature
+  field_owned_blueprints:
     -
       plugin: skip_on_empty
       method: process
@@ -219,6 +223,14 @@ process:
             bundle: augmentation
             bundle_key: type
             entity_type: node
+  field_motivations:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: motivations
+    -
+      plugin: explode
+      delimiter: ','
   field_identity/target_id:
     plugin: entity_maker
     entity_type: component

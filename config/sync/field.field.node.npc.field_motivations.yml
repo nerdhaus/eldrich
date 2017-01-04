@@ -1,18 +1,18 @@
-uuid: 8c6ffade-edc7-4ce9-830d-792d09598145
+uuid: 35922487-a1f0-4ee4-ac82-4c53b2d0d1c1
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_motivations
-    - node.type.pc
-id: node.pc.field_motivations
+    - node.type.npc
+id: node.npc.field_motivations
 field_name: field_motivations
 entity_type: node
-bundle: pc
+bundle: npc
 label: Motivations
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

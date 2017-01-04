@@ -32,29 +32,51 @@ source:
     -
       ego_stats: ego_stats
     -
+      ego_traits: ego_traits
+    -
+      sleights: sleights
+    -
       skills: skills
     -
       morph: morph
     -
       morph_stats: morph_stats
     -
+      morph_traits: morph_traits
+    -
       augmentations: augmentations
     -
-      traits: traits
-    -
-      sleights: sleights
+      appearance: appearance
     -
       gear: gear
-    -
-      blueprints: blueprints
     -
       weapons: weapons
     -
       armor: armor
     -
+      blueprints: blueprints
+    -
       credits: credits
     -
       rep: rep
+    -
+      muse: muse
+    -
+      muse_stats: muse_stats
+    -
+      muse_skills: muse_skills
+    -
+      rez: rez
+    -
+      damage: damage
+    -
+      wounds: wounds
+    -
+      stress: stress
+    -
+      trauma: trauma
+    -
+      derangements: derangements
   keys:
     - name
 process:
@@ -110,7 +132,8 @@ process:
         - vehicle
         - robot
         - mind
-  field_blueprints:
+        - creature
+  field_owned_blueprints:
     -
       plugin: skip_on_empty
       method: process
@@ -172,11 +195,13 @@ process:
       entity_type: instance
       source:
         - morph
-        - traits
+        - morph_stats
+        - morph_traits
         - augmentations
       keys:
         - morph
-        - traits
+        - morph_stats
+        - morph_traits
         - augmentations
       default_values:
         type: morph
@@ -188,11 +213,14 @@ process:
           bundle_key: type
           entity_type: node
           source: morph
+        field_stats:
+          plugin: stat_block
+          source: morph_stats
         field_traits:
           -
             plugin: skip_on_empty
             method: process
-            source: traits
+            source: morph_traits
           -
             plugin: explode
             delimiter: ','
@@ -218,6 +246,14 @@ process:
             bundle: augmentation
             bundle_key: type
             entity_type: node
+  field_motivations:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: motivations
+    -
+      plugin: explode
+      delimiter: ','
   field_identity/target_id:
     plugin: entity_maker
     entity_type: component
@@ -268,13 +304,6 @@ process:
   field_equipped_armor:
     plugin: equipped_armor
     source: armor
-  field_sources:
-    plugin: source_with_page
-    entity_type: node
-    bundle: source
-    bundle_key: type
-    value_key: field_code
-    source: book
 destination:
   plugin: 'entity:node'
 migration_dependencies: null
