@@ -34,9 +34,9 @@ source:
     -
       ego_traits: ego_traits
     -
-      sleights: sleights
-    -
       skills: skills
+    -
+      sleights: sleights
     -
       morph: morph
     -
