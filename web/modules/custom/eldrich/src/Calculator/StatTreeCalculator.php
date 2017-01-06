@@ -49,48 +49,25 @@ class StatTreeCalculator {
 
     // Do the tree walk
     switch ($entity->bundle()) {
-      case 'pc':
-        // PCs store ego stats but reference morph stats
-        $statgroups['total'] = $statgroups['mind'] = static::walkTree($entity);
-        if (!$entity->field_morph->isEmpty()) {
-          $cap = static::getStatCap($entity->field_morph->entity);
-          $statgroups['shell'] = static::walkTree($entity->field_morph->entity);
-
-          foreach (['baseline', 'constant', 'conditional'] as $group) {
-            static::addSets($statgroups['total'][$group], $statgroups['shell'][$group]);
-          }
-        }
-        else {
-          $cap = static::getStatCap();
-        }
-        static::combineTotal($statgroups['mind'], $cap);
-        static::combineTotal($statgroups['shell'], $cap);
-        static::combineTotal($statgroups['total'], $cap);
-        break;
-
       case 'npc':
-        // NPCs store ego and morph stats pre-summed. We still want to get
-        // the conditionals for them, though.
-        $statgroups['total'] = $statgroups['mind'] = static::walkTree($entity);
+      case 'pc':
+      // PCs store ego stats but reference morph stats
+      $statgroups['total'] = $statgroups['mind'] = static::walkTree($entity);
+      if (!$entity->field_morph->isEmpty()) {
+        $cap = static::getStatCap($entity->field_morph->entity);
+        $statgroups['shell'] = static::walkTree($entity->field_morph->entity);
 
-        // We fudge some stuff to constant bonuses never get rolled in.
-        $statgroups['total']['constant'] = $statgroups['total']['baseline'];
-
-        if (!$entity->field_morph->isEmpty()) {
-          $morph = $entity->field_morph->entity;
-          $cap = static::getStatCap($entity->field_morph->entity);
-          $statgroups['shell'] = static::walkTree($morph);
-          static::addSets($statgroups['total']['conditional'], $statgroups['shell']['conditional']);
+        foreach (['baseline', 'constant', 'conditional'] as $group) {
+          static::addSets($statgroups['total'][$group], $statgroups['shell'][$group]);
         }
-        else {
-          $cap = static::getStatCap();
-        }
-        static::addSets($statgroups['total']['conditional'], $statgroups['total']['baseline']);
-
-        static::enforceStatCap($statgroups, $cap);
-        static::calculateProperties($statgroups['total']['constant']);
-        static::calculateProperties($statgroups['total']['conditional']);
-        break;
+      }
+      else {
+        $cap = static::getStatCap();
+      }
+      static::combineTotal($statgroups['mind'], $cap);
+      static::combineTotal($statgroups['shell'], $cap);
+      static::combineTotal($statgroups['total'], $cap);
+      break;
 
       case 'robot':
         // Robots are the opposite — they store shell and reference mind stats

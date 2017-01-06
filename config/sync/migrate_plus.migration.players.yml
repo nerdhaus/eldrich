@@ -252,7 +252,7 @@ process:
       method: process
       source: motivations
     -
-      plugin: explode
+      plugin: split_and_trim
       delimiter: ','
   field_identity/target_id:
     plugin: entity_maker
