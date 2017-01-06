@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.creature.field_armor
+    - field.field.node.creature.field_attribution
     - field.field.node.creature.field_augmentations
     - field.field.node.creature.field_creature_type
     - field.field.node.creature.field_description
@@ -15,6 +16,7 @@ dependencies:
     - field.field.node.creature.field_sources
     - field.field.node.creature.field_stats
     - field.field.node.creature.field_strain
+    - field.field.node.creature.field_threat
     - field.field.node.creature.field_traits
     - node.type.creature
   module:
@@ -118,6 +120,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_threat:
+    weight: 27
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   field_traits:
     weight: 14
     settings:

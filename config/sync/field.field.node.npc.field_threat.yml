@@ -1,0 +1,23 @@
+uuid: d124a031-ad14-4865-93cd-c6b434090df6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_threat
+    - node.type.npc
+id: node.npc.field_threat
+field_name: field_threat
+entity_type: node
+bundle: npc
+label: Threat
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

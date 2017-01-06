@@ -42,6 +42,7 @@ hidden:
   field_headshot: true
   field_identity: true
   field_morph: true
+  field_motivations: true
   field_muse: true
   field_owned_blueprints: true
   field_quote: true

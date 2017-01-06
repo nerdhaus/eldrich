@@ -190,5 +190,6 @@ content:
         delimiter: ', '
     type: entity_reference_override_label
 hidden:
+  field_motivations: true
   field_stats: true
   links: true

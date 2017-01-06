@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.creature.field_armor
+    - field.field.node.creature.field_attribution
     - field.field.node.creature.field_augmentations
     - field.field.node.creature.field_creature_type
     - field.field.node.creature.field_description
@@ -15,11 +16,12 @@ dependencies:
     - field.field.node.creature.field_sources
     - field.field.node.creature.field_stats
     - field.field.node.creature.field_strain
+    - field.field.node.creature.field_threat
     - field.field.node.creature.field_traits
     - node.type.creature
   module:
+    - eldrich
     - entity_reference_override
-    - entity_reference_quantity
     - ep_complex_values
     - ep_skill_reference
     - field_delimiter
@@ -155,6 +157,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_threat:
+    weight: 14
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
   field_traits:
     weight: 7
     label: inline

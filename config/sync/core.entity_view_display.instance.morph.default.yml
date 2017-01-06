@@ -5,6 +5,7 @@ dependencies:
   config:
     - eck.eck_type.instance.morph
     - field.field.instance.morph.field_augmentations
+    - field.field.instance.morph.field_description
     - field.field.instance.morph.field_mobility_system
     - field.field.instance.morph.field_model
     - field.field.instance.morph.field_movement_speed
@@ -17,6 +18,7 @@ dependencies:
     - ep_skill_reference
     - ep_statblock
     - field_delimiter
+    - text
 id: instance.morph.default
 targetEntityType: instance
 bundle: morph
@@ -32,6 +34,12 @@ content:
       field_delimiter:
         delimiter: ', '
     type: entity_reference_override_label
+  field_description:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_mobility_system:
     weight: 3
     label: inline

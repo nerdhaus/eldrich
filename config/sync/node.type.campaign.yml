@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Campaign
 type: campaign
-description: ''
+description: 'An ongoing series of adventures with a consistent cast of characters.'
 help: ''
 new_revision: true
 preview_mode: 1

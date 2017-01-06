@@ -1,20 +1,20 @@
-uuid: d782546e-a724-4dc9-9fc9-43098adff6a2
+uuid: 88a441e9-7fba-4a0a-815c-598e37270277
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_useful_resources
+    - field.storage.node.field_resources
     - node.type.campaign
   module:
     - link
-id: node.campaign.field_useful_resources
-field_name: field_useful_resources
+id: node.campaign.field_resources
+field_name: field_resources
 entity_type: node
 bundle: campaign
-label: 'Useful Resources'
+label: Resources
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

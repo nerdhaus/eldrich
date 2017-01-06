@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.npc.field_sleights
     - field.field.node.npc.field_sources
     - field.field.node.npc.field_stats
+    - field.field.node.npc.field_threat
     - field.field.node.npc.field_traits
     - node.type.npc
   module:
@@ -191,6 +192,12 @@ content:
       display_style: all
     third_party_settings: {  }
     type: stat_block_table
+  field_threat:
+    weight: 29
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   field_traits:
     weight: 9
     settings:

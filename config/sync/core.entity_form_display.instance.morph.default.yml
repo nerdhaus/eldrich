@@ -5,6 +5,7 @@ dependencies:
   config:
     - eck.eck_type.instance.morph
     - field.field.instance.morph.field_augmentations
+    - field.field.instance.morph.field_description
     - field.field.instance.morph.field_mobility_system
     - field.field.instance.morph.field_model
     - field.field.instance.morph.field_movement_speed
@@ -16,21 +17,29 @@ dependencies:
     - ep_complex_values
     - ep_skill_reference
     - ep_statblock
+    - text
 id: instance.morph.default
 targetEntityType: instance
 bundle: morph
 mode: default
 content:
   field_augmentations:
-    weight: 4
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: '60'
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
+  field_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
   field_mobility_system:
-    weight: 2
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
@@ -46,23 +55,23 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_movement_speed:
-    weight: 3
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_widget
   field_skills:
-    weight: 6
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: skill_reference_select
   field_stats:
-    weight: 1
+    weight: 2
     settings:
       display_style: all
     third_party_settings: {  }
     type: stat_block_table
   field_traits:
-    weight: 5
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: '60'

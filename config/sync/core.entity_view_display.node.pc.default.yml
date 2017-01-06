@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.pc.field_sleights
     - field.field.node.pc.field_stats
     - field.field.node.pc.field_status
+    - field.field.node.pc.field_threat
     - field.field.node.pc.field_traits
     - node.type.pc
   module:
@@ -186,6 +187,14 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+  field_threat:
+    weight: 12
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
   field_traits:
     weight: 1
     label: inline

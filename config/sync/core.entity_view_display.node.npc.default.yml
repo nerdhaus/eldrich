@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.npc.field_sleights
     - field.field.node.npc.field_sources
     - field.field.node.npc.field_stats
+    - field.field.node.npc.field_threat
     - field.field.node.npc.field_traits
     - node.type.npc
   module:
@@ -163,6 +164,14 @@ content:
       field_delimiter:
         delimiter: ''
     type: eldrich_citation_formatter
+  field_threat:
+    weight: 15
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
   field_traits:
     weight: 8
     label: inline

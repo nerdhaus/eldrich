@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.inspiration.body
-    - field.field.node.inspiration.field_resource
+    - field.field.node.inspiration.field_resources
     - node.type.inspiration
   module:
     - link
@@ -18,11 +18,11 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
-  field_resource:
-    weight: 102
+  field_resources:
+    weight: 0
     label: above
     settings:
       trim_length: 80
@@ -32,6 +32,5 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-  links:
-    weight: 100
-hidden: {  }
+hidden:
+  links: true

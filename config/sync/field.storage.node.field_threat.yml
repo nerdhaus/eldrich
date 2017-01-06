@@ -1,18 +1,19 @@
-uuid: 0a4e14e6-3fa6-4b62-a45e-ffcae2af9f15
+uuid: f76388b7-d26e-4385-806e-05388f400c24
 langcode: en
 status: true
 dependencies:
   module:
-    - link
     - node
-id: node.field_useful_resources
-field_name: field_useful_resources
+id: node.field_threat
+field_name: field_threat
 entity_type: node
-type: link
-settings: {  }
-module: link
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

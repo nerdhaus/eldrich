@@ -1,0 +1,23 @@
+uuid: 7403793c-a970-4086-9090-e2228d9dd5fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_threat
+    - node.type.creature
+id: node.creature.field_threat
+field_name: field_threat
+entity_type: node
+bundle: creature
+label: Threat
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

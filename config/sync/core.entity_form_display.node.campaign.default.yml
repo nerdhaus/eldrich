@@ -4,9 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.campaign.body
+    - field.field.node.campaign.field_campaign_status
     - field.field.node.campaign.field_characters
+    - field.field.node.campaign.field_resources
     - field.field.node.campaign.field_shortname
-    - field.field.node.campaign.field_useful_resources
     - node.type.campaign
   module:
     - link
@@ -30,6 +31,11 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+  field_campaign_status:
+    weight: 35
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_characters:
     weight: 34
     settings:
@@ -38,6 +44,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_resources:
+    weight: 36
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
   field_shortname:
     weight: 33
     settings:
@@ -45,13 +58,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_useful_resources:
-    weight: 32
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
   path:
     type: path
     weight: 30

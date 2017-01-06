@@ -1,17 +1,17 @@
-uuid: 6b3326df-da07-4c50-a1a0-8e120fa384e5
+uuid: 51c96bb9-b576-4195-8995-8a6e18518ad2
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_resource
+    - field.storage.node.field_resources
     - node.type.inspiration
   module:
     - link
-id: node.inspiration.field_resource
-field_name: field_resource
+id: node.inspiration.field_resources
+field_name: field_resources
 entity_type: node
 bundle: inspiration
-label: Resource
+label: Resources
 description: ''
 required: false
 translatable: false

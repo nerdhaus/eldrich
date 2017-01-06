@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Inspiration
 type: inspiration
-description: ''
+description: 'Media or other works that serve as inspiration for Eclipse Phase concepts, plots, adventures, etc.'
 help: ''
 new_revision: true
 preview_mode: 1

@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Session
 type: session
-description: ''
+description: 'A single adventure or play session in an ongoing campaign.'
 help: ''
 new_revision: true
 preview_mode: 1

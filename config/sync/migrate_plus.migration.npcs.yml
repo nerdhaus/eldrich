@@ -28,13 +28,15 @@ source:
     -
       description: description
     -
+      notes: notes
+    -
       ego_stats: ego_stats
     -
       ego_traits: ego_traits
     -
-      sleights: sleights
-    -
       skills: skills
+    -
+      sleights: sleights
     -
       morph: morph
     -
@@ -70,8 +72,9 @@ process:
   title: name
   type:
     plugin: default_value
-    default_value: pc
+    default_value: npc
   field_description/value: description
+  field_roleplay_notes/value: notes
   field_quote/value: quote
   field_stats:
     plugin: stat_block
@@ -179,10 +182,12 @@ process:
         - morph
         - traits
         - augmentations
+        - appearance
       keys:
         - morph
         - traits
         - augmentations
+        - appearance
       default_values:
         type: morph
       process:
@@ -193,6 +198,7 @@ process:
           bundle_key: type
           entity_type: node
           source: morph
+        field_description/value: appearance
         field_traits:
           -
             plugin: skip_on_empty
