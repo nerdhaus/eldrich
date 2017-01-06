@@ -34,14 +34,16 @@ class Eck extends PreprocessBase implements PreprocessInterface {
     // Prep assorted ECK content types for display.
 
     /** @var $eck \Drupal\eck\Entity\EckEntity **/
-    if (isset($variables->entity['#component'])) {
-      $this->preprocessComponent($variables->entity['#component'], $variables);
-
-    } elseif (isset($variables->entity['#instance'])) {
-      $this->preprocessInstance($variables->entity['#instance'], $variables);
-
-    } elseif (isset($variables->entity['#lookup'])) {
-      $this->preprocessLookup($variables->entity['#lookup'], $variables);
+    switch ($variables->entity_type) {
+      case 'component':
+        $this->preprocessComponent($variables->eck_entity, $variables);
+        break;
+      case 'instance':
+        $this->preprocessInstance($variables->eck_entity, $variables);
+        break;
+      case 'lookup':
+        $this->preprocessLookup($variables->eck_entity, $variables);
+        break;
     }
   }
 
