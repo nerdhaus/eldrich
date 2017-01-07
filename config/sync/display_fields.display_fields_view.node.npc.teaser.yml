@@ -30,4 +30,5 @@ hidden:
   field_sleights: true
   field_sources: true
   field_stats: true
+  field_threat: true
   field_traits: true

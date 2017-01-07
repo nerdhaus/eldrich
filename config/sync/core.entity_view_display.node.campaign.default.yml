@@ -5,11 +5,13 @@ dependencies:
   config:
     - field.field.node.campaign.body
     - field.field.node.campaign.field_campaign_status
-    - field.field.node.campaign.field_characters
+    - field.field.node.campaign.field_official_downloads
+    - field.field.node.campaign.field_players
     - field.field.node.campaign.field_resources
     - field.field.node.campaign.field_shortname
     - node.type.campaign
   module:
+    - file
     - link
     - options
     - text
@@ -31,8 +33,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
-  field_characters:
-    weight: 104
+  field_official_downloads:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+  field_players:
+    weight: 108
     label: above
     settings:
       link: true

@@ -192,4 +192,5 @@ content:
 hidden:
   field_motivations: true
   field_stats: true
+  field_threat: true
   links: true

@@ -25,3 +25,4 @@ content:
     weight: 100
 hidden:
   field_resource: true
+  field_resources: true

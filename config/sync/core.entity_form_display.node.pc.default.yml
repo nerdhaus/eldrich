@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.pc.field_campaign
     - field.field.node.pc.field_description
     - field.field.node.pc.field_equipped_armor
     - field.field.node.pc.field_equipped_weapons
@@ -73,6 +74,14 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+  field_campaign:
+    weight: 28
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_description:
     weight: 10
     settings:

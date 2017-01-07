@@ -1,0 +1,22 @@
+uuid: b3bf3bda-3bea-4610-965d-feb5e255bfb6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: inspiration_nodes
+label: 'Inspiration Nodes'
+type: 'canonical_entities:node'
+pattern: 'world/inspiration/[node:title]'
+selection_criteria:
+  ebc1f8b7-05c0-4250-bd4c-b4d14341cd3b:
+    id: node_type
+    bundles:
+      inspiration: inspiration
+    negate: false
+    context_mapping:
+      node: node
+    uuid: ebc1f8b7-05c0-4250-bd4c-b4d14341cd3b
+selection_logic: and
+weight: -5
+relationships: {  }

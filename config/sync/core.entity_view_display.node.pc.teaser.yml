@@ -50,5 +50,6 @@ hidden:
   field_sleights: true
   field_stats: true
   field_status: true
+  field_threat: true
   field_traits: true
   links: true
