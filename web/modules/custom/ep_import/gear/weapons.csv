@@ -143,7 +143,7 @@ Warbot Claws,,Native Attack,,,,FALSE,,,2,6,,,,,Unarmed Combat,,,,,FALSE,FALSE,FA
 Warbot Stomp,,Native Attack,,,,FALSE,,,5,,,,,,Unarmed Combat,,,,20,FALSE,FALSE,FALSE,FALSE
 Warbot Tentacles,,Native Attack,"If the MoS exceeds the target’s Durability, they are subdued (p. 204, EP).",,,FALSE,,,1,6,,,,,Unarmed Combat,,,,20,FALSE,FALSE,FALSE,FALSE
 Whipper Tentacle,,Native Attack,"Whippers can also grab instead of damaging. If the MoS exceeds the target’s Durability, they are subdued (p. 204, EP).",,,FALSE,,,2,1,-1,,,,Unarmed Combat,,,,20,FALSE,FALSE,FALSE,FALSE
-Buzzsaw,,Native Attack,,,,FALSE,,,1,3,,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
+Buzzsaw,,Native Attack,,,,FALSE,,,1,3,,,,,Exotic Melee Weapons: Buzzsaw,,,,,FALSE,FALSE,FALSE,FALSE
 Eel Electric Stun,Eel Stun,Native Attack,"10m radius when in water, -1 DV per 2 meters",,,FALSE,,10m radius when in water,1,,,,,,Unarmed Combat,Blast,S,,,FALSE,FALSE,FALSE,FALSE
 Eel Bite,,Native Attack,"Bit targets may be subdued (p. 204, EP) with a Quick Action",,,FALSE,,Bit targets may be subdued,1,4,-2,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
 Giant Eel Electric Stun,Giant Eel Stun,Native Attack,"15m radius when in water, -1 DV per 2 meters",,,FALSE,,15m radius when in water,2,,,,,,Unarmed Combat,,S,,,FALSE,FALSE,FALSE,FALSE

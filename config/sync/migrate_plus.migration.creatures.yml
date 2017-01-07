@@ -42,9 +42,9 @@ source:
     -
       sleights: sleights
     -
-      weapons: weapons
-    -
       gear: gear
+    -
+      weapons: weapons
     -
       stress: stress
   constants:
