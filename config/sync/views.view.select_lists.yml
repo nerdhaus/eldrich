@@ -10,6 +10,7 @@ dependencies:
     - node.type.creature
     - node.type.drug
     - node.type.gear
+    - node.type.mind
     - node.type.morph
     - node.type.robot
     - node.type.skill
@@ -679,6 +680,7 @@ display:
             creature: creature
             drug: drug
             gear: gear
+            mind: mind
             morph: morph
             robot: robot
             vehicle: vehicle

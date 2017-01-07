@@ -36,6 +36,7 @@ content:
       trim_length: 400
     third_party_settings: {  }
 hidden:
+  field_campaign: true
   field_equipped_armor: true
   field_equipped_weapons: true
   field_gear: true

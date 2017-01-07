@@ -26,6 +26,8 @@ content:
 hidden:
   field_campaign_status: true
   field_characters: true
+  field_official_downloads: true
+  field_players: true
   field_resources: true
   field_shortname: true
   field_useful_resources: true
