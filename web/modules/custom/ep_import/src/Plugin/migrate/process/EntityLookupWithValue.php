@@ -99,6 +99,13 @@ class EntityLookupWithValue extends EntityLookup {
       // them in with a single query.
       $query->condition($this->lookupBundleKey, $this->lookupBundle, is_array($this->lookupBundle) ? 'IN' : NULL);
     }
+
+    if ($filters = $this->configuration['conditions']) {
+      foreach ($filters as $key => $value) {
+        $query->condition($key, $value);
+      }
+    }
+
     $results = $query->execute();
 
     if (empty($results)) {

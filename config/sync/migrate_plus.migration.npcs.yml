@@ -155,6 +155,8 @@ process:
       bundle: trait
       bundle_key: type
       entity_type: node
+      conditions:
+        field_ego_trait: TRUE
   field_sleights:
     -
       plugin: skip_on_empty
@@ -214,6 +216,8 @@ process:
             bundle: trait
             bundle_key: type
             entity_type: node
+            conditions:
+              field_morph_trait: TRUE
         field_augmentations:
           -
             plugin: skip_on_empty
