@@ -223,8 +223,6 @@ class StatTreeCalculator {
     else {
       $cap = $morph_instance->field_model->entity->field_stat_cap->getValue();
     }
-    $cap['mox'] = 7;
-    $cap['spd'] = 4;
 
     return $cap;
   }
@@ -234,12 +232,14 @@ class StatTreeCalculator {
       return;
     }
 
+    // Speed and moxie can literally never go above this. Srsly.
+    $cap['mox'] = 7;
+    $cap['spd'] = 4;
+
     foreach ($statgroups as $group_key => $group) {
-      foreach (['baseline', 'constant', 'conditional'] as $set) {
-        foreach ($cap as $key => $value) {
-          if (key_exists($set, $statgroups[$group_key]) && key_exists($key, $statgroups[$group_key][$set])) {
-            $statgroups[$group_key][$set][$key] = min($statgroups[$group_key][$set][$key], $value);
-          }
+      foreach ($cap as $key => $value) {
+        if (key_exists($key, $statgroups[$group_key])) {
+          $statgroups[$group_key][$key] = min($statgroups[$group_key][$key], $value);
         }
       }
     }

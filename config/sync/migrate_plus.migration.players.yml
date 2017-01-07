@@ -159,7 +159,7 @@ process:
     -
       plugin: skip_on_empty
       method: process
-      source: traits
+      source: ego_traits
     -
       plugin: explode
       delimiter: ','

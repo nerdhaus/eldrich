@@ -57,7 +57,7 @@ class ThreatCalculator {
         'ap' => $weapon['damage']['ap']
       ];
       if ($weapon['linked_skill']) {
-        $tmp_weapon['skill'] = $skills[$weapon['linked_skill']]['conditional']['total'] + $weapon['skill_bonus'];
+        $tmp_weapon['skill'] = min($skills[$weapon['linked_skill']]['conditional']['total'] + $weapon['skill_bonus'], 100);
       }
       else {
         $tmp_weapon['skill'] = 0;
