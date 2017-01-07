@@ -163,6 +163,21 @@ process:
         - armor
         - drug
         - armor
+  field_sleights:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: sleights
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      bundle: sleight
+      bundle_key: type
+      entity_type: node
   field_traits:
     -
       plugin: skip_on_empty
@@ -182,7 +197,7 @@ process:
     -
       plugin: skip_on_empty
       method: process
-      source: traits
+      source: augmentations
     -
       plugin: explode
       delimiter: ','
@@ -190,11 +205,12 @@ process:
       plugin: entity_lookup_plus
       destination_field: target_id
       value_key: title
-      fallback_value_key: field_short_name
       bundle: augmentation
       bundle_key: type
       entity_type: node
-      source: sleights
+  field_equipped_weapons:
+    plugin: equipped_weapon
+    source: weapons
   field_stress/value: stress
 destination:
   plugin: 'entity:node'
