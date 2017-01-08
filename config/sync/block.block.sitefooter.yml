@@ -1,24 +1,27 @@
-uuid: fccb2987-efe7-4d58-bed6-84624acb9994
+uuid: 6f8dfe11-f8aa-48a7-8c58-34dc60186bd7
 langcode: en
 status: true
 dependencies:
+  content:
+    - 'block_content:basic:fa55a4ba-5c31-42d6-bb27-b15e3b01112c'
   module:
     - block_class
+    - block_content
     - block_visibility_groups
   theme:
     - veil
 third_party_settings:
   block_class:
-    classes: col-sm-12
-id: posthumanstudios
+    classes: col-md-12
+id: sitefooter
 theme: veil
 region: footer
-weight: 0
+weight: -11
 provider: null
-plugin: 'block_content:efc67b2e-1e73-4cac-ade0-e5a3826bc5af'
+plugin: 'block_content:fa55a4ba-5c31-42d6-bb27-b15e3b01112c'
 settings:
-  id: 'block_content:efc67b2e-1e73-4cac-ade0-e5a3826bc5af'
-  label: 'Posthuman Studios'
+  id: 'block_content:fa55a4ba-5c31-42d6-bb27-b15e3b01112c'
+  label: 'Site Footer'
   provider: block_content
   label_display: '0'
   status: true

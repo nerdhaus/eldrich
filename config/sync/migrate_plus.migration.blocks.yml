@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: blocks
 migration_tags: null
-migration_group: none
+migration_group: eldrich_content
 label: Blocks
 source:
   plugin: csv
