@@ -79,6 +79,7 @@ Top Secret,,info_level,5,The location of a top secret black-budget lab. Illegal 
 Region,,location_type,1,A broad region of space,
 Body,,location_type,2,A celestial body and its satellites,
 Habitat,,location_type,3,A habitable living space for humans,
+Zone,,location_type,4,A legal or social boundary marking a particular neighborhood or territory.,
 Hopper,,mobility_type,1,"Hoppers have two or more legs designed to propel the morph forward or up, much like a frog or grasshopper.",4/20/20
 Hovercraft,,mobility_type,2,"The shell uses an impeller to blast a cushion of high-pressure air off the surface below, repelling the frame off the ground (modern hovercraft do not use rubber skirts). Most hovercraft travel a meter or so above the ground, but can temporarily levitate themselves higher for short periods.",8/40/40
 Internal Rocket,,mobility_type,3,"This miniature metallic hydrogen rocket is specifically designed for low thrust. It provides an acceleration of up to 0.25 g, allowing the morph to take off and land on all moons and other small bodies in the solar system. This engine can operate for a total of one and a half hours before it requires refueling.",12/60/60

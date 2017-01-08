@@ -69,7 +69,12 @@ process:
     bundle: gear_type
     bundle_key: vid
     entity_type: taxonomy_term
-  field_description/value: description
+  field_description/value: 
+    plugin: line_breaker
+    source: description
+  field_description/format: 
+    plugin: default_value
+    default_value: basic_html
   field_cost:
     plugin: entity_lookup_plus
     source: cost

@@ -64,7 +64,12 @@ process:
     -
       plugin: explode
       delimiter: ','
-  field_description/value: description
+  field_description/value: 
+    plugin: line_breaker
+    source: description
+  field_description/format: 
+    plugin: default_value
+    default_value: basic_html
   field_calculation: calculation
   field_weight:
     plugin: skip_on_empty

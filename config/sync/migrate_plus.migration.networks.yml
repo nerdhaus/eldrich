@@ -35,7 +35,12 @@ process:
     plugin: skip_on_empty
     method: process
     source: code
-  field_description/value: description
+  field_description/value: 
+    plugin: line_breaker
+    source: description
+  field_description/format: 
+    plugin: default_value
+    default_value: basic_html
   field_sources:
     plugin: source_with_page
     entity_type: node

@@ -51,7 +51,12 @@ process:
     bundle_key: type
     bundle: location_type
     entity_type: lookup
-  field_description/value: description
+  field_description/value: 
+    plugin: line_breaker
+    source: description
+  field_description/format: 
+    plugin: default_value
+    default_value: basic_html
   field_population: population
   field_sources:
     plugin: source_with_page

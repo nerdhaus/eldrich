@@ -28,7 +28,9 @@ source:
     - parent
 process:
   name: title
-  description: description
+  description: 
+    plugin: line_breaker
+    source: description
   vid:
     plugin: default_value
     default_value: gear_type
