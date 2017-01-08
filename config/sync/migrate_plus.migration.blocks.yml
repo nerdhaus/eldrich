@@ -1,0 +1,27 @@
+uuid: 2f15e91a-45a6-4084-81fd-cf0f45410e77
+langcode: en
+status: true
+dependencies: {  }
+id: blocks
+migration_tags: null
+migration_group: none
+label: Blocks
+source:
+  plugin: csv
+  path: modules/custom/ep_import/content/blocks.csv
+  header_row_count: 1
+  column_names:
+    -
+      title: Title
+    -
+      body: Body
+  keys:
+    - title
+process:
+  info: title
+  body/value: body
+destination:
+  plugin: 'entity:block_content'
+  default_bundle: basic
+  no_stub: true
+migration_dependencies: null
