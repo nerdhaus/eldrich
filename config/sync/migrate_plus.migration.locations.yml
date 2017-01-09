@@ -22,6 +22,10 @@ source:
     -
       population: Population
     -
+      distance: Distance
+    -
+      languages: Languages
+    -
       book: Book
   keys:
     - title
@@ -42,7 +46,7 @@ process:
       source: parent
     -
       plugin: migration
-      migration: location
+      migration: locations
   type: constants/content_type
   field_location_type:
     plugin: entity_lookup_plus
@@ -58,6 +62,8 @@ process:
     plugin: default_value
     default_value: basic_html
   field_population: population
+  field_distance: distance
+  field_languages/value: languages
   field_sources:
     plugin: source_with_page
     entity_type: node

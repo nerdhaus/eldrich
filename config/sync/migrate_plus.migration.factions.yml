@@ -44,7 +44,7 @@ process:
       source: parent
     -
       plugin: migration
-      migration: faction
+      migration: factions
   type: constants/content_type
   field_faction_type:
     plugin: entity_lookup_plus
