@@ -84,7 +84,7 @@ process:
       method: process
       source: fields
     -
-      plugin: explode
+      plugin: split_and_trim
       delimiter: ','
   field_specializations:
     -
@@ -92,7 +92,7 @@ process:
       method: process
       source: specializations
     -
-      plugin: explode
+      plugin: split_and_trim
       delimiter: ','
   field_description/value:
     plugin: line_breaker

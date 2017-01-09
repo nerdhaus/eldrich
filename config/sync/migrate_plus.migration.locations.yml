@@ -63,7 +63,14 @@ process:
     default_value: basic_html
   field_population: population
   field_distance: distance
-  field_languages/value: languages
+  field_languages/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: languages
+    -
+      plugin: split_and_trim
+      delimiter: ','
   field_sources:
     plugin: source_with_page
     entity_type: node

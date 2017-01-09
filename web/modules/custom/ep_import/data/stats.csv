@@ -1,5 +1,5 @@
 Title,Code,Aptitude,Ego,Description,Labels,Calculation,Weight
-Cognition,COG,TRUE,TRUE,"Cognition is your aptitude for problem- solving, logical analysis, and understanding. It also includes memory and recall.","Limited,Intelligent,Bright,Learned,Brilliant,Genius",,1
+Cognition,COG,TRUE,TRUE,"Cognition is your aptitude for problemsolving, logical analysis, and understanding. It also includes memory and recall.","Limited,Intelligent,Bright,Learned,Brilliant,Genius",,1
 Coordination,COO,TRUE,TRUE,"Coordination is your skill at integrating the actions of different parts of your morph to produce smooth, successful movements. It includes manual dexterity, ne motor control, nimbleness, and balance. ","Clumsy,Able,Coordinated,Agile,Nimble,Unerring",,2
 Intuition,INT,TRUE,TRUE,"Intuition is your skill at following your gut instincts and evaluating on the y. It includes physical awareness, cleverness, and cunning.","Aware,Perceptive,Sharp,Uncanny,Prescient,Near Omniscient",,3
 Reflexes,REF,TRUE,TRUE,"Reflexes is your skill at acting quickly. This encompasses your reaction time, your gut-level response, and your ability to think fast.","Slow,Paced,Swift,Fast,Lightning,Synaptic",,4
