@@ -35,10 +35,10 @@ process:
     callable: ep_import_date
     source: date
   title: title
-  body/value: 
+  body/value:
     plugin: line_breaker
     source: body
-  body/format: 
+  body/format:
     plugin: default_value
     default_value: basic_html
 destination:

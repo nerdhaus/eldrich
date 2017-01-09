@@ -60,10 +60,10 @@ process:
       'FALSE': 0
     default_value: 0
   field_cp_cost: cost
-  field_description/value: 
+  field_description/value:
     plugin: line_breaker
     source: description
-  field_description/format: 
+  field_description/format:
     plugin: default_value
     default_value: basic_html
   field_special_effect/value: effect

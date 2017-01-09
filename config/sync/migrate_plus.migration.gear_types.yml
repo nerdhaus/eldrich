@@ -28,7 +28,7 @@ source:
     - parent
 process:
   name: title
-  description: 
+  description:
     plugin: line_breaker
     source: description
   vid:

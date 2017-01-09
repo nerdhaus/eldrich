@@ -81,10 +81,10 @@ process:
     bundle: gear_type
     bundle_key: vid
     entity_type: taxonomy_term
-  field_description/value: 
+  field_description/value:
     plugin: line_breaker
     source: description
-  field_description/format: 
+  field_description/format:
     plugin: default_value
     default_value: basic_html
   field_special_effect/value: special_effects

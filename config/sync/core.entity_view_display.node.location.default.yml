@@ -4,13 +4,16 @@ status: true
 dependencies:
   config:
     - field.field.node.location.field_description
+    - field.field.node.location.field_distance
+    - field.field.node.location.field_languages
     - field.field.node.location.field_location_type
     - field.field.node.location.field_parent_location
     - field.field.node.location.field_population
     - field.field.node.location.field_sources
     - node.type.location
   module:
-    - entity_reference_quantity
+    - eldrich
+    - field_delimiter
     - field_group
     - text
     - user
@@ -45,6 +48,21 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+  field_distance:
+    weight: 8
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_languages:
+    weight: 9
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_location_type:
     weight: 4
     label: inline

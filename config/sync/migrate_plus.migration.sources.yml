@@ -58,10 +58,10 @@ process:
       'TRUE': 1
       'FALSE': 0
     default_value: 0
-  field_description/value: 
+  field_description/value:
     plugin: line_breaker
     source: description
-  field_description/format: 
+  field_description/format:
     plugin: default_value
     default_value: basic_html
   field_code/value: code

@@ -3,10 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.faction.field_concerns
     - field.field.node.faction.field_description
     - field.field.node.faction.field_faction_type
     - field.field.node.faction.field_locations
+    - field.field.node.faction.field_memes
     - field.field.node.faction.field_parent_faction
     - field.field.node.faction.field_sources
     - node.type.faction
@@ -24,14 +24,6 @@ content:
     weight: 6
     settings: {  }
     third_party_settings: {  }
-  field_concerns:
-    weight: 4
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete_tags
   field_description:
     weight: 10
     settings:
@@ -52,6 +44,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete_tags
+  field_memes:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_parent_faction:
     weight: 2
     settings:

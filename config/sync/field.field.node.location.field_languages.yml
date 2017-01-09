@@ -1,0 +1,19 @@
+uuid: db883906-0726-4b2d-8581-922c0eb65ade
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_languages
+    - node.type.location
+id: node.location.field_languages
+field_name: field_languages
+entity_type: node
+bundle: location
+label: Languages
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

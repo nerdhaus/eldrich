@@ -73,16 +73,16 @@ process:
   type:
     plugin: default_value
     default_value: npc
-  field_description/value: 
+  field_description/value:
     plugin: line_breaker
     source: description
-  field_description/format: 
+  field_description/format:
     plugin: default_value
     default_value: basic_html
-  field_roleplay_notes/value: 
+  field_roleplay_notes/value:
     plugin: line_breaker
     source: notes
-  field_roleplay_notes/format: 
+  field_roleplay_notes/format:
     plugin: default_value
     default_value: basic_html
   field_quote/value: quote
@@ -210,10 +210,10 @@ process:
           bundle_key: type
           entity_type: node
           source: morph
-        field_description/value: 
+        field_description/value:
           plugin: line_breaker
           source: appearance
-        field_description/format: 
+        field_description/format:
           plugin: default_value
           default_value: basic_html
         field_traits:

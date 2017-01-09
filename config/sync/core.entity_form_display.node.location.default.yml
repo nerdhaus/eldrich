@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.location.field_description
+    - field.field.node.location.field_distance
+    - field.field.node.location.field_languages
     - field.field.node.location.field_location_type
     - field.field.node.location.field_parent_location
     - field.field.node.location.field_population
@@ -30,6 +32,19 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_distance:
+    weight: 28
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_languages:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_location_type:
     weight: 6
     settings: {  }

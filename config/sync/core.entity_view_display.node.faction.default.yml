@@ -3,15 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.faction.field_concerns
     - field.field.node.faction.field_description
     - field.field.node.faction.field_faction_type
     - field.field.node.faction.field_locations
+    - field.field.node.faction.field_memes
     - field.field.node.faction.field_parent_faction
     - field.field.node.faction.field_sources
     - node.type.faction
   module:
-    - entity_reference_quantity
+    - eldrich
+    - field_delimiter
     - field_group
     - text
     - user
@@ -41,15 +42,6 @@ targetEntityType: node
 bundle: faction
 mode: default
 content:
-  field_concerns:
-    weight: 2
-    label: inline
-    settings:
-      link: true
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
-    type: entity_reference_label
   field_description:
     weight: 2
     label: hidden
@@ -72,6 +64,13 @@ content:
       field_delimiter:
         delimiter: ', '
     type: entity_reference_label
+  field_memes:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_parent_faction:
     weight: 1
     label: inline

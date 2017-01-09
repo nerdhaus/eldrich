@@ -37,10 +37,10 @@ process:
   type:
     plugin: default_value
     default_value: strain
-  field_description/value: 
+  field_description/value:
     plugin: line_breaker
     source: description
-  field_description/format: 
+  field_description/format:
     plugin: default_value
     default_value: basic_html
   field_vectors:
@@ -50,10 +50,10 @@ process:
     bundle_key: type
     bundle: vector
     entity_type: lookup
-  field_infectiousness/value: 
+  field_infectiousness/value:
     plugin: line_breaker
     source: infectiousness
-  field_infectiousness/format: 
+  field_infectiousness/format:
     plugin: default_value
     default_value: basic_html
   field_sources:

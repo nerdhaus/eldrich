@@ -89,10 +89,10 @@ process:
   type:
     plugin: default_value
     default_value: pc
-  field_description/value: 
+  field_description/value:
     plugin: line_breaker
     source: description
-  field_description/format: 
+  field_description/format:
     plugin: default_value
     default_value: basic_html
   field_quote/value: quote
