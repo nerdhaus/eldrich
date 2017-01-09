@@ -53,10 +53,10 @@ process:
     bundle_key: type
     bundle: faction_type
     entity_type: lookup
-  field_description/value: 
+  field_description/value:
     plugin: line_breaker
     source: description
-  field_description/format: 
+  field_description/format:
     plugin: default_value
     default_value: basic_html
   field_memes/value:
