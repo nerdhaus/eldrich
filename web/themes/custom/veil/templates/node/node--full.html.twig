@@ -50,32 +50,34 @@
 
   {{ content.field_description }}
 
-  {% if stat_style and stats %}
-    {% include directory ~ '/templates/partials/' ~ stat_style ~ '-statblock.html.twig' %}
+  {% if stats %}
+    {% include directory ~ '/templates/partials/stats.html.twig' %}
   {% endif %}
 
-  {% if content.group_attributes or content.group_equipped.field_equipped_weapon or armor %}
   <dl class="dl-horizontal">
     {% for field in content.group_attributes %}
       <dt>{{ field|field_label }}</dt>
       <dd>{{ field|field_value|safe_join(', ') }}</dd>
     {% endfor %}
+
     {% if armor.energy or armor.kinetic %}
       <dt>Armor</dt>
       <dd>{{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
         {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
       </dd>
     {% endif %}
+
     {% for attack in attacks -%}
       {% include directory ~ '/templates/partials/' ~ 'attack.html.twig' with {'attack': attack} %}
     {%- endfor %}
-    {% if content.field_cost %}<dt>Cost:</dt><dd>{{ content.field_cost|field_value }}</dd>{% endif %}
-    {% if content.field_sources %}<dt>Source:</dt><dd>{{ content.field_sources|field_value|safe_join(', ') }}</dd>{% endif %}
   </dl>
-  {% else %}
+
+  {% if content.field_cost or content.field_sources %}
   <dl class="dl-horizontal">
+    <dt>Skills:</dt><dd>{% include directory ~ '/templates/partials/skills.html.twig' %}</dd>
     {% if content.field_cost %}<dt>Cost:</dt><dd>{{ content.field_cost|field_value }}</dd>{% endif %}
     {% if content.field_sources %}<dt>Source:</dt><dd>{{ content.field_sources|field_value|safe_join(', ') }}</dd>{% endif %}
   </dl>
   {% endif %}
+
 </article>

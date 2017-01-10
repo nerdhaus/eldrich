@@ -1,7 +1,7 @@
 <?php
 namespace Drupal\eldrich\Calculator;
 
-use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Link;
 
 
@@ -36,7 +36,7 @@ use Drupal\Core\Link;
  */
 class ArmorCalculator {
 
-  public static function total(EntityInterface $entity) {
+  public static function total(FieldableEntityInterface $entity) {
     $data = static::defaultData();
 
     if (!empty($entity->field_morph) && !$entity->field_morph->isEmpty()) {

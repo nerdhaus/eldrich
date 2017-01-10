@@ -30,6 +30,7 @@ use Drupal\Core\Link;
  * - The category of weapon (ranged, melee, grenade so far)
  * - The cumulative (not individual) damage, in the form of:
  *   - Number of d10s
+ *   - Optional special modifier, like 'WIL/10' for Psi attacks
  *   - Modifier(s) and operator(s) (i.e. + 10 / 5)
  *   - AP (with modifiers and operators applied)
  *   - Flag to indicate whether SOM / 10 is added
@@ -95,7 +96,7 @@ class WeaponCalculator {
       'damage' => [
         'dice' => 0,
         'mod' => 0,
-        'mod_extra' => NULL,
+        'special' => '',
         'mod_operation' => '+',
         'multiplier' => 1,
         'ap' => 0,
@@ -183,6 +184,7 @@ class WeaponCalculator {
           static::getWeaponCategory($item, $sleight);
           $item['damage']['dice'] = 1;
           $item['damage']['ap'] = 999;
+          $item['damage']['special'] = 'WIL/10';
           $item['build']['weapon'] = static::linkEntity($sleight);
           $has_stab = TRUE;
           break;
@@ -247,6 +249,13 @@ class WeaponCalculator {
   }
 
   public static function accountForWeapon(Array &$item, FieldableEntityInterface $weapon) {
+    if ($skill = $weapon->field_linked_skill->entity) {
+      if ($skill->field_damage_bonus->value) {
+        $item['damage']['special'] = 'SOM/10';
+      }
+    }
+
+
     if (!$weapon->field_magazine_size->isEmpty()) {
       $item['rounds'] = operation_calculate_result($item['rounds'], $weapon->field_magazine_size->operation, $weapon->field_magazine_size->value);
     }

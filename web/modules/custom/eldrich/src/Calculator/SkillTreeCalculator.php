@@ -17,6 +17,7 @@ use Drupal\Core\Entity\FieldableEntityInterface;
  * - A set dictionary of skills, keyed by skill_id:fieldname, containing:
  *   - Skill Name
  *   - Skill Entity
+ *   - Skill Entity URL
  *   - Field
  *   - Specialization
  *   - Linked Aptitude
@@ -76,6 +77,8 @@ class SkillTreeCalculator {
       $skills[$key]['conditional']['total'] = $skills[$key]['conditional']['baseline'] + $skills[$key]['conditional']['points'] + $skills[$key]['conditional']['bonus'];
     }
 
+    ksort($skills);
+
     return $skills;
   }
 
@@ -134,13 +137,20 @@ class SkillTreeCalculator {
   private static function populateRow(Array &$row, FieldableEntityInterface $skill, Array $stats) {
     $row['name'] = $skill->label();
     $row['entity'] = $skill;
+    $row['url'] = $skill->toUrl();
     $row['aptitude'] = strtolower($skill->field_linked_aptitude->entity->field_code->value);
     $row['type'] = $skill->field_skill_type->entity->label();
     $row['no_defaulting'] = $skill->field_no_defaulting->value;
 
+    // The 'baseline' for skills is the 'constant total' for minds.
     if (!empty($stats['mind'])) {
-      $row['constant']['baseline'] = $stats['mind']['baseline'][$row['aptitude']];
-      $row['conditional']['baseline'] = $stats['mind']['baseline'][$row['aptitude']];
+      $row['constant']['baseline'] = $stats['mind']['constant'][$row['aptitude']];
+      $row['conditional']['baseline'] = $stats['mind']['conditional'][$row['aptitude']];
+    }
+
+    if (!empty($stats['shell'])) {
+      $row['constant']['bonus'] = $stats['shell']['constant'][$row['aptitude']];
+      $row['conditional']['bonus'] = $stats['shell']['conditional'][$row['aptitude']];
     }
   }
 

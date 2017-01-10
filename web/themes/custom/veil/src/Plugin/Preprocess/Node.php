@@ -53,7 +53,6 @@ class Node extends PreprocessBase implements PreprocessInterface {
         'robot',
         'creature'
       ])) {
-        $variables->stat_style = 'simple';
         $variables->stats = StatTreeCalculator::total($node);
         $variables->skills = SkillTreeCalculator::total($node, $variables->stats);
       }

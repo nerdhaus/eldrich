@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * List of skills.
+ *
+ *
+ * - skills: An array, keyed by skill, in which each item contains:
+ *   - entity: Raw skill entity, useful for url()
+ *   - name: The friendly name of the skill
+ *   - field: Optional field for the skill
+ *   - specialization: Optional specialization
+ *   - type: Combat, Knowledge, etc.
+ *   - aptitude: Linked aptitude (COG, REF, etc)
+ *   - no_defaulting: Boolean indicating whether the skill can be used if no points
+         are assigned to it.
+ *   - constant: The always-on value of the skill
+ *     - baseline: Ego, plus ego traits and sleights
+ *     - points: Points explicitly assigned to a skill
+ *     - bonus: Bonuses applied by the morph, morph traits, and augmentations
+ *     - total: Current total points for a given skill
+ *   - conditional: Conditionally active bonuses. If this differs from constant,
+         print it parenthetically after the constant value.
+ *     - baseline: Ego, plus ego traits and sleights
+ *     - points: Points explicitly assigned to a skill
+ *     - bonus: Bonuses applied by the morph, morph traits, and augmentations
+ *     - total: Current total points for a given skill
+ *
+ * @ingroup templates
+ */
+#}
+{% for skill in skills %}
+  {# Bail out if no points have been explicitly assigned to the skill #}
+  {%- if skill.constant.points or skill.constant.bonus or skill.conditional.points or skill.conditional.bonus %}
+    <span class="skill skill-{{ skill.type|lower }} skill-aptitude-{{ skill.aptitude }}"><a href="{{ skill.url }}">{{ skill.name }}{% if skill.field %}: {{ skill.field }}{% endif %}</a>
+    {{ skill.constant.total }}{% if skill.constant.total != skill.conditional.total %} ({{ skill.conditional.total }}){% endif -%}
+    {%- if skill.specialization %} ({{ skill.specialization }}){% endif -%}</span>
+    {%- if not loop.last %}, {% endif %}
+  {% endif %}
+{% endfor %}

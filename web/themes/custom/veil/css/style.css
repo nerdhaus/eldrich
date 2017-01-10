@@ -76,3 +76,7 @@ div.panel.teaser {
 div:target {
   background-color: #7a8288;
 }
+
+span.skill-combat {
+  font-weight: bold;
+}
