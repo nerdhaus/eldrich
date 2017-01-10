@@ -1,0 +1,10 @@
+uuid: f9b4f835-18ba-4184-85ae-ecfab44eb46b
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: component.quick
+label: Quick
+targetEntityType: component
+cache: true

@@ -66,9 +66,9 @@
         {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
       </dd>
     {% endif %}
-    {% if content.group_equipped.field_equipped_weapons %}
-      {{ content.group_equipped.field_equipped_weapons|field_value }}
-    {% endif %}
+    {% for attack in attacks -%}
+      {% include directory ~ '/templates/partials/' ~ 'attack.html.twig' with {'attack': attack} %}
+    {%- endfor %}
     {% if content.field_cost %}<dt>Cost:</dt><dd>{{ content.field_cost|field_value }}</dd>{% endif %}
     {% if content.field_sources %}<dt>Source:</dt><dd>{{ content.field_sources|field_value|safe_join(', ') }}</dd>{% endif %}
   </dl>

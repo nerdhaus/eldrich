@@ -67,10 +67,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
         'creature'
       ])) {
         $variables->armor = ArmorCalculator::total($node);
-
-        foreach ($node->field_equipped_weapons as $weapon) {
-          $variables->weapons[] = WeaponCalculator::total($weapon->entity);
-        }
+        $variables->attacks = WeaponCalculator::total($node);
       }
 
       if (in_array($node->bundle(), [
@@ -78,7 +75,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
         'pc',
         'creature'
       ])) {
-        $variables->threat = ThreatCalculator::total($variables->stats, $variables->skills, $variables->armor, $variables->weapons);
+        $variables->threat = ThreatCalculator::total($variables->stats, $variables->skills, $variables->armor, $variables->attacks);
       }
     }
   }

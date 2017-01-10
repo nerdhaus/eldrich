@@ -45,7 +45,6 @@ class ThreatCalculator {
     $data['raw']['fray'] = $skills['fray']['conditional']['total'];
     $data['results']['defense'] = ($data['raw']['dur'] / 5) * ($data['raw']['fray'] / 100) + $data['raw']['armor'];
 
-
     // We want to pick the best/strongest weapon, so we'll just brute force it.
     $tmp_weapons = [];
     foreach ($weapons as $weapon) {

@@ -50,7 +50,7 @@ class Eck extends PreprocessBase implements PreprocessInterface {
   public function preprocessInstance(EckEntity $eck, Variables $variables) {
     switch ($eck->bundle()) {
       case 'weapon_instance':
-        foreach (WeaponCalculator::total($eck) as $key => $value) {
+        foreach (WeaponCalculator::totalEquippedWeapon($eck) as $key => $value) {
           $variables[$key] = $value;
         }
         break;

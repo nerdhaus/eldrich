@@ -97,7 +97,7 @@ class StatTreeCalculator {
   }
 
   public static function walkTree(FieldableEntityInterface $entity) {
-    $stats = ['baseline' => [], 'constant' => [], 'conditional' => []];
+    $stats = ['baseline' => static::initSet(), 'constant' => static::initSet(), 'conditional' => static::initSet()];
     $stats['baseline'] = $entity->field_stats->getValue();
 
     // Honestly this irritates me.
@@ -243,5 +243,20 @@ class StatTreeCalculator {
         }
       }
     }
+  }
+
+  private static function initSet() {
+    return [
+      'cog' => 0,
+      'coo' => 0,
+      'int' => 0,
+      'ref' => 0,
+      'sav' => 0,
+      'som' => 0,
+      'wil' => 0,
+      'mox' => 0,
+      'spd' => 0,
+      'dur' => 0,
+    ];
   }
 }

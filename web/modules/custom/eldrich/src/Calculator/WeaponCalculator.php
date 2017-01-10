@@ -2,7 +2,8 @@
 
 namespace Drupal\eldrich\Calculator;
 
-use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Link;
 
 
@@ -12,14 +13,17 @@ use Drupal\Core\Link;
  *
  * Responsible for collapsing weapon clusters into single stats.
  *
- * The goal is to take a weapon_instance eck entity and produce
- * a structured array with the following information:
+ * The goal is to take a an entity and produce a stuctured array
+ * with the following information for each associated attack:
  *
  * - A presentation array, containing:
- *   - A link to the weapon
- *   - An array of links to the weapon mods
- *   - A link to the weapon's ammo
- *   - An array of links to the ammo mods
+ *   - A link to the weapon (or Psi power)
+ *   - An array of links to the weapon mods, if applicable
+ *     In the case of Psychic Stab, we'll use a special case to handle sleights
+ *     increase increase its effectiveness.
+ *   - A link to the weapon's ammo, if applicable
+ *   - An array of links to the ammo mods, if applicable
+ *   - A formatted string representing its attack damage
  *
  * - The ID of the weapon's linked skill.
  * - The numerical skill bonus from any mods/ammo/etc
@@ -46,16 +50,52 @@ use Drupal\Core\Link;
  *           +2d10 when used underwater or in a vacuum
  * [grenade] Sticky EMP grenade: No damage
  *           Radios w/in 10m of blast reduced to 10% range
+ *     [psi] Psychic Stab w/ Ultra Stab: DV 2d10, ignores armor
  */
 class WeaponCalculator {
-  public static function total(EntityInterface $entity) {
-    $data = [
+
+  /*
+   * This is the biggie. Feed it an entity and it produces a set of weapon
+   * weapon records. It assumes the entity in question is an NPC, PC, robot,
+   * creature, etc.
+   */
+  public static function total(FieldableEntityInterface $entity) {
+    $data = [];
+
+    if ($entity->hasField('field_equipped_weapons')) {
+      foreach ($entity->field_equipped_weapons as $few) {
+        if ($weapon = static::totalEquippedWeapon($few->entity)) {
+          $data[] = $weapon;
+        }
+      }
+    }
+
+    if ($entity->hasField('field_sleights')) {
+      if ($sleight = static::totalPsiAttack($entity->field_sleights)) {
+        $data[] = $sleight;
+      }
+    }
+
+    // This is a degenerate case, we'll build a single record just for this
+    // weapon's damage.
+    if ($entity->bundle() == 'weapon') {
+      $weapon = static::initWeaponRecord();
+      static::accountForWeapon($weapon, $entity);
+      $data = $weapon;
+    }
+
+    return $data;
+  }
+
+  private static function initWeaponRecord() {
+    return [
       'linked_skill' => NULL,
       'skill_bonus' => 0,
       'category' => 'weapon',
       'damage' => [
         'dice' => 0,
         'mod' => 0,
+        'mod_extra' => NULL,
         'mod_operation' => '+',
         'multiplier' => 1,
         'ap' => 0,
@@ -67,87 +107,154 @@ class WeaponCalculator {
       'effects' => [],
       'build' => [],
     ];
+  }
 
-    // If we're in an ECK entity, dance around a bit.
-    if ($entity->bundle() == 'weapon' && $entity->getEntityTypeId() == 'node') {
-      $weapon = $entity;
-    }
-    else {
-      $weapon = $entity->field_weapon->entity;
-    }
 
-    if (!$weapon->field_linked_skill->isEmpty()) {
-      $data['linked_skill'] = strtolower($weapon->field_linked_skill->entity->label());
-      switch ($weapon->field_linked_skill->entity->label()) {
-        case 'Kinetic Weapons':
-        case 'Beam Weapons':
-        case 'Spray Weapons':
-        case 'Seeker Weapons':
-        case 'Exotic Ranged Weapons':
-          $data['category'] = 'ranged';
-          break;
-        case 'Melee Weapons':
-        case 'Unarmed Combat':
-        case 'Blades':
-        case 'Clubs':
-        case 'Exotic Melee Weapons':
-          $data['category'] = 'melee';
-          break;
-        case 'Throwing Weapons':
-          if (strpos($weapon->label(), 'Grenade')) {
-            $data['category'] = 'grenade';
-          }
-          else {
-            $data['category'] = 'ranged';
-          }
-          break;
-      }
-    }
+  /*
+   * This is currently stubbed, and waiting for the day I implement special
+   * handling for the native attacks most creatures have. For the moment
+   * they're treated as custom weapons with no cost and nonexistent blueprints.
+   *
+   * Jesus wept.
+   */
+  public static function totalNativeAttack(Array &$data, FieldableEntityInterface $entity) {
+    return NULL;
+  }
 
+  /*
+   * This deals specifically with the 'EquippedWeapon' entity, responsible for
+   * keeping a weapon, its mods, its ammo, and its smart ammo features together.
+   * To get JUST a single weapon,
+   */
+  public static function totalEquippedWeapon(FieldableEntityInterface $entity) {
+    $item = static::initWeaponRecord();
+
+    $weapon = $entity->field_weapon->entity;
+    static::getWeaponCategory($item, $weapon);
     foreach ($weapon->field_firing_modes as $mode) {
-      $data['modes'][$mode->entity->field_lookup_code->value] = $mode->entity->label();
+      $item['modes'][$mode->entity->field_lookup_code->value] = $mode->entity->label();
     }
+    static::accountForWeapon($item, $weapon);
 
-    static::accountForItem($data, $weapon);
-
-    $data['build']['weapon'] = static::linkEntity($weapon);
+    $item['build']['weapon'] = static::linkEntity($weapon);
 
     foreach ($entity->field_weapon_mods as $mod) {
-      static::accountForItem($data, $mod->entity);
-      $data['build']['mods'][] = static::linkEntity($mod->entity);
+      static::accountForWeapon($item, $mod->entity);
+      $item['build']['mods'][] = static::linkEntity($mod->entity);
     }
 
     if (!$entity->field_ammo->isEmpty()) {
-      static::accountForItem($data, $entity->field_ammo->entity);
-      $data['build']['ammo'] = static::linkEntity($entity->field_ammo->entity);
+      static::accountForWeapon($item, $entity->field_ammo->entity);
+      $item['build']['ammo'] = static::linkEntity($entity->field_ammo->entity);
       foreach ($entity->field_ammo_mods as $ammo_mod) {
-        $data['build']['ammo_mods'][] = static::linkEntity($ammo_mod->entity);
-        static::accountForItem($data, $ammo_mod->entity);
+        $item['build']['ammo_mods'][] = static::linkEntity($ammo_mod->entity);
+        static::accountForWeapon($item, $ammo_mod->entity);
       }
     }
 
-    if ($data['damage']['mod'] < 0) {
-      $data['damage']['mod_operation'] = '-';
-      $data['damage']['mod'] = abs($data['damage']['mod']);
+    if ($item['damage']['mod'] < 0) {
+      $item['damage']['mod_operation'] = '-';
+      $item['damage']['mod'] = abs($item['damage']['mod']);
     }
 
-    $avg = $data['damage']['dice'] * 5;
-    $avg = operation_calculate_result($avg, $data['damage']['mod_operation'], $data['damage']['mod']);
-    $data['damage']['average'] = intval(round($avg * $data['damage']['multiplier']));
+    $avg = $item['damage']['dice'] * 5;
+    $avg = operation_calculate_result($avg, $item['damage']['mod_operation'], $item['damage']['mod']);
+    $item['damage']['average'] = intval(round($avg * $item['damage']['multiplier']));
 
-    return $data;
+    return $item;
   }
 
-  public static function accountForItem(Array &$data, EntityInterface $weapon) {
+  /*
+   * This basically exists to special-case the Psychic Stab attack.
+   * If a Sleights field exists, we throw it here to see how whether Stab is
+   * in the entity's set of sleights. In addition, we'll look for Psychic Rend,
+   * since each level of it adds an extra 1d10 to Stab's damage.
+   */
+  private static function totalPsiAttack(FieldItemListInterface $sleights) {
+    $item = static::initWeaponRecord();
+    $has_stab = FALSE;
+    $rend_levels = 0;
 
+    foreach ($sleights as $ref) {
+      $sleight = $ref->entity;
+
+      switch ($sleight->label()) {
+        case 'Psychic Stab':
+          static::getWeaponCategory($item, $sleight);
+          $item['damage']['dice'] = 1;
+          $item['damage']['ap'] = 999;
+          $item['build']['weapon'] = static::linkEntity($sleight);
+          $has_stab = TRUE;
+          break;
+
+        case 'Psychic Rend':
+          $item['damage']['dice']++;
+          $item['build']['mods'][] = static::linkEntity($sleight);
+          break;
+      }
+    }
+
+    if ($has_stab) {
+      return $item;
+    }
+    else {
+      return NULL;
+    }
+  }
+
+  private static function getWeaponCategory(Array &$item, FieldableEntityInterface $weapon) {
+    if ($weapon->hasField('field_linked_skill')) {
+      $item['linked_skill'] = strtolower($weapon->field_linked_skill->entity->label());
+    }
+    elseif ($weapon->hasField('field_psi_skill')) {
+      $item['linked_skill'] = strtolower($weapon->field_psi_skill->entity->label());
+    }
+
+    switch ($item['linked_skill']) {
+      case 'kinetic weapons':
+      case 'beam weapons':
+      case 'spray weapons':
+      case 'seeker weapons':
+      case 'exotic ranged weapons':
+        $item['category'] = 'Ranged';
+        break;
+
+      case 'melee weapons':
+      case 'unarmed combat':
+      case 'blades':
+      case 'clubs':
+      case 'exotic melee weapons':
+        $item['category'] = 'Melee';
+        break;
+
+      case 'throwing weapons':
+        if (strpos($weapon->label(), 'grenade')) {
+          $item['category'] = 'Grenade';
+        }
+        else {
+          $item['category'] = 'Ranged';
+        }
+        break;
+
+      case 'psi assault':
+        $item['category'] = "Psi";
+        break;
+
+      default:
+        $item['category'] = "Attack";
+    }
+
+  }
+
+  public static function accountForWeapon(Array &$item, FieldableEntityInterface $weapon) {
     if (!$weapon->field_magazine_size->isEmpty()) {
-      $data['rounds'] = operation_calculate_result($data['rounds'], $weapon->field_magazine_size->operation, $weapon->field_magazine_size->value);
+      $item['rounds'] = operation_calculate_result($item['rounds'], $weapon->field_magazine_size->operation, $weapon->field_magazine_size->value);
     }
     if (!$weapon->field_damage_dice->isEmpty()) {
-      $data['damage']['dice'] = operation_calculate_result($data['damage']['dice'], $weapon->field_damage_dice->operation, $weapon->field_damage_dice->value);
+      $item['damage']['dice'] = operation_calculate_result($item['damage']['dice'], $weapon->field_damage_dice->operation, $weapon->field_damage_dice->value);
     }
     if (!$weapon->field_ap_modifier->isEmpty()) {
-      $data['damage']['ap'] = operation_calculate_result($data['damage']['ap'], $weapon->field_ap_modifier->operation, $weapon->field_ap_modifier->value);
+      $item['damage']['ap'] = operation_calculate_result($item['damage']['ap'], $weapon->field_ap_modifier->operation, $weapon->field_ap_modifier->value);
     }
 
     // The mod is trickier, since in theory we could get to strange stuff like
@@ -158,34 +265,39 @@ class WeaponCalculator {
         case '':
         case '+':
         case '-':
-          $data['damage']['mod'] = operation_calculate_result($data['damage']['mod'], $weapon->field_damage_modifier->operation, $weapon->field_damage_modifier->value);
+          $item['damage']['mod'] = operation_calculate_result($item['damage']['mod'], $weapon->field_damage_modifier->operation, $weapon->field_damage_modifier->value);
           break;
         default:
-          $data['damage']['multiplier'] = operation_calculate_result($data['damage']['multiplier'], $weapon->field_damage_modifier->operation, $weapon->field_damage_modifier->value);
+          $item['damage']['multiplier'] = operation_calculate_result($item['damage']['multiplier'], $weapon->field_damage_modifier->operation, $weapon->field_damage_modifier->value);
       }
     }
 
     if (!$weapon->field_skill_bonus->isEmpty()) {
-      $data['skill_bonus'] += $weapon->field_skill_bonus->value;
+      $item['skill_bonus'] += $weapon->field_skill_bonus->value;
     }
 
     if (!$weapon->field_special_effect->isEmpty()) {
-      $data['effects'][] = $weapon->field_special_effect->value;
+      $item['effects'][] = $weapon->field_special_effect->value;
     }
 
     if (!$weapon->field_special_effect->isEmpty()) {
-      $data['effects'][] = $weapon->field_special_effect->value;
+      $item['effects'][] = $weapon->field_special_effect->value;
     }
 
     foreach ($weapon->field_damage_effects as $effect) {
-      if (!in_array($effect->entity->label(), $data['damage']['effects']) && (!in_array($effect->entity->label(), ['Kinetic','Energy','Melee']))) {
-        $data['damage']['effects'][] = $effect->entity->label();
+      if (!in_array($effect->entity->label(), $item['damage']['effects']) && (!in_array($effect->entity->label(), ['Kinetic','Energy','Melee']))) {
+        $item['damage']['effects'][] = $effect->entity->label();
       }
     }
   }
 
-  private static function linkEntity(EntityInterface $entity) {
-    $linkText = $entity->field_short_name->value ?: $entity->label();
+  private static function linkEntity(FieldableEntityInterface $entity) {
+    if (!empty($entity->field_short_name) && !$entity->field_short_name->isEmpty()) {
+      $linkText = $entity->field_short_name->value;
+    }
+    else {
+      $linkText = $entity->label();
+    }
     return Link::createFromRoute($linkText, 'entity.node.canonical', ['node' => $entity->id()])->toString();
   }
 }
