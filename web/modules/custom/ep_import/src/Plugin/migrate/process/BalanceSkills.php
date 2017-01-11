@@ -105,7 +105,7 @@ class BalanceSkills extends ProcessPluginBase implements ContainerFactoryPluginI
       $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nids);
 
       foreach ($nodes as $skill) {
-        static::$mapData[$skill->id()] = $skill->field_linked_aptitude->entity->field_code->value;
+        static::$mapData[$skill->id()] = strtolower($skill->field_linked_aptitude->entity->field_code->value);
       }
     }
     return static::$mapData[$id];
