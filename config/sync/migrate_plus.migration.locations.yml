@@ -63,7 +63,7 @@ process:
     default_value: basic_html
   field_population: population
   field_distance: distance
-  field_languages/value:
+  field_languages:
     -
       plugin: skip_on_empty
       method: process

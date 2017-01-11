@@ -59,6 +59,8 @@ source:
       credits: credits
     -
       rep: rep
+    -
+      skills_include_morph: skills_include_morph
   constants:
     user: Factotum
   keys:
@@ -104,6 +106,8 @@ process:
       bundle: skill
       bundle_key: type
       value_key: title
+    -
+      plugin: balance_skills
   field_gear:
     -
       plugin: skip_on_empty

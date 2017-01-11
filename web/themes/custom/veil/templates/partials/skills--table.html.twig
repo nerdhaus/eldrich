@@ -1,22 +1,26 @@
-<table class="pc-skills">
+<table class="table table-bordered pc-skills">
   <thead>
-    <td>Attribute</td>
+    <td>Aptitude</td>
     <td>Skill</td>
-    <td>Specialization</td>
     <td>Base</td>
+    <td>Points</td>
     <td>Bonus</td>
     <td>Total</td>
   </thead>
   <tbody>
-    {% foreach skill in skills -%}
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+    {% for skill in skills -%}
+      {% if skill.constant.points %}
+        {% set cons = skill.constant %}
+        {% set cond = skill.conditional %}
+        <tr>
+          <td>{{ skill.aptitude|upper }}</td>
+          <td><a href="{{ skill.url }}">{{ skill.name }}{% if skill.field %}: {{ skill.field }}{% endif %}</a>{% if skill.specialization %} ({{ skill.specialization }}){% endif %}</td>
+          <td>{{ cons.baseline }}{% if cons.baseline != cond.baseline %} ({{ cond.baseline }}){% endif -%}</td>
+          <td>{{ cons.points }}</td>
+          <td>{{ cons.bonus }}{% if cons.bonus != cond.bonus %} ({{ cond.bonus }}){% endif -%}</td>
+          <td>{{ cons.total }}{% if cons.total != cond.total %} ({{ cond.total }}){% endif -%}</td>
+        </tr>
+      {% endif %}
     {%- endfor %}
   </tbody>
 </table>

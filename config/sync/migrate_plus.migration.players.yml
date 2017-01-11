@@ -114,6 +114,8 @@ process:
       bundle: skill
       bundle_key: type
       value_key: title
+    -
+      plugin: balance_skills
   field_gear:
     -
       plugin: skip_on_empty

@@ -25,7 +25,7 @@ class LineBreaker extends ProcessPluginBase {
     }
 
     // Strip out nasty linebreaks, a problem in our source data
-    $value = preg_replace("/\s?[\n\r]{2,10}/", "</p>\r<p>", $value);
+    $value = preg_replace("/\s?[\n\r]{1,10}/", "</p>\r<p>", $value);
     $value = preg_replace("/\s?[\n\r]/", "", $value);
 
     $value = "<p>" . $value . "</p>";
