@@ -80,21 +80,17 @@ class BalanceSkills extends ProcessPluginBase implements ContainerFactoryPluginI
     $ego_stats = $this->extract($row->getSourceProperty('ego_stats'), $migrate_executable, $row, $destination_property);
     $morph_stats = $this->extract($row->getSourceProperty('morph_stats'), $migrate_executable, $row, $destination_property);
 
-    if ($row->hasSourceProperty('ego_stats')) {
-      $morph = boolval($row->getSourceProperty('ego_stats'));
+    if ($row->hasSourceProperty('skills_include_morph')) {
+      $morph = $row->getSourceProperty('skills_include_morph') == 'TRUE';
     }
     else {
       $morph = FALSE;
     }
 
-    drush_print_r($value);
-
     $value['points'] = $value['points'] - $ego_stats[$this->map($value['target_id'])];
     if ($morph) {
       $value['points'] = $value['points'] - $morph_stats[$this->map($value['target_id'])];
     }
-
-    drush_print_r($value);
 
     return $value;
   }
@@ -109,7 +105,7 @@ class BalanceSkills extends ProcessPluginBase implements ContainerFactoryPluginI
       $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nids);
 
       foreach ($nodes as $skill) {
-        static::$mapData[$skill->id()] = $skill->field_linked_aptitude->entity->field_lookup_code->value;
+        static::$mapData[$skill->id()] = $skill->field_linked_aptitude->entity->field_code->value;
       }
     }
     return static::$mapData[$id];

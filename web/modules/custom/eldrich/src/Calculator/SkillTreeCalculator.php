@@ -60,7 +60,7 @@ class SkillTreeCalculator {
 
     // If we're working with anything other than a full-fledged PC, subtract baseline
     // and bonus from points. Total is points. Shhhhh. Don't cheapen this.
-    if ($entity->bundle() != 'pc') {
+    if (!in_array($entity->bundle(), ['pc', 'npc'])) {
       foreach ($skills as $key => $data) {
         if ($skills[$key]['constant']['points'] > $skills[$key]['constant']['baseline']) {
           $skills[$key]['constant']['points'] = $skills[$key]['constant']['points'] - $skills[$key]['constant']['baseline'] + $skills[$key]['constant']['bonus'];
