@@ -196,11 +196,13 @@ process:
       entity_type: instance
       source:
         - morph
+        - morph_stats
         - morph_traits
         - augmentations
         - appearance
       keys:
         - morph
+        - morph_stats
         - morph_traits
         - augmentations
         - appearance
@@ -214,6 +216,9 @@ process:
           bundle_key: type
           entity_type: node
           source: morph
+        field_stats:
+          plugin: stat_block
+          source: morph_stats
         field_description/value:
           plugin: line_breaker
           source: appearance
