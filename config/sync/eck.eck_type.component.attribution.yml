@@ -1,9 +1,0 @@
-uuid: 33a4a041-36a9-4be6-b993-8b1ee99887b7
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.component
-name: Attribution
-type: attribution
-description: 'Notes about the origins of a given piece of content.'
