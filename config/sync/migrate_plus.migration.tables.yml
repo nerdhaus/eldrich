@@ -44,38 +44,18 @@ process:
     plugin: skip_on_empty
     method: process
     source: weight
-  '@speed_array':
+  field_speed:
     -
       plugin: skip_on_empty
       method: process
       source: speed
     -
-      plugin: explode
+      plugin: array_to_dict
       delimiter: /
-  field_speed/walk:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: '@speed_array'
-    -
-      plugin: extract
-      index: 0
-  field_speed/run:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: '@speed_array'
-    -
-      plugin: extract
-      index: 1
-  field_speed/cruise:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: '@speed_array'
-    -
-      plugin: extract
-      index: 2
+      keys:
+        - walk
+        - run
+        - cruise
   field_description/value:
     plugin: skip_on_empty
     method: process
