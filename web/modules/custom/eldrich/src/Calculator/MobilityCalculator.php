@@ -25,6 +25,71 @@ use Drupal\Core\Link;
 class MobilityCalculator {
 
   public static function total(FieldableEntityInterface $entity) {
-    return NULL;
+    $data = [];
+
+    static::getForEntity($data, $entity);
+    static::linkEntities($data);
+
+    return $data;
   }
+
+  public static function getForEntity(Array &$data, FieldableEntityInterface $entity) {
+    // We've got actual mobility data!
+    if ($entity->hasField('field_mobility_system') && !$entity->field_mobility_system->isEmpty()) {
+      $move = static::defaultData();
+      $move['entity'] = $entity->field_mobility_system->entity;
+
+      if (!$entity->field_movement_speed->isEmpty()) {
+        $move['entity'] += $entity->field_movement_speed->getValue();
+      }
+      elseif ($move['entity']->field_speed) {
+        $move['entity'] += $move['entity']->field_speed->getValue();
+      }
+      $data[$move['entity']->label()] = $move;
+    }
+
+    // Has augmentations, which might provide additional mobility types
+    if ($entity->hasField('field_augmentations')) {
+      foreach ($entity->field_augmentations as $field) {
+        if ($field->entity) {
+          static::getForEntity($data, $field->entity);
+        }
+      }
+    }
+
+    // Has a morph, which provides a mobility type
+    if ($entity->hasField('field_morph')) {
+      foreach ($entity->field_morph as $field) {
+        if ($field->entity) {
+          static::getForEntity($data, $field->entity);
+        }
+      }
+    }
+
+    // Is a morph, with a model, with defaults for mobility
+    if ($entity->hasField('field_model')) {
+      foreach ($entity->field_model as $field) {
+        if ($field->entity) {
+          static::getForEntity($data, $field->entity);
+        }
+      }
+    }
+  }
+
+  public static function defaultData() {
+    return [
+      'entity' => NULL,
+      'walk' => 0,
+      'run' => 0,
+      'cruise' => 0,
+    ];
+  }
+
+  public static function linkEntities(&$data) {
+    foreach ($data as $name => $details) {
+      $linkText = $details['entity']->label();
+      $data['build'][] = Link::createFromRoute($linkText, 'entity.node.canonical', ['node' => $details['entity']->id()])->toString();
+    }
+  }
+
 }
