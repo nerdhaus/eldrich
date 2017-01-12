@@ -44,14 +44,16 @@
   {% if threat and threat.rating %}
     <span class="text-uppercase label label-danger pull-right">Threat: {{ threat.rating }}</span>
   {% endif %}
-  {% if content.field_quote %}
+
+  {% if not content.field_quote.isEmpty %}
     <blockquote><p>{{ content.field_quote|field_value }}</p></blockquote>
   {% endif %}
 
   {{ content.field_description }}
 
+
   {% if stats %}
-    {% include directory ~ '/templates/partials/stats--breakdown.html.twig' %}
+    {% include directory ~ '/templates/partials/stats.html.twig' %}
   {% endif %}
 
   <dl class="dl-horizontal">
@@ -79,7 +81,4 @@
     {% if content.field_sources %}<dt>Source:</dt><dd>{{ content.field_sources|field_value|safe_join(', ') }}</dd>{% endif %}
   </dl>
   {% endif %}
-
-
-  {% include directory ~ '/templates/partials/skills--table.html.twig' %}
 </article>

@@ -6,17 +6,19 @@
 
 namespace Drupal\veil\Plugin\Preprocess;
 
-use Drupal\bootstrap\Annotation\BootstrapPreprocess;
 use Drupal\bootstrap\Utility\Variables;
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessInterface;
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessBase;
-use Drupal\eldrich\Calculator\ThreatCalculator;
-use Drupal\eldrich\Calculator\WeaponCalculator;
 use Drupal\node\NodeInterface;
 
+use Drupal\eldrich\Calculator\ThreatCalculator;
+use Drupal\eldrich\Calculator\WeaponCalculator;
+use Drupal\eldrich\Calculator\MobilityCalculator;
 use Drupal\eldrich\Calculator\StatTreeCalculator;
 use Drupal\eldrich\Calculator\SkillTreeCalculator;
 use Drupal\eldrich\Calculator\ArmorCalculator;
+
+
 
 /**
  * Pre-processes variables for the "node" theme hook.
@@ -38,45 +40,18 @@ class Node extends PreprocessBase implements PreprocessInterface {
     $variables->icon = $this->getIcon($node);
     $variables->badge = $this->getBadge($variables['content'], $node);
 
-    if (in_array($variables->view_mode, ['full', 'charsheet'])) {
-      // Set up the basics here
-      $variables->stats = [];
-      $variables->skills = [];
-      $variables->armor = [];
-      $variables->weapons = [];
+    $variables->stats = StatTreeCalculator::total($node);
+    $variables->skills = SkillTreeCalculator::total($node, $variables->stats);
+    $variables->mobility = MobilityCalculator::total($node);
 
-      // Things with stats and skills
-      if (in_array($node->bundle(), [
-        'npc',
-        'pc',
-        'mind',
-        'robot',
-        'creature'
-      ])) {
-        $variables->stats = StatTreeCalculator::total($node);
-        $variables->skills = SkillTreeCalculator::total($node, $variables->stats);
-      }
-
-      // Things with armor and weapons
-      if (in_array($node->bundle(), [
-        'npc',
-        'pc',
-        'vehicle',
-        'robot',
-        'creature'
-      ])) {
-        $variables->armor = ArmorCalculator::total($node);
-        $variables->attacks = WeaponCalculator::total($node);
-      }
-
-      if (in_array($node->bundle(), [
-        'npc',
-        'pc',
-        'creature'
-      ])) {
-        $variables->threat = ThreatCalculator::total($variables->stats, $variables->skills, $variables->armor, $variables->attacks);
-      }
+    if ($node->bundle() == 'weapon') {
+      $variables->attack = WeaponCalculator::total($node);
     }
+    else {
+      $variables->attacks = WeaponCalculator::total($node);
+    }
+    $variables->armor = ArmorCalculator::total($node);
+    $variables->threat = ThreatCalculator::total($variables->stats, $variables->skills, $variables->armor, $variables->attacks);
   }
 
   public function getIcon(NodeInterface $node) {

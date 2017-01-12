@@ -62,7 +62,11 @@
         "drupal/prepopulate": "^2.0@alpha",
         "tecnickcom/tc-lib-barcode": "^1",
         "drupal/barcodes": "^1.6",
-        "erusev/parsedown": "^1.6"
+        "erusev/parsedown": "^1.6",
+        "drupal/twig_tweak": "^1.4",
+        "drupal/menu_trail_by_path": "^1.1",
+        "drupal/eva": "^1.0@RC",
+        "drupal/field_tools": "1.x-dev"
     },
     "require-dev": {
         "behat/mink": "~1.7",

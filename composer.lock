@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f4a264e1f193dd600dae6914aebe14c",
+    "content-hash": "7f509c4346bf85302a24e3b25cc4e160",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2351,6 +2351,65 @@
             }
         },
         {
+            "name": "drupal/eva",
+            "version": "1.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/eva",
+                "reference": "8.x-1.0-rc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/eva-8.x-1.0-rc1.zip",
+                "reference": null,
+                "shasum": "8e8c528fb47aa6d3a1f340b21f3c050b458a8e95"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-rc1",
+                    "datestamp": "1482859983"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Crell",
+                    "homepage": "https://www.drupal.org/user/26398"
+                },
+                {
+                    "name": "ahebrank",
+                    "homepage": "https://www.drupal.org/user/3190515"
+                },
+                {
+                    "name": "axel.rutz",
+                    "homepage": "https://www.drupal.org/user/229048"
+                },
+                {
+                    "name": "eaton",
+                    "homepage": "https://www.drupal.org/user/16496"
+                },
+                {
+                    "name": "mkadin",
+                    "homepage": "https://www.drupal.org/user/1093166"
+                }
+            ],
+            "description": "Attach a view to an entity",
+            "homepage": "https://www.drupal.org/project/eva",
+            "support": {
+                "source": "http://cgit.drupalcode.org/eva"
+            }
+        },
+        {
             "name": "drupal/field_group",
             "version": "dev-1.x",
             "source": {
@@ -2403,6 +2462,48 @@
                 "source": "http://cgit.drupalcode.org/field_group"
             },
             "time": "2016-11-28 20:35:38"
+        },
+        {
+            "name": "drupal/field_tools",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/field_tools",
+                "reference": "11261d92f446986a0c80b5c996116ec063e71b1e"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1478039939"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "joachim",
+                    "homepage": "https://www.drupal.org/user/107701"
+                },
+                {
+                    "name": "tedbow",
+                    "homepage": "https://www.drupal.org/user/240860"
+                }
+            ],
+            "description": "Provides tools for working with fields, such as cloning to other entities and bundles.",
+            "homepage": "https://www.drupal.org/project/field_tools",
+            "support": {
+                "source": "http://cgit.drupalcode.org/field_tools"
+            },
+            "time": "2016-11-01 22:36:47"
         },
         {
             "name": "drupal/google_analytics",
@@ -2659,6 +2760,57 @@
             ],
             "support": {
                 "source": "http://cgit.drupalcode.org/layout_plugin"
+            }
+        },
+        {
+            "name": "drupal/menu_trail_by_path",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/menu_trail_by_path",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/menu_trail_by_path-8.x-1.1.zip",
+                "reference": null,
+                "shasum": "52261e3ad3630e88bfc2a147e3056844f5584f62"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1482006782"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SeriousMatters",
+                    "homepage": "https://www.drupal.org/user/290439"
+                },
+                {
+                    "name": "davy-r",
+                    "homepage": "https://www.drupal.org/user/3278771"
+                },
+                {
+                    "name": "redndahead",
+                    "homepage": "https://www.drupal.org/user/160320"
+                }
+            ],
+            "description": "Expand menus and set active-trail according to the current path.",
+            "homepage": "https://www.drupal.org/project/menu_trail_by_path",
+            "support": {
+                "source": "http://cgit.drupalcode.org/menu_trail_by_path"
             }
         },
         {
@@ -3403,6 +3555,49 @@
             "homepage": "https://www.drupal.org/project/twig_field_value",
             "support": {
                 "source": "http://cgit.drupalcode.org/twig_field_value"
+            }
+        },
+        {
+            "name": "drupal/twig_tweak",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/twig_tweak",
+                "reference": "8.x-1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/twig_tweak-8.x-1.4.zip",
+                "reference": null,
+                "shasum": "afd09cd0e3428f551ed0f3f729deaf9964c70465"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.4",
+                    "datestamp": "1478691840"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Chi",
+                    "homepage": "https://www.drupal.org/user/556138"
+                }
+            ],
+            "description": "Provides some extra twig functions.",
+            "homepage": "https://www.drupal.org/project/twig_tweak",
+            "support": {
+                "source": "http://cgit.drupalcode.org/twig_tweak"
             }
         },
         {
@@ -7309,7 +7504,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/viewsreference-8.x-1.0-alpha8.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha8",
                 "shasum": "fb042bce61e91095df608c7fedcfcf1e61690d67"
             },
             "require": {
@@ -8447,6 +8642,8 @@
         "drupal/ief_table_view_mode": 20,
         "drupal/url_embed": 15,
         "drupal/prepopulate": 15,
+        "drupal/eva": 5,
+        "drupal/field_tools": 20,
         "drupal/viewsreference": 15
     },
     "prefer-stable": true,

@@ -230,7 +230,7 @@ class WeaponCalculator {
         break;
 
       case 'throwing weapons':
-        if (strpos($weapon->label(), 'grenade')) {
+        if (strpos($weapon->label(), 'renade')) {
           $item['category'] = 'Grenade';
         }
         else {

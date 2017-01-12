@@ -36,6 +36,10 @@ class ThreatCalculator {
   public static function total(Array $stats, Array $skills, Array $armor, Array $weapons, Array $sleights = []) {
     $data = static::getDefaults();
 
+    if (empty($stats) || empty($skills) || empty($weapons)) {
+      return $data;
+    }
+
     // Defense data
     $data['raw']['dur'] = $stats['total']['conditional']['dur'];
     $data['raw']['spd'] = $stats['total']['conditional']['spd'];

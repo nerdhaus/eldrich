@@ -25,6 +25,6 @@ use Drupal\Core\Link;
 class MobilityCalculator {
 
   public static function total(FieldableEntityInterface $entity) {
-
+    return NULL;
   }
 }

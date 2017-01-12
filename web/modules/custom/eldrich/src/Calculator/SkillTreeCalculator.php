@@ -49,14 +49,17 @@ class SkillTreeCalculator {
   public static function total(FieldableEntityInterface $entity, Array $stats) {
     $skills = [];
 
-    // Pre-initialize defaultable skills.
-    foreach (static::getSkillList() as $nid => $skill) {
-      $key = strtolower($skill->label());
-      $skills[$key] = static::initRow();
-      static::populateRow($skills[$key], $skill, $stats);
+    if (!empty($stats) && in_array($entity->bundle(), ['pc', 'npc', 'creature', 'robot'])) {
+      // Pre-initialize defaultable skills.
+      foreach (static::getSkillList() as $nid => $skill) {
+        $key = strtolower($skill->label());
+        $skills[$key] = static::initRow();
+        static::populateRow($skills[$key], $skill, $stats);
+      }
+
+      static::walkTree($skills, $entity, $stats);
     }
 
-    static::walkTree($skills, $entity, $stats);
 
     // If we're working with anything other than a full-fledged PC, subtract baseline
     // and bonus from points. Total is points. Shhhhh. Don't cheapen this.

@@ -39,25 +39,25 @@ class ArmorCalculator {
   public static function total(FieldableEntityInterface $entity) {
     $data = static::defaultData();
 
-    if (!empty($entity->field_morph) && !$entity->field_morph->isEmpty()) {
+    if ($entity->hasField('field_morph') && !$entity->field_morph->isEmpty()) {
       // If we're looking at an NPC or a Character, they have a 'morph' ECK
       // instance that stores augs and other details. Total up that sub-group.
       $data = ArmorCalculator::total($entity->field_morph->entity);
     }
-    else if (!empty($entity->field_model) && !$entity->field_model->isEmpty()) {
+    else if ($entity->hasField('field_model') && !$entity->field_model->isEmpty()) {
       // If there's a 'field_model' we're in an ECK entity. Grab its base armor
       // value.
       $data['energy'] = $entity->field_model->entity->field_armor->energy;
       $data['kinetic'] = $entity->field_model->entity->field_armor->kinetic;
     }
-    else if (!empty($entity->field_armor) && !$entity->field_armor->isEmpty()) {
+    else if ($entity->hasField('field_armor') && !$entity->field_armor->isEmpty()) {
       // If there's a raw field_armor grab its values directly.
       $data['energy'] = $entity->field_armor->energy;
       $data['kinetic'] = $entity->field_armor->kinetic;
     }
 
     // Add augmentations to the mix.
-    if (isset($entity->field_augmentations)) {
+    if ($entity->hasField('field_augmentations')) {
       foreach ($entity->field_augmentations as $aug) {
         $aug = $aug->entity;
         if (!$aug->field_armor->isEmpty()) {
@@ -72,7 +72,7 @@ class ArmorCalculator {
     }
 
     // If the entity has equipped gear, total it up.
-    if (isset($entity->field_equipped_armor)) {
+    if ($entity->hasField('field_equipped_armor')) {
       $worn = static::defaultData();
       foreach ($entity->field_equipped_armor as $eq) {
         $armor = $eq->entity->field_armor->entity;
