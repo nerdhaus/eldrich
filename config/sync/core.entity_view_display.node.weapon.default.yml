@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.weapon.field_ap_modifier
     - field.field.node.weapon.field_area_effect
-    - field.field.node.weapon.field_attribution
     - field.field.node.weapon.field_blueprints
     - field.field.node.weapon.field_cost
     - field.field.node.weapon.field_damage_dice
@@ -28,41 +27,14 @@ dependencies:
     - field.field.node.weapon.field_uses_mods
     - node.type.weapon
   module:
+    - eldrich
     - entity_reference_override
     - entity_reference_quantity
     - ep_complex_values
-    - field_group
+    - field_delimiter
     - operation
     - text
     - user
-third_party_settings:
-  field_group:
-    group_attributes:
-      children:
-        - field_damage_dice
-        - field_damage_modifier
-        - field_ap_modifier
-        - field_magazine_size
-        - field_range
-        - field_linked_skill
-        - field_skill_bonus
-        - field_firing_modes
-        - field_damage_effects
-        - field_area_effect
-        - field_special_effect
-      parent_name: ''
-      weight: 3
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: ''
-        element: div
-        show_label: false
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: Attributes
 id: node.weapon.default
 targetEntityType: node
 bundle: weapon
@@ -89,14 +61,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_text
-  field_attribution:
-    weight: 11
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
   field_cost:
     weight: 2
     label: inline

@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.weapon.field_ap_modifier
     - field.field.node.weapon.field_area_effect
-    - field.field.node.weapon.field_attribution
     - field.field.node.weapon.field_blueprints
     - field.field.node.weapon.field_cost
     - field.field.node.weapon.field_damage_dice
@@ -23,11 +22,13 @@ dependencies:
     - field.field.node.weapon.field_reach
     - field.field.node.weapon.field_short_name
     - field.field.node.weapon.field_skill_bonus
+    - field.field.node.weapon.field_sources
     - field.field.node.weapon.field_special_effect
     - field.field.node.weapon.field_uses_ammo
     - field.field.node.weapon.field_uses_mods
     - node.type.weapon
   module:
+    - entity_reference_quantity
     - text
     - user
 id: node.weapon.teaser
@@ -65,7 +66,6 @@ hidden:
   field_ap_modifier: true
   field_area_effect: true
   field_armor: true
-  field_attribution: true
   field_blueprints: true
   field_cost: true
   field_damage: true

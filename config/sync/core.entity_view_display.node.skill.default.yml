@@ -14,33 +14,8 @@ dependencies:
     - field.field.node.skill.field_usage
     - node.type.skill
   module:
-    - field_group
     - text
     - user
-third_party_settings:
-  field_group:
-    group_attributes:
-      children:
-        - field_usage
-        - field_linked_aptitude
-        - field_skill_type
-        - field_no_defaulting
-        - field_is_field
-        - field_example_fields
-        - field_specializations
-      parent_name: ''
-      weight: 1
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: ''
-        element: div
-        show_label: false
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: Attributes
 id: node.skill.default
 targetEntityType: node
 bundle: skill

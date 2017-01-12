@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - eck.eck_type.component.attribution
     - field.storage.node.field_attribution
     - node.type.derangement
 id: node.derangement.field_attribution
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:component'
   handler_settings:
-    target_bundles:
-      attribution: attribution
+    target_bundles: {  }
     sort:
       field: _none
     auto_create: false

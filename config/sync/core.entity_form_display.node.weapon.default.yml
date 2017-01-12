@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.weapon.field_ap_modifier
     - field.field.node.weapon.field_area_effect
-    - field.field.node.weapon.field_attribution
     - field.field.node.weapon.field_blueprints
     - field.field.node.weapon.field_cost
     - field.field.node.weapon.field_damage_dice
@@ -32,7 +31,6 @@ dependencies:
     - entity_reference_quantity
     - ep_complex_values
     - field_group
-    - inline_entity_form
     - operation
     - path
     - text
@@ -79,17 +77,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
-  field_attribution:
-    weight: 24
-    settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      collapsible: true
-      collapsed: true
-      override_labels: false
-    third_party_settings: {  }
-    type: inline_entity_form_simple
   field_blueprints:
     weight: 18
     settings:

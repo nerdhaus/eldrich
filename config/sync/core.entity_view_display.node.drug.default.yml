@@ -15,32 +15,12 @@ dependencies:
     - field.field.node.drug.field_sources
     - node.type.drug
   module:
+    - eldrich
     - entity_reference_quantity
-    - field_group
+    - field_delimiter
     - integer_time
     - text
     - user
-third_party_settings:
-  field_group:
-    group_attributes:
-      children:
-        - field_delivery_mechanism
-        - field_addiction_modifier
-        - field_duration
-        - field_onset
-      parent_name: ''
-      weight: 3
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: ''
-        element: div
-        show_label: false
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: Attributes
 id: node.drug.default
 targetEntityType: node
 bundle: drug
@@ -125,7 +105,6 @@ content:
         delimiter: ''
     type: eldrich_citation_formatter
 hidden:
-  field_attribution: true
   field_blueprints: true
   field_short_name: true
   links: true

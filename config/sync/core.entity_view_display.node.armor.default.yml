@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.armor.field_armor
-    - field.field.node.armor.field_attribution
     - field.field.node.armor.field_blueprints
     - field.field.node.armor.field_cost
     - field.field.node.armor.field_description
@@ -20,28 +19,8 @@ dependencies:
     - entity_reference_quantity
     - ep_complex_values
     - field_delimiter
-    - field_group
     - text
     - user
-third_party_settings:
-  field_group:
-    group_attributes:
-      children:
-        - field_armor
-        - field_special_effect
-      parent_name: ''
-      weight: 3
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: ''
-        element: div
-        show_label: false
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: Attributes
 id: node.armor.default
 targetEntityType: node
 bundle: armor
@@ -96,7 +75,6 @@ content:
     third_party_settings: {  }
     type: string
 hidden:
-  field_attribution: true
   field_blueprints: true
   field_is_mod: true
   field_short_name: true

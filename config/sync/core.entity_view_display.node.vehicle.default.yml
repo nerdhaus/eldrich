@@ -21,66 +21,17 @@ dependencies:
     - field.field.node.vehicle.field_stats
     - node.type.vehicle
   module:
+    - eldrich
     - entity_reference_override
     - entity_reference_quantity
-    - ep_complex_values
-    - ep_statblock
-    - field_group
+    - field_delimiter
     - text
     - user
-third_party_settings:
-  field_group:
-    group_attributes:
-      children:
-        - field_mobility_system
-        - field_movement_speed
-        - field_armor
-        - field_passengers
-        - field_stats
-        - field_linked_skill
-        - field_skill_bonus
-        - field_augmentations
-        - field_gear
-      parent_name: ''
-      weight: 3
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: ''
-        element: div
-        show_label: false
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: Attributes
-    group_equipped:
-      children:
-        - field_equipped_weapons
-      parent_name: ''
-      weight: 4
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: ''
-        element: div
-        show_label: false
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: Equipped
 id: node.vehicle.default
 targetEntityType: node
 bundle: vehicle
 mode: default
 content:
-  field_armor:
-    weight: 9
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    type: armor_text
   field_augmentations:
     weight: 14
     label: inline
@@ -106,14 +57,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_equipped_weapons:
-    type: entity_reference_entity_view
-    weight: 13
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
   field_gear:
     weight: 15
     label: inline
@@ -139,19 +82,6 @@ content:
       override_action: suffix
     third_party_settings: {  }
     type: entity_reference_override_label
-  field_mobility_system:
-    weight: 7
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-  field_movement_speed:
-    weight: 8
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    type: mobility_speed_formatter
   field_passengers:
     weight: 10
     label: inline
@@ -181,13 +111,12 @@ content:
       field_delimiter:
         delimiter: ''
     type: eldrich_citation_formatter
-  field_stats:
-    weight: 11
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    type: stat_block_simple
 hidden:
+  field_armor: true
   field_blueprints: true
+  field_equipped_weapons: true
+  field_mobility_system: true
+  field_movement_speed: true
   field_short_name: true
+  field_stats: true
   links: true

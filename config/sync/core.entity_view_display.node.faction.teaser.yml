@@ -34,6 +34,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_locations: true
+  field_memes: true
   field_parent_faction: true
   field_sources: true
   links: true

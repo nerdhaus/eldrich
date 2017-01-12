@@ -12,7 +12,7 @@ mode: default
 content:
   augmentations:
     type: entity_reference_override_label
-    weight: '7'
+    weight: '6'
     settings:
       link: '1'
       override_action: suffix
@@ -36,7 +36,7 @@ content:
     weight: 100
   network_rep:
     type: entity_reference_quantity_label
-    weight: '6'
+    weight: '5'
     settings:
       link: '1'
       location: suffix

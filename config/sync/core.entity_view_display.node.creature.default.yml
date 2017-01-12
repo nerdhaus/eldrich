@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.creature.field_armor
-    - field.field.node.creature.field_attribution
     - field.field.node.creature.field_augmentations
     - field.field.node.creature.field_creature_type
     - field.field.node.creature.field_description
@@ -25,50 +24,8 @@ dependencies:
     - ep_complex_values
     - ep_skill_reference
     - field_delimiter
-    - field_group
     - text
     - user
-third_party_settings:
-  field_group:
-    group_attributes:
-      children:
-        - field_mobility_system
-        - field_movement_speed
-        - field_skills
-        - field_traits
-        - field_augmentations
-        - field_gear
-        - field_strain
-        - field_stats
-      parent_name: ''
-      weight: 2
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: ''
-        element: div
-        show_label: false
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: Attributes
-    group_equipped:
-      children:
-        - field_equipped_weapons
-      parent_name: ''
-      weight: 3
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: ''
-        element: div
-        show_label: false
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: Equipped
 id: node.creature.default
 targetEntityType: node
 bundle: creature
@@ -177,6 +134,5 @@ content:
     type: entity_reference_override_label
 hidden:
   field_armor: true
-  field_attribution: true
   field_stats: true
   links: true

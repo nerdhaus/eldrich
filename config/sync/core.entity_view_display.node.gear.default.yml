@@ -11,7 +11,9 @@ dependencies:
     - field.field.node.gear.field_sources
     - node.type.gear
   module:
+    - eldrich
     - entity_reference_quantity
+    - field_delimiter
     - text
     - user
 id: node.gear.default

@@ -20,53 +20,14 @@ dependencies:
     - field.field.node.robot.field_stats
     - node.type.robot
   module:
+    - eldrich
     - entity_reference_override
     - entity_reference_quantity
     - ep_complex_values
     - ep_skill_reference
     - field_delimiter
-    - field_group
     - text
     - user
-third_party_settings:
-  field_group:
-    group_attributes:
-      children:
-        - field_skills
-        - field_augmentations
-        - field_gear
-        - field_default_ai
-        - field_mobility_system
-        - field_armor
-      parent_name: ''
-      weight: 3
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: ''
-        element: div
-        show_label: false
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: Attributes
-    group_equipped:
-      children:
-        - field_equipped_weapons
-      parent_name: ''
-      weight: 4
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: ''
-        element: div
-        show_label: false
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: Equipped
 id: node.robot.default
 targetEntityType: node
 bundle: robot

@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.creature.field_armor
-    - field.field.node.creature.field_attribution
     - field.field.node.creature.field_augmentations
     - field.field.node.creature.field_creature_type
     - field.field.node.creature.field_description
@@ -166,5 +165,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_attribution: true
+hidden: {  }

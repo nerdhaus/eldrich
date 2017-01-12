@@ -6,30 +6,4 @@ id: node.npc
 label: null
 targetEntityType: node
 bundle: npc
-display_fields:
-  augmentations:
-    field_name: augmentations
-    label: Augmentations
-    plugin_id: reference
-    settings:
-      display_fields_field:
-        reference_key: 'field_morph|instance|morph:field_augmentations'
-        entity_type: instance
-        bundle: morph
-        source_entity_type: node
-        source_bundle: npc
-        field_name: field_augmentations
-        field_name_reset: Reset
-  network_rep:
-    field_name: network_rep
-    label: 'Network Rep'
-    plugin_id: reference
-    settings:
-      display_fields_field:
-        reference_key: 'field_identity|component|identity:field_rep'
-        entity_type: component
-        bundle: identity
-        source_entity_type: node
-        source_bundle: npc
-        field_name: field_rep
-        field_name_reset: Reset
+display_fields: {  }

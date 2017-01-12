@@ -33,13 +33,42 @@ class Node extends PreprocessBase implements PreprocessInterface {
    * {@inheritdoc}
    */
   public function preprocessVariables(Variables $variables) {
-    // Prep node types for display.
-
     /** @var NodeInterface $node */
     $node = $variables->node;
+
+    // Convenience stuff.
     $variables->icon = $this->getIcon($node);
     $variables->badge = $this->getBadge($variables['content'], $node);
 
+    // Prep our heavily-calculated data.
+    $this->prepCalculatedData($node, $variables);
+
+    // Prepare our weird component entities
+    $this->prepChildFields($node, $variables);
+  }
+
+  public function prepChildFields(NodeInterface $node, Variables $variables) {
+    if ($node->hasField('field_morph')) {
+      $instance = $node->field_morph->entity;
+      $model = $instance->field_model->entity;
+      $variables->morph = [
+        'model' => $model->label(),
+        'traits' => $instance->field_traits->view(),
+        'augmentations' => $instance->field_augmentations->view(),
+      ];
+    }
+    if ($node->hasField('field_identity')) {
+      $identity = $node->field_identity->entity;
+      $variables->identity = [
+        'background' => $identity->field_background->view(),
+        'faction' => $identity->field_faction->view(),
+        'rep' => $identity->field_rep->view(),
+        'credits' => $identity->field_credits->view(),
+      ];
+    }
+  }
+
+  public function prepCalculatedData(NodeInterface $node, Variables $variables) {
     $variables->stats = StatTreeCalculator::total($node);
     $variables->skills = SkillTreeCalculator::total($node, $variables->stats);
     $variables->mobility = MobilityCalculator::total($node);
