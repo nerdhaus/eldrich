@@ -14,7 +14,6 @@
   {{ parent() }}
   <p>Damage:
     {% if attack.damage.dice or attack.damage.effects %}
-      <kbd>
       {% if attack.damage.dice %}
         {{ attack.damage.dice }}d10
         {%- if attack.damage.mod %} {{ attack.damage.mod_operation }} {{ attack.damage.mod }}{% endif -%}
@@ -25,7 +24,6 @@
     {% else %}
       No damage
     {% endif %}
-    </kbd>
   </p>
   {% if content.field_firing_modes|field_value %}<p>Firing Modes: {{ content.field_firing_modes|field_value|safe_join(', ') }}</p>{% endif %}
   {% if content.field_magazine_size|field_value %}<p>Magazine: {{ content.field_magazine_size|field_value }} shots</p>{% endif %}

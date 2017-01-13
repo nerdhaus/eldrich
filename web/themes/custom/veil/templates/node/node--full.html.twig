@@ -116,11 +116,7 @@
         {% block callout_content %}
           {% if threat and threat.rating %}<p>Threat Level: {{ threat.label }}</p>{% endif %}
           {% if content.field_gear_type|field_value %}<p>Type: {{ content.field_gear_type|field_value }}</p>{% endif %}
-          {% if content.field_creature_type|field_value %}<p>Type: {{ content.field_creature_type|field_value }}</p>{% endif %}
-          {% if content.field_faction_type|field_value %}<p>Type: {{ content.field_faction_type|field_value }}</p>{% endif %}
           {% if content.field_cost|field_value %}<p>Cost: {{ content.field_cost|field_value }}</p>{% endif %}
-          {% if content.field_cp_cost|field_value %}<p>Creation Points: {{ content.field_cp_cost|field_value }}</p>{% endif %}
-          {% if content.field_linked_skill|field_value %}<p>Linked Skill: {{ content.field_linked_skill|field_value }}</p>{% endif %}
         {% endblock %}
         </div>
         {% if content.field_sources|field_value %}
@@ -165,5 +161,8 @@
       {% include directory ~ '/templates/partials/' ~ 'attack.html.twig' with {'attack': attack} %}
     {%- endfor %}
   </dl>
+  {% endblock %}
+
+  {% block related %}
   {% endblock %}
 </article>

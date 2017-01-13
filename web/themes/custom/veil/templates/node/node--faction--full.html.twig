@@ -9,7 +9,7 @@
 #}
 {% extends "node--full.html.twig" %}
 {% block callout_content %}
-  {{ parent() }}
+  {% if content.field_faction_type|field_value %}<p>Type: {{ content.field_faction_type|field_value }}</p>{% endif %}
   {% if content.field_parent_faction|field_value %}<p>Part of: {{ content.field_parent_faction|field_value|safe_join(', ') }}</p>{% endif %}
   {% if content.field_faction_locations|length == 1 %}<p>Primary Location: {{ content.field_faction_locations|field_value }}</p>
   {% elseif content.field_faction_locations|length > 1 %}<p>Primary Locations: {{ content.field_faction_locations|field_value }}</p>{% endif %}
