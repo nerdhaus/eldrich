@@ -12,7 +12,6 @@ dependencies:
     - node.type.faction
   module:
     - eldrich
-    - field_delimiter
     - text
     - user
 id: node.faction.default
@@ -38,9 +37,7 @@ content:
     label: inline
     settings:
       link: true
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_label
   field_memes:
     weight: 8
@@ -65,9 +62,7 @@ content:
       template: ', page {{ quantity }}'
       destination: list
       length: full
-    third_party_settings:
-      field_delimiter:
-        delimiter: ''
+    third_party_settings: {  }
     type: eldrich_citation_formatter
 hidden:
   links: true

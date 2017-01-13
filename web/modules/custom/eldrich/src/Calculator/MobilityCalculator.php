@@ -25,12 +25,17 @@ use Drupal\Core\Link;
 class MobilityCalculator {
 
   public static function total(FieldableEntityInterface $entity) {
-    $data = [];
+    $mobility_systems = [];
 
-    static::getForEntity($data, $entity);
-    static::linkEntities($data);
+    static::getForEntity($mobility_systems, $entity);
 
-    return $data;
+    foreach($mobility_systems as $key => $datum) {
+      $link = Link::createFromRoute($datum['entity']->label(), 'entity.node.canonical', ['node' => $datum['entity']->id()])->toRenderable();
+      $link['#suffix'] =  ' ' . $datum['walk'] . '/' . $datum['run'];
+      $mobility_systems['build'][] = $link;
+    }
+
+    return $mobility_systems;
   }
 
   public static function getForEntity(Array &$data, FieldableEntityInterface $entity) {
@@ -40,11 +45,17 @@ class MobilityCalculator {
       $move['entity'] = $entity->field_mobility_system->entity;
 
       if (!$entity->field_movement_speed->isEmpty()) {
-        $move['entity'] += $entity->field_movement_speed->getValue();
+        $speed = $entity->field_movement_speed->getValue()[0];
       }
       elseif ($move['entity']->field_speed) {
-        $move['entity'] += $move['entity']->field_speed->getValue();
+        $speed = $move['entity']->field_speed->getValue()[0];
       }
+      if (isset($speed)) {
+        $move['walk'] = $speed['walk'];
+        $move['run'] = $speed['run'];
+        $move['cruise'] = $speed['cruise'];
+      }
+
       $data[$move['entity']->label()] = $move;
     }
 
@@ -83,13 +94,6 @@ class MobilityCalculator {
       'run' => 0,
       'cruise' => 0,
     ];
-  }
-
-  public static function linkEntities(&$data) {
-    foreach ($data as $name => $details) {
-      $linkText = $details['entity']->label();
-      $data['build'][] = Link::createFromRoute($linkText, 'entity.node.canonical', ['node' => $details['entity']->id()])->toString();
-    }
   }
 
 }

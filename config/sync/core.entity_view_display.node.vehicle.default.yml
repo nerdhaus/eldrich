@@ -24,7 +24,6 @@ dependencies:
     - eldrich
     - entity_reference_override
     - entity_reference_quantity
-    - field_delimiter
     - text
     - user
 id: node.vehicle.default
@@ -38,9 +37,7 @@ content:
     settings:
       link: true
       override_action: title-append
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_override_label
   field_cost:
     weight: 2
@@ -63,9 +60,7 @@ content:
     settings:
       link: true
       override_action: title-append
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_override_label
   field_gear_type:
     weight: 0
@@ -107,9 +102,7 @@ content:
       template: ', page {{ quantity }}'
       destination: list
       length: full
-    third_party_settings:
-      field_delimiter:
-        delimiter: ''
+    third_party_settings: {  }
     type: eldrich_citation_formatter
 hidden:
   field_armor: true

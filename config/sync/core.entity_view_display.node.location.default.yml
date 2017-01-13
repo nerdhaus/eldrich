@@ -13,7 +13,6 @@ dependencies:
     - node.type.location
   module:
     - eldrich
-    - field_delimiter
     - text
     - user
 id: node.location.default
@@ -73,9 +72,7 @@ content:
       template: ', page {{ quantity }}'
       destination: list
       length: full
-    third_party_settings:
-      field_delimiter:
-        delimiter: ''
+    third_party_settings: {  }
     type: eldrich_citation_formatter
 hidden:
   links: true

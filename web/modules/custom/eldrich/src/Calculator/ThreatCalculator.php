@@ -106,6 +106,22 @@ class ThreatCalculator {
     $data['results']['threat'] = $data['results']['defense'] + ($data['results']['offense'] * $data['raw']['spd']);
     $data['rating'] = floor($data['results']['threat'] / 5);
 
+    if ($data['rating'] <= 5) {
+      $data['label'] = t('Green');
+    }
+    if ((6 <= $data['rating']) && ($data['rating'] <= 10)) {
+      $data['label'] = t('Yellow');
+    }
+    else if ((11 <= $data['rating']) && ($data['rating'] <= 20)) {
+      $data['label'] = t('Orange');
+    }
+    else if ((21 <= $data['rating']) && ($data['rating'] <= 25)) {
+      $data['label'] = t('Red');
+    }
+    else if (26 <= $data['rating']) {
+      $data['label'] = t('Ultraviolet');
+    }
+
     return $data;
   }
 
@@ -124,6 +140,7 @@ class ThreatCalculator {
         'defense' => 0,
         'offense' => 0,
         'threat' => 0,
+        'label' => '',
       ],
       'rating' => 0,
     ];

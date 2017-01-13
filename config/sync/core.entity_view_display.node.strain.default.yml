@@ -11,8 +11,7 @@ dependencies:
     - field.field.node.strain.field_vectors
     - node.type.strain
   module:
-    - entity_reference_quantity
-    - field_delimiter
+    - eldrich
     - text
     - user
 id: node.strain.default
@@ -48,9 +47,7 @@ content:
       template: ', page {{ quantity }}'
       destination: list
       length: full
-    third_party_settings:
-      field_delimiter:
-        delimiter: ''
+    third_party_settings: {  }
     type: eldrich_citation_formatter
   field_stages:
     weight: 4
@@ -65,9 +62,7 @@ content:
     label: inline
     settings:
       link: false
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_label
 hidden:
   field_strain_rating: true

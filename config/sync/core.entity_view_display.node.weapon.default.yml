@@ -31,7 +31,6 @@ dependencies:
     - entity_reference_override
     - entity_reference_quantity
     - ep_complex_values
-    - field_delimiter
     - operation
     - text
     - user
@@ -152,9 +151,7 @@ content:
       template: ', page {{ quantity }}'
       destination: list
       length: full
-    third_party_settings:
-      field_delimiter:
-        delimiter: ''
+    third_party_settings: {  }
     type: eldrich_citation_formatter
   field_special_effect:
     weight: 16

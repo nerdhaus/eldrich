@@ -16,7 +16,6 @@ dependencies:
     - eldrich
     - entity_reference_quantity
     - ep_skill_reference
-    - field_delimiter
     - text
     - user
 id: node.mind.default
@@ -57,9 +56,7 @@ content:
     label: inline
     settings:
       link: '1'
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: skill_reference_label
   field_sources:
     weight: 4
@@ -70,9 +67,7 @@ content:
       template: ', page {{ quantity }}'
       destination: list
       length: full
-    third_party_settings:
-      field_delimiter:
-        delimiter: ''
+    third_party_settings: {  }
     type: eldrich_citation_formatter
 hidden:
   field_blueprints: true

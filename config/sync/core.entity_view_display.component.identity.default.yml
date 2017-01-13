@@ -12,7 +12,6 @@ dependencies:
     - field.field.component.identity.field_rep
   module:
     - entity_reference_quantity
-    - field_delimiter
 id: component.identity.default
 targetEntityType: component
 bundle: identity
@@ -57,9 +56,9 @@ content:
     weight: 4
     label: inline
     settings:
-      link: true
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+      location: suffix
+      template: ': {{ quantity }}'
+      link: false
+    third_party_settings: {  }
     type: entity_reference_quantity_label
 hidden: {  }

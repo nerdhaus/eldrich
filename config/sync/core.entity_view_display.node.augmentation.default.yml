@@ -23,7 +23,6 @@ dependencies:
     - entity_reference_quantity
     - ep_skill_reference
     - ep_statblock
-    - field_delimiter
     - text
     - user
 id: node.augmentation.default
@@ -65,9 +64,7 @@ content:
     label: inline
     settings:
       link: '1'
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: skill_reference_label
   field_sources:
     weight: 14
@@ -78,9 +75,7 @@ content:
       template: ', page {{ quantity }}'
       destination: list
       length: full
-    third_party_settings:
-      field_delimiter:
-        delimiter: ''
+    third_party_settings: {  }
     type: eldrich_citation_formatter
   field_special_effect:
     weight: 13

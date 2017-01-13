@@ -64,6 +64,11 @@ class StatTreeCalculator {
       else {
         $cap = static::getStatCap();
       }
+
+      if (empty($statgroups['mind']) || empty($statgroups['shell']) || empty($statgroups['total'])) {
+        break;
+      }
+
       static::combineTotal($statgroups['mind'], $cap);
       static::combineTotal($statgroups['shell'], $cap);
       static::combineTotal($statgroups['total'], $cap);

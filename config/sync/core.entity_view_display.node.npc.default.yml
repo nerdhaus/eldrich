@@ -23,7 +23,6 @@ dependencies:
   module:
     - eldrich
     - entity_reference_override
-    - field_delimiter
     - text
     - user
 id: node.npc.default
@@ -43,9 +42,7 @@ content:
     settings:
       link: true
       override_action: title-append
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_override_label
   field_morph:
     weight: 4
@@ -87,9 +84,7 @@ content:
     label: inline
     settings:
       link: true
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_label
   field_sources:
     weight: 12
@@ -100,9 +95,7 @@ content:
       template: ', page {{ quantity }}'
       destination: list
       length: full
-    third_party_settings:
-      field_delimiter:
-        delimiter: ''
+    third_party_settings: {  }
     type: eldrich_citation_formatter
   field_threat:
     weight: 11
@@ -118,9 +111,7 @@ content:
     settings:
       link: true
       override_action: title-append
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_override_label
 hidden:
   field_equipped_armor: true

@@ -11,15 +11,13 @@ dependencies:
     - field.field.component.status.field_stress
     - field.field.component.status.field_trauma
     - field.field.component.status.field_wounds
-  module:
-    - field_delimiter
 id: component.status.default
 targetEntityType: component
 bundle: status
 mode: default
 content:
   field_damage:
-    weight: 1
+    weight: 3
     label: inline
     settings:
       thousand_separator: ''
@@ -27,13 +25,11 @@ content:
     third_party_settings: {  }
     type: number_integer
   field_derangements:
-    weight: 4
+    weight: 2
     label: inline
     settings:
       link: true
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_label
   field_notes:
     weight: 6
@@ -58,7 +54,7 @@ content:
     third_party_settings: {  }
     type: number_integer
   field_trauma:
-    weight: 3
+    weight: 1
     label: inline
     settings:
       thousand_separator: ''
@@ -66,7 +62,7 @@ content:
     third_party_settings: {  }
     type: number_integer
   field_wounds:
-    weight: 2
+    weight: 4
     label: inline
     settings:
       thousand_separator: ''

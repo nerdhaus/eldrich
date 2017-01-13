@@ -1,0 +1,34 @@
+{#
+/*
+ * For Weapons:
+ * - content.damage: A pre-calculated damage string for the weapon.
+ * - content.field_area_effect: If applicable, links to the AoE mechanism.
+ * - content.field_firing_modes: If applicable, a list of firing modes.
+ * - content.field_magazine_size: Stored as an operation, not a number.
+ * - content.field_bonus: Stored as an operation, not a number.
+ * - content.field_range: Short, Medium, Long, and Extreme.
+ */
+#}
+{% extends "node--full.html.twig" %}
+{% block callout_content %}
+  {{ parent() }}
+  <p>Damage:
+    {% if attack.damage.dice or attack.damage.effects %}
+      <kbd>
+      {% if attack.damage.dice %}
+        {{ attack.damage.dice }}d10
+        {%- if attack.damage.mod %} {{ attack.damage.mod_operation }} {{ attack.damage.mod }}{% endif -%}
+        {%- if attack.damage.special %} + {{ attack.damage.special }}{% endif -%}
+        {%- if attack.damage.ap == 999 %}, ignores armor{% elseif attack.damage.ap != 0 %} {{ attack.damage.ap }}AP{% endif %}
+      {% endif %}
+      {% if attack.damage.effects %}+ {{ attack.damage.effects|safe_join(' + ') }}{% endif %}
+    {% else %}
+      No damage
+    {% endif %}
+    </kbd>
+  </p>
+  {% if content.field_firing_modes|field_value %}<p>Firing Modes: {{ content.field_firing_modes|field_value|safe_join(', ') }}</p>{% endif %}
+  {% if content.field_magazine_size|field_value %}<p>Magazine: {{ content.field_magazine_size|field_value }} shots</p>{% endif %}
+  {% if content.field_range|field_value %}<p>Range: {{ content.field_range|field_value }}</p>{% endif %}
+  {% if content.field_area_effect|field_value %}<p>Area Effect: {{ content.field_area_effect|field_value }}</p>{% endif %}
+{% endblock %}

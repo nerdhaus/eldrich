@@ -28,7 +28,6 @@ dependencies:
     - ep_complex_values
     - ep_skill_reference
     - ep_statblock
-    - field_delimiter
     - text
     - user
 id: node.morph.default
@@ -48,9 +47,7 @@ content:
     settings:
       link: true
       override_action: title-append
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_override_label
   field_cost:
     weight: 1
@@ -92,9 +89,7 @@ content:
     label: inline
     settings:
       link: '1'
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: skill_reference_label
   field_sources:
     weight: 4
@@ -105,9 +100,7 @@ content:
       template: ', page {{ quantity }}'
       destination: list
       length: full
-    third_party_settings:
-      field_delimiter:
-        delimiter: ''
+    third_party_settings: {  }
     type: eldrich_citation_formatter
   field_stat_variance:
     weight: 5
@@ -115,9 +108,7 @@ content:
     settings:
       thousand_separator: ''
       prefix_suffix: true
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: number_integer
   field_stats:
     weight: 4
@@ -131,9 +122,7 @@ content:
     settings:
       link: true
       override_action: title-append
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_override_label
 hidden:
   field_blueprints: true

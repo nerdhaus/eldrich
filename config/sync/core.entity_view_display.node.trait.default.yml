@@ -17,7 +17,6 @@ dependencies:
     - eldrich
     - ep_skill_reference
     - ep_statblock
-    - field_delimiter
     - text
     - user
 id: node.trait.default
@@ -88,9 +87,7 @@ content:
       template: ', page {{ quantity }}'
       destination: list
       length: full
-    third_party_settings:
-      field_delimiter:
-        delimiter: ''
+    third_party_settings: {  }
     type: eldrich_citation_formatter
   field_special_effect:
     weight: 4

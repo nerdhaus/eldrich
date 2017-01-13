@@ -79,6 +79,7 @@ class ArmorCalculator {
         if ($armor->field_armor->replaces) {
           $worn = static::defaultData();
         }
+        $data['entities'][$armor->id()] = $armor;
 
         $worn['energy'] += $armor->field_armor->energy;
         $worn['kinetic'] += $armor->field_armor->kinetic;

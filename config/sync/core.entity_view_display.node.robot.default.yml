@@ -25,7 +25,6 @@ dependencies:
     - entity_reference_quantity
     - ep_complex_values
     - ep_skill_reference
-    - field_delimiter
     - text
     - user
 id: node.robot.default
@@ -45,9 +44,7 @@ content:
     settings:
       link: true
       override_action: title-append
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_override_label
   field_cost:
     weight: 1
@@ -85,9 +82,7 @@ content:
     settings:
       link: true
       override_action: title-append
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_override_label
   field_gear_type:
     weight: 0
@@ -108,9 +103,7 @@ content:
     label: inline
     settings:
       link: '1'
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: skill_reference_label
   field_sources:
     weight: 11
@@ -121,9 +114,7 @@ content:
       template: ', page {{ quantity }}'
       destination: list
       length: full
-    third_party_settings:
-      field_delimiter:
-        delimiter: ''
+    third_party_settings: {  }
     type: eldrich_citation_formatter
 hidden:
   field_blueprints: true

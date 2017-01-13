@@ -16,7 +16,6 @@ module:
   datetime: 0
   dblog: 0
   devel: 0
-  display_fields: 0
   dynamic_page_cache: 0
   eck: 0
   editor: 0
@@ -29,7 +28,6 @@ module:
   ep_skill_reference: 0
   ep_statblock: 0
   field: 0
-  field_delimiter: 0
   field_group: 0
   field_ui: 0
   file: 0
@@ -40,6 +38,7 @@ module:
   inline_entity_form: 0
   integer_time: 0
   link: 0
+  menu_trail_by_path: 0
   menu_ui: 0
   migrate: 0
   migrate_plus: 0
@@ -52,7 +51,6 @@ module:
   path: 0
   quick_pages: 0
   range: 0
-  rdf: 0
   search: 0
   search_autocomplete: 0
   shortcut: 0
@@ -62,10 +60,10 @@ module:
   token: 0
   toolbar: 0
   twig_field_value: 0
+  twig_tweak: 0
   update: 0
   user: 0
   verf: 0
-  views_bootstrap: 0
   views_taxonomy_term_name_depth: 0
   views_ui: 0
   menu_link_content: 1

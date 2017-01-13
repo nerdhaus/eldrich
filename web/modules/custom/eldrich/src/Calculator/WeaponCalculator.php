@@ -206,7 +206,12 @@ class WeaponCalculator {
 
   private static function getWeaponCategory(Array &$item, FieldableEntityInterface $weapon) {
     if ($weapon->hasField('field_linked_skill')) {
-      $item['linked_skill'] = strtolower($weapon->field_linked_skill->entity->label());
+      if ($weapon->field_linked_skill->isEmpty()) {
+        $item['linked_skill'] = 'unarmed combat';
+      }
+      else {
+        $item['linked_skill'] = strtolower($weapon->field_linked_skill->entity->label());
+      }
     }
     elseif ($weapon->hasField('field_psi_skill')) {
       $item['linked_skill'] = strtolower($weapon->field_psi_skill->entity->label());
@@ -245,7 +250,6 @@ class WeaponCalculator {
       default:
         $item['category'] = "Attack";
     }
-
   }
 
   public static function accountForWeapon(Array &$item, FieldableEntityInterface $weapon) {

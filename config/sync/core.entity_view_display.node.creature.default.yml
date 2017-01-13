@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.creature.field_sources
     - field.field.node.creature.field_stats
     - field.field.node.creature.field_strain
-    - field.field.node.creature.field_threat
     - field.field.node.creature.field_traits
     - node.type.creature
   module:
@@ -23,7 +22,6 @@ dependencies:
     - entity_reference_override
     - ep_complex_values
     - ep_skill_reference
-    - field_delimiter
     - text
     - user
 id: node.creature.default
@@ -37,9 +35,7 @@ content:
     settings:
       link: true
       override_action: suffix
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_override_label
   field_creature_type:
     weight: 0
@@ -68,9 +64,7 @@ content:
     settings:
       link: true
       override_action: suffix
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_override_label
   field_mobility_system:
     weight: 4
@@ -90,9 +84,7 @@ content:
     label: inline
     settings:
       link: '1'
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: skill_reference_label
   field_sources:
     weight: 13
@@ -103,9 +95,7 @@ content:
       template: ', page {{ quantity }}'
       destination: list
       length: full
-    third_party_settings:
-      field_delimiter:
-        delimiter: ''
+    third_party_settings: {  }
     type: eldrich_citation_formatter
   field_strain:
     weight: 10
@@ -114,23 +104,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  field_threat:
-    weight: 14
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
   field_traits:
     weight: 7
     label: inline
     settings:
       link: true
       override_action: suffix
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_override_label
 hidden:
   field_armor: true

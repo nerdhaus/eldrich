@@ -17,7 +17,6 @@ dependencies:
     - ep_complex_values
     - ep_skill_reference
     - ep_statblock
-    - field_delimiter
     - text
 id: instance.morph.default
 targetEntityType: instance
@@ -26,64 +25,58 @@ mode: default
 content:
   field_augmentations:
     weight: 5
-    label: inline
+    label: hidden
     settings:
       link: true
       override_action: title-append
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_override_label
   field_description:
     weight: 7
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_mobility_system:
     weight: 3
-    label: inline
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_model:
     weight: 0
-    label: inline
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_movement_speed:
     weight: 2
-    label: inline
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_formatter
   field_skills:
     weight: 6
-    label: inline
+    label: hidden
     settings:
       link: '1'
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: skill_reference_label
   field_stats:
     weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: stat_block_table
+    type: stat_block_simple
   field_traits:
     weight: 4
-    label: inline
+    label: hidden
     settings:
       link: true
       override_action: title-append
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_override_label
 hidden:
   title: true

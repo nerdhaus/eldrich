@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.charsheet
+    - field.field.node.pc.field_campaign
     - field.field.node.pc.field_description
     - field.field.node.pc.field_equipped_armor
     - field.field.node.pc.field_equipped_weapons
@@ -11,6 +12,7 @@ dependencies:
     - field.field.node.pc.field_headshot
     - field.field.node.pc.field_identity
     - field.field.node.pc.field_morph
+    - field.field.node.pc.field_motivations
     - field.field.node.pc.field_muse
     - field.field.node.pc.field_owned_blueprints
     - field.field.node.pc.field_quote
@@ -18,12 +20,12 @@ dependencies:
     - field.field.node.pc.field_sleights
     - field.field.node.pc.field_stats
     - field.field.node.pc.field_status
+    - field.field.node.pc.field_threat
     - field.field.node.pc.field_traits
     - node.type.pc
   module:
     - entity_reference_override
     - ep_skill_reference
-    - field_delimiter
     - field_group
     - image
     - text
@@ -100,9 +102,7 @@ content:
     settings:
       link: true
       override_action: title-append
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_override_label
   field_headshot:
     weight: 0
@@ -142,9 +142,7 @@ content:
     settings:
       link: true
       override_action: title-append
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_override_label
   field_quote:
     weight: 1
@@ -159,17 +157,13 @@ content:
     label: above
     settings:
       link: '1'
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
   field_sleights:
     weight: 2
     label: inline
     settings:
       link: true
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_label
   field_status:
     weight: 10
@@ -185,9 +179,7 @@ content:
     settings:
       link: true
       override_action: title-append
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_override_label
 hidden:
   field_campaign: true

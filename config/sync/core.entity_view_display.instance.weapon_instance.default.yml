@@ -8,8 +8,6 @@ dependencies:
     - field.field.instance.weapon_instance.field_ammo_mods
     - field.field.instance.weapon_instance.field_weapon
     - field.field.instance.weapon_instance.field_weapon_mods
-  module:
-    - field_delimiter
 id: instance.weapon_instance.default
 targetEntityType: instance
 bundle: weapon_instance
@@ -27,9 +25,7 @@ content:
     label: inline
     settings:
       link: true
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_label
   field_weapon:
     weight: -4
@@ -43,9 +39,7 @@ content:
     label: inline
     settings:
       link: true
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: entity_reference_label
 hidden:
   title: true

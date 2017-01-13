@@ -36,6 +36,10 @@ class Node extends PreprocessBase implements PreprocessInterface {
     /** @var NodeInterface $node */
     $node = $variables->node;
 
+    $variables->is_gear = in_array($node->bundle(), ['gear', 'armor', 'augmentation', 'drug', 'mind', 'morph', 'robot', 'vehicle', 'weapon']);
+    $variables->is_game = in_array($node->bundle(), ['campaign', 'session', 'pc']);
+    $variables->is_mob = in_array($node->bundle(), ['creature', 'robot', 'mind', 'npc', 'pc']);
+
     // Convenience stuff.
     $variables->icon = $this->getIcon($node);
     $variables->badge = $this->getBadge($variables['content'], $node);
@@ -48,22 +52,20 @@ class Node extends PreprocessBase implements PreprocessInterface {
   }
 
   public function prepChildFields(NodeInterface $node, Variables $variables) {
-    if ($node->hasField('field_morph')) {
-      $instance = $node->field_morph->entity;
-      $model = $instance->field_model->entity;
-      $variables->morph = [
-        'model' => $model->label(),
-        'traits' => $instance->field_traits->view(),
-        'augmentations' => $instance->field_augmentations->view(),
+    if ($node->hasField('field_morph') && $instance = $node->field_morph->entity) {
+      $variables->content += [
+        'field_augmentations' => $instance->field_augmentations->view(),
+        'field_morph_traits' => $instance->field_traits->view(),
+        'field_appearance' => $instance->field_description->view(),
+        'field_morph_model' => $instance->field_model->view(),
       ];
     }
-    if ($node->hasField('field_identity')) {
-      $identity = $node->field_identity->entity;
-      $variables->identity = [
-        'background' => $identity->field_background->view(),
-        'faction' => $identity->field_faction->view(),
-        'rep' => $identity->field_rep->view(),
-        'credits' => $identity->field_credits->view(),
+    if ($node->hasField('field_identity') && $identity = $node->field_identity->entity) {
+      $variables->content += [
+        'field_background' => $identity->field_background->view(),
+        'field_faction' => $identity->field_faction->view(),
+        'field_rep' => $identity->field_rep->view(),
+        'field_credits' => $identity->field_credits->view(),
       ];
     }
   }
@@ -74,7 +76,8 @@ class Node extends PreprocessBase implements PreprocessInterface {
     $variables->mobility = MobilityCalculator::total($node);
 
     if ($node->bundle() == 'weapon') {
-      $variables->attacks = [WeaponCalculator::total($node)];
+      $variables->attack = WeaponCalculator::total($node);
+      $variables->attacks = [];
     }
     else {
       $variables->attacks = WeaponCalculator::total($node);

@@ -3,7 +3,7 @@
  * @file
  * Full-page display.
  *
- * Standard variables:
+ * Standard Drupal variables:
  * - node: The node entity with limited access to object properties and methods.
  * - label: The title of the node.
  * - content: All node items.
@@ -22,17 +22,77 @@
  * - content_attributes: Same as attributes, except applied to the main
  *   content tag that appears in the template.
  *
- * Eldrich/Veil specific variables:
- * - stats: A nested collection of character attributes.
- *   @see \Drupal\eldrich\Calculator\StatTreeCalculator for details.
- * - skills: A nested collection of character skills.
- *   @see \Drupal\eldrich\Calculator\SkillTreeCalculator for details.
- * - lists: Assorted char attribute lists like sleights, traits, etc.
- *   They're just clone of the stuff in content.field_foo, but keeping
- *   them here allows for convenient iteration.
- * - stat_style: contains 'minimal', 'simple', or 'full' — indicates which
- *   sub-template should be used when showing stat table.
+ * For most types of gear:
+ * - content.field_sources: Optional array of book + page links.
+ * - content.field_cost: Cost level and (optional) minimum cost in credits.
+ * - content.field_blueprints: Boolean indicating whether it can be fabbed.
+ * - content.field_gear_type: Taxonomy term linking to the item's gear category.
+ * - content.field_special_effect: Any oddball stuff it does beyond the normal stats.
+ *   Probably ignore this in most cases.
+ * - content.field_linked_skill: The skill needed to use/fire/pilot the gear.
  *
+ * For anything with character bonuses:
+ * - content.field_stats: Stat bonuses.
+ * - content.field_skills: Skill bonuses.
+ * - content.field_is_conditional: Whether said bonuses are always-on or conditional.
+
+ * For Drugs:
+ * - content.field_addiction_modifier:
+ * - content.field_delivery_mechanism:
+ * - content.field_duration:
+ * - content.field_onset:
+ *
+ * For Factions:
+ * - content.field_faction_type: Lookup table of faction types. Laaaame.
+ * - content.field_parent_faction: Pretty straightforward.
+ * - content.field_memes: A list of businesses or concerns associated with the faction.
+ * - content.field_faction_locations: Primary locations they're active.
+ *
+ * For Locations:
+ * - content.field_location_type: Lookup table of location types. Laaaame.
+ * - content.field_parent_location: Does what it says on the tin.
+ * - content.field_distance: AU from the sun, for regions/habs/solar bodies.
+ * - content.field_population: Only populated for habitats.
+ * - content.field_languages: List of languages, only populated for habitats.
+ *
+ * For Augmentations:
+ * - content.field_morph_types: The morph types the augmentation can be installed on
+ *
+ * For Morphs
+ * - content.field_cp_cost: Does what it says on the tin.
+ * - content.field_stats: Inherent morph-stats, and bonuses for ego stats.
+ * - content.field_stat_variance: Flexible bonuses that vary per morph instance.
+ * - content.field_stat_cap: The morph's built-in ceiling on stats, including bonuses.
+ * - content.field_traits: Any morph traits associated with the shell.
+ * - content.field_augmentations: Any augmentations that come standard.
+ * - content.field_skills: Built-in skill bonuses, like 'swimming' for dolphins.
+ *
+ * For Creatures:
+ * - content.field_creature_type: Lookup table of critter types. Laaaame.
+ * - content.field_strain: The stress players take if they miss a WILx3 check.
+ *
+ * For Weapons:
+ * - content.damage: A pre-calculated damage string for the weapon.
+ * - content.field_area_effect: If applicable, links to the AoE mechanism.
+ * - content.field_firing_modes: If applicable, a list of firing modes.
+ * - content.field_magazine_size: Stored as an operation, not a number.
+ * - content.field_bonus: Stored as an operation, not a number.
+ * - content.field_range: Short, Medium, Long, and Extreme.
+ *
+ * Calculated variables:
+ * - stats: A nested collection of character attributes.
+ *   @see \Drupal\eldrich\Calculator\StatTreeCalculator
+ * - skills: A nested collection of character skills.
+ *   @see \Drupal\eldrich\Calculator\SkillTreeCalculator
+ * - attacks:
+ *   @see \Drupal\eldrich\Calculator\WeaponCalculator
+ * - armor:
+ *   @see \Drupal\eldrich\Calculator\ArmorCalculator
+ * - threat:
+ *   @see \Drupal\eldrich\Calculator\ThreatCalculator
+ * - mobility:
+ *   @see \Drupal\eldrich\Calculator\MobilityCalculator
+
  * @ingroup templates
  *
  * @see template_preprocess_node()
@@ -41,44 +101,62 @@
 
 <article{{ attributes.addClass(classes) }}>
 
-  {% if threat and threat.rating %}
-    <span class="text-uppercase label label-danger pull-right">Threat: {{ threat.rating }}</span>
-  {% endif %}
+  {% block callout %}
+    <aside class="col-md-4 pull-right">
+      <div class="panel panel-default">
+        <div class="panel-body">
+        {% block callout_content %}
+          {% if threat and threat.rating %}<p>Threat Level: {{ threat.label }}</p>{% endif %}
+          {% if content.field_gear_type|field_value %}<p>Type: {{ content.field_gear_type|field_value }}</p>{% endif %}
+          {% if content.field_creature_type|field_value %}<p>Type: {{ content.field_creature_type|field_value }}</p>{% endif %}
+          {% if content.field_location_type|field_value %}<p>Type: {{ content.field_location_type|field_value }}</p>{% endif %}
+          {% if content.field_faction_type|field_value %}<p>Type: {{ content.field_faction_type|field_value }}</p>{% endif %}
+          {% if content.field_cost|field_value %}<p>Cost: {{ content.field_cost|field_value }}</p>{% endif %}
+          {% if content.field_cp_cost|field_value %}<p>Creation Points: {{ content.field_cp_cost|field_value }}</p>{% endif %}
+          {% if content.field_linked_skill|field_value %}<p>Linked Skill: {{ content.field_linked_skill|field_value }}</p>{% endif %}
+        {% endblock %}
+        </div>
+        {% if content.field_sources|field_value %}
+          <div class="panel-footer">Source: {{ content.field_sources|field_value|safe_join(', ') }}</div>
+        {% endif %}
+      </div>
+    </aside>
+  {% endblock %}
 
-  {% if not content.field_quote.isEmpty %}
-    <blockquote><p>{{ content.field_quote|field_value }}</p></blockquote>
-  {% endif %}
+  {% block hero %}
+  {% if content.field_quote|field_value %}<blockquote><p>{{ content.field_quote|field_value }}</p></blockquote>{% endif %}
+  {% endblock %}
 
-  {{ content.field_description }}
+  {% block content %}
+    {% if content.field_appearance %}{{ content.field_appearance|field_value }}{% endif %}
+    {% if content.field_usage %}{{ content.field_usage|field_value }}{% endif %}
+    {% if content.field_description %}{{ content.field_description|field_value }}{% endif %}
+    {% if content.field_roleplay_notes %}{{ content.field_roleplay_notes|field_value }}{% endif %}
+  {% endblock %}
 
+  {% block stats %}
+    {% if stats.total %}{% include directory ~ '/templates/partials/stats.html.twig' %}{% endif %}
+  {% endblock %}
 
-  {% if stats %}
-    {% include directory ~ '/templates/partials/stats.html.twig' %}
-  {% endif %}
-
+  {% block properties %}
   <dl class="dl-horizontal">
-    {% for field in content.group_attributes %}
-      <dt>{{ field|field_label }}</dt>
-      <dd>{{ field|field_value|safe_join(', ') }}</dd>
-    {% endfor %}
-
+    {% if content.field_morph_model|field_value %}<dt>Morph Model:</dt><dd>{{ content.field_morph_model|field_value }}</dd>{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}{% endif %}
+    {% if skills|length %}<dt>Skills:</dt><dd>{% include directory ~ '/templates/partials/skills.html.twig' %}</dd>{% endif %}
+    {% if content.field_augmentations|field_value|length %}<dt>Augmentations:</dt><dd>{{ content.field_augmentations|field_value|safe_join(', ') }}</dd>{% endif %}
+    {% if content.field_traits|field_value|length %}<dt>Traits:</dt><dd>{{ content.field_traits|field_value|safe_join(', ') }}</dd>{% endif %}
+    {% if content.field_morph_traits|field_value|length %}<dt>Morph Traits:</dt><dd>{{ content.field_morph_traits|field_value|safe_join(', ') }}</dd>{% endif %}
+    {% if content.field_sleights|field_value|length %}<dt>Psi Sleights:</dt><dd>{{ content.field_sleights|field_value|safe_join(', ') }}</dd>{% endif %}
+    {% if content.field_gear|field_value|length %}<dt>Gear:</dt><dd>{{ content.field_gear|field_value|safe_join(', ') }}</dd>{% endif %}
+    {% if content.field_blueprints|length %}<dt>Blueprints:</dt><dd>{{ content.field_blueprints|field_value|safe_join(', ') }}</dd>{% endif %}
     {% if armor.energy or armor.kinetic %}
-      <dt>Armor</dt>
+      <dt>Armor:</dt>
       <dd>{{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
         {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
       </dd>
     {% endif %}
-
     {% for attack in attacks -%}
       {% include directory ~ '/templates/partials/' ~ 'attack.html.twig' with {'attack': attack} %}
     {%- endfor %}
   </dl>
-
-  {% if content.field_cost or content.field_sources %}
-  <dl class="dl-horizontal">
-    <dt>Skills:</dt><dd>{% include directory ~ '/templates/partials/skills.html.twig' %}</dd>
-    {% if content.field_cost %}<dt>Cost:</dt><dd>{{ content.field_cost|field_value }}</dd>{% endif %}
-    {% if content.field_sources %}<dt>Source:</dt><dd>{{ content.field_sources|field_value|safe_join(', ') }}</dd>{% endif %}
-  </dl>
-  {% endif %}
+  {% endblock %}
 </article>
