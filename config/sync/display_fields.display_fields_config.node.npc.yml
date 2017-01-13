@@ -1,9 +1,0 @@
-uuid: a2b4c149-a8dd-4dd2-af62-9e4f53c53383
-langcode: en
-status: true
-dependencies: {  }
-id: node.npc
-label: null
-targetEntityType: node
-bundle: npc
-display_fields: {  }
