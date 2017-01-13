@@ -31,7 +31,7 @@ class StatBlockSimpleFormatter extends FormatterBase  {
 
       foreach ($values as $key => $value) {
         if (!empty($value) && ($key != 'synthetic')) {
-          $output[] = $key . ':' . $value;
+          $output[] = $key . ': ' . $value;
         }
       }
 

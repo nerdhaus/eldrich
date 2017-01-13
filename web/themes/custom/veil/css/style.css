@@ -80,3 +80,10 @@ div:target {
 span.skill-combat {
   font-weight: bold;
 }
+
+aside.info-callout p {
+  padding-left: 30px;
+}
+aside.info-callout p {
+  text-indent: -30px;
+}

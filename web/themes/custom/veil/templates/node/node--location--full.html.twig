@@ -1,0 +1,18 @@
+{#
+/*
+ * For Factions:
+ * - content.field_faction_type: Lookup table of faction types. Laaaame.
+ * - content.field_parent_faction: Pretty straightforward.
+ * - content.field_memes: A list of businesses or concerns associated with the faction.
+ * - content.field_faction_locations: Primary locations they're active.
+ */
+#}
+{% extends "node--full.html.twig" %}
+{% block callout_content %}
+  {{ parent() }}
+  <p>Type: {{ content.field_location_type|field_value -}}{% if content.field_parent_location|field_value %}, {{ content.field_parent_location|field_value }}{% endif %}</p>
+  {% if content.field_distance|field_value %}<p>Distance from Earth: {{ content.field_distance|field_value }}</p>{% endif %}
+  {% if content.field_population|field_value %}<p>Population: {{ content.field_population|field_value }}</p>{% endif %}
+  {% if content.field_languages|field_value|length == 1 %}<p>Primary Language: {{ content.field_languages|field_value }}</p>
+  {% elseif content.field_languages|field_value|length > 1 %}<p>Primary Languages: {{ content.field_languages|field_value|safe_join(', ') }}</p>{% endif %}
+{% endblock %}

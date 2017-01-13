@@ -35,7 +35,15 @@
  * - content.field_stats: Stat bonuses.
  * - content.field_skills: Skill bonuses.
  * - content.field_is_conditional: Whether said bonuses are always-on or conditional.
-
+ *
+ * For Sleights:
+ * - content.field_sleight_level:
+ * - content.field_psi_skill:
+ * - content.field_sleight_duration:
+ * - content.field_is_active:
+ * - content.field_sleight_range:
+ * - content.field_strain:
+ *
  * For Drugs:
  * - content.field_addiction_modifier:
  * - content.field_delivery_mechanism:
@@ -102,14 +110,13 @@
 <article{{ attributes.addClass(classes) }}>
 
   {% block callout %}
-    <aside class="col-md-4 pull-right">
+    <aside class="info-callout col-sm-4 pull-right">
       <div class="panel panel-default">
         <div class="panel-body">
         {% block callout_content %}
           {% if threat and threat.rating %}<p>Threat Level: {{ threat.label }}</p>{% endif %}
           {% if content.field_gear_type|field_value %}<p>Type: {{ content.field_gear_type|field_value }}</p>{% endif %}
           {% if content.field_creature_type|field_value %}<p>Type: {{ content.field_creature_type|field_value }}</p>{% endif %}
-          {% if content.field_location_type|field_value %}<p>Type: {{ content.field_location_type|field_value }}</p>{% endif %}
           {% if content.field_faction_type|field_value %}<p>Type: {{ content.field_faction_type|field_value }}</p>{% endif %}
           {% if content.field_cost|field_value %}<p>Cost: {{ content.field_cost|field_value }}</p>{% endif %}
           {% if content.field_cp_cost|field_value %}<p>Creation Points: {{ content.field_cp_cost|field_value }}</p>{% endif %}

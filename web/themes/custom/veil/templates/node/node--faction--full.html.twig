@@ -1,0 +1,18 @@
+{#
+/*
+ * For Factions:
+ * - content.field_faction_type: Lookup table of faction types. Laaaame.
+ * - content.field_parent_faction: Pretty straightforward.
+ * - content.field_memes: A list of businesses or concerns associated with the faction.
+ * - content.field_faction_locations: Primary locations they're active.
+ */
+#}
+{% extends "node--full.html.twig" %}
+{% block callout_content %}
+  {{ parent() }}
+  {% if content.field_parent_faction|field_value %}<p>Part of: {{ content.field_parent_faction|field_value|safe_join(', ') }}</p>{% endif %}
+  {% if content.field_faction_locations|length == 1 %}<p>Primary Location: {{ content.field_faction_locations|field_value }}</p>
+  {% elseif content.field_faction_locations|length > 1 %}<p>Primary Locations: {{ content.field_faction_locations|field_value }}</p>{% endif %}
+  {% if content.field_memes|field_value|length == 1 %}<p>Key Meme: {{ content.field_memes|field_value }}</p>
+  {% elseif content.field_memes|field_value|length > 1 %}<p>Key Memes: {{ content.field_memes|field_value|safe_join(', ') }}</p>{% endif %}
+{% endblock %}
