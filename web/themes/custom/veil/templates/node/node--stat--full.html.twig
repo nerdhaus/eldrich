@@ -1,0 +1,13 @@
+{#
+/*
+ * For Factions:
+ * - content.field_faction_type: Lookup table of faction types. Laaaame.
+ * - content.field_parent_faction: Pretty straightforward.
+ * - content.field_memes: A list of businesses or concerns associated with the faction.
+ * - content.field_faction_locations: Primary locations they're active.
+ */
+#}
+{% extends "node--full.html.twig" %}
+{% block callout_content %}
+  {{ parent() }}
+{% endblock %}

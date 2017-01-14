@@ -23,12 +23,13 @@ class EldrichPopupFormatter extends EntityReferenceQuantityLabelFormatter {
     $elements = array();
     $output_as_link = $this->getSetting('link');
     $template = $this->getSetting('template');
+    $location = $this->getSetting('location');
 
     foreach ($this->getEntitiesToView($items, $langcode) as $delta => $entity) {
 
       $elements[$delta] = [
         '#type' => 'link',
-        '#title' => $label,
+        '#title' => $entity->label(),
       ];
 
       if ($output_as_link && !$entity->isNew()) {
@@ -46,8 +47,8 @@ class EldrichPopupFormatter extends EntityReferenceQuantityLabelFormatter {
       }
 
       if ($entity->hasField('field_description')) {
-        $element[$delta]['#options']['attributes']['data-toggle'] = 'popover';
-        $element[$delta]['#options']['attributes']['data-content'] = \Drupal\Component\Utility\Html::escape($entity->field_description->value);
+        $elements[$delta]['#options']['attributes']['data-toggle'] = 'popover';
+        $elements[$delta]['#options']['attributes']['data-content'] = \Drupal\Component\Utility\Html::escape($entity->field_description->value);
       }
 
       $elements[$delta]['#cache']['tags'] = $entity->getCacheTags();

@@ -6,3 +6,10 @@ custom-font:
   css:
     theme:
       eldrich-font/css/eldrich.css: {}
+bootstrap-sortable:
+  css:
+    theme:
+      bootstrap-sortable/bootstrap-sortable.css: {}
+  js:
+    bootstrap-sortable/bootstrap-sortable.js: {}
+    bootstrap-sortable/moment.min.js: {}

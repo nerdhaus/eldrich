@@ -1,26 +1,29 @@
-<table class="table table-bordered pc-skills">
-  <thead>
-    <td class="skill-col-aptitude">Aptitude</td>
-    <td>Skill</td>
-    <td class="skill-col-base">Base</td>
-    <td class="skill-col-points">Points</td>
-    <td class="skill-col-bonus">Bonus</td>
-    <td class="skill-col-total">Total</td>
-  </thead>
-  <tbody>
-    {% for skill in skills -%}
-      {% if skill.constant.points %}
-        {% set cons = skill.constant %}
-        {% set cond = skill.conditional %}
-        <tr class="skill-row" data-aptitude="{{ skill.aptitude|lower }}" data-category="{{ skill.type|lower }}">
-          <td class="skill-col-aptitude">{{ skill.aptitude|upper }}</td>
-          <td><a href="{{ skill.url }}">{{ skill.name }}{% if skill.field %}: {{ skill.field }}{% endif %}</a>{% if skill.specialization %} ({{ skill.specialization }}){% endif %}</td>
-          <td class="skill-col-base">{{ cons.baseline }}{% if cons.baseline != cond.baseline %} ({{ cond.baseline }}){% endif -%}</td>
-          <td class="skill-col-points">{{ cons.points }}</td>
-          <td class="skill-col-bonus">{{ cons.bonus }}{% if cons.bonus != cond.bonus %} ({{ cond.bonus }}){% endif -%}</td>
-          <td class="skill-col-total">{{ cons.total }}{% if cons.total != cond.total %} ({{ cond.total }}){% endif -%}</td>
-        </tr>
-      {% endif %}
-    {%- endfor %}
-  </tbody>
-</table>
+{{ attach_library('veil/bootstrap-sortable') }}
+<div class="panel panel-default">
+  <table class="table table-condensed table-bordered pc-skills sortable">
+    <thead>
+      <th class="skill-col-aptitude hidden-xs">Aptitude</th>
+      <th class="skill-col-aptitude">Category</th>
+      <th class="skill-col-skill">Skill</th>
+      <th class="skill-col-base hidden-sm hidden-xs">Baseline</th>
+      <th class="skill-col-bonus hidden-sm hidden-xs">Bonus</th>
+      <th class="skill-col-total">Total</th>
+    </thead>
+    <tbody>
+      {% for skill in skills -%}
+        {% if skill.constant.points %}
+          {% set cons = skill.constant %}
+          {% set cond = skill.conditional %}
+          <tr class="skill-row" data-aptitude="{{ skill.aptitude|lower }}" data-category="{{ skill.type|lower }}">
+            <td class="skill-col-aptitude hidden-xs">{{ skill.aptitude|upper }}</td>
+            <td class="skill-col-category">{{ skill.type|capitalize }}</td>
+            <td class="skill-col-skill"><a href="{{ skill.url }}">{{ skill.name }}{% if skill.field %}: {{ skill.field }}{% endif %}</a>{% if skill.specialization %} ({{ skill.specialization }}){% endif %}</td>
+            <td class="skill-col-base hidden-sm hidden-xs">{{ cons.baseline }}{% if cons.baseline != cond.baseline %} ({{ cond.baseline }}){% endif -%}</td>
+            <td class="skill-col-bonus hidden-sm hidden-xs">{{ cons.bonus ?: '—' }}{% if cons.bonus != cond.bonus %} ({{ cond.bonus }}){% endif -%}</td>
+            <td class="skill-col-total">{{ cons.total }}{% if cons.total != cond.total %} ({{ cond.total }}){% endif -%}</td>
+          </tr>
+        {% endif %}
+      {%- endfor %}
+    </tbody>
+  </table>
+</div>

@@ -48,7 +48,7 @@ table.table-statblock .empty {
 }
 
 table.table-statblock .summary-row td {
-  border-top-width: 3px;
+  font-weight: bolder;
 }
 
 .eldrich-icon {
@@ -86,4 +86,8 @@ aside.info-callout p {
 }
 aside.info-callout p {
   text-indent: -30px;
+}
+
+.skill-col-total {
+  font-weight: bolder;
 }

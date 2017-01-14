@@ -50,19 +50,6 @@
  * - content.field_duration:
  * - content.field_onset:
  *
- * For Factions:
- * - content.field_faction_type: Lookup table of faction types. Laaaame.
- * - content.field_parent_faction: Pretty straightforward.
- * - content.field_memes: A list of businesses or concerns associated with the faction.
- * - content.field_faction_locations: Primary locations they're active.
- *
- * For Locations:
- * - content.field_location_type: Lookup table of location types. Laaaame.
- * - content.field_parent_location: Does what it says on the tin.
- * - content.field_distance: AU from the sun, for regions/habs/solar bodies.
- * - content.field_population: Only populated for habitats.
- * - content.field_languages: List of languages, only populated for habitats.
- *
  * For Augmentations:
  * - content.field_morph_types: The morph types the augmentation can be installed on
  *
@@ -78,14 +65,6 @@
  * For Creatures:
  * - content.field_creature_type: Lookup table of critter types. Laaaame.
  * - content.field_strain: The stress players take if they miss a WILx3 check.
- *
- * For Weapons:
- * - content.damage: A pre-calculated damage string for the weapon.
- * - content.field_area_effect: If applicable, links to the AoE mechanism.
- * - content.field_firing_modes: If applicable, a list of firing modes.
- * - content.field_magazine_size: Stored as an operation, not a number.
- * - content.field_bonus: Stored as an operation, not a number.
- * - content.field_range: Short, Medium, Long, and Extreme.
  *
  * Calculated variables:
  * - stats: A nested collection of character attributes.
@@ -120,7 +99,7 @@
         {% endblock %}
         </div>
         {% if content.field_sources|field_value %}
-          <div class="panel-footer">Source: {{ content.field_sources|field_value|safe_join(', ') }}</div>
+          <div class="panel-body">Source: {{ content.field_sources|field_value|safe_join(', ') }}</div>
         {% endif %}
       </div>
     </aside>

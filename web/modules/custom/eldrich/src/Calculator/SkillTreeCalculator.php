@@ -24,13 +24,15 @@ use Drupal\Core\Entity\FieldableEntityInterface;
  *   - Skill type
  *   - No Defaulting
  *   - constant
- *     - baseline
+ *     - default
  *     - points
+ *     - baseline
  *     - bonus
  *     - total
  *   - conditional
- *     - baseline
+ *     - default
  *     - points
+ *     - baseline
  *     - bonus
  *     - total
  *
@@ -61,23 +63,26 @@ class SkillTreeCalculator {
     }
 
 
-    // If we're working with anything other than a full-fledged PC, subtract baseline
+    // If we're working with anything other than a full-fledged PC, subtract default
     // and bonus from points. Total is points. Shhhhh. Don't cheapen this.
     if (!in_array($entity->bundle(), ['pc', 'npc'])) {
       foreach ($skills as $key => $data) {
-        if ($skills[$key]['constant']['points'] > $skills[$key]['constant']['baseline']) {
-          $skills[$key]['constant']['points'] = $skills[$key]['constant']['points'] - $skills[$key]['constant']['baseline'] + $skills[$key]['constant']['bonus'];
+        if ($skills[$key]['constant']['points'] > $skills[$key]['constant']['default']) {
+          $skills[$key]['constant']['points'] = $skills[$key]['constant']['points'] - $skills[$key]['constant']['default'] + $skills[$key]['constant']['bonus'];
         }
-        if ($skills[$key]['conditional']['points'] > $skills[$key]['conditional']['baseline']) {
-          $skills[$key]['conditional']['points'] = $skills[$key]['conditional']['points'] - $skills[$key]['conditional']['baseline'] + $skills[$key]['conditional']['bonus'];
+        if ($skills[$key]['conditional']['points'] > $skills[$key]['conditional']['default']) {
+          $skills[$key]['conditional']['points'] = $skills[$key]['conditional']['points'] - $skills[$key]['conditional']['default'] + $skills[$key]['conditional']['bonus'];
         }
       }
     }
 
     // Calculate the totals now!
     foreach ($skills as $key => $data) {
-      $skills[$key]['constant']['total'] = $skills[$key]['constant']['baseline'] + $skills[$key]['constant']['points'] + $skills[$key]['constant']['bonus'];
-      $skills[$key]['conditional']['total'] = $skills[$key]['conditional']['baseline'] + $skills[$key]['conditional']['points'] + $skills[$key]['conditional']['bonus'];
+      $skills[$key]['constant']['baseline'] = $skills[$key]['constant']['default'] + $skills[$key]['constant']['points'];
+      $skills[$key]['conditional']['baseline'] = $skills[$key]['conditional']['default'] + $skills[$key]['conditional']['points'];
+
+      $skills[$key]['constant']['total'] = $skills[$key]['constant']['default'] + $skills[$key]['constant']['points'] + $skills[$key]['constant']['bonus'];
+      $skills[$key]['conditional']['total'] = $skills[$key]['conditional']['default'] + $skills[$key]['conditional']['points'] + $skills[$key]['conditional']['bonus'];
     }
 
     ksort($skills);
@@ -145,10 +150,10 @@ class SkillTreeCalculator {
     $row['type'] = $skill->field_skill_type->entity->label();
     $row['no_defaulting'] = $skill->field_no_defaulting->value;
 
-    // The 'baseline' for skills is the 'constant total' for minds.
+    // The 'default' for skills is the 'constant total' for minds.
     if (!empty($stats['mind'])) {
-      $row['constant']['baseline'] = $stats['mind']['constant'][$row['aptitude']];
-      $row['conditional']['baseline'] = $stats['mind']['conditional'][$row['aptitude']];
+      $row['constant']['default'] = $stats['mind']['constant'][$row['aptitude']];
+      $row['conditional']['default'] = $stats['mind']['conditional'][$row['aptitude']];
     }
 
     if (!empty($stats['shell'])) {
@@ -167,14 +172,16 @@ class SkillTreeCalculator {
       'aptitude' => '',
       'no_defaulting' => TRUE,
       'constant' => [
-        'baseline' => 0,
+        'default' => 0,
         'points' => 0,
+        'baseline' => 0,
         'bonus' => 0,
         'total' => 0,
       ],
       'conditional' => [
-        'baseline' => 0,
+        'default' => 0,
         'points' => 0,
+        'baseline' => 0,
         'bonus' => 0,
         'total' => 0,
       ],
