@@ -76,11 +76,11 @@ class Node extends PreprocessBase implements PreprocessInterface {
     $variables->mobility = MobilityCalculator::total($node);
 
     if ($node->bundle() == 'weapon') {
-      $variables->attack = WeaponCalculator::total($node);
+      $variables->attack = WeaponCalculator::total($node, $variables->skills);
       $variables->attacks = [];
     }
     else {
-      $variables->attacks = WeaponCalculator::total($node);
+      $variables->attacks = WeaponCalculator::total($node, $variables->skills);
     }
     $variables->armor = ArmorCalculator::total($node);
     $variables->threat = ThreatCalculator::total($variables->stats, $variables->skills, $variables->armor, $variables->attacks);

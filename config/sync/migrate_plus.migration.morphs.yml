@@ -212,7 +212,7 @@ process:
     -
       plugin: skip_on_empty
       method: process
-      source: augmentations
+      source: traits
     -
       plugin: explode
       delimiter: ','

@@ -110,7 +110,7 @@
 <article{{ attributes.addClass(classes) }}>
 
   {% block callout %}
-    <aside class="info-callout col-sm-4 pull-right">
+    <aside class="info-callout col-sm-4 col-xs-12 pull-right">
       <div class="panel panel-default">
         <div class="panel-body">
         {% block callout_content %}
@@ -126,12 +126,15 @@
     </aside>
   {% endblock %}
 
+  <div class="clearfix visible-xs-block"></div>
+
   {% block hero %}
-  {% if content.field_quote|field_value %}<blockquote><p>{{ content.field_quote|field_value }}</p></blockquote>{% endif %}
+    {% if content.field_quote|field_value %}<blockquote><p>{{ content.field_quote|field_value }}</p></blockquote>{% endif %}
   {% endblock %}
 
+  <div class="clearfix visible-xs-block"></div>
+
   {% block content %}
-    {% if content.field_appearance %}{{ content.field_appearance|field_value }}{% endif %}
     {% if content.field_usage %}{{ content.field_usage|field_value }}{% endif %}
     {% if content.field_description %}{{ content.field_description|field_value }}{% endif %}
     {% if content.field_roleplay_notes %}{{ content.field_roleplay_notes|field_value }}{% endif %}
@@ -146,8 +149,16 @@
     {% if content.field_morph_model|field_value %}<dt>Morph Model:</dt><dd>{{ content.field_morph_model|field_value }}</dd>{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}{% endif %}
     {% if skills|length %}<dt>Skills:</dt><dd>{% include directory ~ '/templates/partials/skills.html.twig' %}</dd>{% endif %}
     {% if content.field_augmentations|field_value|length %}<dt>Augmentations:</dt><dd>{{ content.field_augmentations|field_value|safe_join(', ') }}</dd>{% endif %}
-    {% if content.field_traits|field_value|length %}<dt>Traits:</dt><dd>{{ content.field_traits|field_value|safe_join(', ') }}</dd>{% endif %}
-    {% if content.field_morph_traits|field_value|length %}<dt>Morph Traits:</dt><dd>{{ content.field_morph_traits|field_value|safe_join(', ') }}</dd>{% endif %}
+
+    {% if content.field_traits|field_value|length %}
+      {% if content.field_morph_traits|field_value|length %}
+        {% set traits = content.field_traits|field_value|merge(content.field_morph_traits|field_value) %}
+      {% else %}
+        {% set traits = content.field_traits|field_value %}
+      {% endif %}
+      <dt>Traits:</dt><dd>{{ traits|safe_join(', ') }}</dd></dd>
+    {% endif %}
+
     {% if content.field_sleights|field_value|length %}<dt>Psi Sleights:</dt><dd>{{ content.field_sleights|field_value|safe_join(', ') }}</dd>{% endif %}
     {% if content.field_gear|field_value|length %}<dt>Gear:</dt><dd>{{ content.field_gear|field_value|safe_join(', ') }}</dd>{% endif %}
     {% if content.field_blueprints|length %}<dt>Blueprints:</dt><dd>{{ content.field_blueprints|field_value|safe_join(', ') }}</dd>{% endif %}

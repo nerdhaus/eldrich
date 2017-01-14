@@ -59,8 +59,16 @@ class ThreatCalculator {
         'multiplier' => $weapon['damage']['multiplier'],
         'ap' => $weapon['damage']['ap']
       ];
+
+      // We really should handle Exotic Ranged Weapons.
       if ($weapon['linked_skill']) {
-        $tmp_weapon['skill'] = min($skills[$weapon['linked_skill']]['conditional']['total'] + $weapon['skill_bonus'], 100);
+        if (strpos($weapon['linked_skill'], 'xotic')) {
+          // We need to handle this in weird ways, because llllllord. Skills.
+          $tmp_weapon['skill'] = 0;
+        }
+        else {
+          $tmp_weapon['skill'] = min($skills[$weapon['linked_skill']]['conditional']['total'] + $weapon['skill_bonus'], 100);
+        }
       }
       else {
         $tmp_weapon['skill'] = 0;

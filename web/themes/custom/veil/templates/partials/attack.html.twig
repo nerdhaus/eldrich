@@ -30,7 +30,7 @@
         {%- if attack.damage.special %} + {{ attack.damage.special }}{% endif -%}
         {%- if attack.damage.ap == 999 %}, ignores armor{% elseif attack.damage.ap != 0 %} {{ attack.damage.ap }}AP{% endif %})
       {% endif %}
-      {% if attack.damage.effects %}+ {{ attack.damage.effects|safe_join(' + ') }}{% endif %}
+      {% if attack.damage.effects %}{% if attack.damage.dice %}+ {% endif %}{{ attack.damage.effects|safe_join(' + ') }}{% endif %}
     {% else %}
       No damage
     {% endif %}

@@ -60,7 +60,7 @@ class WeaponCalculator {
    * weapon records. It assumes the entity in question is an NPC, PC, robot,
    * creature, etc.
    */
-  public static function total(FieldableEntityInterface $entity) {
+  public static function total(FieldableEntityInterface $entity, Array $skills = []) {
     $data = [];
 
     if ($entity->hasField('field_equipped_weapons')) {
