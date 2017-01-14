@@ -13,6 +13,7 @@ dependencies:
     - field.field.instance.morph.field_stats
     - field.field.instance.morph.field_traits
   module:
+    - eldrich
     - entity_reference_override
     - ep_complex_values
     - ep_skill_reference
@@ -42,8 +43,10 @@ content:
     label: hidden
     settings:
       link: true
+      location: suffix
+      template: ' ({{ quantity }})'
     third_party_settings: {  }
-    type: entity_reference_label
+    type: eldrich_popup_formatter
   field_model:
     weight: 0
     label: hidden
