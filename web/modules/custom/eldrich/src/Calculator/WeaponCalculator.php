@@ -71,9 +71,19 @@ class WeaponCalculator {
       }
     }
 
+    // Combat-oriented Psi powers should appear here, too.
     if ($entity->hasField('field_sleights')) {
       if ($sleight = static::totalPsiAttack($entity->field_sleights)) {
         $data[] = $sleight;
+      }
+    }
+
+    // Edge case; Infomorphs and hackers with Scorchers should count.
+    if ($entity->hasField('field_gear')) {
+      foreach ($entity->field_equipped_weapons as $few) {
+        if ($scorcher = static::totalCombatSoftware($few->entity)) {
+          $data[] = $scorcher;
+        }
       }
     }
 
@@ -83,6 +93,12 @@ class WeaponCalculator {
       $weapon = static::initWeaponRecord();
       static::accountForWeapon($weapon, $entity);
       $data = $weapon;
+    }
+
+    if (count($data) == 0) {
+      if ($unarmed = static::unarmedFallback($data, $entity)) {
+        $data[] = $unarmed;
+      }
     }
 
     return $data;
@@ -203,6 +219,22 @@ class WeaponCalculator {
       return NULL;
     }
   }
+
+
+  // TODO: Add scorcher attacks
+  public static function totalCombatSoftware(Array &$data, FieldableEntityInterface $entity) {
+    // Dummy up weapon records for any Scorchers the entity has equipped.
+    return NULL;
+  }
+
+  
+  // TODO: Add unarmed attacks
+  public static function unarmedFallback(Array &$data, FieldableEntityInterface $entity) {
+    // If they have literally no weapons, and they have a body, and they have Unarmed…
+    // Well, fuck. Let's calc an Unarmed Attack for them. They deserve it.
+    return NULL;
+  }
+
 
   private static function getWeaponCategory(Array &$item, FieldableEntityInterface $weapon) {
     if ($weapon->hasField('field_linked_skill')) {
