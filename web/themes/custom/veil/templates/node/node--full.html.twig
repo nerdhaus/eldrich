@@ -119,7 +119,7 @@
 
     {% if content.field_sleights|field_value|length %}<dt>Psi Sleights:</dt><dd>{{ content.field_sleights|field_value|safe_join(', ') }}</dd>{% endif %}
     {% if content.field_gear|field_value|length %}<dt>Gear:</dt><dd>{{ content.field_gear|field_value|safe_join(', ') }}</dd>{% endif %}
-    {% if content.field_owned_blueprints|length %}<dt>Blueprints:</dt><dd>{{ content.field_owned_blueprints|field_value|safe_join(', ') }}</dd>{% endif %}
+    {% if content.field_owned_blueprints|field_value|length %}<dt>Blueprints:</dt><dd>{{ content.field_owned_blueprints|field_value|safe_join(', ') }}</dd>{% endif %}
     {% if armor.energy or armor.kinetic %}
       <dt>Armor:</dt>
       <dd>{{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
