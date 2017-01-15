@@ -66,7 +66,8 @@
         "drupal/twig_tweak": "^1.4",
         "drupal/menu_trail_by_path": "^1.1",
         "drupal/eva": "^1.0@RC",
-        "drupal/field_tools": "1.x-dev"
+        "drupal/field_tools": "1.x-dev",
+        "drupal/subpathauto": "^1.0@beta"
     },
     "require-dev": {
         "behat/mink": "~1.7",

@@ -1,0 +1,13 @@
+{#
+/*
+* For Robots, Minds, and Creatures:
+*/
+#}
+{% extends "node--full.html.twig" %}
+{% block callout_content %}
+{{ parent() }}
+{% endblock %}
+
+{% block stats %}
+{% if stats.total %}{% include directory ~ '/templates/partials/stats--minimal.html.twig' %}{% endif %}
+{% endblock %}

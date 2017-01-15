@@ -1,0 +1,17 @@
+eldrich.charsheet:
+  path: '/node/{node}/charsheet'
+  defaults:
+    _controller: '\Drupal\eldrich\Controller\CharacterViewController::charSheet'
+    _title_callback: '\Drupal\node\Controller\NodeViewController::title'
+  requirements:
+    _entity_access: 'node.view'
+    node: \d+
+
+eldrich.combatcard:
+  path: '/node/{node}/card'
+  defaults:
+    _controller: '\Drupal\eldrich\Controller\CharacterViewController::combatCard'
+    _title_callback: '\Drupal\node\Controller\NodeViewController::title'
+  requirements:
+    _entity_access: 'node.view'
+    node: \d+

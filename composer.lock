@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5d886b5cf81984dd207cdcf03e9f7653",
-    "content-hash": "7f509c4346bf85302a24e3b25cc4e160",
+    "hash": "687c43fba455690344bc333e9d12ba78",
+    "content-hash": "9de07e8f8faf4ec094763c13c279dc23",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1077,7 +1077,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/barcodes-8.x-1.6.zip",
-                "reference": null,
+                "reference": "8.x-1.6",
                 "shasum": "f89f7e24992feae9702c78bf4f9ea6e0b32d9e2d"
             },
             "require": {
@@ -2362,7 +2362,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/eva-8.x-1.0-rc1.zip",
-                "reference": null,
+                "reference": "8.x-1.0-rc1",
                 "shasum": "8e8c528fb47aa6d3a1f340b21f3c050b458a8e95"
             },
             "require": {
@@ -2774,7 +2774,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/menu_trail_by_path-8.x-1.1.zip",
-                "reference": null,
+                "reference": "8.x-1.1",
                 "shasum": "52261e3ad3630e88bfc2a147e3056844f5584f62"
             },
             "require": {
@@ -2825,7 +2825,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.0-beta12.zip",
-                "reference": null,
+                "reference": "8.x-1.0-beta12",
                 "shasum": "ba93038c42295e58a20ba1ff7e7ac85fd032dda9"
             },
             "require": {
@@ -3309,7 +3309,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/site_settings-8.x-1.3.zip",
-                "reference": null,
+                "reference": "8.x-1.3",
                 "shasum": "2bcaba5d65b0fcf413459be95163cc9c64b7370d"
             },
             "require": {
@@ -3406,6 +3406,53 @@
             "homepage": "https://www.drupal.org/project/smart_trim",
             "support": {
                 "source": "http://cgit.drupalcode.org/smart_trim"
+            }
+        },
+        {
+            "name": "drupal/subpathauto",
+            "version": "1.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/subpathauto",
+                "reference": "8.x-1.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/subpathauto-8.x-1.0-beta1.zip",
+                "reference": null,
+                "shasum": "9dc67937f6a4e8a07aa311fa380adf0740993def"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta1",
+                    "datestamp": "1479450840"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "lauriii",
+                    "homepage": "https://www.drupal.org/user/1078742"
+                }
+            ],
+            "description": "Provides support for extending sub-paths of URL aliases.",
+            "homepage": "https://www.drupal.org/project/subpathauto",
+            "support": {
+                "source": "http://cgit.drupalcode.org/subpathauto"
             }
         },
         {
@@ -3569,7 +3616,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/twig_tweak-8.x-1.4.zip",
-                "reference": null,
+                "reference": "8.x-1.4",
                 "shasum": "afd09cd0e3428f551ed0f3f729deaf9964c70465"
             },
             "require": {
@@ -8645,6 +8692,7 @@
         "drupal/prepopulate": 15,
         "drupal/eva": 5,
         "drupal/field_tools": 20,
+        "drupal/subpathauto": 10,
         "drupal/viewsreference": 15
     },
     "prefer-stable": true,

@@ -36,22 +36,21 @@
  * - content.field_skills: Skill bonuses.
  * - content.field_is_conditional: Whether said bonuses are always-on or conditional.
  *
- * For Sleights:
- * - content.field_sleight_level:
- * - content.field_psi_skill:
- * - content.field_sleight_duration:
- * - content.field_is_active:
- * - content.field_sleight_range:
- * - content.field_strain:
- *
  * For Drugs:
  * - content.field_addiction_modifier:
  * - content.field_delivery_mechanism:
  * - content.field_duration:
  * - content.field_onset:
  *
- * For Augmentations:
- * - content.field_morph_types: The morph types the augmentation can be installed on
+ * For Vehicles:
+ * - content.field_passengers:
+ *
+ * For Robots:
+ * - content.field_default_ai:
+ *
+ * For Creatures:
+ * - content.field_creature_type: Lookup table of critter types. Laaaame.
+ * - content.field_strain: The stress players take if they miss a WILx3 check.
  *
  * For Morphs
  * - content.field_cp_cost: Does what it says on the tin.
@@ -62,9 +61,8 @@
  * - content.field_augmentations: Any augmentations that come standard.
  * - content.field_skills: Built-in skill bonuses, like 'swimming' for dolphins.
  *
- * For Creatures:
- * - content.field_creature_type: Lookup table of critter types. Laaaame.
- * - content.field_strain: The stress players take if they miss a WILx3 check.
+ * For Augmentations:
+ * - content.field_morph_types: The morph types the augmentation can be installed on
  *
  * Calculated variables:
  * - stats: A nested collection of character attributes.
@@ -125,7 +123,7 @@
 
   {% block properties %}
   <dl class="dl-horizontal">
-    {% if content.field_morph_model|field_value %}<dt>Morph Model:</dt><dd>{{ content.field_morph_model|field_value }}</dd>{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}{% endif %}
+    {% if content.field_morph_model|field_value %}<dt>Morph Model:</dt><dd>{{ content.field_morph_model|field_value }}{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}</dd>{% endif %}
     {% if skills|length %}<dt>Skills:</dt><dd>{% include directory ~ '/templates/partials/skills.html.twig' %}</dd>{% endif %}
     {% if content.field_augmentations|field_value|length %}<dt>Augmentations:</dt><dd>{{ content.field_augmentations|field_value|safe_join(', ') }}</dd>{% endif %}
 
