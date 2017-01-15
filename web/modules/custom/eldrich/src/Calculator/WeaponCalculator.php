@@ -80,8 +80,8 @@ class WeaponCalculator {
 
     // Edge case; Infomorphs and hackers with Scorchers should count.
     if ($entity->hasField('field_gear')) {
-      foreach ($entity->field_equipped_weapons as $few) {
-        if ($scorcher = static::totalCombatSoftware($few->entity)) {
+      foreach ($entity->field_gear as $fg) {
+        if ($scorcher = static::totalCombatSoftware($data, $fg->entity)) {
           $data[] = $scorcher;
         }
       }

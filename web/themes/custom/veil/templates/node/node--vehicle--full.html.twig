@@ -1,11 +1,17 @@
 {#
 /*
- * For Characters:
- * - content.field_background,
- * - content.field_faction,
- * - content.field_appearance,
- * - content.field_rep,
- * - content.field_credits,
+ * For Vehicles:
+ * - content.field_passengers:
+ * - content.field_skill_bonus:
+ * - content.field_linked_skill:
  */
 #}
 {% extends "node--creature--full.html.twig" %}
+{% block callout_content %}
+  {{ parent() }}
+  {% if content.field_stats|field_value %}<p>Durability: {{ content.field_stats|field_raw('dur') }}</p>{% endif %}
+  {% if content.field_linked_skill|field_value %}<p>Skill: {{ content.field_linked_skill|field_value }}</p>{% endif %}
+  {% if content.field_skill_bonus|field_value %}<p>Handling: {{ content.field_skill_bonus|field_value }}</p>{% endif %}
+  {% if content.field_passengers|field_value %}<p>Stress: {{ content.field_passengers|field_value }}</p>{% endif %}
+{% endblock %}
+{% block stats %}{% endblock %}

@@ -1,0 +1,17 @@
+{#
+/*
+ * For Creatures:
+ * - content.field_creature_type: Lookup table of critter types. Laaaame.
+ * - content.field_strain: The stress players take if they miss a WILx3 check.
+*/
+#}
+{% extends "node--full.html.twig" %}
+{% block callout_content %}
+{{ parent() }}
+  {% if content.field_creature_type|field_value %}<p>Type: {{ content.field_creature_type|field_value }}</p>{% endif %}
+  {% if content.field_strain|field_value %}<p>Stress: {{ content.field_strain|field_value }}</p>{% endif %}
+{% endblock %}
+
+{% block stats %}
+{% if stats.total %}{% include directory ~ '/templates/partials/stats--minimal.html.twig' %}{% endif %}
+{% endblock %}

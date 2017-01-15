@@ -42,25 +42,6 @@
  * - content.field_duration:
  * - content.field_onset:
  *
- * For Vehicles:
- * - content.field_passengers:
- *
- * For Robots:
- * - content.field_default_ai:
- *
- * For Creatures:
- * - content.field_creature_type: Lookup table of critter types. Laaaame.
- * - content.field_strain: The stress players take if they miss a WILx3 check.
- *
- * For Morphs
- * - content.field_cp_cost: Does what it says on the tin.
- * - content.field_stats: Inherent morph-stats, and bonuses for ego stats.
- * - content.field_stat_variance: Flexible bonuses that vary per morph instance.
- * - content.field_stat_cap: The morph's built-in ceiling on stats, including bonuses.
- * - content.field_traits: Any morph traits associated with the shell.
- * - content.field_augmentations: Any augmentations that come standard.
- * - content.field_skills: Built-in skill bonuses, like 'swimming' for dolphins.
- *
  * For Augmentations:
  * - content.field_morph_types: The morph types the augmentation can be installed on
  *
@@ -138,7 +119,7 @@
 
     {% if content.field_sleights|field_value|length %}<dt>Psi Sleights:</dt><dd>{{ content.field_sleights|field_value|safe_join(', ') }}</dd>{% endif %}
     {% if content.field_gear|field_value|length %}<dt>Gear:</dt><dd>{{ content.field_gear|field_value|safe_join(', ') }}</dd>{% endif %}
-    {% if content.field_blueprints|length %}<dt>Blueprints:</dt><dd>{{ content.field_blueprints|field_value|safe_join(', ') }}</dd>{% endif %}
+    {% if content.field_owned_blueprints|length %}<dt>Blueprints:</dt><dd>{{ content.field_owned_blueprints|field_value|safe_join(', ') }}</dd>{% endif %}
     {% if armor.energy or armor.kinetic %}
       <dt>Armor:</dt>
       <dd>{{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}

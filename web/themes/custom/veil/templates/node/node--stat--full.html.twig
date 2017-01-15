@@ -1,13 +1,27 @@
 {#
 /*
- * For Factions:
- * - content.field_faction_type: Lookup table of faction types. Laaaame.
- * - content.field_parent_faction: Pretty straightforward.
- * - content.field_memes: A list of businesses or concerns associated with the faction.
- * - content.field_faction_locations: Primary locations they're active.
+ * For Stats:
+ * - content.field_code:
+ * - content.field_is_aptitude:
+ * - content.field_is_ego_stat:
+ * - content.field_calculation:
  */
 #}
 {% extends "node--full.html.twig" %}
 {% block callout_content %}
-  {{ parent() }}
+  <p>{{ content.field_is_aptitude|field_raw('value') ? 'Core ' : '' }}{{ content.field_is_ego_stat|field_raw('value') ? 'Ego' : 'Morph' }} ability</p>
+  {% if content.field_calculation|field_value %}<p>Calculated: {{ content.field_calculation|field_value }}</p>{% endif %}
+{% endblock %}
+
+{% block properties %}
+  {% if content.field_aptitude_ranges|field_value %}
+  <dl class="dl-horizontal">
+    <dt>0-5:</dt><dd>{{ content.field_aptitude_ranges|field_value.0 }}</dd>
+    <dt>6-10:</dt><dd>{{ content.field_aptitude_ranges|field_value.1 }}</dd>
+    <dt>11-15:</dt><dd>{{ content.field_aptitude_ranges|field_value.2 }}</dd>
+    <dt>16-20:</dt><dd>{{ content.field_aptitude_ranges|field_value.3 }}</dd>
+    <dt>21-25:</dt><dd>{{ content.field_aptitude_ranges|field_value.4 }}</dd>
+    <dt>26-30:</dt><dd>{{ content.field_aptitude_ranges|field_value.5 }}</dd>
+  </dl>
+  {% endif %}
 {% endblock %}
