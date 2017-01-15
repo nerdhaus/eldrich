@@ -16,6 +16,8 @@ source:
     -
       full_name: full_name
     -
+      campaign: campaign
+    -
       player: player
     -
       based_on: based_on
@@ -85,6 +87,15 @@ process:
     entity_type: user
     value_key: name
     source: player
+  field_campaign:
+    plugin: entity_lookup_plus
+    destination_field: target_id
+    value_key: title
+    fallback_value_key: field_short_name
+    bundle_key: type
+    entity_type: node
+    bundle: campaign
+    source: campaign
   title: name
   type:
     plugin: default_value

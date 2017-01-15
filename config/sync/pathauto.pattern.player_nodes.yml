@@ -1,0 +1,22 @@
+uuid: 1e01ed1d-8541-457d-bc81-a827258f5aa0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: player_nodes
+label: 'Player Nodes'
+type: 'canonical_entities:node'
+pattern: 'games/[node:field_campaign:entity:field_short_name]/[node:title]'
+selection_criteria:
+  e74514fe-dcf4-49a9-bf6c-693ee99b7567:
+    id: node_type
+    bundles:
+      pc: pc
+    negate: false
+    context_mapping:
+      node: node
+    uuid: e74514fe-dcf4-49a9-bf6c-693ee99b7567
+selection_logic: and
+weight: -5
+relationships: {  }

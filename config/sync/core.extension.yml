@@ -54,6 +54,7 @@ module:
   search: 0
   search_autocomplete: 0
   shortcut: 0
+  subpathauto: 0
   system: 0
   taxonomy: 0
   text: 0

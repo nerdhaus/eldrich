@@ -227,7 +227,7 @@ class WeaponCalculator {
     return NULL;
   }
 
-  
+
   // TODO: Add unarmed attacks
   public static function unarmedFallback(Array &$data, FieldableEntityInterface $entity) {
     // If they have literally no weapons, and they have a body, and they have Unarmed…

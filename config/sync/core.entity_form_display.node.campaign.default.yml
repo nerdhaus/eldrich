@@ -22,7 +22,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 31
+    weight: 8
     settings:
       rows: 9
       summary_rows: 3
@@ -30,22 +30,22 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 2
     settings: {  }
     third_party_settings: {  }
   field_campaign_status:
-    weight: 35
+    weight: 7
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: options_buttons
   field_official_downloads:
-    weight: 37
+    weight: 10
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
   field_players:
-    weight: 38
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60
@@ -53,14 +53,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_resources:
-    weight: 36
+    weight: 11
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
   field_shortname:
-    weight: 33
+    weight: 6
     settings:
       size: 60
       placeholder: ''
@@ -68,31 +68,31 @@ content:
     type: string_textfield
   path:
     type: path
-    weight: 30
+    weight: 5
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 3
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 4
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
