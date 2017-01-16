@@ -54,18 +54,18 @@ class Node extends PreprocessBase implements PreprocessInterface {
   public function prepChildFields(NodeInterface $node, Variables $variables) {
     if ($node->hasField('field_morph') && $instance = $node->field_morph->entity) {
       $variables->content += [
-        'field_augmentations' => $instance->field_augmentations->view(),
-        'field_morph_traits' => $instance->field_traits->view(),
-        'field_appearance' => $instance->field_description->view(),
-        'field_morph_model' => $instance->field_model->view(),
+        'field_augmentations' => $instance->field_augmentations->view('default'),
+        'field_morph_traits' => $instance->field_traits->view('default'),
+        'field_appearance' => $instance->field_description->view('default'),
+        'field_morph_model' => $instance->field_model->view('default'),
       ];
     }
     if ($node->hasField('field_identity') && $identity = $node->field_identity->entity) {
       $variables->content += [
-        'field_background' => $identity->field_background->view(),
-        'field_faction' => $identity->field_faction->view(),
-        'field_rep' => $identity->field_rep->view(),
-        'field_credits' => $identity->field_credits->view(),
+        'field_background' => $identity->field_background->view('default'),
+        'field_faction' => $identity->field_faction->view('default'),
+        'field_rep' => $identity->field_rep->view('default'),
+        'field_credits' => $identity->field_credits->view('default'),
       ];
     }
   }

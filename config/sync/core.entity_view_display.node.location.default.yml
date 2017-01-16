@@ -47,7 +47,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    type: eldrich_popup_formatter
   field_parent_location:
     weight: 5
     label: inline

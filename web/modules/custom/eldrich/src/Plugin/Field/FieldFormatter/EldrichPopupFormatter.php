@@ -32,7 +32,7 @@ class EldrichPopupFormatter extends EntityReferenceQuantityLabelFormatter {
         '#title' => $entity->label(),
       ];
 
-      if ($output_as_link && !$entity->isNew()) {
+      if (!$entity->isNew()) {
         $uri = $entity->urlInfo();
         $elements[$delta]['#url'] = $uri;
         $elements[$delta]['#options'] = $uri->getOptions();
@@ -47,8 +47,10 @@ class EldrichPopupFormatter extends EntityReferenceQuantityLabelFormatter {
       }
 
       if ($entity->hasField('field_description')) {
+        $elements[$delta]['#options']['attributes']['title'] = $entity->label();
         $elements[$delta]['#options']['attributes']['data-toggle'] = 'popover';
-        $elements[$delta]['#options']['attributes']['data-content'] = \Drupal\Component\Utility\Html::escape($entity->field_description->value);
+        $elements[$delta]['#options']['attributes']['data-placement'] = 'auto';
+        $elements[$delta]['#options']['attributes']['data-content'] = strip_tags($entity->field_description->value);
       }
 
       $elements[$delta]['#cache']['tags'] = $entity->getCacheTags();

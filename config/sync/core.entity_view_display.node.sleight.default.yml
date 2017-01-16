@@ -40,7 +40,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    type: eldrich_popup_formatter
   field_conditional:
     weight: 9
     label: above
@@ -85,21 +85,21 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    type: eldrich_popup_formatter
   field_sleight_level:
     weight: 0
     label: inline
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    type: eldrich_popup_formatter
   field_sleight_range:
     weight: 3
     label: inline
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    type: eldrich_popup_formatter
   field_sources:
     weight: 102
     label: above

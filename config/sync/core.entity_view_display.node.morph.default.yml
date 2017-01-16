@@ -53,11 +53,11 @@ content:
     weight: 1
     label: inline
     settings:
+      link: '1'
       location: suffix
       template: ' (min. {{ quantity }})'
-      link: false
     third_party_settings: {  }
-    type: entity_reference_quantity_label
+    type: eldrich_popup_formatter
   field_description:
     weight: 2
     label: hidden
@@ -77,7 +77,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    type: eldrich_popup_formatter
   field_movement_speed:
     weight: 8
     label: inline
