@@ -10,7 +10,6 @@
 #}
 {% extends "@veil/node/node--full.html.twig" %}
 
-
 {% block callout %}
 <div class="col-sm-4">
   {% if content.field_morph_model|field_value %}<p><strong>Morph Model:</strong> {{ content.field_morph_model|field_value }}{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}</p>{% endif %}
@@ -25,7 +24,8 @@
 
 {% block content %}
 <div class="col-sm-8">
-{% if stats.total %}{% include '@veil/partials/stats--breakdown.html.twig' %}{% endif %}
+  {% if stats.total %}{% include '@veil/partials/stats--breakdown.html.twig' %}{% endif %}
+  {% if attacks|length %}{% include '@veil/partials/attacks--table.html.twig' %}{% endif %}
 </div>
 {% endblock %}
 
@@ -52,8 +52,5 @@
     {% if content.field_sleights|field_value|length %}<dt>Psi Sleights:</dt><dd>{{ content.field_sleights|field_value|safe_join(', ') }}</dd>{% endif %}
     {% if content.field_gear|field_value|length %}<dt>Gear:</dt><dd>{{ content.field_gear|field_value|safe_join(', ') }}</dd>{% endif %}
     {% if content.field_blueprints|length %}<dt>Blueprints:</dt><dd>{{ content.field_blueprints|field_value|safe_join(', ') }}</dd>{% endif %}
-    {% for attack in attacks -%}
-      {% include '@veil/partials/attack.html.twig' with {'attack': attack} %}
-    {%- endfor %}
   </dl>
 {% endblock %}

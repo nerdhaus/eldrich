@@ -3,9 +3,11 @@
   {% set properties = [['cog', 'coo', 'int', 'ref', 'sav', 'som'],  ['wil', 'init', 'spd', 'dur', 'wt', 'dr']] %}
   {% for property_group in properties %}
     <thead>
-    {% for property in property_group %}
-      <th>{{ property|upper }}</th>
-    {% endfor %}
+      <tr>
+        {% for property in properties %}
+          <th>{{ property|upper }}</th>
+        {% endfor %}
+      </tr>
     </thead>
     <tr>
       {% for property in property_group %}

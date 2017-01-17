@@ -2,12 +2,14 @@
 <div class="panel panel-default">
   <table class="table table-condensed table-bordered pc-skills sortable">
     <thead>
-      <th class="skill-col-aptitude hidden-xs">Aptitude</th>
-      <th class="skill-col-aptitude">Category</th>
-      <th class="skill-col-skill">Skill</th>
-      <th class="skill-col-base hidden-sm hidden-xs">Baseline</th>
-      <th class="skill-col-bonus hidden-sm hidden-xs">Bonus</th>
-      <th class="skill-col-total">Total</th>
+      <tr>
+        <th class="skill-col-aptitude hidden-xs">Aptitude</th>
+        <th class="skill-col-aptitude">Category</th>
+        <th class="skill-col-skill">Skill</th>
+        <th class="skill-col-base hidden-sm hidden-xs">Baseline</th>
+        <th class="skill-col-bonus hidden-sm hidden-xs">Bonus</th>
+        <th class="skill-col-total">Total</th>
+      </tr>
     </thead>
     <tbody>
       {% for skill in skills -%}

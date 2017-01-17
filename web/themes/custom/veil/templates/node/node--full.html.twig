@@ -124,10 +124,8 @@ view_mode ? view_mode|clean_class
         {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
       </dd>
     {% endif %}
-    {% for attack in attacks -%}
-      {% include '@veil/partials/' ~ 'attack.html.twig' with {'attack': attack} %}
-    {%- endfor %}
   </dl>
+  {% if attacks|length %}{% include '@veil/partials/attacks.html.twig' %}{% endif %}
   {% endblock %}
 
   {% block related %}

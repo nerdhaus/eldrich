@@ -27,6 +27,7 @@ use Drupal\Core\Link;
  *
  * - The ID of the weapon's linked skill.
  * - The numerical skill bonus from any mods/ammo/etc
+ * - The total skill used when attacking (if available)
  * - The category of weapon (ranged, melee, grenade so far)
  * - The cumulative (not individual) damage, in the form of:
  *   - Number of d10s
@@ -54,6 +55,7 @@ use Drupal\Core\Link;
  *     [psi] Psychic Stab w/ Ultra Stab: DV 2d10, ignores armor
  */
 class WeaponCalculator {
+  private static $skills;
 
   /*
    * This is the biggie. Feed it an entity and it produces a set of weapon
@@ -62,6 +64,9 @@ class WeaponCalculator {
    */
   public static function total(FieldableEntityInterface $entity, Array $skills = []) {
     $data = [];
+    if (isset($skills)) {
+      static::$skills = $skills;
+    }
 
     if ($entity->hasField('field_equipped_weapons')) {
       foreach ($entity->field_equipped_weapons as $few) {
@@ -107,6 +112,7 @@ class WeaponCalculator {
   private static function initWeaponRecord() {
     return [
       'linked_skill' => NULL,
+      'skill' => 0,
       'skill_bonus' => 0,
       'category' => 'weapon',
       'damage' => [
@@ -291,7 +297,6 @@ class WeaponCalculator {
       }
     }
 
-
     if (!$weapon->field_magazine_size->isEmpty()) {
       $item['rounds'] = operation_calculate_result($item['rounds'], $weapon->field_magazine_size->operation, $weapon->field_magazine_size->value);
     }
@@ -319,6 +324,16 @@ class WeaponCalculator {
 
     if (!$weapon->field_skill_bonus->isEmpty()) {
       $item['skill_bonus'] += $weapon->field_skill_bonus->value;
+    }
+    if(isset(static::$skills)) {
+      if ($skill_info = static::$skills[$item['linked_skill']]) {
+        $item['skill'] = $item['skill_bonus'] + $skill_info['constant']['total'];
+        if (!empty($skill_info['specialization'])) {
+          if (strpos(strtolower($weapon->label()), strtolower($skill_info['specialization']))) {
+            $item['skill'] += 10;
+          }
+        }
+      }
     }
 
     if (!$weapon->field_special_effect->isEmpty()) {

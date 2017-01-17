@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Output template for a calculated weapon attack.
+ *
+ * Available variables:
+ * - skill_bonus: Optional numerical boost for attack rolls
+ * - category: melee, ranged, etc.
+ * - damage
+ *   - dice: The number of dice to roll
+ *   - mod: A damage modifier specific to the attack (+10, etc)
+ *   - mod_operation: Always + or /, because we're not insane
+ *   - ap: Armor Piercing power
+ *   - average: Average damage output
+ * - rounds: Numerical magazine size, if appropriate
+ * - effects: An array of strings describing special weapon effects
+ *
+ */
+#}
+<dl class="dl-horizontal">
+  {% for attack in attacks %}
+  <dt><span class="label label-danger text-uppercase">{{ attack.category }}</span></dt>
+  <dd>
+    {{ attack.build.weapon }}
+    {% if attack.skill_bonus %}(+{{ attack.skill_bonus }}){% endif %}
+    {% if attack.build.ammo %} w/ {{ attack.build.ammo_mods|safe_join(' ') }} {{ attack.build.ammo }}{% endif %}
+    <kbd class="damage-roll" data-average="{{ attack.damage.average }}">
+      {% if attack.damage.dice or attack.damage.effects %}
+        {% if attack.damage.dice %}
+          (DV {{ attack.damage.dice }}d10
+          {%- if attack.damage.mod %} {{ attack.damage.mod_operation }} {{ attack.damage.mod }}{% endif -%}
+          {%- if attack.damage.special %} + {{ attack.damage.special }}{% endif -%}
+          {%- if attack.damage.ap == 999 %}, ignores armor{% elseif attack.damage.ap != 0 %} {{ attack.damage.ap }}AP{% endif %})
+        {% endif %}
+        {% if attack.damage.effects %}{% if attack.damage.dice %}+ {% endif %}{{ attack.damage.effects|safe_join(' + ') }}{% endif %}
+      {% else %}
+        No damage
+      {% endif %}
+    </kbd>
+  </dd>
+  {% if attack.effects %}<dd>{{ attack.effects|safe_join(' ') }}</dd>{% endif %}
+  {% endfor %}
+</dl>

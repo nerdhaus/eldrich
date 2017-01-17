@@ -2,9 +2,11 @@
   {% set properties = ['cog', 'coo', 'int', 'ref', 'sav', 'som', 'wil'] %}
   <table class="table table-condensed table-bordered table-statblock">
     <thead>
-    {% for property in properties %}
-      <th>{{ property|upper }}</th>
-    {% endfor %}
+      <tr>
+      {% for property in properties %}
+        <th>{{ property|upper }}</th>
+      {% endfor %}
+      </tr>
     </thead>
     <tbody>
       <tr>
@@ -51,9 +53,11 @@
   {% set properties = ['mox', 'init', 'spd', 'tt', 'luc', 'ir', 'wt', 'dur', 'dr'] %}
   <table class="table table-condensed table-bordered table-statblock">
     <thead>
-    {% for property in properties %}
-      <th>{{ property|upper }}</th>
-    {% endfor %}
+      <tr>
+      {% for property in properties %}
+        <th>{{ property|upper }}</th>
+      {% endfor %}
+      </tr>
     </thead>
     <tbody>
       <tr class="summary-row">
