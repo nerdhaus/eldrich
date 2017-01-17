@@ -1,0 +1,66 @@
+uuid: 360297a0-e7ac-4a73-b9dc-00e54842c4c3
+langcode: en
+status: true
+dependencies: {  }
+id: campaigns
+migration_tags: null
+migration_group: eldrich_content
+label: Campaigns
+source:
+  plugin: csv
+  path: modules/custom/ep_import/content/campaigns.csv
+  header_row_count: 1
+  column_names:
+    -
+      title: title
+    -
+      short: ShortName
+    -
+      status: Status
+    -
+      description: Description
+    -
+      players: Players
+    -
+      resources: Resources
+    -
+      downloads: Downloads
+  keys:
+    - name
+  constants:
+    user: Factotum
+process:
+  uid:
+    plugin: entity_lookup_plus
+    entity_type: user
+    value_key: name
+    source: constants/user
+  type:
+    plugin: default_value
+    default_value: campaign
+  title: title
+  field_shortname: short
+  body/value:
+    plugin: line_breaker
+    source: description
+  body/format:
+    plugin: default_value
+    default_value: basic_html
+  field_players:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: players
+    -
+      plugin: explode
+      delimiter: ', '
+    -
+      plugin: entity_generate
+      entity_type: user
+      value_key: name
+  field_campaign_status: status
+  field_official_downloads: null
+  field_resources: null
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null
