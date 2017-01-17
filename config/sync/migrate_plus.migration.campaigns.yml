@@ -26,7 +26,7 @@ source:
     -
       downloads: Downloads
   keys:
-    - name
+    - title
   constants:
     user: Factotum
 process:
@@ -59,8 +59,8 @@ process:
       entity_type: user
       value_key: name
   field_campaign_status: status
-  field_official_downloads: null
-  field_resources: null
+  field_official_downloads: { }
+  field_resources: { }
 destination:
   plugin: 'entity:node'
 migration_dependencies: null
