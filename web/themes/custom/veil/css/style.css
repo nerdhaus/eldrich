@@ -34,8 +34,6 @@
 table.table-statblock thead th {
   text-align: center;
   border-width: 1px;
-  color: #1c1e22;
-  background-color: #7a8288;
 }
 
 table.table-statblock tr td {
@@ -81,13 +79,24 @@ span.skill-combat {
   font-weight: bold;
 }
 
-aside.info-callout p {
+.info-callout p {
   padding-left: 30px;
 }
-aside.info-callout p {
+.info-callout p {
   text-indent: -30px;
 }
 
 .skill-col-total {
   font-weight: bolder;
+}
+
+
+.table-eldrich thead {
+  color: #1c1e22;
+  background-color: #7a8288;
+}
+
+.panel-charsheet {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }

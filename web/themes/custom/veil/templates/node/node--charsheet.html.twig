@@ -11,7 +11,7 @@
 {% extends "@veil/node/node--full.html.twig" %}
 
 {% block callout %}
-<div class="col-sm-4">
+<div class="col-sm-4 info-callout panel-charsheet">
   {% if content.field_morph_model|field_value %}<p><strong>Morph Model:</strong> {{ content.field_morph_model|field_value }}{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}</p>{% endif %}
   {% if armor.energy or armor.kinetic %}
     <p><strong>Armor:</strong> {{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
@@ -19,6 +19,21 @@
     </p>
   {% endif %}
   {% if content.field_rep|field_value|length %}<p><strong>Rep:</strong> {{ content.field_rep|field_value|safe_join(', ') }}</p>{% endif %}
+
+  {% if content.field_augmentations|field_value|length %}<p><strong>Augmentations:</strong> {{ content.field_augmentations|field_value|safe_join(', ') }}</p>{% endif %}
+  {% if content.field_traits|field_value|length %}
+    {% if content.field_morph_traits|field_value|length %}
+      {% set traits = content.field_traits|field_value|merge(content.field_morph_traits|field_value) %}
+    {% else %}
+      {% set traits = content.field_traits|field_value %}
+    {% endif %}
+    <p><strong>Traits:</strong> {{ traits|safe_join(', ') }}</p>
+  {% endif %}
+
+  {% if content.field_sleights|field_value|length %}<p><strong>Psi Sleights:</strong> {{ content.field_sleights|field_value|safe_join(', ') }}</p>{% endif %}
+  {% if content.field_gear|field_value|length %}<p><strong>Gear:</strong> {{ content.field_gear|field_value|safe_join(', ') }}</p>{% endif %}
+  {% if content.field_blueprints|length %}<p><strong>Blueprints:</strong> {{ content.field_blueprints|field_value|safe_join(', ') }}</p>{% endif %}
+
 </div>
 {% endblock %}
 
@@ -37,20 +52,4 @@
 </section>
 {% endblock %}
 
-{% block properties %}
-  <dl class="dl-horizontal">
-    {% if content.field_augmentations|field_value|length %}<dt>Augmentations:</dt><dd>{{ content.field_augmentations|field_value|safe_join(', ') }}</dd>{% endif %}
-    {% if content.field_traits|field_value|length %}
-      {% if content.field_morph_traits|field_value|length %}
-        {% set traits = content.field_traits|field_value|merge(content.field_morph_traits|field_value) %}
-      {% else %}
-        {% set traits = content.field_traits|field_value %}
-      {% endif %}
-      <dt>Traits:</dt><dd>{{ traits|safe_join(', ') }}</dd></dd>
-    {% endif %}
-
-    {% if content.field_sleights|field_value|length %}<dt>Psi Sleights:</dt><dd>{{ content.field_sleights|field_value|safe_join(', ') }}</dd>{% endif %}
-    {% if content.field_gear|field_value|length %}<dt>Gear:</dt><dd>{{ content.field_gear|field_value|safe_join(', ') }}</dd>{% endif %}
-    {% if content.field_blueprints|length %}<dt>Blueprints:</dt><dd>{{ content.field_blueprints|field_value|safe_join(', ') }}</dd>{% endif %}
-  </dl>
-{% endblock %}
+{% block properties %}{% endblock %}
