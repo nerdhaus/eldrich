@@ -9,28 +9,37 @@
  */
 #}
 {% extends "@veil/node/node--full.html.twig" %}
-{% block callout_content %}
-  {{ parent() }}
-  {% if content.field_background|field_value %}<p>Background: {{ content.field_background|field_value }}</p>{% endif %}
-  {% if content.field_faction|field_value %}<p>Faction: {{ content.field_faction|field_value|safe_join(', ') }}</p>{% endif %}
-  {% if content.field_rep|field_value|length %}<p>Rep: {{ content.field_rep|field_value|safe_join(', ') }}</p>{% endif %}
-  {% if content.field_credits|field_value %}<p>Credits: {{ content.field_credits|field_value }}</p>{% endif %}
-  {% if content.field_appearance|field_value %}<p>{{ content.field_appearance|field_value }}</p>{% endif %}
+
+
+{% block callout %}
+<div class="col-sm-4">
+  {% if content.field_morph_model|field_value %}<p><strong>Morph Model:</strong> {{ content.field_morph_model|field_value }}{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}</p>{% endif %}
+  {% if armor.energy or armor.kinetic %}
+    <p><strong>Armor:</strong> {{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
+      {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
+    </p>
+  {% endif %}
+  {% if content.field_rep|field_value|length %}<p><strong>Rep:</strong> {{ content.field_rep|field_value|safe_join(', ') }}</p>{% endif %}
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="col-sm-8">
+{% if stats.total %}{% include '@veil/partials/stats--breakdown.html.twig' %}{% endif %}
+</div>
 {% endblock %}
 
 {% block stats %}
-  <div class="clearfix visible-xs-block"></div>
-  {% if stats.total %}{% include'@veil/partials/stats--breakdown.html.twig' %}{% endif %}
-  <div class="clearfix visible-xs-block"></div>
-  {% include directory ~ '@veil/partials/skills--table.html.twig' %}
-  <div class="clearfix visible-xs-block"></div>
+<section class="row">
+  <div class="col-sm-12">
+  {% include '@veil/partials/skills--table.html.twig' %}
+  </div>
+</section>
 {% endblock %}
 
 {% block properties %}
   <dl class="dl-horizontal">
-    {% if content.field_morph_model|field_value %}<dt>Morph Model:</dt><dd>{{ content.field_morph_model|field_value }}{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}</dd>{% endif %}
     {% if content.field_augmentations|field_value|length %}<dt>Augmentations:</dt><dd>{{ content.field_augmentations|field_value|safe_join(', ') }}</dd>{% endif %}
-
     {% if content.field_traits|field_value|length %}
       {% if content.field_morph_traits|field_value|length %}
         {% set traits = content.field_traits|field_value|merge(content.field_morph_traits|field_value) %}
@@ -43,14 +52,8 @@
     {% if content.field_sleights|field_value|length %}<dt>Psi Sleights:</dt><dd>{{ content.field_sleights|field_value|safe_join(', ') }}</dd>{% endif %}
     {% if content.field_gear|field_value|length %}<dt>Gear:</dt><dd>{{ content.field_gear|field_value|safe_join(', ') }}</dd>{% endif %}
     {% if content.field_blueprints|length %}<dt>Blueprints:</dt><dd>{{ content.field_blueprints|field_value|safe_join(', ') }}</dd>{% endif %}
-    {% if armor.energy or armor.kinetic %}
-      <dt>Armor:</dt>
-      <dd>{{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
-        {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
-      </dd>
-    {% endif %}
     {% for attack in attacks -%}
-      {% include '@veil/partials/' ~ 'attack.html.twig' with {'attack': attack} %}
+      {% include '@veil/partials/attack.html.twig' with {'attack': attack} %}
     {%- endfor %}
   </dl>
 {% endblock %}

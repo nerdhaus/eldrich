@@ -15,5 +15,4 @@
   {% if content.field_faction|field_value %}<p>Faction: {{ content.field_faction|field_value|safe_join(', ') }}</p>{% endif %}
   {% if content.field_rep|field_value|length %}<p>Rep: {{ content.field_rep|field_value|safe_join(', ') }}</p>{% endif %}
   {% if content.field_credits|field_value %}<p>Credits: {{ content.field_credits|field_value }}</p>{% endif %}
-  {% if content.field_appearance|field_value %}<p>{{ content.field_appearance|field_value }}</p>{% endif %}
 {% endblock %}

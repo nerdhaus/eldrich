@@ -10,8 +10,9 @@
 {{ parent() }}
   {% if content.field_creature_type|field_value %}<p>Type: {{ content.field_creature_type|field_value }}</p>{% endif %}
   {% if content.field_strain|field_value %}<p>Stress: {{ content.field_strain|field_value }}</p>{% endif %}
+
+  {% include '@veil/partials/stats--minimal.html.twig' %}
+
 {% endblock %}
 
-{% block stats %}
-{% if stats.total %}{% include '@veil/partials/stats--minimal.html.twig' %}{% endif %}
-{% endblock %}
+{% block stats %}{% endblock %}

@@ -55,42 +55,49 @@
  * @see template_preprocess_node()
  */
 #}
+{%
+set classes = [
+node.bundle|clean_class,
+node.isPromoted() ? 'is-promoted',
+node.isSticky() ? 'is-sticky',
+not node.isPublished() ? 'is-unpublished',
+view_mode ? view_mode|clean_class
+]
+%}
 
 <article{{ attributes.addClass(classes) }}>
-
+  <section class="row">
   {% block callout %}
     <aside class="info-callout col-sm-4 col-xs-12 pull-right">
-      <div class="panel panel-default">
-        <div class="panel-body">
-        {% block callout_content %}
-          {% if threat and threat.rating %}<p>Threat Level: {{ threat.label }}</p>{% endif %}
-          {% if content.field_gear_type|field_value %}<p>Type: {{ content.field_gear_type|field_value }}</p>{% endif %}
-          {% if content.field_cost|field_value %}<p>Cost: {{ content.field_cost|field_value }}</p>{% endif %}
-        {% endblock %}
-        </div>
-        {% if content.field_sources|field_value %}
-          <div class="panel-body">Source: {{ content.field_sources|field_value|safe_join(', ') }}</div>
-        {% endif %}
-      </div>
+      {% block callout_content %}
+        {% if threat and threat.rating %}<p>Threat Level: {{ threat.label }}</p>{% endif %}
+        {% if content.field_gear_type|field_value %}<p>Type: {{ content.field_gear_type|field_value }}</p>{% endif %}
+        {% if content.field_cost|field_value %}<p>Cost: {{ content.field_cost|field_value }}</p>{% endif %}
+      {% endblock %}
+      {% if content.field_sources|field_value %}
+        <p>Source: {{ content.field_sources|field_value|safe_join(', ') }}</p>
+      {% endif %}
     </aside>
   {% endblock %}
 
-  <div class="clearfix visible-xs-block"></div>
-
-  {% block hero %}
-    {% if content.field_quote|field_value %}<blockquote><p>{{ content.field_quote|field_value }}</p></blockquote>{% endif %}
-  {% endblock %}
-
-  <div class="clearfix visible-xs-block"></div>
-
   {% block content %}
-    {% if content.field_usage %}{{ content.field_usage|field_value }}{% endif %}
-    {% if content.field_description %}{{ content.field_description|field_value }}{% endif %}
-    {% if content.field_roleplay_notes %}{{ content.field_roleplay_notes|field_value }}{% endif %}
+    <div class="col-sm-8">
+      {% if content.field_description %}{{ content.field_description|field_value }}{% endif %}
+      {% if content.field_usage %}{{ content.field_usage|field_value }}{% endif %}
+      {% if content.field_appearance|field_value %}{{ content.field_appearance|field_value }}{% endif %}
+      {% if content.field_roleplay_notes|field_value %}{{ content.field_roleplay_notes|field_value }}{% endif %}
+    </div>
   {% endblock %}
+  </section>
 
   {% block stats %}
-    {% if stats.total %}{% include '@veil/partials/stats.html.twig' %}{% endif %}
+    {% if stats.total %}
+      <section class="row">
+        <div class="col-sm-12">
+        {% include '@veil/partials/stats.html.twig' %}
+        </div>
+      </section>
+    {% endif %}
   {% endblock %}
 
   {% block properties %}
