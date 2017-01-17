@@ -101,7 +101,7 @@ view_mode ? view_mode|clean_class
   {% endblock %}
 
   {% block properties %}
-  <dl class="dl-horizontal">
+  <dl class="dl-horizontal panel-charsheet">
     {% if content.field_morph_model|field_value %}<dt>Morph Model:</dt><dd>{{ content.field_morph_model|field_value }}{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}</dd>{% endif %}
     {% if skills|length %}<dt>Skills:</dt><dd>{% include directory ~ '/templates/partials/skills.html.twig' %}</dd>{% endif %}
     {% if content.field_augmentations|field_value|length %}<dt>Augmentations:</dt><dd>{{ content.field_augmentations|field_value|safe_join(', ') }}</dd>{% endif %}
