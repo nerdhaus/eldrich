@@ -5,7 +5,7 @@
  * - content.field_strain: The stress players take if they miss a WILx3 check.
 */
 #}
-{% extends "node--full.html.twig" %}
+{% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
 {{ parent() }}
   {% if content.field_creature_type|field_value %}<p>Type: {{ content.field_creature_type|field_value }}</p>{% endif %}
@@ -13,5 +13,5 @@
 {% endblock %}
 
 {% block stats %}
-{% if stats.total %}{% include directory ~ '/templates/partials/stats--minimal.html.twig' %}{% endif %}
+{% if stats.total %}{% include '@veil/partials/stats--minimal.html.twig' %}{% endif %}
 {% endblock %}

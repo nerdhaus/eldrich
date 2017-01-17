@@ -9,7 +9,7 @@
  * - content.field_strain:
  */
 #}
-{% extends "node--full.html.twig" %}
+{% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
   {{ parent() }}
   <p>{{ content.field_is_active|field_value ? 'Active' : 'Passive' }} Psi-{{ content.field_sleight_level|field_value }} Sleight</p>

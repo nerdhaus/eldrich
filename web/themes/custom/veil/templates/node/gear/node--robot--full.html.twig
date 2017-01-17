@@ -4,7 +4,7 @@
  * - content.field_default_ai:
  */
 #}
-{% extends "node--creature--full.html.twig" %}
+{% extends "../chars/node--creature--full.html.twig" %}
 {% block callout_content %}
   {{ parent() }}
   {% if content.field_default_ai|field_value %}<p>Default AI: {{ content.field_default_ai|field_value }}</p>{% endif %}

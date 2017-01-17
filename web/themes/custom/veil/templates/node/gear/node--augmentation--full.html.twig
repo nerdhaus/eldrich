@@ -1,0 +1,17 @@
+{#
+/*
+ * For Augmentations:
+ * - content.field_morph_types: The morph types the augmentation can be installed on
+ * - content.field_stats: Stat bonuses.
+ * - content.field_skills: Skill bonuses.
+ * - content.field_is_conditional: Whether said bonuses are always-on or conditional.
+ */
+#}
+{% extends "@veil/node/node--full.html.twig" %}
+{% block callout_content %}
+  {{ parent() }}
+  {% if content.field_stats|field_value %}<p>Stat bonuses: {{ content.field_morph_types|field_stats|safe_join(', ') }}</p>{% endif %}
+  {% if content.field_skills|field_value %}<p>Skill bonuses: {{ content.field_morph_types|field_skills|safe_join(', ') }}</p>{% endif %}
+  {% if content.field_morph_types|field_value %}<p>Valid morphs: {{ content.field_morph_types|field_value|safe_join(', ') }}</p>{% endif %}
+{% endblock %}
+{% block stats %}{% endblock %}

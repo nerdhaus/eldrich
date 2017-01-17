@@ -8,7 +8,7 @@
  * - content.field_credits,
  */
 #}
-{% extends "node--full.html.twig" %}
+{% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
   {{ parent() }}
   {% if content.field_background|field_value %}<p>Background: {{ content.field_background|field_value }}</p>{% endif %}

@@ -9,7 +9,7 @@
  * - content.field_skill_type:
  */
 #}
-{% extends "node--full.html.twig" %}
+{% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
   {% if content.field_skill_type|field_value %}<p>Skill type: {{ content.field_skill_type|field_value }}</p>{% endif %}
   {% if content.field_linked_aptitude|field_value %}<p>Linked Aptitude: {{ content.field_linked_aptitude|field_value }}</p>{% endif %}

@@ -10,7 +10,7 @@
  * - content.field_skills: Built-in skill bonuses, like 'swimming' for dolphins.
  */
 #}
-{% extends "node--full.html.twig" %}
+{% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
   {{ parent() }}
   {% set fixed_bonuses = content.field_stats|field_value %}

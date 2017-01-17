@@ -36,15 +36,6 @@
  * - content.field_skills: Skill bonuses.
  * - content.field_is_conditional: Whether said bonuses are always-on or conditional.
  *
- * For Drugs:
- * - content.field_addiction_modifier:
- * - content.field_delivery_mechanism:
- * - content.field_duration:
- * - content.field_onset:
- *
- * For Augmentations:
- * - content.field_morph_types: The morph types the augmentation can be installed on
- *
  * Calculated variables:
  * - stats: A nested collection of character attributes.
  *   @see \Drupal\eldrich\Calculator\StatTreeCalculator
@@ -99,7 +90,7 @@
   {% endblock %}
 
   {% block stats %}
-    {% if stats.total %}{% include directory ~ '/templates/partials/stats.html.twig' %}{% endif %}
+    {% if stats.total %}{% include '@veil/partials/stats.html.twig' %}{% endif %}
   {% endblock %}
 
   {% block properties %}
@@ -127,7 +118,7 @@
       </dd>
     {% endif %}
     {% for attack in attacks -%}
-      {% include directory ~ '/templates/partials/' ~ 'attack.html.twig' with {'attack': attack} %}
+      {% include '@veil/partials/' ~ 'attack.html.twig' with {'attack': attack} %}
     {%- endfor %}
   </dl>
   {% endblock %}

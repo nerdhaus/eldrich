@@ -7,7 +7,7 @@
  * - content.field_calculation:
  */
 #}
-{% extends "node--full.html.twig" %}
+{% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
   <p>{{ content.field_is_aptitude|field_raw('value') ? 'Core ' : '' }}{{ content.field_is_ego_stat|field_raw('value') ? 'Ego' : 'Morph' }} ability</p>
   {% if content.field_calculation|field_value %}<p>Calculated: {{ content.field_calculation|field_value }}</p>{% endif %}

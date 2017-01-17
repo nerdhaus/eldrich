@@ -8,7 +8,7 @@
  * - content.field_credits,
  */
 #}
-{% extends "node--full.html.twig" %}
+{% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
   {{ parent() }}
   {% if content.field_background|field_value %}<p>Background: {{ content.field_background|field_value }}</p>{% endif %}
@@ -20,9 +20,9 @@
 
 {% block stats %}
   <div class="clearfix visible-xs-block"></div>
-  {% if stats.total %}{% include directory ~ '/templates/partials/stats--breakdown.html.twig' %}{% endif %}
+  {% if stats.total %}{% include'@veil/partials/stats--breakdown.html.twig' %}{% endif %}
   <div class="clearfix visible-xs-block"></div>
-  {% include directory ~ '/templates/partials/skills--table.html.twig' %}
+  {% include directory ~ '@veil/partials/skills--table.html.twig' %}
   <div class="clearfix visible-xs-block"></div>
 {% endblock %}
 
@@ -50,7 +50,7 @@
       </dd>
     {% endif %}
     {% for attack in attacks -%}
-      {% include directory ~ '/templates/partials/' ~ 'attack.html.twig' with {'attack': attack} %}
+      {% include '@veil/partials/' ~ 'attack.html.twig' with {'attack': attack} %}
     {%- endfor %}
   </dl>
 {% endblock %}

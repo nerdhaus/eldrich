@@ -7,7 +7,7 @@
  * - content.field_faction_locations: Primary locations they're active.
  */
 #}
-{% extends "node--full.html.twig" %}
+{% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
   {{ parent() }}
   <p>Type: {{ content.field_location_type|field_value -}}{% if content.field_parent_location|field_value %}, {{ content.field_parent_location|field_value }}{% endif %}</p>
