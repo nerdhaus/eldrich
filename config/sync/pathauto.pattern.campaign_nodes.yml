@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - node
-id: campaign_
+id: campaign_nodes
 label: 'Campaign nodes'
 type: 'canonical_entities:node'
 pattern: 'games/[node:field_short_name]'
