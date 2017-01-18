@@ -4,11 +4,11 @@ status: true
 dependencies: {  }
 id: gear_types
 migration_tags: null
-migration_group: eldrich_core
+migration_group: eldrich_gear
 label: 'Gear Types'
 source:
   plugin: csv
-  path: modules/custom/ep_import/data/gear-taxonomy.csv
+  path: modules/custom/ep_import/gear/taxonomy.csv
   header_row_count: 1
   column_names:
     -
@@ -17,6 +17,8 @@ source:
       parent: Parent
     -
       plural: Plural
+    -
+      short: Short
     -
       icon: Icon
     -
@@ -28,13 +30,17 @@ source:
     - parent
 process:
   name: title
-  description:
+  description/value:
     plugin: line_breaker
     source: description
+  description/format:
+    plugin: default_value
+    default_value: basic_html
   vid:
     plugin: default_value
     default_value: gear_type
   field_plural: plural
+  field_short_name: short
   field_icon: icon
   field_source:
     plugin: source_with_page

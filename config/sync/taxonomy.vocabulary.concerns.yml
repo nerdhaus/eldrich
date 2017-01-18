@@ -1,9 +1,0 @@
-uuid: 44c0e4bb-5ff1-4329-a68a-99e74caaaa53
-langcode: en
-status: true
-dependencies: {  }
-name: Concerns
-vid: concerns
-description: 'Memes, business interests, and ideologies'
-hierarchy: 0
-weight: 0

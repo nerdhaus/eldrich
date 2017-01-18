@@ -235,3 +235,4 @@ destination:
 migration_dependencies:
   required:
     - augmentations
+    - gear_types

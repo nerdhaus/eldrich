@@ -225,6 +225,4 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - tables
-    - skills
-    - sources
+    - gear_types

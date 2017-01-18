@@ -211,3 +211,4 @@ migration_dependencies:
     - augmentations
     - weapons
     - minds
+    - gear_types

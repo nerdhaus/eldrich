@@ -189,3 +189,4 @@ migration_dependencies:
   required:
     - augmentations
     - weapons
+    - gear_types

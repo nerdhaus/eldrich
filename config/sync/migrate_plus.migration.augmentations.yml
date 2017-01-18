@@ -177,4 +177,5 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
+    - gear_types
     - weapons

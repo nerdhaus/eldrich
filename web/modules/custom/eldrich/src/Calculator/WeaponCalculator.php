@@ -326,7 +326,8 @@ class WeaponCalculator {
       $item['skill_bonus'] += $weapon->field_skill_bonus->value;
     }
     if(isset(static::$skills)) {
-      if ($skill_info = static::$skills[$item['linked_skill']]) {
+      if (key_exists($item['linked_skill'], static::$skills)) {
+        $skill_info = static::$skills[$item['linked_skill']];
         $item['skill'] = $item['skill_bonus'] + $skill_info['constant']['total'];
         if (!empty($skill_info['specialization'])) {
           if (strpos(strtolower($weapon->label()), strtolower($skill_info['specialization']))) {

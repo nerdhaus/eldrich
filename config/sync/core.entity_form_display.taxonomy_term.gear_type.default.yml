@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.gear_type.field_icon
     - field.field.taxonomy_term.gear_type.field_plural
+    - field.field.taxonomy_term.gear_type.field_short_name
     - field.field.taxonomy_term.gear_type.field_sources
     - taxonomy.vocabulary.gear_type
   module:
@@ -17,28 +18,35 @@ bundle: gear_type
 mode: default
 content:
   description:
-    type: text_textfield
-    weight: 0
+    type: text_textarea
+    weight: 1
     settings:
-      size: 60
       placeholder: ''
+      rows: 5
     third_party_settings: {  }
   field_icon:
-    weight: 33
+    weight: 5
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
   field_plural:
-    weight: 32
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_short_name:
+    weight: 4
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
   field_sources:
-    weight: 34
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -47,14 +55,14 @@ content:
     type: entity_reference_quantity_autocomplete
   name:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 2
     settings: {  }
     third_party_settings: {  }
 hidden: {  }

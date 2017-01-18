@@ -7,20 +7,24 @@ dependencies:
 id: gear_nodes
 label: 'Gear Nodes'
 type: 'canonical_entities:node'
-pattern: 'gear/catalog/[node:title]'
+pattern: '[node:field_gear_type:entity:url:path]/[node:title]'
 selection_criteria:
-  d241a030-3f2c-477f-b0ad-be4fc2774215:
+  d41b6d2c-2512-4a44-8c6d-c1e155755309:
     id: node_type
     bundles:
       armor: armor
+      augmentation: augmentation
       drug: drug
       gear: gear
+      mind: mind
+      morph: morph
       robot: robot
       vehicle: vehicle
+      weapon: weapon
     negate: false
     context_mapping:
       node: node
-    uuid: d241a030-3f2c-477f-b0ad-be4fc2774215
+    uuid: d41b6d2c-2512-4a44-8c6d-c1e155755309
 selection_logic: and
 weight: -5
 relationships: {  }

@@ -123,4 +123,6 @@ process:
       'FALSE': 0
 destination:
   plugin: 'entity:node'
-migration_dependencies: null
+migration_dependencies:
+  required:
+    - gear_types

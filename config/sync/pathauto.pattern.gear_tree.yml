@@ -1,0 +1,23 @@
+uuid: 8ced5e38-23a7-48b7-8b33-8c418bd73613
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: gear_tree
+label: 'Gear Tree'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'gear/[term:parent:parent:field_short_name]/[term:parent:field_short_name]/[term:field_short_name]'
+selection_criteria:
+  9a2fa02f-0d45-4b67-895e-2f066e4cbe2c:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      gear_type: gear_type
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 9a2fa02f-0d45-4b67-895e-2f066e4cbe2c
+selection_logic: and
+weight: -5
+relationships: {  }
