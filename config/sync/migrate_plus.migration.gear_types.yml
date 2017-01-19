@@ -16,8 +16,6 @@ source:
     -
       parent: Parent
     -
-      plural: Plural
-    -
       short: Short
     -
       icon: Icon
@@ -39,7 +37,6 @@ process:
   vid:
     plugin: default_value
     default_value: gear_type
-  field_plural: plural
   field_short_name: short
   field_icon: icon
   field_source:
