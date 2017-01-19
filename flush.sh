@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 drush sql-drop
-mysql -uroot -proot eldrich < /vagrant/initial.sql
+
+if [ -n "$ELDRICH_MYSQL_USER" ]
+then
+  mysql --user="$ELDRICH_MYSQL_USER" --password="$ELDRICH_MYSQL_PASS" eldrich < /vagrant/initial.sql
+else
+  mysql --user="root" --password="root" eldrich < /vagrant/initial.sql
+fi
+
 drush config-import -y
 drush mi --group=eldrich_core
 drush mi --group=eldrich_gear
