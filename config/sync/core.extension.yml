@@ -30,6 +30,7 @@ module:
   eva: 0
   field: 0
   field_group: 0
+  field_redirection: 0
   field_ui: 0
   file: 0
   filter: 0
@@ -55,8 +56,10 @@ module:
   search: 0
   shortcut: 0
   simple_block: 0
+  smart_trim: 0
   subpathauto: 0
   system: 0
+  system_stream_wrapper: 0
   taxonomy: 0
   text: 0
   token: 0

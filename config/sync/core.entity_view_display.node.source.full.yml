@@ -1,0 +1,73 @@
+uuid: 09ef0985-e675-4d81-9a59-8eaebd6be04d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.source.field_code
+    - field.field.node.source.field_cover_art
+    - field.field.node.source.field_description
+    - field.field.node.source.field_home_page
+    - field.field.node.source.field_is_canon
+    - field.field.node.source.field_source_type
+    - field.field.node.source.field_weight
+    - image.style.medium
+    - node.type.source
+  module:
+    - field_redirection
+    - image
+    - text
+    - user
+id: node.source.full
+targetEntityType: node
+bundle: source
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_code:
+    type: string
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_cover_art:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_description:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_home_page:
+    weight: 3
+    label: hidden
+    settings:
+      code: '301'
+      404_if_empty: false
+      page_restrictions: 0
+      pages: ''
+    third_party_settings: {  }
+    type: field_redirection_formatter
+  field_source_type:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+hidden:
+  field_is_canon: true
+  field_weight: true
+  links: true
