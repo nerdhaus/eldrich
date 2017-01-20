@@ -24,30 +24,30 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 0
     settings: {  }
     third_party_settings: {  }
   field_campaign_status:
-    weight: 105
-    label: above
+    weight: 1
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
   field_official_downloads:
-    weight: 107
+    weight: 4
     label: above
     settings: {  }
     third_party_settings: {  }
     type: file_default
   field_players:
-    weight: 108
+    weight: 2
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_resources:
-    weight: 106
+    weight: 3
     label: above
     settings:
       trim_length: 80
@@ -57,13 +57,6 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-  field_shortname:
-    weight: 103
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-  links:
-    weight: 100
-hidden: {  }
+hidden:
+  field_shortname: true
+  links: true

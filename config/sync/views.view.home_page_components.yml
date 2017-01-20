@@ -7,7 +7,6 @@ dependencies:
     - field.storage.node.field_cost
     - field.storage.node.field_creature_type
     - field.storage.node.field_gear_type
-    - field.storage.node.field_sources
     - node.type.armor
     - node.type.augmentation
     - node.type.creature
@@ -23,65 +22,39 @@ dependencies:
     - node.type.weapon
     - taxonomy.vocabulary.gear_type
   content:
-    - 'taxonomy_term:gear_type:01ff160e-d618-4f3c-be36-14354b1a2928'
-    - 'taxonomy_term:gear_type:08b892f8-9b3e-49fb-aa37-6ef9e9f80e61'
-    - 'taxonomy_term:gear_type:17247939-57ec-48e5-a02d-eca3807f2aba'
-    - 'taxonomy_term:gear_type:22f7b874-6fbe-4432-a768-a1bf16e015cb'
-    - 'taxonomy_term:gear_type:2894e63a-3905-499c-97ac-d5fc780d6811'
-    - 'taxonomy_term:gear_type:2b96d54b-56eb-431e-8cb4-f3bcf2c30fb6'
-    - 'taxonomy_term:gear_type:2e1a7493-9068-4b0e-bb7e-852b83c840d5'
-    - 'taxonomy_term:gear_type:2e2e3d3c-2bd2-4d67-a59e-c4e9945d7621'
-    - 'taxonomy_term:gear_type:310c1b0b-317c-44a1-aa19-cb07d28813c4'
-    - 'taxonomy_term:gear_type:31ee07bc-63af-465c-a811-54e693b476fd'
-    - 'taxonomy_term:gear_type:3244c3d5-5ad0-4b01-82da-a3e0cfdc8011'
-    - 'taxonomy_term:gear_type:36115f6e-6e67-443a-9738-882a9aa19c93'
-    - 'taxonomy_term:gear_type:36d32c18-bfe2-406c-a294-b6d23ff5ea06'
-    - 'taxonomy_term:gear_type:42959e4c-bd64-4c8b-8e4f-0e3f88711c10'
-    - 'taxonomy_term:gear_type:43610a65-e0f7-48c2-b7e7-2f9d0bc00ffd'
-    - 'taxonomy_term:gear_type:4674a71f-d279-4a3b-b78b-933b4db9eb36'
-    - 'taxonomy_term:gear_type:4e195cd6-cbf1-4732-b452-1a8372b8bb92'
-    - 'taxonomy_term:gear_type:4e34cefc-c2e2-445d-b69c-23eaa010d40b'
-    - 'taxonomy_term:gear_type:5b0025d3-8102-45e9-8e40-f4ff61ad7815'
-    - 'taxonomy_term:gear_type:5d52f766-90ca-454d-b869-d1b9b5f1d3d9'
-    - 'taxonomy_term:gear_type:6c01d517-ed29-4e78-a5ed-d14f3bc73f9c'
-    - 'taxonomy_term:gear_type:6c252d29-17c4-459a-a97e-936dcb043eaf'
-    - 'taxonomy_term:gear_type:6f581640-a833-417d-affd-a9f15beeebf5'
-    - 'taxonomy_term:gear_type:757da330-936a-4844-bfef-b9cc3307940e'
-    - 'taxonomy_term:gear_type:79160a76-7210-4235-a647-5a300f8b6246'
-    - 'taxonomy_term:gear_type:7ac83786-549c-4c1e-aebe-a8a580ba6966'
-    - 'taxonomy_term:gear_type:7fa444cb-1171-4afa-a8c8-f9fa4ace7c10'
-    - 'taxonomy_term:gear_type:8459adf9-925b-49b2-b70c-658fd9005d4a'
-    - 'taxonomy_term:gear_type:902918e6-44cb-4229-b1af-b1ae600b1d74'
-    - 'taxonomy_term:gear_type:9a012da9-a3e9-4425-8efe-ddaac09da2c1'
-    - 'taxonomy_term:gear_type:a9bad8ba-f6f5-47c2-a67e-925e1e7512f9'
-    - 'taxonomy_term:gear_type:ac97b8f8-26a0-4cab-b65c-8fbb1a10df8f'
-    - 'taxonomy_term:gear_type:b0cb4dd1-9fd5-4884-ad6f-04cb3608d185'
-    - 'taxonomy_term:gear_type:b17cb385-0f75-4c6e-99d3-0f056ac9e510'
-    - 'taxonomy_term:gear_type:b1c543bc-eb66-4fa8-b60a-543f7e6f11d7'
-    - 'taxonomy_term:gear_type:ba54b716-d2dd-46ec-ab85-ceb9f8f10f4e'
-    - 'taxonomy_term:gear_type:bcc7a60d-6223-4f1c-9dde-484e3c6a80f1'
-    - 'taxonomy_term:gear_type:beb92fd2-e525-49b1-a404-a55214765351'
-    - 'taxonomy_term:gear_type:bf3150bf-d39c-45ba-be0d-230a8d7496a9'
-    - 'taxonomy_term:gear_type:c3ad312b-5f44-4568-acf1-d09d17fedc65'
-    - 'taxonomy_term:gear_type:c606ec2e-e267-4237-83e0-9c8129c1c79e'
-    - 'taxonomy_term:gear_type:c8812da5-83e8-4a62-998a-4332b1690d54'
-    - 'taxonomy_term:gear_type:d13e40a0-40e3-41ce-8b8c-f88773368266'
-    - 'taxonomy_term:gear_type:d15c06a2-bf0a-4ae1-b68f-330e11655443'
-    - 'taxonomy_term:gear_type:d3dba5fa-8e6f-4fdf-b7b4-b5de45a686b4'
-    - 'taxonomy_term:gear_type:d9d694a8-af2c-4aa7-b779-bea6d84b86d0'
-    - 'taxonomy_term:gear_type:dfb738e9-c896-410f-8d5a-ef533ccd3943'
-    - 'taxonomy_term:gear_type:e0e3af30-cedc-47fc-ac85-c22ccfc70916'
-    - 'taxonomy_term:gear_type:e2a70fc2-7e9d-4567-9455-2c61ec7e43ed'
-    - 'taxonomy_term:gear_type:e4a5ccef-8c58-4685-a819-2deaef6b6526'
-    - 'taxonomy_term:gear_type:ebf5d72d-42b5-41ce-9d81-a6974773e11e'
-    - 'taxonomy_term:gear_type:ed3b537f-e820-4ea6-a782-e9e526c6f1c1'
-    - 'taxonomy_term:gear_type:f22a8985-e194-4a98-9c17-bf3280d34013'
-    - 'taxonomy_term:gear_type:f3cabdf1-353d-4361-acb2-46787fda6e9c'
-    - 'taxonomy_term:gear_type:fbc9efea-ba9e-45f5-8405-b66ce60923ed'
+    - 'taxonomy_term:gear_type:02b1a438-2260-4ea0-af49-9c25bac7144d'
+    - 'taxonomy_term:gear_type:063650b4-5733-41bb-9bb2-d767ae85fb97'
+    - 'taxonomy_term:gear_type:1205546c-63c7-4f7d-befc-eb8249f583ac'
+    - 'taxonomy_term:gear_type:12211f5a-cc5b-4bb9-961d-0ad091681fda'
+    - 'taxonomy_term:gear_type:199969ea-5ad0-4e20-9c3c-8e3a7df43bff'
+    - 'taxonomy_term:gear_type:20444fde-a17a-4f4f-a701-fbd6744c754b'
+    - 'taxonomy_term:gear_type:4541dd2f-b41b-492a-a26c-5fb223295bcc'
+    - 'taxonomy_term:gear_type:479eb8be-9998-41b0-a3da-a80a0c18d1ac'
+    - 'taxonomy_term:gear_type:570d1ea8-bae2-4a42-b3a5-7ab8ab451332'
+    - 'taxonomy_term:gear_type:6f30b4a9-dbfe-41c0-aba5-b63536bf9d3c'
+    - 'taxonomy_term:gear_type:7624d0d2-9482-46bb-8e3e-9beab61a027a'
+    - 'taxonomy_term:gear_type:8054f86f-38a1-48c3-9854-a93e221f275b'
+    - 'taxonomy_term:gear_type:83f24157-0f12-44f1-9029-44f907d5672e'
+    - 'taxonomy_term:gear_type:856272df-51b7-4f3e-b292-9002b7f3bd31'
+    - 'taxonomy_term:gear_type:864a789b-3d54-49ae-aae9-58577e7b0971'
+    - 'taxonomy_term:gear_type:8f07c38a-9116-4b64-8e06-a119d9285314'
+    - 'taxonomy_term:gear_type:97565afd-a358-444f-acab-6fd99f5f9774'
+    - 'taxonomy_term:gear_type:97681c22-d779-4a8e-8ef3-53b1f8043914'
+    - 'taxonomy_term:gear_type:98c4ff23-cde7-465c-953b-5336b78cc612'
+    - 'taxonomy_term:gear_type:a2c95cf3-6205-4599-ae11-abd6dc93550e'
+    - 'taxonomy_term:gear_type:b07743e6-d004-4f28-8f4a-fea6537c98ea'
+    - 'taxonomy_term:gear_type:bc85defa-b1f8-46a5-88e9-0855848874fd'
+    - 'taxonomy_term:gear_type:c0589b52-0205-4fdf-b10e-2a4599ef5c65'
+    - 'taxonomy_term:gear_type:c577534c-7e90-4033-a12a-dc715d81fac3'
+    - 'taxonomy_term:gear_type:d5bb0450-9f8a-4f2a-ac37-0075468f7de8'
+    - 'taxonomy_term:gear_type:dfc77ec2-c978-4ebf-96c3-f490426d6b6b'
+    - 'taxonomy_term:gear_type:e0e1d073-0fad-4c82-a41e-95856c899f32'
+    - 'taxonomy_term:gear_type:ee1e60b3-e5e7-4a29-811c-82e522dcd1a3'
+    - 'taxonomy_term:gear_type:f9ce46be-a72b-42be-9447-427d548ac30b'
   module:
-    - eldrich
     - entity_reference_quantity
     - node
+    - search
     - taxonomy
     - user
     - verf
@@ -686,73 +659,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_sources:
-          id: field_sources
-          table: node__field_sources
-          field: field_sources
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Source
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: eldrich_citation_formatter
-          settings:
-            link: true
-            location: attribute
-            template: '{{ quantity }})'
-            destination: list
-            length: acronym
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 1
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
       defaults:
         fields: false
         filters: false
@@ -824,48 +730,6 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: contains
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: title_op
-            label: Name
-            description: ''
-            use_operator: false
-            operator: title_op
-            identifier: name
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              game_master: '0'
-              contributor: '0'
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: node
-          entity_field: title
-          plugin_id: string
         term_node_tid_depth:
           id: term_node_tid_depth
           table: node_field_data
@@ -970,6 +834,46 @@ display:
           depth: 3
           entity_type: node
           plugin_id: taxonomy_index_tid_depth
+        keys:
+          id: keys
+          table: node_search_index
+          field: keys
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: optional
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: keys_op
+            label: Filter
+            description: ''
+            use_operator: false
+            operator: keys_op
+            identifier: filter
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              game_master: '0'
+              contributor: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_keywords
       filter_groups:
         operator: AND
         groups:
@@ -1041,7 +945,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_gear_type'
-        - 'config:field.storage.node.field_sources'
   npc_finder:
     display_plugin: block
     id: npc_finder
@@ -1180,73 +1083,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_sources:
-          id: field_sources
-          table: node__field_sources
-          field: field_sources
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Sources
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: eldrich_citation_formatter
-          settings:
-            link: true
-            location: attribute
-            template: '{{ quantity }}'
-            destination: list
-            length: acronym
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 1
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
       defaults:
         fields: false
         filters: false
@@ -1311,48 +1147,6 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: contains
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: title_op
-            label: Name
-            description: ''
-            use_operator: false
-            operator: title_op
-            identifier: name
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              game_master: '0'
-              contributor: '0'
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: node
-          entity_field: title
-          plugin_id: string
         field_creature_type_target_id_verf:
           id: field_creature_type_target_id_verf
           table: node__field_creature_type
@@ -1421,6 +1215,46 @@ display:
             vector: '0'
             vectors: '0'
           plugin_id: verf
+        keys:
+          id: keys
+          table: node_search_index
+          field: keys
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: optional
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: keys_op
+            label: Filter
+            description: ''
+            use_operator: false
+            operator: keys_op
+            identifier: filter
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              game_master: '0'
+              contributor: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_keywords
       filter_groups:
         operator: AND
         groups:
@@ -1447,7 +1281,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_creature_type'
-        - 'config:field.storage.node.field_sources'
         - 'config:views.view.home_page_components'
         - lookup_list
   random_faction:

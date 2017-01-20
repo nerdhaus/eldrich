@@ -30,15 +30,14 @@ class ViewsExposedForm extends FormBase {
     switch ($form['#id']) {
       case 'views-exposed-form-home-page-components-gear-finder':
       case 'views-exposed-form-home-page-components-npc-finder':
-        $form->name->setProperty('title_display', 'invisible');
-        $form->name->setProperty('placeholder', t('Title'));
+        $form->filter->setProperty('title_display', 'invisible');
         $form->cat->setProperty('title_display', 'invisible');
 
-        $form->name->addClass(['input-sm', 'form-control-inline']);
+        $form->filter->addClass(['input-sm', 'form-control-inline']);
         $form->cat->addClass(['input-sm', 'form-control-inline']);
         $form->actions->submit->setButtonSize('btn-sm');
 
-        $form->name->addClass(['col-xs-5', 'col-spread'], $form::WRAPPER);
+        $form->filter->addClass(['col-xs-5', 'col-spread'], $form::WRAPPER);
         $form->cat->addClass(['col-xs-5'], $form::WRAPPER);
         $form->actions->submit->addClass(['col-xs-2'], $form::WRAPPER);
 
