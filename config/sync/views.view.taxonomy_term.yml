@@ -13,6 +13,7 @@ dependencies:
     - node.type.robot
     - node.type.vehicle
     - node.type.weapon
+    - system.menu.main
     - taxonomy.vocabulary.gear_type
   module:
     - node
@@ -353,8 +354,113 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          operator: 'not empty'
+          operator: or
           value: {  }
+          group: 1
+          exposed: false
+          expose:
+            operator_id: field_gear_type_target_id_op
+            label: Type
+            description: ''
+            use_operator: false
+            operator: field_gear_type_target_id_op
+            identifier: type
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              game_master: '0'
+              contributor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: gear_type
+          hierarchy: true
+          error_message: false
+          plugin_id: taxonomy_index_tid
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+      header:
+        entity_taxonomy_term:
+          id: entity_taxonomy_term
+          table: views
+          field: entity_taxonomy_term
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: true
+          target: '{{ raw_arguments.term_node_tid_depth }}'
+          view_mode: full
+          bypass_access: false
+          plugin_id: entity
+      footer: {  }
+      empty: {  }
+      relationships: {  }
+      fields: {  }
+      display_extenders: {  }
+      link_url: ''
+      link_display: page_1
+      title: 'Gear Catalog'
+    cache_metadata:
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      max-age: -1
+      tags: {  }
+  page_1:
+    id: page_1
+    display_title: 'Gear Type'
+    display_plugin: page
+    position: 1
+    display_options:
+      query:
+        type: views_query
+        options: {  }
+      path: taxonomy/term/%
+      display_extenders: {  }
+      display_description: ''
+      filters:
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
           group: 1
           exposed: false
           expose:
@@ -382,46 +488,228 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          type: textfield
-          limit: true
-          vid: gear_type
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
-      style:
-        type: default
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          uses_fields: false
-      row:
-        type: 'entity:node'
-        options:
-          relationship: none
-          view_mode: teaser
-      header:
-        entity_taxonomy_term:
-          id: entity_taxonomy_term
-          table: views
-          field: entity_taxonomy_term
+          plugin_id: language
+          entity_type: node
+          entity_field: langcode
+        type:
+          id: type
+          table: node_field_data
+          field: type
           relationship: none
           group_type: group
           admin_label: ''
-          empty: true
-          tokenize: true
-          target: '{{ raw_arguments.tid }}'
-          view_mode: full
-          bypass_access: false
-          plugin_id: entity
-      footer: {  }
-      empty: {  }
-      relationships: {  }
-      fields: {  }
-      display_extenders: {  }
-      link_url: ''
-      link_display: page_1
+          operator: in
+          value:
+            armor: armor
+            augmentation: augmentation
+            creature: creature
+            gear: gear
+            mind: mind
+            morph: morph
+            robot: robot
+            vehicle: vehicle
+            weapon: weapon
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+        keys:
+          id: keys
+          table: node_search_index
+          field: keys
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: optional
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: keys_op
+            label: Filter
+            description: ''
+            use_operator: false
+            operator: keys_op
+            identifier: filter
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              game_master: '0'
+              contributor: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_keywords
+        field_cost_target_id:
+          id: field_cost_target_id
+          table: node__field_cost
+          field: field_cost_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: 'not empty'
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: numeric
+        field_gear_type_target_id:
+          id: field_gear_type_target_id
+          table: node__field_gear_type
+          field: field_gear_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: 'not empty'
+          value: {  }
+          group: 1
+          exposed: false
+          expose:
+            operator_id: field_gear_type_target_id_op
+            label: Type
+            description: ''
+            use_operator: false
+            operator: field_gear_type_target_id_op
+            identifier: type
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              game_master: '0'
+              contributor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: gear_type
+          hierarchy: true
+          error_message: false
+          plugin_id: taxonomy_index_tid
+      defaults:
+        filters: false
+        filter_groups: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       contexts:
         - 'languages:language_interface'
@@ -432,25 +720,91 @@ display:
         - user.permissions
       max-age: -1
       tags: {  }
-  page_1:
-    id: page_1
-    display_title: 'Gear Type'
+  page_2:
     display_plugin: page
-    position: 1
+    id: page_2
+    display_title: Gear
+    position: 2
     display_options:
-      query:
-        type: views_query
-        options: {  }
-      path: taxonomy/term/%
       display_extenders: {  }
       display_description: ''
+      path: gear
+      menu:
+        type: normal
+        title: Gear
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 0
+        context: '0'
+        menu_name: main
+      header: {  }
+      defaults:
+        header: false
+        arguments: false
+        style: false
+        row: false
+        sorts: false
+      arguments: {  }
+      style:
+        type: default
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+      sorts:
+        title_1:
+          id: title_1
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Name
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+        field_gear_type_target_id:
+          id: field_gear_type_target_id
+          table: node__field_gear_type
+          field: field_gear_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Type
+          plugin_id: standard
+        field_cost_target_id:
+          id: field_cost_target_id
+          table: node__field_cost
+          field: field_cost_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Cost
+          plugin_id: standard
     cache_metadata:
+      max-age: -1
       contexts:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
         - user
         - 'user.node_grants:view'
         - user.permissions
-      max-age: -1
       tags: {  }

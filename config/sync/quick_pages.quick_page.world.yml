@@ -1,3 +1,7 @@
+uuid: ccebd218-6768-40bd-904c-66ef5d78e67e
+langcode: en
+status: true
+dependencies: {  }
 id: world
 label: World
 path: /world

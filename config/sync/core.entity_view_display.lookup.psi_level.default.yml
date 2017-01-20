@@ -15,18 +15,10 @@ mode: default
 content:
   field_description:
     weight: -4
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_weight:
-    weight: -3
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
   title:
     label: hidden
     type: string
@@ -35,4 +27,5 @@ content:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
+  field_weight: true
   id: true

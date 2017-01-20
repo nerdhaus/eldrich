@@ -3,10 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.lookup.field_description
     - field.storage.node.field_action_type
     - field.storage.node.field_code
     - field.storage.node.field_cp_cost
+    - field.storage.node.field_derangement_level
     - field.storage.node.field_description
     - field.storage.node.field_ego_trait
     - field.storage.node.field_is_active
@@ -17,6 +17,7 @@ dependencies:
     - field.storage.node.field_psi_skill
     - field.storage.node.field_skill_type
     - field.storage.node.field_sleight_duration
+    - field.storage.node.field_sleight_level
     - field.storage.node.field_sleight_range
     - field.storage.node.field_special_effect
     - field.storage.node.field_strain
@@ -751,7 +752,7 @@ display:
           settings:
             format: custom
             format_custom_true: 'Core abilities'
-            format_custom_false: 'Secondary and calculated abilities '
+            format_custom_false: 'Secondary and calculated stats '
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -769,6 +770,7 @@ display:
         relationships: false
         style: false
         row: false
+        title: false
       sorts:
         field_weight_value:
           id: field_weight_value
@@ -817,7 +819,7 @@ display:
               align: views-align-right
               separator: ''
               empty_column: false
-              responsive: priority-medium
+              responsive: priority-low
             field_description:
               sortable: false
               default_sort_order: asc
@@ -837,6 +839,7 @@ display:
       row:
         type: fields
         options: {  }
+      title: Abilities
     cache_metadata:
       max-age: 0
       contexts:
@@ -1979,7 +1982,7 @@ display:
         options:
           grouping:
             -
-              field: field_description
+              field: field_sleight_level
               rendered: true
               rendered_strip: false
           row_class: ''
@@ -1997,7 +2000,7 @@ display:
             field_sleight_range: field_sleight_range
             field_psi_skill: field_psi_skill
             field_strain: field_strain
-            field_description: field_description
+            field_sleight_level: field_sleight_level
           info:
             title:
               sortable: false
@@ -2048,7 +2051,7 @@ display:
               separator: ''
               empty_column: false
               responsive: priority-low
-            field_description:
+            field_sleight_level:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -2494,13 +2497,13 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_description:
-          id: field_description
-          table: lookup__field_description
-          field: field_description
-          relationship: field_sleight_level
+        field_sleight_level:
+          id: field_sleight_level
+          table: node__field_sleight_level
+          field: field_sleight_level
+          relationship: none
           group_type: group
-          admin_label: Level
+          admin_label: ''
           label: ''
           exclude: true
           alter:
@@ -2542,10 +2545,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: text_default
-          settings: {  }
-          group_column: value
+          click_sort_column: target_id
+          type: entity_reference_entity_view
+          settings:
+            view_mode: default
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -2610,11 +2614,11 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.lookup.field_description'
         - 'config:field.storage.node.field_action_type'
         - 'config:field.storage.node.field_is_active'
         - 'config:field.storage.node.field_psi_skill'
         - 'config:field.storage.node.field_sleight_duration'
+        - 'config:field.storage.node.field_sleight_level'
         - 'config:field.storage.node.field_sleight_range'
         - 'config:field.storage.node.field_strain'
   page_5:
@@ -2706,7 +2710,7 @@ display:
         options:
           grouping:
             -
-              field: field_description_1
+              field: field_derangement_level
               rendered: true
               rendered_strip: false
           row_class: ''
@@ -2719,7 +2723,7 @@ display:
           columns:
             title: title
             field_description: field_description
-            field_description_1: field_description_1
+            field_derangement_level: field_derangement_level
           info:
             title:
               sortable: false
@@ -2735,7 +2739,7 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            field_description_1:
+            field_derangement_level:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -2882,11 +2886,11 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_description_1:
-          id: field_description_1
-          table: lookup__field_description
-          field: field_description
-          relationship: field_derangement_level
+        field_derangement_level:
+          id: field_derangement_level
+          table: node__field_derangement_level
+          field: field_derangement_level
+          relationship: none
           group_type: group
           admin_label: ''
           label: ''
@@ -2918,7 +2922,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h3
+          element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -2930,10 +2934,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: text_default
-          settings: {  }
-          group_column: value
+          click_sort_column: target_id
+          type: entity_reference_entity_view
+          settings:
+            view_mode: default
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -2989,5 +2994,5 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.lookup.field_description'
+        - 'config:field.storage.node.field_derangement_level'
         - 'config:field.storage.node.field_description'
