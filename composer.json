@@ -68,7 +68,8 @@
         "drupal/remote_stream_wrapper": "^1.0",
         "drupal/views_advanced_routing": "^1.0@RC",
         "drupal/simple_block": "1.x-dev",
-        "drupal/default_content": "^1.0@alpha"
+        "drupal/default_content": "^1.0@alpha",
+        "drupal/field_redirection": "2.x-dev"
     },
     "require-dev": {
         "behat/mink": "~1.7",
