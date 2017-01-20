@@ -115,8 +115,8 @@ class EldrichCitationFormatter extends EntityReferenceQuantityLabelFormatter {
         if ($destination == 'remote' && !empty($entity->field_home_page)) {
           $uri = $entity->field_home_page->uri;
         }
-        elseif ($destination == 'list') {
-          $uri = Url::fromRoute('view.bestiary.page_5', [], ['fragment' => $entity->field_code->value]);
+        elseif (($destination == 'list') && ($entity->bundle() == 'source')) {
+          $uri = Url::fromRoute('view.world.books', [], ['fragment' => $entity->field_code->value]);
         }
         else {
           $uri = UrL::fromRoute('entity.node.canonical', ['node' => $entity->id()]);

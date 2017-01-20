@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.npc.field_equipped_armor
     - field.field.node.npc.field_equipped_weapons
     - field.field.node.npc.field_gear
+    - field.field.node.npc.field_headshot
     - field.field.node.npc.field_identity
     - field.field.node.npc.field_morph
     - field.field.node.npc.field_motivations
@@ -17,8 +18,8 @@ dependencies:
     - field.field.node.npc.field_sleights
     - field.field.node.npc.field_sources
     - field.field.node.npc.field_stats
-    - field.field.node.npc.field_threat
     - field.field.node.npc.field_traits
+    - image.style.thumbnail
     - node.type.npc
   module:
     - entity_reference_override
@@ -26,6 +27,7 @@ dependencies:
     - ep_skill_reference
     - ep_statblock
     - field_group
+    - image
     - inline_entity_form
     - path
     - text
@@ -33,11 +35,12 @@ third_party_settings:
   field_group:
     group_gear:
       children:
-        - field_gear
-        - field_equipped_weapons
         - field_equipped_armor
+        - field_equipped_weapons
+        - field_gear
+        - field_owned_blueprints
       parent_name: ''
-      weight: 12
+      weight: 14
       format_type: details
       format_settings:
         open: false
@@ -52,7 +55,7 @@ third_party_settings:
         - field_traits
         - field_sleights
       parent_name: ''
-      weight: 9
+      weight: 11
       format_type: details
       format_settings:
         label: Abilities
@@ -68,18 +71,18 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 5
     settings: {  }
     third_party_settings: {  }
   field_description:
-    weight: 7
+    weight: 9
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
   field_equipped_armor:
-    weight: 17
+    weight: 18
     settings:
       match_operator: CONTAINS
       form_mode: default
@@ -93,7 +96,7 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_complex
   field_equipped_weapons:
-    weight: 16
+    weight: 19
     settings:
       match_operator: CONTAINS
       form_mode: default
@@ -107,15 +110,22 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_complex
   field_gear:
-    weight: 15
+    weight: 20
     settings:
       match_operator: CONTAINS
       size: '60'
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
+  field_headshot:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
   field_identity:
-    weight: 11
+    weight: 13
     settings:
       form_mode: default
       label_singular: ''
@@ -126,7 +136,7 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_simple
   field_morph:
-    weight: 10
+    weight: 12
     settings:
       form_mode: default
       label_singular: ''
@@ -137,14 +147,14 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_simple
   field_motivations:
-    weight: 28
+    weight: 2
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
   field_owned_blueprints:
-    weight: 27
+    weight: 21
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -159,7 +169,7 @@ content:
     third_party_settings: {  }
     type: string_textfield
   field_roleplay_notes:
-    weight: 8
+    weight: 10
     settings:
       rows: 5
       placeholder: ''
@@ -179,7 +189,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_sources:
-    weight: 26
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -192,12 +202,6 @@ content:
       display_style: all
     third_party_settings: {  }
     type: stat_block_table
-  field_threat:
-    weight: 29
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
   field_traits:
     weight: 9
     settings:
@@ -208,20 +212,20 @@ content:
     type: entity_reference_override_autocomplete
   path:
     type: path
-    weight: 6
+    weight: 8
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 6
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 7
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -232,7 +236,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60

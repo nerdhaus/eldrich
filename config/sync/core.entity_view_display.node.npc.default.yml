@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.npc.field_equipped_armor
     - field.field.node.npc.field_equipped_weapons
     - field.field.node.npc.field_gear
+    - field.field.node.npc.field_headshot
     - field.field.node.npc.field_identity
     - field.field.node.npc.field_morph
     - field.field.node.npc.field_motivations
@@ -17,12 +18,12 @@ dependencies:
     - field.field.node.npc.field_sleights
     - field.field.node.npc.field_sources
     - field.field.node.npc.field_stats
-    - field.field.node.npc.field_threat
     - field.field.node.npc.field_traits
     - node.type.npc
   module:
     - eldrich
     - entity_reference_override
+    - image
     - text
     - user
 id: node.npc.default
@@ -44,6 +45,14 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
+  field_headshot:
+    weight: 13
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   field_morph:
     weight: 4
     label: inline
@@ -97,14 +106,6 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
-  field_threat:
-    weight: 11
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
   field_traits:
     weight: 7
     label: inline

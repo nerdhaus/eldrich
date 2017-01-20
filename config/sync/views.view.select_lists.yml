@@ -7,9 +7,11 @@ dependencies:
     - field.storage.node.field_linked_aptitude
     - node.type.armor
     - node.type.augmentation
+    - node.type.campaign
     - node.type.creature
     - node.type.drug
     - node.type.gear
+    - node.type.inspiration
     - node.type.mind
     - node.type.morph
     - node.type.robot
@@ -1462,59 +1464,26 @@ display:
           entity_type: node
           entity_field: created
           plugin_id: date
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: standard
       defaults:
         sorts: false
         fields: false
         filters: false
         filter_groups: false
       fields:
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          entity_type: node
-          entity_field: title
-          label: ''
-          alter:
-            alter_text: false
-            make_link: false
-            absolute: false
-            trim: false
-            word_boundary: false
-            ellipsis: false
-            strip_tags: false
-            html: false
-          hide_empty: false
-          empty_zero: false
-          settings:
-            link_to_entity: true
-          plugin_id: field
-          relationship: none
-          group_type: group
-          admin_label: ''
-          exclude: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         type:
           id: type
           table: node_field_data
@@ -1526,7 +1495,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '— {{ type }}'
+            text: '{{ type }}:'
             make_link: false
             path: ''
             absolute: false
@@ -1580,6 +1549,53 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: field
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          label: ''
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            trim: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            html: false
+          hide_empty: false
+          empty_zero: false
+          settings:
+            link_to_entity: true
+          plugin_id: field
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exclude: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       filters:
         status:
           value: '1'
@@ -1601,6 +1617,8 @@ display:
           admin_label: ''
           operator: in
           value:
+            campaign: campaign
+            inspiration: inspiration
             source: source
           group: 1
           exposed: false

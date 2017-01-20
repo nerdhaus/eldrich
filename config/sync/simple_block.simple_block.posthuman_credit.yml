@@ -1,0 +1,11 @@
+uuid: 63b23435-1d3f-416a-9b48-ec1e979d5635
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+id: posthuman_credit
+title: 'Posthuman Studios'
+content:
+  value: "<p>Eclipse Phase is a trademark of <a href=\"http://posthumanstudios.com\">Posthuman Studios, LLC</a>. Unless otherwise noted, text on this site is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unsupported License.</p>\r\n"
+  format: basic_html
