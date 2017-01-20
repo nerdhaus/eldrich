@@ -7,16 +7,16 @@ dependencies:
 id: campaign_nodes
 label: 'Campaign nodes'
 type: 'canonical_entities:node'
-pattern: 'games/[node:field_short_name]'
+pattern: 'games/[node:field_shortname]'
 selection_criteria:
-  db00557e-bd3c-4935-b1f7-eac1fd135fe0:
+  86853a5e-1f32-4819-9f22-52ebf3e72790:
     id: node_type
     bundles:
       campaign: campaign
     negate: false
     context_mapping:
       node: node
-    uuid: db00557e-bd3c-4935-b1f7-eac1fd135fe0
+    uuid: 86853a5e-1f32-4819-9f22-52ebf3e72790
 selection_logic: and
 weight: -7
 relationships: {  }

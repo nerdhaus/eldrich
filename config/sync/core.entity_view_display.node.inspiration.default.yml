@@ -23,7 +23,7 @@ content:
     third_party_settings: {  }
   field_resources:
     weight: 0
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false

@@ -37,7 +37,7 @@ class ViewsExposedForm extends FormBase {
         $form->cat->addClass(['input-sm', 'form-control-inline']);
         $form->actions->submit->setButtonSize('btn-sm');
 
-        $form->filter->addClass(['col-xs-5', 'col-spread'], $form::WRAPPER);
+        $form->filter->addClass(['col-xs-5', 'col-left-spread'], $form::WRAPPER);
         $form->cat->addClass(['col-xs-5'], $form::WRAPPER);
         $form->actions->submit->addClass(['col-xs-2'], $form::WRAPPER);
 

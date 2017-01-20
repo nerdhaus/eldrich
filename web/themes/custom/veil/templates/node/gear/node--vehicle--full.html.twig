@@ -6,7 +6,7 @@
  * - content.field_linked_skill:
  */
 #}
-{% extends "../chars/node--creature--full.html.twig" %}
+{% extends "@veil/node/chars/node--creature--full.html.twig" %}
 {% block callout_content %}
   {{ parent() }}
   {% if content.field_stats|field_value %}<p>Durability: {{ content.field_stats|field_raw('dur') }}</p>{% endif %}

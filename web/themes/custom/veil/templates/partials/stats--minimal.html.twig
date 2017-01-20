@@ -4,7 +4,7 @@
   {% for property_group in properties %}
     <thead>
       <tr>
-        {% for property in properties %}
+        {% for property in property_group %}
           <th>{{ property|upper }}</th>
         {% endfor %}
       </tr>

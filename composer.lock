@@ -282,16 +282,16 @@
         },
         {
             "name": "consolidation/annotated-command",
-            "version": "2.2.2",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/annotated-command.git",
-                "reference": "1f1d92807f72901e049e9df048b412c3bc3652c9"
+                "reference": "ee8e05fb0d9bdb09beb91aab781956669a5705b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/1f1d92807f72901e049e9df048b412c3bc3652c9",
-                "reference": "1f1d92807f72901e049e9df048b412c3bc3652c9",
+                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/ee8e05fb0d9bdb09beb91aab781956669a5705b2",
+                "reference": "ee8e05fb0d9bdb09beb91aab781956669a5705b2",
                 "shasum": ""
             },
             "require": {
@@ -330,7 +330,7 @@
                 }
             ],
             "description": "Initialize Symfony Console commands from annotated command class methods.",
-            "time": "2016-12-16T01:23:33+00:00"
+            "time": "2017-01-19T20:32:55+00:00"
         },
         {
             "name": "consolidation/output-formatters",
@@ -3178,7 +3178,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/remote_stream_wrapper-8.x-1.0.zip",
-                "reference": "8.x-1.0",
+                "reference": null,
                 "shasum": "442094c0a6c097b5d7d757a9c17a6006f2618caa"
             },
             "require": {
@@ -3470,7 +3470,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/system_stream_wrapper-8.x-1.0-alpha1.zip",
-                "reference": "8.x-1.0-alpha1",
+                "reference": null,
                 "shasum": "4ae3eb057d4669a547793f75aa62a8f48bcb4cc8"
             },
             "require": {
@@ -3820,7 +3820,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/views_advanced_routing-8.x-1.0-rc2.zip",
-                "reference": "8.x-1.0-rc2",
+                "reference": null,
                 "shasum": "1ad13a750169ad7d246ca7d67a5dc8e7426c6626"
             },
             "require": {
