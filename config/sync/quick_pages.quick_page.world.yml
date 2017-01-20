@@ -1,0 +1,11 @@
+id: world
+label: World
+path: /world
+title: ''
+theme: ''
+display_variant:
+  id: ''
+main_content_provider:
+  id: empty_page
+access:
+  id: none
