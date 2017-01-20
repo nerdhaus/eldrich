@@ -31,9 +31,9 @@ Subdual,G,damage_type,5,"A subdued opponent is temporarily restrained or immobil
 Payload,D,damage_type,6,"Payload effects deliver a given substance (like a toxin, a drug, or a chemical) to the target on impact.",
 Melee,M,damage_type,7,"Melee damage is (by definition) kinetic; however, melee attacks also receive a bonus equivalent to the attacker’s SOM / 10.",
 Psi,X,damage_type,8,Psi damage is caused by offensive psi sleights like Psychic Stab.,
-Minor,,derangement_magnitude,1,Derangements are temporary mental conditions that result from traumas.,
-Moderate,,derangement_magnitude,2,Derangements are temporary mental conditions that result from traumas.,
-Major,,derangement_magnitude,3,Derangements are temporary mental conditions that result from traumas.,
+Minor,,derangement_magnitude,1,Minor derangements are temporary mental conditions that result from traumas.,
+Moderate,,derangement_magnitude,2,"Moderate derangements result from intense or ongoing trauma. They’re incurred when a character sustains two traumas, or sustains one trauma before an existing one can be healed. ",
+Major,,derangement_magnitude,3,Major derangements are serious mental impairments. They’re incurred when a character accumulates three traumas. ,
 Disorder,,derangement_magnitude,4,"Disorders reflect more permanent madness. In this case, “permanent” does not necessarily mean forever, but the condition is ongoing until the character receives lengthy and effective psychiatric help. Disorders are inflicted whenever a character accumulates 4 traumas. The gamemaster and player should choose a disorder that fits the situation and character.",
 Organization,,faction_type,0,A non-government organization with distinct goals and identity,
 Political Bloc,,faction_type,1,"A political faction, government, or alliance",
@@ -110,7 +110,7 @@ Gamma,,psi_level,2,"Psi-gamma sleights deal with contacting (reading and communi
 Most psi-gamma use is handled as an Opposed Test between the async and the target (EP p. 222). ",
 Epsilon,,psi_level,3,"Psi-epsilon is available to exsurgents with the Psi trait at Level 3. This subset of psi involves abilities that can affect the underlying physical nature of the universe, creating localized reality-altering effects. Psi manipulation on this level is extremely dangerous and should have the potential of disastrous consequences, given that these manipulations violate fundamental laws of nature and sometimes create paradoxes between the forces that glue the universe together. Gamemasters are also encouraged to treat critical failures as appropriately critical.
 
-Given these factors, psi-epsilon should only be accessible to powerful adversaries and used as a gamemaster tool with extreme precaution. The exact mechanics of psi-epsilon sleights are left wide open, for whatever use the gamemaster can dream of. Their intent is to be more cinematic than mechanical, so Given these factors, psi-epsilon should only be accessible to powerful adversaries and used as a gamemaster tool with extreme precaution. The exact mechanics of psi-epsilon sleights are left wide open, for whatever use the gamemaster can dream of. Their intent is to be more cinematic than mechanical, so 
+Given these factors, psi-epsilon should only be accessible to powerful adversaries and used as a gamemaster tool with extreme precaution. The exact mechanics of psi-epsilon sleights are left wide open, for whatever use the gamemaster can dream of. Their intent is to be more cinematic than mechanical, so Given these factors, psi-epsilon should only be accessible to powerful adversaries and used as a gamemaster tool with extreme precaution. The exact mechanics of psi-epsilon sleights are left wide open, for whatever use the gamemaster can dream of. Their intent is to be more cinematic than mechanical.
 
 At the gamemaster’s discretion, simply observing psi-epsilon sleights in action may inflict 1d10 + 2 mental stress on a character (EP p. 214). ",
 Self,,psi_range,1,These sleights only affect the async.,

@@ -17,7 +17,7 @@ third_party_settings:
 id: views_block__home_page_components_npc_finder
 theme: veil
 region: support
-weight: -9
+weight: -7
 provider: null
 plugin: 'views_block:home_page_components-npc_finder'
 settings:

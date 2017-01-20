@@ -7,6 +7,13 @@ eldrich.stats:
   weight: 100
   menu_name: main
   expanded: true
+eldrich.gear:
+  title: 'Gear'
+  description: 'A catalog of gear for your EP characters'
+  route_name: quick_pages.gear
+  weight: 120
+  menu_name: main
+  expanded: true
 eldrich.world:
   title: 'World'
   description: 'The world of Eclipse Phase'

@@ -1,0 +1,22 @@
+uuid: 53c2c890-e571-47c0-a500-e52116ae8b84
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: derangement_nodes
+label: 'Derangement Nodes'
+type: 'canonical_entities:node'
+pattern: 'stats/trauma/[node:title]'
+selection_criteria:
+  bdfbbc04-0a61-4f3c-92d4-94d650a70a23:
+    id: node_type
+    bundles:
+      derangement: derangement
+    negate: false
+    context_mapping:
+      node: node
+    uuid: bdfbbc04-0a61-4f3c-92d4-94d650a70a23
+selection_logic: and
+weight: 3
+relationships: {  }

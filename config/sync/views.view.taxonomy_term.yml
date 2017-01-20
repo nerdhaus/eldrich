@@ -22,9 +22,9 @@ dependencies:
 _core:
   default_config_hash: Gy5PaLdfFhtFSRqJxV-DBTF5AocKgNA2CsCNNEbvx4c
 id: taxonomy_term
-label: 'Taxonomy term'
+label: 'Gear Categories'
 module: taxonomy
-description: 'Content belonging to a certain taxonomy term.'
+description: 'Lists gear tagged with specific gear types'
 tag: default
 base_table: node_field_data
 base_field: nid
@@ -453,62 +453,4 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       max-age: -1
-      tags: {  }
-  page_2:
-    display_plugin: page
-    id: page_2
-    display_title: 'Gear Overview'
-    position: 4
-    display_options:
-      display_extenders: {  }
-      display_description: ''
-      path: gear
-      arguments: {  }
-      defaults:
-        arguments: false
-        header: false
-        filters: true
-        filter_groups: true
-        title: false
-        sorts: false
-      header: {  }
-      title: 'Gear Catalog'
-      sorts:
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: true
-          expose:
-            label: Name
-          entity_type: node
-          entity_field: title
-          plugin_id: standard
-        field_cost_target_id:
-          id: field_cost_target_id
-          table: node__field_cost
-          field: field_cost_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: true
-          expose:
-            label: Cost
-          plugin_id: standard
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - 'url.query_args:sort_by'
-        - 'url.query_args:sort_order'
-        - user
-        - 'user.node_grants:view'
-        - user.permissions
       tags: {  }

@@ -51,7 +51,6 @@
         "drupal/metatag": "^1.0@beta",
         "drupal/block_visibility_groups": "^1.1",
         "drupal/quick_pages": "^1.0@alpha",
-        "drupal/config_update": "^1.2",
         "drupal/block_class": "^1.0@alpha",
         "drupal/twig_field_value": "^1.1",
         "drupal/ief_table_view_mode": "1.x-dev",
@@ -64,7 +63,12 @@
         "drupal/menu_trail_by_path": "^1.1",
         "drupal/eva": "^1.0@RC",
         "drupal/field_tools": "1.x-dev",
-        "drupal/subpathauto": "^1.0@beta"
+        "drupal/subpathauto": "^1.0@beta",
+        "drupal/system_stream_wrapper": "^1.0@alpha",
+        "drupal/remote_stream_wrapper": "^1.0",
+        "drupal/views_advanced_routing": "^1.0@RC",
+        "drupal/simple_block": "1.x-dev",
+        "drupal/default_content": "^1.0@alpha"
     },
     "require-dev": {
         "behat/mink": "~1.7",
