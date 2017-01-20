@@ -7,8 +7,8 @@ dependencies:
     - field.field.node.inspiration.field_resources
     - node.type.inspiration
   module:
-    - link
     - text
+    - url_embed
     - user
 id: node.inspiration.default
 targetEntityType: node
@@ -24,13 +24,8 @@ content:
   field_resources:
     weight: 0
     label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+    settings: {  }
     third_party_settings: {  }
-    type: link
+    type: url_embed
 hidden:
   links: true

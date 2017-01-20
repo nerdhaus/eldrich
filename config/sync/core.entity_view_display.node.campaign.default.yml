@@ -12,9 +12,9 @@ dependencies:
     - node.type.campaign
   module:
     - file
-    - link
     - options
     - text
+    - url_embed
     - user
 id: node.campaign.default
 targetEntityType: node
@@ -38,7 +38,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: file_default
+    type: file_table
   field_players:
     weight: 2
     label: above
@@ -49,14 +49,9 @@ content:
   field_resources:
     weight: 3
     label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+    settings: {  }
     third_party_settings: {  }
-    type: link
+    type: url_embed
 hidden:
   field_shortname: true
   links: true
