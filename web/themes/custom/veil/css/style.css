@@ -100,3 +100,10 @@ span.skill-combat {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
+/* Don't print link hrefs */
+@media print {
+  a[href]:after {
+    content: none
+  }
+}

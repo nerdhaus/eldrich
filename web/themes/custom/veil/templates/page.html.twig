@@ -62,7 +62,7 @@
   {% block navbar %}
     {%
       set navbar_classes = [
-        'navbar',
+        'navbar', 'hidden-print',
         theme.settings.navbar_inverse ? 'navbar-inverse' : 'navbar-default',
         theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
       ]
@@ -174,7 +174,7 @@
 
 {% if page.footer %}
   {% block footer %}
-    <footer class="footer {{ container }}" role="contentinfo">
+    <footer class="footer hidden-print {{ container }}" role="contentinfo">
       <div class="row">{{ page.footer }}</div>
     </footer>
   {% endblock %}
