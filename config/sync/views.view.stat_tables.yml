@@ -472,8 +472,26 @@ display:
           expose:
             label: ''
       title: 'Basic Abilities'
-      header: {  }
-      footer: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: ''
+            format: basic_html
+          plugin_id: text
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          plugin_id: text
       empty: {  }
       relationships: {  }
       arguments: {  }
@@ -751,8 +769,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: 'Core abilities'
-            format_custom_false: 'Secondary and calculated stats '
+            format_custom_true: Aptitudes
+            format_custom_false: 'Character Stats'
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -771,6 +789,7 @@ display:
         style: false
         row: false
         title: false
+        header: false
       sorts:
         field_weight_value:
           id: field_weight_value
@@ -840,6 +859,20 @@ display:
         type: fields
         options: {  }
       title: Abilities
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "Aptitudes are the core skills that every character has by default. They are the foundation on which learned skills are built. Aptitudes are purchased during character creation and rate between 1 and 30, with 10 being average for a baseline unmodi ed human. They represent the ingrained characteristics and talents that your character has developed from birth and stick with you even when you change morphs—though some morphs may modify your aptitude ratings.\n\nYour character’s other stats measure several characteristics that are important to game play: Initiative, Speed, Durability, Wound Threshold, Lucidity, Trauma Threshold, and Moxie. Some of these stats are inherent to your character’s ego, others are influenced or determined by morph."
+            format: basic_html
+          plugin_id: text
     cache_metadata:
       max-age: 0
       contexts:
@@ -869,7 +902,7 @@ display:
         context: '0'
         menu_name: main
       display_description: ''
-      title: 'Trainable Skills'
+      title: 'Learned Skills'
       defaults:
         title: false
         filters: false
@@ -878,6 +911,7 @@ display:
         style: false
         row: false
         fields: false
+        header: false
       filters:
         status:
           value: '1'
@@ -1328,6 +1362,20 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "Learned skills encompass a wide range of specialties and education, from combat training to negotiating to astrophysics (see Skill List, p. 176, for a complete list). Learned skills range in rating from 1 to 99, with an average proficiency being 50. Each learned skill is linked to an aptitude, which represents the underlying competency in which the skill is based. When a learned skill is purchased (either during character generation or advancement), it is bought starting at the rating of the linked aptitude and then raised from there. If the linked aptitude is raised or modi ed, all skills built off it are modi ed appropriately as well.\n\nDepending on your background and faction, you may receive some starting skills for free during character creation. Like aptitudes, learned skills stay with the character even when they change morphs, though certain morphs, implants, and other factors may sometimes modify your skill rating. If you lack a particular skill called for by a test, in most cases you can default to the linked aptitude for the test (see Defaulting: Untrained Skill Use, p. 116).\n\nSpecializations represent an area of concentration and focus in a particular learned skill. A character who learns a specialization is one who not only grasps the basic tenets of that skill, but has trained hard to excel in one particular aspect of that skill’s field. Specializations apply a +10 modifier when the character utilizes that skill in the area of specialization."
+            format: basic_html
+          plugin_id: text
     cache_metadata:
       max-age: 0
       contexts:
@@ -1368,6 +1416,7 @@ display:
         fields: false
         sorts: false
         relationships: false
+        header: false
       filters:
         status:
           value: '1'
@@ -1462,7 +1511,7 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: priority-medium
+              responsive: priority-low
             field_action_type:
               sortable: false
               default_sort_order: asc
@@ -1483,7 +1532,7 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: priority-medium
+              responsive: priority-low
             field_psi_skill:
               sortable: false
               default_sort_order: asc
@@ -2044,6 +2093,20 @@ display:
           admin_label: 'field_sleight_level: Lookup Table'
           required: false
           plugin_id: standard
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: 'In Eclipse Phase, psi is considered a special cognitive condition resulting from infection by the mutant—and hopefully otherwise benign—Watts-MacLeod strain of the exsurgent virus (p. 367). This plague modifies the victim’s mind, conferring special abilities. These abilities are inherent to the brain’s architecture and are copied when the mind is uploaded, allowing the character to retain their psi abilities when changing from morph to morph.'
+            format: basic_html
+          plugin_id: text
     cache_metadata:
       max-age: 0
       contexts:
@@ -2086,6 +2149,7 @@ display:
         style: false
         row: false
         fields: false
+        header: false
       filters:
         status:
           value: '1'
@@ -2599,6 +2663,20 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "Traits include a range of inherent qualities and features that help define your character. Some traits are positive, in that they give your character a bonus to certain stats, skills, or tests, or otherwise give them an edge in certain situations. Others are negative, in that they impair your abilities or occasionally create a glitch in your plans. Some traits apply to a character’s ego, staying with them from body to body, while others only apply to a character’s morph.\n\nTraits are purchased during character generation. Positive traits cost customization points (CP), while negative traits give you extra CP to spend on other things (see Traits, p. 145). The maximum number of CP you may spend on traits is 50, while the maximum you may gain from negative traits is 50. In rare circumstances—and only with gamemaster approval— traits may be purchased, bought off, or inflicted during gameplay (see Gaining/Losing Traits, p. 153)."
+            format: basic_html
+          plugin_id: text
     cache_metadata:
       max-age: 0
       contexts:
@@ -2630,7 +2708,7 @@ display:
         context: '0'
         menu_name: main
       display_description: ''
-      title: 'Trauma and Derangements'
+      title: 'Mental Trauma'
       defaults:
         title: false
         filters: false
@@ -2640,6 +2718,8 @@ display:
         fields: false
         relationships: false
         sorts: false
+        footer: false
+        header: false
       filters:
         status:
           value: '1'
@@ -2977,6 +3057,34 @@ display:
           exposed: false
           expose:
             label: ''
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "Characters with an appropriate skill—Medicine: Psychiatry, Academics: Psychology, or Professional: Psychotherapy—can assist a character suffering mental stress or trauma with psychotherapy. This treatment is a long-term process, involving methods such as psychoanalysis, counseling, roleplaying, relationship-building, hypnotherapy, behavioral modification, drugs, medical treatments, and even psychosurgery. AIs skilled in psychotherapy are also available.\n\nPsychotherapy is a Task Action, with a timeframe of <strong>1 hour per point of stress, 8 hours per trauma, and 40 hours per disorder.</strong> Note that this only counts the time actually spent in psychotherapy with a skilled professional. After each psychotherapy session, make a test to see if the session was successful. Successful psychosurgery adds a +30 modifier to this test; at the gamemaster’s discretion, other modifiers may apply. Likewise, each disorder the character holds inflicts a –10 modifier. <strong>Traumas may not be healed until all stress is eliminated.</strong>\n\nWhen a trauma is healed, the derangement associated with that trauma is eliminated or downgraded. Disorders are treated separately from the trauma that caused them and may only be treated when all other traumas are removed.\n\nCharacters who eschew psychotherapy can hopefully work out the problems in their head on their own over time. For every month that passes without accruing new stress, the character may make a WIL × 3 Test. If successful, they heal 1d10 points of stress or 1 trauma (all stress must be healed first). Disorders are even more difficult to heal, requiring 3 months without stress or trauma, and even then only being eliminated with a successful WIL Test. As a result, disorders can linger for years until resolved with actual psychotherapy."
+            format: basic_html
+          plugin_id: text
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "If your character receives a number of stress points at once that equals or exceeds their Trauma Threshold, they have suffered a trauma. If the inflicted stress points are double or triple the Trauma Threshold, they suffer 2 or 3 traumas, respectively, and so on. Traumas are cumulative and must be recorded on your character sheet.\n\nEach trauma applies a cumulative –10 modifier to all of the character’s actions and –1 to Initiative. A character with 2 traumas, for example, suffers –20 to all actions and –2 Initiative. These modi ers are also cumulative with wound modifiers.\n\nAny time a character suffers a trauma, they must make an immediate WIL × 3 Test. Trauma modifiers apply. If they fail, they are temporarily stunned and disoriented and must expend a Complex Action to regain their wits.\n\nAny time a character is hit with a trauma, they suffer a temporary derangement (see Derangements, next page). The first trauma inflicts a minor derangement. If a second trauma is applied, the first derangement is either upgraded from minor to a moderate derangement or else a second minor derangement is applied (gamemaster’s discretion). Likewise, a third trauma may upgrade that derangement from moderate to major or else inflict a new minor. It is generally recommended that derangements be upgraded in potency, especially when result from the same set of ongoing circumstances. In the case of traumas that result from distinctly separate situations and sources, separate derangements may be applied."
+            format: basic_html
+          plugin_id: text
     cache_metadata:
       max-age: 0
       contexts:

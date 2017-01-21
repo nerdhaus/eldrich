@@ -64,12 +64,12 @@ dom_id ? 'js-view-dom-id-' ~ dom_id,
   {% endif %}
 
   {% if rows %}
-    <div class="container">
-      <div class="view-content row">
+    <div>
+      <div class="view-content">
         {{ rows }}
       </div>
       {% elseif empty %}
-      <div class="view-empty row">
+      <div class="view-empty">
         {{ empty }}
       </div>
     </div>
