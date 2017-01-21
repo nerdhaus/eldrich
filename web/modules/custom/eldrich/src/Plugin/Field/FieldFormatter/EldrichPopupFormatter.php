@@ -49,7 +49,6 @@ class EldrichPopupFormatter extends EntityReferenceQuantityLabelFormatter {
       if ($entity->hasField('field_description')) {
         $elements[$delta]['#options']['attributes']['title'] = $entity->label();
         $elements[$delta]['#options']['attributes']['data-toggle'] = 'popover';
-        $elements[$delta]['#options']['attributes']['data-placement'] = 'auto';
         $elements[$delta]['#options']['attributes']['data-content'] = strip_tags($entity->field_description->value);
       }
 

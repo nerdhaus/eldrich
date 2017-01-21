@@ -1,5 +1,0 @@
-services:
-  veil.twig.extension:
-    class: Drupal\veil\Twig\Extension\VeilExtension
-    tags:
-      - { name: twig.extension }

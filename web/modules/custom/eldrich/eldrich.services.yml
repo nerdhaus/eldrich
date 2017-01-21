@@ -1,0 +1,7 @@
+services:
+  eldrich.twig.extension:
+    class: Drupal\eldrich\TwigExtension\EldrichTwigExtension
+    arguments: ['@renderer']
+    tags:
+      - { name: twig.extension }
+

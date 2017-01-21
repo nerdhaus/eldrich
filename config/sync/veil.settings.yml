@@ -27,11 +27,11 @@ breadcrumb: '1'
 image_shape: img-thumbnail
 popover_animation: 0
 cdn_provider_import_data: ''
+popover_placement: auto
+popover_trigger: click
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: ''
   url: 'http://eldrich.local/themes/contrib/bootstrap/favicon.ico'
   use_default: true
-popover_placement: auto
-popover_trigger: focus
 table: ''

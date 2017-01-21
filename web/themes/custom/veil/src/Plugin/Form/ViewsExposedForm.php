@@ -43,7 +43,21 @@ class ViewsExposedForm extends FormBase {
 
         break;
 
-        default:
+      case 'views-exposed-form-taxonomy-term-page-2':
+        $form->filter->addClass(['input-sm', 'form-control-inline']);
+        $form->filter->setProperty('title_display', 'invisible');
+
+        $form->sort_by->addClass(['input-sm', 'form-control-inline']);
+
+        $form->sort_order->addClass(['input-sm', 'form-control-inline']);
+        $form->sort_order->setProperty('title_display', 'invisible');
+
+        $form->actions->submit->setButtonSize('btn-sm');
+
+        $form->addClass(['form-inline']);
+        break;
+
+      default:
           $form->addClass(['form-inline']);
 
     }
