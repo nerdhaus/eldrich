@@ -11,8 +11,8 @@
 {% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
   {{ parent() }}
-  {% if content.field_background|field_value %}<p>Background: {{ content.field_background|field_value }}</p>{% endif %}
-  {% if content.field_faction|field_value %}<p>Faction: {{ content.field_faction|field_value|safe_join(', ') }}</p>{% endif %}
-  {% if content.field_rep|field_value|length %}<p>Rep: {{ content.field_rep|field_value|safe_join(', ') }}</p>{% endif %}
-  {% if content.field_credits|field_value %}<p>Credits: {{ content.field_credits|field_value }}</p>{% endif %}
+  {% if content.field_background|field_value %}<li><strong>Background:</strong> {{ content.field_background|field_value }}</li>{% endif %}
+  {% if content.field_faction|field_value %}<li><strong>Faction:</strong> {{ content.field_faction|field_value|safe_join(', ') }}</li>{% endif %}
+  {% if content.field_rep|field_value|length %}<li><strong>Rep:</strong> {{ content.field_rep|field_value|safe_join(', ') }}</li>{% endif %}
+  {% if content.field_credits|field_value %}<li><strong>Credits:</strong> {{ content.field_credits|field_value }}</li>{% endif %}
 {% endblock %}

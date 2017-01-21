@@ -11,9 +11,9 @@
 #}
 {% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
-  {% if content.field_skill_type|field_value %}<p>Skill type: {{ content.field_skill_type|field_value }}</p>{% endif %}
-  {% if content.field_linked_aptitude|field_value %}<p>Linked Aptitude: {{ content.field_linked_aptitude|field_value }}</p>{% endif %}
-  {% if content.field_no_defaulting|field_value %}<p>No defaulting allowed</p>{% endif %}
+  {% if content.field_skill_type|field_value %}<li><strong>Skill type:</strong> {{ content.field_skill_type|field_value }}</li>{% endif %}
+  {% if content.field_linked_aptitude|field_value %}<li><strong>Linked Aptitude:</strong> {{ content.field_linked_aptitude|field_value }}</li>{% endif %}
+  {% if content.field_no_defaulting|field_value %}<li><strong>No defaulting allowed</strong></li>{% endif %}
 {% endblock %}
 
 {% block properties %}

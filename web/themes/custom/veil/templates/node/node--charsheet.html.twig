@@ -12,28 +12,29 @@
 
 {% block callout %}
 <div class="col-sm-4 info-callout panel-charsheet">
-  {% if content.field_morph_model|field_value %}<p><strong>Morph Model:</strong> {{ content.field_morph_model|field_value }}{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}</p>{% endif %}
+  <ul class="list-unstyled">
+  {% if content.field_morph_model|field_value %}<li><strong>Morph Model:</strong> {{ content.field_morph_model|field_value }}{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}</li>{% endif %}
   {% if armor.energy or armor.kinetic %}
-    <p><strong>Armor:</strong> {{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
+    <li><strong>Armor:</strong> {{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
       {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
-    </p>
+    </li>
   {% endif %}
-  {% if content.field_rep|field_value|length %}<p><strong>Rep:</strong> {{ content.field_rep|field_value|safe_join(', ') }}</p>{% endif %}
+  {% if content.field_rep|field_value|length %}<li><strong>Rep:</strong> {{ content.field_rep|field_value|safe_join(', ') }}</li>{% endif %}
 
-  {% if content.field_augmentations|field_value|length %}<p><strong>Augmentations:</strong> {{ content.field_augmentations|field_value|safe_join(', ') }}</p>{% endif %}
+  {% if content.field_augmentations|field_value|length %}<li><strong>Augmentations:</strong> {{ content.field_augmentations|field_value|safe_join(', ') }}</li>{% endif %}
   {% if content.field_traits|field_value|length %}
     {% if content.field_morph_traits|field_value|length %}
       {% set traits = content.field_traits|field_value|merge(content.field_morph_traits|field_value) %}
     {% else %}
       {% set traits = content.field_traits|field_value %}
     {% endif %}
-    <p><strong>Traits:</strong> {{ traits|safe_join(', ') }}</p>
+    <li><strong>Traits:</strong> {{ traits|safe_join(', ') }}</li>
   {% endif %}
 
-  {% if content.field_sleights|field_value|length %}<p><strong>Psi Sleights:</strong> {{ content.field_sleights|field_value|safe_join(', ') }}</p>{% endif %}
-  {% if content.field_gear|field_value|length %}<p><strong>Gear:</strong> {{ content.field_gear|field_value|safe_join(', ') }}</p>{% endif %}
-  {% if content.field_blueprints|length %}<p><strong>Blueprints:</strong> {{ content.field_blueprints|field_value|safe_join(', ') }}</p>{% endif %}
-
+  {% if content.field_sleights|field_value|length %}<li><strong>Psi Sleights:</strong> {{ content.field_sleights|field_value|safe_join(', ') }}</li>{% endif %}
+  {% if content.field_gear|field_value|length %}<li><strong>Gear:</strong> {{ content.field_gear|field_value|safe_join(', ') }}</li>{% endif %}
+  {% if content.field_blueprints|length %}<li><strong>Blueprints:</strong> {{ content.field_blueprints|field_value|safe_join(', ') }}</li>{% endif %}
+  </ul>
 </div>
 {% endblock %}
 

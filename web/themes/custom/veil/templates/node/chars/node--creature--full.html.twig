@@ -8,8 +8,8 @@
 {% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
 {{ parent() }}
-  {% if content.field_creature_type|field_value %}<p>Type: {{ content.field_creature_type|field_value }}</p>{% endif %}
-  {% if content.field_strain|field_value %}<p>Stress: {{ content.field_strain|field_value }}</p>{% endif %}
+  {% if content.field_creature_type|field_value %}<li><strong>Type:</strong> {{ content.field_creature_type|field_value }}</li>{% endif %}
+  {% if content.field_strain|field_value %}<li><strong>Stress:</strong> {{ content.field_strain|field_value }}</li>{% endif %}
 
   {% include '@veil/partials/stats--minimal.html.twig' %}
 

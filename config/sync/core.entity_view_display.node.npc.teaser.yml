@@ -37,6 +37,7 @@ hidden:
   field_equipped_armor: true
   field_equipped_weapons: true
   field_gear: true
+  field_headshot: true
   field_identity: true
   field_morph: true
   field_motivations: true

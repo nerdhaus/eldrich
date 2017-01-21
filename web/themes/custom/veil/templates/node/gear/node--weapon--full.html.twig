@@ -12,7 +12,7 @@
 {% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
   {{ parent() }}
-  <p>Damage:
+  <li><strong>Damage:</strong>
     {% if attack.damage.dice or attack.damage.effects %}
       {% if attack.damage.dice %}
         {{ attack.damage.dice }}d10
@@ -24,9 +24,9 @@
     {% else %}
       No damage
     {% endif %}
-  </p>
-  {% if content.field_firing_modes|field_value %}<p>Firing Modes: {{ content.field_firing_modes|field_value|safe_join(', ') }}</p>{% endif %}
-  {% if content.field_magazine_size|field_value %}<p>Magazine: {{ content.field_magazine_size|field_value }} shots</p>{% endif %}
-  {% if content.field_range|field_value %}<p>Range: {{ content.field_range|field_value }}</p>{% endif %}
-  {% if content.field_area_effect|field_value %}<p>Area Effect: {{ content.field_area_effect|field_value }}</p>{% endif %}
+  </li>
+  {% if content.field_firing_modes|field_value %}<li><strong>Firing Modes:</strong> {{ content.field_firing_modes|field_value|safe_join(', ') }}</li>{% endif %}
+  {% if content.field_magazine_size|field_value %}<li><strong>Magazine:</strong> {{ content.field_magazine_size|field_value }} shots</li>{% endif %}
+  {% if content.field_range|field_value %}<li><strong>Range:</strong> {{ content.field_range|field_value }}</li>{% endif %}
+  {% if content.field_area_effect|field_value %}<li><strong>Area Effect:</strong> {{ content.field_area_effect|field_value }}</li>{% endif %}
 {% endblock %}

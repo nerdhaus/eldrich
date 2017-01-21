@@ -17,7 +17,7 @@
   {% set general_bonuses = content.field_stat_variance|field_value|safe_join(', ') %}
   {% set all_bonuses = [fixed_bonuses, general_bonuses]|safe_join(', ') %}
 
-  <p>Durability: {{ content.field_stats|field_raw('dur') }}</p>
-  {% if all_bonuses %}<p>Stat Bonuses: {{ all_bonuses }}</p>{% endif %}
+  <li><strong>Durability:</strong> {{ content.field_stats|field_raw('dur') }}</li>
+  {% if all_bonuses %}<li><strong>Stat Bonuses:</strong> {{ all_bonuses }}</li>{% endif %}
 {% endblock %}
 {% block stats %}{% endblock %}

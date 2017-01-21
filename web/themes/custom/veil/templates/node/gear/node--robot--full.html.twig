@@ -7,5 +7,5 @@
 {% extends "@veil/node/chars/node--creature--full.html.twig" %}
 {% block callout_content %}
   {{ parent() }}
-  {% if content.field_default_ai|field_value %}<p>Default AI: {{ content.field_default_ai|field_value }}</p>{% endif %}
+  {% if content.field_default_ai|field_value %}<li><strong>Default AI:</strong> {{ content.field_default_ai|field_value }}</li>{% endif %}
 {% endblock %}

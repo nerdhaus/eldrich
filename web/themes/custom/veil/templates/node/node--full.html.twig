@@ -67,15 +67,16 @@ view_mode ? view_mode|clean_class
 
 <article{{ attributes.addClass(classes) }}>
   <section class="row">
-  {% block callout %}
+    {% block callout %}
     <aside class="info-callout col-sm-4 col-xs-12 pull-right">
+      <ul class="list-unstyled">
       {% block callout_content %}
-        {% if threat and threat.rating %}<p>Threat Level: {{ threat.label }}</p>{% endif %}
-        {% if content.field_gear_type|field_value %}<p>Type: {{ content.field_gear_type|field_value }}</p>{% endif %}
-        {% if content.field_cost|field_value %}<p>Cost: {{ content.field_cost|field_value }}</p>{% endif %}
+        {% if threat and threat.rating %}<li><strong>Threat Level:</strong> {{ threat.label }}</li>{% endif %}
+        {% if content.field_gear_type|field_value %}<li><strong>Type:</strong> {{ content.field_gear_type|field_value }}</li>{% endif %}
+        {% if content.field_cost|field_value %}<li><strong>Cost:</strong> {{ content.field_cost|field_value }}</li>{% endif %}
       {% endblock %}
       {% if content.field_sources|field_value %}
-        <p>Source: {{ content.field_sources|field_value|safe_join(', ') }}</p>
+        <p><strong>Source:</strong> {{ content.field_sources|field_value|safe_join(', ') }}</p>
       {% endif %}
     </aside>
   {% endblock %}
@@ -129,5 +130,12 @@ view_mode ? view_mode|clean_class
   {% endblock %}
 
   {% block related %}
+    {% if content.related_lists_gear_siblings %}
+      <div class="row">
+        <div class="col-md-8">
+          {{ content.related_lists_gear_siblings }}
+        </div>
+      </div>
+    {% endif %}
   {% endblock %}
 </article>

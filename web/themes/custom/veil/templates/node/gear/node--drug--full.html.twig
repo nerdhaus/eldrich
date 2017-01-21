@@ -10,8 +10,8 @@
 {% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
   {{ parent() }}
-  {% if content.field_delivery_mechanism|field_value %}<p>Delivery: {{ content.field_delivery_mechanism|field_value|safe_join(', ') }}</p>{% endif %}
-  {% if content.field_onset|field_value %}<p>Onset time: {{ content.field_onset|field_value }}</p>{% endif %}
-  {% if content.field_duration|field_value %}<p>Duration: {{ content.field_duration|field_value }}</p>{% endif %}
-  {% if content.field_addiction_modifier|field_value %}<p>Addiction Mod: {{ content.field_addiction_modifier|field_value }}</p>{% endif %}
+  {% if content.field_delivery_mechanism|field_value %}<li><strong>Delivery:</strong> {{ content.field_delivery_mechanism|field_value|safe_join(', ') }}</li>{% endif %}
+  {% if content.field_onset|field_value %}<li><strong>Onset time:</strong> {{ content.field_onset|field_value }}</li>{% endif %}
+  {% if content.field_duration|field_value %}<li><strong>Duration:</strong> {{ content.field_duration|field_value }}</li>{% endif %}
+  {% if content.field_addiction_modifier|field_value %}<li><strong>Addiction Mod:</strong> {{ content.field_addiction_modifier|field_value }}</li>{% endif %}
 {% endblock %}

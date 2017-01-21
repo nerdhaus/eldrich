@@ -10,9 +10,9 @@
 {% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
   {{ parent() }}
-  <p>Type: {{ content.field_location_type|field_value -}}{% if content.field_parent_location|field_value %}, {{ content.field_parent_location|field_value }}{% endif %}</p>
-  {% if content.field_distance|field_value %}<p>Distance from Earth: {{ content.field_distance|field_value }}</p>{% endif %}
-  {% if content.field_population|field_value %}<p>Population: {{ content.field_population|field_value }}</p>{% endif %}
-  {% if content.field_languages|field_value|length == 1 %}<p>Primary Language: {{ content.field_languages|field_value }}</p>
-  {% elseif content.field_languages|field_value|length > 1 %}<p>Primary Languages: {{ content.field_languages|field_value|safe_join(', ') }}</p>{% endif %}
+  <li><strong>Type:</strong> {{ content.field_location_type|field_value -}}{% if content.field_parent_location|field_value %}, {{ content.field_parent_location|field_value }}{% endif %}</li>
+  {% if content.field_distance|field_value %}<li><strong>Distance from Earth:</strong> {{ content.field_distance|field_value }}</li>{% endif %}
+  {% if content.field_population|field_value %}<li><strong>Population:</strong> {{ content.field_population|field_value }}</li>{% endif %}
+  {% if content.field_languages|field_value|length == 1 %}<li><strong>Primary Language:</strong> {{ content.field_languages|field_value }}</li>
+  {% elseif content.field_languages|field_value|length > 1 %}<li><strong>Primary Languages:</strong> {{ content.field_languages|field_value|safe_join(', ') }}</li>{% endif %}
 {% endblock %}

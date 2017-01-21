@@ -44,6 +44,7 @@ class ThemeSuggestions extends PluginBase implements AlterInterface {
         // Too lazy to write a display handler, and I don't want to let
         // Views take care of bootstrappifying the markup for single-item
         // feature views. So? Here we go.
+
         if (($variables->view->display_handler->pluginId == 'block')
           && ($variables->view->pager->options['items_per_page'] != 1)) {
           $suggestions[] = 'views_view__' . 'bootstrap_panel';

@@ -9,10 +9,10 @@
 #}
 {% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
-  {% if content.field_faction_type|field_value %}<p>Type: {{ content.field_faction_type|field_value }}</p>{% endif %}
-  {% if content.field_parent_faction|field_value %}<p>Part of: {{ content.field_parent_faction|field_value|safe_join(', ') }}</p>{% endif %}
-  {% if content.field_faction_locations|length == 1 %}<p>Primary Location: {{ content.field_faction_locations|field_value }}</p>
-  {% elseif content.field_faction_locations|length > 1 %}<p>Primary Locations: {{ content.field_faction_locations|field_value }}</p>{% endif %}
-  {% if content.field_memes|field_value|length == 1 %}<p>Key Meme: {{ content.field_memes|field_value }}</p>
-  {% elseif content.field_memes|field_value|length > 1 %}<p>Key Memes: {{ content.field_memes|field_value|safe_join(', ') }}</p>{% endif %}
+  {% if content.field_faction_type|field_value %}<li><strong>Type:</strong> {{ content.field_faction_type|field_value }}</li>{% endif %}
+  {% if content.field_parent_faction|field_value %}<li><strong>Part of:</strong> {{ content.field_parent_faction|field_value|safe_join(', ') }}</li>{% endif %}
+  {% if content.field_faction_locations|length == 1 %}<li><strong>Primary Location:</strong> {{ content.field_faction_locations|field_value }}</li>
+  {% elseif content.field_faction_locations|length > 1 %}<li><strong>Primary Locations:</strong> {{ content.field_faction_locations|field_value }}</li>{% endif %}
+  {% if content.field_memes|field_value|length == 1 %}<li><strong>Key Meme:</strong> {{ content.field_memes|field_value }}</li>
+  {% elseif content.field_memes|field_value|length > 1 %}<li><strong>Key Memes:</strong> {{ content.field_memes|field_value|safe_join(', ') }}</li>{% endif %}
 {% endblock %}

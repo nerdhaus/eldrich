@@ -12,9 +12,9 @@
 {% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
   {{ parent() }}
-  <p>{{ content.field_is_active|field_value ? 'Active' : 'Passive' }} Psi-{{ content.field_sleight_level|field_value }} Sleight</p>
-  {% if content.field_sleight_duration|field_value %}<p>Duration: {{ content.field_sleight_duration|field_value }}</p>{% endif %}
-  {% if content.field_sleight_range|field_value %}<p>Range: {{ content.field_sleight_range|field_value }}</p>{% endif %}
-  {% if content.field_psi_skill|field_value %}<p>Linked Skill: {{ content.field_psi_skill|field_value }}</p>{% endif %}
-  {% if content.field_strain|field_value %}<p>Strain: DV {{ content.field_strain|field_value }}</p>{% endif %}
+  <li>{{ content.field_is_active|field_value ? 'Active' : 'Passive' }} <strong>Psi-{{ content.field_sleight_level|field_value }} Sleight</strong></li>
+  {% if content.field_sleight_duration|field_value %}<li><strong>Duration:</strong> {{ content.field_sleight_duration|field_value }}</li>{% endif %}
+  {% if content.field_sleight_range|field_value %}<li><strong>Range:</strong> {{ content.field_sleight_range|field_value }}</li>{% endif %}
+  {% if content.field_psi_skill|field_value %}<li><strong>Linked Skill:</strong> {{ content.field_psi_skill|field_value }}</li>{% endif %}
+  {% if content.field_strain|field_value %}<li><strong>Strain:</strong> DV {{ content.field_strain|field_value }}</li>{% endif %}
 {% endblock %}

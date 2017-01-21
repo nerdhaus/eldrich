@@ -16,7 +16,7 @@ third_party_settings:
 id: posthumanstudios
 theme: veil
 region: footer
-weight: 0
+weight: -10
 provider: null
 plugin: 'simple_block:posthuman_credit'
 settings:

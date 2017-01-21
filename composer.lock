@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "af9489d6efbe917c16be92890ca8d3d6",
+    "content-hash": "cb53ba3f15d171db85c096a77d505656",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -487,16 +487,16 @@
         },
         {
             "name": "dflydev/dot-access-data",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dflydev/dflydev-dot-access-data.git",
-                "reference": "7a0960d088119818ce7687d200c363b01d183cbe"
+                "reference": "3fbd874921ab2c041e899d044585a2ab9795df8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dflydev/dflydev-dot-access-data/zipball/7a0960d088119818ce7687d200c363b01d183cbe",
-                "reference": "7a0960d088119818ce7687d200c363b01d183cbe",
+                "url": "https://api.github.com/repos/dflydev/dflydev-dot-access-data/zipball/3fbd874921ab2c041e899d044585a2ab9795df8a",
+                "reference": "3fbd874921ab2c041e899d044585a2ab9795df8a",
                 "shasum": ""
             },
             "require": {
@@ -527,6 +527,11 @@
                     "name": "Beau Simensen",
                     "email": "beau@dflydev.com",
                     "homepage": "http://beausimensen.com"
+                },
+                {
+                    "name": "Carlos Frutos",
+                    "email": "carlos@kiwing.it",
+                    "homepage": "https://github.com/cfrutos"
                 }
             ],
             "description": "Given a deep data structure, access data by dot notation.",
@@ -537,7 +542,7 @@
                 "dot",
                 "notation"
             ],
-            "time": "2015-08-13T03:51:18+00:00"
+            "time": "2017-01-20T21:14:22+00:00"
         },
         {
             "name": "dflydev/placeholder-resolver",
@@ -2100,6 +2105,65 @@
             }
         },
         {
+            "name": "drupal/empty_page",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/empty_page",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/empty_page-8.x-1.0.zip",
+                "reference": null,
+                "shasum": "c1d5f3a39b5282b1d1cfacc8a8fc908f77792a87"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1462895939"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Nick Robillard",
+                    "homepage": "https://www.drupal.org/user/176017"
+                },
+                {
+                    "name": "NormySan",
+                    "homepage": "https://www.drupal.org/user/112352"
+                },
+                {
+                    "name": "bleen",
+                    "homepage": "https://www.drupal.org/user/77375"
+                },
+                {
+                    "name": "merauluka",
+                    "homepage": "https://www.drupal.org/user/780004"
+                },
+                {
+                    "name": "mukila",
+                    "homepage": "https://www.drupal.org/user/3223526"
+                }
+            ],
+            "description": "A simple empty page solution. Assists in creating empty menu callbacks mostly used for pages that only consist of blocks.",
+            "homepage": "https://www.drupal.org/project/empty_page",
+            "support": {
+                "source": "http://cgit.drupalcode.org/empty_page"
+            }
+        },
+        {
             "name": "drupal/entity_browser",
             "version": "dev-1.x",
             "source": {
@@ -2425,6 +2489,49 @@
             "homepage": "https://www.drupal.org/project/eva",
             "support": {
                 "source": "http://cgit.drupalcode.org/eva"
+            }
+        },
+        {
+            "name": "drupal/field_formatter_range",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/field_formatter_range",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/field_formatter_range-8.x-1.0.zip",
+                "reference": null,
+                "shasum": "e454f94811ef7a1ddb415010c44832467d96b638"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1441091939"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "ivanjaros",
+                    "homepage": "https://www.drupal.org/user/135190"
+                }
+            ],
+            "description": "Enhances the field formatters with range and offset settings.",
+            "homepage": "https://www.drupal.org/project/field_formatter_range",
+            "support": {
+                "source": "http://cgit.drupalcode.org/field_formatter_range"
             }
         },
         {
@@ -2770,6 +2877,53 @@
                 "source": "http://cgit.drupalcode.org/inline_entity_form"
             },
             "time": "2016-11-14 20:32:26"
+        },
+        {
+            "name": "drupal/menu_position",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/menu_position",
+                "reference": "d374f9283fc4dbb745dc48afe562577eacc942cf"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1481739783"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "BarisW",
+                    "homepage": "https://www.drupal.org/user/107229"
+                },
+                {
+                    "name": "JohnAlbin",
+                    "homepage": "https://www.drupal.org/user/32095"
+                },
+                {
+                    "name": "lbainbridge",
+                    "homepage": "https://www.drupal.org/user/2406996"
+                }
+            ],
+            "description": "This module allows for the creation of rules that will dynamically add the current page into the menu system at the requested spots.",
+            "homepage": "https://www.drupal.org/project/menu_position",
+            "support": {
+                "source": "http://cgit.drupalcode.org/menu_position",
+                "issues": "https://www.drupal.org/project/issues/menu_position"
+            },
+            "time": "2016-12-14 18:18:19"
         },
         {
             "name": "drupal/menu_trail_by_path",
@@ -3177,7 +3331,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/range",
-                "reference": "df9991a5071f0618afdecdc245e752af6c333d35"
+                "reference": "d5eee927fd10d9969da389559ab579937bab013a"
             },
             "require": {
                 "drupal/core": "*"
@@ -3188,8 +3342,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.1-beta3+3-dev",
-                    "datestamp": "1484061783"
+                    "version": "8.x-1.1-rc1+0-dev",
+                    "datestamp": "1484934783"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3211,7 +3365,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/range"
             },
-            "time": "2017-01-19 10:55:14"
+            "time": "2017-01-20 17:49:13"
         },
         {
             "name": "drupal/remote_stream_wrapper",
@@ -3853,6 +4007,55 @@
             "homepage": "https://www.drupal.org/project/verf",
             "support": {
                 "source": "http://cgit.drupalcode.org/verf"
+            }
+        },
+        {
+            "name": "drupal/view_mode_page",
+            "version": "3.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/view_mode_page",
+                "reference": "8.x-3.0-rc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/view_mode_page-8.x-3.0-rc1.zip",
+                "reference": "8.x-3.0-rc1",
+                "shasum": "58103c89b9bd07c7bde2e98efc553ddf19d6f083"
+            },
+            "require": {
+                "drupal/core": "^8.1.0",
+                "drupal/ctools": "*",
+                "drupal/token": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.0-rc1",
+                    "datestamp": "1482959283"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "davy-r",
+                    "homepage": "https://www.drupal.org/user/3278771"
+                },
+                {
+                    "name": "rballou",
+                    "homepage": "https://www.drupal.org/user/1840982"
+                }
+            ],
+            "description": "Makes it possible to create (additional) paths where entities will be shown in a given view_mode",
+            "homepage": "https://www.drupal.org/project/view_mode_page",
+            "support": {
+                "source": "http://cgit.drupalcode.org/view_mode_page"
             }
         },
         {
@@ -8754,6 +8957,8 @@
         "drupal/simple_block": 20,
         "drupal/default_content": 15,
         "drupal/field_redirection": 20,
+        "drupal/view_mode_page": 5,
+        "drupal/menu_position": 20,
         "drupal/viewsreference": 15
     },
     "prefer-stable": true,

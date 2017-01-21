@@ -79,10 +79,10 @@ span.skill-combat {
   font-weight: bold;
 }
 
-.info-callout p {
+.info-callout li {
   padding-left: 30px;
 }
-.info-callout p {
+.info-callout li {
   text-indent: -30px;
 }
 
@@ -106,4 +106,21 @@ span.skill-combat {
   a[href]:after {
     content: none
   }
+}
+
+.list-delimited {
+  padding-left: 0;
+  list-style: none
+}
+
+.list-delimited li {
+  display: inline-block;
+}
+
+.list-delimited li a:after  {
+  content: ", ";
+}
+
+.list-delimited li:last-child a:after {
+  content: "";
 }

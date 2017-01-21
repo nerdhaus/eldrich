@@ -69,7 +69,11 @@
         "drupal/views_advanced_routing": "^1.0@RC",
         "drupal/simple_block": "1.x-dev",
         "drupal/default_content": "^1.0@alpha",
-        "drupal/field_redirection": "2.x-dev"
+        "drupal/field_redirection": "2.x-dev",
+        "drupal/view_mode_page": "^3.0@RC",
+        "drupal/empty_page": "^1.0",
+        "drupal/menu_position": "1.x-dev",
+        "drupal/field_formatter_range": "^1.0"
     },
     "require-dev": {
         "behat/mink": "~1.7",
