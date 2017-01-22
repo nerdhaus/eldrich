@@ -28,7 +28,7 @@ source:
     -
       book: Book
     -
-      special_effect: 'Special Effects'
+      special_effect: 'Special Effect'
     -
       dice: 'Damage Dice'
     -
@@ -87,7 +87,7 @@ process:
   field_description/format:
     plugin: default_value
     default_value: basic_html
-  field_special_effect/value: special_effects
+  field_special_effect/value: special_effect
   field_cost:
     plugin: entity_lookup_plus
     source: cost
@@ -191,7 +191,7 @@ process:
     bundle_key: type
     value_key: title
     source: skill
-  field_skill_bonus: bonus
+  field_skill_bonus: atk
   field_reach: reach
   field_is_ammo:
     plugin: static_map

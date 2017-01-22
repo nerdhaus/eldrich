@@ -22,7 +22,7 @@ mode: teaser
 content:
   field_description:
     type: text_trimmed
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       trim_length: 400
@@ -35,3 +35,4 @@ hidden:
   field_is_ego_stat: true
   field_weight: true
   links: true
+  related_lists_linked_skills: true

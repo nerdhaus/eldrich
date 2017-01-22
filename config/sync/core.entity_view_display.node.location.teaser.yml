@@ -5,13 +5,15 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.location.field_description
+    - field.field.node.location.field_distance
+    - field.field.node.location.field_languages
     - field.field.node.location.field_location_type
     - field.field.node.location.field_parent_location
     - field.field.node.location.field_population
     - field.field.node.location.field_sources
     - node.type.location
   module:
-    - text
+    - smart_trim
     - user
 id: node.location.teaser
 targetEntityType: node
@@ -19,11 +21,18 @@ bundle: location
 mode: teaser
 content:
   field_description:
-    type: text_trimmed
+    type: smart_trim
     weight: 0
     label: hidden
     settings:
       trim_length: 600
+      trim_type: chars
+      trim_suffix: ''
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      trim_options: {  }
     third_party_settings: {  }
   field_location_type:
     type: entity_reference_label

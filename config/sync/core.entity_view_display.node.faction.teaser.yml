@@ -7,11 +7,12 @@ dependencies:
     - field.field.node.faction.field_description
     - field.field.node.faction.field_faction_type
     - field.field.node.faction.field_locations
+    - field.field.node.faction.field_memes
     - field.field.node.faction.field_parent_faction
     - field.field.node.faction.field_sources
     - node.type.faction
   module:
-    - text
+    - smart_trim
     - user
 id: node.faction.teaser
 targetEntityType: node
@@ -19,11 +20,18 @@ bundle: faction
 mode: teaser
 content:
   field_description:
-    type: text_trimmed
+    type: smart_trim
     weight: 0
     label: hidden
     settings:
       trim_length: 600
+      trim_type: chars
+      trim_suffix: ''
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      trim_options: {  }
     third_party_settings: {  }
   field_faction_type:
     type: entity_reference_label

@@ -19,7 +19,7 @@ dependencies:
     - field.field.node.creature.field_traits
     - node.type.creature
   module:
-    - text
+    - smart_trim
     - user
 id: node.creature.teaser
 targetEntityType: node
@@ -27,10 +27,18 @@ bundle: creature
 mode: teaser
 content:
   field_description:
-    type: text_default
+    type: smart_trim
     weight: 0
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: '600'
+      trim_type: chars
+      trim_suffix: ''
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      trim_options: {  }
     third_party_settings: {  }
 hidden:
   field_armor: true

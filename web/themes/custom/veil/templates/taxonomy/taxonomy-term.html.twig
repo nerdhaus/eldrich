@@ -42,6 +42,9 @@
 
     {% if key == "weapons" %}
       {{ drupal_view('taxonomy_term', 'weapon_table', term.id) }}
+      {{ drupal_view('taxonomy_term', 'ammo_mods_table', term.id) }}
+    {% elseif key == "morphs" %}
+      {{ drupal_view('taxonomy_term', 'morphs_table', term.id) }}
     {% else %}
       {# Show the usual EVA-powered item list #}
       {{ content.taxonomy_term_category_items }}
