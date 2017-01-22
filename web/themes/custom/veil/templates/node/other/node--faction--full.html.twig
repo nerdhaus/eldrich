@@ -16,3 +16,11 @@
   {% if content.field_memes|field_value|length == 1 %}<li><strong>Key Meme:</strong> {{ content.field_memes|field_value }}</li>
   {% elseif content.field_memes|field_value|length > 1 %}<li><strong>Key Memes:</strong> {{ content.field_memes|field_value|safe_join(', ') }}</li>{% endif %}
 {% endblock %}
+
+{% block properties %}
+  {% if content.world_faction_children %}
+    <section class="entity-children">
+    {{ content.world_faction_children }}
+    </section>
+  {% endif %}
+{% endblock %}

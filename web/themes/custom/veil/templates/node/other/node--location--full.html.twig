@@ -16,3 +16,12 @@
   {% if content.field_languages|field_value|length == 1 %}<li><strong>Primary Language:</strong> {{ content.field_languages|field_value }}</li>
   {% elseif content.field_languages|field_value|length > 1 %}<li><strong>Primary Languages:</strong> {{ content.field_languages|field_value|safe_join(', ') }}</li>{% endif %}
 {% endblock %}
+
+
+{% block properties %}
+  {% if content.world_location_children %}
+    <section class="entity-children">
+    {{ content.world_location_children }}
+    </section>
+  {% endif %}
+{% endblock %}

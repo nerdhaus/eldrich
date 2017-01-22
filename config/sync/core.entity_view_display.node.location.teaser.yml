@@ -48,3 +48,4 @@ hidden:
   field_population: true
   field_sources: true
   links: true
+  world_location_children: true

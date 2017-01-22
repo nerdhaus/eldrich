@@ -1,0 +1,22 @@
+uuid: ad56c48a-0338-4198-9a1f-a5e85e982f4f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: location_nodes
+label: 'Location Nodes'
+type: 'canonical_entities:node'
+pattern: 'world/locations/[node:field_parent_location:entity:field_parent_location:entity:title]/[node:field_parent_location:entity:title]/[node:title]'
+selection_criteria:
+  a76518de-3246-4515-918d-f19d40302c82:
+    id: node_type
+    bundles:
+      location: location
+    negate: false
+    context_mapping:
+      node: node
+    uuid: a76518de-3246-4515-918d-f19d40302c82
+selection_logic: and
+weight: -5
+relationships: {  }
