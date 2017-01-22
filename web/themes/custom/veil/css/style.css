@@ -124,3 +124,8 @@ thead {
 .list-delimited li:last-child a:after {
   content: "";
 }
+
+
+table caption {
+  color: inherit;
+}
