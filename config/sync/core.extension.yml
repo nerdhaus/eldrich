@@ -70,8 +70,10 @@ module:
   url_embed: 0
   user: 0
   verf: 0
+  view_mode_page: 0
   views_taxonomy_term_name_depth: 0
   views_ui: 0
+  viewsreference: 0
   menu_link_content: 1
   pathauto: 1
   views: 10

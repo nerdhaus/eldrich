@@ -1,0 +1,26 @@
+uuid: 1822e292-9292-4778-9f29-cb4f9ffb6f17
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: scratchpad
+label: Scratchpad
+type: 'canonical_entities:node'
+pattern: '%/scratchpad'
+view_mode: scratchpad
+selection_criteria:
+  38e7963d-cd9c-401c-bf93-2ed9ce097836:
+    id: node_type
+    bundles:
+      creature: creature
+      npc: npc
+      pc: pc
+      robot: robot
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 38e7963d-cd9c-401c-bf93-2ed9ce097836
+selection_logic: and
+weight: -5
+relationships: {  }

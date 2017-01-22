@@ -4,6 +4,16 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.storage.node.field_ap_modifier
+    - field.storage.node.field_area_effect
+    - field.storage.node.field_cost
+    - field.storage.node.field_damage_dice
+    - field.storage.node.field_damage_effects
+    - field.storage.node.field_damage_modifier
+    - field.storage.node.field_firing_modes
+    - field.storage.node.field_gear_type
+    - field.storage.node.field_magazine_size
+    - field.storage.node.field_range
     - node.type.armor
     - node.type.augmentation
     - node.type.creature
@@ -16,7 +26,11 @@ dependencies:
     - system.menu.main
     - taxonomy.vocabulary.gear_type
   module:
+    - eldrich
+    - ep_complex_values
+    - eva
     - node
+    - operation
     - search
     - taxonomy
     - user
@@ -357,6 +371,254 @@ display:
           operator: or
           value: {  }
           group: 1
+          exposed: true
+          expose:
+            use_operator: false
+            operator: field_gear_type_target_id_op
+            identifier: field_gear_type_target_id
+            label: 'Gear Type (field_gear_type)'
+            description: null
+            remember: false
+            multiple: false
+            required: false
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: gear_type
+          hierarchy: true
+          error_message: false
+          plugin_id: taxonomy_index_tid
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+      header: {  }
+      footer: {  }
+      empty: {  }
+      relationships: {  }
+      fields: {  }
+      display_extenders: {  }
+      link_url: ''
+      link_display: page_1
+      title: 'Gear Catalog'
+    cache_metadata:
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      max-age: -1
+      tags: {  }
+  category_items:
+    display_plugin: entity_view
+    id: category_items
+    display_title: 'Gear List'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      query:
+        type: views_query
+        options: {  }
+      display_description: ''
+      filters:
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: language
+          entity_type: node
+          entity_field: langcode
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            armor: armor
+            augmentation: augmentation
+            creature: creature
+            gear: gear
+            mind: mind
+            morph: morph
+            robot: robot
+            vehicle: vehicle
+            weapon: weapon
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+        field_cost_target_id:
+          id: field_cost_target_id
+          table: node__field_cost
+          field: field_cost_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: 'not empty'
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: numeric
+        field_gear_type_target_id:
+          id: field_gear_type_target_id
+          table: node__field_gear_type
+          field: field_gear_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: 'not empty'
+          value: {  }
+          group: 1
           exposed: false
           expose:
             operator_id: field_gear_type_target_id_op
@@ -394,40 +656,18 @@ display:
           hierarchy: true
           error_message: false
           plugin_id: taxonomy_index_tid
-      style:
-        type: default
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          uses_fields: false
-      row:
-        type: 'entity:node'
-        options:
-          relationship: none
-          view_mode: teaser
-      header:
-        entity_taxonomy_term:
-          id: entity_taxonomy_term
-          table: views
-          field: entity_taxonomy_term
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: true
-          target: '{{ raw_arguments.term_node_tid_depth }}'
-          view_mode: full
-          bypass_access: false
-          plugin_id: entity
-      footer: {  }
-      empty: {  }
-      relationships: {  }
-      fields: {  }
-      display_extenders: {  }
-      link_url: ''
-      link_display: page_1
-      title: 'Gear Catalog'
+      defaults:
+        filters: false
+        filter_groups: false
+        header: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      entity_type: taxonomy_term
+      bundles:
+        - gear_type
+      header: {  }
     cache_metadata:
       contexts:
         - 'languages:language_interface'
@@ -438,18 +678,97 @@ display:
         - user.permissions
       max-age: -1
       tags: {  }
-  page_1:
-    id: page_1
-    display_title: 'Gear Type'
+  page_2:
     display_plugin: page
-    position: 1
+    id: page_2
+    display_title: 'Gear Overview'
+    position: 2
     display_options:
-      query:
-        type: views_query
-        options: {  }
-      path: taxonomy/term/%
       display_extenders: {  }
       display_description: ''
+      path: gear
+      menu:
+        type: normal
+        title: Gear
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 0
+        context: '0'
+        menu_name: main
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "Gear is all of the equipment your character owns and keeps on their person, from weapons and armor to clothing and electronics. You buy gear for your character with customization points during character creation (see Purchase Gear, p. 137) and in the game with Credit or Rep. Certain restricted, illegal, or hard-to-find items may require special efforts to obtain (see Acquiring Gear, p. 296). If you have access to a nanofabricator, you may be able to simply build gear, presuming you have the proper blueprints (see Nanofabrication, p. 284).\n\nEven among the remaining capitalist economies, prices can vary drastically. To represent this, all gear falls into a cost category. Each category defines a range of costs, so the gamemaster can adjust the prices of individual items as appropriate to the situation. Each category also lists an average price for that category, which is used during character generation and any time the gamemaster wants to keep costs simple."
+            format: basic_html
+          plugin_id: text
+      defaults:
+        header: false
+        arguments: false
+        style: false
+        row: false
+        sorts: false
+        filters: false
+        filter_groups: false
+      arguments: {  }
+      style:
+        type: default
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+      sorts:
+        title_1:
+          id: title_1
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Name
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+        field_gear_type_target_id:
+          id: field_gear_type_target_id
+          table: node__field_gear_type
+          field: field_gear_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Type
+          plugin_id: standard
+        field_cost_target_id:
+          id: field_cost_target_id
+          table: node__field_cost
+          field: field_cost_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Cost
+          plugin_id: standard
       filters:
         langcode:
           id: langcode
@@ -663,10 +982,10 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          operator: 'not empty'
+          operator: or
           value: {  }
           group: 1
-          exposed: false
+          exposed: true
           expose:
             operator_id: field_gear_type_target_id_op
             label: Type
@@ -703,99 +1022,10 @@ display:
           hierarchy: true
           error_message: false
           plugin_id: taxonomy_index_tid
-      defaults:
-        filters: false
-        filter_groups: false
       filter_groups:
         operator: AND
         groups:
           1: AND
-    cache_metadata:
-      contexts:
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - user
-        - 'user.node_grants:view'
-        - user.permissions
-      max-age: -1
-      tags: {  }
-  page_2:
-    display_plugin: page
-    id: page_2
-    display_title: Gear
-    position: 2
-    display_options:
-      display_extenders: {  }
-      display_description: ''
-      path: gear
-      menu:
-        type: normal
-        title: Gear
-        description: ''
-        expanded: false
-        parent: ''
-        weight: 0
-        context: '0'
-        menu_name: main
-      header: {  }
-      defaults:
-        header: false
-        arguments: false
-        style: false
-        row: false
-        sorts: false
-      arguments: {  }
-      style:
-        type: default
-        options:
-          row_class: ''
-          default_row_class: true
-          uses_fields: false
-      row:
-        type: 'entity:node'
-        options:
-          relationship: none
-          view_mode: teaser
-      sorts:
-        title_1:
-          id: title_1
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: true
-          expose:
-            label: Name
-          entity_type: node
-          entity_field: title
-          plugin_id: standard
-        field_gear_type_target_id:
-          id: field_gear_type_target_id
-          table: node__field_gear_type
-          field: field_gear_type_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: true
-          expose:
-            label: Type
-          plugin_id: standard
-        field_cost_target_id:
-          id: field_cost_target_id
-          table: node__field_cost
-          field: field_cost_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: true
-          expose:
-            label: Cost
-          plugin_id: standard
     cache_metadata:
       max-age: -1
       contexts:
@@ -808,3 +1038,1128 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  weapon_table:
+    display_plugin: embed
+    id: weapon_table
+    display_title: 'Weapons Table'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      style:
+        type: table
+        options:
+          grouping:
+            -
+              field: field_gear_type
+              rendered: true
+              rendered_strip: false
+          row_class: ''
+          default_row_class: false
+          override: true
+          sticky: false
+          caption: ''
+          summary: ''
+          description: ''
+          columns:
+            title: title
+            field_damage_dice: field_damage_dice
+            field_damage_modifier: field_damage_dice
+            field_ap_modifier: field_damage_dice
+            field_damage_effects: field_damage_dice
+            field_firing_modes: field_firing_modes
+            field_magazine_size: field_magazine_size
+            field_range: field_range
+            field_area_effect: field_area_effect
+            field_gear_type: field_gear_type
+            field_cost: field_cost
+          info:
+            title:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_damage_dice:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_damage_modifier:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_ap_modifier:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_damage_effects:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_firing_modes:
+              align: ''
+              separator: ''
+              empty_column: true
+              responsive: priority-medium
+            field_magazine_size:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: true
+              responsive: priority-medium
+            field_range:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: true
+              responsive: priority-low
+            field_area_effect:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: true
+              responsive: priority-low
+            field_gear_type:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_cost:
+              sortable: false
+              default_sort_order: asc
+              align: views-align-right
+              separator: ''
+              empty_column: false
+              responsive: ''
+          default: '-1'
+          empty_table: false
+      defaults:
+        style: false
+        row: false
+        fields: false
+        relationships: false
+        filters: false
+        filter_groups: false
+        pager: false
+        sorts: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Title
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+        field_damage_dice:
+          id: field_damage_dice
+          table: node__field_damage_dice
+          field: field_damage_dice
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Damage
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{{ field_damage_dice }}d10'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: operation_formatter
+          settings:
+            thousand_separator: ''
+            prefix_suffix: 1
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_damage_modifier:
+          id: field_damage_modifier
+          table: node__field_damage_modifier
+          field: field_damage_modifier
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Modifer
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{% if field_damage_modifier__value %}+{{ field_damage_modifier }}{% endif %}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: operation_formatter
+          settings:
+            thousand_separator: ''
+            prefix_suffix: 1
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_ap_modifier:
+          id: field_ap_modifier
+          table: node__field_ap_modifier
+          field: field_ap_modifier
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: AP
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{{ field_ap_modifier }}{{ field_ap_modifier__value ? ''AP'' : '''' }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: operation_formatter
+          settings:
+            thousand_separator: ''
+            prefix_suffix: 1
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_damage_effects:
+          id: field_damage_effects
+          table: node__field_damage_effects
+          field: field_damage_effects
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Effects
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{{ field_damage_dice ? ''+ '' : '''' }}{{ field_damage_effects }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: eldrich_popup_formatter
+          settings:
+            link: 1
+            location: attribute
+            template: ' ({{ quantity }})'
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_firing_modes:
+          id: field_firing_modes
+          table: node__field_firing_modes
+          field: field_firing_modes
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Firing Modes'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: true
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: eldrich_popup_formatter
+          settings:
+            link: 1
+            location: attribute
+            template: ' ({{ quantity }})'
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_magazine_size:
+          id: field_magazine_size
+          table: node__field_magazine_size
+          field: field_magazine_size
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Rounds
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: true
+          empty_zero: true
+          hide_alter_empty: true
+          click_sort_column: value
+          type: operation_formatter
+          settings:
+            thousand_separator: ''
+            prefix_suffix: 1
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_range:
+          id: field_range
+          table: node__field_range
+          field: field_range
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Range
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: true
+          empty_zero: true
+          hide_alter_empty: true
+          click_sort_column: short
+          type: weapon_range_formatter
+          settings: {  }
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_area_effect:
+          id: field_area_effect
+          table: node__field_area_effect
+          field: field_area_effect
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: AoE
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: true
+          empty_zero: true
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: eldrich_popup_formatter
+          settings:
+            link: 1
+            location: attribute
+            template: ' ({{ quantity }})'
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_gear_type:
+          id: field_gear_type
+          table: node__field_gear_type
+          field: field_gear_type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: h3
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_cost:
+          id: field_cost
+          table: node__field_cost
+          field: field_cost
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Cost
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: eldrich_popup_formatter
+          settings:
+            link: 1
+            location: suffix
+            template: ' ({{ quantity }})'
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      relationships: {  }
+      filters:
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: language
+          entity_type: node
+          entity_field: langcode
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            armor: armor
+            augmentation: augmentation
+            creature: creature
+            gear: gear
+            mind: mind
+            morph: morph
+            robot: robot
+            vehicle: vehicle
+            weapon: weapon
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+        field_cost_target_id:
+          id: field_cost_target_id
+          table: node__field_cost
+          field: field_cost_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: 'not empty'
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: numeric
+        field_is_ammo_value:
+          id: field_is_ammo_value
+          table: node__field_is_ammo
+          field: field_is_ammo_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        field_is_mod_value:
+          id: field_is_mod_value
+          table: node__field_is_mod
+          field: field_is_mod_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      pager:
+        type: none
+        options:
+          offset: 0
+      sorts:
+        field_gear_type_target_id:
+          id: field_gear_type_target_id
+          table: node__field_gear_type
+          field: field_gear_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+    cache_metadata:
+      max-age: 0
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_ap_modifier'
+        - 'config:field.storage.node.field_area_effect'
+        - 'config:field.storage.node.field_cost'
+        - 'config:field.storage.node.field_damage_dice'
+        - 'config:field.storage.node.field_damage_effects'
+        - 'config:field.storage.node.field_damage_modifier'
+        - 'config:field.storage.node.field_firing_modes'
+        - 'config:field.storage.node.field_gear_type'
+        - 'config:field.storage.node.field_magazine_size'
+        - 'config:field.storage.node.field_range'

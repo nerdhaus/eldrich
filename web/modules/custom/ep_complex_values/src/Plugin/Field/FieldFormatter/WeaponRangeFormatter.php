@@ -29,12 +29,12 @@ class WeaponRangeFormatter extends FormatterBase {
 
     foreach ($items as $delta => $item) {
       $raw = $item->getValue();
-      $values = [
-        'short' => $raw['short'] . 'm',
-        'medium' => $raw['medium'] . 'm',
-        'long' => $raw['long'] . 'm',
-        'extreme' => $raw['extreme'] . 'm',
-      ];
+      $values = [];
+      foreach (['short', 'medium', 'long', 'extreme'] as $key) {
+        if ($raw[$key] > 0) {
+          $values[$key] = $raw[$key] . 'm';
+        }
+      }
       $elements[$delta] = ['#markup' => join(' / ', $values)] ;
     }
 

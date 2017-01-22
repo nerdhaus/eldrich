@@ -29,12 +29,13 @@ class MobilitySpeedFormatter extends FormatterBase {
 
     foreach ($items as $delta => $item) {
       $raw = $item->getValue();
-      $values = [
-        'walk' => $raw['walk'],
-        'run' => $raw['run'],
-        'cruise' => $raw['cruise'],
-      ];
-      $elements[$delta] = ['#markup' => join(' / ', $values)];
+      $values = [];
+      foreach (['walk', 'run', 'cruise'] as $key) {
+        if ($raw[$key] > 0) {
+          $values[$key] = $raw[$key];
+        }
+      }
+      $elements[$delta] = ['#markup' => join(' / ', $values)] ;
     }
 
     return $elements;
