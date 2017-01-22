@@ -13,56 +13,57 @@ use Drupal\eldrich\Calculator\StatTreeCalculator;
 class EldrichTwigExtension extends \Twig_Extension {
 
 
-   /**
-    * {@inheritdoc}
-    */
-    public function getTokenParsers() {
-      return [];
-    }
+  /**
+   * {@inheritdoc}
+   */
+  public function getTokenParsers() {
+    return [];
+  }
 
-   /**
-    * {@inheritdoc}
-    */
-    public function getNodeVisitors() {
-      return [];
-    }
+  /**
+   * {@inheritdoc}
+   */
+  public function getNodeVisitors() {
+    return [];
+  }
 
-   /**
-    * {@inheritdoc}
-    */
-    public function getFilters() {
-      return array(
-        new \Twig_SimpleFilter('popup', [$this, 'entityPopup']),
-      );
-    }
+  /**
+   * {@inheritdoc}
+   */
+  public function getFilters() {
+    return array(
+      new \Twig_SimpleFilter('popup', [$this, 'entityPopup']),
+      new \Twig_SimpleFilter('classify', [$this, 'Classify']),
+    );
+  }
 
-   /**
-    * {@inheritdoc}
-    */
-    public function getTests() {
-      return [];
-    }
+  /**
+   * {@inheritdoc}
+   */
+  public function getTests() {
+    return [];
+  }
 
-   /**
-    * {@inheritdoc}
-    */
-    public function getFunctions() {
-      return [];
-    }
+  /**
+   * {@inheritdoc}
+   */
+  public function getFunctions() {
+    return [];
+  }
 
-   /**
-    * {@inheritdoc}
-    */
-    public function getOperators() {
-      return [];
-    }
+  /**
+   * {@inheritdoc}
+   */
+  public function getOperators() {
+    return [];
+  }
 
-   /**
-    * {@inheritdoc}
-    */
-    public function getName() {
-      return 'eldrich.twig.extension';
-    }
+  /**
+   * {@inheritdoc}
+   */
+  public function getName() {
+    return 'eldrich.twig.extension';
+  }
 
   /**
    * Twig filter callback: Truncates text with options, and corrects broken HTML.
@@ -74,12 +75,12 @@ class EldrichTwigExtension extends \Twig_Extension {
    *   A ready-to-be-rendered markup structure.
    */
   public function entityPopup($value) {
-    if (is_object($value)){
+    if (is_object($value)) {
       // Assume it's a loaded entity
       $entity = $value;
       $link_text = $entity->label();
     }
-    elseif (is_numeric($value)){
+    elseif (is_numeric($value)) {
       // Assume it's a nid
       $entity = Drupal::entityTypeManager()->getStorage('node')->load($value);
       $link_text = $entity->label();
@@ -91,7 +92,9 @@ class EldrichTwigExtension extends \Twig_Extension {
         ->condition('field_code', $value)
         ->execute();
 
-      $entity = \Drupal::entityTypeManager()->getStorage('node')->load(reset($nid));
+      $entity = \Drupal::entityTypeManager()
+        ->getStorage('node')
+        ->load(reset($nid));
       $link_text = $value;
     }
 
@@ -117,5 +120,17 @@ class EldrichTwigExtension extends \Twig_Extension {
     }
 
     return $element;
+  }
+
+  public function Classify($value) {
+    foreach ($value['class'] as $key => $class) {
+      if ($class == 'priority-low') {
+        $value['class'][$key] = 'hidden-sm hidden-xs';
+      }
+      elseif ($class == 'priority-medium') {
+        $value['class'][$key] = 'hidden-xs';
+      }
+    }
+    return $value;
   }
 }
