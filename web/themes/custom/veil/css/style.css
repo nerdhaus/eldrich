@@ -91,9 +91,11 @@ span.skill-combat {
 }
 
 
-thead {
+thead, h3.popover-title {
   color: #1c1e22;
   background-color: #7a8288;
+  text-shadow: none;
+  font-weight: bold;
 }
 
 .panel-charsheet {

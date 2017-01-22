@@ -10,6 +10,7 @@ use Drupal\bootstrap\Utility\Variables;
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessInterface;
 use Drupal\bootstrap\Plugin\Preprocess\PreprocessBase;
 use Drupal\node\NodeInterface;
+use Drupal\Core\Url;
 
 use Drupal\eldrich\Calculator\ThreatCalculator;
 use Drupal\eldrich\Calculator\WeaponCalculator;
@@ -39,6 +40,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
     $variables->is_gear = in_array($node->bundle(), ['gear', 'armor', 'augmentation', 'drug', 'mind', 'morph', 'robot', 'vehicle', 'weapon']);
     $variables->is_game = in_array($node->bundle(), ['campaign', 'session', 'pc']);
     $variables->is_mob = in_array($node->bundle(), ['creature', 'robot', 'mind', 'npc', 'pc']);
+    $variables->is_character = in_array($node->bundle(), ['npc', 'pc']);
 
     // Convenience stuff.
     $variables->icon = $this->getIcon($node);
@@ -49,6 +51,9 @@ class Node extends PreprocessBase implements PreprocessInterface {
 
     // Prepare our weird component entities
     $this->prepChildFields($node, $variables);
+
+    // Add some niceties for chars and mobs
+    $this->buildCharacterLinks($node, $variables);
   }
 
   public function prepChildFields(NodeInterface $node, Variables $variables) {
@@ -200,5 +205,23 @@ class Node extends PreprocessBase implements PreprocessInterface {
     }
 
     return $badge;
+  }
+
+  public function buildCharacterLinks(NodeInterface $node, Variables $variables) {
+    if ($variables->is_character) {
+      $variables->charsheet_link = [
+        '#type' => 'link',
+        '#title' => t('View full charsheet'),
+        '#url' => Url::fromRoute('eldrich.charsheet', ['node' => $node->id()]),
+      ];
+    }
+
+    if ($variables->is_character or $variables->is_mob) {
+      $variables->scratchpad_link = [
+        '#type' => 'link',
+        '#title' => t('View combat scratchpad'),
+        '#url' => Url::fromRoute('eldrich.combatcard', ['node' => $node->id()]),
+      ];
+    }
   }
 }

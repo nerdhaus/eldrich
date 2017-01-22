@@ -30,7 +30,12 @@ class MobilityCalculator {
     static::getForEntity($mobility_systems, $entity);
 
     foreach($mobility_systems as $key => $datum) {
-      $link = Link::createFromRoute($datum['entity']->label(), 'entity.node.canonical', ['node' => $datum['entity']->id()])->toRenderable();
+      $link = Link::createFromRoute(
+        $datum['entity']->label(), 'entity.lookup.canonical', ['lookup' => $datum['entity']->id()]
+      )->toRenderable();
+      $link['#options']['attributes']['title'] = $datum['entity']->label();
+      $link['#options']['attributes']['data-toggle'] = 'popover';
+      $link['#options']['attributes']['data-content'] = strip_tags($datum['entity']->field_description->value);
       $link['#suffix'] =  ' ' . $datum['walk'] . '/' . $datum['run'];
       $mobility_systems['build'][] = $link;
     }
@@ -95,5 +100,4 @@ class MobilityCalculator {
       'cruise' => 0,
     ];
   }
-
 }

@@ -15,4 +15,6 @@
   {% if content.field_faction|field_value %}<li><strong>Faction:</strong> {{ content.field_faction|field_value|safe_join(', ') }}</li>{% endif %}
   {% if content.field_rep|field_value|length %}<li><strong>Rep:</strong> {{ content.field_rep|field_value|safe_join(', ') }}</li>{% endif %}
   {% if content.field_credits|field_value %}<li><strong>Credits:</strong> {{ content.field_credits|field_value }}</li>{% endif %}
+  {% if charsheet_link %}<li><strong>{{ charsheet_link }}</strong></li>{% endif %}
 {% endblock %}
+

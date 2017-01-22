@@ -34,7 +34,7 @@ content:
     weight: 2
     label: inline
     settings:
-      link: '1'
+      link: true
       location: suffix
       template: ' (min. {{ quantity }})'
     third_party_settings: {  }

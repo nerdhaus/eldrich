@@ -346,19 +346,26 @@ class WeaponCalculator {
     }
 
     foreach ($weapon->field_damage_effects as $effect) {
-      if (!in_array($effect->entity->label(), $item['damage']['effects']) && (!in_array($effect->entity->label(), ['Kinetic','Energy','Melee']))) {
-        $item['damage']['effects'][] = $effect->entity->label();
+      $ee = $effect->entity;
+      if (empty($item['damage']['effects'][$ee->id()])) {
+        $item['damage']['effects'][$ee->id()] = static::linkEntity($effect->entity, TRUE);
       }
     }
   }
 
-  private static function linkEntity(FieldableEntityInterface $entity) {
+  private static function linkEntity(FieldableEntityInterface $entity, $popup = FALSE) {
     if (!empty($entity->field_short_name) && !$entity->field_short_name->isEmpty()) {
       $linkText = $entity->field_short_name->value;
     }
     else {
       $linkText = $entity->label();
     }
-    return Link::createFromRoute($linkText, 'entity.node.canonical', ['node' => $entity->id()])->toString();
+    $link = Link::createFromRoute($linkText, 'entity.node.canonical', ['node' => $entity->id()])->toRenderable();
+    if ($popup) {
+      $link['#options']['attributes']['title'] = $entity->label();
+      $link['#options']['attributes']['data-toggle'] = 'popover';
+      $link['#options']['attributes']['data-content'] = strip_tags($entity->field_description->value);
+    }
+    return $link;
   }
 }

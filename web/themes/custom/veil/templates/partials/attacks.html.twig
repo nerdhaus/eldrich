@@ -22,15 +22,15 @@
   <dt><span class="label label-danger text-uppercase">{{ attack.category }}</span></dt>
   <dd>
     {{ attack.build.weapon }}
-    {% if attack.skill_bonus %}(+{{ attack.skill_bonus }}){% endif %}
+    {% if attack.skill %}({{ attack.skill }}){% endif %}
     {% if attack.build.ammo %} w/ {{ attack.build.ammo_mods|safe_join(' ') }} {{ attack.build.ammo }}{% endif %}
     <kbd class="damage-roll" data-average="{{ attack.damage.average }}">
       {% if attack.damage.dice or attack.damage.effects %}
         {% if attack.damage.dice %}
-          (DV {{ attack.damage.dice }}d10
+          DV {{ attack.damage.dice }}d10
           {%- if attack.damage.mod %} {{ attack.damage.mod_operation }} {{ attack.damage.mod }}{% endif -%}
           {%- if attack.damage.special %} + {{ attack.damage.special }}{% endif -%}
-          {%- if attack.damage.ap == 999 %}, ignores armor{% elseif attack.damage.ap != 0 %} {{ attack.damage.ap }}AP{% endif %})
+          {%- if attack.damage.ap == 999 %}, ignores armor{% elseif attack.damage.ap != 0 %} {{ attack.damage.ap }}AP{% endif %}
         {% endif %}
         {% if attack.damage.effects %}{% if attack.damage.dice %}+ {% endif %}{{ attack.damage.effects|safe_join(' + ') }}{% endif %}
       {% else %}
