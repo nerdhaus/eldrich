@@ -131,3 +131,7 @@ thead, h3.popover-title {
 table caption {
   color: inherit;
 }
+
+section.gear-items {
+  padding-top: 15px;
+}

@@ -35,6 +35,7 @@
   {{ content|without('taxonomy_term_category_items') }}
 
   {% if page %}
+    <section class="gear-items">
     {# Kinda funky, but we're hiding the normal terms list and showing a custom
      table view for certain specific categories. #}
 
@@ -49,5 +50,6 @@
       {# Show the usual EVA-powered item list #}
       {{ content.taxonomy_term_category_items }}
     {% endif %}
+    </section>
   {% endif %}
 </div>
