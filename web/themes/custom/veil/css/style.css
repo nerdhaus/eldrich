@@ -135,3 +135,7 @@ table caption {
 section.entity-children {
   padding-top: 15px;
 }
+
+div.view-header {
+  padding-bottom: 15px;
+}

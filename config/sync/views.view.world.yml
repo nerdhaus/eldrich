@@ -391,6 +391,7 @@ display:
         title: false
         sorts: false
         css_class: true
+        header: false
       filter_groups:
         operator: AND
         groups:
@@ -409,6 +410,20 @@ display:
           expose:
             label: ''
           plugin_id: standard
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: 'Posthuman Studios has released Eclipse Phase under a Creative Commons license. Writer and editor Rob Doyle hosts semi-official PDF versions of every core book for download at <a href="https://robboyle.wordpress.com/eclipse-phase-pdfs/>his blog</a>. Feel free to grab them, check them out, and support Posthuman studios by purchasing print or digital copies when you decide to sink your teeth in!'
+            format: basic_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:

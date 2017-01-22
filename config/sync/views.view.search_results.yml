@@ -224,46 +224,6 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-        keys:
-          id: keys
-          table: node_search_index
-          field: keys
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: required
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: keys_op
-            label: ''
-            description: ''
-            use_operator: false
-            operator: keys_op
-            identifier: keyword
-            required: true
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              game_master: '0'
-              contributor: '0'
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: search_keywords
       sorts:
         score:
           id: score
@@ -280,9 +240,57 @@ display:
       title: Search
       header: {  }
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: '<em>No results found. Whoops!</em>'
+            format: basic_html
+          plugin_id: text
       relationships: {  }
-      arguments: {  }
+      arguments:
+        keys:
+          id: keys
+          table: node_search_index
+          field: keys
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: true
+          title: 'Search results for <em>{{ raw_arguments.keys }}</em>'
+          default_argument_type: query_parameter
+          default_argument_options:
+            query_param: q
+            fallback: ''
+            multiple: and
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          plugin_id: search
       display_extenders: {  }
     cache_metadata:
       max-age: -1

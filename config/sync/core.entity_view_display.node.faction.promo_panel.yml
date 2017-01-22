@@ -1,8 +1,9 @@
-uuid: 23f3e65d-2f6c-4b83-b5d2-0b47303ef5cc
+uuid: 77e6fbdc-b899-4c90-bb3d-7f1e3174bb30
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.promo_panel
     - field.field.node.faction.field_description
     - field.field.node.faction.field_faction_type
     - field.field.node.faction.field_locations
@@ -12,19 +13,28 @@ dependencies:
     - node.type.faction
   module:
     - eldrich
-    - text
+    - smart_trim
     - user
-id: node.faction.default
+id: node.faction.promo_panel
 targetEntityType: node
 bundle: faction
-mode: default
+mode: promo_panel
 content:
   field_description:
-    weight: 2
+    weight: 3
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: '600'
+      trim_type: chars
+      trim_suffix: ''
+      more_link: '0'
+      more_text: More
+      trim_options:
+        text: 0
+      more_class: more-link
+      summary_handler: full
     third_party_settings: {  }
-    type: text_default
+    type: smart_trim
   field_faction_type:
     weight: 0
     label: inline
@@ -35,41 +45,26 @@ content:
       template: ' ({{ quantity }})'
     third_party_settings: {  }
     type: eldrich_popup_formatter
-  field_locations:
-    weight: 3
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
   field_memes:
-    weight: 8
+    weight: 1
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  field_parent_faction:
-    weight: 1
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
   field_sources:
-    weight: 7
-    label: inline
+    weight: 4
+    label: hidden
     settings:
       link: true
       location: suffix
-      template: ', page {{ quantity }}'
+      template: ', p. {{ quantity }}'
       destination: list
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
-  world_faction_children:
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  field_locations: true
+  field_parent_faction: true
   links: true
+  world_faction_children: true

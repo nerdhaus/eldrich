@@ -1,8 +1,9 @@
-uuid: dfd52534-0960-4599-8bbd-12325d756484
+uuid: 973eb860-e2c1-424b-82be-3c97d24ceca3
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.promo_panel
     - field.field.node.location.field_description
     - field.field.node.location.field_distance
     - field.field.node.location.field_languages
@@ -13,36 +14,36 @@ dependencies:
     - node.type.location
   module:
     - eldrich
-    - text
+    - smart_trim
     - user
-id: node.location.default
+id: node.location.promo_panel
 targetEntityType: node
 bundle: location
-mode: default
+mode: promo_panel
 content:
   field_description:
-    weight: 0
+    weight: 3
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-  field_distance:
-    weight: 8
-    label: inline
     settings:
-      thousand_separator: ''
-      prefix_suffix: true
+      trim_length: '600'
+      trim_type: chars
+      trim_suffix: ''
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      trim_options: {  }
     third_party_settings: {  }
-    type: number_integer
+    type: smart_trim
   field_languages:
-    weight: 9
+    weight: 2
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   field_location_type:
-    weight: 4
+    weight: 0
     label: inline
     settings:
       link: true
@@ -51,15 +52,8 @@ content:
       template: ' ({{ quantity }})'
     third_party_settings: {  }
     type: eldrich_popup_formatter
-  field_parent_location:
-    weight: 5
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
   field_population:
-    weight: 6
+    weight: 1
     label: inline
     settings:
       thousand_separator: ''
@@ -67,19 +61,18 @@ content:
     third_party_settings: {  }
     type: number_integer
   field_sources:
-    weight: 7
-    label: inline
+    weight: 4
+    label: hidden
     settings:
       link: true
       location: suffix
-      template: ', page {{ quantity }}'
+      template: ', p. {{ quantity }}'
       destination: list
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
-  world_location_children:
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  field_distance: true
+  field_parent_location: true
   links: true
+  world_location_children: true
