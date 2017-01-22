@@ -4,6 +4,7 @@ namespace Drupal\eldrich\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\entity_reference_quantity\Plugin\Field\FieldFormatter\EntityReferenceQuantityLabelFormatter;
+use Drupal\Core\Form\FormStateInterface;
 
 
 /**
@@ -19,6 +20,54 @@ use Drupal\entity_reference_quantity\Plugin\Field\FieldFormatter\EntityReference
  * )
  */
 class EldrichPopupFormatter extends EntityReferenceQuantityLabelFormatter {
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function defaultSettings() {
+    return array(
+        'length' => 'full',
+      ) + parent::defaultSettings();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsForm(array $form, FormStateInterface $form_state) {
+    $elements = parent::settingsForm($form, $form_state);
+    $elements['length'] = array(
+      '#type' => 'radios',
+      '#title' => t('Display as'),
+      '#options' => [
+        'full' => t('Full title'),
+        'short' => t('Short title'),
+      ],
+      '#default_value' => $this->getSetting('length'),
+      '#required' => TRUE,
+    );
+
+    return $elements;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsSummary() {
+    $summary = parent::settingsSummary();
+
+    switch ($this->getSetting('length')) {
+      case 'full':
+        $length = t('full text');
+        break;
+      case 'short':
+        $length = t('code');
+        break;
+    }
+    $summary[] = t('Show title as @length', array('@length' => $length));
+
+    return $summary;
+  }
+
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = array();
     $output_as_link = $this->getSetting('link');
@@ -26,10 +75,25 @@ class EldrichPopupFormatter extends EntityReferenceQuantityLabelFormatter {
     $location = $this->getSetting('location');
 
     foreach ($this->getEntitiesToView($items, $langcode) as $delta => $entity) {
+      $length = $this->getSetting('length');
+      if ($length == 'short') {
+        if ($entity->hasField('field_lookup_code')) {
+          $label = $entity->field_lookup_code->value;
+        }
+        elseif ($entity->hasField('field_shortname')) {
+          $label = $entity->field_shortname->value;
+        }
+        else {
+          $label = $entity->label();
+        }
+      }
+      else {
+        $label = $entity->label();
+      }
 
       $elements[$delta] = [
         '#type' => 'link',
-        '#title' => $entity->label(),
+        '#title' => $label,
       ];
 
       if (!$entity->isNew()) {

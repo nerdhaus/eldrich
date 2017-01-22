@@ -7,3 +7,9 @@ field.formatter.settings.eldrich_citation_formatter:
     destination:
       label: 'Link to'
       type: string
+field.formatter.settings.eldrich_popup_formatter:
+  type: field.formatter.settings.entity_reference_label
+  mapping:
+    length:
+      label: 'Show title as'
+      type: string

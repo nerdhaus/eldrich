@@ -1240,7 +1240,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_damage_dice }}d10'
+            text: '{% if field_damage_dice__value == 100 %}Yes{% else %}{{ field_damage_dice }}d10{% endif %}'
             make_link: false
             path: ''
             absolute: false
@@ -1368,7 +1368,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_ap_modifier }}{{ field_ap_modifier__value ? ''AP'' : '''' }}'
+            text: '{% if field_ap_modifier__value == 999 %}(Ignores armor){% else %}{{ field_ap_modifier }}{{ field_ap_modifier__value ? ''AP'' : '''' }}{% endif %}'
             make_link: false
             path: ''
             absolute: false
@@ -1472,7 +1472,7 @@ display:
           click_sort_column: target_id
           type: eldrich_popup_formatter
           settings:
-            link: 1
+            link: true
             location: attribute
             template: ' ({{ quantity }})'
           group_column: target_id
@@ -1537,9 +1537,10 @@ display:
           click_sort_column: target_id
           type: eldrich_popup_formatter
           settings:
-            link: 1
+            link: true
             location: attribute
             template: ' ({{ quantity }})'
+            length: short
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -1728,7 +1729,7 @@ display:
           click_sort_column: target_id
           type: eldrich_popup_formatter
           settings:
-            link: 1
+            link: true
             location: attribute
             template: ' ({{ quantity }})'
           group_column: target_id
@@ -1856,7 +1857,7 @@ display:
           click_sort_column: target_id
           type: eldrich_popup_formatter
           settings:
-            link: 1
+            link: true
             location: suffix
             template: ' ({{ quantity }})'
           group_column: ''
