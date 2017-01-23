@@ -73,7 +73,8 @@
         "drupal/view_mode_page": "^3.0@RC",
         "drupal/empty_page": "^1.0",
         "drupal/menu_position": "1.x-dev",
-        "drupal/field_formatter_range": "^1.0"
+        "drupal/field_formatter_range": "^1.0",
+        "drupal/group": "^1.0@beta"
     },
     "require-dev": {
         "behat/mink": "~1.7",

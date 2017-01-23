@@ -13,7 +13,7 @@ dependencies:
     - node.type.faction
   module:
     - eldrich
-    - smart_trim
+    - text
     - user
 id: node.faction.promo_panel
 targetEntityType: node
@@ -24,17 +24,9 @@ content:
     weight: 3
     label: hidden
     settings:
-      trim_length: '600'
-      trim_type: chars
-      trim_suffix: ''
-      more_link: '0'
-      more_text: More
-      trim_options:
-        text: 0
-      more_class: more-link
-      summary_handler: full
+      trim_length: 600
     third_party_settings: {  }
-    type: smart_trim
+    type: text_trimmed
   field_faction_type:
     weight: 0
     label: inline
@@ -45,16 +37,9 @@ content:
       template: ' ({{ quantity }})'
     third_party_settings: {  }
     type: eldrich_popup_formatter
-  field_memes:
-    weight: 1
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
   field_sources:
     weight: 4
-    label: hidden
+    label: inline
     settings:
       link: true
       location: suffix
@@ -65,6 +50,7 @@ content:
     type: eldrich_citation_formatter
 hidden:
   field_locations: true
+  field_memes: true
   field_parent_faction: true
   links: true
   world_faction_children: true

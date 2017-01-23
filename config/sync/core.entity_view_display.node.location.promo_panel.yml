@@ -14,7 +14,7 @@ dependencies:
     - node.type.location
   module:
     - eldrich
-    - smart_trim
+    - text
     - user
 id: node.location.promo_panel
 targetEntityType: node
@@ -25,23 +25,9 @@ content:
     weight: 3
     label: hidden
     settings:
-      trim_length: '600'
-      trim_type: chars
-      trim_suffix: ''
-      more_link: 0
-      more_class: more-link
-      more_text: More
-      summary_handler: full
-      trim_options: {  }
+      trim_length: 600
     third_party_settings: {  }
-    type: smart_trim
-  field_languages:
-    weight: 2
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
+    type: text_trimmed
   field_location_type:
     weight: 0
     label: inline
@@ -62,7 +48,7 @@ content:
     type: number_integer
   field_sources:
     weight: 4
-    label: hidden
+    label: inline
     settings:
       link: true
       location: suffix
@@ -73,6 +59,7 @@ content:
     type: eldrich_citation_formatter
 hidden:
   field_distance: true
+  field_languages: true
   field_parent_location: true
   links: true
   world_location_children: true

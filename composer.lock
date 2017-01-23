@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb53ba3f15d171db85c096a77d505656",
+    "content-hash": "a459c2f1a22c9d27c7617accf0476663",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2115,7 +2115,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/empty_page-8.x-1.0.zip",
-                "reference": null,
+                "reference": "8.x-1.0",
                 "shasum": "c1d5f3a39b5282b1d1cfacc8a8fc908f77792a87"
             },
             "require": {
@@ -2502,7 +2502,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/field_formatter_range-8.x-1.0.zip",
-                "reference": null,
+                "reference": "8.x-1.0",
                 "shasum": "e454f94811ef7a1ddb415010c44832467d96b638"
             },
             "require": {
@@ -2726,6 +2726,53 @@
             "support": {
                 "source": "http://git.drupal.org/project/google_analytics.git",
                 "issues": "https://www.drupal.org/project/issues/google_analytics"
+            }
+        },
+        {
+            "name": "drupal/group",
+            "version": "1.0.0-beta4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/group",
+                "reference": "8.x-1.0-beta4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/group-8.x-1.0-beta4.zip",
+                "reference": null,
+                "shasum": "744a5b72d06ca3b70055aede39294470232c123e"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta4",
+                    "datestamp": "1474722239"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "kristiaanvandeneynde",
+                    "homepage": "https://www.drupal.org/user/1345130"
+                },
+                {
+                    "name": "oenie",
+                    "homepage": "https://www.drupal.org/user/1446068"
+                }
+            ],
+            "description": "This module allows you to group users, content and other entities",
+            "homepage": "https://www.drupal.org/project/group",
+            "support": {
+                "source": "http://cgit.drupalcode.org/group"
             }
         },
         {
@@ -3871,7 +3918,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/twig_tweak-8.x-1.5.zip",
-                "reference": null,
+                "reference": "8.x-1.5",
                 "shasum": "8e2820ba3b706909c76cb4fa0a85becd39c5b9b1"
             },
             "require": {
@@ -4020,7 +4067,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/view_mode_page-8.x-3.0-rc1.zip",
-                "reference": null,
+                "reference": "8.x-3.0-rc1",
                 "shasum": "58103c89b9bd07c7bde2e98efc553ddf19d6f083"
             },
             "require": {
@@ -8959,6 +9006,7 @@
         "drupal/field_redirection": 20,
         "drupal/view_mode_page": 5,
         "drupal/menu_position": 20,
+        "drupal/group": 10,
         "drupal/viewsreference": 15
     },
     "prefer-stable": true,

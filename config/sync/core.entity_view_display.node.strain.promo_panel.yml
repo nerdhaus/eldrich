@@ -37,7 +37,7 @@ content:
   field_sources:
     type: eldrich_citation_formatter
     weight: 2
-    label: hidden
+    label: inline
     settings:
       link: true
       location: suffix
@@ -45,18 +45,9 @@ content:
       destination: list
       length: full
     third_party_settings: {  }
-  field_vectors:
-    type: eldrich_popup_formatter
-    weight: 0
-    label: inline
-    settings:
-      link: true
-      location: attribute
-      template: ' ({{ quantity }})'
-      length: short
-    third_party_settings: {  }
 hidden:
   field_infectiousness: true
   field_stages: true
   field_strain_rating: true
+  field_vectors: true
   links: true

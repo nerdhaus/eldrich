@@ -1,0 +1,21 @@
+uuid: 5839303d-a417-40d1-b909-d9ae136c757a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lead
+    - node.type.page
+  module:
+    - text
+id: node.page.field_lead
+field_name: field_lead
+entity_type: node
+bundle: page
+label: Lead
+description: 'Lead text will be displayed all big-like at the top of the page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

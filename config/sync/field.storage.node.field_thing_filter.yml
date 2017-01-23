@@ -1,0 +1,19 @@
+uuid: a689ccc5-e8c1-459d-84c3-26b1a81a2421
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_thing_filter
+field_name: field_thing_filter
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node_type
+module: core
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
