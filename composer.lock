@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a459c2f1a22c9d27c7617accf0476663",
+    "content-hash": "129476c3002ab033b52e1279f3c3e9de",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1294,6 +1294,49 @@
             "homepage": "https://www.drupal.org/project/bootstrap",
             "support": {
                 "source": "http://cgit.drupalcode.org/bootstrap"
+            }
+        },
+        {
+            "name": "drupal/config_views",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/config_views",
+                "reference": "8.x-1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_views-8.x-1.0-alpha1.zip",
+                "reference": null,
+                "shasum": "d9c27309e5d92f9de6af0c779ed0a6f65dc1632a"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1466919458"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "vijaycs85",
+                    "homepage": "https://www.drupal.org/user/93488"
+                }
+            ],
+            "description": "Views handler implementation for configuration entities.",
+            "homepage": "https://www.drupal.org/project/config_views",
+            "support": {
+                "source": "http://cgit.drupalcode.org/config_views"
             }
         },
         {
@@ -2739,7 +2782,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/group-8.x-1.0-beta4.zip",
-                "reference": null,
+                "reference": "8.x-1.0-beta4",
                 "shasum": "744a5b72d06ca3b70055aede39294470232c123e"
             },
             "require": {
@@ -9007,6 +9050,7 @@
         "drupal/view_mode_page": 5,
         "drupal/menu_position": 20,
         "drupal/group": 10,
+        "drupal/config_views": 15,
         "drupal/viewsreference": 15
     },
     "prefer-stable": true,

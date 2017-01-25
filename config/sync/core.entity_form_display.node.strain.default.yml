@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.strain.field_description
     - field.field.node.strain.field_infectiousness
+    - field.field.node.strain.field_privacy
     - field.field.node.strain.field_sources
     - field.field.node.strain.field_stages
     - field.field.node.strain.field_strain_rating
@@ -39,6 +40,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_privacy:
+    weight: 35
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_source:
     weight: 32
     settings:

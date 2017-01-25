@@ -1,0 +1,30 @@
+uuid: 7e491e3f-8c0e-4b10-a7af-c56041f630ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_privacy
+field_name: field_privacy
+entity_type: node
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 0
+      label: Public
+    -
+      value: 1
+      label: 'GMs Only'
+    -
+      value: 2
+      label: Private
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: fc916af3-2929-4955-985f-e27df88dabed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_randomizer
+    - node.type.page
+id: node.page.field_randomizer
+field_name: field_randomizer
+entity_type: node
+bundle: page
+label: Randomizer
+description: 'Content Types that should be included in the page''s "random content of the day" section.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node_type'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

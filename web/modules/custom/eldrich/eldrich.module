@@ -6,6 +6,13 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
+
+define("ELDRICH_CONTENT_PUBLIC", 0);
+define("ELDRICH_CONTENT_GM", 1);
+define("ELDRICH_CONTENT_PRIVATE", 2);
 
 /**
  * Implements hook_help().
@@ -59,6 +66,9 @@ function eldrich_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
           }
         }
         break;
+      case 'muse':
+        // If the muse doesn't have any data, pre-populate it as a Standard Muse
+        break;
     }
   }
 }
@@ -81,7 +91,7 @@ function eldrich_options_list_alter(array &$options, array $context) {
 
   $options = [];
   if (!empty($grouped)) {
-    if (count($grouped == 1) && empty($ungrouped)) {
+    if ((count($grouped) == 1) && empty($ungrouped)) {
       $options += reset($grouped);
     }
     else {

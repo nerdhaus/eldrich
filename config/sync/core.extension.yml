@@ -1,5 +1,6 @@
 module:
   automated_cron: 0
+  barcodes: 0
   block: 0
   block_class: 0
   block_content: 0
@@ -50,8 +51,10 @@ module:
   options: 0
   page_cache: 0
   path: 0
+  prepopulate: 0
   quick_pages: 0
   range: 0
+  replicate: 0
   search: 0
   shortcut: 0
   simple_block: 0

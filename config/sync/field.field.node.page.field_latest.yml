@@ -1,0 +1,23 @@
+uuid: 469fbdc6-39a3-4321-9730-ad31f984fdc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_latest
+    - node.type.page
+id: node.page.field_latest
+field_name: field_latest
+entity_type: node
+bundle: page
+label: Latest
+description: 'The content type to use when populating the "Latest Post" region.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node_type'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

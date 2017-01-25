@@ -1,18 +1,16 @@
-uuid: 14386432-1bc9-4a2b-911c-7c5d7566dfe8
+uuid: b3772e74-c504-4504-8c5a-fd14d98d4980
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - views
-    - viewsreference
-id: node.field_content_lists
-field_name: field_content_lists
+id: node.field_randomizer
+field_name: field_randomizer
 entity_type: node
-type: viewsreference
+type: entity_reference
 settings:
-  target_type: view
-module: viewsreference
+  target_type: node_type
+module: core
 locked: false
 cardinality: -1
 translatable: true

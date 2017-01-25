@@ -74,7 +74,8 @@
         "drupal/empty_page": "^1.0",
         "drupal/menu_position": "1.x-dev",
         "drupal/field_formatter_range": "^1.0",
-        "drupal/group": "^1.0@beta"
+        "drupal/group": "^1.0@beta",
+        "drupal/config_views": "^1.0@alpha"
     },
     "require-dev": {
         "behat/mink": "~1.7",

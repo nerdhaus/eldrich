@@ -3,9 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.page.field_content_lists
+    - field.field.node.page.field_body
+    - field.field.node.page.field_latest
     - field.field.node.page.field_lead
-    - field.field.node.page.field_thing_filter
+    - field.field.node.page.field_lists
+    - field.field.node.page.field_randomizer
+    - field.field.node.page.field_template
     - node.type.page
   module:
     - text
@@ -16,27 +19,28 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
-  field_content_lists:
-    weight: 103
-    label: above
+  field_body:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_lead:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_lists:
+    weight: 3
+    label: hidden
     settings:
       plugin_types:
         - block
     third_party_settings: {  }
     type: viewsreference_formatter
-  field_lead:
-    weight: 101
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-  field_thing_filter:
-    weight: 102
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-  links:
-    weight: 100
-hidden: {  }
+hidden:
+  field_latest: true
+  field_randomizer: true
+  field_template: true
+  links: true

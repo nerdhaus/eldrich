@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.npc.field_morph
     - field.field.node.npc.field_motivations
     - field.field.node.npc.field_owned_blueprints
+    - field.field.node.npc.field_privacy
     - field.field.node.npc.field_quote
     - field.field.node.npc.field_roleplay_notes
     - field.field.node.npc.field_skills
@@ -24,6 +25,7 @@ dependencies:
     - eldrich
     - entity_reference_override
     - image
+    - options
     - text
     - user
 id: node.npc.default
@@ -75,6 +77,12 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_override_label
+  field_privacy:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
   field_quote:
     weight: 0
     label: inline

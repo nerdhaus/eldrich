@@ -1,0 +1,5 @@
+name: EP Replicator
+type: module
+description: Clones nodes for use in custom campaigns
+core: 8.x
+package: Custom

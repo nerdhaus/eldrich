@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains ep_replicator.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ep_replicator_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ep_replicator module.
+    case 'help.page.ep_replicator':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Clones nodes for use in custom campaigns') . '</p>';
+      return $output;
+
+    default:
+  }
+}

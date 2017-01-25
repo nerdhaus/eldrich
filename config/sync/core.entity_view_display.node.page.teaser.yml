@@ -4,14 +4,31 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.page.field_body
+    - field.field.node.page.field_latest
+    - field.field.node.page.field_lead
+    - field.field.node.page.field_lists
+    - field.field.node.page.field_randomizer
+    - field.field.node.page.field_template
     - node.type.page
   module:
+    - text
     - user
 id: node.page.teaser
 targetEntityType: node
 bundle: page
 mode: teaser
 content:
-  links:
-    weight: 100
-hidden: {  }
+  field_lead:
+    type: text_default
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_body: true
+  field_latest: true
+  field_lists: true
+  field_randomizer: true
+  field_template: true
+  links: true

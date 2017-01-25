@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.creature.field_gear
     - field.field.node.creature.field_mobility_system
     - field.field.node.creature.field_movement_speed
+    - field.field.node.creature.field_privacy
     - field.field.node.creature.field_skills
     - field.field.node.creature.field_sources
     - field.field.node.creature.field_stats
@@ -22,6 +23,7 @@ dependencies:
     - entity_reference_override
     - ep_complex_values
     - ep_skill_reference
+    - options
     - text
     - user
 id: node.creature.default
@@ -79,6 +81,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_formatter
+  field_privacy:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
   field_skills:
     weight: 6
     label: inline
