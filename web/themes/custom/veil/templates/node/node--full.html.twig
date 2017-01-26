@@ -69,7 +69,7 @@ view_mode ? view_mode|clean_class
   <section class="row">
     {% block callout %}
     <aside class="info-callout col-sm-4 col-xs-12 pull-right">
-      <ul class="list-unstyled">
+      <ul class="list-unstyled list-hanging">
       {% block callout_content %}
         {% if threat and threat.rating %}<li><strong>Threat Level:</strong> {{ threat.label }}</li>{% endif %}
         {% if content.field_gear_type|field_value %}<li><strong>Type:</strong> {{ content.field_gear_type|field_value }}</li>{% endif %}
@@ -102,10 +102,10 @@ view_mode ? view_mode|clean_class
   {% endblock %}
 
   {% block properties %}
-  <dl class="dl-horizontal panel-charsheet">
-    {% if content.field_morph_model|field_value %}<dt>Morph:</dt><dd>{{ content.field_morph_model|field_value }}{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}</dd>{% endif %}
-    {% if skills|length %}<dt>Skills:</dt><dd>{% include directory ~ '/templates/partials/skills.html.twig' %}</dd>{% endif %}
-    {% if content.field_augmentations|field_value|length %}<dt>Augmentations:</dt><dd>{{ content.field_augmentations|field_value|safe_join(', ') }}</dd>{% endif %}
+  <ul class="list-unstyled list-hanging">
+    {% if content.field_morph_model|field_value %}<li><strong>Morph:</strong> {{ content.field_morph_model|field_value }}{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}</li>{% endif %}
+    {% if skills|length %}<li><strong>Skills:</strong> {% include directory ~ '/templates/partials/skills.html.twig' %}</li>{% endif %}
+    {% if content.field_augmentations|field_value|length %}<li><strong>Augmentations:</strong> {{ content.field_augmentations|field_value|safe_join(', ') }}</li>{% endif %}
 
     {% if content.field_traits|field_value|length %}
       {% if content.field_morph_traits|field_value|length %}
@@ -113,19 +113,20 @@ view_mode ? view_mode|clean_class
       {% else %}
         {% set traits = content.field_traits|field_value %}
       {% endif %}
-      <dt>Traits:</dt><dd>{{ traits|safe_join(', ') }}</dd></dd>
+      <li><strong>Traits:</strong> {{ traits|safe_join(', ') }}</li>
     {% endif %}
 
-    {% if content.field_sleights|field_value|length %}<dt>Psi Sleights:</dt><dd>{{ content.field_sleights|field_value|safe_join(', ') }}</dd>{% endif %}
-    {% if content.field_gear|field_value|length %}<dt>Gear:</dt><dd>{{ content.field_gear|field_value|safe_join(', ') }}</dd>{% endif %}
-    {% if content.field_owned_blueprints|field_value|length %}<dt>Blueprints:</dt><dd>{{ content.field_owned_blueprints|field_value|safe_join(', ') }}</dd>{% endif %}
+    {% if content.field_sleights|field_value|length %}<li><strong>Psi Sleights:</strong> {{ content.field_sleights|field_value|safe_join(', ') }}</li>{% endif %}
+    {% if content.field_gear|field_value|length %}<li><strong>Gear:</strong> {{ content.field_gear|field_value|safe_join(', ') }}</li>{% endif %}
+    {% if content.field_owned_blueprints|field_value|length %}<li><strong>Blueprints:</strong> {{ content.field_owned_blueprints|field_value|safe_join(', ') }}</li>{% endif %}
     {% if armor.energy or armor.kinetic %}
-      <dt>Armor:</dt>
-      <dd>{{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
+      <li><strong>Armor:</strong>
+      {{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
         {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
-      </dd>
+      </li>
     {% endif %}
-  </dl>
+  </ul>
+
   {% if attacks|length %}{% include '@veil/partials/attacks.html.twig' %}{% endif %}
   {% endblock %}
 

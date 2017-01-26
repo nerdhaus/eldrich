@@ -79,10 +79,8 @@ span.skill-combat {
   font-weight: bold;
 }
 
-.info-callout li {
+.list-hanging li {
   padding-left: 30px;
-}
-.info-callout li {
   text-indent: -30px;
 }
 
