@@ -5,6 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.campaign.body
+    - field.field.node.campaign.field_campaign_status
+    - field.field.node.campaign.field_official_downloads
+    - field.field.node.campaign.field_players
+    - field.field.node.campaign.field_resources
+    - field.field.node.campaign.field_shortname
     - node.type.campaign
   module:
     - text
@@ -17,13 +22,14 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 2
     settings:
       trim_length: 600
     third_party_settings: {  }
-  links:
-    weight: 100
 hidden:
+  campaign_characters: true
+  campaign_gear: true
+  campaign_sessions: true
   field_campaign_status: true
   field_characters: true
   field_official_downloads: true
@@ -31,3 +37,4 @@ hidden:
   field_resources: true
   field_shortname: true
   field_useful_resources: true
+  links: true

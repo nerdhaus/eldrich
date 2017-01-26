@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.promo_panel
     - core.entity_view_mode.node.rss
     - node.type.news
-    - system.menu.main
   module:
     - node
     - user
@@ -359,7 +358,7 @@ display:
       path: news
       display_extenders: {  }
       menu:
-        type: normal
+        type: none
         title: News
         description: 'Site Updates'
         expanded: false
