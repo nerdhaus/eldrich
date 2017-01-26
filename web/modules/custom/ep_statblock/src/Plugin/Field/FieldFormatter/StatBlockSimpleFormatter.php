@@ -82,7 +82,7 @@ class StatBlockSimpleFormatter extends FormatterBase {
       $output = [];
 
       foreach ($values as $key => $value) {
-        if (!empty($visible_properties[$key]) && !empty($value)) {
+        if ((empty($visible_properties) || !empty($visible_properties[$key])) && !empty($value)) {
           $output[] = $key . ': ' . $value;
         }
       }
