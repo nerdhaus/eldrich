@@ -1,0 +1,8 @@
+field.formatter.settings.stat_block_simple:
+  type: field.formatter.settings.stat_block_simple
+  mapping:
+    visible_properties:
+      type: sequence
+      sequence:
+        type: string
+        label: 'Property'
