@@ -7,8 +7,8 @@ dependencies:
     - field.field.node.npc.field_equipped_armor
     - field.field.node.npc.field_equipped_weapons
     - field.field.node.npc.field_gear
-    - field.field.node.npc.field_headshot
     - field.field.node.npc.field_identity
+    - field.field.node.npc.field_image
     - field.field.node.npc.field_morph
     - field.field.node.npc.field_motivations
     - field.field.node.npc.field_owned_blueprints
@@ -118,13 +118,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
-  field_headshot:
-    weight: 3
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
   field_identity:
     weight: 13
     settings:
@@ -136,6 +129,13 @@ content:
       override_labels: false
     third_party_settings: {  }
     type: inline_entity_form_simple
+  field_image:
+    weight: 27
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
   field_morph:
     weight: 12
     settings:

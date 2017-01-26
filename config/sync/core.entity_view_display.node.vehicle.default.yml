@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.vehicle.field_equipped_weapons
     - field.field.node.vehicle.field_gear
     - field.field.node.vehicle.field_gear_type
+    - field.field.node.vehicle.field_image
     - field.field.node.vehicle.field_linked_skill
     - field.field.node.vehicle.field_mobility_system
     - field.field.node.vehicle.field_movement_speed
@@ -23,7 +24,7 @@ dependencies:
   module:
     - eldrich
     - entity_reference_override
-    - entity_reference_quantity
+    - image
     - text
     - user
 id: node.vehicle.default
@@ -69,6 +70,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_image:
+    weight: 17
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   field_linked_skill:
     weight: 12
     label: inline
@@ -104,6 +113,8 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
+  related_lists_gear_siblings:
+    weight: 10
 hidden:
   field_armor: true
   field_blueprints: true

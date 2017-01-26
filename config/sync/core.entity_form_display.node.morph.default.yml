@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.morph.field_cp_cost
     - field.field.node.morph.field_description
     - field.field.node.morph.field_gear_type
+    - field.field.node.morph.field_image
     - field.field.node.morph.field_mobility_system
     - field.field.node.morph.field_morph_type
     - field.field.node.morph.field_movement_speed
@@ -20,6 +21,7 @@ dependencies:
     - field.field.node.morph.field_stat_variance
     - field.field.node.morph.field_stats
     - field.field.node.morph.field_traits
+    - image.style.thumbnail
     - node.type.morph
   module:
     - entity_reference_override
@@ -27,6 +29,7 @@ dependencies:
     - ep_complex_values
     - ep_skill_reference
     - ep_statblock
+    - image
     - path
     - text
 id: node.morph.default
@@ -81,6 +84,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_image:
+    weight: 42
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
   field_mobility_system:
     weight: 34
     settings:

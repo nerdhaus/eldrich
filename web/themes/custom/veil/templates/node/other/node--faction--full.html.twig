@@ -10,16 +10,17 @@
 {% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
   {% if content.field_faction_type|field_value %}<li><strong>Type:</strong> {{ content.field_faction_type|field_value }}</li>{% endif %}
-  {% if content.field_parent_faction|field_value %}<li><strong>Part of:</strong> {{ content.field_parent_faction|field_value|safe_join(', ') }}</li>{% endif %}
+  {% if content.field_parent_faction|
+  field_value %}<li><strong>Part of:</strong> {{ content.field_parent_faction|field_value|safe_join(', ') }}</li>{% endif %}
   {% if content.field_faction_locations|length == 1 %}<li><strong>Primary Location:</strong> {{ content.field_faction_locations|field_value }}</li>
   {% elseif content.field_faction_locations|length > 1 %}<li><strong>Primary Locations:</strong> {{ content.field_faction_locations|field_value }}</li>{% endif %}
   {% if content.field_memes|field_value|length == 1 %}<li><strong>Key Meme:</strong> {{ content.field_memes|field_value }}</li>
   {% elseif content.field_memes|field_value|length > 1 %}<li><strong>Key Memes:</strong> {{ content.field_memes|field_value|safe_join(', ') }}</li>{% endif %}
 {% endblock %}
 
-{% block properties %}
+{% block related %}
   {% if content.world_faction_children %}
-    <section class="entity-children">
+    <section class="entity-children col-md-8">
     {{ content.world_faction_children }}
     </section>
   {% endif %}

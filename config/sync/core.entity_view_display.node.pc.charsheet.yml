@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.pc.field_equipped_armor
     - field.field.node.pc.field_equipped_weapons
     - field.field.node.pc.field_gear
-    - field.field.node.pc.field_headshot
     - field.field.node.pc.field_identity
     - field.field.node.pc.field_morph
     - field.field.node.pc.field_motivations
@@ -27,7 +26,6 @@ dependencies:
     - entity_reference_override
     - ep_skill_reference
     - field_group
-    - image
     - text
     - user
 third_party_settings:
@@ -104,14 +102,6 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
-  field_headshot:
-    weight: 0
-    label: hidden
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
   field_identity:
     weight: 4
     label: hidden

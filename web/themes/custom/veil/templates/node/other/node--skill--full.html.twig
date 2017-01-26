@@ -13,15 +13,18 @@
 {% block callout_content %}
   {% if content.field_skill_type|field_value %}<li><strong>Skill type:</strong> {{ content.field_skill_type|field_value }}</li>{% endif %}
   {% if content.field_linked_aptitude|field_value %}<li><strong>Linked Aptitude:</strong> {{ content.field_linked_aptitude|field_value }}</li>{% endif %}
-  {% if content.field_no_defaulting|field_value %}<li><strong>No defaulting allowed</strong></li>{% endif %}
+  {% if content.field_no_defaulting.value %}<li><strong>No defaulting allowed</strong></li>{% endif %}
 {% endblock %}
 
 {% block properties %}
-  {% if content.field_is_field|field_value %}
+  {% if content.field_is_field.value %}
     <p>This skill is a <em>field.</em> It requires a particular area of expertise to be selected.
     {% if content.field_example_fields|field_value %}
-      Examples include {{ content.field_example_fields|field_value|safe_join(', ') }}.</p>
+      Examples include {{ content.field_example_fields|field_value|safe_join(', ') }}.
     {% endif %}
+    </p>
   {% endif %}
-  {% if content.field_specializations|field_value|length %}<p>Example (optional) specializations include {{ content.field_specializations|field_value|safe_join(', ') }}.</p>{% endif %}
+  {% if content.field_specializations|field_value|length %}
+    <p>Example (optional) specializations include {{ content.field_specializations|field_value|safe_join(', ') }}.</p>
+  {% endif %}
 {% endblock %}

@@ -23,17 +23,17 @@ region_wells:
 breadcrumb_home: 1
 navbar_position: static-top
 breadcrumb: '1'
-image_shape: img-thumbnail
 popover_animation: 0
 cdn_provider_import_data: ''
 popover_placement: auto
 table_striped: 0
 table_bordered: 1
 table_condensed: 1
+table_responsive: '0'
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: ''
   url: 'http://eldrich.local/themes/contrib/bootstrap/favicon.ico'
   use_default: true
-table_responsive: '0'
+image_shape: img-thumbnail
 table: ''

@@ -213,6 +213,9 @@ class Node extends PreprocessBase implements PreprocessInterface {
         '#type' => 'link',
         '#title' => t('View full charsheet'),
         '#url' => Url::fromRoute('eldrich.charsheet', ['node' => $node->id()]),
+        '#attributes' => [
+          'class' => ['btn', 'btn-default', 'btn-sm']
+        ]
       ];
     }
 

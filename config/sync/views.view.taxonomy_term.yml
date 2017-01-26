@@ -2151,7 +2151,7 @@ display:
               sortable: false
               default_sort_order: asc
               align: ''
-              separator: ''
+              separator: ', '
               empty_column: false
               responsive: ''
             field_stat_variance:
@@ -2366,7 +2366,7 @@ display:
           element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -2374,6 +2374,8 @@ display:
           click_sort_column: dur
           type: stat_block_simple
           settings:
+            labels: none
+            delimiter: ', '
             visible_properties:
               dur: dur
               cog: 0
@@ -2404,6 +2406,70 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_stat_variance:
+          id: field_stat_variance
+          table: node__field_stat_variance
+          field: field_stat_variance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: '{{ field_stat_variance }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: true
+          empty_zero: true
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_stats:
           id: field_stats
           table: node__field_stats
@@ -2414,8 +2480,8 @@ display:
           label: Bonuses
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '{{ field_stats }}{% if field_stat_variance and field_stats %}, {% endif %}{{ field_stat_variance }}'
             make_link: false
             path: ''
             absolute: false
@@ -2455,6 +2521,8 @@ display:
           click_sort_column: cog
           type: stat_block_simple
           settings:
+            labels: keys
+            delimiter: ', '
             visible_properties:
               cog: cog
               coo: coo
@@ -2475,70 +2543,6 @@ display:
               dr: 0
               db: 0
           group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_stat_variance:
-          id: field_stat_variance
-          table: node__field_stat_variance
-          field: field_stat_variance
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Custom Bonuses'
-          exclude: false
-          alter:
-            alter_text: true
-            text: '{{ field_stats ? '','' : '''' }} {{ field_stat_variance }}'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0

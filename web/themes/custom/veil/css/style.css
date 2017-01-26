@@ -84,6 +84,10 @@ span.skill-combat {
   text-indent: -30px;
 }
 
+.list-hanging li strong, .list-hanging li span.label {
+  margin-right: 5px;
+}
+
 .skill-col-total {
   font-weight: bolder;
 }

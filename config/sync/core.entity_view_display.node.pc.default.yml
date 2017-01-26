@@ -8,8 +8,8 @@ dependencies:
     - field.field.node.pc.field_equipped_armor
     - field.field.node.pc.field_equipped_weapons
     - field.field.node.pc.field_gear
-    - field.field.node.pc.field_headshot
     - field.field.node.pc.field_identity
+    - field.field.node.pc.field_image
     - field.field.node.pc.field_morph
     - field.field.node.pc.field_motivations
     - field.field.node.pc.field_muse
@@ -70,14 +70,6 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
-  field_headshot:
-    weight: 0
-    label: hidden
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
   field_identity:
     weight: 4
     label: hidden
@@ -86,6 +78,14 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+  field_image:
+    weight: 14
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   field_morph:
     weight: 6
     label: hidden

@@ -7,8 +7,8 @@ dependencies:
     - field.field.node.npc.field_equipped_armor
     - field.field.node.npc.field_equipped_weapons
     - field.field.node.npc.field_gear
-    - field.field.node.npc.field_headshot
     - field.field.node.npc.field_identity
+    - field.field.node.npc.field_image
     - field.field.node.npc.field_morph
     - field.field.node.npc.field_motivations
     - field.field.node.npc.field_owned_blueprints
@@ -20,12 +20,12 @@ dependencies:
     - field.field.node.npc.field_sources
     - field.field.node.npc.field_stats
     - field.field.node.npc.field_traits
+    - image.style.large
     - node.type.npc
   module:
     - eldrich
     - entity_reference_override
     - image
-    - options
     - text
     - user
 id: node.npc.default
@@ -47,11 +47,11 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
-  field_headshot:
-    weight: 13
-    label: above
+  field_image:
+    weight: 15
+    label: hidden
     settings:
-      image_style: ''
+      image_style: large
       image_link: ''
     third_party_settings: {  }
     type: image
@@ -64,25 +64,19 @@ content:
     type: entity_reference_label
   field_motivations:
     weight: 3
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   field_owned_blueprints:
     weight: 9
-    label: above
+    label: inline
     settings:
       override_action: title
       link: true
     third_party_settings: {  }
     type: entity_reference_override_label
-  field_privacy:
-    weight: 14
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
   field_quote:
     weight: 0
     label: inline
@@ -92,7 +86,7 @@ content:
     type: string
   field_roleplay_notes:
     weight: 2
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: text_default
@@ -105,7 +99,7 @@ content:
     type: entity_reference_label
   field_sources:
     weight: 12
-    label: above
+    label: inline
     settings:
       link: true
       location: suffix
@@ -126,6 +120,7 @@ hidden:
   field_equipped_armor: true
   field_equipped_weapons: true
   field_identity: true
+  field_privacy: true
   field_skills: true
   field_stats: true
   links: true

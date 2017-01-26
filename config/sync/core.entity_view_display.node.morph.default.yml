@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.morph.field_cp_cost
     - field.field.node.morph.field_description
     - field.field.node.morph.field_gear_type
+    - field.field.node.morph.field_image
     - field.field.node.morph.field_mobility_system
     - field.field.node.morph.field_morph_type
     - field.field.node.morph.field_movement_speed
@@ -27,6 +28,7 @@ dependencies:
     - ep_complex_values
     - ep_skill_reference
     - ep_statblock
+    - image
     - text
     - user
 id: node.morph.default
@@ -71,6 +73,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+  field_image:
+    weight: 12
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   field_mobility_system:
     weight: 7
     label: inline

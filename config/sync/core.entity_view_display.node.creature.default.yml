@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.creature.field_description
     - field.field.node.creature.field_equipped_weapons
     - field.field.node.creature.field_gear
+    - field.field.node.creature.field_image
     - field.field.node.creature.field_mobility_system
     - field.field.node.creature.field_movement_speed
     - field.field.node.creature.field_privacy
@@ -23,6 +24,7 @@ dependencies:
     - entity_reference_override
     - ep_complex_values
     - ep_skill_reference
+    - image
     - options
     - text
     - user
@@ -68,6 +70,14 @@ content:
       override_action: suffix
     third_party_settings: {  }
     type: entity_reference_override_label
+  field_image:
+    weight: 15
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   field_mobility_system:
     weight: 4
     label: inline

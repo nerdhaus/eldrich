@@ -1,4 +1,4 @@
-uuid: 35e334b9-d337-46a1-a7fc-06c593df375f
+uuid: 4cd3f27e-948d-4025-be2a-f8482ec8ea50
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - file
     - image
     - node
-id: node.field_headshot
-field_name: field_headshot
+id: node.field_image
+field_name: field_image
 entity_type: node
 type: image
 settings:

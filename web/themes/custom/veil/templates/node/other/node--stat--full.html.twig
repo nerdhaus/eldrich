@@ -11,27 +11,20 @@
 {% block callout_content %}
   <li><strong>{{ content.field_is_aptitude|field_raw('value') ? 'Core ' : '' }}{{ content.field_is_ego_stat|field_raw('value') ? 'Ego' : 'Morph' }} ability</strong></li>
   {% if content.field_calculation|field_value %}<li><strong>Calculated:</strong> {{ content.field_calculation|field_value }}</li>{% endif %}
+  <li><strong>Levels:</strong>
+    <ul class="list-unstyled">
+      <li><strong>0-5:</strong> {{ content.field_aptitude_ranges|field_value.0 }}</li>
+      <li><strong>6-10:</strong> {{ content.field_aptitude_ranges|field_value.1 }}</li>
+      <li><strong>11-15:</strong> {{ content.field_aptitude_ranges|field_value.2 }}</li>
+      <li><strong>16-20:</strong> {{ content.field_aptitude_ranges|field_value.3 }}</li>
+      <li><strong>21-25:</strong> {{ content.field_aptitude_ranges|field_value.4 }}</li>
+      <li><strong>26-30:</strong> {{ content.field_aptitude_ranges|field_value.5 }}</li>
+    </ul>
+  </li>
 {% endblock %}
 
 {% block properties %}
-  <div class="row">
-    {% if content.field_aptitude_ranges|field_value %}
-    <div class="col-md-2">
-      <h4>Levels</h4>
-      <ul class="list-unstyled">
-        <li><strong>0-5:</strong> {{ content.field_aptitude_ranges|field_value.0 }}</li>
-        <li><strong>6-10:</strong> {{ content.field_aptitude_ranges|field_value.1 }}</li>
-        <li><strong>11-15:</strong> {{ content.field_aptitude_ranges|field_value.2 }}</li>
-        <li><strong>16-20:</strong> {{ content.field_aptitude_ranges|field_value.3 }}</li>
-        <li><strong>21-25:</strong> {{ content.field_aptitude_ranges|field_value.4 }}</li>
-        <li><strong>26-30:</strong> {{ content.field_aptitude_ranges|field_value.5 }}</li>
-      </ul>
-    </div>
-  {% endif %}
   {% if content.related_lists_linked_skills %}
-    <div class="col-md-6">
-      {{ content.related_lists_linked_skills }}
-    </div>
+    {{ content.related_lists_linked_skills }}
   {% endif %}
-  </div>
 {% endblock %}

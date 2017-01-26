@@ -1,20 +1,20 @@
-uuid: 7394f10e-166e-485d-8efa-fa969b66e6e3
+uuid: 2fdafdda-3ac1-43da-9461-c04a088bd968
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_headshot
-    - node.type.pc
+    - field.storage.node.field_image
+    - node.type.creature
   module:
     - image
-id: node.pc.field_headshot
-field_name: field_headshot
+id: node.creature.field_image
+field_name: field_image
 entity_type: node
-bundle: pc
-label: Headshot
+bundle: creature
+label: 'Reference Image'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

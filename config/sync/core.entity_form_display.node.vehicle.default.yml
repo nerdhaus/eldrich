@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.vehicle.field_equipped_weapons
     - field.field.node.vehicle.field_gear
     - field.field.node.vehicle.field_gear_type
+    - field.field.node.vehicle.field_image
     - field.field.node.vehicle.field_linked_skill
     - field.field.node.vehicle.field_mobility_system
     - field.field.node.vehicle.field_movement_speed
@@ -19,12 +20,14 @@ dependencies:
     - field.field.node.vehicle.field_skill_bonus
     - field.field.node.vehicle.field_sources
     - field.field.node.vehicle.field_stats
+    - image.style.thumbnail
     - node.type.vehicle
   module:
     - entity_reference_override
     - entity_reference_quantity
     - ep_complex_values
     - ep_statblock
+    - image
     - inline_entity_form
     - path
     - text
@@ -96,6 +99,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_image:
+    weight: 28
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
   field_linked_skill:
     weight: 12
     settings:
