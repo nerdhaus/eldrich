@@ -1,6 +1,12 @@
 field.formatter.settings.stat_block_simple:
   type: field.formatter.settings.stat_block_simple
   mapping:
+    labels:
+      type: string
+      label: 'Label style'
+    delimiter:
+      type: string
+      label: 'String delimiter'
     visible_properties:
       type: sequence
       sequence:

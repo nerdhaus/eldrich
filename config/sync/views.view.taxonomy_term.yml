@@ -2119,6 +2119,7 @@ display:
           columns:
             title: title
             field_gear_type: field_gear_type
+            field_stats_1: field_stats_1
             field_stats: field_stats
             field_stat_variance: field_stats
             field_traits: field_traits
@@ -2133,6 +2134,13 @@ display:
               empty_column: false
               responsive: ''
             field_gear_type:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_stats_1:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -2315,6 +2323,87 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_stats_1:
+          id: field_stats_1
+          table: node__field_stats
+          field: field_stats
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Durability
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: dur
+          type: stat_block_simple
+          settings:
+            visible_properties:
+              dur: dur
+              cog: 0
+              coo: 0
+              int: 0
+              ref: 0
+              sav: 0
+              som: 0
+              wil: 0
+              mox: 0
+              spd: 0
+              synthetic: 0
+              init: 0
+              luc: 0
+              tt: 0
+              ir: 0
+              wt: 0
+              dr: 0
+              db: 0
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_stats:
           id: field_stats
           table: node__field_stats
@@ -2365,7 +2454,26 @@ display:
           hide_alter_empty: true
           click_sort_column: cog
           type: stat_block_simple
-          settings: {  }
+          settings:
+            visible_properties:
+              cog: cog
+              coo: coo
+              int: int
+              ref: ref
+              sav: sav
+              som: som
+              wil: wil
+              mox: mox
+              spd: spd
+              init: init
+              luc: luc
+              tt: tt
+              wt: wt
+              dur: 0
+              synthetic: 0
+              ir: 0
+              dr: 0
+              db: 0
           group_column: ''
           group_columns: {  }
           group_rows: true

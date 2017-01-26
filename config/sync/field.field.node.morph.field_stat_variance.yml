@@ -18,6 +18,6 @@ default_value_callback: ''
 settings:
   min: null
   max: null
-  prefix: 'ANY: '
+  prefix: 'Any: '
   suffix: ''
 field_type: integer
