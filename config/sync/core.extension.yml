@@ -11,6 +11,7 @@ module:
   comment: 0
   config: 0
   contextual: 0
+  crop: 0
   ctools: 0
   ctools_views: 0
   datetime: 0
@@ -38,6 +39,8 @@ module:
   google_analytics: 0
   ief_table_view_mode: 0
   image: 0
+  image_url_formatter: 0
+  image_widget_crop: 0
   inline_entity_form: 0
   integer_time: 0
   link: 0

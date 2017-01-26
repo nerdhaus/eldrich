@@ -60,6 +60,7 @@ hidden:
   field_cost: true
   field_equipped_weapons: true
   field_gear: true
+  field_image: true
   field_linked_skill: true
   field_mobility_system: true
   field_movement_speed: true

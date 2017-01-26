@@ -50,6 +50,8 @@ source:
     -
       image: image
   constants:
+    uri: 'public://morphs/'
+    extension: .png
     user: Factotum
   keys:
     - title
@@ -243,12 +245,12 @@ process:
       entity_type: file
       source:
         - image
-        - code
+        - title
         - constants/uri
         - constants/extension
       keys:
         - image
-        - code
+        - name
         - uri
         - extension
       default_values:
@@ -260,14 +262,14 @@ process:
             plugin: concat
             source:
               - uri
-              - code
+              - name
               - extension
         filename:
           -
             plugin: concat
             source:
               - uri
-              - code
+              - name
               - extension
           -
             plugin: callback

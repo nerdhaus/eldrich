@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "129476c3002ab033b52e1279f3c3e9de",
+    "content-hash": "111eba32390ad26545d3944bebf5dd2a",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1307,7 +1307,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/config_views-8.x-1.0-alpha1.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha1",
                 "shasum": "d9c27309e5d92f9de6af0c779ed0a6f65dc1632a"
             },
             "require": {
@@ -1785,6 +1785,61 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "time": "2017-01-04T11:31:35+00:00"
+        },
+        {
+            "name": "drupal/crop",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/crop",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/crop-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "c59b10336821f0ef99f6d2770a72c400e167d979"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "require-dev": {
+                "drupal/media_entity": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1468356239"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Drupal Media Team",
+                    "homepage": "https://www.drupal.org/user/3260690"
+                },
+                {
+                    "name": "slashrsm",
+                    "homepage": "https://www.drupal.org/user/744628"
+                },
+                {
+                    "name": "woprrr",
+                    "homepage": "https://www.drupal.org/user/858604"
+                }
+            ],
+            "description": "Provides storage and API for image crops.",
+            "homepage": "https://www.drupal.org/project/crop",
+            "support": {
+                "source": "http://cgit.drupalcode.org/crop",
+                "issues": "https://www.drupal.org/project/issues/crop"
+            }
         },
         {
             "name": "drupal/ctools",
@@ -2909,6 +2964,113 @@
             "homepage": "https://www.drupal.org/project/image_effects",
             "support": {
                 "source": "http://cgit.drupalcode.org/image_effects"
+            }
+        },
+        {
+            "name": "drupal/image_url_formatter",
+            "version": "1.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/image_url_formatter",
+                "reference": "8.x-1.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/image_url_formatter-8.x-1.0-beta1.zip",
+                "reference": null,
+                "shasum": "02665a9d29ebd7cc404974d91997f4fbb27b5312"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta1",
+                    "datestamp": "1458189816"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "g089h515r806",
+                    "homepage": "https://www.drupal.org/user/174740"
+                }
+            ],
+            "description": "Add an URL formatter for image field.",
+            "homepage": "https://www.drupal.org/project/image_url_formatter",
+            "support": {
+                "source": "http://cgit.drupalcode.org/image_url_formatter"
+            }
+        },
+        {
+            "name": "drupal/image_widget_crop",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/image_widget_crop",
+                "reference": "8.x-1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/image_widget_crop-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "b4758cdda9c32b22537a9aae17c025676b07c6e2"
+            },
+            "require": {
+                "drupal/core": "*",
+                "drupal/crop": "1.0.0"
+            },
+            "require-dev": {
+                "drupal/crop": "*",
+                "drupal/file_entity": "*",
+                "drupal/inline_entity_form": "*",
+                "drupal/media_entity": "*",
+                "drupal/media_entity_image": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.4",
+                    "datestamp": "1477080239"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Drupal Media Team",
+                    "homepage": "https://www.drupal.org/user/3260690"
+                },
+                {
+                    "name": "Drupal media CI",
+                    "homepage": "https://www.drupal.org/user/3057985"
+                },
+                {
+                    "name": "slashrsm",
+                    "homepage": "https://www.drupal.org/user/744628"
+                },
+                {
+                    "name": "woprrr",
+                    "homepage": "https://www.drupal.org/user/858604"
+                }
+            ],
+            "description": "Provides an interface for using the features of the Crop API.",
+            "homepage": "https://www.drupal.org/project/image_widget_crop",
+            "support": {
+                "source": "https://www.drupal.org/project/image_widget_crop",
+                "issues": "https://www.drupal.org/project/issues/image_widget_crop"
             }
         },
         {
@@ -9051,6 +9213,7 @@
         "drupal/menu_position": 20,
         "drupal/group": 10,
         "drupal/config_views": 15,
+        "drupal/image_url_formatter": 10,
         "drupal/viewsreference": 15
     },
     "prefer-stable": true,

@@ -12,12 +12,32 @@
 #}
 {% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
+  {% if content.field_image|field_value %}
+    <img src="{{ content.field_image | field_target_entity.uri.value | image_style('reference') }}" alt="title" class="img-responsive img-thumbnail" />
+  {% endif %}
   {{ parent() }}
-  {% set fixed_bonuses = content.field_stats|field_value %}
-  {% set general_bonuses = content.field_stat_variance|field_value|safe_join(', ') %}
-  {% set all_bonuses = [fixed_bonuses, general_bonuses]|safe_join(', ') %}
-
-  <li><strong>Durability:</strong> {{ content.field_stats|field_raw('dur') }}</li>
-  {% if all_bonuses %}<li><strong>Stat Bonuses:</strong> {{ all_bonuses }}</li>{% endif %}
 {% endblock %}
 {% block stats %}{% endblock %}
+
+
+  {% block properties %}
+    <ul class="list-unstyled list-hanging">
+      {% set fixed_bonuses = content.field_stats|field_value %}
+      {% set general_bonuses = content.field_stat_variance|field_value|safe_join(', ') %}
+      {% set all_bonuses = [fixed_bonuses, general_bonuses]|safe_join(', ') %}
+
+      {% if skills|length %}<li><strong>Skill bonuses:</strong> {% include directory ~ '/templates/partials/skills.html.twig' %}</li>{% endif %}
+      {% if content.field_stats|field_raw('dur') %}<li><strong>Durability:</strong> {{ content.field_stats|field_raw('dur') }}</li>{% endif %}
+      {% if all_bonuses %}<li><strong>Stat Bonuses:</strong> {{ all_bonuses }}</li>{% endif %}
+
+      {% if content.field_augmentations|field_value|length %}<li><strong>Augmentations:</strong> {{ content.field_augmentations|field_value|safe_join(', ') }}</li>{% endif %}
+      {% if content.field_traitsh %}<li><strong>Traits:</strong> {{ content.field_traits|safe_join(', ') }}</li>{% endif %}
+      {% if armor.energy or armor.kinetic %}
+        <li><strong>Armor:</strong>
+          {{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
+          {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
+        </li>
+      {% endif %}
+    </ul>
+    {% if attacks|length %}{% include '@veil/partials/attacks.html.twig' %}{% endif %}
+  {% endblock %}

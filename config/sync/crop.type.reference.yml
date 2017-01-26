@@ -1,0 +1,12 @@
+uuid: c57dd252-c78e-440f-b215-0b9d00a3d357
+langcode: en
+status: true
+dependencies: {  }
+label: 'Reference Image'
+id: reference
+description: ''
+aspect_ratio: '1:1'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

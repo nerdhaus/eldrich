@@ -28,7 +28,7 @@ dependencies:
     - ep_complex_values
     - ep_skill_reference
     - ep_statblock
-    - image
+    - image_url_formatter
     - text
     - user
 id: node.morph.default
@@ -77,10 +77,11 @@ content:
     weight: 12
     label: above
     settings:
-      image_style: ''
+      url_type: '0'
+      image_style: reference
       image_link: ''
     third_party_settings: {  }
-    type: image
+    type: image_url
   field_mobility_system:
     weight: 7
     label: inline
@@ -147,6 +148,7 @@ content:
         ir: 0
         dr: 0
         db: 0
+      delimiter: ', '
     third_party_settings: {  }
     type: stat_block_simple
   field_traits:

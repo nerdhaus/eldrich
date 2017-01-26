@@ -24,7 +24,7 @@ dependencies:
     - entity_reference_override
     - ep_complex_values
     - ep_skill_reference
-    - image
+    - image_url_formatter
     - options
     - text
     - user
@@ -74,15 +74,19 @@ content:
     weight: 15
     label: above
     settings:
-      image_style: ''
+      url_type: '0'
+      image_style: reference
       image_link: ''
     third_party_settings: {  }
-    type: image
+    type: image_url
   field_mobility_system:
     weight: 4
     label: inline
     settings:
       link: true
+      length: full
+      location: suffix
+      template: ' ({{ quantity }})'
     third_party_settings: {  }
     type: eldrich_popup_formatter
   field_movement_speed:

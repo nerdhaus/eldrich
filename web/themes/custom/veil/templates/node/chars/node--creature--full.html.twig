@@ -8,6 +8,10 @@
 {% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
 {{ parent() }}
+  {% if content.field_image|field_value %}
+    <img src="{{ content.field_image | field_target_entity.uri.value | image_style('reference') }}" alt="title" class="img-responsive img-thumbnail" />
+  {% endif %}
+
   {% if content.field_creature_type|field_value %}<li><strong>Type:</strong> {{ content.field_creature_type|field_value }}</li>{% endif %}
   {% if content.field_strain|field_value %}<li><strong>Stress:</strong> {{ content.field_strain|field_value }}</li>{% endif %}
 

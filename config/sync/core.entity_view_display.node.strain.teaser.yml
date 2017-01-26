@@ -25,6 +25,7 @@ hidden:
   field_attribution: true
   field_description: true
   field_infectiousness: true
+  field_privacy: true
   field_source: true
   field_sources: true
   field_stages: true

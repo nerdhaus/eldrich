@@ -173,6 +173,7 @@ content:
     type: entity_reference_override_label
 hidden:
   field_campaign: true
+  field_image: true
   field_motivations: true
   field_stats: true
   field_threat: true

@@ -20,12 +20,11 @@ dependencies:
     - field.field.node.npc.field_sources
     - field.field.node.npc.field_stats
     - field.field.node.npc.field_traits
-    - image.style.large
     - node.type.npc
   module:
     - eldrich
     - entity_reference_override
-    - image
+    - image_url_formatter
     - text
     - user
 id: node.npc.default
@@ -51,10 +50,11 @@ content:
     weight: 15
     label: hidden
     settings:
-      image_style: large
+      url_type: '0'
+      image_style: reference
       image_link: ''
     third_party_settings: {  }
-    type: image
+    type: image_url
   field_morph:
     weight: 4
     label: inline

@@ -25,7 +25,7 @@ dependencies:
   module:
     - entity_reference_override
     - ep_skill_reference
-    - image
+    - image_url_formatter
     - text
     - user
 id: node.pc.default
@@ -82,10 +82,11 @@ content:
     weight: 14
     label: above
     settings:
-      image_style: ''
+      url_type: '0'
+      image_style: reference
       image_link: ''
     third_party_settings: {  }
-    type: image
+    type: image_url
   field_morph:
     weight: 6
     label: hidden

@@ -47,6 +47,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_infectiousness: true
+  field_privacy: true
   field_stages: true
   field_strain_rating: true
   field_vectors: true
