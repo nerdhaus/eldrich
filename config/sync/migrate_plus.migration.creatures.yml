@@ -47,6 +47,8 @@ source:
       weapons: weapons
     -
       stress: stress
+    -
+      image: image
   constants:
     user: Factotum
   keys:
@@ -217,6 +219,50 @@ process:
     plugin: equipped_weapon
     source: weapons
   field_stress/value: stress
+  field_image/target_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: image
+    -
+      plugin: entity_maker
+      entity_type: file
+      source:
+        - image
+        - code
+        - constants/uri
+        - constants/extension
+      keys:
+        - image
+        - code
+        - uri
+        - extension
+      default_values:
+        type: image
+      process:
+        src: image
+        dest:
+          -
+            plugin: concat
+            source:
+              - uri
+              - code
+              - extension
+        filename:
+          -
+            plugin: concat
+            source:
+              - uri
+              - code
+              - extension
+          -
+            plugin: callback
+            callback: strtolower
+        uri:
+          plugin: file_copy
+          source:
+            - '@src'
+            - '@dest'
 destination:
   plugin: 'entity:node'
 migration_dependencies: null
