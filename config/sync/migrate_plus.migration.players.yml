@@ -16,7 +16,7 @@ source:
     -
       full_name: full_name
     -
-      campaign: campaign
+      campaign: cmp
     -
       player: player
     -
@@ -79,6 +79,11 @@ source:
       trauma: trauma
     -
       derangements: derangements
+    -
+      image: image
+  constants:
+    uri: 'public://npcs/'
+    extension: .png
   keys:
     - name
 process:
@@ -95,7 +100,7 @@ process:
     bundle_key: type
     entity_type: node
     bundle: campaign
-    source: campaign
+    source: cmp
   title: name
   type:
     plugin: default_value
@@ -168,6 +173,7 @@ process:
       entity_type: node
       bundle:
         - gear
+        - augmentation
         - weapon
         - armor
         - drug
@@ -328,6 +334,50 @@ process:
   field_equipped_armor:
     plugin: equipped_armor
     source: armor
+  field_image/target_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: image
+    -
+      plugin: entity_maker
+      entity_type: file
+      source:
+        - image
+        - name
+        - constants/uri
+        - constants/extension
+      keys:
+        - image
+        - name
+        - uri
+        - extension
+      default_values:
+        type: image
+      process:
+        src: image
+        dest:
+          -
+            plugin: concat
+            source:
+              - uri
+              - name
+              - extension
+        filename:
+          -
+            plugin: concat
+            source:
+              - uri
+              - name
+              - extension
+          -
+            plugin: callback
+            callback: strtolower
+        uri:
+          plugin: file_copy
+          source:
+            - '@src'
+            - '@dest'
 destination:
   plugin: 'entity:node'
 migration_dependencies: null
