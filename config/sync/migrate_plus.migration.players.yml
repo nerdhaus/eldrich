@@ -328,6 +328,9 @@ process:
         bundle_key: type
         entity_type: node
         source: faction
+  field_muse/target_id:
+    plugin: standard_muse
+    source: muse
   field_equipped_weapons:
     plugin: equipped_weapon
     source: weapons
