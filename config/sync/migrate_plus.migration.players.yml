@@ -94,7 +94,7 @@ process:
     fallback_value_key: field_short_name
     bundle_key: type
     entity_type: node
-    bundle: 'campaign'
+    bundle: campaign
     source: campaign
   title: name
   type:

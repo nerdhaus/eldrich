@@ -7,16 +7,16 @@ dependencies:
 id: location_nodes
 label: 'Location Nodes'
 type: 'canonical_entities:node'
-pattern: 'world/locations/[node:field_parent_location:entity:field_parent_location:entity:title]/[node:field_parent_location:entity:title]/[node:title]'
+pattern: 'world/locations/[node:field_parent_location:entity:field_parent_location:entity:field_parent_location:entity:title]/[node:field_parent_location:entity:field_parent_location:entity:title]/[node:field_parent_location:entity:title]/[node:title]'
 selection_criteria:
-  a76518de-3246-4515-918d-f19d40302c82:
+  b88a59da-1f1b-4bd0-ab0d-6985205b0177:
     id: node_type
     bundles:
       location: location
     negate: false
     context_mapping:
       node: node
-    uuid: a76518de-3246-4515-918d-f19d40302c82
+    uuid: b88a59da-1f1b-4bd0-ab0d-6985205b0177
 selection_logic: and
 weight: -5
 relationships: {  }

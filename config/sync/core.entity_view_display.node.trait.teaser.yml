@@ -34,6 +34,7 @@ hidden:
   field_cp_cost: true
   field_ego_trait: true
   field_morph_trait: true
+  field_short_name: true
   field_skills: true
   field_sources: true
   field_special_effect: true
