@@ -287,7 +287,7 @@ process:
     default_values:
       type: identity
     process:
-      title: name
+      field_legal_name: name
       field_credits: credits
       field_background: background
       field_rep:
@@ -308,7 +308,9 @@ process:
           entity_type: node
       field_faction:
         plugin: entity_lookup_plus
+        destination_field: target_id
         value_key: title
+        fallback_value_key: field_short_name
         bundle: faction
         bundle_key: type
         entity_type: node

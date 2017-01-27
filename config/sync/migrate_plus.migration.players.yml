@@ -94,7 +94,7 @@ process:
     fallback_value_key: field_short_name
     bundle_key: type
     entity_type: node
-    bundle: campaign
+    bundle: 'campaign'
     source: campaign
   title: name
   type:
@@ -294,12 +294,9 @@ process:
     default_values:
       type: identity
     process:
-      title: full_name
+      field_legal_name: full_name
       field_credits: credits
-      field_background/value: background
-      field_background/format:
-        plugin: default_value
-        default_value: basic_html
+      field_background: background
       field_rep:
         -
           plugin: skip_on_empty
@@ -318,7 +315,9 @@ process:
           entity_type: node
       field_faction:
         plugin: entity_lookup_plus
+        destination_field: target_id
         value_key: title
+        fallback_value_key: field_short_name
         bundle: faction
         bundle_key: type
         entity_type: node
