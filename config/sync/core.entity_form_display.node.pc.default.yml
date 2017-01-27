@@ -19,7 +19,6 @@ dependencies:
     - field.field.node.pc.field_sleights
     - field.field.node.pc.field_stats
     - field.field.node.pc.field_status
-    - field.field.node.pc.field_threat
     - field.field.node.pc.field_traits
     - image.style.thumbnail
     - node.type.pc
@@ -76,12 +75,9 @@ content:
     third_party_settings: {  }
   field_campaign:
     weight: 28
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
   field_description:
     weight: 10
     settings:
@@ -217,12 +213,6 @@ content:
       override_labels: false
     third_party_settings: {  }
     type: inline_entity_form_simple
-  field_threat:
-    weight: 27
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
   field_traits:
     weight: 11
     settings:

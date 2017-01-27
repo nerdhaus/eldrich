@@ -31,8 +31,8 @@ class EntityReferenceShortLabelFormatter extends EntityReferenceLabelFormatter {
       if ($entity->hasField('field_code')) {
         $label = $entity->field_code->value;
       }
-      elseif ($entity->hasField('field_shortname')) {
-        $label = $entity->field_shortname->value;
+      elseif ($entity->hasField('field_short_name')) {
+        $label = $entity->field_short_name->value;
       }
       else {
         $label = $entity->label();

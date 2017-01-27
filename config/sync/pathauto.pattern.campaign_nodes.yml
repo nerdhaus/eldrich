@@ -7,7 +7,7 @@ dependencies:
 id: campaign_nodes
 label: 'Campaign nodes'
 type: 'canonical_entities:node'
-pattern: 'games/[node:field_shortname]'
+pattern: 'games/[node:field_short_name]'
 selection_criteria:
   86853a5e-1f32-4819-9f22-52ebf3e72790:
     id: node_type

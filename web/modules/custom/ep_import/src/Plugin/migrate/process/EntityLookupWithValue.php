@@ -67,6 +67,11 @@ class EntityLookupWithValue extends EntityLookup {
         );
       }
     }
+
+    if (empty($results)) {
+      drush_print_r($value);
+    }
+
     return $results;
   }
 
@@ -100,7 +105,8 @@ class EntityLookupWithValue extends EntityLookup {
       $query->condition($this->lookupBundleKey, $this->lookupBundle, is_array($this->lookupBundle) ? 'IN' : NULL);
     }
 
-    if ($filter = $this->configuration['extra_flag']) {
+    $filter = $this->configuration['extra_flag'];
+    if (!empty($filter)) {
       $query->condition($filter, TRUE);
     }
 

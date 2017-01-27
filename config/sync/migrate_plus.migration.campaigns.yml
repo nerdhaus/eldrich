@@ -39,7 +39,7 @@ process:
     plugin: default_value
     default_value: campaign
   title: title
-  field_shortname/value: short
+  field_short_name/value: short
   body/value:
     plugin: line_breaker
     source: description

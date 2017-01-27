@@ -80,8 +80,8 @@ class EldrichPopupFormatter extends EntityReferenceQuantityLabelFormatter {
         if ($entity->hasField('field_lookup_code')) {
           $label = $entity->field_lookup_code->value;
         }
-        elseif ($entity->hasField('field_shortname')) {
-          $label = $entity->field_shortname->value;
+        elseif ($entity->hasField('field_short_name')) {
+          $label = $entity->field_short_name->value;
         }
         else {
           $label = $entity->label();

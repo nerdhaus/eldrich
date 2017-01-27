@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.campaign.field_official_downloads
     - field.field.node.campaign.field_players
     - field.field.node.campaign.field_resources
-    - field.field.node.campaign.field_shortname
+    - field.field.node.campaign.field_short_name
     - node.type.campaign
   module:
     - text
@@ -35,6 +35,6 @@ hidden:
   field_official_downloads: true
   field_players: true
   field_resources: true
-  field_shortname: true
+  field_short_name: true
   field_useful_resources: true
   links: true
