@@ -68,8 +68,8 @@ class EntityLookupWithValue extends EntityLookup {
       }
     }
 
-    if (empty($results)) {
-      drush_print_r($value);
+    if (count($results) == 0) {
+      drush_print_r($title);
     }
 
     return $results;

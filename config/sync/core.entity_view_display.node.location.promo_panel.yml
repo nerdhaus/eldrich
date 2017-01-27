@@ -61,5 +61,6 @@ hidden:
   field_distance: true
   field_languages: true
   field_parent_location: true
+  field_short_name: true
   links: true
   world_location_children: true

@@ -170,6 +170,7 @@ process:
       plugin: entity_lookup_plus
       destination_field: target_id
       value_key: title
+      fallback_value_key: field_short_name
       bundle: trait
       bundle_key: type
       entity_type: node
@@ -240,6 +241,7 @@ process:
             plugin: entity_lookup_plus
             destination_field: target_id
             value_key: title
+            fallback_value_key: field_short_name
             bundle: trait
             bundle_key: type
             entity_type: node

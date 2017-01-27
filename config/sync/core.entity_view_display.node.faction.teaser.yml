@@ -44,6 +44,7 @@ hidden:
   field_locations: true
   field_memes: true
   field_parent_faction: true
+  field_short_name: true
   field_sources: true
   links: true
   world_faction_children: true

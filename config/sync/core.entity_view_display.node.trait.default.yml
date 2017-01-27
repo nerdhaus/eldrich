@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.trait.field_description
     - field.field.node.trait.field_ego_trait
     - field.field.node.trait.field_morph_trait
+    - field.field.node.trait.field_short_name
     - field.field.node.trait.field_skills
     - field.field.node.trait.field_sources
     - field.field.node.trait.field_special_effect
@@ -71,6 +72,13 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+  field_short_name:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_skills:
     type: skill_reference_label
     weight: 6
