@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.faction.field_locations
     - field.field.node.faction.field_memes
     - field.field.node.faction.field_parent_faction
+    - field.field.node.faction.field_short_name
     - field.field.node.faction.field_sources
     - node.type.faction
   module:
@@ -56,6 +57,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_short_name:
+    weight: 11
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_sources:
     weight: 7
     label: inline

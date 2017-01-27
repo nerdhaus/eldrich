@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.location.field_location_type
     - field.field.node.location.field_parent_location
     - field.field.node.location.field_population
+    - field.field.node.location.field_short_name
     - field.field.node.location.field_sources
     - node.type.location
   module:
@@ -64,6 +65,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+  field_short_name:
+    weight: 30
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_sources:
     weight: 27
     settings:

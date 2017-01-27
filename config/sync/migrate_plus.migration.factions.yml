@@ -14,6 +14,8 @@ source:
     -
       title: Title
     -
+      shortname: shortname
+    -
       parent: Parent
     -
       type: Type
@@ -37,6 +39,7 @@ process:
     value_key: name
     source: constants/user
   title: title
+  field_short_name: shortname
   field_parent_faction:
     -
       plugin: skip_on_empty
