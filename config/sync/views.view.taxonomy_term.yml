@@ -23,6 +23,7 @@ dependencies:
     - node.type.armor
     - node.type.augmentation
     - node.type.creature
+    - node.type.drug
     - node.type.gear
     - node.type.mind
     - node.type.morph
@@ -1631,6 +1632,7 @@ display:
             armor: armor
             augmentation: augmentation
             creature: creature
+            drug: drug
             gear: gear
             mind: mind
             morph: morph
@@ -1911,6 +1913,7 @@ display:
             armor: armor
             augmentation: augmentation
             creature: creature
+            drug: drug
             gear: gear
             mind: mind
             morph: morph
