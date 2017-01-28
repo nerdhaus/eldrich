@@ -16,7 +16,7 @@ source:
     -
       full_name: full_name
     -
-      campaign: cmp
+      campaign: campaign
     -
       player: player
     -
@@ -93,14 +93,8 @@ process:
     value_key: name
     source: player
   field_campaign:
-    plugin: entity_lookup_plus
-    destination_field: target_id
-    value_key: title
-    fallback_value_key: field_short_name
-    bundle_key: type
-    entity_type: node
-    bundle: campaign
-    source: cmp
+    plugin: campaign
+    source: campaign
   title: name
   type:
     plugin: default_value
