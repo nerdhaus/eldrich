@@ -5,8 +5,9 @@ dependencies:
   config:
     - field.field.node.campaign.body
     - field.field.node.campaign.field_campaign_status
+    - field.field.node.campaign.field_npcs
     - field.field.node.campaign.field_official_downloads
-    - field.field.node.campaign.field_players
+    - field.field.node.campaign.field_pcs
     - field.field.node.campaign.field_resources
     - field.field.node.campaign.field_short_name
     - node.type.campaign
@@ -22,7 +23,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 8
+    weight: 3
     settings:
       rows: 9
       summary_rows: 3
@@ -30,22 +31,30 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 2
+    weight: 5
     settings: {  }
     third_party_settings: {  }
   field_campaign_status:
-    weight: 7
+    weight: 2
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
+    type: options_select
+  field_npcs:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_official_downloads:
-    weight: 10
+    weight: 12
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
-  field_players:
-    weight: 9
+  field_pcs:
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60
@@ -53,14 +62,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_resources:
-    weight: 11
+    weight: 13
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
   field_short_name:
-    weight: 26
+    weight: 1
     settings:
       size: 60
       placeholder: ''
@@ -68,20 +77,20 @@ content:
     type: string_textfield
   path:
     type: path
-    weight: 5
+    weight: 8
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 3
+    weight: 6
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 7
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -92,7 +101,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 1
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60

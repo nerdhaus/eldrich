@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.pc.field_campaign
     - field.field.node.pc.field_description
     - field.field.node.pc.field_equipped_armor
     - field.field.node.pc.field_equipped_weapons
@@ -38,7 +37,6 @@ content:
       trim_length: 400
     third_party_settings: {  }
 hidden:
-  field_campaign: true
   field_equipped_armor: true
   field_equipped_weapons: true
   field_gear: true

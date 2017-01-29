@@ -6,8 +6,9 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.campaign.body
     - field.field.node.campaign.field_campaign_status
+    - field.field.node.campaign.field_npcs
     - field.field.node.campaign.field_official_downloads
-    - field.field.node.campaign.field_players
+    - field.field.node.campaign.field_pcs
     - field.field.node.campaign.field_resources
     - field.field.node.campaign.field_short_name
     - node.type.campaign
@@ -32,8 +33,9 @@ hidden:
   campaign_sessions: true
   field_campaign_status: true
   field_characters: true
+  field_npcs: true
   field_official_downloads: true
-  field_players: true
+  field_pcs: true
   field_resources: true
   field_short_name: true
   field_useful_resources: true

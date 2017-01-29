@@ -5,8 +5,9 @@ dependencies:
   config:
     - field.field.node.campaign.body
     - field.field.node.campaign.field_campaign_status
+    - field.field.node.campaign.field_npcs
     - field.field.node.campaign.field_official_downloads
-    - field.field.node.campaign.field_players
+    - field.field.node.campaign.field_pcs
     - field.field.node.campaign.field_resources
     - field.field.node.campaign.field_short_name
     - node.type.campaign
@@ -39,14 +40,21 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
+  field_npcs:
+    weight: 13
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_official_downloads:
     weight: 4
     label: above
     settings: {  }
     third_party_settings: {  }
     type: file_table
-  field_players:
-    weight: 2
+  field_pcs:
+    weight: 12
     label: above
     settings:
       link: true

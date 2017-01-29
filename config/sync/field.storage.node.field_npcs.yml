@@ -1,16 +1,15 @@
-uuid: d70b92d9-70ea-487b-8d57-c5395329cb32
+uuid: d2cbc46f-4de4-4761-b58f-02169c08f733
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - user
-id: node.field_players
-field_name: field_players
+id: node.field_npcs
+field_name: field_npcs
 entity_type: node
 type: entity_reference
 settings:
-  target_type: user
+  target_type: node
 module: core
 locked: false
 cardinality: -1

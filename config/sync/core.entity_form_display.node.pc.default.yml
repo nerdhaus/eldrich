@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.pc.field_campaign
     - field.field.node.pc.field_description
     - field.field.node.pc.field_equipped_armor
     - field.field.node.pc.field_equipped_weapons
@@ -88,11 +87,6 @@ content:
     weight: 4
     settings: {  }
     third_party_settings: {  }
-  field_campaign:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
   field_description:
     weight: 18
     settings:
