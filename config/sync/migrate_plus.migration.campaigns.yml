@@ -20,7 +20,9 @@ source:
     -
       description: Description
     -
-      players: Players
+      pcs: pcs
+    -
+      npcs: npcs
     -
       resources: Resources
     -
@@ -46,18 +48,38 @@ process:
   body/format:
     plugin: default_value
     default_value: basic_html
-  field_players:
+  field_player_characters:
     -
       plugin: skip_on_empty
       method: process
-      source: players
+      source: pcs
     -
       plugin: explode
-      delimiter: ', '
+      delimiter: ','
     -
-      plugin: entity_generate
-      entity_type: user
-      value_key: name
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      bundle_key: type
+      entity_type: node
+      bundle: pc
+  field_npcs:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: npcs
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      value_key: title
+      bundle_key: type
+      entity_type: node
+      bundle:
+        - pc
+        - npc
   field_campaign_status: status
   field_official_downloads: {  }
   field_resources: {  }
