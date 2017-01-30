@@ -30,10 +30,12 @@ table_striped: 0
 table_bordered: 1
 table_condensed: 1
 table_responsive: '0'
+image_shape: img-thumbnail
+cdn_jsdelivr_theme: bootstrap
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: ''
   url: 'http://eldrich.local/themes/contrib/bootstrap/favicon.ico'
   use_default: true
-image_shape: img-thumbnail
+cdn_provider: ''
 table: ''

@@ -25,6 +25,7 @@ module:
   entity_reference_override: 0
   entity_reference_quantity: 0
   ep_complex_values: 0
+  ep_game_tools: 0
   ep_import: 0
   ep_schema: 0
   ep_skill_reference: 0
