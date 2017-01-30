@@ -1,0 +1,110 @@
+<?php
+
+/**
+ * @file
+ * Contains ep_game_tools.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ep_game_tools_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ep_game_tools module.
+    case 'help.page.ep_game_tools':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Tools for EP GMs and players') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ep_game_tools_theme() {
+  return [
+    'initiative' => [
+      'variables' => array('data' => NULL, 'actions' => NULL),
+    ],
+    'skillsheet' => [
+      'variables' => array('data' => NULL),
+    ],
+  ];
+}
+
+
+function ep_game_tools_preprocess(&$variables, $hook) {
+  switch ($hook) {
+    case 'initiative':
+      // Gonna use Transhuman-style initiative calculation, here.
+      // We build raw initiative values and give slots based on speed,
+      // and roll the first initiative, but pass along the raw init
+      // so subsequent rolls can be done client-side.
+      $data = $variables['data'];
+      $actions = [];
+      foreach ($data as $nid => $datum) {
+        $node = $datum['node'];
+        $speed = $datum['stats']['total']['conditional']['spd'] ?: 1;
+        $initiative = $datum['stats']['total']['conditional']['init'];
+
+        for ($i = 0; $i < $speed; $i++) {
+          $actions[] = [
+            'node' => $node,
+            'character' => $node->label(),
+            'initiative' => $initiative,
+            'roll' => $initiative + random_int(1, 10),
+          ];
+        }
+      }
+
+
+      uasort($actions, 'sort_by_initiative');
+      $variables['actions'] = $actions;
+      break;
+
+    case 'skillsheet':
+      // Break out all non-field skills, let template handle custom stuff.
+      break;
+
+  }
+}
+
+function sort_by_initiative($a, $b) {
+  if ($a['roll'] == $b['roll']) {
+    if ($a['initiative'] == $b['initiative']) {
+      return 0;
+    }
+    else {
+      return ($a['initiative'] > $b['initiative']) ? -1 : 1;
+    }
+  }
+  return ($a['roll'] > $b['roll']) ? -1 : 1;
+}
+
+
+function get_listable_skills() {
+  static $skillList;
+  // Because field skills never exist in a vacuum, we'll exclude them from
+  // this list and rely on concrete player skills to populate them.
+  // We'll filter out non-defaultable skills for the same reason.
+  if (empty($skillList)) {
+
+    $nids = \Drupal::entityQuery('node')
+      ->condition('type', 'skill')
+      ->condition('field_is_field', TRUE, '<>')
+      ->condition('field_skill_type.entity.title', 'Knowledge', '<>')
+      ->execute();
+
+    $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nids);
+
+    foreach ($nodes as $skill) {
+      $skillList[$skill->id()] = $skill;
+    }
+  }
+  return $skillList;
+}

@@ -1,0 +1,29 @@
+{#
+/*
+ * Initiative tracker:
+ * - data: contains a nested array of nodes and stat info, keyed by nid.
+ *   - node:
+ *   - stats:
+ * - actions: sorted list of initiative actions.
+ *   - character: Name of the chracter, naturally
+ *   - initiative: Raw initiative score, for use in subsequent JS-powered rerolls
+ *   - roll: First roll + initiative score.
+ */
+#}
+
+<div class="col-xs-12">
+  <div class="panel panel-default">
+    <div class="panel-heading"><strong>Order of Combat</strong></div>
+
+    <div class="panel-body"><p>Coming soon: client-side re-rolling. For now, just reload the page.</p></div>
+
+    <!-- List group -->
+    <ul class="list-group lead">
+      {% for action in actions %}
+        <li class="list-group-item" data-initiative="{{ action.initiative }}">{{ action.character }} <span class="badge initiative-roll">{{ action.roll }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+

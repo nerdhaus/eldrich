@@ -86,8 +86,10 @@ view_mode ? view_mode|clean_class
     {% block content %}
       {{ content.field_description|field_value }}
       {{ content.field_usage|field_value }}
+      {# We're going to hide these, at least for a bit.
       {{ content.field_appearance|field_value }}
       {{ content.field_roleplay_notes|field_value }}
+      #}
     {% endblock %}
 
   {% block stats %}

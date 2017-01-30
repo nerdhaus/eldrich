@@ -54,6 +54,10 @@ class Node extends PreprocessBase implements PreprocessInterface {
 
     // Add some niceties for chars and mobs
     $this->buildCharacterLinks($node, $variables);
+
+    if ($node->bundle() == 'campaign') {
+      $this->addCampaignTools($node, $variables);
+    }
   }
 
   public function prepChildFields(NodeInterface $node, Variables $variables) {
@@ -229,5 +233,29 @@ class Node extends PreprocessBase implements PreprocessInterface {
         '#url' => Url::fromRoute('eldrich.combatcard', ['node' => $node->id()]),
       ];
     }
+  }
+
+  public function addCampaignTools(NodeInterface $node, Variables $variables) {
+    $nids = [];
+    foreach ($node->field_pcs as $field) {
+      $nids[$field->target_id] = $field->target_id;
+    }
+
+    $variables->content['initiative_link'] = [
+      '#type' => 'link',
+      '#title' => t('Track Initiative'),
+      '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_initiative', ['nodes' => join(',', $nids)]),
+      '#attributes' => [
+        'class' => ['btn', 'btn-default', 'btn-sm']
+      ]
+    ];
+    $variables->content['skillsheet_link'] = [
+      '#type' => 'link',
+      '#title' => t('Skills Sheet'),
+      '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_skillsheet', ['nodes' => join(',', $nids)]),
+      '#attributes' => [
+        'class' => ['btn', 'btn-default', 'btn-sm']
+      ]
+    ];
   }
 }

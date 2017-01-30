@@ -1,0 +1,7 @@
+name: Game Tools
+type: module
+description: Tools for EP GMs and players
+core: 8.x
+package: Custom
+dependencies:
+  - eldrich

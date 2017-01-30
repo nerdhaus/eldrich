@@ -1,0 +1,21 @@
+{#
+/*
+ * Initiative tracker:
+ * - data: contains a nested array of nodes and stat info, keyed by nid.
+ *   - node:
+ *   - stats:
+ *   - skills:
+ */
+#}
+
+{{ dump(_context|keys) }}
+
+<div class="col-xs-12">
+  <div class="panel panel-default">
+    <table class="table-responsive">
+      {# iterate for each skill #}
+      {% for nid, datum in data %}
+      {% endfor %}
+    </table>
+  </div>
+</div>
