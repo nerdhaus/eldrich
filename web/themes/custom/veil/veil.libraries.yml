@@ -1,3 +1,10 @@
+bootstrap:
+  css:
+    theme:
+      bootstrap/css/bootstrap.min.css: {}
+      bootstrap/css/bootstrap-responsive.min.css: {}
+  js:
+    bootstrap/js/bootstrap.min.js: {}
 global-styling:
   css:
     theme:

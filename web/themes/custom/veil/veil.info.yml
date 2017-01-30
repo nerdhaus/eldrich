@@ -20,5 +20,6 @@ regions:
   page_bottom: 'Page bottom'
 
 libraries:
+  - 'veil/bootstrap'
   - 'veil/global-styling'
   - 'veil/custom-font'
