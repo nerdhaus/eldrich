@@ -1,0 +1,211 @@
+/*!
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// Core variables and mixins
+@import "custom/variables";
+@import "bootstrap/mixins";
+
+// Reset and dependencies
+@import "bootstrap/normalize";
+@import "bootstrap/print";
+@import "bootstrap/glyphicons";
+
+// Core CSS
+@import "bootstrap/scaffolding";
+@import "bootstrap/type";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+
+// Components
+@import "bootstrap/component-animations";
+@import "bootstrap/dropdowns";
+@import "bootstrap/button-groups";
+@import "bootstrap/input-groups";
+@import "bootstrap/navs";
+@import "bootstrap/navbar";
+@import "bootstrap/breadcrumbs";
+@import "bootstrap/pagination";
+@import "bootstrap/pager";
+@import "bootstrap/labels";
+@import "bootstrap/badges";
+@import "bootstrap/jumbotron";
+@import "bootstrap/thumbnails";
+@import "bootstrap/alerts";
+@import "bootstrap/progress-bars";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+@import "bootstrap/panels";
+@import "bootstrap/responsive-embed";
+@import "bootstrap/wells";
+@import "bootstrap/close";
+
+// Components w/ JavaScript
+@import "bootstrap/modals";
+@import "bootstrap/tooltip";
+@import "bootstrap/popovers";
+@import "bootstrap/carousel";
+
+// Utility classes
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
+
+@import "custom/custom";
+
+/**
+ * Place your custom styles here.
+ */
+
+.region-support .block, .region-recirc .block {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.form-control-inline {
+  min-width: 0;
+  width: 100%;
+  display: inline-block;
+}
+
+.col-left-spread {
+  padding-left: 0;
+}
+
+.col-right-spread {
+  padding-right: 0;
+}
+
+.col-spread {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/**
+ * Statblock tables should have centered text, no margins between header and body,
+ * inverted headers, and horizontal padding between cells.
+ *
+ */
+table.table-statblock thead th {
+  text-align: center;
+  border-width: 1px;
+}
+
+table.table-statblock tr td {
+  text-align: center;
+  border-width: 1px;
+}
+
+table.table-statblock .empty {
+  background-color: transparent;
+}
+
+table.table-statblock .summary-row td {
+  font-weight: bolder;
+}
+
+.eldrich-icon-big {
+  font-size: 200%;
+}
+
+
+div.panel.teaser {
+  margin-bottom: 15px;
+}
+
+
+/* Probably should just start using SASS. */
+.views-row:nth-child(even) .clearblock:before {
+  content: " ";
+  display: table;
+}
+
+.views-row:nth-child(even) .clearblock:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+div:target {
+  background-color: #7a8288;
+}
+
+span.skill-combat {
+  font-weight: bold;
+}
+
+.list-hanging li {
+  padding-left: 30px;
+  text-indent: -30px;
+}
+
+.list-hanging li strong, .list-hanging li span.label {
+  margin-right: 5px;
+}
+
+.skill-col-total {
+  font-weight: bolder;
+}
+
+
+thead, h3.popover-title {
+  color: #1c1e22;
+  background-color: #7a8288;
+  text-shadow: none;
+  font-weight: bold;
+}
+
+.panel-charsheet {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* Don't print link hrefs */
+@media print {
+  a[href]:after {
+    content: none
+  }
+}
+
+.list-delimited {
+  padding-left: 0;
+  list-style: none
+}
+
+.list-delimited li {
+  display: inline-block;
+}
+
+.list-delimited li a:after  {
+  content: ", ";
+}
+
+.list-delimited li:last-child a:after {
+  content: "";
+}
+
+
+table caption {
+  color: inherit;
+}
+
+section.entity-children {
+  padding-top: 15px;
+}
+
+div.view-header {
+  padding-bottom: 15px;
+}
+
+
+.view-filters.form-group {
+  margin-bottom: 0px;
+}
+
+.test {
+  color: yellow;
+}

@@ -246,7 +246,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
       '#title' => t('Track Initiative'),
       '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_initiative', ['nodes' => join(',', $nids)]),
       '#attributes' => [
-        'class' => ['btn', 'btn-default', 'btn-sm']
+        'class' => ['btn', 'btn-default']
       ]
     ];
     $variables->content['skillsheet_link'] = [
@@ -254,7 +254,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
       '#title' => t('Skills Sheet'),
       '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_skillsheet', ['nodes' => join(',', $nids)]),
       '#attributes' => [
-        'class' => ['btn', 'btn-default', 'btn-sm']
+        'class' => ['btn', 'btn-default']
       ]
     ];
   }

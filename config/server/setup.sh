@@ -23,7 +23,7 @@ sudo apt-get install -y mysql-server
 
 # Ruby and SASS
 sudo apt-get install ruby
-sudo su -c "gem install sass"
+sudo apt install ruby-sass
 
 # Varnish and memcached, our performance juicers
 # sudo apt-get install -y varnish memcached
