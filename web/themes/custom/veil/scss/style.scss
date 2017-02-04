@@ -61,6 +61,20 @@
  * Place your custom styles here.
  */
 
+.footer {
+  border-top: 1px solid $navbar-inverse-bg;
+  padding-top: 30px;
+}
+
+.field--label-inline {
+  .field--label:after {
+    content: ": ";
+  }
+  .field--label, .field--item, .field__item {
+    display: inline;
+  }
+}
+
 .region-support .block, .region-recirc .block {
   margin-bottom: 15px;
   margin-top: 15px;
@@ -70,19 +84,6 @@
   min-width: 0;
   width: 100%;
   display: inline-block;
-}
-
-.col-left-spread {
-  padding-left: 0;
-}
-
-.col-right-spread {
-  padding-right: 0;
-}
-
-.col-spread {
-  padding-left: 0;
-  padding-right: 0;
 }
 
 /**
@@ -173,19 +174,19 @@ thead, h3.popover-title {
 
 .list-delimited {
   padding-left: 0;
-  list-style: none
-}
+  list-style: none;
 
-.list-delimited li {
-  display: inline-block;
-}
+  li {
+    display: inline-block;
+  }
 
-.list-delimited li a:after  {
-  content: ", ";
-}
+  li a:after {
+    content: ", ";
+  }
 
-.list-delimited li:last-child a:after {
-  content: "";
+  li:last-child a:after {
+    content: "";
+  }
 }
 
 

@@ -1,56 +1,59 @@
 {#
 /*
- * For Characters:
- * - content.field_background,
- * - content.field_faction,
- * - content.field_appearance,
- * - content.field_rep,
- * - content.field_credits,
+ * Fulll-data charsheet. For control, uses its own markup w/o inheritance.
  */
 #}
-{% extends "@veil/node/node--full.html.twig" %}
 
-{% block callout %}
-<div class="col-sm-4 info-callout panel-charsheet">
-  <ul class="list-unstyled list-hanging">
-  {% if content.field_morph_model|field_value %}<li><strong>Morph:</strong> {{ content.field_morph_model|field_value }}{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}</li>{% endif %}
-  {% if armor.energy or armor.kinetic %}
-    <li><strong>Armor:</strong> {{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
-      {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
-    </li>
-  {% endif %}
-  {% if content.field_rep|field_value|length %}<li><strong>Rep:</strong> {{ content.field_rep|field_value|safe_join(', ') }}</li>{% endif %}
+{%
+set classes = [
+node.bundle|clean_class,
+node.isPromoted() ? 'is-promoted',
+node.isSticky() ? 'is-sticky',
+not node.isPublished() ? 'is-unpublished',
+view_mode ? view_mode|clean_class
+]
+%}
 
-  {% if content.field_augmentations|field_value|length %}<li><strong>Augmentations:</strong> {{ content.field_augmentations|field_value|safe_join(', ') }}</li>{% endif %}
-  {% if content.field_traits|field_value|length %}
-    {% if content.field_morph_traits|field_value|length %}
-      {% set traits = content.field_traits|field_value|merge(content.field_morph_traits|field_value) %}
-    {% else %}
-      {% set traits = content.field_traits|field_value %}
-    {% endif %}
-    <li><strong>Traits:</strong> {{ traits|safe_join(', ') }}</li>
-  {% endif %}
+<article{{ attributes.addClass(classes) }}>
+  <section class="row">
+    <div class="col-sm-4 info-callout panel-charsheet">
+      <ul class="list-unstyled list-hanging">
+      {% if content.field_morph_model|field_value %}<li><strong>Morph:</strong> {{ content.field_morph_model|field_value }}{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}</li>{% endif %}
+      {% if armor.energy or armor.kinetic %}
+        <li><strong>Armor:</strong> {{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
+          {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
+        </li>
+      {% endif %}
+      {% if content.field_rep|field_value|length %}<li><strong>Rep:</strong> {{ content.field_rep|field_value|safe_join(', ') }}</li>{% endif %}
 
-  {% if content.field_sleights|field_value|length %}<li><strong>Psi Sleights:</strong> {{ content.field_sleights|field_value|safe_join(', ') }}</li>{% endif %}
-  {% if content.field_gear|field_value|length %}<li><strong>Gear:</strong> {{ content.field_gear|field_value|safe_join(', ') }}</li>{% endif %}
-  {% if content.field_blueprints|length %}<li><strong>Blueprints:</strong> {{ content.field_blueprints|field_value|safe_join(', ') }}</li>{% endif %}
-  </ul>
-</div>
-{% endblock %}
+      {% if content.field_augmentations|field_value|length %}<li><strong>Augmentations:</strong> {{ content.field_augmentations|field_value|safe_join(', ') }}</li>{% endif %}
+      {% if content.field_traits|field_value|length %}
+        {% if content.field_morph_traits|field_value|length %}
+          {% set traits = content.field_traits|field_value|merge(content.field_morph_traits|field_value) %}
+        {% else %}
+          {% set traits = content.field_traits|field_value %}
+        {% endif %}
+        <li><strong>Traits:</strong> {{ traits|safe_join(', ') }}</li>
+      {% endif %}
 
-{% block content %}
-<div class="col-sm-8">
-  {% if stats.total %}{% include '@veil/partials/stats--breakdown.html.twig' %}{% endif %}
-  {% if attacks|length %}{% include '@veil/partials/attacks--table.html.twig' %}{% endif %}
-</div>
-{% endblock %}
+      {% if content.field_sleights|field_value|length %}<li><strong>Psi Sleights:</strong> {{ content.field_sleights|field_value|safe_join(', ') }}</li>{% endif %}
+      {% if content.field_gear|field_value|length %}<li><strong>Gear:</strong> {{ content.field_gear|field_value|safe_join(', ') }}</li>{% endif %}
+      {% if content.field_blueprints|length %}<li><strong>Blueprints:</strong> {{ content.field_blueprints|field_value|safe_join(', ') }}</li>{% endif %}
+      </ul>
+    </div>
 
-{% block stats %}
-<section class="row">
-  <div class="col-sm-12">
-  {% include '@veil/partials/skills--table.html.twig' %}
-  </div>
-</section>
-{% endblock %}
+    <div class="col-sm-8">
+      {% if stats.total %}{% include '@veil/partials/stats--breakdown.html.twig' %}{% endif %}
+      {% if attacks|length %}{% include '@veil/partials/attacks--table.html.twig' %}{% endif %}
+    </div>
+  </section>
 
-{% block properties %}{% endblock %}
+  <section class="row">
+    <div class="col-sm-12">
+    {% include '@veil/partials/skills--table.html.twig' %}
+    </div>
+  </section>
+
+</article>
+
+
