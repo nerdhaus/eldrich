@@ -32,9 +32,9 @@ class CampaignToolsController extends ControllerBase {
 
     $data = [];
     foreach ($nodes as $nid => $node) {
-      $data[$nid]['node'] = $node;
+      $data[$nid]['name'] = $node->label();
       $data[$nid]['stats'] = StatTreeCalculator::total($node);
-      $data[$nid]['stats'] = SkillTreeCalculator::total($node, $data[$nid]['stats']);
+      $data[$nid]['skills'] = SkillTreeCalculator::total($node, $data[$nid]['stats']);
     }
 
     return [

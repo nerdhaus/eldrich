@@ -54,7 +54,6 @@ function ep_game_tools_preprocess(&$variables, $hook) {
 
         for ($i = 0; $i < $speed; $i++) {
           $actions[] = [
-            'node' => $node,
             'character' => $node->label(),
             'initiative' => $initiative,
             'roll' => $initiative + random_int(1, 10),
@@ -68,6 +67,16 @@ function ep_game_tools_preprocess(&$variables, $hook) {
       break;
 
     case 'skillsheet':
+      $nids = \Drupal::entityQuery('node')
+        ->condition('type', 'skill')
+        ->condition('field_is_field', TRUE, '<>')
+        ->execute();
+
+      $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nids);
+
+      foreach ($nodes as $skill) {
+        $variables['skills'][strtolower($skill->label())] = $skill;
+      }
       // Break out all non-field skills, let template handle custom stuff.
       break;
 
