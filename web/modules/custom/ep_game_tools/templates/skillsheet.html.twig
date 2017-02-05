@@ -2,20 +2,41 @@
 /*
  * Initiative tracker:
  * - data: contains a nested array of nodes and stat info, keyed by nid.
- *   - node:
+ *   - character:
  *   - stats:
  *   - skills:
+ * - skills:
  */
 #}
 
-{{ dump(_context|keys) }}
-
 <div class="col-xs-12">
   <div class="panel panel-default">
-    <table class="table-responsive">
-      {# iterate for each skill #}
-      {% for nid, datum in data %}
+    <table class="table table-eldrich table-condensed table-bordered pc-skills table-striped table-hover">
+      <thead>
+        <tr>
+          <td>Skill</td>
+          {% for character in data %}
+          <td>{{ character.name }}</td>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+      {% for id, skill in skills %}
+        <tr>
+          <td>{{ skill|popup }}</td>
+        {% for character in data %}
+          {% set val = character.skills[id] %}
+          <td
+            data-skill="{{ val.conditional.total }}"
+            data-aptitude="{{ skill.aptitude.label|upper }}"
+            data-type="{{ skill.type.label|lower }}"
+            class="{{ (val.conditional.total < 40) ? 'skill-bad' : '' }}{{ (val.conditional.total > 60) ? ' skill-great' : '' }}">
+            {{ val.constant.total }}{% if val.conditional.total != val.constant.total %} ({{ val.conditional.total }}){% endif %}
+          </td>
+        {% endfor %}
+        </tr>
       {% endfor %}
+      </tbody>
     </table>
   </div>
 </div>

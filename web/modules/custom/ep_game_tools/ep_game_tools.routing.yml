@@ -10,7 +10,7 @@ ep_game_tools.campaign_tools_controller_initiative:
   path: '/games/initiative/{nodes}'
   defaults:
     _controller: '\Drupal\ep_game_tools\Controller\CampaignToolsController::initiative'
-    _title: 'Initiative Roller'
+    _title: 'Order of Combat'
     nodes: '[0-9,]+'
   requirements:
     _permission: 'access content'
