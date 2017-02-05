@@ -210,3 +210,11 @@ div.view-header {
 .test {
   color: yellow;
 }
+
+td.skill-bad {
+  color: $text-muted;
+}
+
+td.skill-great {
+  background-color: $table-bg-accent;
+}

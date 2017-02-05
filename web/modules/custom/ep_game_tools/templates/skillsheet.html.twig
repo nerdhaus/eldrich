@@ -25,7 +25,14 @@
         <tr>
           <td>{{ skill|popup }}</td>
         {% for character in data %}
-          <td>{{ character.skills[id].constant.total }}</td>
+          {% set val = character.skills[id] %}
+          <td
+            data-skill="{{ val.conditional.total }}"
+            data-aptitude="{{ skill.aptitude.label|upper }}"
+            data-type="{{ skill.type.label|lower }}"
+            class="{{ (val.conditional.total < 40) ? 'skill-bad' : '' }}{{ (val.conditional.total > 60) ? ' skill-great' : '' }}">
+            {{ val.constant.total }}{% if val.conditional.total != val.constant.total %} ({{ val.conditional.total }}){% endif %}
+          </td>
         {% endfor %}
         </tr>
       {% endfor %}
