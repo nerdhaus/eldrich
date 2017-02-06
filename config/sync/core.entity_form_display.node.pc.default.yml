@@ -134,13 +134,16 @@ content:
     weight: 11
     settings:
       form_mode: default
-      label_singular: ''
-      label_plural: ''
+      override_labels: true
+      label_singular: Identity
+      label_plural: Identities
       collapsible: true
-      override_labels: false
       collapsed: false
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
     third_party_settings: {  }
-    type: inline_entity_form_simple
+    type: inline_entity_form_complex
   field_image:
     weight: 17
     settings:
@@ -152,13 +155,16 @@ content:
     weight: 9
     settings:
       form_mode: default
-      label_singular: ''
-      label_plural: ''
+      override_labels: true
+      label_singular: Morph
+      label_plural: Morphs
       collapsible: true
-      override_labels: false
-      collapsed: false
+      collapsed: true
+      allow_new: true
+      match_operator: CONTAINS
+      allow_existing: false
     third_party_settings: {  }
-    type: inline_entity_form_simple
+    type: inline_entity_form_complex
   field_motivations:
     weight: 16
     settings:
