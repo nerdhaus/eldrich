@@ -242,7 +242,7 @@ class WeaponCalculator {
     // Check for a morph instance, check for the underlying morph entity, then check if it's
     // an Eidelon. If not, give them this default.
 
-    if ($morph_instance = $entity->field_morph->entity) {
+    if ($entity->has_field('field_morph') && $morph_instance = $entity->field_morph->entity) {
       if ($morph_model = $morph_instance->field_model->entity) {
         if ($morph_model->field_gear_type->entity->label() != 'Eidelon') {
           $item = static::initWeaponRecord();
