@@ -247,12 +247,19 @@ class WeaponCalculator {
         if ($morph_model->field_gear_type->entity->label() != 'Eidelon') {
           $item = static::initWeaponRecord();
           $item['build']['weapon'] = [
-            '#plain_text' => 'Unarmed',
+            '#plain_text' => 'Unarmed strike',
           ];
           $item['category'] = 'Melee';
           $item['linked_skill'] = 'unarmed combat';
           $item['damage']['dice'] = 1;
           $item['damage']['special'] = 'SOM/10';
+
+          if(isset(static::$skills)) {
+            if (key_exists($item['linked_skill'], static::$skills)) {
+              $skill_info = static::$skills[$item['linked_skill']];
+              $item['skill'] = $item['skill_bonus'] + $skill_info['constant']['total'];
+            }
+          }
         }
       }
     }
