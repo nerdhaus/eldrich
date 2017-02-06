@@ -62,7 +62,6 @@ class SkillTreeCalculator {
       static::walkTree($skills, $entity, $stats);
     }
 
-
     // If we're working with anything other than a full-fledged PC, subtract default
     // and bonus from points. Total is points. Shhhhh. Don't cheapen this.
     if (!in_array($entity->bundle(), ['pc', 'npc'])) {
@@ -78,11 +77,11 @@ class SkillTreeCalculator {
 
     // Calculate the totals now!
     foreach ($skills as $key => $data) {
-      $skills[$key]['constant']['baseline'] = $skills[$key]['constant']['default'] + $skills[$key]['constant']['points'];
-      $skills[$key]['conditional']['baseline'] = $skills[$key]['conditional']['default'] + $skills[$key]['conditional']['points'];
+      $skills[$key]['constant']['baseline'] = static::accountForPointCost($skills[$key]['constant']['default'] + $skills[$key]['constant']['points']);
+      $skills[$key]['conditional']['baseline'] = static::accountForPointCost($skills[$key]['conditional']['default'] + $skills[$key]['conditional']['points']);
 
-      $skills[$key]['constant']['total'] = $skills[$key]['constant']['default'] + $skills[$key]['constant']['points'] + $skills[$key]['constant']['bonus'];
-      $skills[$key]['conditional']['total'] = $skills[$key]['conditional']['default'] + $skills[$key]['conditional']['points'] + $skills[$key]['conditional']['bonus'];
+      $skills[$key]['constant']['total'] = $skills[$key]['constant']['baseline'] + $skills[$key]['constant']['bonus'];
+      $skills[$key]['conditional']['total'] = $skills[$key]['conditional']['baseline'] + $skills[$key]['conditional']['bonus'];
     }
 
     ksort($skills);
@@ -160,6 +159,28 @@ class SkillTreeCalculator {
       $row['constant']['bonus'] = $stats['shell']['constant'][$row['aptitude']];
       $row['conditional']['bonus'] = $stats['shell']['conditional'][$row['aptitude']];
     }
+  }
+
+  // Increasing skills above 80 (without morph bonuses) costs double points.
+  // This handles it in the simplest way possible.
+  private static function addPoints($default, $points) {
+    $tmp = $default + $points;
+
+    if ($tmp > 80) {
+      $remainder = floor(($tmp - 80) / 2);
+      $tmp = 80 + $remainder;
+    }
+    return $tmp;
+  }
+
+  // Increasing skills above 80 (without morph bonuses) costs double points.
+  // This handles it in the simplest way possible.
+  private static function accountForPointCost($skill) {
+    if ($skill > 80) {
+      $remainder = floor(($skill - 80) / 2);
+      $skill = 80 + $remainder;
+    }
+    return $skill;
   }
 
   private static function initRow() {

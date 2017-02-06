@@ -226,7 +226,7 @@ class StatTreeCalculator {
       ];
     }
     else {
-      $cap = $morph_instance->field_model->entity->field_stat_cap->getValue();
+      $cap = $morph_instance->field_model->entity->field_stat_cap->getValue()[0];
     }
 
     return $cap;
@@ -243,8 +243,10 @@ class StatTreeCalculator {
 
     foreach ($statgroups as $group_key => $group) {
       foreach ($cap as $key => $value) {
-        if (key_exists($key, $statgroups[$group_key])) {
-          $statgroups[$group_key][$key] = min($statgroups[$group_key][$key], $value);
+        if (!empty($value)) {
+          if (key_exists($key, $statgroups[$group_key])) {
+            $statgroups[$group_key][$key] = min($statgroups[$group_key][$key], $value);
+          }
         }
       }
     }
