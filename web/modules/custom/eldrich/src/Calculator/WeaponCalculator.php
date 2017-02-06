@@ -100,6 +100,8 @@ class WeaponCalculator {
       $data = $weapon;
     }
 
+    // If they have literally no weapons, and they have a body… Well, fuck.
+    // Let's calc an Unarmed Attack for them. They deserve it.
     if (count($data) == 0) {
       if ($unarmed = static::unarmedFallback($data, $entity)) {
         $data[] = $unarmed;
@@ -233,12 +235,29 @@ class WeaponCalculator {
     return NULL;
   }
 
-
-  // TODO: Add unarmed attacks
   public static function unarmedFallback(Array &$data, FieldableEntityInterface $entity) {
-    // If they have literally no weapons, and they have a body, and they have Unarmed…
-    // Well, fuck. Let's calc an Unarmed Attack for them. They deserve it.
-    return NULL;
+    $item = NULL;
+
+    // If the entity in question has a physical body, they have SOME kind of unarmed attack.
+    // Check for a morph instance, check for the underlying morph entity, then check if it's
+    // an Eidelon. If not, give them this default.
+
+    if ($morph_instance = $entity->field_morph->entity) {
+      if ($morph_model = $morph_instance->field_model->entity) {
+        if ($morph_model->field_gear_type->entity->label() != 'Eidelon') {
+          $item = static::initWeaponRecord();
+          $item['build']['weapon'] = [
+            '#plain_text' => 'Unarmed',
+          ];
+          $item['category'] = 'Melee';
+          $item['linked_skill'] = 'unarmed combat';
+          $item['damage']['dice'] = 1;
+          $item['damage']['special'] = 'SOM/10';
+        }
+      }
+    }
+
+    return $item;
   }
 
 
