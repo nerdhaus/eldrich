@@ -75,7 +75,7 @@ content:
     label: above
     settings:
       url_type: '0'
-      image_style: reference
+      image_style: square
       image_link: ''
     third_party_settings: {  }
     type: image_url

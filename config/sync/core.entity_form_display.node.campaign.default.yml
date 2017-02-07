@@ -5,14 +5,17 @@ dependencies:
   config:
     - field.field.node.campaign.body
     - field.field.node.campaign.field_campaign_status
+    - field.field.node.campaign.field_image
     - field.field.node.campaign.field_npcs
     - field.field.node.campaign.field_official_downloads
     - field.field.node.campaign.field_pcs
     - field.field.node.campaign.field_resources
     - field.field.node.campaign.field_short_name
+    - image.style.thumbnail
     - node.type.campaign
   module:
     - file
+    - image_widget_crop
     - link
     - path
     - text
@@ -39,6 +42,20 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_image:
+    weight: 26
+    settings:
+      show_default_crop: true
+      warn_multiple_usages: true
+      preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - landscape
+        - strip
+      progress_indicator: throbber
+      show_crop_area: false
+    third_party_settings: {  }
+    type: image_widget_crop
   field_npcs:
     weight: 11
     settings:

@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.campaign.body
     - field.field.node.campaign.field_campaign_status
+    - field.field.node.campaign.field_image
     - field.field.node.campaign.field_npcs
     - field.field.node.campaign.field_official_downloads
     - field.field.node.campaign.field_pcs
@@ -13,6 +14,7 @@ dependencies:
     - field.field.node.campaign.field_short_name
     - node.type.campaign
   module:
+    - image_url_formatter
     - text
     - user
 id: node.campaign.teaser
@@ -23,9 +25,18 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 2
+    weight: 1
     settings:
       trim_length: 600
+    third_party_settings: {  }
+  field_image:
+    type: image_url
+    weight: 0
+    label: hidden
+    settings:
+      url_type: '0'
+      image_style: landscape
+      image_link: ''
     third_party_settings: {  }
 hidden:
   campaign_characters: true

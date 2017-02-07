@@ -1,0 +1,23 @@
+uuid: f555628d-038e-4774-a59e-aa7dfd86991e
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+name: hero_banner
+label: Hero
+effects:
+  ec7b00e7-4c0c-4004-9705-084b211ea965:
+    uuid: ec7b00e7-4c0c-4004-9705-084b211ea965
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: strip
+  d9890769-0b1d-4fd2-9588-4d1651c5b438:
+    uuid: d9890769-0b1d-4fd2-9588-4d1651c5b438
+    id: image_scale
+    weight: 2
+    data:
+      width: 1000
+      height: null
+      upscale: false

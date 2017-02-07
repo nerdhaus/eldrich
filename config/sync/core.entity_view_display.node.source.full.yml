@@ -11,7 +11,7 @@ dependencies:
     - field.field.node.source.field_is_canon
     - field.field.node.source.field_source_type
     - field.field.node.source.field_weight
-    - image.style.medium
+    - image.style.square
     - node.type.source
   module:
     - field_redirection
@@ -40,7 +40,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: medium
+      image_style: square
       image_link: ''
     third_party_settings: {  }
     type: image

@@ -29,7 +29,7 @@ dependencies:
     - ep_complex_values
     - ep_skill_reference
     - ep_statblock
-    - image
+    - image_widget_crop
     - path
     - text
 id: node.morph.default
@@ -87,10 +87,18 @@ content:
   field_image:
     weight: 42
     settings:
-      progress_indicator: throbber
+      show_default_crop: true
+      warn_multiple_usages: true
       preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - landscape
+        - square
+        - vertical
+      progress_indicator: throbber
+      show_crop_area: false
     third_party_settings: {  }
-    type: image_image
+    type: image_widget_crop
   field_mobility_system:
     weight: 34
     settings:
@@ -134,7 +142,8 @@ content:
     type: entity_reference_quantity_autocomplete
   field_stat_cap:
     weight: 28
-    settings: {  }
+    settings:
+      display_style: all
     third_party_settings: {  }
     type: stat_block_table
   field_stat_variance:
@@ -145,7 +154,8 @@ content:
     type: number
   field_stats:
     weight: 27
-    settings: {  }
+    settings:
+      display_style: all
     third_party_settings: {  }
     type: stat_block_table
   field_traits:
