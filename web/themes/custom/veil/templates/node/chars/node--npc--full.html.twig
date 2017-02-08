@@ -12,12 +12,7 @@
 
 {% block callout_content %}
   {% if content.field_image|field_value %}
-    {% set image = content.field_image|field_target_entity.uri.value %}
-  {% elseif content.field_morph_image|field_value %}
-    {% set image = content.field_morph_image|field_target_entity.uri.value %}
-  {% endif %}
-  {% if image %}
-    <img src="{{ image | image_style('portrait') }}" alt="title" class="img-responsive img-thumbnail" />
+    <img src="{{ content.field_image|field_target_entity.uri.value | image_style('portrait') }}" alt="title" class="img-responsive img-thumbnail" />
   {% endif %}
 
   {{ parent() }}
