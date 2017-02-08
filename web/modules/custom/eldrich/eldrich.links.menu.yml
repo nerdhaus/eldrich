@@ -14,10 +14,3 @@ eldrich.world:
   weight: 130
   menu_name: main
   expanded: true
-eldrich.games:
-  title: 'Games'
-  description: 'Active and archived Eclipse Phase games'
-  route_name: quick_pages.games
-  weight: 140
-  menu_name: main
-  expanded: true
