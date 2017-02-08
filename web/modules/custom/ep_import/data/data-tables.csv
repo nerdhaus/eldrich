@@ -12,7 +12,7 @@ Low,,cost_level,2,"100-499 credits, average 250. Crap insurance, a good meal, a 
 Moderate,,cost_level,3,"500-1,499 credits, average 1,000. A good weapon, a gourmet meal, body armor, renting a morph for a week, an automech or fabber, quality backup insurance. Travel or egocasting within 50,000km. These aren’t out of reach, but add up.",
 High,,cost_level,4,"1,500-9,999 credits, average 5,000. Expensive hardware, a beat up pod morph, throwing a rager of a party. Travel or egocasting within 200,000km. ",
 Expensive,,cost_level,5,"10,000+ credits, average 20,000. A new morph, military-grade weapons, medical equipment. Transport or egocasting beyond 200,000km. Expensive goods often carry their own minimum costs; don’t assume that 20k will buy you a shuttle, or something.",
-Crazypants,,cost_level,6,"100,000+ credits, average 250,000. This is fuck-you money.",
+Crazypants,,cost_level,6,"100,000+ credits, average 250,000. This is fuck-you money, and generally represents something PCs can’t get their hands on without GM approval.",
 AI,,creature_type,1,,
 Alien,,creature_type,2,,
 Asynch,,creature_type,3,,
