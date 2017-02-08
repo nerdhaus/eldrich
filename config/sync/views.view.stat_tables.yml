@@ -1000,7 +1000,7 @@ display:
               sortable: true
               default_sort_order: asc
               align: views-align-left
-              separator: ''
+              separator: ' '
               empty_column: false
               responsive: ''
             field_is_field:
@@ -1014,14 +1014,14 @@ display:
               sortable: true
               default_sort_order: asc
               align: views-align-left
-              separator: ''
+              separator: ' '
               empty_column: false
               responsive: ''
             title_1:
               sortable: true
               default_sort_order: asc
               align: views-align-left
-              separator: ''
+              separator: ' '
               empty_column: false
               responsive: ''
             field_no_defaulting:
@@ -2546,7 +2546,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ (field_ego_trait and field_morph_trait) ? ''& Morph'' : ''Morph'' }}'
+            text: '{{ (field_ego_trait and field_morph_trait) ? '' & Morph'' : ''Morph'' }}'
             make_link: false
             path: ''
             absolute: false
