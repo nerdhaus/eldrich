@@ -1,23 +1,23 @@
-uuid: abe38f1a-6db2-4802-86c5-64f467f473aa
+uuid: 3391caa8-d76b-40fc-8dfd-8e4ed71d3498
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_resources
+    - field.storage.node.field_video
     - node.type.inspiration
   module:
     - link
-id: node.inspiration.field_resources
-field_name: field_resources
+id: node.inspiration.field_video
+field_name: field_video
 entity_type: node
 bundle: inspiration
-label: 'More Links'
+label: Video
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  link_type: 17
-  title: 2
+  link_type: 16
+  title: 0
 field_type: link

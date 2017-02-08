@@ -4,9 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.inspiration.body
+    - field.field.node.inspiration.field_image
     - field.field.node.inspiration.field_resources
+    - field.field.node.inspiration.field_video
+    - image.style.hero_banner
     - node.type.inspiration
   module:
+    - image
+    - link
     - text
     - url_embed
     - user
@@ -18,11 +23,30 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
-  field_resources:
+  field_image:
     weight: 0
+    label: hidden
+    settings:
+      image_style: hero_banner
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_resources:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_video:
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
