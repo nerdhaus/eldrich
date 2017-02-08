@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: players
 migration_tags: null
-migration_group: eldrich_content
+migration_group: eldrich_chars
 label: 'Player Characters'
 source:
   plugin: csv
