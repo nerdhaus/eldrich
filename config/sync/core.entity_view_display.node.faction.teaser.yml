@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.faction.field_locations
     - field.field.node.faction.field_memes
     - field.field.node.faction.field_parent_faction
+    - field.field.node.faction.field_short_name
     - field.field.node.faction.field_sources
     - node.type.faction
   module:

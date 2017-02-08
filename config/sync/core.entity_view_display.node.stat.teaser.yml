@@ -36,3 +36,4 @@ hidden:
   field_weight: true
   links: true
   related_lists_linked_skills: true
+  related_skills: true

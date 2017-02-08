@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.vehicle.field_equipped_weapons
     - field.field.node.vehicle.field_gear
     - field.field.node.vehicle.field_gear_type
+    - field.field.node.vehicle.field_image
     - field.field.node.vehicle.field_linked_skill
     - field.field.node.vehicle.field_mobility_system
     - field.field.node.vehicle.field_movement_speed
@@ -57,7 +58,6 @@ hidden:
   field_armor: true
   field_augmentations: true
   field_blueprints: true
-  field_cost: true
   field_equipped_weapons: true
   field_gear: true
   field_image: true
@@ -70,3 +70,4 @@ hidden:
   field_sources: true
   field_stats: true
   links: true
+  related_gear: true

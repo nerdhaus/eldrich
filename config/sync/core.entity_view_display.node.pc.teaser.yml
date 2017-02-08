@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.pc.field_traits
     - node.type.pc
   module:
+    - image_url_formatter
     - text
     - user
 id: node.pc.teaser
@@ -36,12 +37,20 @@ content:
     settings:
       trim_length: 400
     third_party_settings: {  }
+  field_image:
+    type: image_url
+    weight: 0
+    label: hidden
+    settings:
+      url_type: '2'
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
 hidden:
   field_equipped_armor: true
   field_equipped_weapons: true
   field_gear: true
   field_identity: true
-  field_image: true
   field_morph: true
   field_motivations: true
   field_muse: true

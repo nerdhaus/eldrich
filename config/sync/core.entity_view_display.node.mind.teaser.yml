@@ -48,9 +48,9 @@ content:
 hidden:
   field_armor: true
   field_blueprints: true
-  field_cost: true
   field_short_name: true
   field_skills: true
   field_sources: true
   field_stats: true
   links: true
+  related_gear: true

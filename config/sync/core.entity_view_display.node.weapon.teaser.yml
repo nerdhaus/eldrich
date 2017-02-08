@@ -67,7 +67,6 @@ hidden:
   field_area_effect: true
   field_armor: true
   field_blueprints: true
-  field_cost: true
   field_damage: true
   field_damage_dice: true
   field_damage_effects: true
@@ -86,3 +85,4 @@ hidden:
   field_uses_ammo: true
   field_uses_mods: true
   links: true
+  related_gear: true

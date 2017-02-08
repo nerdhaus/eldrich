@@ -5,6 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.inspiration.body
+    - field.field.node.inspiration.field_image
+    - field.field.node.inspiration.field_resources
+    - field.field.node.inspiration.field_video
     - node.type.inspiration
   module:
     - text
@@ -21,10 +24,12 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-  links:
-    weight: 100
 hidden:
   field_image: true
   field_resource: true
   field_resources: true
   field_video: true
+  links: true
+  sub_content_gear: true
+  sub_content_npcs: true
+  sub_content_world: true

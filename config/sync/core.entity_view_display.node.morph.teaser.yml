@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.morph.field_cp_cost
     - field.field.node.morph.field_description
     - field.field.node.morph.field_gear_type
+    - field.field.node.morph.field_image
     - field.field.node.morph.field_mobility_system
     - field.field.node.morph.field_morph_type
     - field.field.node.morph.field_movement_speed
@@ -58,11 +59,9 @@ hidden:
   field_armor: true
   field_augmentations: true
   field_blueprints: true
-  field_cost: true
   field_cp: true
   field_cp_cost: true
   field_gear: true
-  field_gear_type: true
   field_image: true
   field_mobility_system: true
   field_morph_type: true
@@ -75,3 +74,4 @@ hidden:
   field_stats: true
   field_traits: true
   links: true
+  related_gear: true

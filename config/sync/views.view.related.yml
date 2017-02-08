@@ -1,4 +1,4 @@
-uuid: f5c05545-27e5-424a-bd4c-a914b6d5fc41
+uuid: b56222b7-7852-41d3-bafd-8a6d8428def1
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ dependencies:
     - node
     - taxonomy
     - user
-id: related_lists
-label: 'Related Lists'
+id: related
+label: Related
 module: views
 description: ''
 tag: ''
@@ -215,9 +215,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  gear_siblings:
+  gear:
     display_plugin: entity_view
-    id: gear_siblings
+    id: gear
     display_title: 'Related Gear'
     position: 1
     display_options:
@@ -444,9 +444,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  linked_skills:
+  skills:
     display_plugin: entity_view
-    id: linked_skills
+    id: skills
     display_title: 'Linked Skills'
     position: 2
     display_options:

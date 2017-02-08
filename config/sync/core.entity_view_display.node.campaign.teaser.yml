@@ -51,3 +51,7 @@ hidden:
   field_short_name: true
   field_useful_resources: true
   links: true
+  sub_content_gear: true
+  sub_content_npcs: true
+  sub_content_sessions: true
+  sub_content_world: true

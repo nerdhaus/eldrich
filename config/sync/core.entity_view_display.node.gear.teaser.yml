@@ -45,7 +45,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_blueprints: true
-  field_cost: true
   field_short_name: true
   field_sources: true
   links: true
+  related_gear: true

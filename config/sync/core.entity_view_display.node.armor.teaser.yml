@@ -57,3 +57,4 @@ hidden:
   field_special_effect: true
   field_uses_mods: true
   links: true
+  related_gear: true

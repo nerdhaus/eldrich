@@ -9,7 +9,11 @@ dependencies:
     - field.field.node.npc.field_equipped_weapons
     - field.field.node.npc.field_gear
     - field.field.node.npc.field_identity
+    - field.field.node.npc.field_image
     - field.field.node.npc.field_morph
+    - field.field.node.npc.field_motivations
+    - field.field.node.npc.field_owned_blueprints
+    - field.field.node.npc.field_privacy
     - field.field.node.npc.field_quote
     - field.field.node.npc.field_roleplay_notes
     - field.field.node.npc.field_skills
@@ -19,6 +23,7 @@ dependencies:
     - field.field.node.npc.field_traits
     - node.type.npc
   module:
+    - image_url_formatter
     - text
     - user
 id: node.npc.teaser
@@ -33,13 +38,21 @@ content:
     settings:
       trim_length: 400
     third_party_settings: {  }
+  field_image:
+    type: image_url
+    weight: 0
+    label: hidden
+    settings:
+      url_type: '2'
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
 hidden:
   field_equipped_armor: true
   field_equipped_weapons: true
   field_gear: true
   field_headshot: true
   field_identity: true
-  field_image: true
   field_morph: true
   field_motivations: true
   field_owned_blueprints: true

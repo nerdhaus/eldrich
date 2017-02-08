@@ -56,7 +56,6 @@ hidden:
   field_attribution: true
   field_blueprints: true
   field_conditional: true
-  field_cost: true
   field_mobility_system: true
   field_morph_types: true
   field_short_name: true
@@ -66,3 +65,4 @@ hidden:
   field_stats: true
   field_weapon: true
   links: true
+  related_gear: true
