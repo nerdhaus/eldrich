@@ -7,10 +7,9 @@ dependencies:
     - field.field.node.inspiration.field_image
     - field.field.node.inspiration.field_resources
     - field.field.node.inspiration.field_video
-    - image.style.hero_banner
     - node.type.inspiration
   module:
-    - image
+    - image_url_formatter
     - link
     - text
     - url_embed
@@ -30,19 +29,20 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: hero_banner
+      url_type: '2'
+      image_style: ''
       image_link: ''
     third_party_settings: {  }
-    type: image
+    type: image_url
   field_resources:
     weight: 3
     label: hidden
     settings:
       trim_length: 80
+      rel: nofollow
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      target: '0'
     third_party_settings: {  }
     type: link
   field_video:

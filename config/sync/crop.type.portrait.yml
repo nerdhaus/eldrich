@@ -1,12 +1,12 @@
-uuid: c57dd252-c78e-440f-b215-0b9d00a3d357
+uuid: f0ba3b88-2141-414c-933c-4a34ca044288
 langcode: en
 status: true
 dependencies: {  }
-label: 'Reference Image'
-id: reference
+label: Portrait
+id: portrait
 description: ''
-aspect_ratio: '1:1'
-soft_limit_width: null
+aspect_ratio: '1:2'
+soft_limit_width: 480
 soft_limit_height: null
 hard_limit_width: null
 hard_limit_height: null

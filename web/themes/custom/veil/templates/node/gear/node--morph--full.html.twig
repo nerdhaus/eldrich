@@ -13,7 +13,7 @@
 {% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
   {% if content.field_image|field_value %}
-    <img src="{{ content.field_image | field_target_entity.uri.value | image_style('reference') }}" alt="title" class="img-responsive img-thumbnail" />
+    <img src="{{ content.field_image|field_target_entity.uri.value | image_style('portrait') }}" alt="title" class="img-responsive img-thumbnail" />
   {% endif %}
   {{ parent() }}
 {% endblock %}

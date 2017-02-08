@@ -12,7 +12,7 @@ effects:
     id: crop_crop
     weight: 1
     data:
-      crop_type: vertical
+      crop_type: portrait
   44c1b006-3a5b-4ab8-ba6b-35dd715e8671:
     uuid: 44c1b006-3a5b-4ab8-ba6b-35dd715e8671
     id: image_scale
@@ -20,4 +20,4 @@ effects:
     data:
       width: 480
       height: null
-      upscale: false
+      upscale: true

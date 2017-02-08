@@ -20,4 +20,4 @@ effects:
     data:
       width: null
       height: 480
-      upscale: false
+      upscale: true

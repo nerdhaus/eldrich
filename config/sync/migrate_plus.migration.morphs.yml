@@ -136,10 +136,10 @@ process:
     source: stats
   field_stats/synthetic:
     plugin: static_map
-    source: blueprints
+    source: type
     map:
-      Synthmorph: 1
-      'FALSE': 0
+      Synthmorphs: 1
+      Flexbots: 1
     default_value: 0
   field_stat_cap:
     plugin: stat_block

@@ -5,7 +5,7 @@ dependencies: {  }
 label: Vertical
 id: vertical
 description: ''
-aspect_ratio: '2:1'
+aspect_ratio: '1:2'
 soft_limit_width: null
 soft_limit_height: null
 hard_limit_width: null

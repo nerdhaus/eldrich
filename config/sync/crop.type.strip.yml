@@ -6,7 +6,7 @@ label: Strip
 id: strip
 description: ''
 aspect_ratio: '4:1'
-soft_limit_width: null
+soft_limit_width: 1200
 soft_limit_height: null
 hard_limit_width: null
 hard_limit_height: null

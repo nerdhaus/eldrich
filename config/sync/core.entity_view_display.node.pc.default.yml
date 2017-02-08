@@ -73,8 +73,8 @@ content:
     weight: 14
     label: above
     settings:
-      url_type: '0'
-      image_style: square
+      url_type: '2'
+      image_style: ''
       image_link: ''
     third_party_settings: {  }
     type: image_url

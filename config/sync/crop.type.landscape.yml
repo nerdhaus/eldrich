@@ -7,6 +7,6 @@ id: landscape
 description: ''
 aspect_ratio: '2:1'
 soft_limit_width: null
-soft_limit_height: null
+soft_limit_height: 480
 hard_limit_width: null
 hard_limit_height: null
