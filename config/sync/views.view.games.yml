@@ -203,7 +203,7 @@ display:
         type: normal
         title: Games
         description: 'Active and archived Eclipse Phase games'
-        expanded: false
+        expanded: true
         parent: ''
         weight: 0
         context: '0'

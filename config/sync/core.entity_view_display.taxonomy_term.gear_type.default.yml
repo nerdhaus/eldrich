@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.gear_type.field_featured
     - field.field.taxonomy_term.gear_type.field_icon
     - field.field.taxonomy_term.gear_type.field_plural
     - field.field.taxonomy_term.gear_type.field_short_name
@@ -22,6 +23,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_featured: true
   field_icon: true
   field_plural: true
   field_short_name: true

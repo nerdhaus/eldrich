@@ -1,0 +1,23 @@
+uuid: b38daf1e-103a-4206-b425-60c9357fd140
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_featured
+    - taxonomy.vocabulary.gear_type
+id: taxonomy_term.gear_type.field_featured
+field_name: field_featured
+entity_type: taxonomy_term
+bundle: gear_type
+label: 'Feature in Menu'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

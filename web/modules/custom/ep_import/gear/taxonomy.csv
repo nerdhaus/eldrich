@@ -1,69 +1,69 @@
-Title,Parent,Shortname,Icon,Description,Source
+Title,Parent,Shortname,Icon,Description,Menu,Source
 Personal Augmentations,,Augmentations,,"Almost all citizens of the solar system, whether human, AI, or uplifted animal, use various forms of biological, cybernetic, or nanotechnological augmentation. The following is a list of the most common types.
 
-Unless otherwise noted, any bonuses from personal augmentations are both compatible and cumulative with bonuses from other enhancements. ",EP.300
-Augmentations,Personal Augmentations,Basic,weight-lifting-up,,EP.300
-Enhanced Senses,Personal Augmentations,Senses,psychic-waves,,EP.301
-Mental Augmentations,Personal Augmentations,Mental,brain,,EP.301
-Physical Augmentations,Personal Augmentations,Physical,fist,,EP.301
-Nanoware,Personal Augmentations,Nano,materials-science,,EP.308
-Cosmetic Mods,Personal Augmentations,Cosmetic,lips,,EP.309
-Robotic Enhancements,Personal Augmentations,Robot,hexagonal-nut,,EP.310
-Mobility Systems,Robotic Enhancements,Mobility,tank-tread,,EP.310
-Physical Modifications,Robotic Enhancements,Physical,mechanical-arm,,EP.310
-Software Plug-Ins,Personal Augmentations,Plugins,computing,"Plug-ins are simply programs attached to the mind-state emulation software, so that the ego may access them immediately. A plug-in requires a Complex Action to install; once installed, it is “carried” by the infomorph, so that if the infomorph moves to another device, the plug-in moves with it. Plug-ins may be deleted with a Quick Action. Almost any software can be installed as a plug-in, including standard programs, scorchers, and skillsofts (the latter require virtual skillware to run). Other active infomorphs (including AIs and muses) cannot be attached as plug-ins, as they require their own mind-emulation suite. An inactive infomorph, however, could be attached, just like any other electronic data.",TH.139
-Armor,,Armor,kevlar-vest,"Modern personal armor systems have advanced from the high-modulus polyethylene thermoplastics and aramid fabrics of the early 21st century. Armor in Eclipse Phase is derived from biotech, in the form of organoweave fibers and crystalline-grown plates, and nanotech, in the form of shock-absorbing fullerene (p. 298) materials. Occasionally other materials are used, such as metallic glass plates or shear-resistant fluids that harden against impacts. Such armor protects against (armor-piercing) bullets and kinetic impacts as well as bladed weapons and piercing sharp objects. They also insulate against both the explosive heating of energy weapons and electrical shocks. While such armor protects against bullets, the layers of material catch the bullet and redistribute its kinetic energy across the body, which can still result in severe blunt force trauma.",EP.313
-Armor Mods,Armor,Mods,kevlar-vest,,EP.313
-Communications,,Comms,talk,"The oldest and most widespread communications technology still in regular use is radio. Every habitat and world inhabited by transhumanity is awash in radio traffic, with humans, machines, and uplifts all constantly communicating with one another. The smallest radios are no larger than a speck of dust and have a range of no more than 20 meters, while the largest are the size of a truck and have a range of many thousands of miles. Radios large and small are ubiquitous and almost all devices contain at least short-range radios so they may interact with the mesh. Most morphs are equipped with basic mesh inserts (p. 300) that include an implanted radio. For radio ranges, see p. 299.","EP.313, GC.154"
-Sensors,Communications,Sensors,radar-sweep,,EP.313
-Espionage,,Espionage,spy,"These technologies allow characters to acquire protected information and to gain access to places that others try to keep them out of. Many of these devices are mesh-capable and equipped with radios, see p. 299 for radio ranges.",EP.315
-Substances,,Substances,pill,"In Eclipse Phase, the transhuman desire to enhance the body and mind—especially with chemicals—merges right into humanity’s popular pastime of recreational substance abuse. Drugs of all kinds, whether they be chemical, nano-based, or electronic, are not only popular but widespread. While advances in biotechnology have eliminated many of the side effects that once plagued drug users, transhuman bodies remain complicated environments, and so side effects (especially with long-term use) are still a factor.",EP.317
-Drugs,Substances,Drugs,pill,,EP.318
-Nanodrugs,Substances,Nano,pill,,EP.321
-Narcoalgorithms,Substances,Algorithms,pill,,EP.323
-Chemicals,Substances,Chems,chemical-drop,,EP.323
-Toxins,Substances,Toxins,poison-bottle,,EP.324
-Nanotoxins,Substances,Nanotoxins,poison-bottle,,EP.324
-Pathogens,Substances,Pathogens,biohazard,,EP.324
-Psi Drugs,Substances,Psi,pill,,EP.325
-Everyday Technology,,Everyday,briefcase,The following devices are all exceptionally common and can be acquired in almost any habitat. Almost everyone in Eclipse Phase either owns these devices or knows several people who do.,"EP.325, GC.155"
-Nanotechnology,,Nano,materials-science,"Nanotechnology is the precise manipulation of matter at the atomic level, typically using millions of microscale nanomachines. Nanotechnology transformed manufacturing, enabling new techniques and materials. The advent of nanofabrication—building objects from the molecular level up—transformed economies, allowing people to simply manufacture whatever they needed from raw materials. Nanotechnology is still a growing  field, however, and has its limitations. While the TITANs unleashed self-replicating nanoswarms with the ability to transform or destroy anything through the power of geometric growth, such technology remains far beyond transhumanity’s grasp.",EP.326
-Basic Nanotech,Nanotechnology,Basic,materials-science,,EP.326
-Advanced Nanotech,Nanotechnology,Advanced,materials-science,,EP.326
-Smart Animals,,Animals,rabbit,These partially uplifted and bioengineered animals have rudimentary intelligence and limited communication skills. They make for fine companions and helpers.,"EP.330, GC.157"
-Alien Relics,,Relics,Cube-force,"Though functional alien technology is exceptionally rare, a few items have been discovered that are even available to gatecrashers or lucky explorers who come across their own.",GC.165
-Scavenger Tech,,Scavenging,crowbar,"This technology is often employed by gatecrashers, space scavengers, and Firewall teams during missions. ",EP.330
-Exploration Gear,Scavenger Tech,Exploring,crowbar,Most of these items end up in the arsenal of every gatecrashing team.,GC.155
-Xenoarcheology Gear,Scavenger Tech,Xeno,crowbar,These items are useful when digging up the ruins of dead civilizations.,GC.160
-Services,,Services,money-stack,,EP.330
-Software,,Software,computing,,EP.331
-Programs,Software,Programs,computing,,EP.331
-AIs,Software,AIs,computing,,EP.331
-Scorchers,Software,Scorchers,computing,,EP.331
-Skillsofts,Software,Skillsofts,computing,,EP.331
-Survival Gear,,Survival,caduceus,"The following gear is often critical to the survival of soldiers, spies, criminals, gatecrashers, emergency service personnel, and others who regularly venture into unsafe or unfamiliar regions.",EP.332
-Vacsuum Suits,Survival Gear,Suits,space-suit,,EP.332
-Weapons,,Weapons,crosshair,"A wide range of weapons are available in Eclipse Phase, from the primitive to the technologically advanced.",EP.334
-Melee Weapons,Weapons,Melee,brass-knuckles,,EP.334
-Kinetic Weapons,Weapons,Kinetic,walther-ppk,,EP.335
-Beam Weapons,Weapons,Beam,ray-gun,,EP.338
-Seekers,Weapons,Seekers,missile-pod,,EP.339
-Explosives,Weapons,Explosives,grenade,,EP.341
-Ammunition,Weapons,Ammo,bullets,,
-Spray Weapons,Weapons,Spray,aerosol,,EP.341
-Exotic Ranged Weapons,Weapons,Exotic,boomerang,,EP.334
-Weapon Accessories,Weapons,Mods,gear-hammer,,EP.342
-Vehicles,,Vehicles,,"Almost all of the vehicles in current use, including all of the vehicles listed here, have built-in AIs capable of piloting the vehicle under almost all circumstances. In most cases, passengers simply state their destination and the vehicle takes them there. Manual piloting is primarily used in emergencies or by people who prefer the exotic thrill of controlling their own vehicle.","EP.343, GC.160"
-Aircraft,Vehicles,Aircraft,jet-fighter,,EP.343
-Exoskeletons,Vehicles,Exos,robot-golem,,EP.343
-Groundcraft,Vehicles,Ground,jeep,,EP.343
-Personal Vehicles,Vehicles,Personal,scooter,,EP.343
-Robots,Vehicles,Robots,robot-golem,,"EP.343, GC"
-Spacecraft,Vehicles,Space,space-shuttle,,EP
-Morphs,,Morphs,,"Eclipse Phase’s setting dictates that a distinction must be made between a character’s ego (their ingrained self, their personality, and inherent traits that perpetuate in continuity) and their morph (their ephemeral physical—and sometimes virtual—form). A character’s morph may die while the character’s ego lives on (assuming appropriate backup measures have been taken), transplanted into a new morph.",EP
-Biomorphs,Morphs,Bio,muscular-torso,"Biomorphs are fully biological sleeves (usually equipped with implants), birthed naturally or in a flexowomb, and grown to adulthood either naturally or at a slightly accelerated rate.",EP
-Pods,Morphs,Pods,cyborg-face,"Pods (from “pod people”) are vat-grown, biological bodies with extremely undeveloped brains that are augmented with an implanted computer and cybernetics system. Though typically run by an AI, pods are socially unfavored in some stations, used as slave labor in others, and even illegal in some areas. Because pods underwent accelerated growth in their creation and were mostly grown as separate parts and then assembled, their biological design includes some shortcuts and limitations, offset with implants and regular maintenance. They lack reproductive capabilities. In many habitats, their legal status is a hotly contested issue.",EP
-Synthmorphs,Morphs,Synth,android-mask,"Synthetic morphs are completely artificial/robotic. They are usually operated by AIs or via remote control, but the lack of available biomorphs after the Fall meant that many infugees resorted to resleeving in robotic shells, which were also cheaper, quicker to manufacture, and more widely available. Nevertheless, synthmorphs are viewed with disdain in many habitats, an option that only the poor and desperate accept to be sleeved in. Synthetic morphs are not without their advantages, however, and so are commonly used for menial labor, heavy labor, habitat construction, and security services. ",EP
-Uplifts,Morphs,Uplifts,octopus,These custom biological morphs are available only to uplifted creatures.,EP
-Eidelons,Morphs,Eidelons,artificial-intelligence,"The basic infomorph shell is a software mind-emulation package that runs an ego. The default infomorph is much like a digital version of a flat, in that it does not enjoy the cognitive or other aptitude bonuses common to other physical morphs. Other varieties of infomorph shells exist, however. Known as eidolons, these digital morphs include routines that bolster an ego’s innate capabilities and often come equipped with pre-installed plug-ins and upgrades. ",TH
-Flexbots,Morphs,Flexbots,jigsaw-box,Shape-changing synthmorphs capable of joining together with other flexbots in a modular fashion to create larger shapes.,EP
+Unless otherwise noted, any bonuses from personal augmentations are both compatible and cumulative with bonuses from other enhancements. ",TRUE,EP.300
+Augmentations,Personal Augmentations,Basic,weight-lifting-up,,FALSE,EP.300
+Enhanced Senses,Personal Augmentations,Senses,psychic-waves,,FALSE,EP.301
+Mental Augmentations,Personal Augmentations,Mental,brain,,FALSE,EP.301
+Physical Augmentations,Personal Augmentations,Physical,fist,,FALSE,EP.301
+Nanoware,Personal Augmentations,Nano,materials-science,,FALSE,EP.308
+Cosmetic Mods,Personal Augmentations,Cosmetic,lips,,FALSE,EP.309
+Robotic Enhancements,Personal Augmentations,Robot,hexagonal-nut,,FALSE,EP.310
+Mobility Systems,Robotic Enhancements,Mobility,tank-tread,,FALSE,EP.310
+Physical Modifications,Robotic Enhancements,Physical,mechanical-arm,,FALSE,EP.310
+Software Plug-Ins,Personal Augmentations,Plugins,computing,"Plug-ins are simply programs attached to the mind-state emulation software, so that the ego may access them immediately. A plug-in requires a Complex Action to install; once installed, it is “carried” by the infomorph, so that if the infomorph moves to another device, the plug-in moves with it. Plug-ins may be deleted with a Quick Action. Almost any software can be installed as a plug-in, including standard programs, scorchers, and skillsofts (the latter require virtual skillware to run). Other active infomorphs (including AIs and muses) cannot be attached as plug-ins, as they require their own mind-emulation suite. An inactive infomorph, however, could be attached, just like any other electronic data.",FALSE,TH.139
+Armor,,Armor,kevlar-vest,"Modern personal armor systems have advanced from the high-modulus polyethylene thermoplastics and aramid fabrics of the early 21st century. Armor in Eclipse Phase is derived from biotech, in the form of organoweave fibers and crystalline-grown plates, and nanotech, in the form of shock-absorbing fullerene (p. 298) materials. Occasionally other materials are used, such as metallic glass plates or shear-resistant fluids that harden against impacts. Such armor protects against (armor-piercing) bullets and kinetic impacts as well as bladed weapons and piercing sharp objects. They also insulate against both the explosive heating of energy weapons and electrical shocks. While such armor protects against bullets, the layers of material catch the bullet and redistribute its kinetic energy across the body, which can still result in severe blunt force trauma.",FALSE,EP.313
+Armor Mods,Armor,Mods,kevlar-vest,,FALSE,EP.313
+Communications,,Comms,talk,"The oldest and most widespread communications technology still in regular use is radio. Every habitat and world inhabited by transhumanity is awash in radio traffic, with humans, machines, and uplifts all constantly communicating with one another. The smallest radios are no larger than a speck of dust and have a range of no more than 20 meters, while the largest are the size of a truck and have a range of many thousands of miles. Radios large and small are ubiquitous and almost all devices contain at least short-range radios so they may interact with the mesh. Most morphs are equipped with basic mesh inserts (p. 300) that include an implanted radio. For radio ranges, see p. 299.",FALSE,"EP.313, GC.154"
+Sensors,Communications,Sensors,radar-sweep,,FALSE,EP.313
+Espionage,,Espionage,spy,"These technologies allow characters to acquire protected information and to gain access to places that others try to keep them out of. Many of these devices are mesh-capable and equipped with radios, see p. 299 for radio ranges.",FALSE,EP.315
+Substances,,Substances,pill,"In Eclipse Phase, the transhuman desire to enhance the body and mind—especially with chemicals—merges right into humanity’s popular pastime of recreational substance abuse. Drugs of all kinds, whether they be chemical, nano-based, or electronic, are not only popular but widespread. While advances in biotechnology have eliminated many of the side effects that once plagued drug users, transhuman bodies remain complicated environments, and so side effects (especially with long-term use) are still a factor.",FALSE,EP.317
+Drugs,Substances,Drugs,pill,,FALSE,EP.318
+Nanodrugs,Substances,Nano,pill,,FALSE,EP.321
+Narcoalgorithms,Substances,Algorithms,pill,,FALSE,EP.323
+Chemicals,Substances,Chems,chemical-drop,,FALSE,EP.323
+Toxins,Substances,Toxins,poison-bottle,,FALSE,EP.324
+Nanotoxins,Substances,Nanotoxins,poison-bottle,,FALSE,EP.324
+Pathogens,Substances,Pathogens,biohazard,,FALSE,EP.324
+Psi Drugs,Substances,Psi,pill,,FALSE,EP.325
+Everyday Technology,,Everyday,briefcase,The following devices are all exceptionally common and can be acquired in almost any habitat. Almost everyone in Eclipse Phase either owns these devices or knows several people who do.,FALSE,"EP.325, GC.155"
+Nanotechnology,,Nano,materials-science,"Nanotechnology is the precise manipulation of matter at the atomic level, typically using millions of microscale nanomachines. Nanotechnology transformed manufacturing, enabling new techniques and materials. The advent of nanofabrication—building objects from the molecular level up—transformed economies, allowing people to simply manufacture whatever they needed from raw materials. Nanotechnology is still a growing  field, however, and has its limitations. While the TITANs unleashed self-replicating nanoswarms with the ability to transform or destroy anything through the power of geometric growth, such technology remains far beyond transhumanity’s grasp.",FALSE,EP.326
+Basic Nanotech,Nanotechnology,Basic,materials-science,,FALSE,EP.326
+Advanced Nanotech,Nanotechnology,Advanced,materials-science,,FALSE,EP.326
+Smart Animals,,Animals,rabbit,These partially uplifted and bioengineered animals have rudimentary intelligence and limited communication skills. They make for fine companions and helpers.,FALSE,"EP.330, GC.157"
+Alien Relics,,Relics,Cube-force,"Though functional alien technology is exceptionally rare, a few items have been discovered that are even available to gatecrashers or lucky explorers who come across their own.",FALSE,GC.165
+Scavenger Tech,,Scavenging,crowbar,"This technology is often employed by gatecrashers, space scavengers, and Firewall teams during missions. ",FALSE,EP.330
+Exploration Gear,Scavenger Tech,Exploring,crowbar,Most of these items end up in the arsenal of every gatecrashing team.,FALSE,GC.155
+Xenoarcheology Gear,Scavenger Tech,Xeno,crowbar,These items are useful when digging up the ruins of dead civilizations.,FALSE,GC.160
+Services,,Services,money-stack,,FALSE,EP.330
+Software,,Software,computing,,FALSE,EP.331
+Programs,Software,Programs,computing,,FALSE,EP.331
+AIs,Software,AIs,computing,,FALSE,EP.331
+Scorchers,Software,Scorchers,computing,,FALSE,EP.331
+Skillsofts,Software,Skillsofts,computing,,FALSE,EP.331
+Survival Gear,,Survival,caduceus,"The following gear is often critical to the survival of soldiers, spies, criminals, gatecrashers, emergency service personnel, and others who regularly venture into unsafe or unfamiliar regions.",FALSE,EP.332
+Vacsuum Suits,Survival Gear,Suits,space-suit,,FALSE,EP.332
+Weapons,,Weapons,crosshair,"A wide range of weapons are available in Eclipse Phase, from the primitive to the technologically advanced.",TRUE,EP.334
+Melee Weapons,Weapons,Melee,brass-knuckles,,FALSE,EP.334
+Kinetic Weapons,Weapons,Kinetic,walther-ppk,,FALSE,EP.335
+Beam Weapons,Weapons,Beam,ray-gun,,FALSE,EP.338
+Seekers,Weapons,Seekers,missile-pod,,FALSE,EP.339
+Explosives,Weapons,Explosives,grenade,,FALSE,EP.341
+Ammunition,Weapons,Ammo,bullets,,FALSE,
+Spray Weapons,Weapons,Spray,aerosol,,FALSE,EP.341
+Exotic Ranged Weapons,Weapons,Exotic,boomerang,,FALSE,EP.334
+Weapon Accessories,Weapons,Mods,gear-hammer,,FALSE,EP.342
+Vehicles,,Vehicles,,"Almost all of the vehicles in current use, including all of the vehicles listed here, have built-in AIs capable of piloting the vehicle under almost all circumstances. In most cases, passengers simply state their destination and the vehicle takes them there. Manual piloting is primarily used in emergencies or by people who prefer the exotic thrill of controlling their own vehicle.",FALSE,"EP.343, GC.160"
+Aircraft,Vehicles,Aircraft,jet-fighter,,FALSE,EP.343
+Exoskeletons,Vehicles,Exos,robot-golem,,FALSE,EP.343
+Groundcraft,Vehicles,Ground,jeep,,FALSE,EP.343
+Personal Vehicles,Vehicles,Personal,scooter,,FALSE,EP.343
+Robots,Vehicles,Robots,robot-golem,,TRUE,"EP.343, GC"
+Spacecraft,Vehicles,Space,space-shuttle,,FALSE,EP
+Morphs,,Morphs,,"Eclipse Phase’s setting dictates that a distinction must be made between a character’s ego (their ingrained self, their personality, and inherent traits that perpetuate in continuity) and their morph (their ephemeral physical—and sometimes virtual—form). A character’s morph may die while the character’s ego lives on (assuming appropriate backup measures have been taken), transplanted into a new morph.",TRUE,EP
+Biomorphs,Morphs,Bio,muscular-torso,"Biomorphs are fully biological sleeves (usually equipped with implants), birthed naturally or in a flexowomb, and grown to adulthood either naturally or at a slightly accelerated rate.",FALSE,EP
+Pods,Morphs,Pods,cyborg-face,"Pods (from “pod people”) are vat-grown, biological bodies with extremely undeveloped brains that are augmented with an implanted computer and cybernetics system. Though typically run by an AI, pods are socially unfavored in some stations, used as slave labor in others, and even illegal in some areas. Because pods underwent accelerated growth in their creation and were mostly grown as separate parts and then assembled, their biological design includes some shortcuts and limitations, offset with implants and regular maintenance. They lack reproductive capabilities. In many habitats, their legal status is a hotly contested issue.",FALSE,EP
+Synthmorphs,Morphs,Synth,android-mask,"Synthetic morphs are completely artificial/robotic. They are usually operated by AIs or via remote control, but the lack of available biomorphs after the Fall meant that many infugees resorted to resleeving in robotic shells, which were also cheaper, quicker to manufacture, and more widely available. Nevertheless, synthmorphs are viewed with disdain in many habitats, an option that only the poor and desperate accept to be sleeved in. Synthetic morphs are not without their advantages, however, and so are commonly used for menial labor, heavy labor, habitat construction, and security services. ",FALSE,EP
+Uplifts,Morphs,Uplifts,octopus,These custom biological morphs are available only to uplifted creatures.,FALSE,EP
+Eidelons,Morphs,Eidelons,artificial-intelligence,"The basic infomorph shell is a software mind-emulation package that runs an ego. The default infomorph is much like a digital version of a flat, in that it does not enjoy the cognitive or other aptitude bonuses common to other physical morphs. Other varieties of infomorph shells exist, however. Known as eidolons, these digital morphs include routines that bolster an ego’s innate capabilities and often come equipped with pre-installed plug-ins and upgrades. ",FALSE,TH
+Flexbots,Morphs,Flexbots,jigsaw-box,Shape-changing synthmorphs capable of joining together with other flexbots in a modular fashion to create larger shapes.,FALSE,EP

@@ -14,3 +14,6 @@ eldrich.world:
   weight: 130
   menu_name: main
   expanded: true
+eldrich.dynamic:
+  class: Drupal\Core\Menu\MenuLinkDefault
+  deriver: \Drupal\eldrich\Plugin\Derivative\EldrichMenuLink

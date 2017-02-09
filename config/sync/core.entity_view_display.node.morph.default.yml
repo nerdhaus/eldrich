@@ -159,6 +159,8 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
+  related_gear:
+    weight: 10
   related_lists_gear_siblings:
     weight: 10
     settings: {  }

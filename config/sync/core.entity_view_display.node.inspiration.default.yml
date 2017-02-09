@@ -51,5 +51,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: url_embed
+  sub_content_gear:
+    weight: 10
+  sub_content_npcs:
+    weight: 10
+  sub_content_world:
+    weight: 10
 hidden:
   links: true

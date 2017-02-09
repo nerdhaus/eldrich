@@ -88,5 +88,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  sub_content_gear:
+    weight: 10
+  sub_content_npcs:
+    weight: 10
+  sub_content_sessions:
+    weight: 10
+  sub_content_world:
+    weight: 10
 hidden:
   links: true
