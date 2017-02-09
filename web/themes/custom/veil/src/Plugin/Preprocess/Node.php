@@ -241,21 +241,23 @@ class Node extends PreprocessBase implements PreprocessInterface {
       $nids[$field->target_id] = $field->target_id;
     }
 
-    $variables->content['initiative_link'] = [
-      '#type' => 'link',
-      '#title' => t('Track Initiative'),
-      '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_initiative', ['nodes' => join(',', $nids)]),
-      '#attributes' => [
-        'class' => ['btn', 'btn-default']
-      ]
-    ];
-    $variables->content['skillsheet_link'] = [
-      '#type' => 'link',
-      '#title' => t('Skills Sheet'),
-      '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_skillsheet', ['nodes' => join(',', $nids)]),
-      '#attributes' => [
-        'class' => ['btn', 'btn-default']
-      ]
-    ];
+    if (count($nids)) {
+      $variables->content['initiative_link'] = [
+        '#type' => 'link',
+        '#title' => t('Track Initiative'),
+        '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_initiative', ['nodes' => join(',', $nids)]),
+        '#attributes' => [
+          'class' => ['btn', 'btn-default']
+        ]
+      ];
+      $variables->content['skillsheet_link'] = [
+        '#type' => 'link',
+        '#title' => t('Skills Sheet'),
+        '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_skillsheet', ['nodes' => join(',', $nids)]),
+        '#attributes' => [
+          'class' => ['btn', 'btn-default']
+        ]
+      ];
+    }
   }
 }
