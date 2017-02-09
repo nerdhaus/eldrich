@@ -1,0 +1,77 @@
+{#
+/**
+ * @file
+ * Full-page display.
+ *
+ * Standard Drupal variables:
+ * - node: The node entity with limited access to object properties and methods.
+ * - label: The title of the node.
+ * - content: All node items.
+ * - metadata: Metadata for this node.
+ * - url: Direct URL of the current node.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ *
+ * For most types of gear:
+ * - content.field_sources: Optional array of book + page links.
+ * - content.field_cost: Cost level and (optional) minimum cost in credits.
+ * - content.field_blueprints: Boolean indicating whether it can be fabbed.
+ * - content.field_gear_type: Taxonomy term linking to the item's gear category.
+ * - content.field_special_effect: Any oddball stuff it does beyond the normal stats.
+ *   Probably ignore this in most cases.
+ * - content.field_linked_skill: The skill needed to use/fire/pilot the gear.
+ *
+ * For anything with character bonuses:
+ * - content.field_stats: Stat bonuses.
+ * - content.field_skills: Skill bonuses.
+ * - content.field_is_conditional: Whether said bonuses are always-on or conditional.
+ *
+ * Calculated variables:
+ * - stats: A nested collection of character attributes.
+ *   @see \Drupal\eldrich\Calculator\StatTreeCalculator
+ * - skills: A nested collection of character skills.
+ *   @see \Drupal\eldrich\Calculator\SkillTreeCalculator
+ * - attacks:
+ *   @see \Drupal\eldrich\Calculator\WeaponCalculator
+ * - armor:
+ *   @see \Drupal\eldrich\Calculator\ArmorCalculator
+ * - threat:
+ *   @see \Drupal\eldrich\Calculator\ThreatCalculator
+ * - mobility:
+ *   @see \Drupal\eldrich\Calculator\MobilityCalculator
+
+ * @ingroup templates
+ *
+ * @see template_preprocess_node()
+ */
+#}
+{%
+set classes = [
+node.bundle|clean_class,
+node.isPromoted() ? 'is-promoted',
+node.isSticky() ? 'is-sticky',
+not node.isPublished() ? 'is-unpublished',
+view_mode ? view_mode|clean_class
+]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+  <section class="row">
+    {% block content %}
+      <div class="col-sm-12">
+        {{ content }}
+      </div>
+    {% endblock %}
+  </section>
+
+</article>

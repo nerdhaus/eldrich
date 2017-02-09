@@ -27,6 +27,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_featured: true
   field_icon: true
   field_plural: true
   field_short_name: true

@@ -1501,7 +1501,7 @@ display:
         type: normal
         title: Gear
         description: ''
-        expanded: false
+        expanded: true
         parent: ''
         weight: 0
         context: '0'

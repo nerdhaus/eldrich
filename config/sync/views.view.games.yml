@@ -205,7 +205,7 @@ display:
         description: 'Active and archived Eclipse Phase games'
         expanded: true
         parent: ''
-        weight: 0
+        weight: 10
         context: '0'
         menu_name: main
       display_description: ''
