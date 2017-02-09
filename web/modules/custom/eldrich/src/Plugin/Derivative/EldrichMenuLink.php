@@ -115,11 +115,11 @@ class EldrichMenuLink extends DeriverBase implements ContainerDeriverInterface {
    * @return array
    */
   private function createTermDerivativeDefinition(EntityInterface $term, $weight = 0) {
+    $title = $term->field_short_name->value ?: $term->label();
     $derivative = [
-        'id' => 'eldrich.dynamic.' . $term->id(),
-        'route_name' => 'entity.term.canonical',
+        'route_name' => 'entity.taxonomy_term.canonical',
         'route_parameters' => ['taxonomy_term' => $term->id()],
-        'title' => $term->label(),
+        'title' => $title,
         'parent' => 'views_view:views.taxonomy_term.catalog',
         'weight' => $weight,
         'menu_name' => 'main'
@@ -134,7 +134,6 @@ class EldrichMenuLink extends DeriverBase implements ContainerDeriverInterface {
    */
   private function createNodeDerivativeDefinition(EntityInterface $node, $weight = 0) {
     $derivative = [
-        'id' => 'eldrich.dynamic.' . $node->id(),
         'route_name' => 'entity.node.canonical',
         'route_parameters' => ['node' => $node->id()],
         'title' => $node->label(),
