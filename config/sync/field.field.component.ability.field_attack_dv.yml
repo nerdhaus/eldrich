@@ -1,0 +1,21 @@
+uuid: e161aa6c-e639-4015-842a-b066d9ab545c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.ability
+    - field.storage.component.field_attack_dv
+  module:
+    - ep_complex_values
+id: component.ability.field_attack_dv
+field_name: field_attack_dv
+entity_type: component
+bundle: ability
+label: 'Attack Damage'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: damage_value

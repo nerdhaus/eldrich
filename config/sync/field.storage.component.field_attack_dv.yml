@@ -1,0 +1,19 @@
+uuid: bd79c000-4896-418f-b443-3d31ef34ade5
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - ep_complex_values
+id: component.field_attack_dv
+field_name: field_attack_dv
+entity_type: component
+type: damage_value
+settings: {  }
+module: ep_complex_values
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

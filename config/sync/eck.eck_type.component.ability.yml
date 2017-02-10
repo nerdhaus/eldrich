@@ -1,0 +1,9 @@
+uuid: 5644a22e-9a14-4650-b0c4-16c89a81de8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.component
+name: Ability
+type: ability
+description: 'A native ability or attack used by a creature.'

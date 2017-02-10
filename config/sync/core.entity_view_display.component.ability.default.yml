@@ -1,0 +1,37 @@
+uuid: b08013ec-a331-477b-95ab-9a01462c05ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.ability
+    - field.field.component.ability.field_attack_dv
+    - field.field.component.ability.field_description
+    - field.field.component.ability.field_linked_skill
+  module:
+    - ep_complex_values
+    - text
+id: component.ability.default
+targetEntityType: component
+bundle: ability
+mode: default
+content:
+  field_attack_dv:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: damage_text
+  field_description:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_linked_skill:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+hidden: {  }

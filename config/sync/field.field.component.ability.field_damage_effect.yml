@@ -1,0 +1,19 @@
+uuid: 49787796-7577-4ed7-b017-2762818fd7f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.ability
+    - field.storage.component.field_damage_effect
+id: component.ability.field_damage_effect
+field_name: field_damage_effect
+entity_type: component
+bundle: ability
+label: 'Special Effect'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
