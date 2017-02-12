@@ -75,8 +75,7 @@ class DamageValue extends FieldItemBase {
     if (
       empty($this->values['dice']) &&
       empty($this->values['ap']) &&
-      empty($this->values['modifier']) &&
-      empty($this->values['mod_function'])
+      empty($this->values['modifier'])
     ) {
       return TRUE;
     }

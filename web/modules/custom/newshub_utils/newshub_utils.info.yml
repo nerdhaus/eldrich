@@ -1,5 +1,0 @@
-name: Newshub Utilities
-type: module
-description: Filters, alter hooks, and custom formatters for NYU Langone Newshub
-core: 8.x
-package: Custom

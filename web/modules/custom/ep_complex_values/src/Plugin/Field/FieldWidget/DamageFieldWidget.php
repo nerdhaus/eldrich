@@ -55,4 +55,20 @@ class DamageFieldWidget extends WidgetBase {
 
     return $element;
   }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function massageFormValues(array $values, array $form, FormStateInterface $form_state) {
+    foreach ($values as $delta => $value) {
+      if (is_array($value)) {
+        foreach ($value as $key => $subvalue) {
+          if (!empty($subvalue)) {
+            $values[$delta][$key] = $subvalue;
+          }
+        }
+      }
+    }
+    return $values;
+  }
 }
