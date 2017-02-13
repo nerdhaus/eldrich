@@ -1,0 +1,140 @@
+id: native_attacks
+migration_group: eldrich_chars
+label: 'Creature attacks'
+source:
+  plugin: csv
+  path: modules/custom/ep_import/characters/native-attacks.csv
+  header_row_count: 1
+  column_names:
+    -
+      creature: Creature
+    -
+      name: Name
+    -
+      description: Description
+    -
+      special_effect: 'Special Effect'
+    -
+      dice: 'Damage Dice'
+    -
+      dmg: 'Damage Bonus'
+    -
+      ap: AP
+    -
+      modes: Modes
+    -
+      rounds: Rounds
+    -
+      skill: Skill
+    -
+      aoe: AoE
+    -
+      damage_effects: 'Damage Effects'
+    -
+      range: Range
+    -
+      reach: Reach
+  constants:
+    user: Factotum
+  keys:
+    - creature
+    - name
+process:
+  uid:
+    plugin: entity_lookup_plus
+    entity_type: user
+    value_key: name
+    source: constants/user
+  field_name: name
+  field_creature: creature
+  type:
+    plugin: default_value
+    default_value: native_attack
+  field_description/value:
+    plugin: line_breaker
+    source: description
+  field_description/format:
+    plugin: default_value
+    default_value: basic_html
+  field_special_effect/value: special_effect
+  field_damage_dice:
+    plugin: operation_string
+    source: dice
+  field_damage_modifier:
+    plugin: operation_string
+    source: dmg
+  field_ap_modifier:
+    plugin: operation_string
+    source: ap
+  field_magazine_size:
+    plugin: operation_string
+    source: rounds
+  field_damage_effects:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: damage_effects
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      entity_type: lookup
+      bundle: damage_type
+      bundle_key: type
+      value_key: field_lookup_code
+  field_area_effect:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: aoe
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      entity_type: lookup
+      bundle: area_effect
+      bundle_key: type
+      value_key: title
+  field_firing_modes:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: modes
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      destination_field: target_id
+      entity_type: lookup
+      bundle: firing_modes
+      bundle_key: type
+      value_key: field_lookup_code
+  field_range:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: range
+    -
+      plugin: array_to_dict
+      delimiter: /
+      keys:
+        - short
+        - medium
+        - long
+        - extreme
+  field_linked_skill:
+    plugin: entity_lookup_plus
+    destination_field: target_id
+    entity_type: node
+    bundle: skill
+    bundle_key: type
+    value_key: title
+    source: skill
+  field_reach: reach
+destination:
+  plugin: 'entity:component'

@@ -151,6 +151,14 @@ process:
         - walk
         - run
         - cruise
+  field_native_attacks:
+    plugin: native_entities
+    type: native_attack
+    source: title
+  field_native_abilities:
+    plugin: native_entities
+    type: native_ability
+    source: title
   field_gear:
     -
       plugin: skip_on_empty
@@ -268,4 +276,6 @@ process:
             - '@dest'
 destination:
   plugin: 'entity:node'
-migration_dependencies: null
+migration_dependencies:
+  - native_abilities
+  - native_attacks

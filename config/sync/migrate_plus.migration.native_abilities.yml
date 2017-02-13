@@ -1,0 +1,38 @@
+id: native_abilities
+migration_group: eldrich_chars
+label: 'Creature abilities'
+source:
+  plugin: csv
+  path: modules/custom/ep_import/characters/native-abilities.csv
+  header_row_count: 1
+  column_names:
+    -
+      creature: Creature
+    -
+      name: Name
+    -
+      description: Description
+  constants:
+    user: Factotum
+  keys:
+    - creature
+    - name
+process:
+  uid:
+    plugin: entity_lookup_plus
+    entity_type: user
+    value_key: name
+    source: constants/user
+  field_name: name
+  field_creature: creature
+  type:
+    plugin: default_value
+    default_value: native_ability
+  field_description/value:
+    plugin: line_breaker
+    source: description
+  field_description/format:
+    plugin: default_value
+    default_value: basic_html
+destination:
+  plugin: 'entity:component'
