@@ -85,8 +85,8 @@ class Node extends PreprocessBase implements PreprocessInterface {
     if ($node->hasField('field_native_attacks')) {
       foreach ($node->field_native_attacks as $delta => $fi) {
         if ($attack = $fi->entity) {
-          if (!$attack->field_description->isEmpty()) {
-            $native[$attack->field_name->value] = $attack->field_description->value;
+          if (!$attack->field_notes->isEmpty()) {
+            $native[$attack->field_name->value] = $attack->field_notes->value;
           }
         }
       }
@@ -94,8 +94,8 @@ class Node extends PreprocessBase implements PreprocessInterface {
     if ($node->hasField('field_native_abilities')) {
       foreach ($node->field_native_abilities as $delta => $fi) {
         if ($ability = $fi->entity) {
-          if (!$ability->field_description->isEmpty()) {
-            $native[$ability->field_name->value] = $ability->field_description->value;
+          if (!$ability->field_notes->isEmpty()) {
+            $native[$ability->field_name->value] = $ability->field_notes->value;
           }
         }
       }

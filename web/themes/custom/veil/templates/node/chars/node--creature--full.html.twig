@@ -43,7 +43,7 @@
   {% if native_abilities|length %}
     <ul class="list-unstyled list-hanging">
       {% for title, description in native_abilities %}
-      <li><strong>{{ title }}:</strong> {{ description|raw }}</li>
+      <li><strong>{{ title }}:</strong> {{ description }}</li>
       {% endfor %}
     </ul>
   {% endif %}
