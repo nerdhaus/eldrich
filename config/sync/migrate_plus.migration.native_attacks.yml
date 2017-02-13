@@ -1,4 +1,9 @@
+uuid: 1cdd7a0f-4f62-42fa-a41a-f2a6dc5a29a3
+langcode: en
+status: true
+dependencies: {  }
 id: native_attacks
+migration_tags: null
 migration_group: eldrich_chars
 label: 'Creature attacks'
 source:
@@ -34,17 +39,10 @@ source:
       range: Range
     -
       reach: Reach
-  constants:
-    user: Factotum
   keys:
     - creature
     - name
 process:
-  uid:
-    plugin: entity_lookup_plus
-    entity_type: user
-    value_key: name
-    source: constants/user
   field_name: name
   field_creature: creature
   type:
@@ -138,3 +136,4 @@ process:
   field_reach: reach
 destination:
   plugin: 'entity:component'
+migration_dependencies: null

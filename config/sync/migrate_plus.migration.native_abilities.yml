@@ -1,4 +1,9 @@
+uuid: 61f4c9a8-bc96-4c99-811f-45e349418bd6
+langcode: en
+status: true
+dependencies: {  }
 id: native_abilities
+migration_tags: null
 migration_group: eldrich_chars
 label: 'Creature abilities'
 source:
@@ -12,17 +17,10 @@ source:
       name: Name
     -
       description: Description
-  constants:
-    user: Factotum
   keys:
     - creature
     - name
 process:
-  uid:
-    plugin: entity_lookup_plus
-    entity_type: user
-    value_key: name
-    source: constants/user
   field_name: name
   field_creature: creature
   type:
@@ -36,3 +34,4 @@ process:
     default_value: basic_html
 destination:
   plugin: 'entity:component'
+migration_dependencies: null

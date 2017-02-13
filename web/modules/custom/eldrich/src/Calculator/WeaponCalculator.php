@@ -92,6 +92,14 @@ class WeaponCalculator {
       }
     }
 
+    if ($entity->hasField('field_native_attacks')) {
+      foreach ($entity->field_native_attacks as $fna) {
+        if ($weapon = static::totalNativeAttack($data, $fna->entity)) {
+          $data[] = $weapon;
+        }
+      }
+    }
+
     // This is a degenerate case, we'll build a single record just for this
     // weapon's damage.
     if ($entity->bundle() == 'weapon') {
@@ -142,8 +150,88 @@ class WeaponCalculator {
    *
    * Jesus wept.
    */
-  public static function totalNativeAttack(Array &$data, FieldableEntityInterface $entity) {
-    return NULL;
+  public static function totalNativeAttack(Array &$data, FieldableEntityInterface $weapon) {
+    $item = static::initWeaponRecord();
+
+    static::getWeaponCategory($item, $weapon);
+
+    foreach ($weapon->field_firing_modes as $mode) {
+      $item['modes'][$mode->entity->field_lookup_code->value] = $mode->entity->label();
+    }
+
+    if ($skill = $weapon->field_linked_skill->entity) {
+      if ($skill->field_damage_bonus->value) {
+        $item['damage']['special'] = 'SOM/10';
+      }
+    }
+
+    if (!$weapon->field_magazine_size->isEmpty()) {
+      $item['rounds'] = operation_calculate_result($item['rounds'], $weapon->field_magazine_size->operation, $weapon->field_magazine_size->value);
+    }
+    if (!$weapon->field_damage_dice->isEmpty()) {
+      $item['damage']['dice'] = operation_calculate_result($item['damage']['dice'], $weapon->field_damage_dice->operation, $weapon->field_damage_dice->value);
+    }
+    if (!$weapon->field_ap_modifier->isEmpty()) {
+      if ($weapon->field_ap_modifier->operation == '/') {
+        $item['damage']['ap'] = '.5';
+      }
+      else {
+        $item['damage']['ap'] = operation_calculate_result($item['damage']['ap'], $weapon->field_ap_modifier->operation, $weapon->field_ap_modifier->value);
+      }
+    }
+
+    // The mod is trickier, since in theory we could get to strange stuff like
+    // DV / 2 + 3 but we don't care enough to do full math handling. If we
+    // encounter a multiplication or division operator, just roll with it.
+    if (!$weapon->field_damage_modifier->isEmpty()) {
+      switch ($weapon->field_damage_modifier->operation) {
+        case '':
+        case '+':
+        case '-':
+          $item['damage']['mod'] = operation_calculate_result($item['damage']['mod'], $weapon->field_damage_modifier->operation, $weapon->field_damage_modifier->value);
+          break;
+        default:
+          $item['damage']['multiplier'] = operation_calculate_result($item['damage']['multiplier'], $weapon->field_damage_modifier->operation, $weapon->field_damage_modifier->value);
+      }
+    }
+
+    if(isset(static::$skills)) {
+      if (key_exists($item['linked_skill'], static::$skills)) {
+        $skill_info = static::$skills[$item['linked_skill']];
+        $item['skill'] = $item['skill_bonus'] + $skill_info['constant']['total'];
+        if (!empty($skill_info['specialization'])) {
+          if (strpos(strtolower($weapon->label()), strtolower($skill_info['specialization']))) {
+            $item['skill'] += 10;
+          }
+        }
+      }
+    }
+
+    if (!$weapon->field_special_effect->isEmpty()) {
+      $item['effects'][] = $weapon->field_special_effect->value;
+    }
+
+    foreach ($weapon->field_damage_effects as $effect) {
+      $ee = $effect->entity;
+      if (empty($item['damage']['effects'][$ee->id()])) {
+        $item['damage']['effects'][$ee->id()] = static::linkEntity($effect->entity, TRUE);
+      }
+    }
+
+    $item['build']['weapon'] = [
+      '#plain_text' => $weapon->field_name->value,
+    ];
+
+    if ($item['damage']['mod'] < 0) {
+      $item['damage']['mod_operation'] = '-';
+      $item['damage']['mod'] = abs($item['damage']['mod']);
+    }
+
+    $avg = $item['damage']['dice'] * 5;
+    $avg = operation_calculate_result($avg, $item['damage']['mod_operation'], $item['damage']['mod']);
+    $item['damage']['average'] = intval(round($avg * $item['damage']['multiplier']));
+
+    return $item;
   }
 
   /*
@@ -361,10 +449,6 @@ class WeaponCalculator {
           }
         }
       }
-    }
-
-    if (!$weapon->field_special_effect->isEmpty()) {
-      $item['effects'][] = $weapon->field_special_effect->value;
     }
 
     if (!$weapon->field_special_effect->isEmpty()) {

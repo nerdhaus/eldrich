@@ -6,6 +6,7 @@
 */
 #}
 {% extends "@veil/node/node--full.html.twig" %}
+
 {% block callout_content %}
   {% if content.field_image|field_value %}
     <img src="{{ content.field_image|field_target_entity.uri.value | image_style('portrait') }}" alt="title" class="img-responsive img-thumbnail" />
@@ -17,6 +18,35 @@
 
   {% if content.field_creature_type|field_value %}<li><strong>Type:</strong> {{ content.field_creature_type|field_value }}</li>{% endif %}
   {% if content.field_strain|field_value %}<li><strong>Stress:</strong> {{ content.field_strain|field_value }}</li>{% endif %}
+
+{% endblock %}
+
+{% block properties %}
+  <ul class="list-unstyled list-hanging">
+    {% if mobility|length %}<li><strong>Mobility:</strong> ({{ mobility.build|safe_join(', ') }})</li>{% endif %}
+    {% if skills|length %}<li><strong>Skills:</strong> {% include directory ~ '/templates/partials/skills.html.twig' %}</li>{% endif %}
+    {% if content.field_augmentations|field_value|length %}<li><strong>Augmentations:</strong> {{ content.field_augmentations|field_value|safe_join(', ') }}</li>{% endif %}
+    {% if content.field_traits|field_value|length %}
+      <li><strong>Traits:</strong> {{ content.field_traits|field_value|safe_join(', ') }}</li>
+    {% endif %}
+    {% if content.field_sleights|field_value|length %}<li><strong>Psi Sleights:</strong> {{ content.field_sleights|field_value|safe_join(', ') }}</li>{% endif %}
+    {% if content.field_gear|field_value|length %}<li><strong>Other Gear:</strong> {{ content.field_gear|field_value|safe_join(', ') }}</li>{% endif %}
+    {% if armor.energy or armor.kinetic %}
+      <li><strong>Armor:</strong>
+        {{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
+        {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
+      </li>
+    {% endif %}
+  </ul>
+  {% if attacks|length %}{% include '@veil/partials/attacks.html.twig' %}{% endif %}
+
+  {% if native_abilities|length %}
+    <ul class="list-unstyled list-hanging">
+      {% for title, description in native_abilities %}
+      <li><strong>{{ title }}:</strong> {{ description|raw }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 
 {% endblock %}
 

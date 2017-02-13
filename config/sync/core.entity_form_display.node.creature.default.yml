@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.creature.field_native_attacks
     - field.field.node.creature.field_privacy
     - field.field.node.creature.field_skills
+    - field.field.node.creature.field_sleights
     - field.field.node.creature.field_sources
     - field.field.node.creature.field_stats
     - field.field.node.creature.field_strain
@@ -146,6 +147,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: skill_reference_select
+  field_sleights:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_sources:
     weight: 20
     settings:

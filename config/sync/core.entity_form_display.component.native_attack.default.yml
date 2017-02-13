@@ -13,6 +13,7 @@ dependencies:
     - field.field.component.native_attack.field_description
     - field.field.component.native_attack.field_firing_modes
     - field.field.component.native_attack.field_linked_skill
+    - field.field.component.native_attack.field_magazine_size
     - field.field.component.native_attack.field_name
     - field.field.component.native_attack.field_range
     - field.field.component.native_attack.field_special_effect
@@ -73,6 +74,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_magazine_size:
+    weight: 11
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   field_name:
     weight: 0
     settings:

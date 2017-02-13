@@ -277,5 +277,6 @@ process:
 destination:
   plugin: 'entity:node'
 migration_dependencies:
-  - native_abilities
-  - native_attacks
+  optional:
+    - native_abilities
+    - native_attacks

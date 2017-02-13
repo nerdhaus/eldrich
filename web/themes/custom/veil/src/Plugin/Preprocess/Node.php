@@ -80,6 +80,29 @@ class Node extends PreprocessBase implements PreprocessInterface {
         'field_credits' => $identity->field_credits->view('default'),
       ];
     }
+
+    $native = [];
+    if ($node->hasField('field_native_attacks')) {
+      foreach ($node->field_native_attacks as $delta => $fi) {
+        if ($attack = $fi->entity) {
+          if (!$attack->field_description->isEmpty()) {
+            $native[$attack->field_name->value] = $attack->field_description->value;
+          }
+        }
+      }
+    }
+    if ($node->hasField('field_native_abilities')) {
+      foreach ($node->field_native_abilities as $delta => $fi) {
+        if ($ability = $fi->entity) {
+          if (!$ability->field_description->isEmpty()) {
+            $native[$ability->field_name->value] = $ability->field_description->value;
+          }
+        }
+      }
+    }
+    if (count($native)) {
+      $variables->native_abilities = $native;
+    }
   }
 
   public function prepCalculatedData(NodeInterface $node, Variables $variables) {
