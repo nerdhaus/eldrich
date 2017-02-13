@@ -100,39 +100,8 @@ Eelware,,Melee Weapons,"Derived from electric eel genetics, a character can have
 Extendable Baton,Baton,Melee Weapons,"This hardened composite baton retracts into its handle for easy carrying, storage, or concealment. Extending it simply requires a flick or an electronic signal.",Trivial,,TRUE,EP.334,,1,2,,,,,Clubs,,,,,FALSE,FALSE,FALSE,FALSE
 Shock Baton,,Melee Weapons,"Shock batons are standard clubs used for policing duties, but when activated they also deliver an electric shock to struck targets.",Low,,TRUE,EP.334,,1,2,,,,,Clubs,,S,,,FALSE,FALSE,FALSE,FALSE
 Shock Gloves,,Melee Weapons,"When activated, these gloves deliver an incapacitating shock along with every punch or grab. Note that the effect is the same whether wearing one glove or two.",Low,,TRUE,EP.334,,1,,,,,,Unarmed Combat,,S,,,FALSE,FALSE,FALSE,FALSE
-Tyrannoaurus Bite,,Native Attacks,,,,FALSE,,,5,,-5,,,,Unarmed Combat,,,,20,FALSE,FALSE,FALSE,FALSE
-Giant Eel Bite,,Native Attacks,"Bite targets may be subdued (p. 204, EP) with a Quick Action. Medium and smaller targets are swallowed on the next action. Swallowed victims cannot see, hear, or breathe (p. 204, EP), are restricted (−30 to all actions), and suffer DV 2d10 per Action Turn (armor does not apply). An eel that takes 2 wounds internally regurgitates anything swallowed on its next action.",,,FALSE,,Bit targets may be subdued,2,8,-4,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Chrysacid Slash,,Native Attacks,"If a character receives a wound from contact with a chrysacid form, they become infected with the Chrynalus nanovirus.",,,FALSE,,,1,4,-3,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Kumobot Leg Spike,Leg Spike,Native Attacks,,,,FALSE,,+1d10 if attacking with two,3,4,-3,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Eel Bite,,Native Attacks,"Bit targets may be subdued (p. 204, EP) with a Quick Action",,,FALSE,,Bit targets may be subdued,1,4,-2,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Causapod Bite,,Native Attacks,,,,FALSE,,,1,5,-2,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Cat Claws,,Native Attacks,,,,FALSE,,,1,2,-1,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Hawk Beak,,Native Attacks,,,,FALSE,,,1,2,-1,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Whipper Tentacle,,Native Attacks,"Whippers can also grab instead of damaging. If the MoS exceeds the target’s Durability, they are subdued (p. 204, EP).",,,FALSE,,,2,1,-1,,,,Unarmed Combat,,,,20,FALSE,FALSE,FALSE,FALSE
 Hand Laser,,Native Attacks,"The morph has a weapon-grade laser implanted in its forearm, with a flexible waveguide leading to a lens located between the first two knuckles on the morph's dominant hand. The laser fires from this waveguide, inflicting 2d10 damage with 0AP. The laser is powered by a small nuclear battery located in the morph's torso, good for 50 shots before it must be recharged like other beam weapon batteries.",,,FALSE,EP.308,,2,,,,SS,50,Beam Weapons,,,30/100/150/250,,FALSE,FALSE,FALSE,FALSE
-Antlers,,Native Attacks,,,,FALSE,,,,,,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Baboon Bite,,Native Attacks,,,,FALSE,,,1,2,,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Dog Bite,,Native Attacks,,,,FALSE,,,1,2,,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
 Ink Attack,,Native Attacks,Blinding attack,,,FALSE,,,,,,,,,Exotic Ranged Weapon: Ink,,,,,FALSE,FALSE,FALSE,FALSE
-Marmoset Bite,,Native Attacks,,,,FALSE,,,1,,,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Monkey Bite,,Native Attacks,,,,FALSE,,,1,/2,,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Neo-Avian Claws,,Native Attacks,,,,FALSE,,,1,,,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Novacrab Claw,,Native Attacks,,,,FALSE,,,2,,,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Octopus Beak,,Native Attacks,,,,FALSE,,,1,,,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Raccoon Bite,,Native Attacks,,,,FALSE,,,1,-4,,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Rat Bite,,Native Attacks,,,,FALSE,,,,1,,,,,Unarmed Combat,,,,-10,FALSE,FALSE,FALSE,FALSE
-Roach Bite,,Native Attacks,,,,FALSE,,,,1,,,,,Unarmed Combat,,,,-10,FALSE,FALSE,FALSE,FALSE
-Squid Beak,,Native Attacks,,,,FALSE,,,,,,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Unarmed,,Native Attacks,,,,FALSE,,,1,,,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Warbot Claws,,Native Attacks,,,,FALSE,,,2,6,,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Warbot Stomp,,Native Attacks,,,,FALSE,,,5,,,,,,Unarmed Combat,,,,20,FALSE,FALSE,FALSE,FALSE
-Warbot Tentacles,,Native Attacks,"If the MoS exceeds the target’s Durability, they are subdued (p. 204, EP).",,,FALSE,,,1,6,,,,,Unarmed Combat,,,,20,FALSE,FALSE,FALSE,FALSE
-Buzzsaw,,Native Attacks,,,,FALSE,,,1,3,,,,,Exotic Melee Weapons: Buzzsaw,,,,,FALSE,FALSE,FALSE,FALSE
-Eel Electric Stun,Eel Stun,Native Attacks,"10m radius when in water, -1 DV per 2 meters",,,FALSE,,10m radius when in water,1,,,,,,Unarmed Combat,Blast,S,,,FALSE,FALSE,FALSE,FALSE
-Giant Eel Electric Stun,Giant Eel Stun,Native Attacks,"15m radius when in water, -1 DV per 2 meters",,,FALSE,,15m radius when in water,2,,,,,,Unarmed Combat,,S,,,FALSE,FALSE,FALSE,FALSE
-Matter Conversion,,Native Attacks,DV 1d10 per Action Turn to touched/penetrated targets. Damage inflicted increases creeper's DUR.,,,FALSE,,Damage inflicted increases attacker’s DUR,1,,,20,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Disassembly,,Native Attacks,DV 1d10 per Action Turn to touched/penetrated targets.,,,FALSE,,,1,,,,,,Unarmed Combat,,,,,FALSE,FALSE,FALSE,FALSE
-Repulsion Wave,,Native Attacks,"No defense. 30 meter radius effect. All physical things pushed back 1d10 meters, SOM x 3 Test or knocked down.",,,FALSE,,No defense. SOM x 3 or knocked down,3,,,100,,,Unarmed Combat,Uniform Blast,,,,FALSE,FALSE,FALSE,FALSE
 Disposable Launcher,Launcher,Seekers,This launcher is pre-packed with one standard missile.,Moderate,,TRUE,EP.339,,,,,,SS,1,Seeker Weapons,,,300/1000/3000/10000,,FALSE,FALSE,FALSE,FALSE
 Micromissile Seeker Rifle,Micro Seeker Rifle,Seekers,The seeker rifle comes in a bullpup configuration and fires micromissiles in semi-auto mode. It is a two-handed weapons.,High,,TRUE,EP.339,,,,,,SA,12,Seeker Weapons,,,70/180/600/2000,,FALSE,FALSE,TRUE,TRUE
 Minimissile Seeker Rifle,Seeker Rifle,Seekers,The seeker rifle comes in a bullpup configuration and fires minimissiles in semi-auto mode. It is a two-handed weapons.,High,,TRUE,EP.339,,,,,,SA,6,Seeker Weapons,,,150/300/600/2000,,FALSE,FALSE,TRUE,TRUE
