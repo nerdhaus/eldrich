@@ -50,8 +50,11 @@ hidden:
   field_image: true
   field_mobility_system: true
   field_movement_speed: true
+  field_native_abilities: true
+  field_native_attacks: true
   field_privacy: true
   field_skills: true
+  field_sleights: true
   field_sources: true
   field_stats: true
   field_strain: true

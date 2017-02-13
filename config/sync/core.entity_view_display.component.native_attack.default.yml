@@ -10,26 +10,18 @@ dependencies:
     - field.field.component.native_attack.field_damage_dice
     - field.field.component.native_attack.field_damage_effects
     - field.field.component.native_attack.field_damage_modifier
-    - field.field.component.native_attack.field_description
     - field.field.component.native_attack.field_firing_modes
     - field.field.component.native_attack.field_linked_skill
     - field.field.component.native_attack.field_magazine_size
     - field.field.component.native_attack.field_name
+    - field.field.component.native_attack.field_notes
     - field.field.component.native_attack.field_range
     - field.field.component.native_attack.field_special_effect
-  module:
-    - text
 id: component.native_attack.default
 targetEntityType: component
 bundle: native_attack
 mode: default
 content:
-  field_description:
-    weight: 1
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
   field_magazine_size:
     weight: 2
     label: above
@@ -45,6 +37,12 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_notes:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
 hidden:
   field_ap_modifier: true
   field_area_effect: true

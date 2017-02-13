@@ -5,22 +5,13 @@ dependencies:
   config:
     - eck.eck_type.component.native_ability
     - field.field.component.native_ability.field_creature
-    - field.field.component.native_ability.field_description
     - field.field.component.native_ability.field_name
-  module:
-    - text
+    - field.field.component.native_ability.field_notes
 id: component.native_ability.default
 targetEntityType: component
 bundle: native_ability
 mode: default
 content:
-  field_description:
-    weight: 4
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
   field_name:
     weight: 3
     settings:
@@ -28,5 +19,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_notes:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
 hidden:
   field_creature: true
