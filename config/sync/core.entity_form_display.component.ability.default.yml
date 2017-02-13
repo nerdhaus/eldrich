@@ -4,22 +4,17 @@ status: true
 dependencies:
   config:
     - eck.eck_type.component.ability
-    - field.field.component.ability.field_attack_dv
+    - field.field.component.ability.field_damage_effect
     - field.field.component.ability.field_description
     - field.field.component.ability.field_linked_skill
+    - field.field.component.ability.field_name
   module:
-    - ep_complex_values
     - text
 id: component.ability.default
 targetEntityType: component
 bundle: ability
 mode: default
 content:
-  field_attack_dv:
-    weight: 5
-    settings: {  }
-    third_party_settings: {  }
-    type: damage_widget
   field_description:
     weight: 3
     settings:
@@ -35,4 +30,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
-hidden: {  }
+  field_name:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  field_damage_effect: true

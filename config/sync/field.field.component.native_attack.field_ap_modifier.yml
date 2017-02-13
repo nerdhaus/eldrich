@@ -1,0 +1,26 @@
+uuid: fdf2b923-7f84-4709-9bab-2be6870b97f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.native_attack
+    - field.storage.component.field_ap_modifier
+  module:
+    - operation
+id: component.native_attack.field_ap_modifier
+field_name: field_ap_modifier
+entity_type: component
+bundle: native_attack
+label: 'AP Modifier'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: ''
+  max: ''
+  prefix: ''
+  suffix: ''
+  operator: ''
+field_type: operation

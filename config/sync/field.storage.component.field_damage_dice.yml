@@ -1,0 +1,21 @@
+uuid: ff616093-7154-4234-8380-151b6b2660d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - operation
+id: component.field_damage_dice
+field_name: field_damage_dice
+entity_type: component
+type: operation
+settings:
+  unsigned: false
+  size: normal
+module: operation
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

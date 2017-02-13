@@ -1,0 +1,107 @@
+uuid: d4c1fd9b-cf8e-4960-b5db-3ff8038041b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.native_attack
+    - field.field.component.native_attack.field_ap_modifier
+    - field.field.component.native_attack.field_area_effect
+    - field.field.component.native_attack.field_creature
+    - field.field.component.native_attack.field_damage_dice
+    - field.field.component.native_attack.field_damage_effects
+    - field.field.component.native_attack.field_damage_modifier
+    - field.field.component.native_attack.field_description
+    - field.field.component.native_attack.field_firing_modes
+    - field.field.component.native_attack.field_linked_skill
+    - field.field.component.native_attack.field_name
+    - field.field.component.native_attack.field_range
+    - field.field.component.native_attack.field_special_effect
+  module:
+    - ep_complex_values
+    - operation
+    - text
+id: component.native_attack.default
+targetEntityType: component
+bundle: native_attack
+mode: default
+content:
+  field_ap_modifier:
+    weight: 9
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: operation_formatter
+  field_area_effect:
+    weight: 10
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_damage_dice:
+    weight: 7
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: operation_formatter
+  field_damage_effects:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_damage_modifier:
+    weight: 8
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: operation_formatter
+  field_description:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_firing_modes:
+    weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_linked_skill:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_range:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: weapon_range_formatter
+  field_special_effect:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  field_creature: true

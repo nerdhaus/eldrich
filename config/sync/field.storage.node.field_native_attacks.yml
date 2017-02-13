@@ -1,0 +1,20 @@
+uuid: 28cda6d6-937f-435d-9086-b612f6b58ae4
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - node
+id: node.field_native_attacks
+field_name: field_native_attacks
+entity_type: node
+type: entity_reference
+settings:
+  target_type: component
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

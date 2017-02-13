@@ -1,0 +1,21 @@
+uuid: dbc4324b-fe06-465d-9e3c-2d7e9dd08bca
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - operation
+id: component.field_damage_modifier
+field_name: field_damage_modifier
+entity_type: component
+type: operation
+settings:
+  unsigned: false
+  size: normal
+module: operation
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,26 @@
+uuid: 4c8de579-5c93-4b04-9353-35cb7b200d0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.native_attack
+    - field.storage.component.field_damage_dice
+  module:
+    - operation
+id: component.native_attack.field_damage_dice
+field_name: field_damage_dice
+entity_type: component
+bundle: native_attack
+label: 'Damage Dice'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: ''
+  max: ''
+  prefix: ''
+  suffix: ''
+  operator: ''
+field_type: operation

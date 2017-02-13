@@ -1,0 +1,19 @@
+uuid: 3650edec-4804-40d2-8f63-49d2465f8e03
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.native_attack
+    - field.storage.component.field_special_effect
+id: component.native_attack.field_special_effect
+field_name: field_special_effect
+entity_type: component
+bundle: native_attack
+label: 'Special Effect'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

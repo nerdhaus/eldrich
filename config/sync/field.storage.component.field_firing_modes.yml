@@ -1,0 +1,19 @@
+uuid: 0bc452a2-1cbc-4f21-94de-e2ef9ce38cbf
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: component.field_firing_modes
+field_name: field_firing_modes
+entity_type: component
+type: entity_reference
+settings:
+  target_type: lookup
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

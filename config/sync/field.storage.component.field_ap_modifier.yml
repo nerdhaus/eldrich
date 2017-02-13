@@ -1,0 +1,21 @@
+uuid: 44eac6a5-9f1b-47ec-8890-d13ebf3b9e7d
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - operation
+id: component.field_ap_modifier
+field_name: field_ap_modifier
+entity_type: component
+type: operation
+settings:
+  unsigned: false
+  size: normal
+module: operation
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

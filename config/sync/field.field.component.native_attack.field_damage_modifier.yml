@@ -1,0 +1,26 @@
+uuid: 6cc1eb1c-7fb9-4f0d-a9e2-62bf55f088be
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.native_attack
+    - field.storage.component.field_damage_modifier
+  module:
+    - operation
+id: component.native_attack.field_damage_modifier
+field_name: field_damage_modifier
+entity_type: component
+bundle: native_attack
+label: 'Damage Modifier'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: ''
+  max: ''
+  prefix: ''
+  suffix: ''
+  operator: ''
+field_type: operation

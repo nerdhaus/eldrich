@@ -1,0 +1,31 @@
+uuid: fcc61ef7-acec-4de1-8421-ca8682629c70
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.native_ability
+    - field.field.component.native_ability.field_creature
+    - field.field.component.native_ability.field_description
+    - field.field.component.native_ability.field_name
+  module:
+    - text
+id: component.native_ability.default
+targetEntityType: component
+bundle: native_ability
+mode: default
+content:
+  field_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  field_creature: true

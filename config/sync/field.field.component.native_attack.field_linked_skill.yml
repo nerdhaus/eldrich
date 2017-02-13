@@ -1,0 +1,25 @@
+uuid: 1c6143df-e98f-4126-878c-05bb0e150633
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.native_attack
+    - field.storage.component.field_linked_skill
+id: component.native_attack.field_linked_skill
+field_name: field_linked_skill
+entity_type: component
+bundle: native_attack
+label: 'Linked Skill'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: select_lists
+      display_name: skills
+      arguments: {  }
+field_type: entity_reference

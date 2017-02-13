@@ -1,0 +1,28 @@
+uuid: 4d744d06-7d75-4278-ad04-c2d718ae3644
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.native_attack
+    - eck.eck_type.lookup.damage_type
+    - field.storage.component.field_damage_effects
+id: component.native_attack.field_damage_effects
+field_name: field_damage_effects
+entity_type: component
+bundle: native_attack
+label: 'Damage Effects'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:lookup'
+  handler_settings:
+    target_bundles:
+      damage_type: damage_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

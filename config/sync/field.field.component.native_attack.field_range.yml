@@ -1,0 +1,21 @@
+uuid: 9703aaed-6e0d-444b-9df7-999481380cf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.native_attack
+    - field.storage.component.field_range
+  module:
+    - ep_complex_values
+id: component.native_attack.field_range
+field_name: field_range
+entity_type: component
+bundle: native_attack
+label: Range
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: weapon_range

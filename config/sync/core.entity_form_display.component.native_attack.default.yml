@@ -1,0 +1,96 @@
+uuid: f0282b05-a3c2-40a3-8980-49abf4f09ef0
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.native_attack
+    - field.field.component.native_attack.field_ap_modifier
+    - field.field.component.native_attack.field_area_effect
+    - field.field.component.native_attack.field_creature
+    - field.field.component.native_attack.field_damage_dice
+    - field.field.component.native_attack.field_damage_effects
+    - field.field.component.native_attack.field_damage_modifier
+    - field.field.component.native_attack.field_description
+    - field.field.component.native_attack.field_firing_modes
+    - field.field.component.native_attack.field_linked_skill
+    - field.field.component.native_attack.field_name
+    - field.field.component.native_attack.field_range
+    - field.field.component.native_attack.field_special_effect
+  module:
+    - ep_complex_values
+    - operation
+    - text
+id: component.native_attack.default
+targetEntityType: component
+bundle: native_attack
+mode: default
+content:
+  field_ap_modifier:
+    weight: 9
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: operation_widget
+  field_area_effect:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_damage_dice:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: operation_widget
+  field_damage_effects:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_damage_modifier:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: operation_widget
+  field_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_firing_modes:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_linked_skill:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_range:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: weapon_range_widget
+  field_special_effect:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  field_creature: true
