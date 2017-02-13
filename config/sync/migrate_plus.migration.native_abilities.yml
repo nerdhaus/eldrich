@@ -26,9 +26,7 @@ process:
   type:
     plugin: default_value
     default_value: native_ability
-  field_notes/value:
-    plugin: line_breaker
-    source: description
+  field_notes/value: description
 destination:
   plugin: 'entity:component'
 migration_dependencies: null

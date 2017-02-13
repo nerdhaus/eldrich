@@ -48,9 +48,7 @@ process:
   type:
     plugin: default_value
     default_value: native_attack
-  field_notes/value:
-    plugin: line_breaker
-    source: description
+  field_notes/value: description
   field_special_effect/value: special_effect
   field_damage_dice:
     plugin: operation_string
