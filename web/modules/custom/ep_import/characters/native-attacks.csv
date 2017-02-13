@@ -106,3 +106,34 @@ Warbot,Tentacles,"If the MoS exceeds the target’s Durability, they are subdued
 Stinger Hound,Tongue Stinger,"Toxin: Injected, Onset: 1 Action Turn, Duration: 6 Action Turns (3 with medichines), victims lose 5 points of SOM per Action Turn. Each turn the victim may make a SOM Test to negate the SOM loss and further effects. If SOM is reduced to zero, the character is paralyzed. SOM loss returns at the rate of 1 point per hour.",,1,3,-5,,,Unarmed Combat,,D,,10
 Grootslang,Tusks,,,3,,,,,Unarmed Combat,,,,10
 Zephyr,Wing Bash,,,3,6,,,,Unarmed Combat,,,,20
+Sapient Defiler,Sting,"On an MoS of 30+ targets are impaled (treat as subdual, p. 204, EP) and injected with defiler eggs.",,2,3,-4,,,Unarmed Combat,,,,
+Sapient Defiler,Claws,,,3,5,-2,,,Unarmed Combat,,,,
+Sapient Defiler,Bite,,Applies Acid Spit,2,3,-8,,,Unarmed Combat,,,,
+Sapient Defiler,Acid Spit,"Additional DV 1d10 every turn for 3 additional Action Turns. Kinetic armor applies, but the AV is reduced by the DV absorbed. Usable once per 12 hours.",DV 1d10 for 3 turns,3,3,,,,Exotic Ranged Weapon: Acid,Cone,,5/10/15/20,
+Feral Defiler,Sting,"On an MoS of 30+ targets are impaled (treat as subdual, p. 204, EP) and injected with defiler eggs.",,2,3,-4,,,Unarmed Combat,,,,
+Feral Defiler,Claws,,,3,5,-2,,,Unarmed Combat,,,,
+Feral Defiler,Bite,,Applies Acid Spit,2,3,-8,,,Unarmed Combat,,,,
+Feral Defiler,Acid Spit,"Additional DV 1d10 every turn for 3 additional Action Turns. Kinetic armor applies, but the AV is reduced by the DV absorbed. Usable once per 12 hours.",DV 1d10 for 3 turns,3,3,,,,Exotic Ranged Weapon: Acid,Cone,,5/10/15/20,
+Larval Defiler,Bite,,Applies Acid Spit,1,,-1,,,Unarmed Combat,,,,
+Larval Defiler,Acid Spit,"Additional DV 1d10 every turn for 3 additional Action Turns. Kinetic armor applies, but the AV is reduced by the DV absorbed. Usable once per day.",DV 1d10 for 3 turns,2,,,,,Exotic Ranged Weapon: Acid,Cone,,5/10/15/20,
+Larval Defiler,Latch On,"Latches onto head or extremity with an MoS of 30+ (treat as subdual, p. 204, EP). Claw/bite attacks while latched on receive a +30 to hit and inflict +2d10 DV.",,,,,,,Unarmed Combat,,G,,
+Land Anemone,Grapple,"Subdued targets are swallowed on next action. Swallowed victims cannot see, hear, or breathe (Asphyxiation, p. 194, EP), are restricted (–30 to physical actions), and suffer DV 1d10 each Action Turn; armor defends but is decreased by the damage.",,,,,,,Unarmed Combat,,"G,D",,10
+Land Anemone,Tentacle Attack,,,1,,,,,Unarmed Combat,,D,,10
+Jelly,Spit Attack,,Applies Corrosive Spit,,,,,,Unarmed Combat,,D,10/15/20/25,
+Jelly,Tongue,,Applies Corrosive Spit,1,3,,,,Unarmed Combat,,D,,
+Jelly,Engulf,"On the second turn of subdual, the target is completely enveloped. Engulfed victims take double damage from the caustic coating, cannot see, hear, or breathe (Asphyxiation, p. 194, EP), and are restricted (−30 to all physical actions). Engulfed characters that beat the jelly in an Opposed SOM x 3 Test with the −30 modifier return to being normally subdued.",Applies Corrosive Spit,,,,,,Unarmed Combat,,"D,G",,
+Mimic Jelly,Spit Attack,,Applies Corrosive Spit,,,,,,Unarmed Combat,,D,10/15/20/25,
+Mimic Jelly,Tongue,,Applies Corrosive Spit,1,3,,,,Unarmed Combat,,"D,G",,
+Mimic Jelly,Engulf,"On the second turn of subdual, the target is completely enveloped. Engulfed victims take double damage from the caustic coating, cannot see, hear, or breathe (Asphyxiation, p. 194, EP), and are restricted (−30 to all physical actions). Engulfed characters that beat the jelly in an Opposed SOM x 3 Test with the −30 modifier return to being normally subdued.",Applies Corrosive Spit,,,,,,Unarmed Combat,,D,,
+Immolator Mother,Bite,Biomorphs wounded by this bite are infected with the glory exsurgent virus (p. 175).,,2,3,-1,,,Unarmed Combat,,,,
+Immolator Mother,Tentacles,,,1,3,,,,Unarmed Combat,,,,20
+Immolator Breeder,Claws,,,1,3,-1,,,Unarmed Combat,,,,
+Iktomi Kumobot,Adjustible Laser Pulser,"May increase damage +1d10 DV per shot by consuming 1 extra ammo, up to a maximum of +5d10 DV.",,2,,,SA,100,Beam Weapons,,,50/100/150/250,
+Iktomi Kumobot,Claws,,,2,3,,,,Unarmed Combat,,,,
+Iktomi Kumobot,Leg Spikes,,,3,4,-3,,,Unarmed Combat,,,,
+Hookbladder,Envelop Head,,,1,1,-2,,,Unarmed Combat,,G,,
+Hollow,Disassembly,"A hollow’s nano plasma can corrode matter like a disassembler swarm (p. 329, EP), inflicting DV 1d10 per Action Turn.",,1,,,,,Unarmed Combat,,,,
+Headhunter,Buzzsaw,,,1,3,,,,Unarmed Combat,,,,
+Headhunter Mk II,Buzzsaw,,,1,4,-6,,,Unarmed Combat,,,,
+Gut Eeater,Bite,,,1,7,-1,,,Unarmed Combat,,,,
+Gut Eeater,Subdual,"If a target is subdued, the gut eater will attempt to force its way down the victim’s throat on its next action.",,,,,,,Unarmed Combat,,G,,

@@ -10,16 +10,21 @@ dependencies:
     - field.field.node.creature.field_description
     - field.field.node.creature.field_equipped_weapons
     - field.field.node.creature.field_gear
+    - field.field.node.creature.field_image
     - field.field.node.creature.field_mobility_system
     - field.field.node.creature.field_movement_speed
+    - field.field.node.creature.field_native_abilities
+    - field.field.node.creature.field_native_attacks
+    - field.field.node.creature.field_privacy
     - field.field.node.creature.field_skills
+    - field.field.node.creature.field_sleights
     - field.field.node.creature.field_sources
     - field.field.node.creature.field_stats
     - field.field.node.creature.field_strain
     - field.field.node.creature.field_traits
     - node.type.creature
   module:
-    - smart_trim
+    - text
     - user
 id: node.creature.teaser
 targetEntityType: node
@@ -27,18 +32,11 @@ bundle: creature
 mode: teaser
 content:
   field_description:
-    type: smart_trim
+    type: text_trimmed
     weight: 0
     label: hidden
     settings:
-      trim_length: '600'
-      trim_type: chars
-      trim_suffix: ''
-      more_link: 0
-      more_class: more-link
-      more_text: More
-      summary_handler: full
-      trim_options: {  }
+      trim_length: 600
     third_party_settings: {  }
 hidden:
   field_armor: true
