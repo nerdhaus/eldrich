@@ -1,139 +1,180 @@
 name,name,description,effect,dice,mod,ap,modes,rounds,linked skill,aoe,extra effect,ranges,reach
-Titanian Caribou,Antler,,,1,-2,,,,,,,,
-Stalker,Arm Blade,,,2,4,-4,,,Unarmed Combat,,,,
-Smart Hawk,Beak/Claws,,,1,2,-1,,,Unarmed Combat,,,,
-Brontops,Bite,,,2,4,-1,,,Unarmed Combat,,,,
-Cherub,Bite,,,1,/2,,,,Unarmed Combat,,,,
-Clown Sprite,Bite,,,1,/2,,,,Unarmed Combat,,,,
-Crocasaur,Bite,,,5,,-5,,,Unarmed Combat,,,,20
-Dino Pet,Bite,,,1,/2,,,,Unarmed Combat,,,,
-Grootslang,Bite,,,2,4,-3,,,Unarmed Combat,,,,10
-Head Wrapper,Bite,,,2,3,-5,,,Unarmed Combat,,,,
-Hexanewt,Bite,,,1,1,,,,Unarmed Combat,,,,
-Mazimus,Bite,,,3,8,-8,,,Unarmed Combat,,,,
-Mind Wrapper,Bite,,,2,3,-5,,,Unarmed Combat,,,,
-Oct Swarm,Bite,,,2,,/2,,,Unarmed Combat,,,,
-Poisonous Marmoset Swarm,Bite,,Injects BTX Poison,1,,/2,,,Unarmed Combat,,D,,
-Rust Hound,Bite,,,1,2,,,,Unarmed Combat,,,,
-Sciurid,Bite,,,1,/2,,,,Unarmed Combat,,,,
-Skitter,Bite,,"Target’s Fray is halved 
-",1,2,,,,Unarmed Combat,,,,
-Skrik,Bite,,,1,/2,-1,,,Unarmed Combat,,,,
-Smart Cat,Bite,,,1,2,-1,,,Unarmed Combat,,,,
-Smart Dog,Bite,,,1,2,,,,Unarmed Combat,,,,
-Smart Monkey,Bite,,,1,/2,,,,Unarmed Combat,,,,
-Smart Racoon,Bite,,,1,-4,,,,Unarmed Combat,,,,
-Smart Rat,Bite,,,1,,,,,Unarmed Combat,,,,
-Smart Roach,Bite,,,1,,,,,Unarmed Combat,,,,
-Swarm Cat,Bite,,,1,1,,,,Unarmed Combat,,,,
-Tyrannosaurus,Bite,,,5,-5,,,,Unarmed Combat,,,,+20
-Veiled Leech,Bite,,,1,,,,,Unarmed Combat,,D,,
-Vydra,Bite,"Each vydra head may attack separately with the same action. If the MoS exceeds the target’s Durability, they are subdued (p. 204, EP).",,3,6,-3,,,Unarmed Combat,,,,10
-Zephyr,Bite,"Large and smaller targets are swallowed whole with an MoS of 30+. Swallowed victims take DV 1d10 per 
-minute; armor protects but is reduced by damage.",,2,6,,,,Unarmed Combat,,,,20
-Zombie Crab,Bite,Damaged characters must make a DUR x 2 Test (+30 with medichines) or become infected by the protist pathogen.,,3,,-3,,,Unarmed Combat,,,,
-Mantis Worm,Bite,"Synthmorphs take half damage (round down). Biomorph targets that take at least 5 damage must make a SOM x 2 Test or be overcome with pain (negated by Pain Tolerance), taking no other actions but to flee or remove worms for the next 10 minutes, and will continue to take DV 1d10 (armor does not apply) each Action Turn until the attached worms are removed. Removing the worms requires 4 Complex Actions (others may assist), during which the victim must remain free from the swarm (else it resets), and inflicts DV 1d10 + 2 (armor does not apply).",Target’s Fray is halved,1,15,,,,Unarmed Combat,,,,
-Shifter,Blade,,,2,5,,,,Blades,,,,
-Wild Artificial Collector,Blades,,,1,2,-1,,,Blades,,,,
-Wild Artificial Collector,Blades,,,1,2,-1,,,Blades,,,,
-Skitter,Breach Armor,Target’s Fray is halved. Further melee attacks by the swarm ignore armor.,"Target’s Fray is halved 
-",,,,,,Unarmed Combat,,,,
-Stalker,Chain Whirlwind,Strikes all targets within 2 meters of the stalker simultaneously.,,3,6,-8,,,Unarmed Combat,,,,10
-Slouch,Claw,,,2,6,-4,,,Unarmed Combat,,,,
-Zombie Crab,Claw,Damaged characters must make a DUR x 2 Test (+30 with medichines) or become infected by the protist pathogen.,,2,4,,,,Unarmed Combat,,,,10
-Leftover Special Snack Bar,Claw,,,1,6,-1,,,Unarmed Combat,,,,
-Whiplash,Clawed Tendril,"If the MoS exceeds the target’s Durability, they are subdued, as with the feeding tendril above.",,2,3,-1,,,Unarmed Combat,,G,,10
-Head Wrapper,Claws,,,1,2,-2,,,Unarmed Combat,,,,
-Mind Wrapper,Claws,,,1,2,-2,,,Unarmed Combat,,,,
-Stinger Hound,Claws,,,2,2,-2,,,Unarmed Combat,,,,10
-Swarm Cat,Claws,,,1,2,-1,,,Unarmed Combat,,,,
-Vohaulian,Claws,,,1,1,-2,,,Unarmed Combat,,,,
-Warbot,Claws,,,2,6,,,,Unarmed Combat,,,,10
-Wastewalker,Claws,,,1,2,-1,,,Unarmed Combat,,,,
-Guardian Brute,Claws,,,2,4,-3,,,Unarmed Combat,,,,
-Grootslang,Constrict,"If the MoS exceeds the target's Durability, they are subdued (p. 204, EP) and take 3d10 DV per Action Turn (armor does not protect).",,,,,,,Unarmed Combat,,S,,
-Xenosampler,Critter Control Pole,"With an MoS of 30+, target is snared around neck. Attempts to move will result in DV 1d10 ÷ 2 (round down, armor does not protect) and asphyxiation (p. 194, EP).",,,,999,,,Unarmed Combat,,G,,10
-Snapper,Crushing Attack,Medium-sized and smaller targets only,,4,,,,,Unarmed Combat,,,,10
-Predator,Diamond-Tooth Bite,,,1,7,-3,,,Unarmed Combat,,,,
-Switchwing,Diving Attack,Switchwings can move their full Running rate and dive attack with no additional modifiers.,,3,4,-2,,,Unarmed Combat,,,,
+Async Flesh Party,Bite,"Medium and smaller targets are swallowed whole with an MoS of 30+. Engulfed victims suffer the effects of acid spit (below) until freed or dead and cannot see, hear, or breathe (see Asphyxiation, p. 194, EP).",,2,5,-3,,,Unarmed Combat,,,,
+Async Flesh Party,Acid Spit,DV 1d10 + 5 per turn for 3 Action Turns. Armor defends but is decreased by the damage.,,1,5,,,,Unarmed Combat,Cone,,,
+Async Flesh Party,Bone Spur,,,1,4,-2,,,Unarmed Combat,,,,
+Barbed Eel,Bite,"Bite targets may be subdued (p. 204, EP) with a Quick Action.",,1,4,-2,,,Unarmed Combat,,,,
+Barbed Eel,Electric Stun,"No defense, 10 meter radius effect, when underwater.",,1,,,,,Unarmed Combat,,S,,
+Bees,Sting,,,1,,,,,Unarmed Combat,,,,
+Blister Beast,Tail Strike,Struck targets must make a SOM x 3 Test or be knocked down.,,2,,,,,Unarmed Combat,,,,
+Blister Beast,Sting,,Injects paralytic sting toxin,1,5,-3,,,Unarmed Combat,,D,,
 Bolatee,Entangle,"On subsequent actions, entangled victims will be grabbed by other bolatees and torn apart, inflicting DV 2d10 (armor does not protect).",,,,,,,Unarmed Combat,,S,,10
-Whiplash,Feeding Tendril,"On its next action, medium and smaller subdued targets are swallowed. Swallowed victims cannot see, hear, or breathe (Asphyxiation, p. 194, EP), are restricted (−30 to physical actions), and suffer DV 1d10 per Action Turn (armor does not apply). A whiplash that takes 2 wounds internally will regurgitate anything swallowed on its next action.",,,,,,,Unarmed Combat,,G,,10
-Wild Artificial Loper,Freeze-Foam Glob,Target must make a REF x 3 Test or be incapacitated in quick-hardening foam (Armor 10/Durability 20) for 12 hours.,,,,,,,Spray Weapons,Cone,G,5/10/15/20,
+Bolatee,Entangle,"On subsequent actions, entangled victims will be grabbed by other bolatees and torn apart, inflicting DV 2d10 (armor does not protect).",,,,,,,Unarmed Combat,,G,,10
 Brontops,Gore,,,3,4,-3,,,Unarmed Combat,,,,
-Whiplash,Ground Bash,"After subduing a victim with its tendril, the whiplash will raise and drop them on each subsequent action (without letting go), until the target no longer struggles, before swallowing.",,2,,/2,,,Unarmed Combat,,,,
-Skitter,Harry,"Target’s Fray is halved. The swarm harries a target by clustering around eyes and orifices, buzzing around, etc. The target suffers a −10 modifier to all actions (−30 if MoS is 30+).","Target’s Fray is halved 
-",,,,,,Unarmed Combat,,,,
-Switchwing,Hunting Pincers,,,1,4,,,,Unarmed Combat,,,,
-Skitter,Injectors,"Toxin: Injected, Onset: 1 Action Turn, Duration: 2 minutes/6 hours (medichines reduce by half), victims suffer incapacitating seizures for 2 minutes followed by active hallucinations for 6 hours. Hallucinating characters act completely randomly/are under GM control. A SOM x 2 Test negates the seizures and reduces the intensity of the hallucinations to a −20 modifier to all actions.",,,1,,,,Unarmed Combat,,D,,
-Slouch,Kick,,,3,3,-4,,,Unarmed Combat,,,,
-Stalker,Kick,,,3,2,,,,Unarmed Combat,,,,
-Slouch,Laser Turret,,,3,,,SA,100,Beam Weapons,,,5/100/150/300,
-Switchwing,Mandibles,,,1,1,,,,Unarmed Combat,,,,
-Predator,Monofilament Claws,,,1,8,-4,,,Unarmed Combat,,,,
-Leftover Special Limb Walker,Needle Fingers,"Necrosis nanotoxin: injected, Onset: 3 Action Turns, Duration: 1 minute, inflicts DV (1d10 ÷ 2) per Action Turn, see p. 324, EP.",,1,1,-1,,,Exotic Melee Weapon: Needle Fingers,,D,,
-Think Tank,Particle Beam Cannon,,,4,8,-4,SA,100,Beam Weapons,,,60/200/300/600,
-Snapper,Pincers,,,2,3,-3,,,Unarmed Combat,,,,10
-Wild Artificial Loper,Pinning Leap,"If loper moved at least 5 meters before attack and MoS exceeds target’s Durability, the target is knocked down and pinned (Subdual, p. 204, EP).",,2,1,,,,Unarmed Combat,,G,,
-Think Tank,Plasma Cannon,,,6,20,-8,SA,50,Beam Weapons,,,40/100/200/600,
-Wild Artificial Loper,Pneumatic Bite,,,2,1,,,,Unarmed Combat,,,,
-Stinger Hound,Pounce,"With an MoS of 30+ the target is knocked down and 
-pinned to the ground (see Subdual, p. 204, EP).",,2,5,,,,Unarmed Combat,,,,10
-Xenosampler,Sampling Needle,,,1,,-3,,,Unarmed Combat,,,,
-Vydra,Shear Armor,"If the vydra achieves a MoS equal to the AV x 2 or more, it rips off a chunk of protection. Reduce the target’s AV values by 1d10 + 2.",,,,,,,Unarmed Combat,,,,10
-Slouch,Shearing Beams,"Two slouches may direct their Bessel beams at the same target, one pulling, one repulsing, to create a devastating shearing effect.",,6,,999,,,Beam Weapons,,,500/500/500/500,
-Gardener Insect Swarm,Sting,,,1,,/2,,,Unarmed Combat,,,,
-Switchwing,Stinger,"Toxin: Injected, Onset: 1 minute, Duration: 1 hour (30 minutes with medichines), victims take DV 2d10 from internal bleeding every ten minutes.",,2,,-2,,,Unarmed Combat,,D,,
 Brontops,Stomp,,,3,4,,,,Unarmed Combat,,,,
-Warbot,Stomp,,,5,,,,,Unarmed Combat,,,,20
-Head Wrapper,Subdual,"If the MoS exceeds the target’s Durability, they are blinded and subdued (see Subdual, p. 204, EP).",,,,,,,Unarmed Combat,,G,,
-Mind Wrapper,Subdual,"If the MoS exceeds the target’s Durability, they are blinded and subdued (see Subdual, p. 204, EP).",,,,,,,Unarmed Combat,,G,,
-Predator,Subdual,,,,,,,,Unarmed Combat,,G,,
-Puppet Elite Agent,Subdual,On next action puppet will make a called shot on target's access jacks to plug in a disabler or a direct fiberoptic link to initiate a brainhack.,,,,,,,Unarmed Combat,,G,,
-Puppet Sleeper Agent,Subdual,On next action puppet will make a called shot on target's access jacks to plug in a disabler or a direct fiberoptic link to initiate a brainhack.,,,,,,,Unarmed Combat,,G,,
-Spambot Minion,Suicide Bot,These bots are suicide bombers.,,3,6,-4,,,Unarmed Combat,Blast,,,
-Guardian Spider Head,Suicide Explosion,,,4,10,-6,,,Unarmed Combat,Blast,,,
-Transhuman Smart Mine,Suicide Strike,"Ignores armor with an MoS of 30+, blast area effect, −2 DV per meter. If the target’s Wound Threshold and/or Armor Value exceed 10, the mine will detonate an additional charge (for each). Each mine carries 6 charges. Extra charges are ejected. For every 2 wounds inflicted, there is a 20% chance of a crippled or amputated limb; victims losing legs move at a quarter their normal movement rate until healed or repaired (pp. 208 and 327, EP).",,2,10,-4,,,,Blast,,,
-Zephyr,Tail,"Struck targets that are medium or larger sized may be 
-subdued (p. 204, EP) with a Quick Action.",,2,6,,,,Unarmed Combat,,,,20
-Predator,Tail Sting,"Twitch Toxin: Injected, Onset: 3 Action Turns, Duration: 10 minutes (5 with medichines). Targets make a SOM Test (+20 with medichines).",,2,7,-5,,,Unarmed Combat,,D,,
+Brontops,Bite,,,2,4,-1,,,Unarmed Combat,,,,
+Brontops,Gore,,,3,4,-3,,,Unarmed Combat,,,,
+Brontops,Stomp,,,3,4,,,,Unarmed Combat,,,,
+Causapod,Bite,,,1,5,-2,,,Unarmed Combat,,,,
+Cherub,Bite,,,1,/2,,,,Unarmed Combat,,,,
+Cherub,Cyberclaws,,,1,/2,3,,,Unarmed Combat,,,,
+Chrysacid Exsurgent,Club Attack,,,1,4,,,,Unarmed Combat,,,,
+Chrysacid Limb,Slash,,,1,5,-4,,,Unarmed Combat,,,,
+Chrysacid Spider,Slash,,,1,6,-5,,,Unarmed Combat,,,,
+Chrysacid Spur,Slash,,,1,4,-3,,,Unarmed Combat,,,,
+Clown Sprite,Bite,,,1,/2,,,,Unarmed Combat,,,,
+Creeper,Subdual,Subdued targets are penetrated and converted on next action.,,,,,,,Unarmed Combat,,G,,
+Creeper,Convert Matter,DV 1d10 per Action Turn to touched/penetrated targets. Damage inflicted increases creeper's DUR.,,1,,,,,Unarmed Combat,,,,
+Creeper,Repulsion Wave,"No defense, 30 meter radius effect, kinetic armor applies. All physical things pushed back 1d10 meters, SOM x 3 Test or knocked down.",No defense,3,,,,,,Blast,,30/30/30/30,
+Crocasaur,Bite,,,5,,-5,,,Unarmed Combat,,,,20
 Crocasaur,Tail Swipe,Struck victims must make a SOM x 3 Test or be knocked down,,3,5,,,,Unarmed Combat,,,,20
-Vydra,Tail Swipe,Target must make a SOM x 3 Test or be knocked down.,,3,3,,,,Unarmed Combat,,,,10
-Void Crawler,Tail Whip,"With 30+ MoS target is subdued (p. 204, EP). On further actions, biomorphs are strangled; each turn they take DV 1d10 (no defense) and must make a SOM x 3 Test or fall unconscious. Apply a cumulative −10 modifier to each test after the first.",,1,,-1,,,Unarmed Combat,,,,
-Whipper,Tentacle Grab,"If MoS exceeds target’s Durability, they are subdued (see Subdual, p. 204, EP).",,,,,,,Unarmed Combat,,G,,20
-Whipper,Tentacle Whip,,,2,1,-1,,,Unarmed Combat,,,,20
-Stalker,Tentacle-Chain,"On an MoS of 30+, target is subdued (p. 204, EP).",,2,2,-6,,,Unarmed Combat,,,,10
-Warbot,Tentacles,"If the MoS exceeds the target’s Durability, they are subdued (p. 204, EP).",,1,6,,,,Unarmed Combat,,G,,20
-Stinger Hound,Tongue Stinger,"Toxin: Injected, Onset: 1 Action Turn, Duration: 6 Action Turns (3 with medichines), victims lose 5 points of SOM per Action Turn. Each turn the victim may make a SOM Test to negate the SOM loss and further effects. If SOM is reduced to zero, the character is paralyzed. SOM loss returns at the rate of 1 point per hour.",,1,3,-5,,,Unarmed Combat,,D,,10
-Grootslang,Tusks,,,3,,,,,Unarmed Combat,,,,10
-Zephyr,Wing Bash,,,3,6,,,,Unarmed Combat,,,,20
-Sapient Defiler,Sting,"On an MoS of 30+ targets are impaled (treat as subdual, p. 204, EP) and injected with defiler eggs.",,2,3,-4,,,Unarmed Combat,,,,
-Sapient Defiler,Claws,,,3,5,-2,,,Unarmed Combat,,,,
-Sapient Defiler,Bite,,Applies Acid Spit,2,3,-8,,,Unarmed Combat,,,,
-Sapient Defiler,Acid Spit,"Additional DV 1d10 every turn for 3 additional Action Turns. Kinetic armor applies, but the AV is reduced by the DV absorbed. Usable once per 12 hours.",DV 1d10 for 3 turns,3,3,,,,Exotic Ranged Weapon: Acid,Cone,,5/10/15/20,
+Dino Pet,Bite,,,1,/2,,,,Unarmed Combat,,,,
+Dreadnought,Cannon,,,8,20,,SS,30,Kinetic Weapons,Blast,,500/1000/3000/5000,
+Extractor,Injection Bite,,Injects sedative,1,,-4,,,Unarmed Combat,,D,,
+Extractor,Strangle,Subdued biomorphs take DV 2d10 per Action Turn (armor does not protect); subdued synthmorphs may be incapacitated with the disabler.,,2,,,,,Unarmed Combat,,G,,
+Extractor,Shock Touch,,,,,,,,Unarmed Combat,,S,,
+Factor Ambassador,Factor Dust,"Toxin: Inhalation, Onset Time: 1 Action Turn, Duration: 5 turns/2 hours; victims suffer severe coughing and respiratory distress, DV 1d10 per turn for 5 Action Turns, −20 to all actions for 2 hours; medichines reduce DV by half and modifier duration to 15 minutes.",,1,,,,,Exotic Ranged Weapon: Factor Dust,Cone,D,2/4/6/8,
+Factor Gestalt,Factor Dust,"Toxin: Inhalation, Onset Time: 1 Action Turn, Duration: 5 turns/2 hours; victims suffer severe coughing and respiratory distress, DV 1d10 per turn for 5 Action Turns, −20 to all actions for 2 hours; medichines reduce DV by half and modifier duration to 15 minutes.",,1,,,,,Exotic Ranged Weapon: Factor Dust,Cone,D,10/30/50/70,
+Factor Gestalt,Tentacle Whip,"Struck targets may be subdued with a Quick Action (p. 204, EP)",,2,1,-1,,,Unarmed Combat,,,,20
+Factor Gestalt,Poison Keratin Shard,"Poison: Injected, Onset Time: 1 Action Turn, Duration 1 Action Turn/10 minutes, victims take DV 2d10 + 5 and are incapacitated with convulsions; a SOM x 3 Test halves the damage and replaces convulsions with a −20 modifier to all actions. Medichines reduce the duration by half.",,2,2,-8,SA,,Exotic Ranged Weapon: Keratin Shard,,D,10/20/40/60,
+Factor Guardian,Factor Dust,"Toxin: Inhalation, Onset Time: 1 Action Turn, Duration: 5 turns/2 hours; victims suffer severe coughing and respiratory distress, DV 1d10 per turn for 5 Action Turns, −20 to all actions for 2 hours; medichines reduce DV by half and modifier duration to 15 minutes.",,1,,,,,Exotic Ranged Weapon: Factor Dust,Cone,D,2/4/6/8,
+Factor Guardian,Tentacle Whip,,,2,1,-1,,,Unarmed Combat,,,,
+Factor Guardian,Laser,"These weapons only work for Factors. May be set to self-destruct, inflicting DV 8d10 + 10, AP −8, blast area effect.",,4,,,SA,200,Beam Weapons,,,,
 Feral Defiler,Sting,"On an MoS of 30+ targets are impaled (treat as subdual, p. 204, EP) and injected with defiler eggs.",,2,3,-4,,,Unarmed Combat,,,,
 Feral Defiler,Claws,,,3,5,-2,,,Unarmed Combat,,,,
 Feral Defiler,Bite,,Applies Acid Spit,2,3,-8,,,Unarmed Combat,,,,
 Feral Defiler,Acid Spit,"Additional DV 1d10 every turn for 3 additional Action Turns. Kinetic armor applies, but the AV is reduced by the DV absorbed. Usable once per 12 hours.",DV 1d10 for 3 turns,3,3,,,,Exotic Ranged Weapon: Acid,Cone,,5/10/15/20,
-Larval Defiler,Bite,,Applies Acid Spit,1,,-1,,,Unarmed Combat,,,,
-Larval Defiler,Acid Spit,"Additional DV 1d10 every turn for 3 additional Action Turns. Kinetic armor applies, but the AV is reduced by the DV absorbed. Usable once per day.",DV 1d10 for 3 turns,2,,,,,Exotic Ranged Weapon: Acid,Cone,,5/10/15/20,
-Larval Defiler,Latch On,"Latches onto head or extremity with an MoS of 30+ (treat as subdual, p. 204, EP). Claw/bite attacks while latched on receive a +30 to hit and inflict +2d10 DV.",,,,,,,Unarmed Combat,,G,,
-Land Anemone,Grapple,"Subdued targets are swallowed on next action. Swallowed victims cannot see, hear, or breathe (Asphyxiation, p. 194, EP), are restricted (–30 to physical actions), and suffer DV 1d10 each Action Turn; armor defends but is decreased by the damage.",,,,,,,Unarmed Combat,,"G,D",,10
-Land Anemone,Tentacle Attack,,,1,,,,,Unarmed Combat,,D,,10
-Jelly,Spit Attack,,Applies Corrosive Spit,,,,,,Unarmed Combat,,D,10/15/20/25,
-Jelly,Tongue,,Applies Corrosive Spit,1,3,,,,Unarmed Combat,,D,,
-Jelly,Engulf,"On the second turn of subdual, the target is completely enveloped. Engulfed victims take double damage from the caustic coating, cannot see, hear, or breathe (Asphyxiation, p. 194, EP), and are restricted (−30 to all physical actions). Engulfed characters that beat the jelly in an Opposed SOM x 3 Test with the −30 modifier return to being normally subdued.",Applies Corrosive Spit,,,,,,Unarmed Combat,,"D,G",,
-Mimic Jelly,Spit Attack,,Applies Corrosive Spit,,,,,,Unarmed Combat,,D,10/15/20/25,
-Mimic Jelly,Tongue,,Applies Corrosive Spit,1,3,,,,Unarmed Combat,,"D,G",,
-Mimic Jelly,Engulf,"On the second turn of subdual, the target is completely enveloped. Engulfed victims take double damage from the caustic coating, cannot see, hear, or breathe (Asphyxiation, p. 194, EP), and are restricted (−30 to all physical actions). Engulfed characters that beat the jelly in an Opposed SOM x 3 Test with the −30 modifier return to being normally subdued.",Applies Corrosive Spit,,,,,,Unarmed Combat,,D,,
-Immolator Mother,Bite,Biomorphs wounded by this bite are infected with the glory exsurgent virus (p. 175).,,2,3,-1,,,Unarmed Combat,,,,
-Immolator Mother,Tentacles,,,1,3,,,,Unarmed Combat,,,,20
-Immolator Breeder,Claws,,,1,3,-1,,,Unarmed Combat,,,,
+Flesh Party,Bite,"Medium and smaller targets are swallowed whole with an MoS of 30+. Engulfed victims suffer the effects of acid spit (below) until freed or dead and cannot see, hear, or breathe (see Asphyxiation, p. 194, EP).",,2,5,-3,,,Unarmed Combat,,,,
+Flesh Party,Acid Spit,DV 1d10 + 5 per turn for 3 Action Turns. Armor defends but is decreased by the damage.,,1,5,,,,Unarmed Combat,Cone,,,
+Flesh Party,Bone Spur,,,1,4,-2,,,Unarmed Combat,,,,
+Fractal,Bush Blades,,,2,,-10,,,Unarmed Combat,,,,
+Fractal Troll,Claws,,,1,7,-1,,,Unarmed Combat,,,,
+Fractal Troll,Subdual,The troll may take a fractal gouge attack against subdued targets with a Quick Action.,,,,,,,Unarmed Combat,,G,,
+Fractal Troll,Fractal Gouge,,,1,4,-8,,,Unarmed Combat,,,,
+Freak,TITAN Beam Weapon,"On a critical failure the weapon autotargets the nearest three individuals or machines, attacks each with a skill of 60, and inflicts a shock effect and DV 1d10 on the freak (p. 204, EP).",,3,,-5,SA,50,Beam Weapons,,,50/100/150/500,
+Gardener Insect Swarm,Sting,,,1,,/2,,,Unarmed Combat,,,,
+Giant Barbed Eel,Bite,"Bite targets may be subdued (p. 204, EP) with a Quick Action. Medium and smaller targets are swallowed on the next action. Swallowed victims cannot see, hear, or breathe (p. 204, EP), are restricted (−30 to all actions), and suffer DV 2d10 per Action Turn (armor does not apply). An eel that takes 2 wounds internally regurgitates anything swallowed on its next action.",,2,8,-4,,,Unarmed Combat,,,,
+Giant Barbed Eel,Electric Stun,"No defense, 10 meter radius effect, when underwater.",,2,,,,,Unarmed Combat,,S,,
+Grootslang,Bite,,Injects Twitch,2,4,-3,,,Unarmed Combat,,D,,10
+Grootslang,Constrict,"If the MoS exceeds the target's Durability, they are subdued (p. 204, EP) and take 3d10 DV per Action Turn (armor does not protect).",,,,,,,Unarmed Combat,,S,,
+Grootslang,Tusks,,,3,,,,,Unarmed Combat,,,,10
+Guardian Brute,Claws,,,2,4,-3,,,Unarmed Combat,,,,
+Guardian Spider Head,Suicide Explosion,,,4,10,-6,,,Unarmed Combat,Blast,,,
+Gut Eeater,Bite,,,1,7,-1,,,Unarmed Combat,,,,
+Gut Eeater,Subdual,"If a target is subdued, the gut eater will attempt to force its way down the victim’s throat on its next action.",,,,,,,Unarmed Combat,,G,,
+Head Wrapper,Bite,,,2,3,-5,,,Unarmed Combat,,,,
+Head Wrapper,Claws,,,1,2,-2,,,Unarmed Combat,,,,
+Head Wrapper,Subdual,"If the MoS exceeds the target’s Durability, they are blinded and subdued (see Subdual, p. 204, EP).",,,,,,,Unarmed Combat,,G,,
+Headhunter,Buzzsaw,,,1,3,,,,Unarmed Combat,,,,
+Headhunter Mk II,Buzzsaw,,,1,4,-6,,,Unarmed Combat,,,,
+Hexanewt,Bite,,,1,1,,,,Unarmed Combat,,,,
+Hollow,Disassembly,"A hollow’s nano plasma can corrode matter like a disassembler swarm (p. 329, EP), inflicting DV 1d10 per Action Turn.",,1,,,,,Unarmed Combat,,,,
+Hookbladder,Envelop Head,,,1,1,-2,,,Unarmed Combat,,G,,
 Iktomi Kumobot,Adjustible Laser Pulser,"May increase damage +1d10 DV per shot by consuming 1 extra ammo, up to a maximum of +5d10 DV.",,2,,,SA,100,Beam Weapons,,,50/100/150/250,
 Iktomi Kumobot,Claws,,,2,3,,,,Unarmed Combat,,,,
 Iktomi Kumobot,Leg Spikes,,,3,4,-3,,,Unarmed Combat,,,,
-Hookbladder,Envelop Head,,,1,1,-2,,,Unarmed Combat,,G,,
-Hollow,Disassembly,"A hollow’s nano plasma can corrode matter like a disassembler swarm (p. 329, EP), inflicting DV 1d10 per Action Turn.",,1,,,,,Unarmed Combat,,,,
-Headhunter,Buzzsaw,,,1,3,,,,Unarmed Combat,,,,
-Headhunter Mk II,Buzzsaw,,,1,4,-6,,,Unarmed Combat,,,,
-Gut Eeater,Bite,,,1,7,-1,,,Unarmed Combat,,,,
-Gut Eeater,Subdual,"If a target is subdued, the gut eater will attempt to force its way down the victim’s throat on its next action.",,,,,,,Unarmed Combat,,G,,
+Immolator Breeder,Claws,,,1,3,-1,,,Unarmed Combat,,,,
+Immolator Mother,Bite,Biomorphs wounded by this bite are infected with the glory exsurgent virus (p. 175).,,2,3,-1,,,Unarmed Combat,,,,
+Immolator Mother,Tentacles,,,1,3,,,,Unarmed Combat,,,,20
+Jelly,Spit Attack,,Applies Corrosive Spit,,,,,,Unarmed Combat,,D,10/15/20/25,
+Jelly,Tongue,,Applies Corrosive Spit,1,3,,,,Unarmed Combat,,D,,
+Jelly,Engulf,"On the second turn of subdual, the target is completely enveloped. Engulfed victims take double damage from the caustic coating, cannot see, hear, or breathe (Asphyxiation, p. 194, EP), and are restricted (−30 to all physical actions). Engulfed characters that beat the jelly in an Opposed SOM x 3 Test with the −30 modifier return to being normally subdued.",Applies Corrosive Spit,,,,,,Unarmed Combat,,"D,G",,
+Land Anemone,Grapple,"Subdued targets are swallowed on next action. Swallowed victims cannot see, hear, or breathe (Asphyxiation, p. 194, EP), are restricted (–30 to physical actions), and suffer DV 1d10 each Action Turn; armor defends but is decreased by the damage.",,,,,,,Unarmed Combat,,"G,D",,10
+Land Anemone,Tentacle Attack,,,1,,,,,Unarmed Combat,,D,,10
+Larval Defiler,Bite,,Applies Acid Spit,1,,-1,,,Unarmed Combat,,,,
+Larval Defiler,Acid Spit,"Additional DV 1d10 every turn for 3 additional Action Turns. Kinetic armor applies, but the AV is reduced by the DV absorbed. Usable once per day.",DV 1d10 for 3 turns,2,,,,,Exotic Ranged Weapon: Acid,Cone,,5/10/15/20,
+Larval Defiler,Latch On,"Latches onto head or extremity with an MoS of 30+ (treat as subdual, p. 204, EP). Claw/bite attacks while latched on receive a +30 to hit and inflict +2d10 DV.",,,,,,,Unarmed Combat,,G,,
+Leftover Special Limb Walker,Needle Fingers,"Necrosis nanotoxin: injected, Onset: 3 Action Turns, Duration: 1 minute, inflicts DV (1d10 ÷ 2) per Action Turn, see p. 324, EP.",,1,1,-1,,,Exotic Melee Weapon: Needle Fingers,,D,,
+Leftover Special Snack Bar,Claw,,,1,6,-1,,,Unarmed Combat,,,,
+Mantis Worm,Bite,"Synthmorphs take half damage (round down). Biomorph targets that take at least 5 damage must make a SOM x 2 Test or be overcome with pain (negated by Pain Tolerance), taking no other actions but to flee or remove worms for the next 10 minutes, and will continue to take DV 1d10 (armor does not apply) each Action Turn until the attached worms are removed. Removing the worms requires 4 Complex Actions (others may assist), during which the victim must remain free from the swarm (else it resets), and inflicts DV 1d10 + 2 (armor does not apply).",Target’s Fray is halved,1,15,,,,Unarmed Combat,,,,
+Mazimus,Bite,,,3,8,-8,,,Unarmed Combat,,,,
+Mimic Jelly,Spit Attack,,Applies Corrosive Spit,,,,,,Unarmed Combat,,D,10/15/20/25,
+Mimic Jelly,Tongue,,Applies Corrosive Spit,1,3,,,,Unarmed Combat,,"D,G",,
+Mimic Jelly,Engulf,"On the second turn of subdual, the target is completely enveloped. Engulfed victims take double damage from the caustic coating, cannot see, hear, or breathe (Asphyxiation, p. 194, EP), and are restricted (−30 to all physical actions). Engulfed characters that beat the jelly in an Opposed SOM x 3 Test with the −30 modifier return to being normally subdued.",Applies Corrosive Spit,,,,,,Unarmed Combat,,D,,
+Mind Wrapper,Bite,,,2,3,-5,,,Unarmed Combat,,,,
+Mind Wrapper,Claws,,,1,2,-2,,,Unarmed Combat,,,,
+Mind Wrapper,Subdual,"If the MoS exceeds the target’s Durability, they are blinded and subdued (see Subdual, p. 204, EP).",,,,,,,Unarmed Combat,,G,,
+Oct Swarm,Bite,,,2,,/2,,,Unarmed Combat,,,,
+Poisonous Marmoset Swarm,Bite,,Injects BTX Poison,1,,/2,,,Unarmed Combat,,D,,
+Predator,Diamond-Tooth Bite,,,1,7,-3,,,Unarmed Combat,,,,
+Predator,Monofilament Claws,,,1,8,-4,,,Unarmed Combat,,,,
+Predator,Subdual,,,,,,,,Unarmed Combat,,G,,
+Predator,Tail Sting,"Twitch Toxin: Injected, Onset: 3 Action Turns, Duration: 10 minutes (5 with medichines). Targets make a SOM Test (+20 with medichines).",,2,7,-5,,,Unarmed Combat,,D,,
+Puppet Elite Agent,Subdual,On next action puppet will make a called shot on target's access jacks to plug in a disabler or a direct fiberoptic link to initiate a brainhack.,,,,,,,Unarmed Combat,,G,,
+Puppet Sleeper Agent,Subdual,On next action puppet will make a called shot on target's access jacks to plug in a disabler or a direct fiberoptic link to initiate a brainhack.,,,,,,,Unarmed Combat,,G,,
+Rust Hound,Bite,,,1,2,,,,Unarmed Combat,,,,
+Sapient Defiler,Sting,"On an MoS of 30+ targets are impaled (treat as subdual, p. 204, EP) and injected with defiler eggs.",,2,3,-4,,,Unarmed Combat,,,,
+Sapient Defiler,Claws,,,3,5,-2,,,Unarmed Combat,,,,
+Sapient Defiler,Bite,,Applies Acid Spit,2,3,-8,,,Unarmed Combat,,,,
+Sapient Defiler,Acid Spit,"Additional DV 1d10 every turn for 3 additional Action Turns. Kinetic armor applies, but the AV is reduced by the DV absorbed. Usable once per 12 hours.",DV 1d10 for 3 turns,3,3,,,,Exotic Ranged Weapon: Acid,Cone,,5/10/15/20,
+Sciurid,Bite,,,1,/2,,,,Unarmed Combat,,,,
+Shifter,Blade,,,2,5,,,,Blades,,,,
+Skitter,Bite,,"Target’s Fray is halved 
+",1,2,,,,Unarmed Combat,,,,
+Skitter,Breach Armor,Target’s Fray is halved. Further melee attacks by the swarm ignore armor.,"Target’s Fray is halved 
+",,,,,,Unarmed Combat,,,,
+Skitter,Harry,"Target’s Fray is halved. The swarm harries a target by clustering around eyes and orifices, buzzing around, etc. The target suffers a −10 modifier to all actions (−30 if MoS is 30+).","Target’s Fray is halved 
+",,,,,,Unarmed Combat,,,,
+Skitter,Injectors,"Toxin: Injected, Onset: 1 Action Turn, Duration: 2 minutes/6 hours (medichines reduce by half), victims suffer incapacitating seizures for 2 minutes followed by active hallucinations for 6 hours. Hallucinating characters act completely randomly/are under GM control. A SOM x 2 Test negates the seizures and reduces the intensity of the hallucinations to a −20 modifier to all actions.",,,1,,,,Unarmed Combat,,D,,
+Skrik,Bite,,,1,/2,-1,,,Unarmed Combat,,,,
+Slouch,Claw,,,2,6,-4,,,Unarmed Combat,,,,
+Slouch,Kick,,,3,3,-4,,,Unarmed Combat,,,,
+Slouch,Laser Turret,,,3,,,SA,100,Beam Weapons,,,5/100/150/300,
+Slouch,Shearing Beams,"Two slouches may direct their Bessel beams at the same target, one pulling, one repulsing, to create a devastating shearing effect.",,6,,999,,,Beam Weapons,,,500/500/500/500,
+Smart Cat,Bite,,,1,2,-1,,,Unarmed Combat,,,,
+Smart Dog,Bite,,,1,2,,,,Unarmed Combat,,,,
+Smart Hawk,Beak/Claws,,,1,2,-1,,,Unarmed Combat,,,,
+Smart Monkey,Bite,,,1,/2,,,,Unarmed Combat,,,,
+Smart Racoon,Bite,,,1,-4,,,,Unarmed Combat,,,,
+Smart Rat,Bite,,,1,,,,,Unarmed Combat,,,,
+Space Roach,Bite,,,1,,,,,Unarmed Combat,,,,
+Snapper,Crushing Attack,Medium-sized and smaller targets only,,4,,,,,Unarmed Combat,,,,10
+Snapper,Pincers,,,2,3,-3,,,Unarmed Combat,,,,10
+Spambot Minion,Suicide Bot,These bots are suicide bombers.,,3,6,-4,,,Unarmed Combat,Blast,,,
+Stalker,Arm Blade,,,2,4,-4,,,Unarmed Combat,,,,
+Stalker,Chain Whirlwind,Strikes all targets within 2 meters of the stalker simultaneously.,,3,6,-8,,,Unarmed Combat,,,,10
+Stalker,Kick,,,3,2,,,,Unarmed Combat,,,,
+Stalker,Tentacle-Chain,"On an MoS of 30+, target is subdued (p. 204, EP).",,2,2,-6,,,Unarmed Combat,,,,10
+Stinger Hound,Claws,,,2,2,-2,,,Unarmed Combat,,,,10
+Stinger Hound,Pounce,"With an MoS of 30+ the target is knocked down and 
+pinned to the ground (see Subdual, p. 204, EP).",,2,5,,,,Unarmed Combat,,,,10
+Stinger Hound,Tongue Stinger,"Toxin: Injected, Onset: 1 Action Turn, Duration: 6 Action Turns (3 with medichines), victims lose 5 points of SOM per Action Turn. Each turn the victim may make a SOM Test to negate the SOM loss and further effects. If SOM is reduced to zero, the character is paralyzed. SOM loss returns at the rate of 1 point per hour.",,1,3,-5,,,Unarmed Combat,,D,,10
+Swarm Cat,Bite,,,1,1,,,,Unarmed Combat,,,,
+Swarm Cat,Claws,,,1,2,-1,,,Unarmed Combat,,,,
+Switchwing,Diving Attack,Switchwings can move their full Running rate and dive attack with no additional modifiers.,,3,4,-2,,,Unarmed Combat,,,,
+Switchwing,Hunting Pincers,,,1,4,,,,Unarmed Combat,,,,
+Switchwing,Mandibles,,,1,1,,,,Unarmed Combat,,,,
+Switchwing,Stinger,"Toxin: Injected, Onset: 1 minute, Duration: 1 hour (30 minutes with medichines), victims take DV 2d10 from internal bleeding every ten minutes.",,2,,-2,,,Unarmed Combat,,D,,
+Think Tank,Particle Beam Cannon,,,4,8,-4,SA,100,Beam Weapons,,,60/200/300/600,
+Think Tank,Plasma Cannon,,,6,20,-8,SA,50,Beam Weapons,,,40/100/200/600,
+Titanian Caribou,Antler,,,1,-2,,,,Unarmed Combat,,,,
+Transhuman Smart Mine,Suicide Strike,"Ignores armor with an MoS of 30+, blast area effect, −2 DV per meter. If the target’s Wound Threshold and/or Armor Value exceed 10, the mine will detonate an additional charge (for each). Each mine carries 6 charges. Extra charges are ejected. For every 2 wounds inflicted, there is a 20% chance of a crippled or amputated limb; victims losing legs move at a quarter their normal movement rate until healed or repaired (pp. 208 and 327, EP).",,2,10,-4,,,,Blast,,,
+Tyrannosaurus,Bite,,,5,-5,,,,Unarmed Combat,,,,+20
+Veiled Leech,Bite,,,1,,,,,Unarmed Combat,,D,,
+Vohaulian,Claws,,,1,1,-2,,,Unarmed Combat,,,,
+Void Crawler,Tail Whip,"With 30+ MoS target is subdued (p. 204, EP). On further actions, biomorphs are strangled; each turn they take DV 1d10 (no defense) and must make a SOM x 3 Test or fall unconscious. Apply a cumulative −10 modifier to each test after the first.",,1,,-1,,,Unarmed Combat,,,,
+Vydra,Bite,"Each vydra head may attack separately with the same action. If the MoS exceeds the target’s Durability, they are subdued (p. 204, EP).",,3,6,-3,,,Unarmed Combat,,,,10
+Vydra,Shear Armor,"If the vydra achieves a MoS equal to the AV x 2 or more, it rips off a chunk of protection. Reduce the target’s AV values by 1d10 + 2.",,,,,,,Unarmed Combat,,,,10
+Vydra,Tail Swipe,Target must make a SOM x 3 Test or be knocked down.,,3,3,,,,Unarmed Combat,,,,10
+Warbot,Claws,,,2,6,,,,Unarmed Combat,,,,10
+Warbot,Stomp,,,5,,,,,Unarmed Combat,,,,20
+Warbot,Tentacles,"If the MoS exceeds the target’s Durability, they are subdued (p. 204, EP).",,1,6,,,,Unarmed Combat,,G,,20
+Wastewalker,Claws,,,1,2,-1,,,Unarmed Combat,,,,
+Whiplash,Clawed Tendril,"If the MoS exceeds the target’s Durability, they are subdued, as with the feeding tendril above.",,2,3,-1,,,Unarmed Combat,,G,,10
+Whiplash,Feeding Tendril,"On its next action, medium and smaller subdued targets are swallowed. Swallowed victims cannot see, hear, or breathe (Asphyxiation, p. 194, EP), are restricted (−30 to physical actions), and suffer DV 1d10 per Action Turn (armor does not apply). A whiplash that takes 2 wounds internally will regurgitate anything swallowed on its next action.",,,,,,,Unarmed Combat,,G,,10
+Whiplash,Ground Bash,"After subduing a victim with its tendril, the whiplash will raise and drop them on each subsequent action (without letting go), until the target no longer struggles, before swallowing.",,2,,/2,,,Unarmed Combat,,,,
+Whipper,Tentacle Grab,"If MoS exceeds target’s Durability, they are subdued (see Subdual, p. 204, EP).",,,,,,,Unarmed Combat,,G,,20
+Whipper,Tentacle Whip,,,2,1,-1,,,Unarmed Combat,,,,20
+Wild Artificial Collector,Blades,,,1,2,-1,,,Blades,,,,
+Wild Artificial Collector,Blades,,,1,2,-1,,,Blades,,,,
+Wild Artificial Loper,Freeze-Foam Glob,Target must make a REF x 3 Test or be incapacitated in quick-hardening foam (Armor 10/Durability 20) for 12 hours.,,,,,,,Spray Weapons,Cone,G,5/10/15/20,
+Wild Artificial Loper,Pinning Leap,"If loper moved at least 5 meters before attack and MoS exceeds target’s Durability, the target is knocked down and pinned (Subdual, p. 204, EP).",,2,1,,,,Unarmed Combat,,G,,
+Wild Artificial Loper,Pneumatic Bite,,,2,1,,,,Unarmed Combat,,,,
+Xenosampler,Critter Control Pole,"With an MoS of 30+, target is snared around neck. Attempts to move will result in DV 1d10 ÷ 2 (round down, armor does not protect) and asphyxiation (p. 194, EP).",,,,999,,,Unarmed Combat,,G,,10
+Xenosampler,Sampling Needle,,,1,,-3,,,Unarmed Combat,,,,
+Zephyr,Bite,"Large and smaller targets are swallowed whole with an MoS of 30+. Swallowed victims take DV 1d10 per 
+minute; armor protects but is reduced by damage.",,2,6,,,,Unarmed Combat,,,,20
+Zephyr,Tail,"Struck targets that are medium or larger sized may be 
+subdued (p. 204, EP) with a Quick Action.",,2,6,,,,Unarmed Combat,,,,20
+Zephyr,Wing Bash,,,3,6,,,,Unarmed Combat,,,,20
+Zombie Crab,Bite,Damaged characters must make a DUR x 2 Test (+30 with medichines) or become infected by the protist pathogen.,,3,,-3,,,Unarmed Combat,,,,
+Zombie Crab,Claw,Damaged characters must make a DUR x 2 Test (+30 with medichines) or become infected by the protist pathogen.,,2,4,,,,Unarmed Combat,,,,10
