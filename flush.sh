@@ -13,6 +13,6 @@ drush mi --group=eldrich_core
 drush mi --group=eldrich_gear
 drush mi --group=eldrich_chars
 drush mi --group=eldrich_content
-drush ci
+drush cr
 drush search-index
 
