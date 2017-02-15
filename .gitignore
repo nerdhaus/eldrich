@@ -19,7 +19,6 @@ web/sites/*/files
 /environment.inc
 web/sites/default/settings.local.php
 console/log
-/config/sync/field.field.node.article.field_image.yml
 /sass.log
 /.sass-cache
 /web/.sass-cache
