@@ -10,7 +10,7 @@ source:
   plugin: csv
   path: modules/custom/ep_import/data/books.csv
   constants:
-    uri: 'public://cover_art/'
+    uri: 'public://books/'
     extension: .jpg
   header_row_count: 1
   column_names:

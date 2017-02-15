@@ -34,6 +34,7 @@ source:
   constants:
     user: Factotum
     uri: 'public://inspiration/'
+    fileuri: 'public://downloads/'
 process:
   uid:
     plugin: entity_lookup_plus
