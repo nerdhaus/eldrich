@@ -1,3 +1,7 @@
+uuid: 822719f7-865d-4ff9-8477-5bb098873094
+langcode: en
+status: true
+dependencies: {  }
 id: inspiration
 migration_tags: null
 migration_group: eldrich_content
@@ -52,7 +56,7 @@ process:
         - constants/uri
       keys:
         - image
-        - uri
+        - dir
       default_values:
         type: image
       process:
@@ -69,12 +73,13 @@ process:
           -
             plugin: concat
             source:
-              - uri
+              - dir
               - '@filename'
         uri:
           plugin: file_copy
           source:
             - '@src'
             - '@dest'
+destination:
   plugin: 'entity:node'
 migration_dependencies: null

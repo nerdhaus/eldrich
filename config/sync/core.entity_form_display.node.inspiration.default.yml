@@ -7,10 +7,10 @@ dependencies:
     - field.field.node.inspiration.field_image
     - field.field.node.inspiration.field_resources
     - field.field.node.inspiration.field_video
-    - image.style.thumbnail
+    - image.style.crop_thumbnail
     - node.type.inspiration
   module:
-    - image
+    - image_widget_crop
     - link
     - path
     - text
@@ -35,10 +35,17 @@ content:
   field_image:
     weight: 2
     settings:
+      show_default_crop: true
+      warn_multiple_usages: true
+      preview_image_style: crop_thumbnail
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - square
+        - strip
       progress_indicator: throbber
-      preview_image_style: thumbnail
+      show_crop_area: false
     third_party_settings: {  }
-    type: image_image
+    type: image_widget_crop
   field_resources:
     weight: 4
     settings:

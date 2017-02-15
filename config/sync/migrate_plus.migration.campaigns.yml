@@ -96,7 +96,7 @@ process:
         - constants/uri
       keys:
         - image
-        - uri
+        - dir
       default_values:
         type: image
       process:
@@ -113,7 +113,7 @@ process:
           -
             plugin: concat
             source:
-              - uri
+              - dir
               - '@filename'
         uri:
           plugin: file_copy
