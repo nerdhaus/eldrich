@@ -34,6 +34,7 @@ module:
   field: 0
   field_group: 0
   field_redirection: 0
+  field_tools: 0
   field_ui: 0
   file: 0
   filter: 0
@@ -46,6 +47,13 @@ module:
   integer_time: 0
   link: 0
   menu_ui: 0
+  metatag: 0
+  metatag_facebook: 0
+  metatag_mobile: 0
+  metatag_open_graph: 0
+  metatag_open_graph_products: 0
+  metatag_twitter_cards: 0
+  metatag_verification: 0
   migrate: 0
   migrate_plus: 0
   migrate_source_csv: 0
