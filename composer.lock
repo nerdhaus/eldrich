@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "111eba32390ad26545d3944bebf5dd2a",
+    "content-hash": "4f24f43b0f38f3565961a3fe71b66459",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1309,7 +1309,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/config_views-8.x-1.0-alpha1.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha1",
                 "shasum": "d9c27309e5d92f9de6af0c779ed0a6f65dc1632a"
             },
             "require": {
@@ -1800,7 +1800,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/crop-8.x-1.0.zip",
-                "reference": null,
+                "reference": "8.x-1.0",
                 "shasum": "c59b10336821f0ef99f6d2770a72c400e167d979"
             },
             "require": {
@@ -2216,7 +2216,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/empty_page-8.x-1.0.zip",
-                "reference": null,
+                "reference": "8.x-1.0",
                 "shasum": "c1d5f3a39b5282b1d1cfacc8a8fc908f77792a87"
             },
             "require": {
@@ -2557,7 +2557,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-rc1",
-                    "datestamp": "1482859983"
+                    "datestamp": "1485616683"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2603,7 +2603,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/field_formatter_range-8.x-1.0.zip",
-                "reference": null,
+                "reference": "8.x-1.0",
                 "shasum": "e454f94811ef7a1ddb415010c44832467d96b638"
             },
             "require": {
@@ -2778,6 +2778,77 @@
             "time": "2017-01-16 21:25:02"
         },
         {
+            "name": "drupal/flag",
+            "version": "4.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/flag",
+                "reference": "8.x-4.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/flag-8.x-4.0-alpha1.zip",
+                "reference": null,
+                "shasum": "a5612adca2e82104bf0d4d7eae7250c5e0defdca"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-4.x": "4.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-4.0-alpha1",
+                    "datestamp": "1483948886"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "fago",
+                    "homepage": "https://www.drupal.org/user/16747"
+                },
+                {
+                    "name": "fubhy",
+                    "homepage": "https://www.drupal.org/user/761344"
+                },
+                {
+                    "name": "joachim",
+                    "homepage": "https://www.drupal.org/user/107701"
+                },
+                {
+                    "name": "merlinofchaos",
+                    "homepage": "https://www.drupal.org/user/26979"
+                },
+                {
+                    "name": "mooffie",
+                    "homepage": "https://www.drupal.org/user/78454"
+                },
+                {
+                    "name": "quicksketch",
+                    "homepage": "https://www.drupal.org/user/35821"
+                },
+                {
+                    "name": "shabana.navas",
+                    "homepage": "https://www.drupal.org/user/1311398"
+                },
+                {
+                    "name": "socketwench",
+                    "homepage": "https://www.drupal.org/user/65793"
+                }
+            ],
+            "description": "Create customized flags that users can set on entities.",
+            "homepage": "https://www.drupal.org/project/flag",
+            "support": {
+                "source": "http://cgit.drupalcode.org/flag"
+            }
+        },
+        {
             "name": "drupal/google_analytics",
             "version": "2.1.0",
             "source": {
@@ -2840,7 +2911,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/group-8.x-1.0-beta4.zip",
-                "reference": null,
+                "reference": "8.x-1.0-beta4",
                 "shasum": "744a5b72d06ca3b70055aede39294470232c123e"
             },
             "require": {
@@ -2932,8 +3003,8 @@
             "require": {
                 "drupal/core": "^8.2.0"
             },
-            "suggest": {
-                "drupal/imagemagick": "Required by drupal/image_effects"
+            "require-dev": {
+                "drupal/imagemagick": "*"
             },
             "type": "drupal-module",
             "extra": {
@@ -2942,7 +3013,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-alpha3",
-                    "datestamp": "1479725943"
+                    "datestamp": "1485631383"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2980,7 +3051,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/image_url_formatter-8.x-1.0-beta1.zip",
-                "reference": null,
+                "reference": "8.x-1.0-beta1",
                 "shasum": "02665a9d29ebd7cc404974d91997f4fbb27b5312"
             },
             "require": {
@@ -3023,7 +3094,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/image_widget_crop-8.x-1.4.zip",
-                "reference": null,
+                "reference": "8.x-1.4",
                 "shasum": "b4758cdda9c32b22537a9aae17c025676b07c6e2"
             },
             "require": {
@@ -3260,7 +3331,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta12",
-                    "datestamp": "1483477143"
+                    "datestamp": "1485901983"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -4126,7 +4197,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/twig_tweak-8.x-1.5.zip",
-                "reference": null,
+                "reference": "8.x-1.5",
                 "shasum": "8e2820ba3b706909c76cb4fa0a85becd39c5b9b1"
             },
             "require": {
@@ -4275,7 +4346,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/view_mode_page-8.x-3.0-rc1.zip",
-                "reference": null,
+                "reference": "8.x-3.0-rc1",
                 "shasum": "58103c89b9bd07c7bde2e98efc553ddf19d6f083"
             },
             "require": {
@@ -4290,7 +4361,7 @@
                 },
                 "drupal": {
                     "version": "8.x-3.0-rc1",
-                    "datestamp": "1482959283"
+                    "datestamp": "1485946989"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -9105,6 +9176,7 @@
         "drupal/group": 10,
         "drupal/config_views": 15,
         "drupal/image_url_formatter": 10,
+        "drupal/flag": 15,
         "drupal/viewsreference": 15
     },
     "prefer-stable": true,

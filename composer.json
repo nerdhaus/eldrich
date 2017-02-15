@@ -78,7 +78,8 @@
         "drupal/config_views": "^1.0@alpha",
         "drupal/crop": "^1.0",
         "drupal/image_widget_crop": "^1.4",
-        "drupal/image_url_formatter": "^1.0@beta"
+        "drupal/image_url_formatter": "^1.0@beta",
+        "drupal/flag": "^4.0@alpha"
     },
     "require-dev": {
         "behat/mink": "~1.7",
