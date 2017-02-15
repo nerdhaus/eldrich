@@ -35,8 +35,8 @@ content:
     label: hidden
     settings:
       url_type: '0'
-      image_style: landscape
-      image_link: ''
+      image_style: square_small
+      image_link: content
     third_party_settings: {  }
 hidden:
   campaign_characters: true

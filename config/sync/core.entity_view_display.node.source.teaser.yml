@@ -11,7 +11,7 @@ dependencies:
     - field.field.node.source.field_is_canon
     - field.field.node.source.field_source_type
     - field.field.node.source.field_weight
-    - image.style.square
+    - image.style.square_small
     - node.type.source
   module:
     - image
@@ -35,7 +35,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: square
+      image_style: square_small
       image_link: ''
     third_party_settings: {  }
   field_description:
