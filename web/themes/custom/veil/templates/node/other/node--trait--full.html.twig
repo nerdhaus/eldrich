@@ -1,0 +1,40 @@
+{#
+/*
+ * For Traits:
+ * - content.field_cp_cost:        Cost during chargen
+ * - content.field_morph_trait:    Does the trait apply to morphs?
+ * - content.field_ego_trait:      Does the trait apply to egos?
+ * - content.field_stats:          Stat bonuses
+ * - content.field_skills:         Skill bonuses
+ * - content.field_is_conditional: Are the bonuses are always-on or conditional?
+ */
+#}
+{% extends "@veil/node/node--full.html.twig" %}
+{% set raw = content.field_cp_cost|field_raw('value') %}
+{% set morph = content.field_morph_trait|field_raw('value') %}
+{% set ego = content.field_ego_trait|field_raw('value') %}
+{% if raw > 0 %}
+  {% set cost = 'Positive' %}
+{% elseif raw < 0 %}
+  {% set cost = 'Negative' %}
+{% else %}
+  {% set cost = 'Neutral' %}
+{% endif %}
+{% if ego and morph %}
+  {% set trait = 'dual' %}
+{% elseif morph %}
+  {% set trait = 'morph' %}
+{% elseif ego %}
+  {% set trait = 'ego' %}
+{% else %}
+  {% set trait = 'special' %}
+{% endif %}
+
+{% block callout_content %}
+  {{ parent() }}
+
+  <li><strong>{{ cost }} {{ trait }} trait{% if raw != 0 %} ({{ raw }} CP){% endif %}</strong></li>
+  {% if content.field_stats|field_value|length %}<li><strong>Stat bonuses:</strong> {{ content.field_stats|field_value|safe_join(', ') }}</li>{% endif %}
+  {% if content.field_skills|field_value|length %}<li><strong>Skill bonuses:</strong> {{ content.field_skills|field_value|safe_join(', ') }}</li>{% endif %}
+  {% if content.field_is_conditional|field_value %}<li><strong>Bonuses are conditional</strong></li>{% endif %}
+{% endblock %}
