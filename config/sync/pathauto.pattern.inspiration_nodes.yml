@@ -7,16 +7,16 @@ dependencies:
 id: inspiration_nodes
 label: 'Inspiration Nodes'
 type: 'canonical_entities:node'
-pattern: 'world/inspiration/[node:title]'
+pattern: 'games/inspiration/[node:title]'
 selection_criteria:
-  ebc1f8b7-05c0-4250-bd4c-b4d14341cd3b:
+  e9c39e6f-c499-4f24-a68e-bf9f680256d2:
     id: node_type
     bundles:
       inspiration: inspiration
     negate: false
     context_mapping:
       node: node
-    uuid: ebc1f8b7-05c0-4250-bd4c-b4d14341cd3b
+    uuid: e9c39e6f-c499-4f24-a68e-bf9f680256d2
 selection_logic: and
 weight: -3
 relationships: {  }

@@ -44,21 +44,24 @@ set classes = [
 %}
 <div class="col-md-6 col-sm-12">
   <div {{ attributes.addClass(classes) }}>
-    <div class="panel-body media" id="{{ content.field_code|field_raw('value') }}">
-      {% if content.field_cover_art %}
-        <div class="media-left media-top">
-          <a href="{{ content.field_home_page|field_raw('uri') }}">
-            {{ content.field_cover_art }}
-          </a>
+    <div class="panel-body" id="{{ content.field_code|field_raw('value') }}">
+      <div class="row">
+      <a href="{{ content.field_home_page|field_raw('uri') }}">
+        <div class="col-md-5">
+          {% if content.field_cover_art %}
+            <img src="{{ content.field_cover_art|field_target_entity.uri.value | image_style('square') }}" class="img-responsive img-thumbnail" />
+          {% endif %}
         </div>
-        {% endif %}
-      <div class="media-body">
-        {{ title_prefix }}
-        <h4 {{ title_attributes.addClass('media-heading') }}>
-          {% if badge %}<small class="badge pull-right">{{ badge|field_value }}</small>{% endif %}
-          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-        </h4>{{ title_suffix }}
-        {{ content.field_description }}
+        <div class="col-md-7">
+          {{ title_prefix }}
+          <h4 {{ title_attributes }}>
+            {% if badge %}<small class="badge pull-right">{{ badge|field_value }}</small>{% endif %}
+            <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+          </h4>
+          {{ title_suffix }}
+          {{ content.field_description }}
+        </div>
+      </a>
       </div>
     </div>
   </div>

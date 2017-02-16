@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - node.type.creature
     - node.type.faction
-    - node.type.inspiration
     - node.type.location
     - node.type.npc
     - node.type.source
@@ -65,6 +64,7 @@ display:
       row:
         type: 'entity:node'
         options:
+          relationship: none
           view_mode: teaser
       fields:
         title:
