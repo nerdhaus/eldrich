@@ -92,6 +92,12 @@ class BalanceSkills extends ProcessPluginBase implements ContainerFactoryPluginI
       $value['points'] = $value['points'] - $morph_stats[$this->map($value['target_id'])];
     }
 
+    // Now make sure points are calculated correctly over 60.
+    if ($value['points'] > 60) {
+      $remainder = $value['points'] - 60;
+      $value['points'] = 60 + ($remainder * 2);
+    }
+
     return $value;
   }
 

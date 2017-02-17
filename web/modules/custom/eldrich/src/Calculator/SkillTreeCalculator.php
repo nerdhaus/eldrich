@@ -62,6 +62,8 @@ class SkillTreeCalculator {
       static::walkTree($skills, $entity, $stats);
     }
 
+    static::handleGearBonuses($skills, $entity, $stats);
+
     // If we're working with anything other than a full-fledged PC, subtract default
     // and bonus from points. Total is points. Shhhhh. Don't cheapen this.
     if (!in_array($entity->bundle(), ['pc', 'npc'])) {
@@ -161,26 +163,19 @@ class SkillTreeCalculator {
     }
   }
 
-  // Increasing skills above 80 (without morph bonuses) costs double points.
-  // This handles it in the simplest way possible.
-  private static function addPoints($default, $points) {
-    $tmp = $default + $points;
-
-    if ($tmp > 80) {
-      $remainder = floor(($tmp - 80) / 2);
-      $tmp = 80 + $remainder;
-    }
-    return $tmp;
-  }
 
   // Increasing skills above 80 (without morph bonuses) costs double points.
   // This handles it in the simplest way possible.
   private static function accountForPointCost($skill) {
-    if ($skill > 80) {
-      $remainder = floor(($skill - 80) / 2);
-      $skill = 80 + $remainder;
+    if ($skill > 60) {
+      $remainder = floor(($skill - 60) / 2);
+      $skill = 60 + $remainder;
     }
     return $skill;
+  }
+
+  private static function handleGearBonuses(Array &$skills, FieldableEntityInterface $entity, Array $stats) {
+
   }
 
   private static function initRow() {

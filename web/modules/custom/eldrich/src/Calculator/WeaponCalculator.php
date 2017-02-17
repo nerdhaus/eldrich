@@ -116,6 +116,9 @@ class WeaponCalculator {
       }
     }
 
+    // Catch-all function designed to apply damage bonuses for oddball gear
+    static::handleGearBonuses($data, $entity);
+
     return $data;
   }
 
@@ -356,7 +359,37 @@ class WeaponCalculator {
   }
 
 
-  private static function getWeaponCategory(Array &$item, FieldableEntityInterface $weapon) {
+  public static function handleGearBonuses(Array &$data, FieldableEntityInterface $entity) {
+    $augs = $armor = $gear = [];
+
+    if ($entity->hasField('field_morph')) {
+      $morph = $entity->field_morph->entity;
+      $augs = $entity->field_morph->entity->field_augmentations;
+    }
+    if ($entity->hasField('field_augmentations')) {
+      $augs = $entity->field_augmentations;
+    }
+    if ($entity->hasField('field_equipped_armor')) {
+      $armor = $entity->field_equipped_armor;
+    }
+    if ($entity->hasField('field_gear')) {
+      $gear = $entity->field_gear;
+    }
+
+    foreach ($augs as $fi) {
+      // Pneumatic limbs add an extra damage die to unarmed attacks.
+      if ($fi->entity->label() == 'Pneumatic Limbs') {
+        foreach ($data as $key => $item) {
+          if ($item['linked_skill'] == 'unarmed combat') {
+            $data[$key]['damage']['dice'] += 1;
+          }
+        }
+      }
+    }
+  }
+
+
+    private static function getWeaponCategory(Array &$item, FieldableEntityInterface $weapon) {
     if ($weapon->hasField('field_linked_skill')) {
       if ($weapon->field_linked_skill->isEmpty()) {
         $item['linked_skill'] = 'unarmed combat';
