@@ -13,7 +13,7 @@ dependencies:
     - field.field.node.faction.field_sources
     - node.type.faction
   module:
-    - smart_trim
+    - text
     - user
 id: node.faction.teaser
 targetEntityType: node
@@ -21,19 +21,11 @@ bundle: faction
 mode: teaser
 content:
   field_description:
-    type: smart_trim
-    weight: 0
-    label: hidden
-    settings:
-      trim_length: 600
-      trim_type: chars
-      trim_suffix: ''
-      more_link: 0
-      more_class: more-link
-      more_text: More
-      summary_handler: full
-      trim_options: {  }
+    weight: 2
+    label: above
+    settings: {  }
     third_party_settings: {  }
+    type: text_default
   field_faction_type:
     type: entity_reference_label
     weight: 1
@@ -47,5 +39,6 @@ hidden:
   field_parent_faction: true
   field_short_name: true
   field_sources: true
+  flag_bookmark: true
   links: true
   world_faction_children: true

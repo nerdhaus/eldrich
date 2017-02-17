@@ -118,7 +118,8 @@ class Node extends PreprocessBase implements PreprocessInterface {
       $variables->attacks = WeaponCalculator::total($node, $variables->skills);
     }
     $variables->armor = ArmorCalculator::total($node);
-    $variables->threat = ThreatCalculator::total($variables->stats, $variables->skills, $variables->armor, $variables->attacks);
+
+    // $variables->threat = ThreatCalculator::total($variables->stats, $variables->skills, $variables->armor, $variables->attacks);
   }
 
   public function getIcon(NodeInterface $node) {

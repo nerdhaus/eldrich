@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.news.body
     - node.type.news
   module:
-    - smart_trim
+    - text
     - user
 id: node.news.teaser
 targetEntityType: node
@@ -15,18 +15,10 @@ bundle: news
 mode: teaser
 content:
   body:
-    label: hidden
-    type: smart_trim
-    weight: 101
-    settings:
-      trim_length: '600'
-      trim_type: chars
-      trim_suffix: ''
-      more_link: 0
-      more_class: more-link
-      more_text: More
-      summary_handler: full
-      trim_options: {  }
+    weight: 102
+    label: above
+    settings: {  }
     third_party_settings: {  }
+    type: text_default
 hidden:
   links: true

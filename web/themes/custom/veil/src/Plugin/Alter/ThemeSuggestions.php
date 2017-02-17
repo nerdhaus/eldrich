@@ -13,6 +13,7 @@ use Drupal\bootstrap\Utility\Variables;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\bootstrap\Plugin\Alter\AlterInterface;
 use Drupal\block\Entity\Block;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_theme_suggestions_alter().
@@ -30,6 +31,30 @@ class ThemeSuggestions extends PluginBase implements AlterInterface {
     $variables = Variables::create($context1);
 
     switch ($hook) {
+      case 'page':
+        $node_id = \Drupal::routeMatch()->getRawParameter('node');
+        if ($node_id && ($node = Node::load($node_id))) {
+          $content_type = $node->bundle();
+
+          switch ($content_type) {
+            case 'armor':
+            case 'augmentation':
+            case 'gear':
+            case 'mind':
+            case 'morph':
+            case 'robot':
+            case 'vehicle':
+            case 'weapon':
+              $suggestions[] = 'page__gear';
+              return;
+            case 'campaign':
+            case 'inspiration':
+            case 'session':
+              $suggestions[] = 'page__games';
+              return;
+          }
+        }
+        break;
       case 'block':
         // Don't actually need this anymore, but I kinda like the look of it.
         $block = Block::load($variables['elements']['#id']);
