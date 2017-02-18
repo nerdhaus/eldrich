@@ -125,7 +125,7 @@ process:
   field_official_downloads: {  }
   field_resources:
     plugin: split_and_trim
-    delimiter: ' | '
+    delimiter: ";"
     tuck: uri
     source: resources
 destination:
