@@ -20,10 +20,17 @@ class SplitAndTrim extends ProcessPluginBase {
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     $delimiter = $this->configuration['delimiter'] ?: ',';
+    $tuck = $this->configuration['tuck'];
     $values = explode($delimiter, $value);
 
     for($i = 0; $i < count($values); $i++) {
       $values[$i] = trim($values[$i]);
+    }
+
+    if (!empty($tuck)) {
+      foreach ($values as $key => $value) {
+        $values[$key] = [$tuck => $value];
+      }
     }
 
     return $values;

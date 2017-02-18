@@ -7,8 +7,14 @@ migration_tags: null
 migration_group: eldrich_chars
 label: NPCs
 source:
-  plugin: csv
-  path: modules/custom/ep_import/characters/npcs.csv
+  plugin: csvs
+  path:
+    - modules/custom/ep_import/npcs/canon.csv
+    - modules/custom/ep_import/npcs/android.csv
+    - modules/custom/ep_import/npcs/expanse.csv
+    - modules/custom/ep_import/npcs/person-of-interest.csv
+    - modules/custom/ep_import/npcs/transmetropolitan.csv
+    - modules/custom/ep_import/npcs/whiskey.csv
   header_row_count: 1
   column_names:
     -
@@ -16,7 +22,7 @@ source:
     -
       based_on: based_on
     -
-      book: book
+      source: source
     -
       background: background
     -
@@ -69,6 +75,7 @@ source:
     user: Factotum
   keys:
     - name
+    - source
 process:
   uid:
     plugin: entity_lookup_plus
@@ -327,7 +334,7 @@ process:
     bundle: source
     bundle_key: type
     value_key: field_code
-    source: book
+    source: source
   field_image/target_id:
     -
       plugin: skip_on_empty

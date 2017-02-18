@@ -101,7 +101,7 @@ process:
       default_values:
         type: image
       process:
-        src: image
+        source: image
         filename:
           -
             plugin: callback
@@ -119,11 +119,15 @@ process:
         uri:
           plugin: file_copy
           source:
-            - '@src'
+            - '@source'
             - '@dest'
   field_campaign_status: status
   field_official_downloads: {  }
-  field_resources: {  }
+  field_resources:
+    plugin: split_and_trim
+    delimiter: ' | '
+    tuck: uri
+    source: resources
 destination:
   plugin: 'entity:node'
 migration_dependencies: null
