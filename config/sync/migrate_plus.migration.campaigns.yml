@@ -24,9 +24,9 @@ source:
     -
       npcs: npcs
     -
-      resources: Resources
-    -
       image: Image
+    -
+      resources: Resources
     -
       downloads: Downloads
   keys:
@@ -125,7 +125,7 @@ process:
   field_official_downloads: {  }
   field_resources:
     plugin: split_and_trim
-    delimiter: ";"
+    delimiter: ;
     tuck: uri
     source: resources
 destination:

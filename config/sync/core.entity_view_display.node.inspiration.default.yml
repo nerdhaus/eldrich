@@ -7,9 +7,10 @@ dependencies:
     - field.field.node.inspiration.field_image
     - field.field.node.inspiration.field_resources
     - field.field.node.inspiration.field_video
+    - image.style.hero_banner
     - node.type.inspiration
   module:
-    - image_url_formatter
+    - image
     - link
     - text
     - url_embed
@@ -29,11 +30,10 @@ content:
     weight: 0
     label: hidden
     settings:
-      url_type: '2'
-      image_style: ''
+      image_style: hero_banner
       image_link: ''
     third_party_settings: {  }
-    type: image_url
+    type: image
   field_resources:
     weight: 3
     label: hidden
@@ -53,9 +53,15 @@ content:
     type: url_embed
   sub_content_gear:
     weight: 10
+    settings: {  }
+    third_party_settings: {  }
   sub_content_npcs:
     weight: 10
+    settings: {  }
+    third_party_settings: {  }
   sub_content_world:
     weight: 10
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   links: true

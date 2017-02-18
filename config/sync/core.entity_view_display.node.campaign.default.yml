@@ -11,10 +11,11 @@ dependencies:
     - field.field.node.campaign.field_pcs
     - field.field.node.campaign.field_resources
     - field.field.node.campaign.field_short_name
+    - image.style.hero_banner
     - node.type.campaign
   module:
     - file
-    - image_url_formatter
+    - image
     - options
     - text
     - url_embed
@@ -27,7 +28,7 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 1
     settings: {  }
     third_party_settings: {  }
   campaign_characters:
@@ -41,22 +42,21 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_campaign_status:
-    weight: 1
+    weight: 2
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
   field_image:
-    weight: 14
-    label: above
+    weight: 0
+    label: hidden
     settings:
-      url_type: '2'
-      image_style: ''
+      image_style: hero_banner
       image_link: ''
     third_party_settings: {  }
-    type: image_url
+    type: image
   field_npcs:
-    weight: 13
+    weight: 11
     label: above
     settings:
       link: true
@@ -69,7 +69,7 @@ content:
     third_party_settings: {  }
     type: file_table
   field_pcs:
-    weight: 12
+    weight: 10
     label: above
     settings:
       link: true
@@ -82,19 +82,27 @@ content:
     third_party_settings: {  }
     type: url_embed
   field_short_name:
-    weight: 11
+    weight: 9
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   sub_content_gear:
-    weight: 10
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
   sub_content_npcs:
-    weight: 10
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
   sub_content_sessions:
-    weight: 10
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
   sub_content_world:
-    weight: 10
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   links: true
