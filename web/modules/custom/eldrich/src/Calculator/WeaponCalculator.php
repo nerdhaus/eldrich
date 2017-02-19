@@ -360,7 +360,9 @@ class WeaponCalculator {
 
 
   public static function handleGearBonuses(Array &$data, FieldableEntityInterface $entity) {
-    $augs = $armor = $gear = [];
+    $augs = [];
+    $armor = [];
+    $gear = [];
 
     if ($entity->hasField('field_morph')) {
       $morph = $entity->field_morph->entity;
