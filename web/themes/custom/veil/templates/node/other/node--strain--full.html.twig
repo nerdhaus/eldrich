@@ -10,7 +10,7 @@
 {% extends "@veil/node/node--full.html.twig" %}
 {% block callout_content %}
   {{ parent() }}
-  {% if content.field_vectors|field_value|length %}<li><strong>Vectors:</strong> {{ content.field_vectors|field_value|save_join(', ') }}</li>{% endif %}
+  {% if content.field_vectors|field_value|length %}<li><strong>Vectors:</strong> {{ content.field_vectors|field_value|safe_join(', ') }}</li>{% endif %}
   {% if content.field_infectiousness|field_value %}<li> {{ content.field_infectiousness|field_value }}</li>{% endif %}
 {% endblock %}
 

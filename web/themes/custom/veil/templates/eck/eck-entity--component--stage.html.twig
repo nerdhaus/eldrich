@@ -27,5 +27,5 @@ set classes = [
 %}
 <h3>{{ content.field_name|field_value }}</h3>
 <div{{ attributes.addClass(classes) }}>
-  {{ content|without('title') }}
+  {{ content|without('field_name') }}
 </div>

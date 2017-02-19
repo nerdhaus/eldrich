@@ -51,10 +51,13 @@ class IntegerTimeParser extends ProcessPluginBase {
   protected function parseTime($string) {
     $matches = array();
     $number = 0;
-    preg_match_all("/([0-9]+)([dhms])/", $string, $matches);
+    preg_match_all("/([0-9]+)([wdhms])/", $string, $matches);
 
     for ($i = 0; $i< count($matches); $i++) {
       switch ($matches[2][$i]) {
+        case 'w':
+          $number += (int)($matches[1][$i]) * 604800;
+          break;
         case 'd':
           $number += (int)($matches[1][$i]) * 86400;
           break;

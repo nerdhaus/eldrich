@@ -64,7 +64,7 @@ process:
     default_value: basic_html
   field_stages:
     plugin: native_entities
-    type: native_attack
+    type: stage
     field: field_virus
     source: title
   field_sources:

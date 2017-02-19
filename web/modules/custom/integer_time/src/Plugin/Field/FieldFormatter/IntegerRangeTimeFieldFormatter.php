@@ -28,21 +28,26 @@ class IntegerRangeTimeFieldFormatter extends RangeIntegerFormatter {
    * {@inheritdoc}
    */
   protected function numberFormat($number) {
+    if (is_null($number)) {
+      return NULL;
+    }
+
     $output = '';
 
     // Eclipse Phase specific special cases
-    if ($number === 0) {
+    if ($number == 0) {
       return "Instantaneous";
     }
-    elseif ($number === 3) {
+    elseif ($number == 3) {
       return "1 Action";
     }
 
     $units = array(
-      '1d|@countd' => 86400,
-      '1h|@counth' => 3600,
-      '1m|@countm' => 60,
-      '1s|@counts' => 1,
+      '1 week|@count weeks' => 604800,
+      '1 day|@count days' => 86400,
+      '1 hour|@count hours' => 3600,
+      '1 minute|@count minutes' => 60,
+      '1 second|@count seconds' => 1,
     );
     foreach ($units as $key => $value) {
       $key = explode('|', $key);
