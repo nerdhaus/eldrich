@@ -27,5 +27,11 @@ set classes = [
 %}
 <h3>{{ content.field_name|field_value }}</h3>
 <div{{ attributes.addClass(classes) }}>
-  {{ content|without('field_name') }}
+  {% if content.field_timeframe|field_value %}
+    <p><strong>{{ content.field_timeframe|field_label }}:</strong> {{ content.field_timeframe|field_value }}</p>
+  {% endif %}
+  {{ content.field_description|field_value }}
+  {% if content.field_stress_incurred|field_value %}
+    <p><strong>{{ content.field_stress_incurred|field_label }}:</strong> {{ content.field_stress_incurred|field_value }}</p>
+  {% endif %}
 </div>

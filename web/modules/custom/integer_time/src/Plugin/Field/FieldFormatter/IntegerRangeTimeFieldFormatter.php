@@ -23,6 +23,41 @@ use Drupal\range\Plugin\Field\FieldFormatter\RangeIntegerFormatter;
  * )
  */
 class IntegerRangeTimeFieldFormatter extends RangeIntegerFormatter {
+  /**
+   * {@inheritdoc}
+   */
+  public static function defaultSettings() {
+    return array(
+        'abbreviate' => FALSE,
+      ) + parent::defaultSettings();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsForm(array $form, FormStateInterface $form_state) {
+    $elements = parent::settingsForm($form, $form_state);
+
+    $elements['abbreviate'] = array(
+      '#type' => 'checkbox',
+      '#title' => $this->t('Abbreviate durations'),
+      '#default_value' => $this->getSetting('abbreviate'),
+      '#weight' => 13,
+    );
+
+    return $elements;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsSummary() {
+    $summary = array();
+    if ($this->getSetting('abbreviate')) {
+      $summary[] = $this->t('Abbreviated durations');
+    }
+    return $summary;
+  }
 
   /**
    * {@inheritdoc}
@@ -36,19 +71,31 @@ class IntegerRangeTimeFieldFormatter extends RangeIntegerFormatter {
 
     // Eclipse Phase specific special cases
     if ($number == 0) {
-      return "Instantaneous";
+      return $this->getSetting('abbreviate') ? "Instant" : "Instantaneous";
     }
     elseif ($number == 3) {
-      return "1 Action";
+      return $this->getSetting('abbreviate') ? "1 Turn" : "1 Action Turn";
     }
 
-    $units = array(
-      '1 week|@count weeks' => 604800,
-      '1 day|@count days' => 86400,
-      '1 hour|@count hours' => 3600,
-      '1 minute|@count minutes' => 60,
-      '1 second|@count seconds' => 1,
-    );
+    if ($this->getSetting('abbreviate')) {
+      $units = array(
+        '1w|@countw' => 604800,
+        '1d|@countd' => 86400,
+        '1h|@counth' => 3600,
+        '1m|@countm' => 60,
+        '1s|@counts' => 1,
+      );
+    }
+    else {
+      $units = array(
+        '1 week|@count weeks' => 604800,
+        '1 day|@count days' => 86400,
+        '1 hour|@count hours' => 3600,
+        '1 minute|@count minutes' => 60,
+        '1 second|@count seconds' => 1,
+      );
+    }
+
     foreach ($units as $key => $value) {
       $key = explode('|', $key);
       if ($number >= $value) {

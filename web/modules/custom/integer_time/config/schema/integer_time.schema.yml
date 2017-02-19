@@ -1,0 +1,9 @@
+# Schema for the configuration of the Range (integer) field type.
+
+field.formatter.settings.integer_range_time_field_formatter:
+  type: mapping
+  label: 'Range integer display format settings'
+  mapping:
+    abbreviate:
+      type: boolean
+      label: 'Abbreviate durations'
