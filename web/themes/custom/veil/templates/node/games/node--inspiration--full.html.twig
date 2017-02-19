@@ -47,8 +47,20 @@ view_mode ? view_mode|clean_class
   <section class="row">
     {% block content %}
       <div class="col-sm-12">
-        {{ content }}
+        {{ content.field_image }}
+      </div>
+      <div class="col-sm-7">
+        {{ content.body }}
+      </div>
+      <div class="col-sm-5">
+        {{ content.field_video }}
+        {{ content.field_resources }}
       </div>
     {% endblock %}
+  </section>
+  <section class="row">
+    <div class="col-sm-12">
+    {{ content|without('body', 'field_image', 'field_video', 'field_resources') }}
+    </div>
   </section>
 </article>

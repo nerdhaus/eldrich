@@ -82,7 +82,7 @@ process:
             - '@dest'
   field_resources:
     plugin: split_and_trim
-    delimiter: "\n"
+    delimiter: ";"
     tuck: uri
     source: links
 destination:

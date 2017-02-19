@@ -264,9 +264,8 @@ class Node extends PreprocessBase implements PreprocessInterface {
     foreach ($node->field_pcs as $field) {
       $nids[$field->target_id] = $field->target_id;
     }
-
     if (count($nids)) {
-      $variables->content['initiative_link'] = [
+      $variables->tools['initiative'] = [
         '#type' => 'link',
         '#title' => t('Track Initiative'),
         '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_initiative', ['nodes' => join(',', $nids)]),
@@ -274,7 +273,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
           'class' => ['btn', 'btn-default']
         ]
       ];
-      $variables->content['skillsheet_link'] = [
+      $variables->tools['skillsheet'] = [
         '#type' => 'link',
         '#title' => t('Skills Sheet'),
         '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_skillsheet', ['nodes' => join(',', $nids)]),

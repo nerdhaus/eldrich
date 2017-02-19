@@ -51,8 +51,30 @@ view_mode ? view_mode|clean_class
   <section class="row">
     {% block content %}
       <div class="col-sm-12">
-        {{ content }}
+        {{ content.field_image }}
+      </div>
+      <div class="col-sm-7">
+        {{ content.body }}
+      </div>
+      <div class="col-sm-5">
+        <ul class="list-unstyled list-hanging">
+          {% if content.field_pcs|field_value|length -%}
+            <li><strong>Players:</strong> {{ content.field_pcs|field_value|safe_join(', ') }}</li>
+          {%- endif %}
+          {% if content.field_resources|field_value|length -%}
+            <li><strong>Resources:</strong> {{ content.field_resources|field_value|safe_join(', ') }}</li>
+          {%- endif %}
+          {% if content.field_official_downloads|field_value|length -%}
+            <li><strong>Downloads:</strong> {{ content.field_official_downloads|field_value|safe_join(', ') }}</li>
+          {%- endif %}
+        </ul>
+        {{ tools }}
       </div>
     {% endblock %}
+  </section>
+  <section class="row">
+    <div class="col-sm-12">
+      {{ content|without('body', 'field_image', 'field_pcs', 'field_resources', 'field_official_downloads', 'field_campaign_status') }}
+    </div>
   </section>
 </article>
