@@ -56,6 +56,11 @@ process:
   field_infectiousness/format:
     plugin: default_value
     default_value: basic_html
+  field_native_attacks:
+    plugin: native_entities
+    type: native_attack
+    field: field_virus
+    source: title
   field_sources:
     plugin: source_with_page
     entity_type: node
@@ -68,3 +73,4 @@ destination:
 migration_dependencies:
   required:
     - tables
+    - strain_stages

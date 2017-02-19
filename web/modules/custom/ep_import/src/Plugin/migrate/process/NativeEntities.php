@@ -44,11 +44,12 @@ class NativeEntities extends ProcessPluginBase implements ContainerFactoryPlugin
   }
 
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
+    $match_field = $this->configuration['field'];
     $entity_type = $this->configuration['type'];
     $query = $this->entityManager->getStorage('component')->getQuery();
     $ids = $query
       ->condition('type', $entity_type)
-      ->condition('field_creature', trim($value))
+      ->condition($match_field, trim($value))
       ->execute();
 
     $results = [];
