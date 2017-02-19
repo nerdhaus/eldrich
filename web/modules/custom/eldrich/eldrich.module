@@ -10,26 +10,6 @@ use Drupal\node\NodeInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Access\AccessResult;
 
-define("ELDRICH_CONTENT_PUBLIC", 0);
-define("ELDRICH_CONTENT_GM", 1);
-define("ELDRICH_CONTENT_PRIVATE", 2);
-
-/**
- * Implements hook_help().
- */
-function eldrich_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_name) {
-    // Main module help for the eldrich module.
-    case 'help.page.eldrich':
-      $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Utils, callbacks, and more') . '</p>';
-      return $output;
-
-    default:
-  }
-}
-
 function eldrich_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
   // when Weapon Instances and Armor Instances are saved, title them.
   // Weapon Pattern: Short Weapon Name (Mod Shortnames) with [Smart Ammo features] Ammo Name

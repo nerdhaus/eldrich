@@ -335,7 +335,7 @@ class WeaponCalculator {
 
     if ($entity->hasField('field_morph') && $morph_instance = $entity->field_morph->entity) {
       if ($morph_model = $morph_instance->field_model->entity) {
-        if ($morph_model->field_gear_type->entity->label() != 'Eidelon') {
+        if (!empty($morph_model->field_stats->dur)) {
           $item = static::initWeaponRecord();
           $item['build']['weapon'] = [
             '#plain_text' => 'Unarmed strike',
