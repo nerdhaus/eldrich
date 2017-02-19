@@ -62,8 +62,11 @@ content:
     label: inline
     settings:
       link: false
+      length: full
+      location: suffix
+      template: ' ({{ quantity }})'
     third_party_settings: {  }
-    type: entity_reference_label
+    type: eldrich_popup_formatter
 hidden:
   field_gm_only: true
   links: true

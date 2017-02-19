@@ -9,6 +9,7 @@ dependencies:
     - node.type.location
     - node.type.npc
     - node.type.source
+    - node.type.strain
     - system.menu.main
   module:
     - eva
@@ -1047,6 +1048,108 @@ display:
         operator: AND
         groups:
           1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  strains:
+    display_plugin: page
+    id: strains
+    display_title: Strains
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: world/strains
+      menu:
+        type: normal
+        title: 'Virus Strains'
+        description: ''
+        expanded: false
+        parent: eldrich.world
+        weight: -47
+        context: '0'
+        menu_name: main
+      display_description: ''
+      title: 'Exsurgent Strains'
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+        header: false
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            strain: strain
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "The exsurgent virus is amazingly effective and infectious. As an information virus, it is highly intelligent and adaptive, able to mutate into new forms. Much like certain viruses are able to cross species boundaries or change their vector from contact to airborne, it is also a self-morphing omnivirus, capable of altering itself and its transmission vectors to bypass infection safeguards. Like a retrovirus that incorporates genetic information into the genome of the target cell to subvert the cell to do its bidding, the exsurgent virus does the same but on a more complex level. It is also known to rewrite a host’s neural code in a similar manner, in effect restructuring the target’s mind and personality.\n\nWhile it began as a digital computer virus—the manner in which it infected the TITANs—it has transformed to be communicable via at least three other forms: biological nanovirus, nanoplague, and basilisk hack."
+            format: basic_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:

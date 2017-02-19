@@ -1,0 +1,22 @@
+uuid: 407feda7-531d-4f48-a775-ea2b6ff43c50
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: strain_nodes
+label: 'Strain Nodes'
+type: 'canonical_entities:node'
+pattern: 'world/strains/[node:title]'
+selection_criteria:
+  5210d0dd-6808-4bca-a039-f22033794f8d:
+    id: node_type
+    bundles:
+      strain: strain
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 5210d0dd-6808-4bca-a039-f22033794f8d
+selection_logic: and
+weight: -5
+relationships: {  }

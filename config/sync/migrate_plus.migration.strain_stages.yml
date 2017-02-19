@@ -1,6 +1,10 @@
-id: stages
+uuid: 64434edb-2b98-4d64-a76f-0638fd380d3b
+langcode: en
+status: true
+dependencies: {  }
+id: strain_stages
 migration_tags: null
-migration_group: eldrich_data
+migration_group: eldrich_core
 label: 'Strain stages'
 source:
   plugin: csv
