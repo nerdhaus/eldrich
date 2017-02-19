@@ -6,8 +6,32 @@ dependencies:
     - field.field.user.user.field_personal_links
     - field.field.user.user.field_profile
     - field.field.user.user.user_picture
+    - image.style.thumbnail
   module:
+    - field_group
+    - image
+    - link
+    - path
+    - text
     - user
+third_party_settings:
+  field_group:
+    group_settings:
+      children:
+        - account
+        - language
+        - timezone
+        - path
+        - google_analytics
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
+      label: Settings
 _core:
   default_config_hash: LLAieeozVsoZDb-2PbFxRJpQqnKmpR7-4OoRJnduz-U
 id: user.user.default
@@ -16,21 +40,47 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 0
     settings: {  }
     third_party_settings: {  }
   contact:
     weight: 5
+  field_personal_links:
+    type: link_default
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_profile:
+    type: text_textarea
+    weight: 2
+    settings:
+      rows: 8
+      placeholder: ''
+    third_party_settings: {  }
+  google_analytics:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
   language:
-    weight: 0
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
     settings: {  }
     third_party_settings: {  }
   timezone:
-    weight: 6
+    weight: 2
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_personal_links: true
-  field_profile: true
-  google_analytics: true
-  user_picture: true
+  user_picture:
+    type: image_image
+    weight: 1
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings: {  }
+hidden: {  }

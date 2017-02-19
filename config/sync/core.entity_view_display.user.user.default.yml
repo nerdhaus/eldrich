@@ -19,7 +19,7 @@ bundle: user
 mode: default
 content:
   field_personal_links:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       trim_length: 80
@@ -30,17 +30,17 @@ content:
     third_party_settings: {  }
     type: link
   field_profile:
-    weight: 2
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   user_content_characters:
-    weight: 4
+    weight: 3
     settings: {  }
     third_party_settings: {  }
   user_content_content:
-    weight: 5
+    weight: 4
     settings: {  }
     third_party_settings: {  }
   user_content_entity_view_1:
@@ -49,7 +49,7 @@ content:
     third_party_settings: {  }
   user_picture:
     type: image_url
-    weight: 1
+    weight: 0
     label: above
     settings:
       url_type: ''

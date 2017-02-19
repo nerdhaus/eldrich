@@ -5,7 +5,6 @@ module:
   block_class: 0
   block_content: 0
   block_visibility_groups: 0
-  block_visibility_groups_admin: 0
   breakpoint: 0
   ckeditor: 0
   comment: 0
@@ -49,12 +48,7 @@ module:
   link: 0
   menu_ui: 0
   metatag: 0
-  metatag_facebook: 0
-  metatag_mobile: 0
   metatag_open_graph: 0
-  metatag_open_graph_products: 0
-  metatag_twitter_cards: 0
-  metatag_verification: 0
   migrate: 0
   migrate_plus: 0
   migrate_source_csv: 0
@@ -64,14 +58,12 @@ module:
   options: 0
   page_cache: 0
   path: 0
-  prepopulate: 0
   quick_pages: 0
   range: 0
   replicate: 0
   search: 0
   shortcut: 0
   simple_block: 0
-  smart_trim: 0
   subpathauto: 0
   system: 0
   system_stream_wrapper: 0
@@ -87,7 +79,6 @@ module:
   verf: 0
   views_taxonomy_term_name_depth: 0
   views_ui: 0
-  viewsreference: 0
   menu_link_content: 1
   pathauto: 1
   views: 10

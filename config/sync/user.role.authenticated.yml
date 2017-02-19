@@ -22,3 +22,5 @@ permissions:
   11: 'change own username'
   12: 'access user profiles'
   13: 'edit own pc content'
+  14: 'create pc content'
+  15: 'delete own pc content'
