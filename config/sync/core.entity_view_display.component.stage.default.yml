@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - eck.eck_type.component.stage
+    - field.field.component.stage.field_delta
     - field.field.component.stage.field_description
-    - field.field.component.stage.field_stage
+    - field.field.component.stage.field_name
     - field.field.component.stage.field_stress_incurred
     - field.field.component.stage.field_timeframe
+    - field.field.component.stage.field_virus
   module:
-    - range
+    - integer_time
     - text
 id: component.stage.default
 targetEntityType: component
@@ -18,27 +20,27 @@ mode: default
 content:
   field_description:
     weight: 2
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_stage:
-    weight: 3
-    label: above
+  field_name:
+    weight: 0
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   field_stress_incurred:
-    weight: 0
-    label: above
+    weight: 3
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   field_timeframe:
     weight: 1
-    label: above
+    label: inline
     settings:
       range_separator: '-'
       thousand_separator: ''
@@ -46,5 +48,7 @@ content:
       from_prefix_suffix: false
       to_prefix_suffix: false
     third_party_settings: {  }
-    type: range_integer
-hidden: {  }
+    type: integer_range_time_field_formatter
+hidden:
+  field_delta: true
+  field_virus: true

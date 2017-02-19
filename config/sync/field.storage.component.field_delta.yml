@@ -1,0 +1,20 @@
+uuid: 90d29ce9-ba34-4cf9-a1d0-a3e14afc0c14
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: component.field_delta
+field_name: field_delta
+entity_type: component
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

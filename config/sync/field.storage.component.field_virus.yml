@@ -1,11 +1,11 @@
-uuid: d72c0b03-79f3-42e6-9c56-dd8e861fdeef
+uuid: f9fcd263-ae2f-40d3-a0f6-8bf2be452e53
 langcode: en
 status: true
 dependencies:
   module:
     - eck
-id: component.field_stage
-field_name: field_stage
+id: component.field_virus
+field_name: field_virus
 entity_type: component
 type: string
 settings:

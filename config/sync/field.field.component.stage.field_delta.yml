@@ -1,0 +1,23 @@
+uuid: 94a85a98-9471-495e-b272-1c8156a3672e
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.stage
+    - field.storage.component.field_delta
+id: component.stage.field_delta
+field_name: field_delta
+entity_type: component
+bundle: stage
+label: Delta
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

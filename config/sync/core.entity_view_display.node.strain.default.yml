@@ -27,7 +27,7 @@ content:
     type: text_default
   field_infectiousness:
     weight: 2
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
@@ -40,7 +40,7 @@ content:
     type: entity_reference_quantity_label
   field_sources:
     weight: 103
-    label: above
+    label: inline
     settings:
       link: true
       location: suffix
