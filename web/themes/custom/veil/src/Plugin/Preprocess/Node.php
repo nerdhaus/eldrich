@@ -53,11 +53,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
     $this->prepChildFields($node, $variables);
 
     // Add some niceties for chars and mobs
-    $this->buildCharacterLinks($node, $variables);
-
-    if ($node->bundle() == 'campaign') {
-      $this->addCampaignTools($node, $variables);
-    }
+    $this->buildNodeActions($node, $variables);
   }
 
   public function prepChildFields(NodeInterface $node, Variables $variables) {
@@ -281,6 +277,62 @@ class Node extends PreprocessBase implements PreprocessInterface {
           'class' => ['btn', 'btn-default']
         ]
       ];
+    }
+  }
+
+  public function buildNodeActions(NodeInterface $node, Variables $variables) {
+    $actions = [];
+
+    if ($node->bundle() == 'campaign') {
+      foreach ($node->field_pcs as $field) {
+        $nids[$field->target_id] = $field->target_id;
+      }
+      if (count($nids)) {
+        $actions['initiative'] = [
+          '#type' => 'link',
+          '#title' => t('Initiative'),
+          '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_initiative', ['nodes' => join(',', $nids)]),
+          '#attributes' => [
+            'class' => ['btn', 'btn-default']
+          ]
+        ];
+        $actions['skillsheet'] = [
+          '#type' => 'link',
+          '#title' => t('Skill Table'),
+          '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_skillsheet', ['nodes' => join(',', $nids)]),
+          '#attributes' => [
+            'class' => ['btn', 'btn-default']
+          ]
+        ];
+      }
+    }
+
+    if (in_array($node->bundle(), ['npc', 'pc'])) {
+      $actions['charsheet'] = [
+        '#type' => 'link',
+        '#title' => t('Charsheet'),
+        '#url' => Url::fromRoute('eldrich.charsheet', ['node' => $node->id()]),
+        '#attributes' => [
+          'class' => ['btn', 'btn-default']
+        ]
+      ];
+    }
+
+    if ($variables->is_character or $variables->is_mob) {
+      $actions['scratchpad'] = [
+        '#type' => 'link',
+        '#title' => t('Scratchpad'),
+        '#url' => Url::fromRoute('eldrich.combatcard', ['node' => $node->id()]),
+        '#attributes' => [
+          'class' => ['btn', 'btn-default']
+        ]
+      ];
+    }
+
+    if (count($actions)) {
+      $actions['#type'] = 'actions';
+      $actions['#attributes'] = ['class' => ['btn-group']];
+      $variables->actions = $actions;
     }
   }
 }

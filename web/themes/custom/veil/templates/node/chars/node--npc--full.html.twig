@@ -28,9 +28,10 @@
     <ul class="list-unstyled list-hanging">
       {{ block('callout_content') }}
       {% if content.field_sources|field_value %}
-        <p><strong>Source:</strong> {{ content.field_sources|field_value|safe_join(', ') }}</p>
+        <li><strong>Source:</strong> {{ content.field_sources|field_value|safe_join(', ') }}</li>
       {% endif %}
-      {% if charsheet_link %}<p>{{ charsheet_link }}</p>{% endif %}
+    </ul>
+    {{ actions }}
   </aside>
 {% endblock %}
 
