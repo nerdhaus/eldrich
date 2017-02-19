@@ -13,11 +13,10 @@ effects:
     weight: 1
     data:
       crop_type: strip
-  d9890769-0b1d-4fd2-9588-4d1651c5b438:
-    uuid: d9890769-0b1d-4fd2-9588-4d1651c5b438
-    id: image_scale
-    weight: 2
+  a0bf10d2-3cd1-417f-b8c5-00e88ef1e745:
+    uuid: a0bf10d2-3cd1-417f-b8c5-00e88ef1e745
+    id: image_scale_and_crop
+    weight: 3
     data:
       width: 1200
       height: 300
-      upscale: true
