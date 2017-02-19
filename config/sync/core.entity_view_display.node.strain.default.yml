@@ -4,16 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.strain.field_description
+    - field.field.node.strain.field_gm_only
     - field.field.node.strain.field_infectiousness
-    - field.field.node.strain.field_privacy
     - field.field.node.strain.field_sources
     - field.field.node.strain.field_stages
-    - field.field.node.strain.field_strain_rating
     - field.field.node.strain.field_vectors
     - node.type.strain
   module:
     - eldrich
-    - options
     - text
     - user
 id: node.strain.default
@@ -33,12 +31,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_privacy:
-    weight: 104
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
   field_source:
     weight: 102
     label: above
@@ -73,5 +65,5 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
 hidden:
-  field_strain_rating: true
+  field_gm_only: true
   links: true

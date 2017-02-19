@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_personal_links
+    - field.field.user.user.field_profile
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -25,4 +27,8 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
+  field_personal_links: true
+  field_profile: true
   member_for: true
+  user_content_characters: true
+  user_content_content: true

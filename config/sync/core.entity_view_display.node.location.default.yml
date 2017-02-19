@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.location.field_description
     - field.field.node.location.field_distance
+    - field.field.node.location.field_gm_only
     - field.field.node.location.field_languages
     - field.field.node.location.field_location_type
     - field.field.node.location.field_parent_location
@@ -35,6 +36,15 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+  field_gm_only:
+    weight: 12
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_languages:
     weight: 9
     label: inline

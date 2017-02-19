@@ -1,0 +1,99 @@
+<?php
+
+/**
+ * @file
+ * Hides nodes from normal users if they're marked as GM-Only.
+ *
+ * This module's functionality depends on the following state variables:
+ * - gmo.no_access_uid: Used in NodeQueryAlterTest to enable the
+ *   node_access_all grant realm.
+ *
+ * @see gmo_node_grants()
+ */
+
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\node\NodeTypeInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_node_grants().
+ *
+ * Provides three grant realms:
+ * - gmo_author: Grants users view, update, and delete privileges
+ *   on nodes they have authored. Users receive a group ID matching their user
+ *   ID on this realm.
+ * - gmo: Grants users view privileges when they have the
+ *   'access gm content' permission. Users with this permission receive a
+ *   group IDs for the realm 1337.
+ *
+ * @see gmo.permissions.yml
+ * @see gmo_node_access_records()
+ */
+function gmo_node_grants($account, $op) {
+  $grants = array();
+  $grants['gmo_author'] = array($account->id());
+  if ($op == 'view' && $account->hasPermission('access gm content', $account)) {
+    $grants['gmo'] = array(1337);
+  }
+  return $grants;
+}
+
+/**
+ * Implements hook_node_access_records().
+ *
+ * By default, records are written for all nodes. When the
+ * 'gmo.private' state variable is set to TRUE, records
+ * are only written for nodes with a "private" property set, which causes the
+ * Node module to write the default global view grant for nodes that are not
+ * marked private.
+ *
+ * @see \Drupal\node\Tests\NodeAccessBaseTableTest::setUp()
+ * @see gmo_node_grants()
+ * @see gmo.permissions.yml
+ */
+function gmo_node_access_records(NodeInterface $node) {
+  $grants = array();
+
+  if ($node->hasField('field_gm_only') && $node->field_gm_only->value) {
+    $grants[] = array(
+      'realm' => 'gmo',
+      'gid' => 1337,
+      'grant_view' => 1,
+      'grant_update' => 0,
+      'grant_delete' => 0,
+      'priority' => 0,
+    );
+    // For the author realm, the group ID is equivalent to a user ID, which
+    // means there are many many groups of just 1 user.
+    $grants[] = array(
+      'realm' => 'gmo_author',
+      'gid' => $node->getOwnerId(),
+      'grant_view' => 1,
+      'grant_update' => 1,
+      'grant_delete' => 1,
+      'priority' => 0,
+    );
+  }
+
+  return $grants;
+}
+
+/**
+ * Implements hook_node_access().
+ */
+function gmo_node_access(NodeInterface $node, $op, AccountInterface $account) {
+  // Is the current user a GM or the author?
+  if ($node->hasField('field_gm_only')) {
+    if (!$account->hasPermission('access gm content')
+      && $account->id() != $node->getOwner()->id()
+      && ($node->field_gm_only->value)
+    ) {
+      return AccessResult::forbidden()->setCacheMaxAge(0);
+    }
+  }
+  // No opinion.
+  return AccessResult::neutral()->setCacheMaxAge(0);
+}

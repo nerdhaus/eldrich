@@ -1,0 +1,21 @@
+uuid: f5376c01-04b0-4db6-b118-dd488f6505bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile
+  module:
+    - text
+    - user
+id: user.user.field_profile
+field_name: field_profile
+entity_type: user
+bundle: user
+label: Profile
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

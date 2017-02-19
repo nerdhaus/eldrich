@@ -11,3 +11,4 @@ permissions:
   - 'create npc content'
   - 'create pc content'
   - 'use text format basic_html'
+  - 'access gm content'

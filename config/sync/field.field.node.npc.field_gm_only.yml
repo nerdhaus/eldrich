@@ -1,0 +1,23 @@
+uuid: eb239590-5004-4363-a16a-12e5fc09b79f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gm_only
+    - node.type.npc
+id: node.npc.field_gm_only
+field_name: field_gm_only
+entity_type: node
+bundle: npc
+label: 'GM Only'
+description: 'If checked, this content will be hidden from users who aren''t logged in and running a game. It allows you to share in-progress campaign materials with other GMs, while keeping it secret from your players.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

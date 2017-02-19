@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.strain.field_infectiousness
     - field.field.node.strain.field_sources
     - field.field.node.strain.field_stages
-    - field.field.node.strain.field_strain_rating
     - field.field.node.strain.field_vectors
     - node.type.strain
   module:
@@ -49,6 +48,5 @@ hidden:
   field_infectiousness: true
   field_privacy: true
   field_stages: true
-  field_strain_rating: true
   field_vectors: true
   links: true

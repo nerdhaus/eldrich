@@ -7,12 +7,12 @@ dependencies:
     - field.field.node.npc.field_equipped_armor
     - field.field.node.npc.field_equipped_weapons
     - field.field.node.npc.field_gear
+    - field.field.node.npc.field_gm_only
     - field.field.node.npc.field_identity
     - field.field.node.npc.field_image
     - field.field.node.npc.field_morph
     - field.field.node.npc.field_motivations
     - field.field.node.npc.field_owned_blueprints
-    - field.field.node.npc.field_privacy
     - field.field.node.npc.field_quote
     - field.field.node.npc.field_roleplay_notes
     - field.field.node.npc.field_skills
@@ -119,8 +119,8 @@ content:
 hidden:
   field_equipped_armor: true
   field_equipped_weapons: true
+  field_gm_only: true
   field_identity: true
-  field_privacy: true
   field_skills: true
   field_stats: true
   links: true

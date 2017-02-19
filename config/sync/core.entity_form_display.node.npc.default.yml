@@ -7,12 +7,12 @@ dependencies:
     - field.field.node.npc.field_equipped_armor
     - field.field.node.npc.field_equipped_weapons
     - field.field.node.npc.field_gear
+    - field.field.node.npc.field_gm_only
     - field.field.node.npc.field_identity
     - field.field.node.npc.field_image
     - field.field.node.npc.field_morph
     - field.field.node.npc.field_motivations
     - field.field.node.npc.field_owned_blueprints
-    - field.field.node.npc.field_privacy
     - field.field.node.npc.field_quote
     - field.field.node.npc.field_roleplay_notes
     - field.field.node.npc.field_skills
@@ -118,6 +118,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
+  field_gm_only:
+    weight: 28
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_identity:
     weight: 13
     settings:
@@ -170,11 +176,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
-  field_privacy:
-    weight: 26
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
   field_quote:
     weight: 1
     settings:

@@ -9,12 +9,12 @@ dependencies:
     - field.field.node.creature.field_description
     - field.field.node.creature.field_equipped_weapons
     - field.field.node.creature.field_gear
+    - field.field.node.creature.field_gm_only
     - field.field.node.creature.field_image
     - field.field.node.creature.field_mobility_system
     - field.field.node.creature.field_movement_speed
     - field.field.node.creature.field_native_abilities
     - field.field.node.creature.field_native_attacks
-    - field.field.node.creature.field_privacy
     - field.field.node.creature.field_skills
     - field.field.node.creature.field_sleights
     - field.field.node.creature.field_sources
@@ -90,6 +90,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
+  field_gm_only:
+    weight: 27
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_image:
     weight: 22
     settings:
@@ -137,11 +143,6 @@ content:
       collapsed: false
     third_party_settings: {  }
     type: inline_entity_form_simple
-  field_privacy:
-    weight: 21
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
   field_skills:
     weight: 12
     settings: {  }

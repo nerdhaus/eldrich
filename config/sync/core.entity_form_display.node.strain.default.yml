@@ -4,11 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.strain.field_description
+    - field.field.node.strain.field_gm_only
     - field.field.node.strain.field_infectiousness
-    - field.field.node.strain.field_privacy
     - field.field.node.strain.field_sources
     - field.field.node.strain.field_stages
-    - field.field.node.strain.field_strain_rating
     - field.field.node.strain.field_vectors
     - node.type.strain
   module:
@@ -33,6 +32,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_gm_only:
+    weight: 35
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_infectiousness:
     weight: 8
     settings:
@@ -40,11 +45,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
-  field_privacy:
-    weight: 35
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
   field_source:
     weight: 32
     settings:
@@ -75,12 +75,6 @@ content:
       allow_existing: false
     third_party_settings: {  }
     type: inline_entity_form_complex
-  field_strain_rating:
-    weight: 9
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
   field_vectors:
     weight: 6
     settings: {  }

@@ -1,16 +1,14 @@
-uuid: 7f1f2ad0-69f5-4624-ac15-657dec4519bf
+uuid: 763c973e-71d3-44c5-8aa3-530082356837
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_strain_rating
-field_name: field_strain_rating
+id: node.field_gm_only
+field_name: field_gm_only
 entity_type: node
-type: integer
-settings:
-  unsigned: false
-  size: normal
+type: boolean
+settings: {  }
 module: core
 locked: false
 cardinality: 1

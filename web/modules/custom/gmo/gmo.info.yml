@@ -1,0 +1,5 @@
+name: 'GM Content'
+type: module
+description: 'Hides sensitive material from players.'
+core: 8.x
+package: Eldrich

@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.creature.field_movement_speed
     - field.field.node.creature.field_native_abilities
     - field.field.node.creature.field_native_attacks
-    - field.field.node.creature.field_privacy
     - field.field.node.creature.field_skills
     - field.field.node.creature.field_sleights
     - field.field.node.creature.field_sources
@@ -50,7 +49,6 @@ hidden:
   field_movement_speed: true
   field_native_abilities: true
   field_native_attacks: true
-  field_privacy: true
   field_skills: true
   field_sleights: true
   field_sources: true

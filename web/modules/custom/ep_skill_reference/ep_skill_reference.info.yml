@@ -2,4 +2,4 @@ name: Eclipse Phase Skill Reference
 type: module
 description: Reference field for EP Skills with extra properties for skill values
 core: 8.x
-package: Eclipse Phase
+package: Eldrich

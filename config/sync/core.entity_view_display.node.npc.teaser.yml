@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.npc.field_morph
     - field.field.node.npc.field_motivations
     - field.field.node.npc.field_owned_blueprints
-    - field.field.node.npc.field_privacy
     - field.field.node.npc.field_quote
     - field.field.node.npc.field_roleplay_notes
     - field.field.node.npc.field_skills
@@ -56,7 +55,6 @@ hidden:
   field_morph: true
   field_motivations: true
   field_owned_blueprints: true
-  field_privacy: true
   field_quote: true
   field_roleplay_notes: true
   field_skills: true
