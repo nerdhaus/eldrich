@@ -20,8 +20,6 @@ source:
     -
       infectiousness: Infectiousness
     -
-      rating: Rating
-    -
       book: Book
   keys:
     - title
@@ -44,19 +42,27 @@ process:
     plugin: default_value
     default_value: basic_html
   field_vectors:
-    plugin: entity_lookup_plus
-    source: vectors
-    value_key: title
-    bundle_key: type
-    bundle: vector
-    entity_type: lookup
+    -
+      plugin: skip_on_empty
+      method: process
+      source: vectors
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_lookup_plus
+      value_key: title
+      fallback_value_key: field_lookup_code
+      bundle_key: type
+      bundle: vector
+      entity_type: lookup
   field_infectiousness/value:
     plugin: line_breaker
     source: infectiousness
   field_infectiousness/format:
     plugin: default_value
     default_value: basic_html
-  field_native_attacks:
+  field_stages:
     plugin: native_entities
     type: native_attack
     field: field_virus

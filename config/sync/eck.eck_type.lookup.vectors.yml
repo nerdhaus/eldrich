@@ -1,9 +1,0 @@
-uuid: c3301067-057f-4c53-baec-37bddc636146
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.lookup
-name: 'Infection Vectors'
-type: vectors
-description: ''

@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - eck.eck_type.lookup.vectors
+    - eck.eck_type.lookup.vector
     - field.storage.node.field_vectors
     - node.type.strain
 id: node.strain.field_vectors
@@ -20,7 +20,7 @@ settings:
   handler: 'default:lookup'
   handler_settings:
     target_bundles:
-      vectors: vectors
+      vector: vector
     sort:
       field: field_weight
       direction: ASC

@@ -4,6 +4,6 @@ status: true
 dependencies:
   config:
     - eck.eck_entity_type.lookup
-name: Vector
+name: 'Infection Vector'
 type: vector
 description: 'A transmission vector for the Exsurgent virus'
