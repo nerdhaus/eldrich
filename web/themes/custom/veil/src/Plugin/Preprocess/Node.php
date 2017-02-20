@@ -307,7 +307,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
       }
     }
 
-    if (in_array($node->bundle(), ['npc', 'pc'])) {
+    if ($variables->is_character) {
       $actions['charsheet'] = [
         '#type' => 'link',
         '#title' => t('Charsheet'),
@@ -328,6 +328,17 @@ class Node extends PreprocessBase implements PreprocessInterface {
         ]
       ];
     }
+
+    $type_id = $node->bundle();
+    $actions['clone'] = [
+      '#access' => \Drupal::currentUser()->hasPermission("create $type_id content"),
+      '#type' => 'link',
+      '#title' => t('Clone'),
+      '#url' => Url::fromRoute('eldrich.combatcard', ['node' => $node->id()]),
+      '#attributes' => [
+        'class' => ['btn', 'btn-default']
+      ]
+    ];
 
     if (count($actions)) {
       $actions['#type'] = 'actions';

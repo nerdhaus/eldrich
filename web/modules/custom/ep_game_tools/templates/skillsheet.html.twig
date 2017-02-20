@@ -8,34 +8,224 @@
  * - skills:
  */
 #}
+{{ attach_library('veil/bootstrap-sortable') }}
+{% set aptitudes = {'cog': 'Cognition', 'coo': 'Coordination', 'int': 'Intuition', 'ref': 'Reflexes', 'som': 'Somatics', 'wil': 'Willpower'} %}
+{% set delete = '<small><span class="glyphicon glyphicon-trash delete-button" aria-hidden="true"></span></small>' %}
+
+<div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="Filter Skills">
+
+  {# <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#filterModal">Filter Skills</button> #}
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Skill Visibility</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="col-sm-6">
+              <label class="checkbox"><input checked type="checkbox" id="aptitudeToggle" value="aptitude"> Aptitudes</label>
+              <label class="checkbox"><input checked type="checkbox" id="resleevingToggle" value="resleeving"> Resleeving Checks</label>
+              <label class="checkbox"><input checked type="checkbox" id="miscToggle" value="misc"> Misc. Tests</label>
+            </div>
+            <div class="col-sm-6">
+              <label class="checkbox"><input checked type="checkbox" id="combatToggle" value="combat"> Combat Skills</label>
+              <label class="checkbox"><input checked type="checkbox" id="mentalToggle" value="mental"> Mental Skills</label>
+              <label class="checkbox"><input checked type="checkbox" id="physicalToggle" value="physical"> Physical Skills</label>
+              <label class="checkbox"><input checked type="checkbox" id="psiToggle" value="psi"> Psi Skills</label>
+              <label class="checkbox"><input checked type="checkbox" id="socialToggle" value="social"> Social Skills</label>
+              <label class="checkbox"><input checked type="checkbox" id="technicalToggle" value="technical"> Technical Skills</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="col-xs-12">
   <div class="panel panel-default">
-    <table class="table table-eldrich table-condensed table-bordered pc-skills table-striped table-hover">
+    <table class="table table-eldrich table-condensed table-bordered pc-skills sortable table-striped table-hover">
       <thead>
-        <tr>
-          <td>Skill</td>
-          {% for character in data %}
-          <td>{{ character.name }}</td>
-          {% endfor %}
-        </tr>
+      <th>Type</th>
+      <th>Skill</th>
+        {% for character in data %}
+        <th class="character-name">{{ character.name }}</th>
+        {% endfor %}
       </thead>
       <tbody>
+
       {% for id, skill in skills %}
-        <tr>
+        <tr data-type="{{ skill.field_skill_type.entity.label|lower }}">
+          <td>{{ skill.field_skill_type.entity.label }}</td>
           <td>{{ skill|popup }}</td>
         {% for character in data %}
           {% set val = character.skills[id] %}
           <td
             data-skill="{{ val.conditional.total }}"
             data-aptitude="{{ skill.aptitude.label|upper }}"
-            data-type="{{ skill.type.label|lower }}"
             class="{{ (val.conditional.total < 40) ? 'skill-bad' : '' }}{{ (val.conditional.total > 60) ? ' skill-great' : '' }}">
             {{ val.constant.total }}{% if val.conditional.total != val.constant.total %} ({{ val.conditional.total }}){% endif %}
           </td>
         {% endfor %}
         </tr>
       {% endfor %}
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel panel-default">
+    <table class="table table-eldrich table-condensed table-bordered pc-skills sortable table-striped table-hover">
+      <thead>
+        <th>Type</th>
+        <th>Skill</th>
+        {% for character in data %}
+          <th class="character-name">{{ character.name }}</th>
+        {% endfor %}
+        </thead>
+        <tbody>
+
+        {% for key, label in aptitudes %}
+          <tr data-type="aptitude">
+            <td>Aptitude</td>
+            <td>{{ label }}</td>
+            {% for character in data %}
+              {% set val = character.stats.total %}
+              <td
+                class="{{ (val.conditional[key] < 15) ? 'skill-bad' : '' }}{{ (val.conditional[key] > 20) ? ' skill-great' : '' }}">
+                {{ val.constant[key] }}{% if val.conditional[key] != val.constant[key] %} ({{ val.conditional[key] }}){% endif %}
+              </td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+
+        <tr data-type="misc">
+          <td>Misc Tests</td>
+          <td>Brute Force</td>
+          {% for character in data %}
+            {% set const = character.stats.total.constant.som * 3 %}
+            {% set cond = character.stats.total.conditional.som * 3 %}
+            <td
+              class="{{ (cond < 30) ? 'skill-bad' : '' }}{{ (cond > 60) ? ' skill-great' : '' }}">
+              {{ const }}{% if const != cond %} ({{ cond }}){% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+        <tr data-type="misc">
+          <td>Misc Tests</td>
+          <td>Catching Objects</td>
+          {% for character in data %}
+            {% set const = character.stats.total.constant.ref + (character.stats.total.constant.coo * 2) %}
+            {% set cond = character.stats.total.conditional.ref + (character.stats.total.conditional.coo * 2) %}
+            <td
+              class="{{ (cond < 30) ? 'skill-bad' : '' }}{{ (cond > 60) ? ' skill-great' : '' }}">
+              {{ const }}{% if const != cond %} ({{ cond }}){% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+        <tr data-type="misc">
+          <td>Misc Tests</td>
+          <td>Resolve / Stress</td>
+          {% for character in data %}
+            {% set const = character.stats.total.constant.wil * 3 %}
+            {% set cond = character.stats.total.conditional.wil * 3 %}
+            <td
+              class="{{ (cond < 30) ? 'skill-bad' : '' }}{{ (cond > 60) ? ' skill-great' : '' }}">
+              {{ const }}{% if const != cond %} ({{ cond }}){% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+        <tr data-type="misc">
+          <td>Misc Tests</td>
+          <td>Escape Artist</td>
+          {% for character in data %}
+            {% set const = character.stats.total.constant.som + character.stats.total.constant.coo %}
+            {% set cond = character.stats.total.conditional.som + character.stats.total.conditional.coo %}
+            <td
+              class="{{ (cond < 30) ? 'skill-bad' : '' }}{{ (cond > 60) ? ' skill-great' : '' }}">
+              {{ const }}{% if const != cond %} ({{ cond }}){% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+        <tr data-type="misc">
+          <td>Misc Tests</td>
+          <td>Brainstorming</td>
+          {% for character in data %}
+            {% set const = character.stats.total.constant.int * 3 %}
+            {% set cond = character.stats.total.conditional.int * 3 %}
+            <td
+              class="{{ (cond < 30) ? 'skill-bad' : '' }}{{ (cond > 60) ? ' skill-great' : '' }}">
+              {{ const }}{% if const != cond %} ({{ cond }}){% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+        <tr data-type="misc">
+          <td>Misc Tests</td>
+          <td>Memory Recall</td>
+          {% for character in data %}
+            {% set const = character.stats.total.constant.cog * 3 %}
+            {% set cond = character.stats.total.conditional.cog * 3 %}
+            <td
+              class="{{ (cond < 30) ? 'skill-bad' : '' }}{{ (cond > 60) ? ' skill-great' : '' }}">
+              {{ const }}{% if const != cond %} ({{ cond }}){% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+        <tr data-type="misc">
+          <td>Misc Tests</td>
+          <td>Resist Basilisk</td>
+          {% for character in data %}
+            {% set const = character.stats.total.constant.cog + character.stats.total.constant.int + character.stats.total.constant.sav %}
+            {% set cond = character.stats.total.conditional.cog + character.stats.total.conditional.int + character.stats.total.conditional.sav  %}
+            <td
+              class="{{ (cond < 30) ? 'skill-bad' : '' }}{{ (cond > 60) ? ' skill-great' : '' }}">
+              {{ const }}{% if const != cond %} ({{ cond }}){% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+
+        <tr data-type="resleeving">
+          <td>Resleeving</td>
+          <td>Integration</td>
+          {% for character in data %}
+            {% set const = character.stats.mind.constant.som * 3 %}
+            {% set cond = character.stats.mind.conditional.som * 3 %}
+            <td
+              class="{{ (const < 45) ? 'skill-bad' : '' }}{{ (cond > 60) ? ' skill-great' : '' }}">
+              {{ const }}{% if cond != const %} ({{ cond }}){% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+        <tr data-type="resleeving">
+          <td>Resleeving</td>
+          <td>Alienation</td>
+          {% for character in data %}
+            {% set const = character.stats.total.constant.int * 3 %}
+            {% set cond = character.stats.total.conditional.int * 3 %}
+            <td
+              class="{{ (const < 45) ? 'skill-bad' : '' }}{{ (cond > 60) ? ' skill-great' : '' }}">
+              {{ const }}{% if cond != const %} ({{ cond }}){% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+        <tr data-type="resleeving">
+          <td>Resleeving</td>
+          <td>Continuity</td>
+          {% for character in data %}
+            {% set const = character.stats.total.constant.wil * 3 %}
+            {% set cond = character.stats.total.conditional.wil * 3 %}
+            <td
+              class="{{ (const < 45) ? 'skill-bad' : '' }}{{ (cond > 60) ? ' skill-great' : '' }}">
+              {{ const }}{% if cond != const %} ({{ cond }}){% endif %}
+            </td>
+          {% endfor %}
+        </tr>
       </tbody>
     </table>
   </div>
