@@ -59,6 +59,7 @@ content:
     type: eldrich_citation_formatter
 hidden:
   field_distance: true
+  field_gm_only: true
   field_languages: true
   field_parent_location: true
   field_short_name: true

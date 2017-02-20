@@ -49,6 +49,7 @@ content:
     third_party_settings: {  }
     type: eldrich_citation_formatter
 hidden:
+  field_gm_only: true
   field_locations: true
   field_memes: true
   field_parent_faction: true

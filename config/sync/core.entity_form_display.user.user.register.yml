@@ -48,6 +48,11 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
   timezone:
     weight: 6
     settings: {  }

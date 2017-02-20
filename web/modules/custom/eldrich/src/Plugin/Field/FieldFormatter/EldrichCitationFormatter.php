@@ -112,8 +112,8 @@ class EldrichCitationFormatter extends EntityReferenceQuantityLabelFormatter {
       // If the link is to be displayed and the entity has a uri, display a
       // link.
       if ($output_as_link && !$entity->isNew()) {
-        if ($destination == 'remote' && !empty($entity->field_home_page)) {
-          $uri = $entity->field_home_page->uri;
+        if ($destination == 'remote' && !empty($entity->field_home)) {
+          $uri = $entity->field_home->uri;
         }
         elseif (($destination == 'list') && ($entity->bundle() == 'source')) {
           $uri = Url::fromRoute('view.world.books', [], ['fragment' => $entity->field_code->value]);

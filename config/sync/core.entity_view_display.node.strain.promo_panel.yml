@@ -45,6 +45,7 @@ content:
       length: full
     third_party_settings: {  }
 hidden:
+  field_gm_only: true
   field_infectiousness: true
   field_privacy: true
   field_stages: true

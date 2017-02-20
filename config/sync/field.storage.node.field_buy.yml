@@ -1,15 +1,16 @@
-uuid: 8a6edf69-5f0f-425a-b0b2-ca72681b358d
+uuid: f8f93992-79e7-4d26-a881-ce6d622c5949
 langcode: en
 status: true
 dependencies:
   module:
+    - link
     - node
-id: node.field_is_canon
-field_name: field_is_canon
+id: node.field_buy
+field_name: field_buy
 entity_type: node
-type: boolean
+type: link
 settings: {  }
-module: core
+module: link
 locked: false
 cardinality: 1
 translatable: true

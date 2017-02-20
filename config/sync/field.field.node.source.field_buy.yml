@@ -1,17 +1,17 @@
-uuid: 14667ac8-2d7f-48b5-8719-d63d5bb1b775
+uuid: f7a4a253-4322-4a63-86fc-d402aa6e7e0d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_home_page
+    - field.storage.node.field_buy
     - node.type.source
   module:
     - link
-id: node.source.field_home_page
-field_name: field_home_page
+id: node.source.field_buy
+field_name: field_buy
 entity_type: node
 bundle: source
-label: 'Home Page'
+label: Buy
 description: ''
 required: false
 translatable: false
