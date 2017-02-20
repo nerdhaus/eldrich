@@ -282,6 +282,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
 
   public function buildNodeActions(NodeInterface $node, Variables $variables) {
     $actions = [];
+    $nids = [];
 
     if ($node->bundle() == 'campaign') {
       foreach ($node->field_pcs as $field) {
