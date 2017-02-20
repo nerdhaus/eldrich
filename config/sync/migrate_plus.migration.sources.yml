@@ -53,13 +53,7 @@ process:
     bundle_key: type
     bundle: source_type
     entity_type: lookup
-  field_is_canon:
-    plugin: static_map
-    source: canon
-    map:
-      'TRUE': 1
-      'FALSE': 0
-    default_value: 0
+  field_weight: weight
   field_description/value:
     plugin: line_breaker
     source: description
