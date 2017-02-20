@@ -33,10 +33,10 @@
     </ul>
     {{ actions }}
   </aside>
+  <div class="clearfix visible-xs-block"></div>
 {% endblock %}
 
 {% block content %}
-  <div class="clearfix visible-xs-block"></div>
   {% if content.field_quote|field_value %}
     <blockquote><p>“{{ content.field_quote|field_value }}”</p></blockquote>
   {% endif %}
