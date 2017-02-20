@@ -9,6 +9,8 @@
  */
 #}
 {{ attach_library('veil/bootstrap-sortable') }}
+{{ attach_library('veil/skillsheet-filter') }}
+
 {% set aptitudes = {'cog': 'Cognition', 'coo': 'Coordination', 'int': 'Intuition', 'ref': 'Reflexes', 'som': 'Somatics', 'wil': 'Willpower'} %}
 {% set delete = '<small><span class="glyphicon glyphicon-trash delete-button" aria-hidden="true"></span></small>' %}
 
@@ -19,25 +21,26 @@
         <form>
           <div class="row">
             <div class="col-sm-4">
-              <h4>Players</h4>
+              <h4>Columns</h4>
+              <label class="checkbox"><input class="players" checked type="checkbox" id="categoryToggle" value="category"> Category</label>
               {% for character in data %}
-              <label class="checkbox"><input checked type="checkbox" id="{{ character.name|lower }}Toggle" value="aptitude"> {{ character.name }}</label>
+              <label class="checkbox"><input class="players" checked type="checkbox" id="{{ character.name|lower }}Toggle" value="{{ character.name|lower }}"> {{ character.name }}</label>
               {%- endfor %}
             </div>
             <div class="col-sm-4">
               <h4>Skill types</h4>
-              <label class="checkbox"><input checked type="checkbox" id="combatToggle" value="combat"> Combat Skills</label>
-              <label class="checkbox"><input checked type="checkbox" id="mentalToggle" value="mental"> Mental Skills</label>
-              <label class="checkbox"><input checked type="checkbox" id="physicalToggle" value="physical"> Physical Skills</label>
-              <label class="checkbox"><input checked type="checkbox" id="psiToggle" value="psi"> Psi Skills</label>
-              <label class="checkbox"><input checked type="checkbox" id="socialToggle" value="social"> Social Skills</label>
-              <label class="checkbox"><input checked type="checkbox" id="technicalToggle" value="technical"> Technical Skills</label>
+              <label class="checkbox"><input class="skills" checked type="checkbox" id="combatToggle" value="combat"> Combat Skills</label>
+              <label class="checkbox"><input class="skills" checked type="checkbox" id="mentalToggle" value="mental"> Mental Skills</label>
+              <label class="checkbox"><input class="skills" checked type="checkbox" id="physicalToggle" value="physical"> Physical Skills</label>
+              <label class="checkbox"><input class="skills" checked type="checkbox" id="psiToggle" value="psi"> Psi Skills</label>
+              <label class="checkbox"><input class="skills" checked type="checkbox" id="socialToggle" value="social"> Social Skills</label>
+              <label class="checkbox"><input class="skills" checked type="checkbox" id="technicalToggle" value="technical"> Technical Skills</label>
             </div>
             <div class="col-sm-4">
               <h4>Other</h4>
-              <label class="checkbox"><input checked type="checkbox" id="aptitudeToggle" value="aptitude"> Aptitudes</label>
-              <label class="checkbox"><input checked type="checkbox" id="resleevingToggle" value="resleeving"> Resleeving Checks</label>
-              <label class="checkbox"><input checked type="checkbox" id="miscToggle" value="misc"> Misc. Tests</label>
+              <label class="checkbox"><input class="skills" checked type="checkbox" id="aptitudeToggle" value="aptitude"> Aptitudes</label>
+              <label class="checkbox"><input class="skills" checked type="checkbox" id="resleevingToggle" value="resleeving"> Resleeving Checks</label>
+              <label class="checkbox"><input class="skills" checked type="checkbox" id="miscToggle" value="misc"> Misc. Tests</label>
             </div>
           </div>
         </form>
@@ -51,28 +54,29 @@
 
 <div class="col-xs-12">
 
-  {# <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#filterModal">Filter Skills</button> #}
+  <button type="button" class="btn btn-primary hidden-print" data-toggle="modal" data-target="#filterModal">Filter Skills</button>
 
   <div class="panel panel-default">
     <table class="table table-eldrich table-condensed table-bordered pc-skills sortable table-striped table-hover">
       <thead>
-      <th>Type</th>
+      <th data-column="category">Type</th>
       <th>Skill</th>
         {% for character in data %}
-        <th class="character-name">{{ character.name }}</th>
+        <th class="character-name" data-column="{{ character.name|lower }}">{{ character.name }}</th>
         {% endfor %}
       </thead>
       <tbody>
 
       {% for id, skill in skills %}
-        <tr data-type="{{ skill.field_skill_type.entity.label|lower }}">
-          <td>{{ skill.field_skill_type.entity.label }}</td>
+        <tr data-category="{{ skill.field_skill_type.entity.label|lower }}">
+          <td data-column="category">{{ skill.field_skill_type.entity.label }}</td>
           <td>{{ skill|popup }}</td>
         {% for character in data %}
           {% set val = character.skills[id] %}
           <td
             data-skill="{{ val.conditional.total }}"
             data-aptitude="{{ skill.aptitude.label|upper }}"
+            data-column="{{ character.name|lower }}"
             class="{{ (val.conditional.total < 40) ? 'skill-bad' : '' }}{{ (val.conditional.total > 60) ? ' skill-great' : '' }}">
             {{ val.constant.total }}{% if val.conditional.total != val.constant.total %} ({{ val.conditional.total }}){% endif %}
           </td>
@@ -87,7 +91,7 @@
   <div class="panel panel-default">
     <table class="table table-eldrich table-condensed table-bordered pc-skills sortable table-striped table-hover">
       <thead>
-        <th>Type</th>
+        <th data-column="category">Type</th>
         <th>Skill</th>
         {% for character in data %}
           <th class="character-name">{{ character.name }}</th>
@@ -96,8 +100,8 @@
         <tbody>
 
         {% for key, label in aptitudes %}
-          <tr data-type="aptitude">
-            <td>Aptitude</td>
+          <tr data-category="aptitude">
+            <td data-column="category">Aptitude</td>
             <td>{{ label }}</td>
             {% for character in data %}
               {% set val = character.stats.total %}
@@ -109,8 +113,8 @@
           </tr>
         {% endfor %}
 
-        <tr data-type="misc">
-          <td>Misc Tests</td>
+        <tr data-category="misc">
+          <td data-column="category">Misc Tests</td>
           <td>Brute Force</td>
           {% for character in data %}
             {% set const = character.stats.total.constant.som * 3 %}
@@ -121,8 +125,8 @@
             </td>
           {% endfor %}
         </tr>
-        <tr data-type="misc">
-          <td>Misc Tests</td>
+        <tr data-category="misc">
+          <td data-column="category">Misc Tests</td>
           <td>Catching Objects</td>
           {% for character in data %}
             {% set const = character.stats.total.constant.ref + (character.stats.total.constant.coo * 2) %}
@@ -133,8 +137,8 @@
             </td>
           {% endfor %}
         </tr>
-        <tr data-type="misc">
-          <td>Misc Tests</td>
+        <tr data-category="misc">
+           <td data-column="category">Misc Tests</td>
           <td>Resolve / Stress</td>
           {% for character in data %}
             {% set const = character.stats.total.constant.wil * 3 %}
@@ -145,8 +149,8 @@
             </td>
           {% endfor %}
         </tr>
-        <tr data-type="misc">
-          <td>Misc Tests</td>
+        <tr data-category="misc">
+           <td data-column="category">Misc Tests</td>
           <td>Escape Artist</td>
           {% for character in data %}
             {% set const = character.stats.total.constant.som + character.stats.total.constant.coo %}
@@ -157,8 +161,8 @@
             </td>
           {% endfor %}
         </tr>
-        <tr data-type="misc">
-          <td>Misc Tests</td>
+        <tr data-category="misc">
+           <td data-column="category">Misc Tests</td>
           <td>Brainstorming</td>
           {% for character in data %}
             {% set const = character.stats.total.constant.int * 3 %}
@@ -169,8 +173,8 @@
             </td>
           {% endfor %}
         </tr>
-        <tr data-type="misc">
-          <td>Misc Tests</td>
+        <tr data-category="misc">
+           <td data-column="category">Misc Tests</td>
           <td>Memory Recall</td>
           {% for character in data %}
             {% set const = character.stats.total.constant.cog * 3 %}
@@ -181,8 +185,8 @@
             </td>
           {% endfor %}
         </tr>
-        <tr data-type="misc">
-          <td>Misc Tests</td>
+        <tr data-category="misc">
+           <td data-column="category">Misc Tests</td>
           <td>Resist Basilisk</td>
           {% for character in data %}
             {% set const = character.stats.total.constant.cog + character.stats.total.constant.int + character.stats.total.constant.sav %}
@@ -194,8 +198,8 @@
           {% endfor %}
         </tr>
 
-        <tr data-type="resleeving">
-          <td>Resleeving</td>
+        <tr data-category="resleeving">
+           <td data-column="category">Resleeving</td>
           <td>Integration</td>
           {% for character in data %}
             {% set const = character.stats.mind.constant.som * 3 %}
@@ -206,8 +210,8 @@
             </td>
           {% endfor %}
         </tr>
-        <tr data-type="resleeving">
-          <td>Resleeving</td>
+        <tr data-category="resleeving">
+           <td data-column="category">Resleeving</td>
           <td>Alienation</td>
           {% for character in data %}
             {% set const = character.stats.total.constant.int * 3 %}
@@ -218,8 +222,8 @@
             </td>
           {% endfor %}
         </tr>
-        <tr data-type="resleeving">
-          <td>Resleeving</td>
+        <tr data-category="resleeving">
+           <td data-column="category">Resleeving</td>
           <td>Continuity</td>
           {% for character in data %}
             {% set const = character.stats.total.constant.wil * 3 %}

@@ -15,3 +15,6 @@ bootstrap-sortable:
   js:
     bootstrap-sortable/bootstrap-sortable.js: {}
     bootstrap-sortable/moment.min.js: {}
+skillsheet-filter:
+  js:
+    js/skillsheet-filter.js: {}
