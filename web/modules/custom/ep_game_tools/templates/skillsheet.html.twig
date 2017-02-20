@@ -13,30 +13,31 @@
 {% set delete = '<small><span class="glyphicon glyphicon-trash delete-button" aria-hidden="true"></span></small>' %}
 
 <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="Filter Skills">
-
-  {# <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#filterModal">Filter Skills</button> #}
-
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">Skill Visibility</h4>
-      </div>
       <div class="modal-body">
         <form>
           <div class="row">
-            <div class="col-sm-6">
-              <label class="checkbox"><input checked type="checkbox" id="aptitudeToggle" value="aptitude"> Aptitudes</label>
-              <label class="checkbox"><input checked type="checkbox" id="resleevingToggle" value="resleeving"> Resleeving Checks</label>
-              <label class="checkbox"><input checked type="checkbox" id="miscToggle" value="misc"> Misc. Tests</label>
+            <div class="col-sm-4">
+              <h4>Players</h4>
+              {% for character in data %}
+              <label class="checkbox"><input checked type="checkbox" id="{{ character.name|lower }}Toggle" value="aptitude"> {{ character.name }}</label>
+              {%- endfor %}
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-4">
+              <h4>Skill types</h4>
               <label class="checkbox"><input checked type="checkbox" id="combatToggle" value="combat"> Combat Skills</label>
               <label class="checkbox"><input checked type="checkbox" id="mentalToggle" value="mental"> Mental Skills</label>
               <label class="checkbox"><input checked type="checkbox" id="physicalToggle" value="physical"> Physical Skills</label>
               <label class="checkbox"><input checked type="checkbox" id="psiToggle" value="psi"> Psi Skills</label>
               <label class="checkbox"><input checked type="checkbox" id="socialToggle" value="social"> Social Skills</label>
               <label class="checkbox"><input checked type="checkbox" id="technicalToggle" value="technical"> Technical Skills</label>
+            </div>
+            <div class="col-sm-4">
+              <h4>Other</h4>
+              <label class="checkbox"><input checked type="checkbox" id="aptitudeToggle" value="aptitude"> Aptitudes</label>
+              <label class="checkbox"><input checked type="checkbox" id="resleevingToggle" value="resleeving"> Resleeving Checks</label>
+              <label class="checkbox"><input checked type="checkbox" id="miscToggle" value="misc"> Misc. Tests</label>
             </div>
           </div>
         </form>
@@ -49,6 +50,9 @@
 </div>
 
 <div class="col-xs-12">
+
+  {# <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#filterModal">Filter Skills</button> #}
+
   <div class="panel panel-default">
     <table class="table table-eldrich table-condensed table-bordered pc-skills sortable table-striped table-hover">
       <thead>
