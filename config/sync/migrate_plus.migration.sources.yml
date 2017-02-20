@@ -21,13 +21,15 @@ source:
     -
       type: Type
     -
-      canon: Canon
-    -
       description: Description
     -
-      homepage: Homepage
-    -
       image: Image
+    -
+      home: Home
+    -
+      buy: Buy
+    -
+      download: Download
     -
       pdf: PDF
     -
@@ -66,7 +68,9 @@ process:
     default_value: basic_html
   field_code/value: code
   field_weight: weight
-  field_home_page/uri: homepage
+  field_home/uri: home
+  field_buy/uri: buy
+  field_download/uri: download
   field_cover_art/target_id:
     -
       plugin: skip_on_empty
