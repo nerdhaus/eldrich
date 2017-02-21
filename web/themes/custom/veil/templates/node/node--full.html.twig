@@ -76,10 +76,11 @@ view_mode ? view_mode|clean_class
         {% if content.field_cost|field_value %}<li><strong>Cost:</strong> {{ content.field_cost|field_value }}</li>{% endif %}
       {% endblock %}
       {% if content.field_sources|field_value %}
-        <p><strong>Source:</strong> {{ content.field_sources|field_value|safe_join(', ') }}</p>
+        <li><strong>Source:</strong> {{ content.field_sources|field_value|safe_join(', ') }}</li>
       {% endif %}
+      </ul>
     </aside>
-  {% endblock %}
+    {% endblock %}
 
   <section class="col-sm-8">
 

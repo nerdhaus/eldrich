@@ -58,7 +58,6 @@ view_mode ? view_mode|clean_class
           <li><strong>Links:</strong> {{ content.field_resources|field_value|safe_join(', ') }}
           </li>
         </ul>
-        {{ actions }}
       {% endif %}
     </div>
     {% if content.field_video|field_value %}
