@@ -5,12 +5,10 @@
  * Contains eldrich.module.
  */
 
-use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\node\NodeInterface;
-use Drupal\Core\Session\AccountInterface;
-use Drupal\Core\Access\AccessResult;
-
-function eldrich_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Node\Entity\Node;
+function eldrich_entity_presave(EntityInterface $entity) {
   // when Weapon Instances and Armor Instances are saved, title them.
   // Weapon Pattern: Short Weapon Name (Mod Shortnames) with [Smart Ammo features] Ammo Name
 
@@ -57,6 +55,7 @@ function eldrich_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
   }
 }
 
+/*
 function eldrich_options_list_alter(array &$options, array $context) {
   // Loop through options, look for a magic value, group on what's after it.
   $grouped = $ungrouped = [];
@@ -85,4 +84,55 @@ function eldrich_options_list_alter(array &$options, array $context) {
   if (!empty($ungrouped)) {
     $options += $ungrouped;
   }
+}
+*/
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function eldrich_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  // If this is a subsequent step of a multi-step form, the prepopulate values
+  // have done their work, and the user may have modified them: bail.
+  if (!empty($form_state->rebuild_info)) {
+    return;
+  }
+  if (isset($_REQUEST['source']) || isset($_REQUEST['campaign'])) {
+    $form['#after_build'][] = 'eldrich_prepopulator_after_build';
+  }
+}
+
+/**
+ * If someone creates content with an 'Add an X' button, prepopulate the campaign
+ * or source field and disable it so it can't be monkeyed with.
+ */
+function eldrich_prepopulator_after_build($form) {
+  if (isset($_REQUEST['source'])) {
+    $source_id = (int) $_REQUEST['source'];
+    if ($node = Node::load($source_id)) {
+      if (in_array($node->bundle(), ['campaign', 'inspiration'])) {
+        if (isset($form['field_sources'])) {
+          $form['field_sources']['widget'][0]['target_id']['#value'] = $node->id();
+          $form['field_sources']['widget'][0]['target_id']['#default_value'] = $node->id();
+          $form['field_sources']['widget'][0]['target_id']['#attributes']['disabled'] = TRUE;
+          $form['field_sources']['widget'][0]['quantity']['#attributes']['disabled'] = TRUE;
+          $form['field_sources']['widget']['add_more']['#attributes']['disabled'] = TRUE;
+        }
+      }
+    }
+  }
+  if (isset($_REQUEST['campaign'])) {
+    $campaign_id = (int) $_REQUEST['campaign'];
+    if ($node = Node::load($campaign_id)) {
+      if ($node->bundle() == 'campaign') {
+        if (isset($form['field_campaign'])) {
+          $form['field_campaign']['widget']['#value'] = $node->id();
+          $form['field_campaign']['widget']['#default_value'] = $node->id();
+          $form['field_campaign']['widget']['#attributes']['disabled'] = TRUE;
+        }
+      }
+    }
+  }
+  return $form;
 }
