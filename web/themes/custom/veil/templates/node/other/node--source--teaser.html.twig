@@ -58,8 +58,7 @@ set classes = [
           </h4>
           {{ title_suffix }}
           {{ content.field_description }}
-        </div>
-        <div class="col-md-7">
+
           <div class="btn-group btn-group-sm pull-right" role="group">
             <a href="{{ content.field_home|field_raw('uri') }}" type="button" class="btn btn-default"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
             {% if logged_in %}<a href="{{ content.field_download|field_raw('uri') }}" type="button" class="btn btn-default"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span></a>{% endif %}
