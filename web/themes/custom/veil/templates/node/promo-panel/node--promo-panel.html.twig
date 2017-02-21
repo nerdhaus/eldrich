@@ -73,17 +73,15 @@ node.isSticky() ? 'is-sticky',
 not node.isPublished() ? 'is-unpublished',
 view_mode ? view_mode|clean_class,
 'panel',
-'panel-primary',
-'clearfix',
-]
+'panel-primary']
 %}
 
-<article {{ attributes.addClass(classes) }}>
+<div {{ attributes.addClass(classes) }}>
   <div class="panel-heading">
     {{ title_prefix }}
     <h2{{ title_attributes.addClass('panel-title') }}><a href="{{ url }}" rel="bookmark">{{ label }}</a>
       {% if display_submitted %}
-      <small>{% trans %}Posted {{ date }}{% endtrans %}</small>
+        <small><em>{% trans %}Posted {{ date }}{% endtrans %}</em></small>
       {% endif %}
       {{ title_suffix }}
     </h2>
@@ -100,4 +98,4 @@ view_mode ? view_mode|clean_class,
   {% if content.group_footer %}
     <div class="panel-footer">{{ content.group_footer }}</div>
   {% endif %}
-</article>
+</div>
