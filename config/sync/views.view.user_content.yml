@@ -1221,7 +1221,7 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: GM
+            format_custom_true: Secret
             format_custom_false: ''
           group_column: value
           group_columns: {  }

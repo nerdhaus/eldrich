@@ -25,7 +25,7 @@
   {%- for item in items -%}{{ item.content }}{%- endfor -%}
 </span>
 <span class="title-additions">
-{% if gm %}<span class='badge badge-danger'>GM’s Eyes Only</span>{% endif %}
+{% if gm %}<span class="badge" data-toggle="tooltip" data-placement="top" title="GM’s Eyes Only!">Secret</span>{% endif %}
 {% if actions %}
   <div class="dropdown pull-right">
     <button class="btn btn-default dropdown-toggle" type="button" id="nodeToolsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

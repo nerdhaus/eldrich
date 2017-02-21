@@ -36,7 +36,7 @@ class NodeTitle extends PreprocessBase implements PreprocessInterface {
     }
 
     $page_node = \Drupal::routeMatch()->getParameter('node');
-    if (empty($page_node) || $page_node->id != $node->id()) {
+    if (empty($page_node) || $page_node->id() != $node->id()) {
       return;
     }
 
