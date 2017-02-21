@@ -26,6 +26,7 @@ module:
   ep_complex_values: 0
   ep_game_tools: 0
   ep_import: 0
+  ep_replicator: 0
   ep_schema: 0
   ep_skill_reference: 0
   ep_statblock: 0
@@ -60,7 +61,6 @@ module:
   path: 0
   quick_pages: 0
   range: 0
-  replicate: 0
   search: 0
   shortcut: 0
   simple_block: 0

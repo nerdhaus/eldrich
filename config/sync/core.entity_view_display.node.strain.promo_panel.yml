@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.promo_panel
     - field.field.node.strain.field_description
+    - field.field.node.strain.field_gm_only
     - field.field.node.strain.field_infectiousness
     - field.field.node.strain.field_sources
     - field.field.node.strain.field_stages
@@ -36,7 +37,7 @@ content:
   field_sources:
     type: eldrich_citation_formatter
     weight: 2
-    label: inline
+    label: hidden
     settings:
       link: true
       location: suffix

@@ -6,9 +6,11 @@ dependencies:
     - core.entity_view_mode.node.promo_panel
     - field.field.node.faction.field_description
     - field.field.node.faction.field_faction_type
+    - field.field.node.faction.field_gm_only
     - field.field.node.faction.field_locations
     - field.field.node.faction.field_memes
     - field.field.node.faction.field_parent_faction
+    - field.field.node.faction.field_short_name
     - field.field.node.faction.field_sources
     - node.type.faction
   module:
@@ -39,7 +41,7 @@ content:
     type: eldrich_popup_formatter
   field_sources:
     weight: 4
-    label: inline
+    label: hidden
     settings:
       link: true
       location: suffix

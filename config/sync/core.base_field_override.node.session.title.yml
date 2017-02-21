@@ -8,7 +8,7 @@ id: node.session.title
 field_name: title
 entity_type: node
 bundle: session
-label: Name
+label: Title
 description: ''
 required: true
 translatable: true
