@@ -114,16 +114,3 @@ function gmo_node_access(NodeInterface $node, $op, AccountInterface $account) {
   // No opinion.
   return AccessResult::neutral()->setCacheMaxAge(0);
 }
-
-// Add a special note to page titles of GM-only nodes, so visitors know
-// not to share them.
-function gmo_preprocess_page_title(&$variables) {
-  if ($variables['title']) {
-    if ($node = \Drupal::routeMatch()->getParameter('node')) {
-      if ($node->hasField('field_gm_only') && $node->field_gm_only->value) {
-        $new_title = $node->label() . " <span class='badge'>GM’s Eyes Only</span>";
-        $variables['title'] = \Drupal\Core\Render\Markup::create($new_title);
-      }
-    }
-  }
-}

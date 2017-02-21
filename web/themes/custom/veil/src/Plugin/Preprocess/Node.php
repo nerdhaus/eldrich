@@ -37,11 +37,35 @@ class Node extends PreprocessBase implements PreprocessInterface {
     /** @var NodeInterface $node */
     $node = $variables->node;
 
-    $variables->is_gear = in_array($node->bundle(), ['gear', 'armor', 'augmentation', 'drug', 'mind', 'morph', 'robot', 'vehicle', 'weapon']);
-    $variables->is_game = in_array($node->bundle(), ['campaign', 'session', 'pc']);
-    $variables->is_mob = in_array($node->bundle(), ['creature', 'robot', 'mind', 'npc', 'pc']);
+    $variables->is_gear = in_array($node->bundle(), [
+      'gear',
+      'armor',
+      'augmentation',
+      'drug',
+      'mind',
+      'morph',
+      'robot',
+      'vehicle',
+      'weapon'
+    ]);
+    $variables->is_game = in_array($node->bundle(), [
+      'campaign',
+      'session',
+      'pc'
+    ]);
+    $variables->is_mob = in_array($node->bundle(), [
+      'creature',
+      'robot',
+      'mind',
+      'npc',
+      'pc'
+    ]);
     $variables->is_character = in_array($node->bundle(), ['npc', 'pc']);
-    $variables->is_fluff = in_array($node->bundle(), ['location', 'faction', 'strain']);
+    $variables->is_fluff = in_array($node->bundle(), [
+      'location',
+      'faction',
+      'strain'
+    ]);
 
     // Convenience stuff.
     $variables->icon = $this->getIcon($node);
@@ -52,9 +76,6 @@ class Node extends PreprocessBase implements PreprocessInterface {
 
     // Prepare our weird component entities
     $this->prepChildFields($node, $variables);
-
-    // Add some niceties for chars and mobs
-    $this->buildNodeActions($node, $variables);
   }
 
   public function prepChildFields(NodeInterface $node, Variables $variables) {
@@ -222,7 +243,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
         $badge = $content['field_linked_aptitude'];
         break;
       case 'sleight':
-        $badge =  $content['field_sleight_level'];
+        $badge = $content['field_sleight_level'];
         break;
       case 'derangement':
         $badge = $content['field_derangement_level'];
@@ -281,73 +302,4 @@ class Node extends PreprocessBase implements PreprocessInterface {
     }
   }
 
-  public function buildNodeActions(NodeInterface $node, Variables $variables) {
-    $actions = [];
-    $nids = [];
-
-    if ($node->bundle() == 'campaign') {
-      foreach ($node->field_pcs as $field) {
-        $nids[$field->target_id] = $field->target_id;
-      }
-      if (count($nids)) {
-        $actions['initiative'] = [
-          '#type' => 'link',
-          '#title' => t('Initiative'),
-          '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_initiative', ['nodes' => join(',', $nids)]),
-          '#attributes' => [
-            'class' => ['btn', 'btn-default']
-          ]
-        ];
-        $actions['skillsheet'] = [
-          '#type' => 'link',
-          '#title' => t('Skill Table'),
-          '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_skillsheet', ['nodes' => join(',', $nids)]),
-          '#attributes' => [
-            'class' => ['btn', 'btn-default']
-          ]
-        ];
-      }
-    }
-
-    if ($variables->is_character) {
-      $actions['charsheet'] = [
-        '#type' => 'link',
-        '#title' => t('Charsheet'),
-        '#url' => Url::fromRoute('eldrich.charsheet', ['node' => $node->id()]),
-        '#attributes' => [
-          'class' => ['btn', 'btn-default']
-        ]
-      ];
-    }
-
-    if ($variables->is_character or $variables->is_mob) {
-      $actions['scratchpad'] = [
-        '#type' => 'link',
-        '#title' => t('Scratchpad'),
-        '#url' => Url::fromRoute('eldrich.combatcard', ['node' => $node->id()]),
-        '#attributes' => [
-          'class' => ['btn', 'btn-default']
-        ]
-      ];
-    }
-
-    $type_id = $node->bundle();
-    if ($variables->is_gear || $variables->is_mob || $variables->is_character || $variables->is_fluff) {
-      $actions['clone'] = [
-        '#access' => \Drupal::currentUser()->hasPermission("create $type_id content"),
-        '#type' => 'link',
-        '#title' => t('Clone'),
-        '#url' => Url::fromRoute('eldrich.combatcard', ['node' => $node->id()]),
-        '#attributes' => [
-          'class' => ['btn', 'btn-default']
-        ]
-      ];
-    }
-
-    if (count($actions)) {
-      $actions['#type'] = 'actions';
-      $actions['#attributes'] = ['class' => ['btn-group']];
-      $variables->actions = $actions;
-    }
-  }
 }

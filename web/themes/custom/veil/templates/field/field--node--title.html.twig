@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the node title field.
+ *
+ * This is an override of field.html.twig for the node title field. See that
+ * template for documentation about its details and overrides.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing span element.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see field.html.twig
+ *
+ * @ingroup themeable
+ */
+#}
+<span{{ attributes }}>
+  {%- for item in items -%}{{ item.content }}{%- endfor -%}
+</span>
+<span class="title-additions">
+{% if gm %}<span class='badge badge-danger'>GM’s Eyes Only</span>{% endif %}
+{% if actions %}
+  <div class="dropdown pull-right">
+    <button class="btn btn-default dropdown-toggle" type="button" id="nodeToolsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      <span class="sr-only">Tools</span>
+      <span class="glyphicon glyphicon-cog"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="nodeToolsDropdown">
+      {% for action in actions %}<li>{{ action }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+</span>
