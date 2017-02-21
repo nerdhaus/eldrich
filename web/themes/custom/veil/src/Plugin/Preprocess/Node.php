@@ -41,6 +41,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
     $variables->is_game = in_array($node->bundle(), ['campaign', 'session', 'pc']);
     $variables->is_mob = in_array($node->bundle(), ['creature', 'robot', 'mind', 'npc', 'pc']);
     $variables->is_character = in_array($node->bundle(), ['npc', 'pc']);
+    $variables->is_fluff = in_array($node->bundle(), ['location', 'faction', 'strain']);
 
     // Convenience stuff.
     $variables->icon = $this->getIcon($node);
@@ -331,15 +332,17 @@ class Node extends PreprocessBase implements PreprocessInterface {
     }
 
     $type_id = $node->bundle();
-    $actions['clone'] = [
-      '#access' => \Drupal::currentUser()->hasPermission("create $type_id content"),
-      '#type' => 'link',
-      '#title' => t('Clone'),
-      '#url' => Url::fromRoute('eldrich.combatcard', ['node' => $node->id()]),
-      '#attributes' => [
-        'class' => ['btn', 'btn-default']
-      ]
-    ];
+    if ($variables->is_gear || $variables->is_mob || $variables->is_character || $variables->is_fluff) {
+      $actions['clone'] = [
+        '#access' => \Drupal::currentUser()->hasPermission("create $type_id content"),
+        '#type' => 'link',
+        '#title' => t('Clone'),
+        '#url' => Url::fromRoute('eldrich.combatcard', ['node' => $node->id()]),
+        '#attributes' => [
+          'class' => ['btn', 'btn-default']
+        ]
+      ];
+    }
 
     if (count($actions)) {
       $actions['#type'] = 'actions';
