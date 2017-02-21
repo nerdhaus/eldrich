@@ -9,12 +9,14 @@ dependencies:
     - field.field.node.source.field_cover_art
     - field.field.node.source.field_description
     - field.field.node.source.field_download
+    - field.field.node.source.field_home
     - field.field.node.source.field_source_type
     - field.field.node.source.field_weight
     - image.style.square_small
     - node.type.source
   module:
     - image
+    - link
     - text
     - user
 id: node.source.teaser
@@ -22,6 +24,17 @@ targetEntityType: node
 bundle: source
 mode: teaser
 content:
+  field_buy:
+    type: link
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
   field_code:
     type: string
     weight: 2
@@ -43,16 +56,35 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  field_download:
+    type: link
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_home:
+    type: link
+    weight: 6
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
   field_source_type:
     type: entity_reference_label
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       link: false
     third_party_settings: {  }
 hidden:
-  field_buy: true
-  field_download: true
-  field_home: true
   field_weight: true
   links: true
