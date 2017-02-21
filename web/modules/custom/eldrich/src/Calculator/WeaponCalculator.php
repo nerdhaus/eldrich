@@ -365,8 +365,9 @@ class WeaponCalculator {
     $gear = [];
 
     if ($entity->hasField('field_morph')) {
-      $morph = $entity->field_morph->entity;
-      $augs = $entity->field_morph->entity->field_augmentations;
+      if ($morph = $entity->field_morph->entity) {
+        $augs = $entity->field_morph->entity->field_augmentations;
+      }
     }
     if ($entity->hasField('field_augmentations')) {
       $augs = $entity->field_augmentations;
