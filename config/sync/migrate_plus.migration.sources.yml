@@ -27,11 +27,9 @@ source:
     -
       home: Home
     -
-      buy: Buy
-    -
       download: Download
     -
-      pdf: PDF
+      buy: Buy
     -
       weight: Weight
   keys:
@@ -61,7 +59,6 @@ process:
     plugin: default_value
     default_value: basic_html
   field_code/value: code
-  field_weight: weight
   field_home/uri: home
   field_buy/uri: buy
   field_download/uri: download
