@@ -8,16 +8,16 @@ dependencies:
 id: gear_tree
 label: 'Gear Tree'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'gear/[term:parent:parent:field_short_name]/[term:parent:field_short_name]/[term:field_short_name]'
+pattern: 'gear/[term:parent:parent:parent:field_short_name]/[term:parent:parent:field_short_name]/[term:parent:field_short_name]/[term:field_short_name]'
 selection_criteria:
-  9a2fa02f-0d45-4b67-895e-2f066e4cbe2c:
+  56eff333-f6c4-4356-bbea-62dc00e8db90:
     id: 'entity_bundle:taxonomy_term'
     bundles:
       gear_type: gear_type
     negate: false
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: 9a2fa02f-0d45-4b67-895e-2f066e4cbe2c
+    uuid: 56eff333-f6c4-4356-bbea-62dc00e8db90
 selection_logic: and
-weight: -8
+weight: -10
 relationships: {  }

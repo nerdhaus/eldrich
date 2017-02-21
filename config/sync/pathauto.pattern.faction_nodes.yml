@@ -7,16 +7,16 @@ dependencies:
 id: faction_nodes
 label: 'Faction Nodes'
 type: 'canonical_entities:node'
-pattern: 'world/factions/[node:field_parent_faction:entity:field_parent_faction:entity:field_parent_faction:entity:title]/[node:field_parent_faction:entity:field_parent_faction:entity:title]/[node:field_parent_faction:entity:title]/[node:title]'
+pattern: 'world/factions/[node:field_parent_faction:entity:field_parent_faction:entity:field_parent_faction:entity:field_parent_faction:entity:title]/[node:field_parent_faction:entity:field_parent_faction:entity:field_parent_faction:entity:title]/[node:field_parent_faction:entity:field_parent_faction:entity:title]/[node:field_parent_faction:entity:title]/[node:title]'
 selection_criteria:
-  a616e989-8b40-46b8-9555-c567e1e3992d:
+  23e807d1-fd5e-4fdf-ba84-fe738052e1e0:
     id: node_type
     bundles:
       faction: faction
     negate: false
     context_mapping:
       node: node
-    uuid: a616e989-8b40-46b8-9555-c567e1e3992d
+    uuid: 23e807d1-fd5e-4fdf-ba84-fe738052e1e0
 selection_logic: and
-weight: -4
+weight: -2
 relationships: {  }

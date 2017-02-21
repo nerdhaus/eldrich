@@ -7,8 +7,8 @@ dependencies:
 id: users
 label: Users
 type: 'canonical_entities:user'
-pattern: 'user/[user:display-name]'
+pattern: 'users/[user:display-name]'
 selection_criteria: {  }
 selection_logic: and
-weight: 0
+weight: 3
 relationships: {  }
