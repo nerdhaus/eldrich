@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.gear.field_gear_type
     - field.field.node.gear.field_short_name
     - field.field.node.gear.field_sources
+    - field.field.node.gear.field_special_effect
     - node.type.gear
   module:
     - entity_reference_quantity
@@ -63,6 +64,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_quantity_autocomplete
+  field_special_effect:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   path:
     type: path
     weight: 5

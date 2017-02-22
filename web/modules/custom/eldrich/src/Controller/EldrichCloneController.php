@@ -84,18 +84,18 @@ class EldrichCloneController implements ContainerInjectionInterface {
     foreach ($this->referencesToClone() as $field_name) {
       if ($clone->hasField($field_name) && !$clone->$field_name->isEmpty()) {
         foreach ($clone->$field_name as $delta => $fi) {
-          $oldEck = $fi->entity;
-          $clonedEck = $oldEck->createDuplicate();
-          $clonedEck->save();
+          $oldReference = $fi->entity;
+          $newReference = $oldReference->createDuplicate();
+          $newReference->save();
 
           // We do this instead of building the field data from scratch to
           // preserve extras in EntityReferenceQuantity and Override fields
-          $clone->$field_name[$delta]->target_id = $clonedEck->id();
+          $clone->$field_name[$delta]->target_id = $newReference->id();
         }
       }
     }
 
-    foreach ($this->referencesToClear() as $field_name) {
+    foreach ($this->fieldToClear() as $field_name) {
       if ($clone->hasField($field_name) && !$clone->$field_name->isEmpty()) {
         $clone->$field_name->setValue(null);
       }

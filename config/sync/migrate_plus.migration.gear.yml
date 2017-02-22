@@ -27,6 +27,8 @@ source:
       blueprints: Blueprints
     -
       book: Book
+    -
+      special_effect: Effect
   constants:
     user: Factotum
   keys:
@@ -73,6 +75,7 @@ process:
     bundle_key: type
     value_key: field_code
     source: book
+  field_special_effect/value: special_effect
   field_blueprints:
     plugin: static_map
     source: blueprints

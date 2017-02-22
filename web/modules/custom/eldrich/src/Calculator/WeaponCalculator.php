@@ -83,7 +83,7 @@ class WeaponCalculator {
       }
     }
 
-    // Edge case; Infomorphs and hackers with Scorchers should count.
+    // Loop through owned gear and check for Scorcher software.
     if ($entity->hasField('field_gear')) {
       foreach ($entity->field_gear as $fg) {
         if ($scorcher = static::totalCombatSoftware($data, $fg->entity)) {
@@ -92,6 +92,8 @@ class WeaponCalculator {
       }
     }
 
+    // Native attacks for creatures. These are one-off and should never appear
+    // in the general purpose equipment/gear lists, so.
     if ($entity->hasField('field_native_attacks')) {
       foreach ($entity->field_native_attacks as $fna) {
         if ($weapon = static::totalNativeAttack($data, $fna->entity)) {
@@ -147,10 +149,6 @@ class WeaponCalculator {
 
 
   /*
-   * This is currently stubbed, and waiting for the day I implement special
-   * handling for the native attacks most creatures have. For the moment
-   * they're treated as custom weapons with no cost and nonexistent blueprints.
-   *
    * Jesus wept.
    */
   public static function totalNativeAttack(Array &$data, FieldableEntityInterface $weapon) {
@@ -300,6 +298,7 @@ class WeaponCalculator {
           $item['damage']['dice'] = 1;
           $item['damage']['ap'] = 999;
           $item['damage']['special'] = 'WIL/10';
+          $item['linked_skill'] = 'infosec';
           $item['build']['weapon'] = static::linkEntity($sleight);
           $has_stab = TRUE;
           break;
@@ -319,11 +318,29 @@ class WeaponCalculator {
     }
   }
 
+  public static function totalCombatSoftware(Array &$data, FieldableEntityInterface $scorcher) {
+    $item = NULL;
 
-  // TODO: Add scorcher attacks
-  public static function totalCombatSoftware(Array &$data, FieldableEntityInterface $entity) {
-    // Dummy up weapon records for any Scorchers the entity has equipped.
-    return NULL;
+    if (!$scorcher->field_gear_type->isEmpty() && ($scorcher->field_gear_type->entity->label() == 'Scorchers')) {
+      $item = static::initWeaponRecord();
+      $item['category'] = 'Scorcher';
+      $item['linked_skill'] = 'infosec';
+      $item['damage']['effects'][] = $scorcher->field_special_effect->value;
+      $item['build']['weapon'] = static::linkEntity($scorcher);
+      if(isset(static::$skills)) {
+        if (key_exists($item['linked_skill'], static::$skills)) {
+          $skill_info = static::$skills[$item['linked_skill']];
+          $item['skill'] = $item['skill_bonus'] + $skill_info['constant']['total'];
+          if (!empty($skill_info['specialization'])) {
+            if (strpos(strtolower($weapon->label()), strtolower($skill_info['specialization']))) {
+              $item['skill'] += 10;
+            }
+          }
+        }
+      }
+    }
+
+    return $item;
   }
 
   public static function unarmedFallback(Array &$data, FieldableEntityInterface $entity) {
@@ -358,7 +375,6 @@ class WeaponCalculator {
     return $item;
   }
 
-
   public static function handleGearBonuses(Array &$data, FieldableEntityInterface $entity) {
     $augs = [];
     $armor = [];
@@ -391,8 +407,7 @@ class WeaponCalculator {
     }
   }
 
-
-    private static function getWeaponCategory(Array &$item, FieldableEntityInterface $weapon) {
+  private static function getWeaponCategory(Array &$item, FieldableEntityInterface $weapon) {
     if ($weapon->hasField('field_linked_skill')) {
       if ($weapon->field_linked_skill->isEmpty()) {
         $item['linked_skill'] = 'unarmed combat';
