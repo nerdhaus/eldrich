@@ -71,19 +71,27 @@ class NodeTitle extends PreprocessBase implements PreprocessInterface {
     ]);
 
     if ($node->bundle() == 'campaign') {
+      if ($node->uid == \Drupal::currentUser()->id()) {
+        $actions['session'] = [
+          '#type' => 'link',
+          '#title' => t('Add a Session'),
+          '#url' => Url::fromRoute('node.add', ['node_type' => 'session'], ['query' => ['campaign' => $node->id()]]),
+        ];
+      }
+
       foreach ($node->field_pcs as $field) {
         $nids[$field->target_id] = $field->target_id;
       }
       if (count($nids)) {
         $actions['initiative'] = [
           '#type' => 'link',
-          '#title' => t('Initiative'),
-          '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_initiative', ['nodes' => join(',', $nids)]),
+          '#title' => t('Initiative Tracker'),
+          '#url' =>Url::fromRoute('ep_game_tools.campaign_tools_controller_initiative', ['nodes' => join(',', $nids)]),
         ];
         $actions['skillsheet'] = [
           '#type' => 'link',
           '#title' => t('Skill Table'),
-          '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_skillsheet', ['nodes' => join(',', $nids)]),
+          '#url' =>Url::fromRoute('ep_game_tools.campaign_tools_controller_skillsheet', ['nodes' => join(',', $nids)]),
         ];
       }
     }
@@ -92,7 +100,7 @@ class NodeTitle extends PreprocessBase implements PreprocessInterface {
       $actions['charsheet'] = [
         '#type' => 'link',
         '#title' => t('Full Charsheet'),
-        '#url' => Url::fromRoute('eldrich.charsheet', ['node' => $node->id()]),
+        '#url' =>Url::fromRoute('eldrich.charsheet', ['node' => $node->id()]),
       ];
     }
 
@@ -100,7 +108,7 @@ class NodeTitle extends PreprocessBase implements PreprocessInterface {
       $actions['scratchpad'] = [
         '#type' => 'link',
         '#title' => t('Combat Card'),
-        '#url' => Url::fromRoute('eldrich.combatcard', ['node' => $node->id()]),
+        '#url' =>Url::fromRoute('eldrich.combatcard', ['node' => $node->id()]),
       ];
     }
 
@@ -110,7 +118,7 @@ class NodeTitle extends PreprocessBase implements PreprocessInterface {
         $actions['clone'] = [
           '#type' => 'link',
           '#title' => t('Clone'),
-          '#url' => Url::fromRoute('eldrich.combatcard', ['node' => $node->id()]),
+          '#url' =>Url::fromRoute('eldrich.clone', ['original' => $node->id()]),
         ];
       }
     }
@@ -118,6 +126,5 @@ class NodeTitle extends PreprocessBase implements PreprocessInterface {
     if (count($actions)) {
       $variables->actions = $actions;
     }
-
   }
 }

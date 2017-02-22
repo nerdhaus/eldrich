@@ -18,8 +18,8 @@ class EldrichServiceProvider extends ServiceProviderBase {
    * {@inheritdoc}
    */
   public function alter(ContainerBuilder $container) {
-    // Overrides language_manager class to test domain language negotiation.
-    $definition = $container->getDefinition('taxonomy_term.breadcrumb');
+    // Ensures our path aliases still generate the breadcrumb trail,
+    // even when taxonomy terms are being displayed.
     $container->removeDefinition('taxonomy_term.breadcrumb');
   }
 }

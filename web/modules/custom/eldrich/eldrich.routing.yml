@@ -15,3 +15,17 @@ eldrich.combatcard:
   requirements:
     _entity_access: 'node.view'
     node: \d+
+
+eldrich.clone:
+  path: '/eldrich/clone/{original}'
+  defaults:
+    _controller: '\Drupal\eldrich\Controller\EldrichCloneController::cloneAndEdit'
+    _title: 'Clone'
+  requirements:
+    _csrf_token: 'TRUE'
+    _permission: 'clone content'
+    original: \d+
+  options:
+    parameters:
+      original:
+        type: entity:node

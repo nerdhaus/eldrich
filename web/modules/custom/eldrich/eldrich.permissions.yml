@@ -1,3 +1,6 @@
 access gm content:
   title: 'Access GM Content'
   description: 'View content that should only be seen by Gamemasters.'
+clone content:
+  title: 'Clone Content'
+  description: 'Clone an existing piece of content for use in a campaign or personal project.'
