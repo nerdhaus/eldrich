@@ -51,7 +51,7 @@ class SkillTreeCalculator {
   public static function total(FieldableEntityInterface $entity, Array $stats) {
     $skills = [];
 
-    if (!empty($stats) && in_array($entity->bundle(), ['pc', 'npc', 'creature', 'robot'])) {
+    if (!empty($stats) && in_array($entity->bundle(), ['pc', 'npc', 'creature', 'robot', 'mind'])) {
       // Pre-initialize defaultable skills.
       foreach (static::getSkillList() as $nid => $skill) {
         $key = strtolower($skill->label());
@@ -140,6 +140,11 @@ class SkillTreeCalculator {
     if (!empty($entity->field_morph) && !$entity->field_morph->isEmpty()) {
       $morph = $entity->field_morph->entity;
       static::walkTree($skills, $morph, $stats, TRUE);
+    }
+
+    if (!empty($entity->field_default_ai) && !$entity->field_default_ai->isEmpty()) {
+      $ai = $entity->field_default_ai->entity;
+      static::walkTree($skills, $ai, $stats, TRUE);
     }
   }
 

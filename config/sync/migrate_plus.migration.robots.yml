@@ -108,6 +108,7 @@ process:
     bundle: mind
     bundle_key: type
     entity_type: node
+    destination_field: target_id
   field_stats:
     plugin: stat_block
     source: stats
