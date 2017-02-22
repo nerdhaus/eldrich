@@ -71,7 +71,7 @@ class NodeTitle extends PreprocessBase implements PreprocessInterface {
     ]);
 
     if ($node->bundle() == 'campaign') {
-      if ($node->uid == \Drupal::currentUser()->id()) {
+      if ($node->access('update')) {
         $actions['session'] = [
           '#type' => 'link',
           '#title' => t('Add a Session'),
