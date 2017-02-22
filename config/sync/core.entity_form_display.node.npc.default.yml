@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.npc.field_based_on
     - field.field.node.npc.field_description
     - field.field.node.npc.field_equipped_armor
     - field.field.node.npc.field_equipped_weapons
@@ -41,7 +42,7 @@ third_party_settings:
         - field_gear
         - field_owned_blueprints
       parent_name: ''
-      weight: 14
+      weight: 15
       format_type: details
       format_settings:
         open: false
@@ -56,7 +57,7 @@ third_party_settings:
         - field_traits
         - field_sleights
       parent_name: ''
-      weight: 11
+      weight: 12
       format_type: details
       format_settings:
         label: Abilities
@@ -72,11 +73,11 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 6
     settings: {  }
     third_party_settings: {  }
   field_description:
-    weight: 9
+    weight: 10
     settings:
       rows: 5
       placeholder: ''
@@ -119,13 +120,13 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
   field_gm_only:
-    weight: 28
+    weight: 1
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
   field_identity:
-    weight: 13
+    weight: 14
     settings:
       form_mode: default
       label_singular: ''
@@ -136,7 +137,7 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_simple
   field_image:
-    weight: 27
+    weight: 4
     settings:
       show_default_crop: true
       warn_multiple_usages: true
@@ -151,7 +152,7 @@ content:
     third_party_settings: {  }
     type: image_widget_crop
   field_morph:
-    weight: 12
+    weight: 13
     settings:
       form_mode: default
       label_singular: ''
@@ -162,7 +163,7 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_simple
   field_motivations:
-    weight: 2
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -177,14 +178,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
   field_quote:
-    weight: 1
+    weight: 2
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
   field_roleplay_notes:
-    weight: 10
+    weight: 11
     settings:
       rows: 5
       placeholder: ''
@@ -204,7 +205,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_sources:
-    weight: 15
+    weight: 16
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -227,20 +228,20 @@ content:
     type: entity_reference_override_autocomplete
   path:
     type: path
-    weight: 8
+    weight: 9
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 7
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 8
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -251,10 +252,11 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_based_on: true

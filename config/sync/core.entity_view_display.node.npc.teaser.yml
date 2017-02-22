@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.npc.field_based_on
     - field.field.node.npc.field_description
     - field.field.node.npc.field_equipped_armor
     - field.field.node.npc.field_equipped_weapons
     - field.field.node.npc.field_gear
+    - field.field.node.npc.field_gm_only
     - field.field.node.npc.field_identity
     - field.field.node.npc.field_image
     - field.field.node.npc.field_morph
@@ -47,6 +49,7 @@ content:
       image_link: ''
     third_party_settings: {  }
 hidden:
+  field_based_on: true
   field_equipped_armor: true
   field_equipped_weapons: true
   field_gear: true

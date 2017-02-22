@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.pc.field_based_on
     - field.field.node.pc.field_description
     - field.field.node.pc.field_equipped_armor
     - field.field.node.pc.field_equipped_weapons
@@ -276,4 +277,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_based_on: true

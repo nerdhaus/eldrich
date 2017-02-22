@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.robot.field_armor
     - field.field.node.robot.field_augmentations
+    - field.field.node.robot.field_based_on
     - field.field.node.robot.field_blueprints
     - field.field.node.robot.field_cost
     - field.field.node.robot.field_default_ai
@@ -125,9 +126,12 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
+  related_gear:
+    weight: 10
   related_lists_gear_siblings:
     weight: 10
 hidden:
+  field_based_on: true
   field_blueprints: true
   field_movement_speed: true
   field_short_name: true

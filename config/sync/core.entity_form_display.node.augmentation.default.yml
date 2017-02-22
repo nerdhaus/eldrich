@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.augmentation.field_armor
+    - field.field.node.augmentation.field_based_on
     - field.field.node.augmentation.field_blueprints
     - field.field.node.augmentation.field_conditional
     - field.field.node.augmentation.field_cost
@@ -159,3 +160,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_attribution: true
+  field_based_on: true

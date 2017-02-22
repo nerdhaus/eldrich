@@ -1,0 +1,55 @@
+uuid: d6aa72a5-b184-42ab-b1b8-b806bb05d71d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_based_on
+    - node.type.armor
+    - node.type.augmentation
+    - node.type.creature
+    - node.type.drug
+    - node.type.faction
+    - node.type.gear
+    - node.type.location
+    - node.type.mind
+    - node.type.morph
+    - node.type.npc
+    - node.type.pc
+    - node.type.robot
+    - node.type.strain
+    - node.type.vehicle
+    - node.type.weapon
+id: node.gear.field_based_on
+field_name: field_based_on
+entity_type: node
+bundle: gear
+label: 'Based On'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      armor: armor
+      augmentation: augmentation
+      creature: creature
+      drug: drug
+      faction: faction
+      gear: gear
+      location: location
+      mind: mind
+      morph: morph
+      npc: npc
+      pc: pc
+      robot: robot
+      strain: strain
+      vehicle: vehicle
+      weapon: weapon
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: armor
+field_type: entity_reference

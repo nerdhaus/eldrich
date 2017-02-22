@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.robot.field_armor
     - field.field.node.robot.field_augmentations
+    - field.field.node.robot.field_based_on
     - field.field.node.robot.field_blueprints
     - field.field.node.robot.field_cost
     - field.field.node.robot.field_default_ai
@@ -181,4 +182,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_based_on: true

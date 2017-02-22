@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.drug.field_addiction_modifier
+    - field.field.node.drug.field_based_on
     - field.field.node.drug.field_blueprints
     - field.field.node.drug.field_cost
     - field.field.node.drug.field_delivery_mechanism
@@ -51,6 +52,7 @@ hidden:
   field_addiction_modifier: true
   field_armor: true
   field_attribution: true
+  field_based_on: true
   field_blueprints: true
   field_delivery_mechanism: true
   field_duration: true

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.mind.field_based_on
     - field.field.node.mind.field_blueprints
     - field.field.node.mind.field_cost
     - field.field.node.mind.field_description
@@ -14,7 +15,6 @@ dependencies:
     - node.type.mind
   module:
     - eldrich
-    - entity_reference_quantity
     - ep_skill_reference
     - text
     - user
@@ -69,7 +69,10 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
+  related_gear:
+    weight: 10
 hidden:
+  field_based_on: true
   field_blueprints: true
   field_short_name: true
   field_stats: true

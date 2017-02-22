@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.faction.field_based_on
     - field.field.node.faction.field_description
     - field.field.node.faction.field_faction_type
     - field.field.node.faction.field_gm_only
@@ -81,5 +82,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_based_on: true
   field_gm_only: true
   links: true

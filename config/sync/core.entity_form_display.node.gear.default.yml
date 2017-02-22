@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.gear.field_based_on
     - field.field.node.gear.field_blueprints
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
@@ -94,4 +95,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_based_on: true

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.armor.field_armor
+    - field.field.node.armor.field_based_on
     - field.field.node.armor.field_blueprints
     - field.field.node.armor.field_cost
     - field.field.node.armor.field_description
@@ -37,6 +38,7 @@ content:
       link: true
       location: suffix
       template: ' (min. {{ quantity }})'
+      length: full
     third_party_settings: {  }
     type: eldrich_popup_formatter
   field_description:
@@ -70,7 +72,12 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  related_gear:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  field_based_on: true
   field_blueprints: true
   field_is_mod: true
   field_short_name: true

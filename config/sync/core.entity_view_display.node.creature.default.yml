@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.creature.field_armor
     - field.field.node.creature.field_augmentations
+    - field.field.node.creature.field_based_on
     - field.field.node.creature.field_creature_type
     - field.field.node.creature.field_description
     - field.field.node.creature.field_equipped_weapons
@@ -153,6 +154,7 @@ content:
     type: entity_reference_override_label
 hidden:
   field_armor: true
+  field_based_on: true
   field_gm_only: true
   field_stats: true
   links: true

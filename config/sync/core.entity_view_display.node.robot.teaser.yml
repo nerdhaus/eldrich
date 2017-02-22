@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.robot.field_armor
     - field.field.node.robot.field_augmentations
+    - field.field.node.robot.field_based_on
     - field.field.node.robot.field_blueprints
     - field.field.node.robot.field_cost
     - field.field.node.robot.field_default_ai
@@ -56,6 +57,7 @@ content:
 hidden:
   field_armor: true
   field_augmentations: true
+  field_based_on: true
   field_blueprints: true
   field_default_ai: true
   field_equipped_weapons: true

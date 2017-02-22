@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.gear.field_based_on
     - field.field.node.gear.field_blueprints
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
@@ -12,7 +13,6 @@ dependencies:
     - node.type.gear
   module:
     - eldrich
-    - entity_reference_quantity
     - text
     - user
 id: node.gear.default
@@ -53,7 +53,10 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
+  related_gear:
+    weight: 10
 hidden:
+  field_based_on: true
   field_blueprints: true
   field_short_name: true
   links: true

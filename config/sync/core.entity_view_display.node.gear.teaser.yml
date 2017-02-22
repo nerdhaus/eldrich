@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.gear.field_based_on
     - field.field.node.gear.field_blueprints
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
@@ -44,6 +45,7 @@ content:
       link: true
     third_party_settings: {  }
 hidden:
+  field_based_on: true
   field_blueprints: true
   field_short_name: true
   field_sources: true

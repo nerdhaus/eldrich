@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.faction.field_based_on
     - field.field.node.faction.field_description
     - field.field.node.faction.field_faction_type
+    - field.field.node.faction.field_gm_only
     - field.field.node.faction.field_locations
     - field.field.node.faction.field_memes
     - field.field.node.faction.field_parent_faction
@@ -34,6 +36,7 @@ content:
       link: false
     third_party_settings: {  }
 hidden:
+  field_based_on: true
   field_gm_only: true
   field_locations: true
   field_memes: true

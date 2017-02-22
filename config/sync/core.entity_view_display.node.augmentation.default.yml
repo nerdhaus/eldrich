@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.augmentation.field_armor
+    - field.field.node.augmentation.field_based_on
     - field.field.node.augmentation.field_blueprints
     - field.field.node.augmentation.field_conditional
     - field.field.node.augmentation.field_cost
@@ -20,7 +21,6 @@ dependencies:
     - node.type.augmentation
   module:
     - eldrich
-    - entity_reference_quantity
     - ep_skill_reference
     - ep_statblock
     - text
@@ -97,8 +97,11 @@ content:
     settings:
       link: false
     third_party_settings: {  }
+  related_gear:
+    weight: 10
 hidden:
   field_armor: true
+  field_based_on: true
   field_blueprints: true
   field_conditional: true
   field_mobility_system: true

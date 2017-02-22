@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.augmentation.field_armor
+    - field.field.node.augmentation.field_based_on
     - field.field.node.augmentation.field_blueprints
     - field.field.node.augmentation.field_conditional
     - field.field.node.augmentation.field_cost
@@ -54,6 +55,7 @@ content:
 hidden:
   field_armor: true
   field_attribution: true
+  field_based_on: true
   field_blueprints: true
   field_conditional: true
   field_mobility_system: true

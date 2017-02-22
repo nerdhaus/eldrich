@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.morph.field_armor
     - field.field.node.morph.field_augmentations
+    - field.field.node.morph.field_based_on
     - field.field.node.morph.field_blueprints
     - field.field.node.morph.field_cost
     - field.field.node.morph.field_cp_cost
@@ -198,4 +199,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_based_on: true

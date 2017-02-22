@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.weapon.field_ap_modifier
     - field.field.node.weapon.field_area_effect
+    - field.field.node.weapon.field_based_on
     - field.field.node.weapon.field_blueprints
     - field.field.node.weapon.field_cost
     - field.field.node.weapon.field_damage_dice
@@ -66,6 +67,7 @@ hidden:
   field_ap_modifier: true
   field_area_effect: true
   field_armor: true
+  field_based_on: true
   field_blueprints: true
   field_damage: true
   field_damage_dice: true

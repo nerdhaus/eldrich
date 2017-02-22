@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.drug.field_addiction_modifier
+    - field.field.node.drug.field_based_on
     - field.field.node.drug.field_blueprints
     - field.field.node.drug.field_cost
     - field.field.node.drug.field_delivery_mechanism
@@ -16,7 +17,6 @@ dependencies:
     - node.type.drug
   module:
     - eldrich
-    - entity_reference_quantity
     - integer_time
     - text
     - user
@@ -101,7 +101,10 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
+  related_gear:
+    weight: 10
 hidden:
+  field_based_on: true
   field_blueprints: true
   field_short_name: true
   links: true

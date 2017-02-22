@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.mind.field_based_on
     - field.field.node.mind.field_blueprints
     - field.field.node.mind.field_cost
     - field.field.node.mind.field_description
@@ -114,4 +115,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_based_on: true

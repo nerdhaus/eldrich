@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.npc.field_based_on
     - field.field.node.npc.field_description
     - field.field.node.npc.field_equipped_armor
     - field.field.node.npc.field_equipped_weapons
@@ -117,6 +118,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_label
 hidden:
+  field_based_on: true
   field_equipped_armor: true
   field_equipped_weapons: true
   field_gm_only: true

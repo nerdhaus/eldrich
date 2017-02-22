@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.vehicle.field_armor
     - field.field.node.vehicle.field_augmentations
+    - field.field.node.vehicle.field_based_on
     - field.field.node.vehicle.field_blueprints
     - field.field.node.vehicle.field_cost
     - field.field.node.vehicle.field_description
@@ -57,6 +58,7 @@ content:
 hidden:
   field_armor: true
   field_augmentations: true
+  field_based_on: true
   field_blueprints: true
   field_equipped_weapons: true
   field_gear: true

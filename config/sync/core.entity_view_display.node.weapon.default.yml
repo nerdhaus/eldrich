@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.weapon.field_ap_modifier
     - field.field.node.weapon.field_area_effect
+    - field.field.node.weapon.field_based_on
     - field.field.node.weapon.field_blueprints
     - field.field.node.weapon.field_cost
     - field.field.node.weapon.field_damage_dice
@@ -29,7 +30,6 @@ dependencies:
   module:
     - eldrich
     - entity_reference_override
-    - entity_reference_quantity
     - ep_complex_values
     - operation
     - text
@@ -160,7 +160,10 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  related_gear:
+    weight: 10
 hidden:
+  field_based_on: true
   field_blueprints: true
   field_is_ammo: true
   field_is_mod: true

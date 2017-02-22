@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.weapon.field_ap_modifier
     - field.field.node.weapon.field_area_effect
+    - field.field.node.weapon.field_based_on
     - field.field.node.weapon.field_blueprints
     - field.field.node.weapon.field_cost
     - field.field.node.weapon.field_damage_dice
@@ -231,4 +232,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_based_on: true

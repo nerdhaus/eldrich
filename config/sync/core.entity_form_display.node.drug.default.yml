@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.drug.field_addiction_modifier
+    - field.field.node.drug.field_based_on
     - field.field.node.drug.field_blueprints
     - field.field.node.drug.field_cost
     - field.field.node.drug.field_delivery_mechanism
@@ -127,3 +128,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_attribution: true
+  field_based_on: true

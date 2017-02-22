@@ -6,10 +6,12 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.creature.field_armor
     - field.field.node.creature.field_augmentations
+    - field.field.node.creature.field_based_on
     - field.field.node.creature.field_creature_type
     - field.field.node.creature.field_description
     - field.field.node.creature.field_equipped_weapons
     - field.field.node.creature.field_gear
+    - field.field.node.creature.field_gm_only
     - field.field.node.creature.field_image
     - field.field.node.creature.field_mobility_system
     - field.field.node.creature.field_movement_speed
@@ -41,6 +43,7 @@ hidden:
   field_armor: true
   field_attribution: true
   field_augmentations: true
+  field_based_on: true
   field_creature_type: true
   field_equipped_weapons: true
   field_gear: true
