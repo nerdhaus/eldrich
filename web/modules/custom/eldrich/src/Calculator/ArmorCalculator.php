@@ -61,9 +61,16 @@ class ArmorCalculator {
       foreach ($entity->field_augmentations as $aug) {
         $aug = $aug->entity;
         if (!$aug->field_armor->isEmpty()) {
-          $data['energy'] += $aug->field_armor->energy;
-          $data['kinetic'] += $aug->field_armor->kinetic;
-          $data['entities'][$aug->id()] = $aug;
+          if ($aug->field_armor->replaces) {
+            $data['energy'] = max($data['energy'], $aug->field_armor->energy);
+            $data['kinetic'] = max($data['kinetic'], $aug->field_armor->kinetic);
+            $data['entities'][$aug->id()] = $aug;
+          }
+          else {
+            $data['energy'] += $aug->field_armor->energy;
+            $data['kinetic'] += $aug->field_armor->kinetic;
+            $data['entities'][$aug->id()] = $aug;
+          }
           if (!$aug->field_special_effect->isEmpty()) {
             $data['effects'][] = $aug->field_special_effect->value;
           }
