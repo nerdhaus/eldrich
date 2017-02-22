@@ -75,15 +75,15 @@ content:
     third_party_settings: {  }
     type: url_embed
   sub_content_gear:
-    weight: 6
-    settings: {  }
-    third_party_settings: {  }
-  sub_content_npcs:
     weight: 7
     settings: {  }
     third_party_settings: {  }
-  sub_content_sessions:
+  sub_content_npcs:
     weight: 8
+    settings: {  }
+    third_party_settings: {  }
+  sub_content_sessions:
+    weight: 6
     settings: {  }
     third_party_settings: {  }
   sub_content_world:

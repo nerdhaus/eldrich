@@ -4,11 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_gear
-    - node.type.drug
-    - node.type.gear
     - node.type.pc
-    - node.type.robot
-    - node.type.weapon
   module:
     - entity_reference_override
 id: node.pc.field_gear
@@ -22,16 +18,11 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: views
   handler_settings:
-    target_bundles:
-      drug: drug
-      gear: gear
-      robot: robot
-      weapon: weapon
-    sort:
-      field: _none
-    auto_create: false
-    auto_create_bundle: drug
+    view:
+      view_name: select_lists
+      display_name: gear
+      arguments: {  }
   override_label: Notes
 field_type: entity_reference_override

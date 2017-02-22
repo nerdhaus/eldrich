@@ -6,10 +6,12 @@ dependencies:
     - field.field.node.creature.field_armor
     - field.field.node.creature.field_augmentations
     - field.field.node.creature.field_based_on
+    - field.field.node.creature.field_cost
     - field.field.node.creature.field_creature_type
     - field.field.node.creature.field_description
     - field.field.node.creature.field_equipped_weapons
     - field.field.node.creature.field_gear
+    - field.field.node.creature.field_gear_type
     - field.field.node.creature.field_gm_only
     - field.field.node.creature.field_image
     - field.field.node.creature.field_mobility_system
@@ -26,6 +28,7 @@ dependencies:
   module:
     - eldrich
     - entity_reference_override
+    - entity_reference_quantity
     - ep_complex_values
     - ep_skill_reference
     - image_url_formatter
@@ -44,6 +47,15 @@ content:
       override_action: suffix
     third_party_settings: {  }
     type: entity_reference_override_label
+  field_cost:
+    weight: 19
+    label: above
+    settings:
+      location: suffix
+      template: ' ({{ quantity }})'
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_quantity_label
   field_creature_type:
     weight: 0
     label: inline
@@ -155,6 +167,7 @@ content:
 hidden:
   field_armor: true
   field_based_on: true
+  field_gear_type: true
   field_gm_only: true
   field_stats: true
   links: true

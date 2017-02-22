@@ -17,16 +17,9 @@ targetEntityType: node
 bundle: session
 mode: default
 content:
-  field_campaign:
-    weight: 102
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
   field_date:
     weight: 103
-    label: above
+    label: hidden
     settings:
       format_type: medium
       timezone_override: ''
@@ -34,16 +27,16 @@ content:
     type: datetime_default
   field_session_promo:
     weight: 104
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_session_recap:
     weight: 105
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  links:
-    weight: 100
-hidden: {  }
+hidden:
+  field_campaign: true
+  links: true

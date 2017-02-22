@@ -10,16 +10,39 @@ dependencies:
     - field.field.node.session.field_session_recap
     - node.type.session
   module:
+    - datetime
+    - text
     - user
 id: node.session.teaser
 targetEntityType: node
 bundle: session
 mode: teaser
 content:
+  field_date:
+    type: datetime_custom
+    weight: 0
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'l n/t'
+    third_party_settings: {  }
+  field_session_promo:
+    type: text_trimmed
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  field_session_recap:
+    type: text_trimmed
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
   links:
-    weight: 100
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_campaign: true
-  field_date: true
-  field_session_promo: true
-  field_session_recap: true

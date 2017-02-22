@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.creature.field_armor
     - field.field.node.creature.field_augmentations
     - field.field.node.creature.field_based_on
+    - field.field.node.creature.field_cost
     - field.field.node.creature.field_creature_type
     - field.field.node.creature.field_description
     - field.field.node.creature.field_equipped_weapons
@@ -57,6 +58,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
+  field_cost:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_quantity_autocomplete
   field_creature_type:
     weight: 2
     settings: {  }

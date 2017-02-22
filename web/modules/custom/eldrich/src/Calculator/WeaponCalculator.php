@@ -321,7 +321,7 @@ class WeaponCalculator {
   public static function totalCombatSoftware(Array &$data, FieldableEntityInterface $scorcher) {
     $item = NULL;
 
-    if (!$scorcher->field_gear_type->isEmpty() && ($scorcher->field_gear_type->entity->label() == 'Scorchers')) {
+    if ($scorcher->hasField('field_gear_type') && !$scorcher->field_gear_type->isEmpty() && ($scorcher->field_gear_type->entity->label() == 'Scorchers')) {
       $item = static::initWeaponRecord();
       $item['category'] = 'Scorcher';
       $item['linked_skill'] = 'infosec';
