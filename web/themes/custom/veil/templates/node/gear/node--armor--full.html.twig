@@ -1,0 +1,18 @@
+{#
+/*
+ * For Armor:
+ * - content.field_armor: The morph types the augmentation can be installed on
+ * - content.field_special_effect: Stat bonuses.
+ */
+#}
+{% extends "@veil/node/node--full.html.twig" %}
+{% block callout_content %}
+  {{ parent() }}
+  {% if content.field_armor|field_value %}<li><strong>Armor:</strong> {{ content.field_armor|field_value }}</li>{% endif %}
+{% endblock %}
+{% block stats %}{% endblock %}
+  {% block properties %}
+    <ul class="list-unstyled list-hanging">
+      {% if content.field_special_effect|field_value|length %}<li><strong>Special Effect:</strong> {{ content.field_special_effect|field_value }}</li>{% endif %}
+    </ul>
+  {% endblock %}
