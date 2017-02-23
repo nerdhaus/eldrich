@@ -12,7 +12,7 @@ dependencies:
     - veil
 third_party_settings:
   block_class:
-    classes: col-sm-6
+    classes: col-sm-5
 id: posthumanstudios
 theme: veil
 region: footer

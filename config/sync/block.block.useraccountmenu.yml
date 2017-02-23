@@ -1,29 +1,31 @@
-uuid: 0e4f9c9d-aed6-42bc-9ca6-1c1c34981ab1
+uuid: fa6b92e3-7591-4d9a-b607-ca757b185210
 langcode: en
 status: true
 dependencies:
   config:
-    - simple_block.simple_block.eldrich_credit
+    - system.menu.account
   module:
     - block_class
     - block_visibility_groups
-    - simple_block
+    - system
   theme:
     - veil
 third_party_settings:
   block_class:
-    classes: col-sm-5
-id: eldrichhostcredits
+    classes: col-sm-2
+id: useraccountmenu
 theme: veil
 region: footer
-weight: -9
+weight: 0
 provider: null
-plugin: 'simple_block:eldrich_credit'
+plugin: 'system_menu_block:account'
 settings:
-  id: 'simple_block:eldrich_credit'
-  label: 'Eldrich Host credits'
-  provider: simple_block
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
   label_display: '0'
+  level: 1
+  depth: 0
 visibility:
   condition_group:
     id: condition_group

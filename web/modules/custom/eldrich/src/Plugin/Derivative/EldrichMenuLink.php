@@ -77,6 +77,7 @@ class EldrichMenuLink extends DeriverBase implements ContainerDeriverInterface {
     $cids = $this->nodeStorage->getQuery()
       ->condition('type', 'campaign')
       ->condition('status', NODE_PUBLISHED)
+      ->condition('field_campaign_status', 'active')
       ->execute();
 
     if (count($cids)) {

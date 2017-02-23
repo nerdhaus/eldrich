@@ -229,3 +229,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_based_on: true
+  field_gear_type: true

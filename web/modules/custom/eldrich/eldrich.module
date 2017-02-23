@@ -8,6 +8,19 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Node\Entity\Node;
+
+function eldrich_entity_upate(EntityInterface $entity) {
+  if (in_array($entity->bundle(), ['campaign', 'gear_type'])) {
+    \Drupal::service("router.builder")->rebuild();
+  }
+}
+
+function eldrich_entity_insert(EntityInterface $entity) {
+  if (in_array($entity->bundle(), ['campaign', 'gear_type'])) {
+    \Drupal::service("router.builder")->rebuild();
+  }
+}
+
 function eldrich_entity_presave(EntityInterface $entity) {
   // when Weapon Instances and Armor Instances are saved, title them.
   // Weapon Pattern: Short Weapon Name (Mod Shortnames) with [Smart Ammo features] Ammo Name
