@@ -17,7 +17,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "eldrich"
   config.ssh.insert_key = true
   config.ssh.forward_agent = true
-  config.ssh.private_key_path = "~/.ssh/id_rsa"
 
 
   config.vm.synced_folder "./", "/vagrant", id: "vagrant-root",
