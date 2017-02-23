@@ -61,7 +61,7 @@
         "erusev/parsedown": "^1.6",
         "drupal/twig_tweak": "^1.4",
         "drupal/menu_trail_by_path": "^1.1",
-        "drupal/eva": "^1.0@RC",
+        "drupal/eva": "1.1-rc1",
         "drupal/field_tools": "1.x-dev",
         "drupal/subpathauto": "^1.0@beta",
         "drupal/system_stream_wrapper": "^1.0@alpha",
