@@ -81,7 +81,7 @@ class NodeTitle extends PreprocessBase implements PreprocessInterface {
         $actions['invite'] = [
           '#type' => 'link',
           '#title' => t('Invite a player'),
-          '#url' => Url::fromUri('base:/'),
+          '#url' => Url::fromUri('route:<nolink>'),
           '#attributes' => [
             'data-toggle' => 'modal',
             'data-target' => '#inviteModal',
