@@ -25,6 +25,8 @@ sudo apt-get install -y mysql-server
 sudo apt-get install ruby
 sudo apt install ruby-sass
 
+sudo apt-get install phantomjs
+
 # Varnish and memcached, our performance juicers
 # sudo apt-get install -y varnish memcached
 # sudo rm /etc/default/varnish
