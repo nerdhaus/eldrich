@@ -6,8 +6,9 @@ dependencies:
     - field.field.user.user.field_personal_links
     - field.field.user.user.field_profile
     - field.field.user.user.user_picture
+    - image.style.square_small
   module:
-    - image_url_formatter
+    - image
     - link
     - text
     - user
@@ -30,17 +31,17 @@ content:
     third_party_settings: {  }
     type: link
   field_profile:
+    type: text_default
     weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
   user_content_characters:
     weight: 3
     settings: {  }
     third_party_settings: {  }
   user_content_content:
-    weight: 4
+    weight: 3
     settings: {  }
     third_party_settings: {  }
   user_content_entity_view_1:
@@ -48,13 +49,12 @@ content:
     settings: {  }
     third_party_settings: {  }
   user_picture:
-    type: image_url
+    type: image
     weight: 0
-    label: above
+    label: hidden
     settings:
-      url_type: ''
-      image_style: ''
-      image_link: ''
+      image_style: square_small
+      image_link: content
     third_party_settings: {  }
 hidden:
   member_for: true

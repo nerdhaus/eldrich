@@ -24,7 +24,7 @@ mode: teaser
 content:
   field_description:
     weight: 2
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default

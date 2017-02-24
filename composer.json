@@ -66,7 +66,9 @@
         "drupal/image_widget_crop": "^1.4",
         "drupal/image_url_formatter": "^1.0@beta",
         "drupal/flag": "^4.0@alpha",
-        "drupal/invite": "1.x-dev"
+        "drupal/invite": "1.x-dev",
+        "drupal/page_url_qr_code_block": "^1.0",
+        "drupal/mailchimp": "^1.2"
     },
     "require-dev": {
         "behat/mink": "~1.7",

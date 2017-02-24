@@ -1,6 +1,5 @@
 module:
   automated_cron: 0
-  barcodes: 0
   block: 0
   block_class: 0
   block_content: 0

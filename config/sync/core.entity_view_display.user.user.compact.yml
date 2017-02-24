@@ -10,6 +10,7 @@ dependencies:
     - image.style.thumbnail
   module:
     - image
+    - text
     - user
 _core:
   default_config_hash: C3k_McOy8bL8rTnIjspy5OfFdgqV1z6OdGZaI-tO5eM
@@ -18,6 +19,13 @@ targetEntityType: user
 bundle: user
 mode: compact
 content:
+  field_profile:
+    type: text_trimmed
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 400
+    third_party_settings: {  }
   user_picture:
     type: image
     weight: 0
@@ -28,7 +36,6 @@ content:
     label: hidden
 hidden:
   field_personal_links: true
-  field_profile: true
   member_for: true
   user_content_characters: true
   user_content_content: true

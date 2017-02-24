@@ -13,12 +13,14 @@ dependencies:
     - image.style.square_small
     - node.type.armor
     - node.type.augmentation
+    - node.type.creature
     - node.type.drug
     - node.type.faction
     - node.type.gear
     - node.type.location
     - node.type.mind
     - node.type.morph
+    - node.type.network
     - node.type.npc
     - node.type.pc
     - node.type.robot
@@ -724,13 +726,16 @@ display:
           value:
             armor: armor
             augmentation: augmentation
+            creature: creature
             drug: drug
             faction: faction
             gear: gear
             location: location
             mind: mind
             morph: morph
+            network: network
             npc: npc
+            pc: pc
             robot: robot
             strain: strain
             vehicle: vehicle
@@ -1075,7 +1080,7 @@ display:
       show_title: 1
       argument_mode: None
       default_argument: null
-      enabled: true
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -1100,7 +1105,7 @@ display:
       display_description: ''
       argument_mode: None
       default_argument: null
-      title: 'Original Content'
+      title: 'Homebrew Content'
       show_title: 1
       enabled: true
       fields:
