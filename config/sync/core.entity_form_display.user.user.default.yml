@@ -32,6 +32,25 @@ third_party_settings:
         classes: ''
         id: ''
       label: Settings
+    group_profile:
+      children:
+        - user_picture
+        - field_profile
+        - field_personal_links
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Profile
 _core:
   default_config_hash: LLAieeozVsoZDb-2PbFxRJpQqnKmpR7-4OoRJnduz-U
 id: user.user.default
@@ -47,14 +66,14 @@ content:
     weight: 5
   field_personal_links:
     type: link_default
-    weight: 3
+    weight: 4
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
   field_profile:
     type: text_textarea
-    weight: 2
+    weight: 3
     settings:
       rows: 8
       placeholder: ''
@@ -78,7 +97,7 @@ content:
     third_party_settings: {  }
   user_picture:
     type: image_image
-    weight: 1
+    weight: 2
     settings:
       preview_image_style: thumbnail
       progress_indicator: throbber

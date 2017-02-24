@@ -1,0 +1,23 @@
+uuid: 8cb74d71-c9cd-471c-bd0a-9b0ff634b345
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.ic_comment
+    - field.field.comment.ic_comment.comment_body
+  module:
+    - text
+id: comment.ic_comment.default
+targetEntityType: comment
+bundle: ic_comment
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden: {  }
