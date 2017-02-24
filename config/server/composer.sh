@@ -10,9 +10,6 @@ cd /vagrant
 composer install
 composer update
 
-if [ ! -f "/vagrant/web/sites/default/settings.local.php" ]; then
-  cp /vagrant/web/sites/example.settings.local.php /vagrant/web/sites/default/settings.local.php
-  cat /vagrant/config/server/dev-database.txt >> /vagrant/web/sites/default/settings.local.php
-fi
-
 sudo service apache2 restart
+
+echo "Installation complete. Run drush sql-sync @live @self for full data."
