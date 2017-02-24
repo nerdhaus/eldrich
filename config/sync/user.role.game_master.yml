@@ -71,3 +71,9 @@ permissions:
   - 'create weapon content'
   - 'delete own weapon content'
   - 'edit own weapon content'
+  - 'clone content'
+  - 'add invite entities'
+  - 'delete invite entities'
+  - 'edit invite entities'
+  - invite_type_campaign_invite
+  - 'cancel account'

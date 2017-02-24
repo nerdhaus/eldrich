@@ -1,0 +1,24 @@
+uuid: ff7fba01-5849-41b3-afe8-d182bf12fafc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.invite.field_invite_email_body
+  module:
+    - invite
+_core:
+  default_config_hash: rLzCFOx_1vbWULkakva3vIuZTHlu6R22AZSwuSkhEqQ
+id: invite.invite.field_invite_email_body
+field_name: field_invite_email_body
+entity_type: invite
+bundle: invite
+label: Body
+description: 'Enter e-mail body.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Congratulations! [invite:inviter:name] has invited you to join an Eclipse Phase campaign on [site:name] at [site:url]. To become a member of [site:name], click the link below or paste it into the address bar of your browser. [invite:invite-accept-link]'
+default_value_callback: ''
+settings: {  }
+field_type: string_long

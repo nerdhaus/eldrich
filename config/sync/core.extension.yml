@@ -46,6 +46,9 @@ module:
   image_widget_crop: 0
   inline_entity_form: 0
   integer_time: 0
+  invite: 0
+  invite_by_email: 0
+  invite_link: 0
   link: 0
   menu_ui: 0
   metatag: 0

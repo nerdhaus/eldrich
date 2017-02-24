@@ -1,0 +1,30 @@
+uuid: c38bb4c8-fb9c-4e38-abfc-fa1da13dd778
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - block_visibility_groups
+    - invite_by_email
+  theme:
+    - veil
+third_party_settings:
+  block_class:
+    classes: col-sm-4
+id: campaigninvite
+theme: veil
+region: footer
+weight: 0
+provider: null
+plugin: 'invite_by_email_block:campaign_invite'
+settings:
+  id: 'invite_by_email_block:campaign_invite'
+  label: 'Invite a player'
+  provider: invite_by_email
+  label_display: visible
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

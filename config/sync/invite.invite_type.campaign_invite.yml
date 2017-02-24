@@ -1,0 +1,8 @@
+uuid: d1652e30-fba5-4ec1-929d-3ede9213aab0
+langcode: en
+status: null
+dependencies: {  }
+id: campaign_invite
+label: 'Campaign Invite'
+description: 'Allows Eclipse Phase GMs to invite players in their campaigns to Eldrich Host.'
+data: 'a:4:{s:11:"use_default";i:0;s:16:"subject_editable";i:1;s:10:"html_email";i:0;s:11:"target_role";s:6:"player";}'

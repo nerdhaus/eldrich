@@ -1,0 +1,19 @@
+uuid: e15fe591-2297-43ed-81b6-0a97d2e5f11a
+langcode: en
+status: true
+dependencies: {  }
+id: player
+label: Player
+weight: 4
+is_admin: null
+permissions:
+  - 'clone content'
+  - 'create component entities'
+  - 'create instance entities'
+  - 'create npc content'
+  - 'delete own npc content'
+  - 'edit own npc content'
+  - 'create pc content'
+  - 'delete own pc content'
+  - 'edit own pc content'
+  - 'cancel account'

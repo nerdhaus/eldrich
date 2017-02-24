@@ -5,3 +5,12 @@
  *
  * Place your custom PHP code in this file.
  */
+
+
+
+use Drupal\Core\Form\FormStateInterface;
+
+
+function veil_form_invite_by_email_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['#theme'] = 'invite_by_email_block_form';
+}
