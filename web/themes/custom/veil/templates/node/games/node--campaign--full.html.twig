@@ -67,10 +67,8 @@ view_mode ? view_mode|clean_class
         {% if content.field_resources|field_value|length -%}
           <li><strong>Resources:</strong> {{ content.field_resources|field_value|safe_join(', ') }}</li>
         {%- endif %}
-        {% if content.field_official_downloads|field_value|length -%}
-          <li><strong>Downloads:</strong> {{ content.field_official_downloads|field_value|safe_join(', ') }}</li>
-        {%- endif %}
       </ul>
+      {{ content.field_official_downloads }}
     </div>
     {% endblock %}
   </section>
