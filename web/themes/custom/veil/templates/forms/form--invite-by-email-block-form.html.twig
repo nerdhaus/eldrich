@@ -1,0 +1,21 @@
+{#
+/**
+* @file
+* Default theme implementation for a 'form' element.
+*
+* Available variables
+* - attributes: A list of HTML attributes for the wrapper element.
+* - element: The child elements of the form.
+*
+* @see template_preprocess_form()
+*
+* @ingroup themeable
+*/
+#}
+  <div class="modal-body">
+    {{ element|without('send_invitation', 'cancel') }}
+  </div>
+  <div class="modal-footer">
+    {{ element.cancel }}
+    {{ element.send_invitation }}
+  </div><!-- /.modal-footer -->
