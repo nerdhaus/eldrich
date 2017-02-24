@@ -68,7 +68,17 @@
         "drupal/flag": "^4.0@alpha",
         "drupal/invite": "1.x-dev",
         "drupal/page_url_qr_code_block": "^1.0",
-        "drupal/mailchimp": "^1.2"
+        "drupal/mailchimp": "^1.2",
+        "drupal/slack": "^1.0",
+        "drupal/ics_field": "^1.0",
+        "drupal/nice_login": "^1.0",
+        "drupal/dindent": "^1.0@beta",
+        "drupal/image_effects": "^1.0@alpha",
+        "drupal/unique_field_ajax": "^1.0",
+        "drupal/custom_add_another": "^1.0@beta",
+        "drupal/filelist_formatter": "^1.1",
+        "drupal/veoa": "^1.0@RC",
+        "drupal/webform": "^5.0@beta"
     },
     "require-dev": {
         "behat/mink": "~1.7",
