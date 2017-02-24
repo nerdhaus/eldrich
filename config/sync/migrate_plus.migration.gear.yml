@@ -30,7 +30,7 @@ source:
     -
       special_effect: Effect
   constants:
-    user: Factotum
+    user: Proxy
   keys:
     - title
 process:

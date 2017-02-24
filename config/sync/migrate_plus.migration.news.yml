@@ -20,7 +20,7 @@ source:
   keys:
     - title
   constants:
-    user: Factotum
+    user: Proxy
 process:
   uid:
     plugin: entity_lookup_plus

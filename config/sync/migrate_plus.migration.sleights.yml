@@ -42,7 +42,7 @@ source:
     -
       book: Book
   constants:
-    user: Factotum
+    user: Proxy
   keys:
     - title
 process:

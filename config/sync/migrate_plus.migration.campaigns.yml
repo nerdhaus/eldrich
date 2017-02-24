@@ -32,7 +32,7 @@ source:
   keys:
     - title
   constants:
-    user: Factotum
+    user: Proxy
     uri: 'public://inspiration/'
     fileuri: 'public://downloads/'
 process:

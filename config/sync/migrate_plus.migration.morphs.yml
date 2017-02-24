@@ -52,7 +52,7 @@ source:
   constants:
     uri: 'public://morphs/'
     extension: .png
-    user: Factotum
+    user: Proxy
   keys:
     - title
 process:

@@ -32,7 +32,7 @@ source:
     -
       skills: Skills
   constants:
-    user: Factotum
+    user: Proxy
   keys:
     - title
 process:

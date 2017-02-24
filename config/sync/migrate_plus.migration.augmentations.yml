@@ -48,7 +48,7 @@ source:
     -
       morphs: Morphs
   constants:
-    user: Factotum
+    user: Proxy
   keys:
     - title
 process:

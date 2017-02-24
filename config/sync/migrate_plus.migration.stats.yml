@@ -28,7 +28,7 @@ source:
     -
       weight: Weight
   constants:
-    user: Factotum
+    user: Proxy
   keys:
     - code
 process:

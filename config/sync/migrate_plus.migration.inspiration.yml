@@ -24,7 +24,7 @@ source:
   keys:
     - title
   constants:
-    user: Factotum
+    user: Proxy
     uri: 'public://inspiration/'
 process:
   uid:

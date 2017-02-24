@@ -30,7 +30,7 @@ source:
   keys:
     - title
   constants:
-    user: Factotum
+    user: Proxy
     content_type: faction
 process:
   uid:

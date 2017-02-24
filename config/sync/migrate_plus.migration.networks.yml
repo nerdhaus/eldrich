@@ -20,7 +20,7 @@ source:
     -
       source: Source
   constants:
-    user: Factotum
+    user: Proxy
   keys:
     - title
 process:

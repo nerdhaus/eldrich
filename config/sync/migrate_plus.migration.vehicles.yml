@@ -48,7 +48,7 @@ source:
     -
       weapons: Weapons
   constants:
-    user: Factotum
+    user: Proxy
   keys:
     - title
 process:

@@ -15,7 +15,7 @@ function ep_import_update_8001() {
   $query->fields(['uid' => $user->id()]);
   $query->execute();
 
-  return t('Created the Factotum user, assigned all content to it.');
+  return t('Created the Proxy user, assigned all content to it.');
 }
 
 function _ep_import_create_content_user() {
@@ -25,7 +25,7 @@ function _ep_import_create_content_user() {
   //Save user
   $user = \Drupal\user\Entity\User::create(
     [
-      'name' => 'Factotum',
+      'name' => 'Proxy',
       'mail' => 'editor@eldrich.host',
       'pass' => substr(md5(rand()), 0, 16),
       'status' => 1,

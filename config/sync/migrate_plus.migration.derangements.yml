@@ -24,7 +24,7 @@ source:
   keys:
     - title
   constants:
-    user: Factotum
+    user: Proxy
     format: basic_html
 process:
   uid:

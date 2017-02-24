@@ -60,7 +60,7 @@ source:
     -
       uses_mods: 'Uses Mods'
   constants:
-    user: Factotum
+    user: Proxy
   keys:
     - title
 process:

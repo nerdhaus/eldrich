@@ -52,7 +52,7 @@ source:
   constants:
     uri: 'public://creatures/'
     extension: .png
-    user: Factotum
+    user: Proxy
   keys:
     - title
 process:

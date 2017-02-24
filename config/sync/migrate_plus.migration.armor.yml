@@ -38,7 +38,7 @@ source:
     -
       moddable: Moddable
   constants:
-    user: Factotum
+    user: Proxy
   keys:
     - title
 process:
