@@ -25,4 +25,5 @@ content:
     type: options_select
 hidden:
   author: true
+  comment_body: true
   subject: true

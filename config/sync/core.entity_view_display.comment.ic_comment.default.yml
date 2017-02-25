@@ -25,4 +25,5 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
 hidden:
+  comment_body: true
   links: true
