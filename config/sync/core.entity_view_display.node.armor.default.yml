@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.ic_comment.default
     - field.field.node.armor.field_armor
     - field.field.node.armor.field_based_on
     - field.field.node.armor.field_blueprints
+    - field.field.node.armor.field_chat
     - field.field.node.armor.field_cost
     - field.field.node.armor.field_description
     - field.field.node.armor.field_gear_type
@@ -16,6 +18,7 @@ dependencies:
     - field.field.node.armor.field_uses_mods
     - node.type.armor
   module:
+    - comment
     - eldrich
     - ep_complex_values
     - text
@@ -31,6 +34,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_text
+  field_chat:
+    weight: 11
+    label: hidden
+    settings:
+      pager_id: 0
+      view_mode: default
+    third_party_settings: {  }
+    type: comment_default
   field_cost:
     weight: 2
     label: inline

@@ -6,13 +6,14 @@ dependencies:
     - comment.type.ic_comment
     - field.field.comment.ic_comment.field_body
     - field.field.comment.ic_comment.field_character
+    - field.field.comment.ic_comment.field_obscure_id
 id: comment.ic_comment.default
 targetEntityType: comment
 bundle: ic_comment
 mode: default
 content:
   field_body:
-    weight: 3
+    weight: 2
     settings:
       rows: 5
       placeholder: ''
@@ -23,6 +24,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_obscure_id:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
 hidden:
   author: true
   comment_body: true

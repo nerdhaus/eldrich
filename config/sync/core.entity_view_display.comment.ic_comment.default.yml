@@ -6,13 +6,14 @@ dependencies:
     - comment.type.ic_comment
     - field.field.comment.ic_comment.field_body
     - field.field.comment.ic_comment.field_character
+    - field.field.comment.ic_comment.field_obscure_id
 id: comment.ic_comment.default
 targetEntityType: comment
 bundle: ic_comment
 mode: default
 content:
   field_body:
-    weight: 1
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -26,4 +27,5 @@ content:
     type: entity_reference_label
 hidden:
   comment_body: true
+  field_obscure_id: true
   links: true

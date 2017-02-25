@@ -1,0 +1,23 @@
+uuid: f2601490-1301-4180-aa4f-3ab2c20b2451
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.ic_comment
+    - field.storage.comment.field_obscure_id
+id: comment.ic_comment.field_obscure_id
+field_name: field_obscure_id
+entity_type: comment
+bundle: ic_comment
+label: 'Obscure ID'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

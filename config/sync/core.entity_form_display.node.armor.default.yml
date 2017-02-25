@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.armor.field_armor
     - field.field.node.armor.field_based_on
     - field.field.node.armor.field_blueprints
+    - field.field.node.armor.field_chat
     - field.field.node.armor.field_cost
     - field.field.node.armor.field_description
     - field.field.node.armor.field_gear_type
@@ -16,6 +17,7 @@ dependencies:
     - field.field.node.armor.field_uses_mods
     - node.type.armor
   module:
+    - comment
     - entity_reference_quantity
     - ep_complex_values
     - path
@@ -41,6 +43,11 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+  field_chat:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
   field_cost:
     weight: 10
     settings: {  }
