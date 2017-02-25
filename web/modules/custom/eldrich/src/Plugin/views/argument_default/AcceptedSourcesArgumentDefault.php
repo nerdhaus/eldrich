@@ -57,7 +57,12 @@ class AcceptedSourcesArgumentDefault extends ArgumentDefaultPluginBase implement
    * {@inheritdoc}
    */
   public function getArgument() {
-    $preference = $this->currentUser->field_canon_preference->value;
+    if (!is_null($this->currentUser) && $this->currentUser->hasField('field_canon_preference')) {
+      $preference = $this->currentUser->field_canon_preference->value;
+    }
+    else {
+      $preference = 'canon';
+    }
 
     $player_query = $this->query->andConditionGroup()
       ->condition('type', 'campaign')
