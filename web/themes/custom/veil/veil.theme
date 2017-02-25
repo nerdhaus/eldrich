@@ -12,7 +12,7 @@ use Drupal\Core\Form\FormStateInterface;
 
 
 function veil_form_invite_by_email_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $form['#theme'] = 'form__invite_by_email_block_form';
+  $form['#theme'][] = 'form__invite_by_email_block_form';
 
   $form['#attributes']['class'][] = 'form-horizontal';
   $form['email']['#attributes']['class'][] = 'form-control';
@@ -27,4 +27,22 @@ function veil_form_invite_by_email_block_form_alter(&$form, FormStateInterface $
       'data-dismiss' => 'modal',
     ],
   ];
+}
+
+
+function veil_form_comment_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['#theme'][] = 'comment_form__ic';
+
+  if (isset($form['field_character']['widget'])) {
+    $identities = count($form['field_character']['widget']['#options']);
+    if ($identities == 1) {
+      $form['#access'] = FALSE;
+    }
+    if ($identities == 2) {
+      unset($form['field_character']['widget']['#options']['_none']);
+    }
+    else {
+      $form['field_character']['widget']['#options']['_none'] = t('— Choose an Identity —');
+    }
+  }
 }

@@ -26,18 +26,20 @@
  * @see comment_preprocess_field()
  */
 #}
-<section{{ attributes.addClass('col-md-8') }}>
-  {% if comments and not label_hidden %}
-    {{ title_prefix }}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-    {{ title_suffix }}
-  {% endif %}
-
-  {{ comments }}
-
-  {% if comment_form %}
-    <h2{{ content_attributes }}>{{ 'Add new comment'|t }}</h2>
-    {{ comment_form }}
-  {% endif %}
-
+<section{{ attributes.addClass('row') }}>
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">Network Chatter <span class="eldrich-icon icon-talk pull-right"></span></h4>
+      </div>
+      <div class="panel-body">
+        {{ comments }}
+      </div>
+      {% if comment_form %}
+        <div class="panel-footer">
+          {{ comment_form }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
 </section>
