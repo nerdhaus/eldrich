@@ -57,8 +57,8 @@ class AcceptedSourcesArgumentDefault extends ArgumentDefaultPluginBase implement
    * {@inheritdoc}
    */
   public function getArgument() {
-    if (!is_null($this->currentUser) && $this->currentUser->hasField('field_canon_preference')) {
-      $preference = $this->currentUser->field_canon_preference->value;
+    if ($this->currentUser->isAuthenticated()) {
+      $preference = $this->currentUser->get('field_canon_preferences')->value;
     }
     else {
       $preference = 'canon';
