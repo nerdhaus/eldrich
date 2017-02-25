@@ -1,0 +1,21 @@
+uuid: 1b0dc40b-18f5-40e1-837c-2892bf14721c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_canon_preferences
+  module:
+    - options
+    - user
+id: user.user.field_canon_preferences
+field_name: field_canon_preferences
+entity_type: user
+bundle: user
+label: 'Browsing Preferences'
+description: 'Homebrew content will always be available if you visit it directly — this just controls what will appear when you''re browsing Eldrich Host''s information archive.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

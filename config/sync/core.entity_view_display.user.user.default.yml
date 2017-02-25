@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_canon_preferences
     - field.field.user.user.field_personal_links
     - field.field.user.user.field_profile
     - field.field.user.user.user_picture
@@ -57,4 +58,5 @@ content:
       image_link: content
     third_party_settings: {  }
 hidden:
+  field_canon_preferences: true
   member_for: true

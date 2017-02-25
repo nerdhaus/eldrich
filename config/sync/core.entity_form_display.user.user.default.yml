@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_canon_preferences
     - field.field.user.user.field_personal_links
     - field.field.user.user.field_profile
     - field.field.user.user.user_picture
@@ -19,6 +20,7 @@ third_party_settings:
     group_settings:
       children:
         - account
+        - field_canon_preferences
         - language
         - timezone
         - path
@@ -64,6 +66,11 @@ content:
     third_party_settings: {  }
   contact:
     weight: 5
+  field_canon_preferences:
+    type: options_buttons
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
   field_personal_links:
     type: link_default
     weight: 4
@@ -79,20 +86,20 @@ content:
       placeholder: ''
     third_party_settings: {  }
   google_analytics:
-    weight: 4
+    weight: 5
     settings: {  }
     third_party_settings: {  }
   language:
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
   timezone:
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
   user_picture:

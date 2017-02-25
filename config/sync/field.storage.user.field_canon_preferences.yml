@@ -1,0 +1,33 @@
+uuid: bc65a581-5f9c-4057-8d95-5c06b6359700
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_canon_preferences
+field_name: field_canon_preferences
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: canon
+      label: 'Only show content from canon sources'
+    -
+      value: my_games
+      label: 'Show homebrew content from games I play in'
+    -
+      value: mine
+      label: 'Show homebrew content from campaigns and collections I create'
+    -
+      value: all
+      label: 'Show all content, regardless of source'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

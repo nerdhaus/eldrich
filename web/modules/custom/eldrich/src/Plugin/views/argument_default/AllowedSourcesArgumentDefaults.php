@@ -16,7 +16,7 @@ use Drupal\Core\Session\AccountInterface;
  *   title = @Translation("Content IDs from allowed sources")
  * )
  */
-class Node extends ArgumentDefaultPluginBase implements CacheableDependencyInterface {
+class AllowedSourcesArgumentDefaults extends ArgumentDefaultPluginBase implements CacheableDependencyInterface {
 
   /**
    * The Current User object.
@@ -61,35 +61,38 @@ class Node extends ArgumentDefaultPluginBase implements CacheableDependencyInter
     }
 
     $owned_or_open = $this->query->orConditionGroup()
-      ->condition('uid', $account->id())
+      ->condition('uid', $this->currentUser->id())
       ->condition('field_allow_others.value', TRUE);
     $inspiration_query = $this->query->andConditionGroup()
       ->condition($owned_or_open)
       ->condition('type', 'inspiration');
 
     $player_or_owner = $this->query->orConditionGroup()
-      ->condition('field_pcs.entity.uid', $account->id())
-      ->condition('uid', $account->id());
+      ->condition('field_pcs.entity.uid', $this->currentUser->id())
+      ->condition('uid', $this->currentUser->id());
     $campaign_query = $this->query->andConditionGroup()
       ->condition($player_or_owner)
       ->condition('type', 'campaign');
 
-    if (in_array('contributor', $roles) || in_array('administrator', $roles)) {
+    if (in_array('contributor', $roles)) {
       $sources_query = $this->query
         ->condition('type', 'source');
+
+      $all_conditions = $this->query->orConditionGroup()
+        ->condition($inspiration_query)
+        ->condition($campaign_query)
+        ->condition($sources_query);
     }
     else {
-      $sources_query = $this->query->condition(1, 1);
+      $all_conditions = $this->query->orConditionGroup()
+        ->condition($inspiration_query)
+        ->condition($campaign_query);
     }
 
-    $all_conditions = $this->query->orConditionGroup()
-      ->condition($inspiration_query)
-      ->condition($campaign_query)
-      ->condition($sources_query);
-
     $nids = $this->query->condition($all_conditions)->execute();
+    $value = join(',', $nids);
 
-    return join('+', $nids);
+    return $value;
   }
 
   /**
