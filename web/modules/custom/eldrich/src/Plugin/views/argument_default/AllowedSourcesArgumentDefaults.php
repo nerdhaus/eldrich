@@ -90,7 +90,7 @@ class AllowedSourcesArgumentDefaults extends ArgumentDefaultPluginBase implement
     }
 
     $nids = $this->query->condition($all_conditions)->execute();
-    $value = join(',', $nids);
+    $value = join('+', $nids);
 
     return $value;
   }
