@@ -57,9 +57,26 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
-        type: none
+        type: full
         options:
+          items_per_page: 20
           offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
       style:
         type: default
       row:
@@ -269,7 +286,7 @@ display:
             type: none
             fail: 'not found'
           validate_options: {  }
-          break_phrase: false
+          break_phrase: true
           not: false
           plugin_id: numeric
       display_extenders: {  }
@@ -279,6 +296,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
@@ -309,6 +327,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
@@ -429,6 +448,8 @@ display:
         sorts: false
         css_class: true
         header: false
+        pager: false
+        arguments: false
       filter_groups:
         operator: AND
         groups:
@@ -461,13 +482,16 @@ display:
             value: 'Posthuman Studios has released Eclipse Phase under a Creative Commons license. Writer and editor Rob Doyle hosts semi-official PDF versions of every core book for download at <a href="https://robboyle.wordpress.com/eclipse-phase-pdfs/">his blog</a>. Feel free to grab them, check them out, and support Posthuman studios by purchasing print or digital copies when you decide to sink your teeth in!'
             format: basic_html
           plugin_id: text
+      pager:
+        type: none
+        options:
+          offset: 0
+      arguments: {  }
     cache_metadata:
-      max-age: 0
+      max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -614,7 +638,7 @@ display:
             type: none
             fail: 'not found'
           validate_options: {  }
-          break_phrase: 0
+          break_phrase: 1
           not: 0
           plugin_id: numeric
     cache_metadata:
@@ -623,6 +647,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
@@ -766,6 +791,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
@@ -925,7 +951,7 @@ display:
             type: none
             fail: 'not found'
           validate_options: {  }
-          break_phrase: 0
+          break_phrase: 1
           not: 0
           plugin_id: numeric
     cache_metadata:
@@ -934,6 +960,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
@@ -1077,6 +1104,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
@@ -1166,6 +1194,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
@@ -1270,6 +1299,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions

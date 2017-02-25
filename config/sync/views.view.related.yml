@@ -363,7 +363,7 @@ display:
             type: none
             fail: 'not found'
           validate_options: {  }
-          break_phrase: 0
+          break_phrase: 1
           not: 0
           plugin_id: numeric
       filters:
