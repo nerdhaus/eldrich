@@ -12,7 +12,6 @@ dependencies:
   module:
     - comment
     - eldrich
-    - field_delimiter
     - text
     - user
 id: node.network.default
@@ -43,9 +42,7 @@ content:
       template: ', page {{ quantity }}'
       destination: list
       length: full
-    third_party_settings:
-      field_delimiter:
-        delimiter: ''
+    third_party_settings: {  }
     type: eldrich_citation_formatter
   field_symbol:
     weight: 1

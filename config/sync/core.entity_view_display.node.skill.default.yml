@@ -38,9 +38,7 @@ content:
     label: inline
     settings:
       link_to_entity: false
-    third_party_settings:
-      field_delimiter:
-        delimiter: ', '
+    third_party_settings: {  }
     type: string
   field_is_field:
     type: boolean
