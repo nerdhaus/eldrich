@@ -3,12 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.ic_comment.default
+    - field.field.node.network.field_chat
     - field.field.node.network.field_description
     - field.field.node.network.field_sources
     - field.field.node.network.field_symbol
     - node.type.network
   module:
-    - entity_reference_quantity
+    - comment
+    - eldrich
+    - field_delimiter
     - text
     - user
 id: node.network.default
@@ -16,6 +20,14 @@ targetEntityType: node
 bundle: network
 mode: default
 content:
+  field_chat:
+    weight: 11
+    label: hidden
+    settings:
+      pager_id: 0
+      view_mode: default
+    third_party_settings: {  }
+    type: comment_default
   field_description:
     weight: 2
     label: hidden

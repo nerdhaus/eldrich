@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.location.field_based_on
+    - field.field.node.location.field_chat
     - field.field.node.location.field_description
     - field.field.node.location.field_distance
     - field.field.node.location.field_gm_only
@@ -15,6 +16,7 @@ dependencies:
     - field.field.node.location.field_sources
     - node.type.location
   module:
+    - comment
     - entity_reference_quantity
     - path
     - text
@@ -28,6 +30,11 @@ content:
     weight: 4
     settings: {  }
     third_party_settings: {  }
+  field_chat:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
   field_description:
     weight: 13
     settings:

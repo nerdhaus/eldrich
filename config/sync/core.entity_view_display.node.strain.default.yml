@@ -3,7 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.ic_comment.default
     - field.field.node.strain.field_based_on
+    - field.field.node.strain.field_chat
     - field.field.node.strain.field_description
     - field.field.node.strain.field_gm_only
     - field.field.node.strain.field_infectiousness
@@ -12,6 +14,7 @@ dependencies:
     - field.field.node.strain.field_vectors
     - node.type.strain
   module:
+    - comment
     - eldrich
     - text
     - user
@@ -20,6 +23,14 @@ targetEntityType: node
 bundle: strain
 mode: default
 content:
+  field_chat:
+    weight: 11
+    label: hidden
+    settings:
+      pager_id: 0
+      view_mode: default
+    third_party_settings: {  }
+    type: comment_default
   field_description:
     weight: 1
     label: hidden

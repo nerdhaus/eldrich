@@ -3,7 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.ic_comment.default
     - field.field.node.faction.field_based_on
+    - field.field.node.faction.field_chat
     - field.field.node.faction.field_description
     - field.field.node.faction.field_faction_type
     - field.field.node.faction.field_gm_only
@@ -14,6 +16,7 @@ dependencies:
     - field.field.node.faction.field_sources
     - node.type.faction
   module:
+    - comment
     - eldrich
     - text
     - user
@@ -22,6 +25,14 @@ targetEntityType: node
 bundle: faction
 mode: default
 content:
+  field_chat:
+    weight: 11
+    label: hidden
+    settings:
+      pager_id: 0
+      view_mode: default
+    third_party_settings: {  }
+    type: comment_default
   field_description:
     weight: 2
     label: hidden

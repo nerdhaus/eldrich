@@ -3,11 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.network.field_chat
     - field.field.node.network.field_description
     - field.field.node.network.field_sources
     - field.field.node.network.field_symbol
     - node.type.network
   module:
+    - comment
     - entity_reference_quantity
     - path
     - text
@@ -21,6 +23,11 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+  field_chat:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
   field_description:
     weight: 7
     settings:

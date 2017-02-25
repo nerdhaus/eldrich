@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.ic_comment.default
+    - field.field.node.trait.field_chat
     - field.field.node.trait.field_conditional
     - field.field.node.trait.field_cp_cost
     - field.field.node.trait.field_description
@@ -15,6 +17,7 @@ dependencies:
     - field.field.node.trait.field_stats
     - node.type.trait
   module:
+    - comment
     - eldrich
     - ep_skill_reference
     - ep_statblock
@@ -31,6 +34,14 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_chat:
+    weight: 11
+    label: hidden
+    settings:
+      pager_id: 0
+      view_mode: default
+    third_party_settings: {  }
+    type: comment_default
   field_conditional:
     weight: 5
     label: inline

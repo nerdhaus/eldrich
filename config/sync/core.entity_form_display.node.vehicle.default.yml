@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.vehicle.field_augmentations
     - field.field.node.vehicle.field_based_on
     - field.field.node.vehicle.field_blueprints
+    - field.field.node.vehicle.field_chat
     - field.field.node.vehicle.field_cost
     - field.field.node.vehicle.field_description
     - field.field.node.vehicle.field_equipped_weapons
@@ -24,6 +25,7 @@ dependencies:
     - image.style.thumbnail
     - node.type.vehicle
   module:
+    - comment
     - entity_reference_override
     - entity_reference_quantity
     - ep_complex_values
@@ -61,6 +63,11 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+  field_chat:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
   field_cost:
     weight: 8
     settings: {  }

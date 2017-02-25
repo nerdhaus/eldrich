@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.ic_comment.default
     - field.field.node.creature.field_armor
     - field.field.node.creature.field_augmentations
     - field.field.node.creature.field_based_on
+    - field.field.node.creature.field_chat
     - field.field.node.creature.field_cost
     - field.field.node.creature.field_creature_type
     - field.field.node.creature.field_description
@@ -26,6 +28,7 @@ dependencies:
     - field.field.node.creature.field_traits
     - node.type.creature
   module:
+    - comment
     - eldrich
     - entity_reference_override
     - entity_reference_quantity
@@ -47,6 +50,14 @@ content:
       override_action: suffix
     third_party_settings: {  }
     type: entity_reference_override_label
+  field_chat:
+    weight: 11
+    label: hidden
+    settings:
+      pager_id: 0
+      view_mode: default
+    third_party_settings: {  }
+    type: comment_default
   field_cost:
     weight: 19
     label: above

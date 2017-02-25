@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.weapon.field_area_effect
     - field.field.node.weapon.field_based_on
     - field.field.node.weapon.field_blueprints
+    - field.field.node.weapon.field_chat
     - field.field.node.weapon.field_cost
     - field.field.node.weapon.field_damage_dice
     - field.field.node.weapon.field_damage_effects
@@ -69,6 +70,7 @@ hidden:
   field_armor: true
   field_based_on: true
   field_blueprints: true
+  field_chat: true
   field_damage: true
   field_damage_dice: true
   field_damage_effects: true

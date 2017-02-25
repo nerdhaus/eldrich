@@ -93,3 +93,4 @@ permissions:
   - 'delete own weapon content'
   - 'edit any weapon content'
   - 'edit own weapon content'
+  - 'skip comment approval'

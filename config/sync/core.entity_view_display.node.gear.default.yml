@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.ic_comment.default
     - field.field.node.gear.field_based_on
     - field.field.node.gear.field_blueprints
+    - field.field.node.gear.field_chat
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
     - field.field.node.gear.field_gear_type
@@ -13,6 +15,7 @@ dependencies:
     - field.field.node.gear.field_special_effect
     - node.type.gear
   module:
+    - comment
     - eldrich
     - text
     - user
@@ -21,6 +24,14 @@ targetEntityType: node
 bundle: gear
 mode: default
 content:
+  field_chat:
+    weight: 11
+    label: hidden
+    settings:
+      pager_id: 0
+      view_mode: default
+    third_party_settings: {  }
+    type: comment_default
   field_cost:
     weight: 2
     label: inline

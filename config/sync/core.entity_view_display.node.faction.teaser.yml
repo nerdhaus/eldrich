@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.faction.field_based_on
+    - field.field.node.faction.field_chat
     - field.field.node.faction.field_description
     - field.field.node.faction.field_faction_type
     - field.field.node.faction.field_gm_only
@@ -37,6 +38,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_based_on: true
+  field_chat: true
   field_gm_only: true
   field_locations: true
   field_memes: true

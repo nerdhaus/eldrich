@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.robot.field_augmentations
     - field.field.node.robot.field_based_on
     - field.field.node.robot.field_blueprints
+    - field.field.node.robot.field_chat
     - field.field.node.robot.field_cost
     - field.field.node.robot.field_default_ai
     - field.field.node.robot.field_description
@@ -59,6 +60,7 @@ hidden:
   field_augmentations: true
   field_based_on: true
   field_blueprints: true
+  field_chat: true
   field_default_ai: true
   field_equipped_weapons: true
   field_gear: true

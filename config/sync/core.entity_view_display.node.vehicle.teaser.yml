@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.vehicle.field_augmentations
     - field.field.node.vehicle.field_based_on
     - field.field.node.vehicle.field_blueprints
+    - field.field.node.vehicle.field_chat
     - field.field.node.vehicle.field_cost
     - field.field.node.vehicle.field_description
     - field.field.node.vehicle.field_equipped_weapons
@@ -60,6 +61,7 @@ hidden:
   field_augmentations: true
   field_based_on: true
   field_blueprints: true
+  field_chat: true
   field_equipped_weapons: true
   field_gear: true
   field_image: true

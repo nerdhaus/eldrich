@@ -4,10 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.network.field_chat
     - field.field.node.network.field_description
+    - field.field.node.network.field_sources
     - field.field.node.network.field_symbol
     - node.type.network
   module:
+    - text
     - user
 id: node.network.teaser
 targetEntityType: node
@@ -25,5 +28,6 @@ content:
     weight: 100
 hidden:
   field_attribution: true
+  field_chat: true
   field_sources: true
   field_symbol: true

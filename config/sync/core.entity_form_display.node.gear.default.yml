@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.gear.field_based_on
     - field.field.node.gear.field_blueprints
+    - field.field.node.gear.field_chat
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
     - field.field.node.gear.field_gear_type
@@ -13,6 +14,7 @@ dependencies:
     - field.field.node.gear.field_special_effect
     - node.type.gear
   module:
+    - comment
     - entity_reference_quantity
     - path
     - text
@@ -32,6 +34,11 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+  field_chat:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
   field_cost:
     weight: 8
     settings: {  }

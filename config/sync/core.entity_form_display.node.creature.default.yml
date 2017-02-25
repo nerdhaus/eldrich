@@ -6,11 +6,13 @@ dependencies:
     - field.field.node.creature.field_armor
     - field.field.node.creature.field_augmentations
     - field.field.node.creature.field_based_on
+    - field.field.node.creature.field_chat
     - field.field.node.creature.field_cost
     - field.field.node.creature.field_creature_type
     - field.field.node.creature.field_description
     - field.field.node.creature.field_equipped_weapons
     - field.field.node.creature.field_gear
+    - field.field.node.creature.field_gear_type
     - field.field.node.creature.field_gm_only
     - field.field.node.creature.field_image
     - field.field.node.creature.field_mobility_system
@@ -26,6 +28,7 @@ dependencies:
     - image.style.thumbnail
     - node.type.creature
   module:
+    - comment
     - entity_reference_override
     - entity_reference_quantity
     - ep_complex_values
@@ -58,6 +61,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
+  field_chat:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
   field_cost:
     weight: 26
     settings:

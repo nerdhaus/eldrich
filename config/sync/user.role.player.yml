@@ -17,3 +17,4 @@ permissions:
   - 'delete own pc content'
   - 'edit own pc content'
   - 'cancel account'
+  - 'skip comment approval'

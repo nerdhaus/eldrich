@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.trait.field_chat
     - field.field.node.trait.field_conditional
     - field.field.node.trait.field_cp_cost
     - field.field.node.trait.field_description
@@ -15,6 +16,7 @@ dependencies:
     - field.field.node.trait.field_stats
     - node.type.trait
   module:
+    - comment
     - entity_reference_quantity
     - ep_skill_reference
     - ep_statblock
@@ -54,6 +56,11 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
+  field_chat:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
   field_conditional:
     weight: 34
     settings:

@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.morph.field_augmentations
     - field.field.node.morph.field_based_on
     - field.field.node.morph.field_blueprints
+    - field.field.node.morph.field_chat
     - field.field.node.morph.field_cost
     - field.field.node.morph.field_cp_cost
     - field.field.node.morph.field_description
@@ -61,6 +62,7 @@ hidden:
   field_augmentations: true
   field_based_on: true
   field_blueprints: true
+  field_chat: true
   field_cp: true
   field_cp_cost: true
   field_gear: true

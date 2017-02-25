@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.ic_comment.default
     - field.field.node.drug.field_addiction_modifier
     - field.field.node.drug.field_based_on
     - field.field.node.drug.field_blueprints
+    - field.field.node.drug.field_chat
     - field.field.node.drug.field_cost
     - field.field.node.drug.field_delivery_mechanism
     - field.field.node.drug.field_description
@@ -16,6 +18,7 @@ dependencies:
     - field.field.node.drug.field_sources
     - node.type.drug
   module:
+    - comment
     - eldrich
     - integer_time
     - text
@@ -39,6 +42,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_text
+  field_chat:
+    weight: 11
+    label: hidden
+    settings:
+      pager_id: 0
+      view_mode: default
+    third_party_settings: {  }
+    type: comment_default
   field_cost:
     weight: 2
     label: inline

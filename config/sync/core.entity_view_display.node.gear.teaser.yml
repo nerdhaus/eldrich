@@ -6,11 +6,13 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.gear.field_based_on
     - field.field.node.gear.field_blueprints
+    - field.field.node.gear.field_chat
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
     - field.field.node.gear.field_gear_type
     - field.field.node.gear.field_short_name
     - field.field.node.gear.field_sources
+    - field.field.node.gear.field_special_effect
     - node.type.gear
   module:
     - entity_reference_quantity
@@ -47,7 +49,9 @@ content:
 hidden:
   field_based_on: true
   field_blueprints: true
+  field_chat: true
   field_short_name: true
   field_sources: true
+  field_special_effect: true
   links: true
   related_gear: true

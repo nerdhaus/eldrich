@@ -3,10 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.ic_comment.default
     - field.field.node.vehicle.field_armor
     - field.field.node.vehicle.field_augmentations
     - field.field.node.vehicle.field_based_on
     - field.field.node.vehicle.field_blueprints
+    - field.field.node.vehicle.field_chat
     - field.field.node.vehicle.field_cost
     - field.field.node.vehicle.field_description
     - field.field.node.vehicle.field_equipped_weapons
@@ -23,6 +25,7 @@ dependencies:
     - field.field.node.vehicle.field_stats
     - node.type.vehicle
   module:
+    - comment
     - eldrich
     - entity_reference_override
     - image
@@ -41,6 +44,14 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
+  field_chat:
+    weight: 11
+    label: hidden
+    settings:
+      pager_id: 0
+      view_mode: default
+    third_party_settings: {  }
+    type: comment_default
   field_cost:
     weight: 2
     label: inline

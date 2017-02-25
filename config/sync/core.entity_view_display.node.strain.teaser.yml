@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.strain.field_based_on
+    - field.field.node.strain.field_chat
     - field.field.node.strain.field_description
     - field.field.node.strain.field_gm_only
     - field.field.node.strain.field_infectiousness
@@ -30,6 +31,7 @@ content:
 hidden:
   field_attribution: true
   field_based_on: true
+  field_chat: true
   field_gm_only: true
   field_infectiousness: true
   field_privacy: true

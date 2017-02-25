@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.location.field_based_on
+    - field.field.node.location.field_chat
     - field.field.node.location.field_description
     - field.field.node.location.field_distance
     - field.field.node.location.field_gm_only
@@ -39,6 +40,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_based_on: true
+  field_chat: true
   field_distance: true
   field_gm_only: true
   field_languages: true

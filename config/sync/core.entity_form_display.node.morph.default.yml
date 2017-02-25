@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.morph.field_augmentations
     - field.field.node.morph.field_based_on
     - field.field.node.morph.field_blueprints
+    - field.field.node.morph.field_chat
     - field.field.node.morph.field_cost
     - field.field.node.morph.field_cp_cost
     - field.field.node.morph.field_description
@@ -25,6 +26,7 @@ dependencies:
     - image.style.thumbnail
     - node.type.morph
   module:
+    - comment
     - entity_reference_override
     - entity_reference_quantity
     - ep_complex_values
@@ -62,6 +64,11 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+  field_chat:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
   field_cost:
     weight: 8
     settings: {  }

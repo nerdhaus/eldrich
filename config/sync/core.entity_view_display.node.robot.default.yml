@@ -3,10 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.ic_comment.default
     - field.field.node.robot.field_armor
     - field.field.node.robot.field_augmentations
     - field.field.node.robot.field_based_on
     - field.field.node.robot.field_blueprints
+    - field.field.node.robot.field_chat
     - field.field.node.robot.field_cost
     - field.field.node.robot.field_default_ai
     - field.field.node.robot.field_description
@@ -22,6 +24,7 @@ dependencies:
     - field.field.node.robot.field_stats
     - node.type.robot
   module:
+    - comment
     - eldrich
     - entity_reference_override
     - ep_complex_values
@@ -48,6 +51,14 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
+  field_chat:
+    weight: 11
+    label: hidden
+    settings:
+      pager_id: 0
+      view_mode: default
+    third_party_settings: {  }
+    type: comment_default
   field_cost:
     weight: 1
     label: inline

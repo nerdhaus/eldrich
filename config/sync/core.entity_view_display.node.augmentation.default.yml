@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.ic_comment.default
     - field.field.node.augmentation.field_armor
     - field.field.node.augmentation.field_based_on
     - field.field.node.augmentation.field_blueprints
+    - field.field.node.augmentation.field_chat
     - field.field.node.augmentation.field_conditional
     - field.field.node.augmentation.field_cost
     - field.field.node.augmentation.field_description
@@ -20,6 +22,7 @@ dependencies:
     - field.field.node.augmentation.field_weapon
     - node.type.augmentation
   module:
+    - comment
     - eldrich
     - ep_skill_reference
     - ep_statblock
@@ -30,6 +33,14 @@ targetEntityType: node
 bundle: augmentation
 mode: default
 content:
+  field_chat:
+    weight: 11
+    label: hidden
+    settings:
+      pager_id: 0
+      view_mode: default
+    third_party_settings: {  }
+    type: comment_default
   field_cost:
     weight: 2
     label: inline

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.faction.field_based_on
+    - field.field.node.faction.field_chat
     - field.field.node.faction.field_description
     - field.field.node.faction.field_faction_type
     - field.field.node.faction.field_gm_only
@@ -14,6 +15,7 @@ dependencies:
     - field.field.node.faction.field_sources
     - node.type.faction
   module:
+    - comment
     - entity_reference_quantity
     - path
     - text
@@ -27,6 +29,11 @@ content:
     weight: 8
     settings: {  }
     third_party_settings: {  }
+  field_chat:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
   field_description:
     weight: 12
     settings:

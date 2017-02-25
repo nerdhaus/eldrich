@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.drug.field_addiction_modifier
     - field.field.node.drug.field_based_on
     - field.field.node.drug.field_blueprints
+    - field.field.node.drug.field_chat
     - field.field.node.drug.field_cost
     - field.field.node.drug.field_delivery_mechanism
     - field.field.node.drug.field_description
@@ -54,6 +55,7 @@ hidden:
   field_attribution: true
   field_based_on: true
   field_blueprints: true
+  field_chat: true
   field_delivery_mechanism: true
   field_duration: true
   field_onset: true

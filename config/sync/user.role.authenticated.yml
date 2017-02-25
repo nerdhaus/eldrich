@@ -13,7 +13,6 @@ permissions:
   1: 'use text format basic_html'
   2: 'access comments'
   3: 'post comments'
-  4: 'skip comment approval'
   5: 'access site-wide contact form'
   7: 'search content'
   8: 'view any component entities'

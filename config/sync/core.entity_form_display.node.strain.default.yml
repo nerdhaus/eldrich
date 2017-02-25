@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.strain.field_based_on
+    - field.field.node.strain.field_chat
     - field.field.node.strain.field_description
     - field.field.node.strain.field_gm_only
     - field.field.node.strain.field_infectiousness
@@ -12,6 +13,7 @@ dependencies:
     - field.field.node.strain.field_vectors
     - node.type.strain
   module:
+    - comment
     - entity_reference_quantity
     - inline_entity_form
     - path
@@ -26,6 +28,11 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+  field_chat:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
   field_description:
     weight: 8
     settings:
