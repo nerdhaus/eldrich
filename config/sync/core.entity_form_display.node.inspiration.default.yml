@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.inspiration.body
+    - field.field.node.inspiration.field_allow_others
     - field.field.node.inspiration.field_image
     - field.field.node.inspiration.field_resources
     - field.field.node.inspiration.field_video
@@ -21,7 +22,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 1
+    weight: 2
     settings:
       rows: 9
       summary_rows: 3
@@ -29,11 +30,17 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 7
     settings: {  }
     third_party_settings: {  }
+  field_allow_others:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_image:
-    weight: 2
+    weight: 3
     settings:
       show_default_crop: true
       warn_multiple_usages: true
@@ -47,14 +54,14 @@ content:
     third_party_settings: {  }
     type: image_widget_crop
   field_resources:
-    weight: 4
+    weight: 5
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
   field_video:
-    weight: 3
+    weight: 4
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -62,20 +69,20 @@ content:
     type: link_default
   path:
     type: path
-    weight: 9
+    weight: 10
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 8
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 9
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -86,7 +93,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60

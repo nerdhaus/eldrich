@@ -4,20 +4,25 @@ status: true
 dependencies:
   config:
     - comment.type.ic_comment
-    - field.field.comment.ic_comment.comment_body
-  module:
-    - text
+    - field.field.comment.ic_comment.field_body
+    - field.field.comment.ic_comment.field_character
 id: comment.ic_comment.default
 targetEntityType: comment
 bundle: ic_comment
 mode: default
 content:
-  comment_body:
+  field_body:
+    weight: 1
     label: hidden
-    type: text_default
-    weight: 0
     settings: {  }
     third_party_settings: {  }
-  links:
-    weight: 100
-hidden: {  }
+    type: basic_string
+  field_character:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+hidden:
+  links: true

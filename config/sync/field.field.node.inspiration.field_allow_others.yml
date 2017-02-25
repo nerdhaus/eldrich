@@ -1,0 +1,23 @@
+uuid: fdd53eb9-db28-4943-b807-ccc04fb6b810
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_allow_others
+    - node.type.inspiration
+id: node.inspiration.field_allow_others
+field_name: field_allow_others
+entity_type: node
+bundle: inspiration
+label: 'Allow others to add to this page'
+description: 'If this box is checked, other GMs and site contributors will be able to add NPCs, gear, and so on to this collection. If it''s unchecked, only you will be able to add new items.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.inspiration.body
+    - field.field.node.inspiration.field_allow_others
     - field.field.node.inspiration.field_image
     - field.field.node.inspiration.field_resources
     - field.field.node.inspiration.field_video
@@ -52,16 +53,17 @@ content:
     third_party_settings: {  }
     type: url_embed
   sub_content_gear:
-    weight: 10
+    weight: 5
     settings: {  }
     third_party_settings: {  }
   sub_content_npcs:
-    weight: 10
+    weight: 4
     settings: {  }
     third_party_settings: {  }
   sub_content_world:
-    weight: 10
+    weight: 6
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_allow_others: true
   links: true

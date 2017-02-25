@@ -1,0 +1,25 @@
+uuid: d05f0785-6768-409a-afd7-c6942c2e9042
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.ic_comment
+    - field.storage.comment.field_character
+id: comment.ic_comment.field_character
+field_name: field_character
+entity_type: comment
+bundle: ic_comment
+label: Character
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: select_lists
+      display_name: user_characters
+      arguments: {  }
+field_type: entity_reference

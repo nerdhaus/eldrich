@@ -1,0 +1,18 @@
+uuid: 314bc09a-9b28-4087-a70f-7917222835e3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_allow_others
+field_name: field_allow_others
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

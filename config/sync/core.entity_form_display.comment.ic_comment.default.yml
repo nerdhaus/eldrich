@@ -4,28 +4,25 @@ status: true
 dependencies:
   config:
     - comment.type.ic_comment
-    - field.field.comment.ic_comment.comment_body
-  module:
-    - text
+    - field.field.comment.ic_comment.field_body
+    - field.field.comment.ic_comment.field_character
 id: comment.ic_comment.default
 targetEntityType: comment
 bundle: ic_comment
 mode: default
 content:
-  author:
-    weight: -2
-  comment_body:
-    type: text_textarea
-    weight: 11
+  field_body:
+    weight: 3
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  subject:
-    type: string_textfield
-    weight: 10
-    settings:
-      size: 60
-      placeholder: ''
+    type: string_textarea
+  field_character:
+    weight: 0
+    settings: {  }
     third_party_settings: {  }
-hidden: {  }
+    type: options_select
+hidden:
+  author: true
+  subject: true
