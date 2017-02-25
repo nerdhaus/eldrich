@@ -12,4 +12,14 @@
 * @ingroup themeable
 */
 #}
-{{ element }}
+
+{% if element.needs_character %}
+  <div class="alert alert-warning" role="alert">{ element.needs_character }}</div>{
+{% endif %}
+
+<div class="form-inline">
+  {{ element.field_character }}
+{{ element.field_obscure_id }}
+</div>
+
+{{ element|without('field_character','field_obscure_id') }}

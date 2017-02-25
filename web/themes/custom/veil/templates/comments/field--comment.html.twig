@@ -26,15 +26,16 @@
  * @see comment_preprocess_field()
  */
 #}
+{% if comments|length or comment_form %}
 <section{{ attributes.addClass('row') }}>
   <div class="col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h4 class="panel-title">Network Chatter <span class="eldrich-icon icon-talk pull-right"></span></h4>
+        <h4 class="panel-title">Network Chatter <span class="glyphicon glyphicon-transfer pull-right"></span></h4>
       </div>
-      <div class="panel-body">
+      <ul class="list-group">
         {{ comments }}
-      </div>
+      </ul>
       {% if comment_form %}
         <div class="panel-footer">
           {{ comment_form }}
@@ -43,3 +44,4 @@
     </div>
   </div>
 </section>
+{% endif %}

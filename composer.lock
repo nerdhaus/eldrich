@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5bf73af813b8dc860d0b9e627d3f1a21",
+    "content-hash": "c2ff71372a4542cdebfbbfa0b96dcd3b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4333,7 +4333,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/veoa-8.x-1.0-rc1.zip",
-                "reference": null,
+                "reference": "8.x-1.0-rc1",
                 "shasum": "e9347a378aae61340d58538143c8a826dab35f05"
             },
             "require": {
@@ -4474,7 +4474,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-beta7.zip",
-                "reference": null,
+                "reference": "8.x-5.0-beta7",
                 "shasum": "1c2be66200291e38ebe41e27641e2607d4be7baa"
             },
             "require": {
@@ -5412,6 +5412,55 @@
                 "php"
             ],
             "time": "2017-02-10T20:20:03+00:00"
+        },
+        {
+            "name": "nubs/random-name-generator",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nubs/random-name-generator.git",
+                "reference": "7004eb1724e1c4a154553e44312b7045fe412b77"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nubs/random-name-generator/zipball/7004eb1724e1c4a154553e44312b7045fe412b77",
+                "reference": "7004eb1724e1c4a154553e44312b7045fe412b77",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~5.6 || ~7.0"
+            },
+            "require-dev": {
+                "cinam/randomizer": ">=1.1.1,<2.0",
+                "phpunit/phpunit": "~5.0",
+                "satooshi/php-coveralls": "~1.0",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nubs\\RandomNameGenerator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Spencer Rinehart",
+                    "email": "anubis@overthemonkey.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A library to create interesting, sometimes entertaining, random names.",
+            "keywords": [
+                "alliteration",
+                "generator",
+                "random",
+                "video game"
+            ],
+            "time": "2016-12-04T01:57:19+00:00"
         },
         {
             "name": "paragonie/random_compat",

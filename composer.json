@@ -78,7 +78,8 @@
         "drupal/custom_add_another": "^1.0@beta",
         "drupal/filelist_formatter": "^1.1",
         "drupal/veoa": "^1.0@RC",
-        "drupal/webform": "^5.0@beta"
+        "drupal/webform": "^5.0@beta",
+        "nubs/random-name-generator": "^2.1"
     },
     "require-dev": {
         "behat/mink": "~1.7",

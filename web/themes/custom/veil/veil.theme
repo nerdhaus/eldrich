@@ -31,12 +31,26 @@ function veil_form_invite_by_email_block_form_alter(&$form, FormStateInterface $
 
 
 function veil_form_comment_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $form['#theme'][] = 'comment_form__ic';
+  $form['#theme'] = ['comment_form__ic'];
 
   if (isset($form['field_character']['widget'])) {
     $identities = count($form['field_character']['widget']['#options']);
     if ($identities == 1) {
-      $form['#access'] = FALSE;
+      $form['needs_character'] = [
+        '#weight' => -50,
+        '#prefix' => '<div class="alert alert-warning" role="alert">',
+        '#markup' => t('You must have control of at least one character or NPC to post network chatter.'),
+        '#suffix' => '</div>'
+      ];
+
+      $form['field_character']['widget']['#disabled'][] = 'disabled';
+      $form['field_body']['widget']['#disabled'] = 'disabled';
+      $form['field_obscure_id']['widget']['#disabled'] = 'disabled';
+
+      $form['field_character']['#disabled'][] = 'disabled';
+      $form['field_body']['#disabled'] = 'disabled';
+      $form['field_obscure_id']['#disabled'] = 'disabled';
+      $form['actions']['submit']['#disabled'] = 'disabled';
     }
     if ($identities == 2) {
       unset($form['field_character']['widget']['#options']['_none']);
@@ -44,5 +58,12 @@ function veil_form_comment_form_alter(&$form, FormStateInterface $form_state, $f
     else {
       $form['field_character']['widget']['#options']['_none'] = t('— Choose an Identity —');
     }
+
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-default';
+    $form['actions']['submit']['#value'] = 'Transmit';
+
+    $form['field_character']['widget']['#title_display'] = 'invisible';
+    $form['field_body']['widget']['#title_display'] = 'invisible';
+    $form['field_body']['#title_display'] = 'invisible';
   }
 }
