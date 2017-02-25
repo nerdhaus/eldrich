@@ -13,7 +13,7 @@ use Drupal\Core\Session\AccountInterface;
  *
  * @ViewsArgumentDefault(
  *   id = "allowed_sources",
- *   title = @Translation("Content IDs from allowed sources")
+ *   title = @Translation("Source IDs accessible to current user")
  * )
  */
 class AllowedSourcesArgumentDefaults extends ArgumentDefaultPluginBase implements CacheableDependencyInterface {

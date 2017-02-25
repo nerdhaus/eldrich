@@ -494,13 +494,49 @@ display:
           plugin_id: text
       empty: {  }
       relationships: {  }
-      arguments: {  }
+      arguments:
+        field_sources_target_id:
+          id: field_sources_target_id
+          table: node__field_sources
+          field: field_sources_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: accepted_sources
+          default_argument_options: {  }
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
+          plugin_id: numeric
       display_extenders: {  }
     cache_metadata:
       max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -790,6 +826,7 @@ display:
         row: false
         title: false
         header: false
+        arguments: false
       sorts:
         field_weight_value:
           id: field_weight_value
@@ -873,6 +910,7 @@ display:
             value: "Aptitudes are the core skills that every character has by default. They are the foundation on which learned skills are built. Aptitudes are purchased during character creation and rate between 1 and 30, with 10 being average for a baseline unmodi ed human. They represent the ingrained characteristics and talents that your character has developed from birth and stick with you even when you change morphs—though some morphs may modify your aptitude ratings.\n\nYour character’s other stats measure several characteristics that are important to game play: Initiative, Speed, Durability, Wound Threshold, Lucidity, Trauma Threshold, and Moxie. Some of these stats are inherent to your character’s ego, others are influenced or determined by morph."
             format: basic_html
           plugin_id: text
+      arguments: {  }
     cache_metadata:
       max-age: 0
       contexts:
@@ -912,6 +950,7 @@ display:
         row: false
         fields: false
         header: false
+        arguments: false
       filters:
         status:
           value: '1'
@@ -1376,6 +1415,7 @@ display:
             value: "Learned skills encompass a wide range of specialties and education, from combat training to negotiating to astrophysics (see Skill List, p. 176, for a complete list). Learned skills range in rating from 1 to 99, with an average proficiency being 50. Each learned skill is linked to an aptitude, which represents the underlying competency in which the skill is based. When a learned skill is purchased (either during character generation or advancement), it is bought starting at the rating of the linked aptitude and then raised from there. If the linked aptitude is raised or modi ed, all skills built off it are modi ed appropriately as well.\n\nDepending on your background and faction, you may receive some starting skills for free during character creation. Like aptitudes, learned skills stay with the character even when they change morphs, though certain morphs, implants, and other factors may sometimes modify your skill rating. If you lack a particular skill called for by a test, in most cases you can default to the linked aptitude for the test (see Defaulting: Untrained Skill Use, p. 116).\n\nSpecializations represent an area of concentration and focus in a particular learned skill. A character who learns a specialization is one who not only grasps the basic tenets of that skill, but has trained hard to excel in one particular aspect of that skill’s field. Specializations apply a +10 modifier when the character utilizes that skill in the area of specialization."
             format: basic_html
           plugin_id: text
+      arguments: {  }
     cache_metadata:
       max-age: 0
       contexts:
@@ -2112,6 +2152,8 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -2682,7 +2724,9 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -3090,6 +3134,8 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:

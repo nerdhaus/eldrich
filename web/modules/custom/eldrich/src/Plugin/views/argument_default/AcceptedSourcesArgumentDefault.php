@@ -7,7 +7,7 @@ use Drupal\views\Plugin\views\argument_default\ArgumentDefaultPluginBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\Query\QueryInterface;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\User\Entity\User;
+use Drupal\user\Entity\User;
 use Drupal\Core\Cache\Cache;
 
 /**
@@ -15,7 +15,7 @@ use Drupal\Core\Cache\Cache;
  *
  * @ViewsArgumentDefault(
  *   id = "accepted_sources",
- *   title = @Translation("Source IDs according to the user's preference")
+ *   title = @Translation("Source IDs by user preference")
  * )
  */
 class AcceptedSourcesArgumentDefault extends ArgumentDefaultPluginBase implements CacheableDependencyInterface {
@@ -57,17 +57,17 @@ class AcceptedSourcesArgumentDefault extends ArgumentDefaultPluginBase implement
    * {@inheritdoc}
    */
   public function getArgument() {
-    $preference = $this->currentUser->field_canon_preferences->value;
+    $preference = $this->currentUser->field_canon_preference->value;
 
     $player_query = $this->query->andConditionGroup()
       ->condition('type', 'campaign')
       ->condition('field_pcs.entity.uid', $this->currentUser->id());
 
     $owner_query = $this->query->andConditionGroup()
-      ->condition('type', ['campaign', 'inspiration'])
+      ->condition('type', ['campaign', 'inspiration'], 'IN')
       ->condition('uid', $this->currentUser->id());
 
-    $canon_query = $this->query->orConditionGroup()
+    $canon_query = $this->query->andConditionGroup()
       ->condition('type', 'source');
 
     switch ($preference) {
@@ -96,7 +96,7 @@ class AcceptedSourcesArgumentDefault extends ArgumentDefaultPluginBase implement
       default:
         // Canon materials only.
         // Literally only show canon materials. Everything else hidden.
-        $all_conditions = $this->query
+        $all_conditions = $this->query->orConditionGroup()
           ->condition($canon_query);
         break;
     }
@@ -117,6 +117,6 @@ class AcceptedSourcesArgumentDefault extends ArgumentDefaultPluginBase implement
    * {@inheritdoc}
    */
   public function getCacheMaxAge() {
-    return Cache::PERMANENT;
+    return 0; // Cache::PERMANENT;
   }
 }
