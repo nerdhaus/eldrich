@@ -52,7 +52,7 @@ source:
   constants:
     uri: 'public://creatures/'
     extension: .png
-    user: Proxy
+    user: Crow
   keys:
     - title
 process:

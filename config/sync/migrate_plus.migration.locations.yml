@@ -32,7 +32,7 @@ source:
   keys:
     - title
   constants:
-    user: Proxy
+    user: Crow
     content_type: location
 process:
   uid:

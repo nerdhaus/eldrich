@@ -30,7 +30,7 @@ source:
     -
       special_effect: Effect
   constants:
-    user: Proxy
+    user: Crow
   keys:
     - title
 process:

@@ -30,7 +30,7 @@ source:
   keys:
     - title
   constants:
-    user: Proxy
+    user: Crow
     content_type: faction
 process:
   uid:

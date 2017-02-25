@@ -28,7 +28,7 @@ source:
     -
       weight: Weight
   constants:
-    user: Proxy
+    user: Crow
   keys:
     - code
 process:

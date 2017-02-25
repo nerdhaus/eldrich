@@ -24,7 +24,7 @@ source:
   keys:
     - title
   constants:
-    user: Proxy
+    user: Crow
     uri: 'public://inspiration/'
 process:
   uid:

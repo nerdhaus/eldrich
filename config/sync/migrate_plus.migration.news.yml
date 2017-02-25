@@ -20,7 +20,7 @@ source:
   keys:
     - title
   constants:
-    user: Proxy
+    user: Crow
 process:
   uid:
     plugin: entity_lookup_plus

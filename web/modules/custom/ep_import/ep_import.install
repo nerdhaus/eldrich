@@ -10,7 +10,7 @@ function ep_import_install() {
 function ep_import_update_8001() {
   $user = _ep_import_create_content_user();
 
-  // Bulk-update all the nodes that bave been authored up to this point.
+  // Bulk-update all the nodes that have been authored up to this point.
   $query = \Drupal::database()->update('node');
   $query->fields(['uid' => $user->id()]);
   $query->execute();
@@ -25,7 +25,7 @@ function _ep_import_create_content_user() {
   //Save user
   $user = \Drupal\user\Entity\User::create(
     [
-      'name' => 'Proxy',
+      'name' => 'Crow',
       'mail' => 'editor@eldrich.host',
       'pass' => substr(md5(rand()), 0, 16),
       'status' => 1,

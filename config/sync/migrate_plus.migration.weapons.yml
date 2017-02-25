@@ -60,7 +60,7 @@ source:
     -
       uses_mods: 'Uses Mods'
   constants:
-    user: Proxy
+    user: Crow
   keys:
     - title
 process:

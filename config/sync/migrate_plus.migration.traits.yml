@@ -34,7 +34,7 @@ source:
     -
       book: Book
   constants:
-    user: Proxy
+    user: Crow
   keys:
     - title
 process:
