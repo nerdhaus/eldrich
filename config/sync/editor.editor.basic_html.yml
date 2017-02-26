@@ -17,6 +17,7 @@ settings:
         -
           name: Formatting
           items:
+            - Styles
             - Bold
             - Italic
         -
@@ -33,20 +34,11 @@ settings:
           name: Media
           items:
             - Blockquote
-            - DrupalImage
-        -
-          name: 'Block Formatting'
-          items:
-            - Format
-        -
-          name: Tools
-          items:
-            - Source
   plugins:
     language:
       language_list: un
     stylescombo:
-      styles: ''
+      styles: "h4|Header\r\np.lead|Lead Paragraph\r\ndiv.alert.alert-warning|Warning"
 image_upload:
   status: true
   scheme: public
