@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_owned_blueprints
-    - node.type.gear
     - node.type.pc
   module:
     - entity_reference_override
@@ -19,13 +18,11 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: views
   handler_settings:
-    target_bundles:
-      gear: gear
-    sort:
-      field: _none
-    auto_create: false
-    auto_create_bundle: ''
+    view:
+      view_name: select_lists
+      display_name: blueprints
+      arguments: {  }
   override_label: Notes
 field_type: entity_reference_override
