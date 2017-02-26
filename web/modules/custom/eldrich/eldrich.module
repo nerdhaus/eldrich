@@ -5,11 +5,13 @@
  * Contains eldrich.module.
  */
 
+
+use Drupal\Core\Database\Database;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Node\Entity\Node;
 
-function eldrich_entity_upate(EntityInterface $entity) {
+function eldrich_entity_update(EntityInterface $entity) {
   if (in_array($entity->bundle(), ['campaign', 'gear_type'])) {
     \Drupal::service("router.builder")->rebuild();
   }
@@ -68,39 +70,6 @@ function eldrich_entity_presave(EntityInterface $entity) {
   }
 }
 
-/*
-function eldrich_options_list_alter(array &$options, array $context) {
-  // Loop through options, look for a magic value, group on what's after it.
-  $grouped = $ungrouped = [];
-  $delimiter = '—';
-  foreach ($options as $key => $value) {
-    if (strpos($value, $delimiter)) {
-      $pair = explode($delimiter, $value);
-      $group = trim(end($pair));
-      $label = trim(reset($pair));
-      $grouped[$group][$key] = $label;
-    }
-    else {
-      $ungrouped[$key] = $value;
-    }
-  }
-
-  $options = [];
-  if (!empty($grouped)) {
-    if ((count($grouped) == 1) && empty($ungrouped)) {
-      $options += reset($grouped);
-    }
-    else {
-      $options += $grouped;
-    }
-  }
-  if (!empty($ungrouped)) {
-    $options += $ungrouped;
-  }
-}
-*/
-
-
 /**
  * Implements hook_form_alter().
  */
@@ -148,4 +117,21 @@ function eldrich_prepopulator_after_build($form) {
     }
   }
   return $form;
+}
+
+function eldrich_delete_orphaned_ecks() {
+  $fields = [
+    'field_muse',
+    'field_morph',
+    'field_status',
+    'field_identity',
+    'field_equipped_armor',
+    'field_equipped_weapons',
+    'field_native_abilities',
+    'field_native_attacks'
+  ];
+  $eck_types = ['component', 'instance'];
+
+  // Retrieves a \Drupal\Core\Database\Connection which is a PDO instance
+  $connection = Database::getConnection();
 }
