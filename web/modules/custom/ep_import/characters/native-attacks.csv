@@ -164,8 +164,7 @@ Whiplash,Feeding Tendril,"On its next action, medium and smaller subdued targets
 Whiplash,Ground Bash,"After subduing a victim with its tendril, the whiplash will raise and drop them on each subsequent action (without letting go), until the target no longer struggles, before swallowing.",,2,,/2,,,Unarmed Combat,,,,
 Whipper,Tentacle Grab,"If MoS exceeds target’s Durability, they are subdued (see Subdual, p. 204, EP).",,,,,,,Unarmed Combat,,G,,20
 Whipper,Tentacle Whip,,,2,1,-1,,,Unarmed Combat,,,,20
-Wild Artificial Collector,Blades,,,1,2,-1,,,Blades,,,,
-Wild Artificial Collector,Blades,,,1,2,-1,,,Blades,,,,
+Wild Artificial Collector,Blades,\,,1,2,-1,,,Blades,,,,
 Wild Artificial Loper,Freeze-Foam Glob,Target must make a REF x 3 Test or be incapacitated in quick-hardening foam (Armor 10/Durability 20) for 12 hours.,,,,,,,Spray Weapons,Cone,G,5/10/15/20,
 Wild Artificial Loper,Pinning Leap,"If loper moved at least 5 meters before attack and MoS exceeds target’s Durability, the target is knocked down and pinned (Subdual, p. 204, EP).",,2,1,,,,Unarmed Combat,,G,,
 Wild Artificial Loper,Pneumatic Bite,,,2,1,,,,Unarmed Combat,,,,
