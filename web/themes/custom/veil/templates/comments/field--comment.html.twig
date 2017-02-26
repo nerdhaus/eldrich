@@ -27,7 +27,7 @@
  */
 #}
 {% if comments|length or comment_form %}
-<section{{ attributes.addClass('row') }}>
+<section{{ attributes.addClass('row').addClass('hidden-print') }}>
   <div class="col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
