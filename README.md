@@ -46,3 +46,8 @@ This project includes a Vagrantfile that can bootstrap a development server and 
 *Veil*, Eldrich Host's custom front-end theme, is based on Bootstrap 3.2 nd handles most of the heavy lifting of making things look nice. It makes heavy use of Twig template inheritance to handle the special needs of various gear types, and completely bypasses normal FieldAPI rendering for a lot of the tangly Eclise Phase data. Skills, Weapons, and Armor in particular are never output as fields directly — they're used as the starting point for dynamically calculating stat values that include all of a character's current bonuses and so on.
 
 Veil has a lot of hard dependencies on *Eldrich* and *EP Game Tools* — it makes plenty of assumptions about those modules and their support classes being there, so it can't really be untangled.
+
+## Where do you fit in?
+- If you have a bug report or feature request, hit the *Issues* tab here on GitHub and knock yourself out.
+- If you're working on your own Eclipse Phase utility or web site and want to reuse some of the structured data that drives Eldrich.Host, check out the [EP Import module and its giant pile of .CSV files.](https://github.com/nerdhaus/eldrich/tree/master/web/modules/custom/ep_import)
+- If you'd like to add your own homebrew materials to Eldrich Host, or use it to run a custom campaign, ping us at [@EldrichHost](http://twitter.com/eldrichhost) on Twitter or post an issue here on GitHub.
