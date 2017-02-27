@@ -11,7 +11,7 @@
 {% block callout_content %}
   {{ parent() }}
   <li><strong>Type:</strong> {{ content.field_location_type|field_value -}}{% if content.field_parent_location|field_value %}, {{ content.field_parent_location|field_value }}{% endif %}</li>
-  {% if content.field_distance|field_value %}<li><strong>Distance from Earth:</strong> {{ content.field_distance|field_value }}</li>{% endif %}
+  {% if content.field_distance|field_value %}<li><strong>Distance from Sol:</strong> {{ content.field_distance|field_value }}</li>{% endif %}
   {% if content.field_population|field_value %}<li><strong>Population:</strong> {{ content.field_population|field_value }}</li>{% endif %}
   {% if content.field_languages|field_value|length == 1 %}<li><strong>Primary Language:</strong> {{ content.field_languages|field_value }}</li>
   {% elseif content.field_languages|field_value|length > 1 %}<li><strong>Primary Languages:</strong> {{ content.field_languages|field_value|safe_join(', ') }}</li>{% endif %}
