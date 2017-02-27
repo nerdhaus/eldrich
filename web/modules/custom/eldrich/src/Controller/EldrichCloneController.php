@@ -74,12 +74,16 @@ class EldrichCloneController implements ContainerInjectionInterface {
    *
    * @param EntityInterface $original
    *   The Node to be cloned.
-   *
    * @return EntityInterface $clone
    *   The new node, with its assorted properties updated and ready to be saved.
    */
   public function constructClone(EntityInterface $original) {
     $clone = $original->createDuplicate();
+
+
+    if ($original->bundle() == 'npc' && \Drupal::request()->query->get('target') == 'pc') {
+      $clone->type = 'pc';
+    }
 
     foreach ($this->referencesToClone() as $field_name) {
       if ($clone->hasField($field_name) && !$clone->$field_name->isEmpty()) {
@@ -134,7 +138,7 @@ class EldrichCloneController implements ContainerInjectionInterface {
    * @return array
    *   A list of fields whose values should be cleared instead of cloned.
    */
-  private function referencesToClear() {
+  private function fieldToClear() {
     $fields = [
       'field_sources', // Don't clone sources.
       'field_image'
