@@ -124,6 +124,14 @@ class NodeTitle extends PreprocessBase implements PreprocessInterface {
           '#title' => t('Clone'),
           '#url' =>Url::fromRoute('eldrich.clone', ['original' => $node->id()]),
         ];
+
+        if ($node->bundle() == 'npc') {
+          $actions['clone_as'] = [
+            '#type' => 'link',
+            '#title' => t('Clone as full PC'),
+            '#url' =>Url::fromRoute('eldrich.clone', ['original' => $node->id()], ['query' => ['target' => 'pc']]),
+          ];
+        }
       }
     }
 
