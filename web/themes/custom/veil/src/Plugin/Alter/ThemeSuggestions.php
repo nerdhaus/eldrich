@@ -31,10 +31,17 @@ class ThemeSuggestions extends PluginBase implements AlterInterface {
     $variables = Variables::create($context1);
 
     switch ($hook) {
+      case 'form':
+        foreach ($variables->element['#theme'] as $theme) {
+          $suggestions[] = 'form__' . $theme; // Machine name of form.
+        }
+        $suggestions[] = 'form__' . $variables->element['#form_id'];
+
       case 'block':
         // Don't actually need this anymore, but I kinda like the look of it.
-        $block = Block::load($variables['elements']['#id']);
-        $suggestions[] = 'block__' . $block->getRegion();
+        if (($id = $variables->elements['#id']) && ($block = Block::load($id))) {
+          $suggestions[] = 'block__' . $block->getRegion();
+        }
         break;
 
       case 'views_view':
