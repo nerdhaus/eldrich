@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.location.field_based_on
     - field.field.node.location.field_chat
     - field.field.node.location.field_description
+    - field.field.node.location.field_distance
     - field.field.node.location.field_gm_only
     - field.field.node.location.field_languages
     - field.field.node.location.field_location_type
@@ -30,7 +31,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_chat:
-    weight: 29
+    weight: 15
     settings: {  }
     third_party_settings: {  }
     type: comment_default
@@ -41,6 +42,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_distance:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   field_gm_only:
     weight: 2
     settings:
@@ -68,7 +75,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_population:
-    weight: 10
+    weight: 11
     settings:
       placeholder: ''
     third_party_settings: {  }

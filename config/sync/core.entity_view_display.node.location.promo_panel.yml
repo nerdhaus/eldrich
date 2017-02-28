@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.location.field_based_on
     - field.field.node.location.field_chat
     - field.field.node.location.field_description
+    - field.field.node.location.field_distance
     - field.field.node.location.field_gm_only
     - field.field.node.location.field_languages
     - field.field.node.location.field_location_type
@@ -45,7 +46,7 @@ content:
     weight: 1
     label: inline
     settings:
-      thousand_separator: ''
+      thousand_separator: ','
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
@@ -63,6 +64,7 @@ content:
 hidden:
   field_based_on: true
   field_chat: true
+  field_distance: true
   field_gm_only: true
   field_languages: true
   field_parent_location: true

@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.location.field_based_on
     - field.field.node.location.field_chat
     - field.field.node.location.field_description
+    - field.field.node.location.field_distance
     - field.field.node.location.field_gm_only
     - field.field.node.location.field_languages
     - field.field.node.location.field_location_type
@@ -26,7 +27,7 @@ bundle: location
 mode: default
 content:
   field_chat:
-    weight: 11
+    weight: 8
     label: hidden
     settings:
       pager_id: 0
@@ -39,24 +40,25 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_gm_only:
-    weight: 12
-    label: above
+  field_distance:
+    weight: 3
+    label: inline
     settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
     third_party_settings: {  }
-    type: boolean
+    type: number_decimal
   field_languages:
-    weight: 9
+    weight: 6
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   field_location_type:
-    weight: 4
+    weight: 1
     label: inline
     settings:
       link: true
@@ -66,29 +68,22 @@ content:
     third_party_settings: {  }
     type: eldrich_popup_formatter
   field_parent_location:
-    weight: 5
+    weight: 2
     label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_population:
-    weight: 6
+    weight: 4
     label: inline
     settings:
-      thousand_separator: ''
+      thousand_separator: ','
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
-  field_short_name:
-    weight: 11
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
   field_sources:
-    weight: 7
+    weight: 5
     label: inline
     settings:
       link: true
@@ -99,9 +94,11 @@ content:
     third_party_settings: {  }
     type: eldrich_citation_formatter
   world_location_children:
-    weight: 10
+    weight: 7
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_based_on: true
+  field_gm_only: true
+  field_short_name: true
   links: true
