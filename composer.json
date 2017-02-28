@@ -79,7 +79,8 @@
         "drupal/filelist_formatter": "^1.1",
         "drupal/veoa": "^1.0@RC",
         "drupal/webform": "^5.0@beta",
-        "nubs/random-name-generator": "^2.1"
+        "nubs/random-name-generator": "^2.1",
+        "drupal/themable_forms": "^1.0@alpha"
     },
     "require-dev": {
         "behat/mink": "~1.7",
