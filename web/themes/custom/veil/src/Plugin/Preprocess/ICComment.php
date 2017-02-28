@@ -87,7 +87,8 @@ class ICComment extends PreprocessBase implements PreprocessInterface {
   }
 
   function hashToCallsign($hash) {
-    $str = str_split(substr($hash, 5, 3));
+    preg_match("/\D\d\d/", $hash, $output_array);
+    $str = str_split(array_pop($output_array));
 
     $nato_alpha = [
       'a' => 'alfa',

@@ -1,0 +1,30 @@
+{#
+/**
+* @file
+* Default theme implementation for a 'form' element.
+*
+* Available variables
+* - attributes: A list of HTML attributes for the wrapper element.
+* - element: The child elements of the form.
+*
+* @see template_preprocess_form()
+*
+* @ingroup themeable
+*/
+#}
+<form{{ attributes }}>
+  {{ element.form_build_id }}
+  {{ element.form_token }}
+  {{ element.form_id }}
+  {{ element.author }}
+
+  {{ element.needs_character }}
+  <div class="form-group form-inline">
+    {{ element.field_character }}
+    {{ element.field_obscure_id }}
+  </div>
+  {{ element.field_body }}
+  <div class="pull-right">{{ element.actions }}</div>
+  {# {{ element|without('needs_character', 'field_character', 'field_obscure_id', 'field_body', 'actions') }} #}
+  <div class="clearfix"></div>
+</form>

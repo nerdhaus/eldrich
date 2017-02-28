@@ -12,8 +12,6 @@ use Drupal\Core\Form\FormStateInterface;
 
 
 function veil_form_invite_by_email_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $form['#theme'][] = 'form__invite_by_email_block_form';
-
   $form['#attributes']['class'][] = 'form-horizontal';
   $form['email']['#attributes']['class'][] = 'form-control';
   $form['email_subject']['#attributes']['class'][] = 'form-control';
@@ -56,11 +54,11 @@ function veil_form_comment_form_alter(&$form, FormStateInterface $form_state, $f
     else {
       $form['field_character']['widget']['#options']['_none'] = t('— Choose an Identity —');
     }
-
-    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-default';
-    $form['actions']['submit']['#value'] = 'Transmit';
-
-    $form['field_character']['widget']['#title_display'] = 'invisible';
-    $form['field_body']['widget'][0]['value']['#title_display'] = 'invisible';
   }
+
+  $form['actions']['submit']['#attributes']['class'][] = 'btn btn-default';
+  $form['actions']['submit']['#value'] = 'Transmit';
+
+  $form['field_character']['widget']['#title_display'] = 'invisible';
+  $form['field_body']['widget'][0]['value']['#title_display'] = 'invisible';
 }
