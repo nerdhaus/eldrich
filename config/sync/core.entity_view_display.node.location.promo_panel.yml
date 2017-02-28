@@ -4,8 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.promo_panel
+    - field.field.node.location.field_based_on
+    - field.field.node.location.field_chat
     - field.field.node.location.field_description
-    - field.field.node.location.field_distance
     - field.field.node.location.field_gm_only
     - field.field.node.location.field_languages
     - field.field.node.location.field_location_type
@@ -60,7 +61,8 @@ content:
     third_party_settings: {  }
     type: eldrich_citation_formatter
 hidden:
-  field_distance: true
+  field_based_on: true
+  field_chat: true
   field_gm_only: true
   field_languages: true
   field_parent_location: true

@@ -989,6 +989,7 @@ display:
         filters: false
         filter_groups: false
         header: false
+        sorts: false
       filters:
         status:
           value: '1'
@@ -1098,6 +1099,33 @@ display:
             value: 'With Earth now uninhabitable, transhumanity survives in a variety of offworld habitats. There are two major types of these habitats: settlements on planets or large moons, such as those on Luna, Mars, Venus, Europa, or Titan, and space habitats that are built on or near an asteroid or other useful source of raw materials. Most of these space habitats spin themselves to provide gravity, with Earth and Mars gravity being the two most common choices. There are also a large number of zero-g or microgravity habitats, consisting of either non-spinning habitats or stations built into small asteroids or moons.'
             format: basic_html
           plugin_id: text
+      sorts:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+        field_distance_value:
+          id: field_distance_value
+          table: node__field_distance
+          field: field_distance_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
     cache_metadata:
       max-age: 0
       contexts:
