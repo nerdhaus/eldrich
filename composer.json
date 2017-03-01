@@ -81,7 +81,8 @@
         "drupal/webform": "^5.0@beta",
         "nubs/random-name-generator": "^2.1",
         "drupal/themable_forms": "^1.0@alpha",
-        "drupal/multi_text": "1.x-dev"
+        "drupal/multi_text": "1.x-dev",
+        "drupal/options_widget_placeholder": "^1.0@RC"
     },
     "require-dev": {
         "behat/mink": "~1.7",

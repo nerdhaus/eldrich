@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "14ecf713109dcc0c5c61847b57f23ab7",
+    "content-hash": "933d4b6231ee46a2c442befb61e2f393",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3680,6 +3680,49 @@
             "homepage": "https://www.drupal.org/project/nice_login",
             "support": {
                 "source": "http://cgit.drupalcode.org/nice_login"
+            }
+        },
+        {
+            "name": "drupal/options_widget_placeholder",
+            "version": "1.0.0-rc4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/options_widget_placeholder",
+                "reference": "8.x-1.0-rc4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/options_widget_placeholder-8.x-1.0-rc4.zip",
+                "reference": null,
+                "shasum": "7d8b59793d6cfd902c4ddececd4050cdf290e1f8"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-rc4",
+                    "datestamp": "1447444440"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "andrewmacpherson",
+                    "homepage": "https://www.drupal.org/user/265648"
+                }
+            ],
+            "description": "Provides settings to customize the placeholder text on Options field widgets.",
+            "homepage": "https://www.drupal.org/project/options_widget_placeholder",
+            "support": {
+                "source": "http://cgit.drupalcode.org/options_widget_placeholder"
             }
         },
         {
@@ -9415,7 +9458,8 @@
         "drupal/veoa": 5,
         "drupal/webform": 10,
         "drupal/themable_forms": 15,
-        "drupal/multi_text": 20
+        "drupal/multi_text": 20,
+        "drupal/options_widget_placeholder": 5
     },
     "prefer-stable": true,
     "prefer-lowest": false,
