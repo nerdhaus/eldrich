@@ -1100,6 +1100,18 @@ display:
             format: basic_html
           plugin_id: text
       sorts:
+        field_distance_value:
+          id: field_distance_value
+          table: node__field_distance
+          field: field_distance_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
         title:
           id: title
           table: node_field_data
@@ -1113,18 +1125,6 @@ display:
             label: ''
           entity_type: node
           entity_field: title
-          plugin_id: standard
-        field_distance_value:
-          id: field_distance_value
-          table: node__field_distance
-          field: field_distance_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
           plugin_id: standard
     cache_metadata:
       max-age: 0
