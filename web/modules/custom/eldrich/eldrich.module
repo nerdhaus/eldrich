@@ -73,7 +73,7 @@ function eldrich_entity_presave(EntityInterface $entity) {
   if (($entity->getEntityType()->id() == 'node') && $entity->bundle() == 'creature') {
     if (!$entity->field_creature_type->isEmpty()) {
       $ct = $entity->field_creature_type->entity->label();
-      if ($ct = 'Smart Animal') {
+      if ($ct == 'Smart Animal') {
         $entity->field_gear_type->target_id = 30;
       }
     }
