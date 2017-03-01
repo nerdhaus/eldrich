@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.strain.field_description
     - field.field.node.strain.field_gm_only
     - field.field.node.strain.field_infectiousness
+    - field.field.node.strain.field_plot_seeds
     - field.field.node.strain.field_sources
     - field.field.node.strain.field_stages
     - field.field.node.strain.field_vectors
@@ -43,6 +44,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+  field_plot_seeds:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
   field_source:
     weight: 102
     label: above

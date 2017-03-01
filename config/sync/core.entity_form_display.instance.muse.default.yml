@@ -25,9 +25,12 @@ content:
     type: text_textarea
   field_skills:
     weight: 4
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
     third_party_settings: {  }
-    type: skill_reference_select
+    type: skill_reference_autocomplete
   field_stats:
     weight: 3
     settings:

@@ -5,6 +5,12 @@ dependencies:
   config:
     - eck.eck_type.component.native_attack
     - field.storage.component.field_magazine_size
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: component.native_attack.field_magazine_size
 field_name: field_magazine_size
 entity_type: component

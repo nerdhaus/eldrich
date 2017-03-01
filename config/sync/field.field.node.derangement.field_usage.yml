@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_usage
     - node.type.derangement
   module:
+    - custom_add_another
     - text
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.derangement.field_usage
 field_name: field_usage
 entity_type: node

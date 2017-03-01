@@ -6,6 +6,12 @@ dependencies:
     - eck.eck_type.instance.weapon_instance
     - field.storage.node.field_equipped_weapons
     - node.type.vehicle
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.vehicle.field_equipped_weapons
 field_name: field_equipped_weapons
 entity_type: node

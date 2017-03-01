@@ -5,8 +5,13 @@ dependencies:
   config:
     - field.storage.user.field_personal_links
   module:
+    - custom_add_another
     - link
     - user
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: user.user.field_personal_links
 field_name: field_personal_links
 entity_type: user

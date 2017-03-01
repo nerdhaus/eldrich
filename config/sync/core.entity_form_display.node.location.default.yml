@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.location.field_languages
     - field.field.node.location.field_location_type
     - field.field.node.location.field_parent_location
+    - field.field.node.location.field_plot_seeds
     - field.field.node.location.field_population
     - field.field.node.location.field_short_name
     - field.field.node.location.field_sources
@@ -18,8 +19,53 @@ dependencies:
   module:
     - comment
     - entity_reference_quantity
+    - field_group
+    - multi_text
     - path
     - text
+third_party_settings:
+  field_group:
+    group_gm_resources:
+      children:
+        - field_chat
+        - field_plot_seeds
+      parent_name: ''
+      weight: 14
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'GM Resources'
+    group_attribution:
+      children:
+        - field_sources
+        - field_based_on
+      parent_name: ''
+      weight: 15
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Attribution
+    group_writeup:
+      children:
+        - field_distance
+        - field_population
+        - field_languages
+        - field_description
+      parent_name: ''
+      weight: 10
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Writeup
 id: node.location.default
 targetEntityType: node
 bundle: location
@@ -27,55 +73,71 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 6
     settings: {  }
     third_party_settings: {  }
+  field_based_on:
+    type: entity_reference_autocomplete_tags
+    weight: 22
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_chat:
-    weight: 15
+    weight: 27
     settings: {  }
     third_party_settings: {  }
     type: comment_default
   field_description:
-    weight: 13
+    weight: 14
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
   field_distance:
-    weight: 10
+    weight: 11
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
   field_gm_only:
-    weight: 2
+    weight: 4
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
   field_languages:
-    weight: 12
+    weight: 13
     settings:
       size: 60
       placeholder: ''
+      delimiter: ', '
     third_party_settings: {  }
-    type: string_textfield
+    type: multi_text_string_widget
   field_location_type:
-    weight: 8
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
   field_parent_location:
-    weight: 9
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_plot_seeds:
+    weight: 28
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
   field_population:
-    weight: 11
+    weight: 12
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -88,7 +150,7 @@ content:
     third_party_settings: {  }
     type: string_textfield
   field_sources:
-    weight: 14
+    weight: 21
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -97,20 +159,20 @@ content:
     type: entity_reference_quantity_autocomplete
   path:
     type: path
-    weight: 7
+    weight: 9
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 7
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 8
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -121,11 +183,10 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_based_on: true
+hidden: {  }

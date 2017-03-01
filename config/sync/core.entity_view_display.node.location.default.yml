@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.location.field_languages
     - field.field.node.location.field_location_type
     - field.field.node.location.field_parent_location
+    - field.field.node.location.field_plot_seeds
     - field.field.node.location.field_population
     - field.field.node.location.field_short_name
     - field.field.node.location.field_sources
@@ -74,6 +75,12 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_plot_seeds:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
   field_population:
     weight: 4
     label: inline

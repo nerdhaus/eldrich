@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.faction.field_locations
     - field.field.node.faction.field_memes
     - field.field.node.faction.field_parent_faction
+    - field.field.node.faction.field_plot_seeds
     - field.field.node.faction.field_short_name
     - field.field.node.faction.field_sources
     - node.type.faction
@@ -43,6 +44,7 @@ hidden:
   field_locations: true
   field_memes: true
   field_parent_faction: true
+  field_plot_seeds: true
   field_short_name: true
   field_sources: true
   flag_bookmark: true

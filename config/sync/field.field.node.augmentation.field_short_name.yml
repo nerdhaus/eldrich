@@ -5,6 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_short_name
     - node.type.augmentation
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.augmentation.field_short_name
 field_name: field_short_name
 entity_type: node

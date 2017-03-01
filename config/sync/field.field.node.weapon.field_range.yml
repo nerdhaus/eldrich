@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_range
     - node.type.weapon
   module:
+    - custom_add_another
     - ep_complex_values
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.weapon.field_range
 field_name: field_range
 entity_type: node

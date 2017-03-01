@@ -13,6 +13,7 @@ module:
   crop: 0
   ctools: 0
   ctools_views: 0
+  custom_add_another: 0
   datetime: 0
   dblog: 0
   devel: 0
@@ -57,9 +58,11 @@ module:
   migrate_plus: 0
   migrate_source_csv: 0
   migrate_tools: 0
+  multi_text: 0
   node: 0
   operation: 0
   options: 0
+  options_widget_placeholder: 0
   page_cache: 0
   path: 0
   quick_pages: 0

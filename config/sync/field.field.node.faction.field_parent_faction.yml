@@ -5,6 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_parent_faction
     - node.type.faction
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.faction.field_parent_faction
 field_name: field_parent_faction
 entity_type: node

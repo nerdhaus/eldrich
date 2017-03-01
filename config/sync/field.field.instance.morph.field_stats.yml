@@ -6,7 +6,12 @@ dependencies:
     - eck.eck_type.instance.morph
     - field.storage.instance.field_stats
   module:
+    - custom_add_another
     - ep_statblock
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: instance.morph.field_stats
 field_name: field_stats
 entity_type: instance

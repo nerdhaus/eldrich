@@ -7,10 +7,12 @@ dependencies:
     - field.field.node.location.field_based_on
     - field.field.node.location.field_chat
     - field.field.node.location.field_description
+    - field.field.node.location.field_distance
     - field.field.node.location.field_gm_only
     - field.field.node.location.field_languages
     - field.field.node.location.field_location_type
     - field.field.node.location.field_parent_location
+    - field.field.node.location.field_plot_seeds
     - field.field.node.location.field_population
     - field.field.node.location.field_short_name
     - field.field.node.location.field_sources
@@ -40,9 +42,11 @@ content:
 hidden:
   field_based_on: true
   field_chat: true
+  field_distance: true
   field_gm_only: true
   field_languages: true
   field_parent_location: true
+  field_plot_seeds: true
   field_population: true
   field_short_name: true
   field_sources: true

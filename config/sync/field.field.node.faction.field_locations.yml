@@ -6,6 +6,12 @@ dependencies:
     - field.storage.node.field_locations
     - node.type.faction
     - node.type.location
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.faction.field_locations
 field_name: field_locations
 entity_type: node

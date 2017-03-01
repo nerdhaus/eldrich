@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_duration
     - node.type.drug
   module:
+    - custom_add_another
     - range
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.drug.field_duration
 field_name: field_duration
 entity_type: node

@@ -10,8 +10,36 @@ dependencies:
     - node.type.derangement
   module:
     - entity_reference_quantity
+    - field_group
     - path
     - text
+third_party_settings:
+  field_group:
+    group_attribution:
+      children:
+        - field_sources
+      parent_name: ''
+      weight: 13
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Attribution
+    group_writeup:
+      children:
+        - field_description
+        - field_usage
+      parent_name: ''
+      weight: 8
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Writeup
 id: node.derangement.default
 targetEntityType: node
 bundle: derangement
@@ -36,14 +64,14 @@ content:
     third_party_settings: {  }
     type: options_select
   field_description:
-    weight: 7
+    weight: 10
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
   field_sources:
-    weight: 33
+    weight: 21
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -51,7 +79,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_quantity_autocomplete
   field_usage:
-    weight: 8
+    weight: 11
     settings:
       rows: 5
       placeholder: ''

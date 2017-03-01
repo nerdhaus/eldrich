@@ -7,6 +7,12 @@ dependencies:
     - node.type.campaign
     - node.type.npc
     - node.type.pc
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.campaign.field_npcs
 field_name: field_npcs
 entity_type: node

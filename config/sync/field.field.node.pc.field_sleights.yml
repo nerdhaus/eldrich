@@ -6,6 +6,12 @@ dependencies:
     - field.storage.node.field_sleights
     - node.type.pc
     - node.type.sleight
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.pc.field_sleights
 field_name: field_sleights
 entity_type: node

@@ -5,7 +5,12 @@ dependencies:
   config:
     - field.storage.invite.field_invite_email_body
   module:
+    - custom_add_another
     - invite
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 _core:
   default_config_hash: rLzCFOx_1vbWULkakva3vIuZTHlu6R22AZSwuSkhEqQ
 id: invite.invite.field_invite_email_body

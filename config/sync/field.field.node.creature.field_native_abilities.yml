@@ -6,6 +6,12 @@ dependencies:
     - eck.eck_type.component.native_ability
     - field.storage.node.field_native_abilities
     - node.type.creature
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.creature.field_native_abilities
 field_name: field_native_abilities
 entity_type: node

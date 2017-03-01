@@ -7,7 +7,12 @@ dependencies:
     - node.type.skill
     - node.type.weapon
   module:
+    - custom_add_another
     - entity_reference_override
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.weapon.field_linked_skill
 field_name: field_linked_skill
 entity_type: node

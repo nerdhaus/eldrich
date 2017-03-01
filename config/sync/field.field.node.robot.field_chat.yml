@@ -7,6 +7,11 @@ dependencies:
     - node.type.robot
   module:
     - comment
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.robot.field_chat
 field_name: field_chat
 entity_type: node

@@ -6,6 +6,12 @@ dependencies:
     - eck.eck_type.lookup.morph_type
     - field.storage.node.field_morph_types
     - node.type.augmentation
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.augmentation.field_morph_types
 field_name: field_morph_types
 entity_type: node

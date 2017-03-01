@@ -5,6 +5,12 @@ dependencies:
   config:
     - eck.eck_type.component.status
     - field.storage.component.field_notes
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: component.status.field_notes
 field_name: field_notes
 entity_type: component

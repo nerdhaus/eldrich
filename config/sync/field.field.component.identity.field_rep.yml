@@ -7,7 +7,12 @@ dependencies:
     - field.storage.component.field_rep
     - node.type.network
   module:
+    - custom_add_another
     - entity_reference_quantity
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: component.identity.field_rep
 field_name: field_rep
 entity_type: component

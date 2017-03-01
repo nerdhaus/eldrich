@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_armor
     - node.type.vehicle
   module:
+    - custom_add_another
     - ep_complex_values
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.vehicle.field_armor
 field_name: field_armor
 entity_type: node

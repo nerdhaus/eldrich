@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.drug.field_duration
     - field.field.node.drug.field_gear_type
     - field.field.node.drug.field_onset
+    - field.field.node.drug.field_plot_seeds
     - field.field.node.drug.field_short_name
     - field.field.node.drug.field_sources
     - node.type.drug
@@ -101,6 +102,12 @@ content:
       to_prefix_suffix: false
     third_party_settings: {  }
     type: integer_range_time_field_formatter
+  field_plot_seeds:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
   field_sources:
     weight: 103
     label: above

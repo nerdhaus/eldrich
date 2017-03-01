@@ -6,6 +6,12 @@ dependencies:
     - eck.eck_type.lookup.mobility_type
     - field.storage.node.field_mobility_system
     - node.type.robot
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.robot.field_mobility_system
 field_name: field_mobility_system
 entity_type: node

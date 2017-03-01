@@ -5,6 +5,12 @@ dependencies:
   config:
     - eck.eck_type.lookup.damage_type
     - field.storage.lookup.field_lookup_code
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: lookup.damage_type.field_lookup_code
 field_name: field_lookup_code
 entity_type: lookup

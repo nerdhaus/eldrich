@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_video
     - node.type.inspiration
   module:
+    - custom_add_another
     - link
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.inspiration.field_video
 field_name: field_video
 entity_type: node

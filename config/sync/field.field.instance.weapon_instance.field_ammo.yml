@@ -5,6 +5,12 @@ dependencies:
   config:
     - eck.eck_type.instance.weapon_instance
     - field.storage.instance.field_ammo
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: instance.weapon_instance.field_ammo
 field_name: field_ammo
 entity_type: instance

@@ -5,6 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_uses_mods
     - node.type.armor
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.armor.field_uses_mods
 field_name: field_uses_mods
 entity_type: node

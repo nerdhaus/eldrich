@@ -6,7 +6,12 @@ dependencies:
     - eck.eck_type.lookup.psi_duration
     - field.storage.lookup.field_description
   module:
+    - custom_add_another
     - text
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: lookup.psi_duration.field_description
 field_name: field_description
 entity_type: lookup

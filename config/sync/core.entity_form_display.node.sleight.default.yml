@@ -26,23 +26,62 @@ dependencies:
     - text
 third_party_settings:
   field_group:
-    group_psi_details:
+    group_attribution:
       children:
-        - field_sleight_level
+        - field_sources
+      parent_name: ''
+      weight: 11
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Attribution
+    group_stats:
+      children:
+        - field_stats
+        - field_skills
+      parent_name: ''
+      weight: 10
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Stats and Abilities'
+    group_writeup:
+      children:
+        - field_description
+      parent_name: ''
+      weight: 8
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Writeup
+    group_details:
+      children:
         - field_action_type
         - field_sleight_range
         - field_sleight_duration
-        - field_strain
         - field_psi_skill
+        - field_conditional
+        - field_is_active
+        - field_strain
+        - field_exsurgent
       parent_name: ''
-      weight: 1
-      label: Details
-      format_type: details
+      weight: 9
+      format_type: fieldset
       format_settings:
-        open: false
-        required_fields: true
-        classes: ''
         id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Details
 id: node.sleight.default
 targetEntityType: node
 bundle: sleight
@@ -67,47 +106,50 @@ content:
     third_party_settings: {  }
     type: options_select
   field_conditional:
-    weight: 37
+    weight: 12
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
   field_description:
-    weight: 13
+    weight: 10
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
   field_exsurgent:
-    weight: 34
+    weight: 15
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
   field_is_active:
-    weight: 33
+    weight: 13
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
   field_psi_skill:
-    weight: 12
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: options_select
   field_skills:
-    weight: 39
-    settings: {  }
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
     third_party_settings: {  }
-    type: skill_reference_select
+    type: skill_reference_autocomplete
   field_sleight_duration:
     weight: 10
     settings: {  }
     third_party_settings: {  }
     type: options_select
   field_sleight_level:
-    weight: 7
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -117,7 +159,7 @@ content:
     third_party_settings: {  }
     type: options_select
   field_sources:
-    weight: 40
+    weight: 21
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -125,13 +167,13 @@ content:
     third_party_settings: {  }
     type: entity_reference_quantity_autocomplete
   field_stats:
-    weight: 38
+    weight: 12
     settings:
       display_style: all
     third_party_settings: {  }
     type: stat_block_table
   field_strain:
-    weight: 35
+    weight: 14
     settings:
       size: 60
       placeholder: ''

@@ -6,6 +6,12 @@ dependencies:
     - eck.eck_type.instance.armor_instance
     - field.storage.node.field_equipped_armor
     - node.type.npc
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.npc.field_equipped_armor
 field_name: field_equipped_armor
 entity_type: node

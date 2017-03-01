@@ -5,6 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_cp_cost
     - node.type.trait
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.trait.field_cp_cost
 field_name: field_cp_cost
 entity_type: node

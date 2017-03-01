@@ -5,6 +5,12 @@ dependencies:
   config:
     - comment.type.ic_comment
     - field.storage.comment.field_character
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: comment.ic_comment.field_character
 field_name: field_character
 entity_type: comment

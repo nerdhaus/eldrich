@@ -6,6 +6,12 @@ dependencies:
     - eck.eck_type.lookup.source_type
     - field.storage.node.field_source_type
     - node.type.source
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.source.field_source_type
 field_name: field_source_type
 entity_type: node

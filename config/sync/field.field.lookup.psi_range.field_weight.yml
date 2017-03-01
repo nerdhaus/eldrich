@@ -5,6 +5,12 @@ dependencies:
   config:
     - eck.eck_type.lookup.psi_range
     - field.storage.lookup.field_weight
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: lookup.psi_range.field_weight
 field_name: field_weight
 entity_type: lookup

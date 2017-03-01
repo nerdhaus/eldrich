@@ -7,7 +7,12 @@ dependencies:
     - node.type.skill
     - node.type.trait
   module:
+    - custom_add_another
     - ep_skill_reference
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.trait.field_skills
 field_name: field_skills
 entity_type: node

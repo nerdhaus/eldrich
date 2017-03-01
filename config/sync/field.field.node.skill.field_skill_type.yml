@@ -6,6 +6,12 @@ dependencies:
     - eck.eck_type.lookup.skill_category
     - field.storage.node.field_skill_type
     - node.type.skill
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.skill.field_skill_type
 field_name: field_skill_type
 entity_type: node

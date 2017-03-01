@@ -6,6 +6,12 @@ dependencies:
     - eck.eck_type.lookup.psi_duration
     - field.storage.node.field_sleight_duration
     - node.type.sleight
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.sleight.field_sleight_duration
 field_name: field_sleight_duration
 entity_type: node

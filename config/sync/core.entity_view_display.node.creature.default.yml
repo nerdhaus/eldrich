@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.creature.field_movement_speed
     - field.field.node.creature.field_native_abilities
     - field.field.node.creature.field_native_attacks
+    - field.field.node.creature.field_plot_seeds
     - field.field.node.creature.field_skills
     - field.field.node.creature.field_sleights
     - field.field.node.creature.field_sources
@@ -135,6 +136,12 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_plot_seeds:
+    weight: 20
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
   field_skills:
     weight: 6
     label: inline

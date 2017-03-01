@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_campaign_status
     - node.type.campaign
   module:
+    - custom_add_another
     - options
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.campaign.field_campaign_status
 field_name: field_campaign_status
 entity_type: node

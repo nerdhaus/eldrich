@@ -6,7 +6,12 @@ dependencies:
     - eck.eck_type.component.native_attack
     - field.storage.component.field_damage_dice
   module:
+    - custom_add_another
     - operation
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: component.native_attack.field_damage_dice
 field_name: field_damage_dice
 entity_type: component

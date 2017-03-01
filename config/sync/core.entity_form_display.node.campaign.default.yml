@@ -34,7 +34,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 6
     settings: {  }
     third_party_settings: {  }
   field_campaign_status:
@@ -43,7 +43,7 @@ content:
     third_party_settings: {  }
     type: options_select
   field_image:
-    weight: 26
+    weight: 4
     settings:
       show_default_crop: true
       warn_multiple_usages: true
@@ -51,7 +51,8 @@ content:
       crop_preview_image_style: crop_thumbnail
       crop_list:
         - landscape
-        - strip
+        - square
+        - vertical
       progress_indicator: throbber
       show_crop_area: false
     third_party_settings: {  }
@@ -94,20 +95,20 @@ content:
     type: string_textfield
   path:
     type: path
-    weight: 8
+    weight: 9
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 7
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 8
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -118,7 +119,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60

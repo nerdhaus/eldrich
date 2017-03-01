@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.creature.field_movement_speed
     - field.field.node.creature.field_native_abilities
     - field.field.node.creature.field_native_attacks
+    - field.field.node.creature.field_plot_seeds
     - field.field.node.creature.field_skills
     - field.field.node.creature.field_sleights
     - field.field.node.creature.field_sources
@@ -34,10 +35,98 @@ dependencies:
     - ep_complex_values
     - ep_skill_reference
     - ep_statblock
+    - field_group
     - image_widget_crop
     - inline_entity_form
     - path
     - text
+third_party_settings:
+  field_group:
+    group_gm_resources:
+      children:
+        - field_plot_seeds
+        - field_chat
+      parent_name: ''
+      weight: 15
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'GM Resources'
+    group_attribution:
+      children:
+        - field_sources
+        - field_based_on
+      parent_name: ''
+      weight: 16
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Attribution
+    group_stats:
+      children:
+        - field_stats
+        - field_skills
+        - field_traits
+        - field_sleights
+        - field_native_abilities
+      parent_name: ''
+      weight: 12
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Stats and Abilities'
+    group_writeup:
+      children:
+        - field_description
+        - field_image
+      parent_name: ''
+      weight: 10
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Writeup
+    group_gear:
+      children:
+        - field_augmentations
+        - field_gear
+        - field_equipped_weapons
+        - field_native_attacks
+      parent_name: ''
+      weight: 14
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Gear
+    group_details:
+      children:
+        - field_armor
+        - field_mobility_system
+        - field_movement_speed
+        - field_strain
+      parent_name: ''
+      weight: 11
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Details
 id: node.creature.default
 targetEntityType: node
 bundle: creature
@@ -45,49 +134,54 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 6
     settings: {  }
     third_party_settings: {  }
   field_armor:
-    weight: 11
+    weight: 12
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
   field_augmentations:
-    weight: 15
+    weight: 16
     settings:
       match_operator: CONTAINS
       size: '60'
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
+  field_based_on:
+    type: entity_reference_autocomplete_tags
+    weight: 22
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_chat:
-    weight: 29
+    weight: 22
     settings: {  }
     third_party_settings: {  }
     type: comment_default
   field_cost:
-    weight: 26
-    settings:
-      match_operator: CONTAINS
-      size: '60'
-      placeholder: ''
+    weight: 3
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_quantity_autocomplete
+    type: entity_reference_quantity_select
   field_creature_type:
-    weight: 2
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     type: options_select
   field_description:
-    weight: 9
+    weight: 10
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
   field_equipped_weapons:
-    weight: 20
+    weight: 18
     settings:
       match_operator: CONTAINS
       form_mode: default
@@ -101,7 +195,7 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_complex
   field_gear:
-    weight: 21
+    weight: 17
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -109,13 +203,13 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
   field_gm_only:
-    weight: 1
+    weight: 4
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
   field_image:
-    weight: 3
+    weight: 11
     settings:
       show_default_crop: true
       warn_multiple_usages: true
@@ -130,28 +224,28 @@ content:
     third_party_settings: {  }
     type: image_widget_crop
   field_mobility_system:
-    weight: 12
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: options_select
   field_movement_speed:
-    weight: 13
+    weight: 14
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_widget
   field_native_abilities:
-    weight: 18
+    weight: 16
     settings:
       form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
+      override_labels: true
+      label_singular: Ability
+      label_plural: Abilities
       collapsible: false
       collapsed: false
     third_party_settings: {  }
     type: inline_entity_form_simple
   field_native_attacks:
-    weight: 17
+    weight: 19
     settings:
       form_mode: default
       override_labels: false
@@ -161,13 +255,23 @@ content:
       collapsed: false
     third_party_settings: {  }
     type: inline_entity_form_simple
-  field_skills:
-    weight: 14
-    settings: {  }
+  field_plot_seeds:
+    weight: 21
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
-    type: skill_reference_select
+    type: string_textarea
+  field_skills:
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: skill_reference_autocomplete
   field_sleights:
-    weight: 19
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: 60
@@ -175,7 +279,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_sources:
-    weight: 23
+    weight: 21
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -183,20 +287,20 @@ content:
     third_party_settings: {  }
     type: entity_reference_quantity_autocomplete
   field_stats:
-    weight: 10
+    weight: 12
     settings:
       display_style: all
     third_party_settings: {  }
     type: stat_block_table
   field_strain:
-    weight: 22
+    weight: 15
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
   field_traits:
-    weight: 16
+    weight: 14
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -205,20 +309,20 @@ content:
     type: entity_reference_override_autocomplete
   path:
     type: path
-    weight: 8
+    weight: 9
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 7
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 8
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -229,12 +333,11 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
 hidden:
-  field_based_on: true
   field_gear_type: true

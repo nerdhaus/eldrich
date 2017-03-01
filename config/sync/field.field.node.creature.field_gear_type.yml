@@ -6,6 +6,12 @@ dependencies:
     - field.storage.node.field_gear_type
     - node.type.creature
     - taxonomy.vocabulary.gear_type
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.creature.field_gear_type
 field_name: field_gear_type
 entity_type: node

@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.strain.field_description
     - field.field.node.strain.field_gm_only
     - field.field.node.strain.field_infectiousness
+    - field.field.node.strain.field_plot_seeds
     - field.field.node.strain.field_sources
     - field.field.node.strain.field_stages
     - field.field.node.strain.field_vectors
@@ -15,9 +16,51 @@ dependencies:
   module:
     - comment
     - entity_reference_quantity
+    - field_group
     - inline_entity_form
     - path
     - text
+third_party_settings:
+  field_group:
+    group_gm_resources:
+      children:
+        - field_chat
+      parent_name: ''
+      weight: 10
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'GM Resources'
+    group_attribution:
+      children:
+        - field_sources
+        - field_based_on
+      parent_name: ''
+      weight: 11
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Attribution
+    group_writeup:
+      children:
+        - field_vectors
+        - field_description
+        - field_infectiousness
+      parent_name: ''
+      weight: 8
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Writeup
 id: node.strain.default
 targetEntityType: node
 bundle: strain
@@ -25,16 +68,24 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
+  field_based_on:
+    type: entity_reference_autocomplete_tags
+    weight: 22
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_chat:
-    weight: 29
+    weight: 21
     settings: {  }
     third_party_settings: {  }
     type: comment_default
   field_description:
-    weight: 8
+    weight: 3
     settings:
       rows: 5
       placeholder: ''
@@ -47,12 +98,19 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
   field_infectiousness:
-    weight: 9
+    weight: 4
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_plot_seeds:
+    weight: 26
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
   field_source:
     weight: 32
     settings:
@@ -62,7 +120,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_quantity_autocomplete
   field_sources:
-    weight: 11
+    weight: 21
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -70,7 +128,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_quantity_autocomplete
   field_stages:
-    weight: 10
+    weight: 9
     settings:
       form_mode: default
       label_singular: ''
@@ -81,26 +139,26 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_simple
   field_vectors:
-    weight: 7
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
   path:
     type: path
-    weight: 6
+    weight: 7
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 5
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 6
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -111,11 +169,10 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_based_on: true
+hidden: {  }

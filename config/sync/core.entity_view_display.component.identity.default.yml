@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - eck.eck_type.component.identity
+    - field.field.component.identity.field_aliases
     - field.field.component.identity.field_background
     - field.field.component.identity.field_credits
     - field.field.component.identity.field_faction
-    - field.field.component.identity.field_legal_name
     - field.field.component.identity.field_notes
     - field.field.component.identity.field_rep
   module:
@@ -17,6 +17,13 @@ targetEntityType: component
 bundle: identity
 mode: default
 content:
+  field_aliases:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_background:
     weight: 1
     label: inline
@@ -39,13 +46,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_legal_name:
-    weight: 0
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
   field_notes:
     weight: 5
     label: above

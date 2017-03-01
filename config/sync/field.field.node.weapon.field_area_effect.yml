@@ -6,6 +6,12 @@ dependencies:
     - eck.eck_type.lookup.area_effect
     - field.storage.node.field_area_effect
     - node.type.weapon
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.weapon.field_area_effect
 field_name: field_area_effect
 entity_type: node

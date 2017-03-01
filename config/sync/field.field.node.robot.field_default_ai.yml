@@ -6,6 +6,12 @@ dependencies:
     - field.storage.node.field_default_ai
     - node.type.mind
     - node.type.robot
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.robot.field_default_ai
 field_name: field_default_ai
 entity_type: node

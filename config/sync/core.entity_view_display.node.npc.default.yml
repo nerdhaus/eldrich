@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.npc.field_morph
     - field.field.node.npc.field_motivations
     - field.field.node.npc.field_owned_blueprints
+    - field.field.node.npc.field_plot_seeds
     - field.field.node.npc.field_quote
     - field.field.node.npc.field_roleplay_notes
     - field.field.node.npc.field_skills
@@ -78,6 +79,12 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_override_label
+  field_plot_seeds:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
   field_quote:
     weight: 0
     label: inline

@@ -5,7 +5,6 @@ dependencies:
   config:
     - eck.eck_type.component.status
     - field.field.component.status.field_damage
-    - field.field.component.status.field_derangements
     - field.field.component.status.field_notes
     - field.field.component.status.field_rez_points
     - field.field.component.status.field_stress
@@ -22,14 +21,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
-  field_derangements:
-    weight: 4
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
   field_notes:
     weight: 5
     settings:

@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.network.field_chat
     - field.field.node.network.field_description
+    - field.field.node.network.field_plot_seeds
     - field.field.node.network.field_sources
     - field.field.node.network.field_symbol
     - node.type.network
@@ -29,5 +30,6 @@ content:
 hidden:
   field_attribution: true
   field_chat: true
+  field_plot_seeds: true
   field_sources: true
   field_symbol: true

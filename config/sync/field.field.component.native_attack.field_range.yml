@@ -6,7 +6,12 @@ dependencies:
     - eck.eck_type.component.native_attack
     - field.storage.component.field_range
   module:
+    - custom_add_another
     - ep_complex_values
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: component.native_attack.field_range
 field_name: field_range
 entity_type: component

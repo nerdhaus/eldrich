@@ -19,6 +19,12 @@ dependencies:
     - node.type.strain
     - node.type.vehicle
     - node.type.weapon
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.strain.field_based_on
 field_name: field_based_on
 entity_type: node

@@ -5,7 +5,6 @@ dependencies:
   config:
     - eck.eck_type.component.status
     - field.field.component.status.field_damage
-    - field.field.component.status.field_derangements
     - field.field.component.status.field_notes
     - field.field.component.status.field_rez_points
     - field.field.component.status.field_stress
@@ -24,13 +23,6 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
-  field_derangements:
-    weight: 2
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
   field_notes:
     weight: 6
     label: above

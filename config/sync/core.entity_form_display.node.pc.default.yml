@@ -29,40 +29,26 @@ dependencies:
     - field_group
     - image_widget_crop
     - inline_entity_form
+    - multi_text
     - path
     - text
 third_party_settings:
   field_group:
     group_gear:
       children:
-        - field_equipped_weapons
-        - field_equipped_armor
         - field_gear
         - field_owned_blueprints
+        - field_equipped_weapons
+        - field_equipped_armor
       parent_name: ''
-      weight: 12
-      format_type: details
+      weight: 13
+      format_type: fieldset
       format_settings:
-        open: false
-        required_fields: true
-        classes: ''
         id: ''
+        classes: ''
+        description: ''
+        required_fields: true
       label: Gear
-    group_abilities:
-      children:
-        - field_stats
-        - field_skills
-        - field_traits
-        - field_sleights
-      parent_name: ''
-      weight: 8
-      format_type: details
-      format_settings:
-        open: false
-        required_fields: true
-        classes: ''
-        id: ''
-      label: Abilities
     group_basic:
       children:
         - field_quote
@@ -70,7 +56,7 @@ third_party_settings:
         - field_image
         - field_description
       parent_name: ''
-      weight: 2
+      weight: 1
       format_type: details
       format_settings:
         id: ''
@@ -78,6 +64,21 @@ third_party_settings:
         open: true
         required_fields: true
       label: 'Basic Info'
+    group_stats:
+      children:
+        - field_stats
+        - field_skills
+        - field_traits
+        - field_sleights
+      parent_name: ''
+      weight: 8
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Stats and Abilities'
 id: node.pc.default
 targetEntityType: node
 bundle: pc
@@ -96,7 +97,7 @@ content:
     third_party_settings: {  }
     type: text_textarea
   field_equipped_armor:
-    weight: 15
+    weight: 20
     settings:
       match_operator: CONTAINS
       form_mode: default
@@ -110,7 +111,7 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_complex
   field_equipped_weapons:
-    weight: 14
+    weight: 19
     settings:
       match_operator: CONTAINS
       form_mode: default
@@ -124,7 +125,7 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_complex
   field_gear:
-    weight: 16
+    weight: 17
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -161,7 +162,7 @@ content:
     third_party_settings: {  }
     type: image_widget_crop
   field_morph:
-    weight: 9
+    weight: 10
     settings:
       form_mode: default
       override_labels: true
@@ -179,10 +180,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+      delimiter: ', '
     third_party_settings: {  }
-    type: string_textfield
+    type: multi_text_string_widget
   field_muse:
-    weight: 10
+    weight: 12
     settings:
       form_mode: default
       label_singular: ''
@@ -193,7 +195,7 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_simple
   field_owned_blueprints:
-    weight: 17
+    weight: 18
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -208,12 +210,15 @@ content:
     third_party_settings: {  }
     type: string_textfield
   field_skills:
-    weight: 10
-    settings: {  }
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
     third_party_settings: {  }
-    type: skill_reference_select
+    type: skill_reference_autocomplete
   field_sleights:
-    weight: 12
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: 60
@@ -221,13 +226,13 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_stats:
-    weight: 9
+    weight: 12
     settings:
-      display_style: ego
+      display_style: all
     third_party_settings: {  }
     type: stat_block_table
   field_status:
-    weight: 13
+    weight: 14
     settings:
       form_mode: default
       label_singular: ''
@@ -238,7 +243,7 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_simple
   field_traits:
-    weight: 11
+    weight: 14
     settings:
       match_operator: CONTAINS
       size: '60'

@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_session_promo
     - node.type.session
   module:
+    - custom_add_another
     - text
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
 id: node.session.field_session_promo
 field_name: field_session_promo
 entity_type: node
