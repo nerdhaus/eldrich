@@ -1,0 +1,34 @@
+uuid: 274571d3-9df8-4eb1-89d7-b47cbab246fe
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - block_class
+    - block_visibility_groups
+    - system
+  theme:
+    - eye
+third_party_settings:
+  block_class:
+    classes: col-sm-2
+id: eye_useraccountmenu
+theme: eye
+region: '-1'
+weight: -1
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

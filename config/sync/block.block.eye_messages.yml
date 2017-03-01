@@ -1,0 +1,22 @@
+uuid: 4b9ac349-9124-48fc-b811-b23fffe96c44
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - eye
+_core:
+  default_config_hash: 9RnnTUBcn0WRWXfrGOnId2H0Q31uQUeu_F5TnDxl2yg
+id: eye_messages
+theme: eye
+region: highlighted
+weight: -11
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

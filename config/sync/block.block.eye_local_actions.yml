@@ -1,0 +1,20 @@
+uuid: 091c2171-95cc-490c-b686-569305d6bd1a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - eye
+_core:
+  default_config_hash: ffxthelqQF8xcr4GTG4HlaNNsluiHftN0pujmQpW0bQ
+id: eye_local_actions
+theme: eye
+region: pre_content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

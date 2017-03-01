@@ -20,3 +20,4 @@ permissions:
   10: 'view any instance entities'
   11: 'change own username'
   12: 'access user profiles'
+  13: 'view the administration theme'

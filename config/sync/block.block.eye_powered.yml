@@ -1,0 +1,22 @@
+uuid: 2a0dcf80-fe6e-43d2-aa3b-3c056aac91c3
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - eye
+_core:
+  default_config_hash: iggZSiUKz4mYP1YPJ8SsUfFu79HIgOTt6IDy3Up59aM
+id: eye_powered
+theme: eye
+region: '-1'
+weight: 1
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

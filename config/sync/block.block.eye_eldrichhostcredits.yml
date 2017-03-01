@@ -1,0 +1,32 @@
+uuid: 6cc57cc4-8dcb-4140-a69c-bb3fc93dd498
+langcode: en
+status: false
+dependencies:
+  config:
+    - simple_block.simple_block.eldrich_credit
+  module:
+    - block_class
+    - block_visibility_groups
+    - simple_block
+  theme:
+    - eye
+third_party_settings:
+  block_class:
+    classes: col-sm-5
+id: eye_eldrichhostcredits
+theme: eye
+region: '-1'
+weight: -10
+provider: null
+plugin: 'simple_block:eldrich_credit'
+settings:
+  id: 'simple_block:eldrich_credit'
+  label: 'Eldrich Host credits'
+  provider: simple_block
+  label_display: '0'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
