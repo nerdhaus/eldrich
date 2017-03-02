@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.creature.field_native_abilities
     - field.field.node.creature.field_native_attacks
     - field.field.node.creature.field_plot_seeds
+    - field.field.node.creature.field_roleplay_notes
     - field.field.node.creature.field_skills
     - field.field.node.creature.field_sleights
     - field.field.node.creature.field_sources
@@ -142,6 +143,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+  field_roleplay_notes:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_skills:
     weight: 6
     label: inline

@@ -1,10 +1,10 @@
-uuid: ff50b3ce-f01d-4ba0-8ee6-a48cee05db1d
+uuid: 279242b1-49f8-44fd-9e79-6a1dc44fd746
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_roleplay_notes
-    - node.type.npc
+    - node.type.creature
   module:
     - custom_add_another
     - text
@@ -12,10 +12,10 @@ third_party_settings:
   custom_add_another:
     custom_add_another: ''
     custom_remove: ''
-id: node.npc.field_roleplay_notes
+id: node.creature.field_roleplay_notes
 field_name: field_roleplay_notes
 entity_type: node
-bundle: npc
+bundle: creature
 label: 'GM Notes'
 description: 'These notes will only be visible to GMs and the author.'
 required: false

@@ -35,12 +35,14 @@ module:
   field: 0
   field_group: 0
   field_redirection: 0
+  field_states_ui: 0
   field_tools: 0
   field_ui: 0
   file: 0
   filter: 0
   gmo: 0
   google_analytics: 0
+  hide_revision_field: 0
   ief_table_view_mode: 0
   image: 0
   image_url_formatter: 0

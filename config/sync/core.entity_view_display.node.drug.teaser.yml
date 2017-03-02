@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.drug.field_gear_type
     - field.field.node.drug.field_onset
     - field.field.node.drug.field_plot_seeds
+    - field.field.node.drug.field_roleplay_notes
     - field.field.node.drug.field_short_name
     - field.field.node.drug.field_sources
     - node.type.drug
@@ -62,6 +63,7 @@ hidden:
   field_onset: true
   field_onset_time: true
   field_plot_seeds: true
+  field_roleplay_notes: true
   field_short_name: true
   field_sources: true
   links: true

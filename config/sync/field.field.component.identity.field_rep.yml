@@ -11,7 +11,7 @@ dependencies:
     - entity_reference_quantity
 third_party_settings:
   custom_add_another:
-    custom_add_another: ''
+    custom_add_another: 'Add Network'
     custom_remove: ''
 id: component.identity.field_rep
 field_name: field_rep

@@ -15,7 +15,7 @@ id: node.creature.field_gm_only
 field_name: field_gm_only
 entity_type: node
 bundle: creature
-label: 'GM Only'
+label: 'Hide from players'
 description: 'If checked, this content will be hidden from users who aren''t logged in and running a game. It allows you to share in-progress campaign materials with other GMs, while keeping it secret from your players.'
 required: false
 translatable: true

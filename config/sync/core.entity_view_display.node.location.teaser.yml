@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.location.field_parent_location
     - field.field.node.location.field_plot_seeds
     - field.field.node.location.field_population
+    - field.field.node.location.field_roleplay_notes
     - field.field.node.location.field_short_name
     - field.field.node.location.field_sources
     - node.type.location
@@ -48,6 +49,7 @@ hidden:
   field_parent_location: true
   field_plot_seeds: true
   field_population: true
+  field_roleplay_notes: true
   field_short_name: true
   field_sources: true
   flag_bookmark: true

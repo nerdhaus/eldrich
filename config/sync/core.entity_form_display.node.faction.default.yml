@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.faction.field_memes
     - field.field.node.faction.field_parent_faction
     - field.field.node.faction.field_plot_seeds
+    - field.field.node.faction.field_roleplay_notes
     - field.field.node.faction.field_short_name
     - field.field.node.faction.field_sources
     - node.type.faction
@@ -26,8 +27,8 @@ third_party_settings:
   field_group:
     group_gm_resources:
       children:
+        - field_roleplay_notes
         - field_plot_seeds
-        - field_chat
       parent_name: ''
       weight: 11
       format_type: fieldset
@@ -83,7 +84,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_chat:
-    weight: 27
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: comment_default
@@ -130,12 +131,19 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_plot_seeds:
-    weight: 26
+    weight: 28
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+  field_roleplay_notes:
+    weight: 27
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
   field_short_name:
     weight: 1
     settings:

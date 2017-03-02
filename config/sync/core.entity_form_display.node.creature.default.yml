@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.creature.field_native_abilities
     - field.field.node.creature.field_native_attacks
     - field.field.node.creature.field_plot_seeds
+    - field.field.node.creature.field_roleplay_notes
     - field.field.node.creature.field_skills
     - field.field.node.creature.field_sleights
     - field.field.node.creature.field_sources
@@ -44,10 +45,11 @@ third_party_settings:
   field_group:
     group_gm_resources:
       children:
+        - field_gm_only
         - field_plot_seeds
-        - field_chat
+        - field_roleplay_notes
       parent_name: ''
-      weight: 15
+      weight: 13
       format_type: fieldset
       format_settings:
         id: ''
@@ -60,7 +62,7 @@ third_party_settings:
         - field_sources
         - field_based_on
       parent_name: ''
-      weight: 16
+      weight: 14
       format_type: fieldset
       format_settings:
         id: ''
@@ -76,7 +78,7 @@ third_party_settings:
         - field_sleights
         - field_native_abilities
       parent_name: ''
-      weight: 12
+      weight: 10
       format_type: fieldset
       format_settings:
         id: ''
@@ -89,7 +91,7 @@ third_party_settings:
         - field_description
         - field_image
       parent_name: ''
-      weight: 10
+      weight: 8
       format_type: fieldset
       format_settings:
         id: ''
@@ -104,7 +106,7 @@ third_party_settings:
         - field_equipped_weapons
         - field_native_attacks
       parent_name: ''
-      weight: 14
+      weight: 11
       format_type: fieldset
       format_settings:
         id: ''
@@ -119,7 +121,7 @@ third_party_settings:
         - field_movement_speed
         - field_strain
       parent_name: ''
-      weight: 11
+      weight: 9
       format_type: fieldset
       format_settings:
         id: ''
@@ -134,7 +136,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 4
     settings: {  }
     third_party_settings: {  }
   field_armor:
@@ -159,12 +161,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_chat:
-    weight: 22
+    weight: 15
     settings: {  }
     third_party_settings: {  }
     type: comment_default
   field_cost:
-    weight: 3
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: entity_reference_quantity_select
@@ -256,12 +258,19 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_simple
   field_plot_seeds:
-    weight: 21
+    weight: 5
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+  field_roleplay_notes:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
   field_skills:
     weight: 13
     settings:
@@ -309,20 +318,20 @@ content:
     type: entity_reference_override_autocomplete
   path:
     type: path
-    weight: 9
+    weight: 7
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 5
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 6
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -333,7 +342,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60

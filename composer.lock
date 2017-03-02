@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "933d4b6231ee46a2c442befb61e2f393",
+    "content-hash": "919033267e636991a5447d1412c603e4",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2648,6 +2648,60 @@
             "time": "2016-02-22 18:51:43"
         },
         {
+            "name": "drupal/field_states_ui",
+            "version": "1.0.0-rc2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/field_states_ui",
+                "reference": "8.x-1.0-rc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/field_states_ui-8.x-1.0-rc2.zip",
+                "reference": "8.x-1.0-rc2",
+                "shasum": "c67e511310ddf74c9d18b62fa49ae39ad050d2a6"
+            },
+            "require": {
+                "cweagans/composer-patches": "~1.0",
+                "drupal/core": "8.x"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-rc2",
+                    "datestamp": "1477601639"
+                },
+                "patches": {
+                    "drupal/core": {
+                        "multi-value field widget hook": "https://www.drupal.org/files/issues/no_hook_to_edit-2822460-2.patch"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Nick Wilde",
+                    "homepage": "https://www.drupal.org/u/nickwilde"
+                },
+                {
+                    "name": "See other contributors",
+                    "homepage": "https://www.drupal.org/node/2776325/committers"
+                }
+            ],
+            "description": "Provides a UI for applying field states.",
+            "homepage": "https://www.drupal.org/project/field_states_ui",
+            "support": {
+                "source": "http://git.drupal.org/project/field_states_ui.git",
+                "issues": "https://www.drupal.org/project/issues/field_states_ui"
+            }
+        },
+        {
             "name": "drupal/field_tools",
             "version": "dev-1.x",
             "source": {
@@ -2688,6 +2742,44 @@
                 "source": "http://cgit.drupalcode.org/field_tools"
             },
             "time": "2017-01-30 22:53:00"
+        },
+        {
+            "name": "drupal/file_table_formatter",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/file_table_formatter",
+                "reference": "c4c7c2fe4e22477cfc84631e047fba1f554d7944"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1445889549"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "zengenuity",
+                    "homepage": "https://www.drupal.org/user/326925"
+                }
+            ],
+            "description": "Display uploaded files as tables",
+            "homepage": "https://www.drupal.org/project/file_table_formatter",
+            "support": {
+                "source": "http://cgit.drupalcode.org/file_table_formatter"
+            },
+            "time": "2015-10-26 19:53:41"
         },
         {
             "name": "drupal/filelist_formatter",
@@ -2854,6 +2946,49 @@
             "support": {
                 "source": "http://git.drupal.org/project/google_analytics.git",
                 "issues": "https://www.drupal.org/project/issues/google_analytics"
+            }
+        },
+        {
+            "name": "drupal/hide_revision_field",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/hide_revision_field",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/hide_revision_field-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "572ad7ae8e442c8b8e7e51ec47483f5c1b035d7b"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1463677947"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "NickWilde",
+                    "homepage": "https://www.drupal.org/user/3094661"
+                }
+            ],
+            "description": "Controls visibility of the revision field on content add/edit forms.",
+            "homepage": "https://www.drupal.org/project/hide_revision_field",
+            "support": {
+                "source": "http://cgit.drupalcode.org/hide_revision_field"
             }
         },
         {
@@ -3264,6 +3399,60 @@
                 "source": "http://cgit.drupalcode.org/invite"
             },
             "time": "2016-05-27 19:38:04"
+        },
+        {
+            "name": "drupal/jsonapi",
+            "version": "1.0.0-alpha5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/jsonapi",
+                "reference": "8.x-1.0-alpha5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.0-alpha5.zip",
+                "reference": "8.x-1.0-alpha5",
+                "shasum": "5dec35d3b4d9a42d00f8e9dc29f1cafd3f310ba5"
+            },
+            "require": {
+                "drupal/core": "^8.2"
+            },
+            "require-dev": {
+                "justinrainbow/json-schema": "^4.1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha5",
+                    "datestamp": "1488188283"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
+                },
+                {
+                    "name": "e0ipso",
+                    "homepage": "https://www.drupal.org/user/550110"
+                },
+                {
+                    "name": "gabesullice",
+                    "homepage": "https://www.drupal.org/user/2287430"
+                }
+            ],
+            "description": "Provides a JSON API standards-compliant API for accessing and manipulating Drupal content and configuration entities.",
+            "homepage": "https://www.drupal.org/project/jsonapi",
+            "support": {
+                "source": "http://cgit.drupalcode.org/jsonapi"
+            }
         },
         {
             "name": "drupal/mailchimp",
@@ -3683,6 +3872,77 @@
             }
         },
         {
+            "name": "drupal/node_title_validation",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/node_title_validation",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/node_title_validation-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "738f5bc0376064f09c6b2dddf474e32642f3cb01"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1458373140"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "N.kishorekumar",
+                    "homepage": "https://www.drupal.org/user/2887361"
+                },
+                {
+                    "name": "harika gujjula",
+                    "homepage": "https://www.drupal.org/user/2978505"
+                },
+                {
+                    "name": "heykarthikwithu",
+                    "homepage": "https://www.drupal.org/user/2833651"
+                },
+                {
+                    "name": "krknth",
+                    "homepage": "https://www.drupal.org/user/2659743"
+                },
+                {
+                    "name": "mahaveer003",
+                    "homepage": "https://www.drupal.org/user/3063119"
+                },
+                {
+                    "name": "neerajskydiver",
+                    "homepage": "https://www.drupal.org/user/227792"
+                },
+                {
+                    "name": "rakesh.gectcr",
+                    "homepage": "https://www.drupal.org/user/1177822"
+                },
+                {
+                    "name": "xaiwant",
+                    "homepage": "https://www.drupal.org/user/2598494"
+                }
+            ],
+            "description": "This module helps to validate node titles with min/max characters, Blacklist characters/words and unique node titles.",
+            "homepage": "https://www.drupal.org/project/node_title_validation",
+            "support": {
+                "source": "http://cgit.drupalcode.org/node_title_validation"
+            }
+        },
+        {
             "name": "drupal/options_widget_placeholder",
             "version": "1.0.0-rc4",
             "source": {
@@ -3693,7 +3953,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/options_widget_placeholder-8.x-1.0-rc4.zip",
-                "reference": null,
+                "reference": "8.x-1.0-rc4",
                 "shasum": "7d8b59793d6cfd902c4ddececd4050cdf290e1f8"
             },
             "require": {
@@ -3723,6 +3983,50 @@
             "homepage": "https://www.drupal.org/project/options_widget_placeholder",
             "support": {
                 "source": "http://cgit.drupalcode.org/options_widget_placeholder"
+            }
+        },
+        {
+            "name": "drupal/override_node_options",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/override_node_options",
+                "reference": "8.x-2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/override_node_options-8.x-2.0.zip",
+                "reference": null,
+                "shasum": "d736a9ccee1bc4480c9862750831e00444a559ca"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0",
+                    "datestamp": "1454368439"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Davies",
+                    "homepage": "https://www.drupal.org/user/381388",
+                    "email": "oliver@oliverdavies.uk"
+                }
+            ],
+            "description": "Allows permissions to be set on each node option such as published and authoring information.",
+            "homepage": "https://www.drupal.org/project/override_node_options",
+            "support": {
+                "source": "http://cgit.drupalcode.org/override_node_options"
             }
         },
         {
@@ -9459,7 +9763,10 @@
         "drupal/webform": 10,
         "drupal/themable_forms": 15,
         "drupal/multi_text": 20,
-        "drupal/options_widget_placeholder": 5
+        "drupal/options_widget_placeholder": 5,
+        "drupal/field_states_ui": 5,
+        "drupal/jsonapi": 15,
+        "drupal/file_table_formatter": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

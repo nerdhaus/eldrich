@@ -6,7 +6,9 @@ dependencies:
     - field.field.node.inspiration.body
     - field.field.node.inspiration.field_allow_others
     - field.field.node.inspiration.field_image
+    - field.field.node.inspiration.field_plot_seeds
     - field.field.node.inspiration.field_resources
+    - field.field.node.inspiration.field_roleplay_notes
     - field.field.node.inspiration.field_video
     - image.style.hero_banner
     - node.type.inspiration
@@ -35,6 +37,12 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+  field_plot_seeds:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
   field_resources:
     weight: 3
     label: hidden
@@ -46,6 +54,12 @@ content:
       target: '0'
     third_party_settings: {  }
     type: link
+  field_roleplay_notes:
+    weight: 8
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_video:
     weight: 1
     label: hidden

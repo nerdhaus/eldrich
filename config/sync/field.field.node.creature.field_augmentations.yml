@@ -11,7 +11,7 @@ dependencies:
     - entity_reference_override
 third_party_settings:
   custom_add_another:
-    custom_add_another: ''
+    custom_add_another: 'Add Augmentation'
     custom_remove: ''
 id: node.creature.field_augmentations
 field_name: field_augmentations

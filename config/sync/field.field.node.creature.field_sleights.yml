@@ -9,7 +9,7 @@ dependencies:
     - custom_add_another
 third_party_settings:
   custom_add_another:
-    custom_add_another: ''
+    custom_add_another: 'Add Sleight'
     custom_remove: ''
 id: node.creature.field_sleights
 field_name: field_sleights

@@ -17,3 +17,4 @@ permissions:
   6: 'view any lookup entities'
   7: 'view any instance entities'
   8: 'access user profiles'
+  9: 'view revision field'

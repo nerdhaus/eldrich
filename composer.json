@@ -82,7 +82,13 @@
         "nubs/random-name-generator": "^2.1",
         "drupal/themable_forms": "^1.0@alpha",
         "drupal/multi_text": "1.x-dev",
-        "drupal/options_widget_placeholder": "^1.0@RC"
+        "drupal/options_widget_placeholder": "^1.0@RC",
+        "drupal/hide_revision_field": "^1.1",
+        "drupal/field_states_ui": "^1.0@RC",
+        "drupal/jsonapi": "^1.0@alpha",
+        "drupal/node_title_validation": "^1.1",
+        "drupal/file_table_formatter": "1.x-dev",
+        "drupal/override_node_options": "^2.0"
     },
     "require-dev": {
         "behat/mink": "~1.7",
