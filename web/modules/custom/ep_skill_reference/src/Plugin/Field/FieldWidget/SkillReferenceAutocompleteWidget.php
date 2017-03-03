@@ -30,7 +30,6 @@ class SkillReferenceAutocompleteWidget extends EntityReferenceAutocompleteWidget
       '#type' => 'textfield',
       '#size' => '15',
       '#default_value' => isset($items[$delta]) ? $items[$delta]->field : '',
-      '#disabled' => !$items[$delta]->fieldable,
       '#placeholder' => t('Field'),
     );
     $widget['specialization'] = array(

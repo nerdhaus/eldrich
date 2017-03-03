@@ -23,28 +23,9 @@ class StatBlockTableWidget extends WidgetBase {
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
-    $properties = [
-      [
-        'cog' => t('Cognition'),
-        'coo' => t('Coordination'),
-        'int' => t('Initiative'),
-        'ref' => t('Reflexes'),
-        'sav' => t('Savvy'),
-        'som' => t('Somatics'),
-        'wil' => t('Willpower'),
-        'mox' => t('Moxie')
-      ],
-      [
-        'init' => t('Initiative'),
-        'spd' => t('Speed'),
-        'luc' => t('Lucidity'),
-        'tt' => t('Trauma Threshold'),
-        'ir' => t('Insanity Rating'),
-        'dur' => t('Durability'),
-        'wt' => t('Wound Threshold'),
-        'dr' => t('Death Rating')
-      ]
-    ];
+    $mode = $this->getSetting('display_style');
+    $properties = $this->getFieldList($mode);
+    $disabled = $this->getDisabledFields($mode);
 
     $widget['#attached']['library'][] = 'ep_statblock/statblock-widget';
     $widget['table'] = [
@@ -54,43 +35,119 @@ class StatBlockTableWidget extends WidgetBase {
       '#attributes' => ['class' => ['stat-block-widget']],
     ];
 
-    $row = [];
-    foreach ($properties[0] as $key => $title) {
-      $row[$key] = array(
-        '#type' => 'number',
-        '#title' => strtoupper($key),
-        '#default_value' => $items[$delta]->{$key},
-      );
-    }
-    $widget['table'][] = $row;
-
-    $all = ($this->getSetting('display_style') == 'all');
-
-    $row = [];
-    foreach ($properties[1] as $key => $title) {
-      $row[$key] = array(
-        '#type' => ($all) ? 'number' : 'hidden',
-        '#title' => strtoupper($key),
-        '#default_value' => $items[$delta]->{$key},
-      );
-//      if (in_array($key, ['init', 'tt', 'luc', 'ir', 'wt', 'dr'])) {
-//        $row[$key]['#disabled'] = TRUE;
-//        $row[$key]['#attributes']['class'][] = 'calculated';
-//      }
-    }
-    if ($all) {
+    foreach ($properties as $subprops) {
+      $row = [];
+      foreach ($subprops as $key => $title) {
+        $row[$key] = array(
+          '#type' => 'number',
+          '#title' => strtoupper($key),
+          '#default_value' => $items[$delta]->{$key},
+        );
+        if (in_array($key, $disabled)) {
+          $row[$key]['#disabled'] = TRUE;
+        }
+      }
       $widget['table'][] = $row;
-    } else {
-      $widget += $row;
     }
-    $widget['synthetic'] = [
-      '#type' => ($all) ? 'checkbox' : 'hidden',
-      '#title' => t('Synthetic body'),
-      '#default_value' => $items[$delta]->synthetic,
-    ];
+
+    if ($this->showCheckBox($mode)) {
+      $widget['synthetic'] = [
+        '#type' => 'checkbox',
+        '#title' => t('Synthetic body'),
+        '#default_value' => $items[$delta]->synthetic,
+      ];
+    }
 
     return $widget;
   }
+
+
+  private function getFieldList($mode) {
+    switch ($mode) {
+      case 'creature':
+        return [
+          [
+            'cog' => t('Cognition'),
+            'coo' => t('Coordination'),
+            'int' => t('Initiative'),
+            'ref' => t('Reflexes'),
+            'sav' => t('Savvy'),
+            'som' => t('Somatics')
+          ],
+          [
+            'wil' => t('Willpower'),
+            'init' => t('Initiative'),
+            'spd' => t('Speed'),
+            'dur' => t('Durability'),
+            'wt' => t('Wound Threshold'),
+            'dr' => t('Death Rating')
+          ]
+        ];
+
+      default:
+        return [
+          [
+            'cog' => t('Cognition'),
+            'coo' => t('Coordination'),
+            'int' => t('Initiative'),
+            'ref' => t('Reflexes'),
+            'sav' => t('Savvy'),
+            'som' => t('Somatics'),
+            'wil' => t('Willpower'),
+            'mox' => t('Moxie')
+          ],
+          [
+            'init' => t('Initiative'),
+            'spd' => t('Speed'),
+            'luc' => t('Lucidity'),
+            'tt' => t('Trauma Threshold'),
+            'ir' => t('Insanity Rating'),
+            'dur' => t('Durability'),
+            'wt' => t('Wound Threshold'),
+            'dr' => t('Death Rating')
+          ]
+        ];
+    }
+  }
+
+  private function getDisabledFields($mode) {
+    switch ($mode) {
+      case 'bonus':
+        return [];
+
+      case 'mind':
+        return [
+          'init',
+          'luc',
+          'tt',
+          'ir',
+          'dur',
+          'wt',
+          'dr'
+        ];
+
+      default:
+        return [
+          'init',
+          'luc',
+          'tt',
+          'ir',
+          'wt',
+          'dr'
+        ];
+    }
+  }
+
+  public function showCheckBox($mode) {
+    switch ($mode) {
+      case 'morph':
+      case 'creature':
+        return TRUE;
+      default:
+        return FALSE;
+    }
+  }
+
 
   /**
    * {@inheritdoc}
@@ -125,8 +182,10 @@ class StatBlockTableWidget extends WidgetBase {
    */
   public function settingsForm(array $form, FormStateInterface $form_state) {
     $options = [
-      'all' => t('All stats'),
-      'ego' => t('Ego stats only'),
+      'morph' => t('Morph stats and bonuses'),
+      'mind' => t('Ego stats'),
+      'creature' => t('Creature stats'),
+      'bonus' => t('Bonuses')
     ];
     $element['display_style'] = [
       '#title' => $this->t('Stat block style'),
@@ -143,7 +202,7 @@ class StatBlockTableWidget extends WidgetBase {
    */
   public static function defaultSettings() {
     return array(
-        'display_style' => 'all',
+        'display_style' => 'standard',
       ) + parent::defaultSettings();
   }
 
