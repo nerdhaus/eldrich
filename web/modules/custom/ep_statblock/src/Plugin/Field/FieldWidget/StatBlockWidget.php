@@ -41,6 +41,7 @@ class StatBlockWidget extends WidgetBase {
       $element[$key] = array(
         '#type' => 'number',
         '#min' => -40,
+        '#step' => 1,
         '#max' => 40,
         '#title' => $title,
         '#default_value' => $items[$delta]->{$key},

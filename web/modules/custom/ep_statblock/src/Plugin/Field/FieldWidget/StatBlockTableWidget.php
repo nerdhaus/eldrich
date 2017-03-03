@@ -40,7 +40,9 @@ class StatBlockTableWidget extends WidgetBase {
       foreach ($subprops as $key => $title) {
         $row[$key] = array(
           '#type' => 'number',
+          '#size' => 4,
           '#min' => -40,
+          '#step' => 1,
           '#max' => 40,
           '#title' => strtoupper($key),
           '#default_value' => $items[$delta]->{$key},
@@ -116,6 +118,7 @@ class StatBlockTableWidget extends WidgetBase {
     switch ($mode) {
       case 'bonus':
         return [];
+        break;
 
       case 'mind':
         return [
@@ -127,6 +130,19 @@ class StatBlockTableWidget extends WidgetBase {
           'wt',
           'dr'
         ];
+        break;
+
+      case 'morph':
+        return [
+          'mox',
+          'init',
+          'luc',
+          'tt',
+          'ir',
+          'wt',
+          'dr'
+        ];
+        break;
 
       default:
         return [
@@ -137,6 +153,8 @@ class StatBlockTableWidget extends WidgetBase {
           'wt',
           'dr'
         ];
+        break;
+
     }
   }
 
