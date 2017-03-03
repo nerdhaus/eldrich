@@ -23,11 +23,11 @@ third_party_settings:
         - field_aptitude_ranges
       parent_name: ''
       weight: 10
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Writeup
     group_details:
@@ -38,11 +38,11 @@ third_party_settings:
         - field_calculation
       parent_name: ''
       weight: 7
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Details
 id: node.stat.default

@@ -32,11 +32,11 @@ third_party_settings:
         - field_area_effect
       parent_name: ''
       weight: 4
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Damage
 id: component.native_attack.default

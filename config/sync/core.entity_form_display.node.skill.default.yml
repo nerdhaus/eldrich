@@ -27,11 +27,11 @@ third_party_settings:
         - field_specializations
       parent_name: ''
       weight: 9
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Writeup
     group_details:
@@ -42,11 +42,11 @@ third_party_settings:
         - field_example_fields
       parent_name: ''
       weight: 8
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Details
 id: node.skill.default

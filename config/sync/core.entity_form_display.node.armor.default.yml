@@ -30,11 +30,11 @@ third_party_settings:
         - field_chat
       parent_name: ''
       weight: 12
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: 'GM Resources'
     group_attribution:
@@ -43,11 +43,11 @@ third_party_settings:
         - field_based_on
       parent_name: ''
       weight: 13
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Attribution
     group_writeup:
@@ -55,11 +55,11 @@ third_party_settings:
         - field_description
       parent_name: ''
       weight: 8
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Writeup
     group_details:
@@ -70,11 +70,11 @@ third_party_settings:
         - field_is_mod
       parent_name: ''
       weight: 9
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Details
     group_availability:
@@ -83,11 +83,11 @@ third_party_settings:
         - field_blueprints
       parent_name: ''
       weight: 11
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Availability
 id: node.armor.default

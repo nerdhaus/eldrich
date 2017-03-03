@@ -26,11 +26,11 @@ third_party_settings:
         - field_roleplay_notes
       parent_name: ''
       weight: 20
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: 'GM Resources'
 id: node.inspiration.default

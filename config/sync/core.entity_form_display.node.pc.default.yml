@@ -43,11 +43,11 @@ third_party_settings:
         - field_equipped_armor
       parent_name: ''
       weight: 13
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Gear
     group_basic:
@@ -73,11 +73,11 @@ third_party_settings:
         - field_sleights
       parent_name: ''
       weight: 8
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: 'Stats and Abilities'
 id: node.pc.default

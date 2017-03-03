@@ -46,11 +46,11 @@ third_party_settings:
         - field_equipped_armor
       parent_name: ''
       weight: 11
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Gear
     group_abilities:
@@ -70,11 +70,11 @@ third_party_settings:
         - field_based_on
       parent_name: ''
       weight: 14
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Attribution
     group_stats:
@@ -85,11 +85,11 @@ third_party_settings:
         - field_sleights
       parent_name: ''
       weight: 6
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: 'Stats and Abilities'
     group_basic:
@@ -111,11 +111,11 @@ third_party_settings:
       children: {  }
       parent_name: ''
       weight: 13
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: 'GM Information'
     group_gm_resources:
@@ -125,11 +125,11 @@ third_party_settings:
         - field_plot_seeds
       parent_name: ''
       weight: 12
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: 'GM Resources'
 id: node.npc.default

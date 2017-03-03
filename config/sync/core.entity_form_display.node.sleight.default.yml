@@ -32,11 +32,11 @@ third_party_settings:
         - field_sources
       parent_name: ''
       weight: 11
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Attribution
     group_stats:
@@ -45,11 +45,11 @@ third_party_settings:
         - field_skills
       parent_name: ''
       weight: 10
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: 'Stats and Abilities'
     group_writeup:
@@ -57,11 +57,11 @@ third_party_settings:
         - field_description
       parent_name: ''
       weight: 8
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Writeup
     group_details:
@@ -76,11 +76,11 @@ third_party_settings:
         - field_exsurgent
       parent_name: ''
       weight: 9
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Details
 id: node.sleight.default

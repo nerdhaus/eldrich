@@ -24,11 +24,11 @@ third_party_settings:
         - field_plot_seeds
       parent_name: ''
       weight: 8
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: 'GM Resources'
     group_attribution:
@@ -36,11 +36,11 @@ third_party_settings:
         - field_sources
       parent_name: ''
       weight: 9
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Attribution
     group_writeup:
@@ -48,11 +48,11 @@ third_party_settings:
         - field_description
       parent_name: ''
       weight: 7
-      format_type: fieldset
+      format_type: details
       format_settings:
         id: ''
         classes: ''
-        description: ''
+        open: true
         required_fields: true
       label: Writeup
 id: node.network.default
