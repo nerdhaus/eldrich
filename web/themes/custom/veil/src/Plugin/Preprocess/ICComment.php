@@ -35,7 +35,7 @@ class ICComment extends PreprocessBase implements PreprocessInterface {
 
     $variables->identity = $this->makeNetworkId($character, $comment, $obscure);
     $variables->reputation = $this->getCharacterRep($character);
-    $variables->timestamp = eldrich_af_time($comment->getCreatedTime());
+    $variables->timestamp = eldrich_af_time($comment->getCreatedTime(), 3);
   }
 
   private function makeNetworkId(NodeInterface $character, Comment $comment, $obscure = FALSE) {
