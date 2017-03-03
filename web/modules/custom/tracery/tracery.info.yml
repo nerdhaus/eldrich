@@ -1,0 +1,5 @@
+name: Tracery
+type: module
+description: Exposes tools for using the Tracery grammar library in Drupal
+core: 8.x
+package: Custom

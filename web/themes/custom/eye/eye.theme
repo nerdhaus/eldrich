@@ -1,9 +1,27 @@
 <?php
-
 /**
  * @file
  * Functions to support theming in the eye theme.
  */
+
+use Drupal\Core\Form\FormStateInterface;
+
+
+function eye_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  switch ($form_id) {
+    case 'node_npc_form':
+    case 'node_pc_form':
+      /*
+      $path = drupal_get_path('theme', 'eye');
+      $form['#attached']['library'][] = 'tracery/tracery';
+      $form['#attached']['drupalSettings']['tracery']['grammar'] = $path . '/nameGrammar.js';
+      $form['title']['#attributes']['class'][] = 'traceryInputTarget';
+      $form['title']['#suffix'] = " <a href='#' id='#traceryTrigger'>[ Random Name ]</a>";
+       */
+      break;
+  }
+}
+
 
 /**
  * Implements hook_preprocess_HOOK() for html.html.twig.

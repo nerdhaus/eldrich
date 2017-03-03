@@ -1,0 +1,6 @@
+tracery:
+  version: 1.x
+  js:
+    tracery/js/tracery.min.js: { attributes: { defer: true } }
+    loadjs/dist/loadjs.min.js: {}
+    tracery.behavior.js: {}
