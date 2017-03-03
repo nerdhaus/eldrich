@@ -30,6 +30,7 @@ dependencies:
     - ep_skill_reference
     - ep_statblock
     - field_group
+    - field_states_ui
     - image_widget_crop
     - inline_entity_form
     - multi_text
@@ -235,11 +236,16 @@ content:
       label_singular: Morph
       label_plural: Morphs
       collapsible: true
-      collapsed: true
       allow_new: true
       match_operator: CONTAINS
+      collapsed: false
       allow_existing: false
-    third_party_settings: {  }
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
     type: inline_entity_form_complex
   field_motivations:
     weight: 16
@@ -305,8 +311,13 @@ content:
   field_stats:
     weight: 12
     settings:
-      display_style: all
-    third_party_settings: {  }
+      display_style: mind
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
     type: stat_block_table
   field_traits:
     weight: 14

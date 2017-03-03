@@ -37,6 +37,7 @@ dependencies:
     - ep_skill_reference
     - ep_statblock
     - field_group
+    - field_states_ui
     - image_widget_crop
     - inline_entity_form
     - path
@@ -153,7 +154,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
   field_based_on:
-    type: entity_reference_autocomplete_tags
+    type: entity_reference_autocomplete
     weight: 22
     settings:
       match_operator: CONTAINS
@@ -168,7 +169,25 @@ content:
   field_cost:
     weight: 2
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list:
+            d0a99115-c81b-458f-9d26-7b13d34a4caf:
+              operations:
+                edit: Edit
+                delete: Delete
+          add: Add
+        field_states:
+          d0a99115-c81b-458f-9d26-7b13d34a4caf:
+            uuid: d0a99115-c81b-458f-9d26-7b13d34a4caf
+            id: visible
+            data:
+              target: field_creature_type
+              comparison: value
+              value: '21'
+              submit: 'Add Cancel'
     type: entity_reference_quantity_select
   field_creature_type:
     weight: 1
@@ -244,8 +263,11 @@ content:
       label_plural: Abilities
       collapsible: false
       collapsed: false
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
     third_party_settings: {  }
-    type: inline_entity_form_simple
+    type: inline_entity_form_complex
   field_native_attacks:
     weight: 19
     settings:
@@ -255,8 +277,11 @@ content:
       label_plural: ''
       collapsible: false
       collapsed: false
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
     third_party_settings: {  }
-    type: inline_entity_form_simple
+    type: inline_entity_form_complex
   field_plot_seeds:
     weight: 5
     settings:
@@ -298,8 +323,13 @@ content:
   field_stats:
     weight: 12
     settings:
-      display_style: all
-    third_party_settings: {  }
+      display_style: creature
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
     type: stat_block_table
   field_strain:
     weight: 15

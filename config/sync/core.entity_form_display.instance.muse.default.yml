@@ -10,6 +10,7 @@ dependencies:
   module:
     - ep_skill_reference
     - ep_statblock
+    - field_states_ui
     - text
 id: instance.muse.default
 targetEntityType: instance
@@ -34,8 +35,13 @@ content:
   field_stats:
     weight: 3
     settings:
-      display_style: ego
-    third_party_settings: {  }
+      display_style: mind
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
     type: stat_block_table
   title:
     type: string_textfield

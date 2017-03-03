@@ -3,12 +3,17 @@ langcode: en
 status: true
 dependencies:
   module:
+    - hide_revision_field
     - menu_ui
 third_party_settings:
   menu_ui:
     available_menus:
       - main
     parent: 'main:'
+  hide_revision_field:
+    personalization:
+      24:
+        hide: false
 name: Stat
 type: stat
 description: 'A core stat for Eclipse Phase characters. Covers information on basic aptitudes, as well as calculated stats like Durability and Lucidity.'

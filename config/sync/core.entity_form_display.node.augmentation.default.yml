@@ -27,6 +27,7 @@ dependencies:
     - ep_skill_reference
     - ep_statblock
     - field_group
+    - field_states_ui
     - path
     - text
 third_party_settings:
@@ -217,8 +218,13 @@ content:
   field_stats:
     weight: 12
     settings:
-      display_style: all
-    third_party_settings: {  }
+      display_style: bonus
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
     type: stat_block_table
   field_weapon:
     weight: 16

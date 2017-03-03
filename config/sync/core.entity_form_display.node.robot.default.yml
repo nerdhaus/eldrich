@@ -31,6 +31,7 @@ dependencies:
     - ep_skill_reference
     - ep_statblock
     - field_group
+    - field_states_ui
     - image_widget_crop
     - inline_entity_form
     - path
@@ -273,8 +274,13 @@ content:
   field_stats:
     weight: 18
     settings:
-      display_style: all
-    third_party_settings: {  }
+      display_style: creature
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
     type: stat_block_table
   path:
     type: path

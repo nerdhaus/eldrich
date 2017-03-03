@@ -3,12 +3,17 @@ langcode: en
 status: true
 dependencies:
   module:
+    - hide_revision_field
     - menu_ui
 third_party_settings:
   menu_ui:
     available_menus:
       - main
     parent: 'main:'
+  hide_revision_field:
+    personalization:
+      24:
+        hide: false
 name: Faction
 type: faction
 description: 'An organization or group of people in the Eclipse Phase universe'
