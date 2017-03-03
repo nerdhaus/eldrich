@@ -142,3 +142,89 @@ function eldrich_delete_orphaned_ecks() {
   ];
   $eck_types = ['component', 'instance'];
 }
+
+
+// It's not super-clear when 'now' is in Eclipse Phase, but we'll
+// make a best guess and use an offset that puts us a bit past 10AF:
+// Jul 4 2005, the UTC Time of Deep Impact's contact with its target
+// https://www.nasa.gov/mission_pages/deepimpact/timeline/index.html
+function eldrich_af_time($timeStamp = 0, $precision = 2) {
+
+  $fall = 1120455926;
+  $time = $timeStamp - $fall;
+
+  $af[] = $time/31556926 % 12;  // to get year
+  $af[] = $time / 604800 % 52;  // to get weeks
+  $af[] = $time / 3600 % 24;    // to get hours
+  $af[] = $time / 60 % 60;      // to get minutes
+  $af[] = $time % 60;        // to get seconds
+
+  $af = array_slice($af, 0, $precision);
+
+  return 'AF' . join('.', $af);
+}
+
+
+function make_obscured_name($value, $salt = 0) {
+  $hash = hash('md2', (string)$value . (string)$salt);
+  preg_match("/\D\d\d/", $hash, $output_array);
+  $str = str_split(array_pop($output_array));
+
+  $nato_alpha = [
+    'a' => 'alfa',
+    'b' => 'bravo',
+    'c' => 'charlie',
+    'd' => 'delta',
+    'e' => 'echo',
+    'f' => 'foxtrot',
+    'g' => 'golf',
+    'h' => 'hotel',
+    'i' => 'india',
+    'j' => 'juliett',
+    'k' => 'kilo',
+    'l' => 'lima',
+    'm' => 'mike',
+    'n' => 'november',
+    'o' => 'oscar',
+    'p' => 'papa',
+    'q' => 'quebec',
+    'r' => 'romeo',
+    's' => 'sierra',
+    't' => 'tango',
+    'u' => 'uniform',
+    'v' => 'victor',
+    'w' => 'whiskey',
+    'y' => 'yankee',
+    'z' => 'zulu'
+  ];
+  $nato_number = [
+    '0' => 'zero',
+    '1' => 'one',
+    '2' => 'two',
+    '3' => 'three',
+    '4' => 'four',
+    '5' => 'five',
+    '6' => 'six',
+    '7' => 'seven',
+    '8' => 'eight',
+    '9' => 'niner'
+  ];
+  $color_number = [
+    '0' => 'black',
+    '1' => 'blue',
+    '2' => 'brown',
+    '3' => 'green',
+    '4' => 'indigo',
+    '5' => 'jade',
+    '6' => 'orange',
+    '7' => 'pink',
+    '8' => 'purple',
+    '9' => 'violet'
+  ];
+
+  $str[0] = $nato_alpha[$str[0]];
+  $str[1] = $nato_number[$str[1]];
+  $str[2] = $color_number[$str[2]];
+
+  return join('-', $str);
+}
