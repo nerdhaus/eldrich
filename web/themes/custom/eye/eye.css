@@ -1,1 +1,10 @@
-/* CSS overrides for Seven */
+/* CSS overrides for the Eye theme */
+
+#field-plot-seeds-values .field-multiple-drag,
+#field-sources-values .field-multiple-drag,
+#field-skills-values .field-multiple-drag,
+#field-traits-values .field-multiple-drag,
+#field-sleights-values .field-multiple-drag
+{
+  display: none;
+}
