@@ -40,6 +40,8 @@ class StatBlockWidget extends WidgetBase {
     foreach ($properties as $key => $title) {
       $element[$key] = array(
         '#type' => 'number',
+        '#min' => -40,
+        '#max' => 40,
         '#title' => $title,
         '#default_value' => $items[$delta]->{$key},
       );
