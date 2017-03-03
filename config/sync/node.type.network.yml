@@ -12,7 +12,8 @@ third_party_settings:
     parent: 'main:'
   hide_revision_field:
     hide: true
-    personalizable: falsename: Network
+    personalizable: false
+name: Network
 type: network
 description: 'A social reputation network used by Eclipse Phase characters'
 help: ''

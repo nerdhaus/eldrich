@@ -12,7 +12,8 @@ third_party_settings:
     parent: 'main:'
   hide_revision_field:
     hide: true
-    personalizable: falsename: Trait
+    personalizable: false
+name: Trait
 type: trait
 description: 'A unique quality or quirk applied to a specific Eclipse Phase character.'
 help: ''
