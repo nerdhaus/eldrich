@@ -63,17 +63,7 @@ class AcceptedSourcesArgumentDefault extends ArgumentDefaultPluginBase implement
     else {
       $preference = 'canon';
     }
-
-    $player_query = $this->query->andConditionGroup()
-      ->condition('type', 'campaign')
-      ->condition('field_pcs.entity.uid', $this->currentUser->id());
-
-    $owner_query = $this->query->andConditionGroup()
-      ->condition('type', ['campaign', 'inspiration'], 'IN')
-      ->condition('uid', $this->currentUser->id());
-
-    $canon_query = $this->query->andConditionGroup()
-      ->condition('type', 'source');
+    $uid = $this->currentUser->id();
 
     switch ($preference) {
       case 'all':
@@ -84,29 +74,47 @@ class AcceptedSourcesArgumentDefault extends ArgumentDefaultPluginBase implement
         // Show all canon materials, AND materials sourced in campaigns
         // the user plays in, AND materials sourced in campaigns or inspiration
         // the user created.
-        $all_conditions = $this->query->orConditionGroup()
-          ->condition($canon_query)
-          ->condition($owner_query)
-          ->condition($player_query);
+        $member_sources = \Drupal::entityQuery('node')
+          ->condition('type', 'campaign')
+          ->condition('field_pcs.entity.uid', $uid)
+          ->execute();
+
+        $owned_sources = \Drupal::entityQuery('node')
+          ->condition('type', ['campaign', 'inspiration'], 'IN')
+          ->condition('uid', $uid)
+          ->execute();
+
+        $canon_nids = \Drupal::entityQuery('node')
+          ->condition('type', 'source')
+          ->execute();
+
+        $nids = array_merge($member_sources, $owned_sources, $canon_nids);
         break;
 
       case 'my_games':
         // Show all canon materials, AND materials sourced in campaigns
         // the user plays in.
-        $all_conditions = $this->query->orConditionGroup()
-          ->condition($canon_query)
-          ->condition($player_query);
+        $member_sources = \Drupal::entityQuery('node')
+          ->condition('type', 'campaign')
+          ->condition('field_pcs.entity.uid', $uid)
+          ->execute();
+
+        $canon_nids = \Drupal::entityQuery('node')
+          ->condition('type', 'source')
+          ->execute();
+
+        $nids = array_merge($member_sources, $canon_nids);
         break;
 
       default:
         // Canon materials only.
         // Literally only show canon materials. Everything else hidden.
-        $all_conditions = $this->query->orConditionGroup()
-          ->condition($canon_query);
+        $nids = \Drupal::entityQuery('node')
+          ->condition('type', 'source')
+          ->execute();
         break;
     }
 
-    $nids = $this->query->condition($all_conditions)->execute();
     $value = join('+', $nids);
     return $value;
   }
