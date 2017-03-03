@@ -1,0 +1,39 @@
+uuid: 0a9b65ba-23f0-46dd-88dd-804fbf5ce00a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.component.ief_table
+    - eck.eck_type.component.identity
+    - field.field.component.identity.field_aliases
+    - field.field.component.identity.field_background
+    - field.field.component.identity.field_credits
+    - field.field.component.identity.field_faction
+    - field.field.component.identity.field_notes
+    - field.field.component.identity.field_rep
+id: component.identity.ief_table
+targetEntityType: component
+bundle: identity
+mode: ief_table
+content:
+  field_aliases:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_background:
+    type: string
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_credits: true
+  field_faction: true
+  field_notes: true
+  field_rep: true
+  label: true
+  type: true

@@ -59,6 +59,7 @@ content:
       location: suffix
       template: ': {{ quantity }}'
       link: false
+      length: full
     third_party_settings: {  }
     type: eldrich_popup_formatter
 hidden: {  }

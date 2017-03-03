@@ -41,9 +41,7 @@ class StatBlockTableWidget extends WidgetBase {
         $row[$key] = array(
           '#type' => 'number',
           '#size' => 4,
-          '#min' => -40,
           '#step' => 1,
-          '#max' => 40,
           '#title' => strtoupper($key),
           '#default_value' => $items[$delta]->{$key},
         );

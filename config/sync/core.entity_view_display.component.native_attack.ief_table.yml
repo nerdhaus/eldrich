@@ -1,0 +1,47 @@
+uuid: c21046f4-370e-44d5-9482-fe4c834f2ada
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.component.ief_table
+    - eck.eck_type.component.native_attack
+    - field.field.component.native_attack.field_ap_modifier
+    - field.field.component.native_attack.field_area_effect
+    - field.field.component.native_attack.field_creature
+    - field.field.component.native_attack.field_damage_dice
+    - field.field.component.native_attack.field_damage_effects
+    - field.field.component.native_attack.field_damage_modifier
+    - field.field.component.native_attack.field_firing_modes
+    - field.field.component.native_attack.field_linked_skill
+    - field.field.component.native_attack.field_magazine_size
+    - field.field.component.native_attack.field_name
+    - field.field.component.native_attack.field_notes
+    - field.field.component.native_attack.field_range
+    - field.field.component.native_attack.field_special_effect
+id: component.native_attack.ief_table
+targetEntityType: component
+bundle: native_attack
+mode: ief_table
+content:
+  field_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  field_ap_modifier: true
+  field_area_effect: true
+  field_creature: true
+  field_damage_dice: true
+  field_damage_effects: true
+  field_damage_modifier: true
+  field_firing_modes: true
+  field_linked_skill: true
+  field_magazine_size: true
+  field_notes: true
+  field_range: true
+  field_special_effect: true
+  label: true
+  type: true

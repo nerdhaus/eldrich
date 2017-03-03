@@ -12,3 +12,15 @@ field.formatter.settings.stat_block_simple:
       sequence:
         type: string
         label: 'Property'
+field.widget.settings.stat_block_default:
+  type: widget.settings.stat_block_default
+  mapping:
+    display_style:
+      type: string
+      label: 'Display Style'
+field.widget.settings.stat_block_table:
+  type: widget.settings.stat_block_table
+  mapping:
+    display_style:
+      type: string
+      label: 'Display Style'
