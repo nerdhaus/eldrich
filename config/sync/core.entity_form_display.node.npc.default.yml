@@ -50,7 +50,7 @@ third_party_settings:
       format_settings:
         id: ''
         classes: ''
-        open: true
+        open: false
         required_fields: true
       label: Gear
     group_abilities:
@@ -74,7 +74,7 @@ third_party_settings:
       format_settings:
         id: ''
         classes: ''
-        open: true
+        open: false
         required_fields: true
       label: Attribution
     group_stats:
@@ -89,7 +89,7 @@ third_party_settings:
       format_settings:
         id: ''
         classes: ''
-        open: true
+        open: false
         required_fields: true
       label: 'Stats and Abilities'
     group_basic:
@@ -115,7 +115,7 @@ third_party_settings:
       format_settings:
         id: ''
         classes: ''
-        open: true
+        open: false
         required_fields: true
       label: 'GM Information'
     group_gm_resources:
@@ -129,7 +129,7 @@ third_party_settings:
       format_settings:
         id: ''
         classes: ''
-        open: true
+        open: false
         required_fields: true
       label: 'GM Resources'
 id: node.npc.default

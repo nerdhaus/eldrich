@@ -47,7 +47,7 @@ third_party_settings:
       format_settings:
         id: ''
         classes: ''
-        open: true
+        open: false
         required_fields: true
       label: Gear
     group_basic:
@@ -77,7 +77,7 @@ third_party_settings:
       format_settings:
         id: ''
         classes: ''
-        open: true
+        open: false
         required_fields: true
       label: 'Stats and Abilities'
 id: node.pc.default

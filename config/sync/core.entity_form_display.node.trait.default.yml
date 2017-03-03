@@ -50,7 +50,7 @@ third_party_settings:
       format_settings:
         id: ''
         classes: ''
-        open: true
+        open: false
         required_fields: true
       label: 'GM Resources'
     group_attribution:
@@ -62,7 +62,7 @@ third_party_settings:
       format_settings:
         id: ''
         classes: ''
-        open: true
+        open: false
         required_fields: true
       label: Attribution
     group_writeup:
@@ -88,7 +88,7 @@ third_party_settings:
       format_settings:
         id: ''
         classes: ''
-        open: true
+        open: false
         required_fields: true
       label: Details
 id: node.trait.default
