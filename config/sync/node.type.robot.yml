@@ -11,10 +11,8 @@ third_party_settings:
       - main
     parent: 'main:'
   hide_revision_field:
-    personalization:
-      24:
-        hide: false
-name: Robot
+    hide: true
+    personalizable: falsename: Robot
 type: robot
 description: 'Robots and other synthetic shells used as companions and helpers'
 help: ''

@@ -11,9 +11,9 @@ third_party_settings:
       - main
     parent: 'main:'
   hide_revision_field:
-    personalization:
-      24:
-        hide: false
+    hide: true
+    personalizable: false    hide: true
+    personalizable: false
 name: Weapon
 type: weapon
 description: 'Nukes, knives, and sharp sticks'

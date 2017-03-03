@@ -11,10 +11,8 @@ third_party_settings:
       - main
     parent: 'main:'
   hide_revision_field:
-    personalization:
-      24:
-        hide: false
-name: Morph
+    hide: true
+    personalizable: falsename: Morph
 type: morph
 description: 'Meatsacks, synth shells, and virtual servers for transhuman minds.'
 help: ''

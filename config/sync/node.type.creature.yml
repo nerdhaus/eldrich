@@ -11,10 +11,8 @@ third_party_settings:
       - main
     parent: 'main:'
   hide_revision_field:
-    personalization:
-      24:
-        hide: false
-name: Creature
+    hide: true
+    personalizable: falsename: Creature
 type: creature
 description: 'Simple threats and companions in the Eclipse Phase universe; "personalities" need not apply.'
 help: ''

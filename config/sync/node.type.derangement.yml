@@ -11,10 +11,8 @@ third_party_settings:
       - main
     parent: 'main:'
   hide_revision_field:
-    personalization:
-      24:
-        hide: false
-name: Derangement
+    hide: true
+    personalizable: falsename: Derangement
 type: derangement
 description: 'A temporary psychological effect triggered by stress and trauma. Covers both derangement and long-term disorders.'
 help: ''

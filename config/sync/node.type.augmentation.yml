@@ -11,10 +11,8 @@ third_party_settings:
       - main
     parent: 'main:'
   hide_revision_field:
-    personalization:
-      24:
-        hide: false
-name: Augmentation
+    hide: true
+    personalizable: falsename: Augmentation
 type: augmentation
 description: 'Body modifications and enhancements'
 help: ''
