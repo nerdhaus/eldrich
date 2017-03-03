@@ -10,7 +10,7 @@ dependencies:
     - custom_add_another
 third_party_settings:
   custom_add_another:
-    custom_add_another: ''
+    custom_add_another: 'Add Armor'
     custom_remove: ''
 id: node.npc.field_equipped_armor
 field_name: field_equipped_armor
