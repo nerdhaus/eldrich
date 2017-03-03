@@ -12,7 +12,6 @@ third_party_settings:
     parent: 'main:'
   hide_revision_field:
     hide: true
-    personalizable: false    hide: true
     personalizable: false
 name: Weapon
 type: weapon
