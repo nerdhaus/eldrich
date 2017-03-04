@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.muse_instance
     - field.field.node.pc.field_based_on
     - field.field.node.pc.field_description
     - field.field.node.pc.field_equipped_armor
@@ -23,6 +24,7 @@ dependencies:
     - image.style.thumbnail
     - node.type.pc
   module:
+    - entity_browser
     - entity_reference_override
     - ep_skill_reference
     - ep_statblock
@@ -197,14 +199,20 @@ content:
   field_muse:
     weight: 12
     settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      collapsible: true
-      override_labels: false
-      collapsed: false
-    third_party_settings: {  }
-    type: inline_entity_form_simple
+      entity_browser: muse_instance
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_edit
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
+    type: entity_browser_entity_reference
   field_owned_blueprints:
     weight: 18
     settings:

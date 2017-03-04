@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.morph_instance
     - field.field.node.npc.field_based_on
     - field.field.node.npc.field_description
     - field.field.node.npc.field_equipped_armor
@@ -25,6 +26,7 @@ dependencies:
     - image.style.thumbnail
     - node.type.npc
   module:
+    - entity_browser
     - entity_reference_override
     - entity_reference_quantity
     - ep_skill_reference
@@ -231,22 +233,20 @@ content:
   field_morph:
     weight: 9
     settings:
-      form_mode: default
-      override_labels: true
-      label_singular: Morph
-      label_plural: Morphs
-      collapsible: true
-      allow_new: true
-      match_operator: CONTAINS
-      collapsed: false
-      allow_existing: false
+      entity_browser: morph_instance
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_edit
+      open: false
+      field_widget_display_settings: {  }
     third_party_settings:
       field_states_ui:
         form:
           type: ''
           list: ''
           add: Add
-    type: inline_entity_form_complex
+    type: entity_browser_entity_reference
   field_motivations:
     weight: 16
     settings:

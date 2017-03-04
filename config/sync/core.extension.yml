@@ -22,6 +22,8 @@ module:
   editor: 0
   eldrich: 0
   embed: 0
+  entity_browser: 0
+  entity_browser_entity_form: 0
   entity_reference_override: 0
   entity_reference_quantity: 0
   ep_complex_values: 0
