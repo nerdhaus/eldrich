@@ -40,15 +40,33 @@ function eldrich_entity_presave(EntityInterface $entity) {
       case 'morph':
         // If the morph instance is new, or the morph model has changed, update stuff.
         // If the morph isn't populated, copy over the data from its template model.
-        if ($entity->isNew()) {
-          $entity->title = $entity->field_model->entity->label();
-          $entity->field_stats = $entity->field_model->entity->field_stats->getValue();
+        if (!$entity->field_model->isEmpty()) {
+          if ($entity->title->isEmpty()) {
+            $entity->title = $entity->field_model->entity->label();
+          }
+
+          if ($entity->field_stats->isEmpty()) {
+            $entity->field_stats = $entity->field_model->entity->field_stats->getValue();
+          }
+
+          // …But always copy over the Synthetic flag.
           $entity->field_stats->synthetic = $entity->field_model->entity->field_stats->synthetic;
-          $entity->field_traits = $entity->field_model->entity->field_traits->getValue();
-          $entity->field_mobility_system = $entity->field_model->entity->field_mobility_system->getValue();
-          $entity->field_movement_speed = $entity->field_model->entity->field_movement_speed->getValue();
-          $entity->field_augmentations = $entity->field_model->entity->field_augmentations->getValue();
-          $entity->field_skills = $entity->field_model->entity->field_skills->getValue();
+
+          if ($entity->field_traits->isEmpty()) {
+            $entity->field_traits = $entity->field_model->entity->field_traits->getValue();
+          }
+          if ($entity->field_mobility_system->isEmpty()) {
+            $entity->field_mobility_system = $entity->field_model->entity->field_mobility_system->getValue();
+          }
+          if ($entity->field_movement_speed->isEmpty()) {
+            $entity->field_movement_speed = $entity->field_model->entity->field_movement_speed->getValue();
+          }
+          if ($entity->field_augmentations->isEmpty()) {
+            $entity->field_augmentations = $entity->field_model->entity->field_augmentations->getValue();
+          }
+          if ($entity->field_skills->isEmpty()) {
+            $entity->field_skills = $entity->field_model->entity->field_skills->getValue();
+          }
         }
         break;
       case 'muse':
