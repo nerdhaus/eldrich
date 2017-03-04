@@ -1,10 +1,10 @@
 Name,Code,Description,Source
-The @-list,@,"The Circle-A list for anarchists, Barsoomians, Extropians, scum, and Titanians",
-CivicNet,c,"Used by the Jovian Republic, LunarLagrange Alliance, Morningstar Constellation, Planetary Consortium, and many hypercorps",
-EcoWave,e,"Used by nano-ecologists, preservationists, and reclaimers",
-Fame,f,"The seen-and-be-seen network used by socialites, artists, glitterati, and media",
-Guanxi,g,Used by the triads and numerous criminal entities,
-The Eye,i,Used by Firewall,
-RNA,r,"Research Network Affiliation, used by argonauts, technologists, scientists, and researchers",
-XNET,x,A loose network of data-sharing nodes for gatecrashers,
-Ultimate,u,The Ultimates’ dedicated reputation network tracks acts of bravery and combat prowess.,
+The @-list,@,"The Circle-A list for anarchists, Barsoomians, Extropians, scum, and Titanians.",EP.286
+CivicNet,c,"Used by the Jovian Republic, Lunar Lagrange Alliance, Morningstar Constellation, Planetary Consortium, and many hypercorps.",EP.286
+EcoWave,e,"Used by nano-ecologists, preservationists, and reclaimers.",EP.286
+Fame,f,"The seen-and-be-seen network used by socialites, artists, glitterati, and media.",EP.286
+Guanxi,g,Used by the triads and numerous criminal entities.,EP.286
+The Eye,i,"The Eye is Firewall’s communication infrastructure, social network, and data repository.","EP.286, FW.44"
+RNA,r,"Research Network Affiliation, used by argonauts, technologists, scientists, and researchers.",EP.286
+XNET,x,A loose network of data-sharing nodes for gatecrashers.,EP.286
+Ultimate,u,The Ultimates’ dedicated reputation network tracks acts of bravery and combat prowess.,FW
