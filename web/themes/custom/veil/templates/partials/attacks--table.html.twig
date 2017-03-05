@@ -32,8 +32,8 @@
     {% for attack in attacks %}
       <tr class="attacks-row">
         <td class="attacks-col-category">{{ attack.category }}</td>
-        <td class="attacks-col-weapon">{{ attack.build.weapon }}
-          {% if attack.build.ammo %}<br />{{ attack.build.ammo_mods|safe_join(' ') }} {{ attack.build.ammo }}{% endif %}
+        <td class="attacks-col-weapon">{{ attack.build.weapon }}{% if attack.build.mods %} w/ {{ attack.build.mods|safe_join(', ') }}{% endif %}
+          {% if attack.build.ammo %} using {{ attack.build.ammo_mods|safe_join(' ') }} {{ attack.build.ammo }}{% endif %}
         </td>
         <td class="skill-col-damage" data-average="{{ attack.damage.average }}">
           {% if attack.damage.dice or attack.damage.effects %}

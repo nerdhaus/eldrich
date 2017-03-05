@@ -20,9 +20,9 @@
 <ul class="list-unstyled list-hanging">
   {% for attack in attacks %}
   <li><span class="label label-danger text-uppercase">{{ attack.category }}</span>
-    {{ attack.build.weapon }}
+    {{ attack.build.weapon }}{% if attack.build.mods %} w/ {{ attack.build.mods|safe_join(', ') }}{% endif %}
     {% if attack.skill %}({{ attack.skill }}){% endif %}
-    {% if attack.build.ammo %} w/ {{ attack.build.ammo_mods|safe_join(' ') }} {{ attack.build.ammo }}{% endif %}
+    {% if attack.build.ammo %}<br />{{ attack.build.ammo_mods|safe_join(' ') }} {{ attack.build.ammo }}{% endif %}
     <kbd class="damage-roll" data-average="{{ attack.damage.average }}">
       {% if attack.damage.dice or attack.damage.effects %}
         {% if attack.damage.dice %}
