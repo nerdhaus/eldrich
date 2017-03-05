@@ -188,10 +188,10 @@ class SkillTreeCalculator {
       foreach ($entity->equipped_armor as $f) {
         $e = $f->entity;
         foreach ($e->field_armor as $a) {
-          static::walkTree($skills, $a->entity, $stats);
+          static::walkTree($skills, $a->entity, $stats, TRUE);
         }
         foreach ($e->field_armor_mods as $m) {
-          static::walkTree($skills, $m->entity, $stats);
+          static::walkTree($skills, $m->entity, $stats, TRUE);
         }
       }
     }
