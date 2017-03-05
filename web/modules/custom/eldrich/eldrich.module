@@ -10,6 +10,8 @@ use Drupal\Core\Database\Database;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Node\Entity\Node;
+use Drupal\eck\Entity\EckEntity;
+
 
 function eldrich_entity_update(EntityInterface $entity) {
   if (in_array($entity->bundle(), ['campaign', 'gear_type'])) {
@@ -76,7 +78,7 @@ function eldrich_entity_presave(EntityInterface $entity) {
   }
 
   // This is terrible and a sign that I've failed as a human
-  if (($entity->getEntityType()->id() == 'node') && $entity->bundle() == 'creature') {
+  if ($entity->bundle() == 'creature') {
     if (!$entity->field_creature_type->isEmpty()) {
       $ct = $entity->field_creature_type->entity->label();
       if ($ct == 'Smart Animal') {
@@ -136,17 +138,49 @@ function eldrich_prepopulator_after_build($form) {
 }
 
 function eldrich_delete_orphaned_ecks() {
-  $fields = [
-    'field_muse',
-    'field_morph',
-    'field_status',
-    'field_identity',
-    'field_equipped_armor',
-    'field_equipped_weapons',
-    'field_native_abilities',
-    'field_native_attacks'
+  // We're looking for ECK entities unlinked by any muse, morph, status, identity,
+  // equipped-* or native-* fields. Just nuke 'em then.
+
+  $types = [
+    'instance' => [
+      'node__field_muse' => 'field_muse_target_id',
+      'node__field_morph' => 'field_morph_target_id',
+      'node__field_equipped_armor' => 'field_equipped_armor_target_id',
+      'node__field_equipped_weapons' => 'field_equipped_weapons_target_id'
+    ],
+    'component' => [
+      'node__field_status' => 'field_status_target_id',
+      'node__field_identity' => 'field_identity_target_id',
+      'node__field_native_abilities' => 'field_native_abilities_target_id',
+      'node__field_native_attacks' => 'field_native_attacks_target_id',
+    ]
   ];
-  $eck_types = ['component', 'instance'];
+
+  $delete = [
+    'instance' => [],
+    'component' => [],
+  ];
+
+  $db = \Drupal::database();
+
+  foreach ($types as $table => $joins) {
+    foreach ($joins as $table_2 => $column) {
+
+      $query = $db->select($table,'t1');
+      $query->leftJoin($table_2, 't2', 't1.id = t2.' . $column);
+      $query->addField('t1', 'id');
+      $query->isNull('t2.entity_id');
+
+      $results = $query->execute()->fetchCol();
+      $delete[$table]= array_merge($delete[$table], array_values($results));
+    }
+  }
+
+  foreach ($delete as $type => $ids) {
+    $controller = \Drupal::entityManager()->getStorage($type);
+    $entities = $controller->loadMultiple($ids);
+    $controller->delete($entities);
+  }
 }
 
 
