@@ -111,7 +111,7 @@ class StatTreeCalculator {
     }
 
     foreach (['field_traits', 'field_augmentations', 'field_sleights'] as $field) {
-      if (!empty($entity->{$field})) {
+      if ($entity->hasField($field)) {
         foreach ($entity->{$field} as $f) {
           $e = $f->entity;
           if ($es = $e->field_stats->getValue()) {
@@ -129,6 +129,43 @@ class StatTreeCalculator {
         }
       }
     }
+
+    // Equipped Armor is a special case. Some armors can give bonuses,
+    // But have a goofier field structure.
+    if ($entity->hasField('equipped_armor')) {
+      foreach ($entity->equipped_armor as $f) {
+        $e = $f->entity;
+        foreach ($e->field_armor as $a) {
+          if ($as = $a->field_stats->getValue()) {
+            // Suddenly, deltas!
+            if (count($as) == 1) {
+              $ms = reset($as);
+            }
+            if ($a->field_conditional->value == TRUE) {
+              static::addSets($stats['conditional'], $as);
+            }
+            else {
+              static::addSets($stats['constant'], $as);
+            }
+          }
+        }
+        foreach ($e->field_armor_mods as $m) {
+          if ($ms = $m->field_stats->getValue()) {
+            // Suddenly, deltas!
+            if (count($ms) == 1) {
+              $ms = reset($ms);
+            }
+            if ($m->field_conditional->value == TRUE) {
+              static::addSets($stats['conditional'], $ms);
+            }
+            else {
+              static::addSets($stats['constant'], $ms);
+            }
+          }
+        }
+      }
+    }
+
     return $stats;
   }
 

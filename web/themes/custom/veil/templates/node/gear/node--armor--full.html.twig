@@ -9,10 +9,7 @@
 {% block callout_content %}
   {{ parent() }}
   {% if content.field_armor|field_value %}<li><strong>Armor:</strong> {{ content.field_armor|field_value }}</li>{% endif %}
+  {% if content.field_stats|field_value|length %}<li><strong>Stat Bonuses:</strong> {{ content.field_stats|field_value|safe_join(', ') }}</li>{% endif %}
+  {% if content.field_skills|field_value|length %}<li><strong>Skill Bonuses:</strong> {{ content.field_skills|field_value|safe_join(', ') }}</li>{% endif %}
+  {% if content.field_special_effect|field_value|length %}<li><strong>Special Effect:</strong> {{ content.field_special_effect|field_value }}</li>{% endif %}
 {% endblock %}
-{% block stats %}{% endblock %}
-  {% block properties %}
-    <ul class="list-unstyled list-hanging">
-      {% if content.field_special_effect|field_value|length %}<li><strong>Special Effect:</strong> {{ content.field_special_effect|field_value }}</li>{% endif %}
-    </ul>
-  {% endblock %}

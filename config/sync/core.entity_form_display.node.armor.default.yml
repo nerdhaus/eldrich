@@ -7,42 +7,35 @@ dependencies:
     - field.field.node.armor.field_based_on
     - field.field.node.armor.field_blueprints
     - field.field.node.armor.field_chat
+    - field.field.node.armor.field_conditional
     - field.field.node.armor.field_cost
     - field.field.node.armor.field_description
     - field.field.node.armor.field_gear_type
     - field.field.node.armor.field_is_mod
     - field.field.node.armor.field_short_name
+    - field.field.node.armor.field_skills
     - field.field.node.armor.field_sources
     - field.field.node.armor.field_special_effect
+    - field.field.node.armor.field_stats
     - field.field.node.armor.field_uses_mods
     - node.type.armor
   module:
     - comment
     - entity_reference_quantity
     - ep_complex_values
+    - ep_skill_reference
+    - ep_statblock
     - field_group
     - path
     - text
 third_party_settings:
   field_group:
-    group_gm_resources:
-      children:
-        - field_chat
-      parent_name: ''
-      weight: 12
-      format_type: details
-      format_settings:
-        id: ''
-        classes: ''
-        open: false
-        required_fields: true
-      label: 'GM Resources'
     group_attribution:
       children:
         - field_sources
         - field_based_on
       parent_name: ''
-      weight: 13
+      weight: 12
       format_type: details
       format_settings:
         id: ''
@@ -65,9 +58,12 @@ third_party_settings:
     group_details:
       children:
         - field_armor
-        - field_special_effect
         - field_uses_mods
         - field_is_mod
+        - field_special_effect
+        - field_stats
+        - field_skills
+        - field_conditional
       parent_name: ''
       weight: 9
       format_type: details
@@ -82,7 +78,7 @@ third_party_settings:
         - field_cost
         - field_blueprints
       parent_name: ''
-      weight: 11
+      weight: 10
       format_type: details
       format_settings:
         id: ''
@@ -97,7 +93,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
   field_armor:
@@ -114,18 +110,24 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_blueprints:
-    weight: 7
+    weight: 28
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
   field_chat:
-    weight: 21
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: comment_default
+  field_conditional:
+    weight: 18
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_cost:
-    weight: 6
+    weight: 27
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -140,12 +142,12 @@ content:
     third_party_settings: {  }
     type: text_textarea
   field_gear_type:
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select
   field_is_mod:
-    weight: 15
+    weight: 14
     settings:
       display_label: true
     third_party_settings: {  }
@@ -157,6 +159,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_skills:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: skill_reference_select
   field_sources:
     weight: 21
     settings:
@@ -166,34 +173,40 @@ content:
     third_party_settings: {  }
     type: entity_reference_quantity_autocomplete
   field_special_effect:
-    weight: 13
+    weight: 15
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_stats:
+    weight: 16
+    settings:
+      display_style: standard
+    third_party_settings: {  }
+    type: stat_block_table
   field_uses_mods:
-    weight: 14
+    weight: 13
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
   path:
     type: path
-    weight: 6
+    weight: 7
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 5
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 6
     third_party_settings: {  }
   title:
     type: string_textfield

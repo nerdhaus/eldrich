@@ -1,0 +1,26 @@
+uuid: d77d0cc4-2364-4aa0-a6e0-a5a0aec9bf09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stats
+    - node.type.armor
+  module:
+    - custom_add_another
+    - ep_statblock
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.armor.field_stats
+field_name: field_stats
+entity_type: node
+bundle: armor
+label: Stats
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: stat_block

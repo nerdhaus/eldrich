@@ -179,8 +179,22 @@ class SkillTreeCalculator {
     return $skill;
   }
 
+  // Until we actually track what gear is in use vs. owned, we won't actually
+  // roll owned gear into this. We WILL account for worn armor, though, mostly
+  // to handle the special case of Smart Clothing and Chameleon Cloak bonuses
+  // to skills.
   private static function handleGearBonuses(Array &$skills, FieldableEntityInterface $entity, Array $stats) {
-
+    if ($entity->hasField('equipped_armor')) {
+      foreach ($entity->equipped_armor as $f) {
+        $e = $f->entity;
+        foreach ($e->field_armor as $a) {
+          static::walkTree($skills, $a->entity, $stats);
+        }
+        foreach ($e->field_armor_mods as $m) {
+          static::walkTree($skills, $m->entity, $stats);
+        }
+      }
+    }
   }
 
   private static function initRow() {

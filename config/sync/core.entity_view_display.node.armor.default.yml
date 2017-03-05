@@ -8,19 +8,24 @@ dependencies:
     - field.field.node.armor.field_based_on
     - field.field.node.armor.field_blueprints
     - field.field.node.armor.field_chat
+    - field.field.node.armor.field_conditional
     - field.field.node.armor.field_cost
     - field.field.node.armor.field_description
     - field.field.node.armor.field_gear_type
     - field.field.node.armor.field_is_mod
     - field.field.node.armor.field_short_name
+    - field.field.node.armor.field_skills
     - field.field.node.armor.field_sources
     - field.field.node.armor.field_special_effect
+    - field.field.node.armor.field_stats
     - field.field.node.armor.field_uses_mods
     - node.type.armor
   module:
     - comment
     - eldrich
     - ep_complex_values
+    - ep_skill_reference
+    - ep_statblock
     - text
     - user
 id: node.armor.default
@@ -42,6 +47,15 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: comment_default
+  field_conditional:
+    weight: 14
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_cost:
     weight: 2
     label: inline
@@ -65,6 +79,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_skills:
+    weight: 13
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: skill_reference_label
   field_sources:
     weight: 6
     label: above
@@ -83,6 +104,12 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_stats:
+    weight: 12
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: stat_block_table
   related_gear:
     weight: 10
     settings: {  }
