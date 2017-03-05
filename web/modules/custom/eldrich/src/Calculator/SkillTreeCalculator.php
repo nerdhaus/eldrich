@@ -184,8 +184,8 @@ class SkillTreeCalculator {
   // to handle the special case of Smart Clothing and Chameleon Cloak bonuses
   // to skills.
   private static function handleGearBonuses(Array &$skills, FieldableEntityInterface $entity, Array $stats) {
-    if ($entity->hasField('equipped_armor')) {
-      foreach ($entity->equipped_armor as $f) {
+    if ($entity->hasField('field_equipped_armor')) {
+      foreach ($entity->field_equipped_armor as $f) {
         $e = $f->entity;
         foreach ($e->field_armor as $a) {
           static::walkTree($skills, $a->entity, $stats, TRUE);

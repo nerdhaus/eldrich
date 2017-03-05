@@ -19,11 +19,14 @@ view_mode ? view_mode|clean_class
     <div class="col-sm-4 info-callout panel-charsheet">
       <ul class="list-unstyled list-hanging">
       {% if content.field_morph_model|field_value %}<li><strong>Morph:</strong> {{ content.field_morph_model|field_value }}{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}</li>{% endif %}
-      {% if armor.energy or armor.kinetic %}
-        <li><strong>Armor:</strong> {{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
-          {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
-        </li>
-      {% endif %}
+        {% if armor.build or armor.energy or armor.kinetic %}
+          <li><strong>Armor:</strong>
+            {% if armor.energy or armor.kinetic -%}
+              {{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
+            {%- endif %}
+            {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
+          </li>
+        {% endif %}
       {% if content.field_rep|field_value|length %}<li><strong>Rep:</strong> {{ content.field_rep|field_value|safe_join(', ') }}</li>{% endif %}
 
       {% if content.field_augmentations|field_value|length %}<li><strong>Augmentations:</strong> {{ content.field_augmentations|field_value|safe_join(', ') }}</li>{% endif %}

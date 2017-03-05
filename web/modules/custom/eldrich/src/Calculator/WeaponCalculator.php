@@ -86,8 +86,10 @@ class WeaponCalculator {
     // Loop through owned gear and check for Scorcher software.
     if ($entity->hasField('field_gear')) {
       foreach ($entity->field_gear as $fg) {
-        if ($scorcher = static::totalCombatSoftware($data, $fg->entity)) {
-          $data[] = $scorcher;
+        if ($g = $fg->entity) {
+          if ($scorcher = static::totalCombatSoftware($data, $g)) {
+            $data[] = $scorcher;
+          }
         }
       }
     }

@@ -118,9 +118,12 @@ view_mode ? view_mode|clean_class
       {% if content.field_sleights|field_value|length %}<li><strong>Psi Sleights:</strong> {{ content.field_sleights|field_value|safe_join(', ') }}</li>{% endif %}
       {% if content.field_gear|field_value|length %}<li><strong>Gear:</strong> {{ content.field_gear|field_value|safe_join(', ') }}</li>{% endif %}
       {% if content.field_owned_blueprints|field_value|length %}<li><strong>Blueprints:</strong> {{ content.field_owned_blueprints|field_value|safe_join(', ') }}</li>{% endif %}
-      {% if armor.energy or armor.kinetic %}
+
+      {% if armor.build or armor.energy or armor.kinetic %}
         <li><strong>Armor:</strong>
-        {{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
+          {% if armor.energy or armor.kinetic -%}
+            {{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}
+          {%- endif %}
           {% if armor.build %}({{ armor.build|safe_join(', ') }}){% endif %}
         </li>
       {% endif %}
