@@ -12,6 +12,7 @@
 * @ingroup themeable
 */
 #}
+<form{{ attributes }}>
   <div class="modal-body">
     {{ element|without('send_invitation', 'cancel') }}
   </div>
@@ -19,3 +20,4 @@
     {{ element.cancel }}
     {{ element.send_invitation }}
   </div><!-- /.modal-footer -->
+</form>

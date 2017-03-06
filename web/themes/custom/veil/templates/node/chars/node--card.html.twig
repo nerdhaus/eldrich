@@ -1,11 +1,87 @@
-{#
-/*
- * For Characters:
- * - content.field_background,
- * - content.field_faction,
- * - content.field_appearance,
- * - content.field_rep,
- * - content.field_credits,
- */
-#}
-{% extends "node--full.html.twig" %}
+<article class="row">
+  <div class="combat-card-attacks col-sm-2">
+    <table class="table table-eldrich table-condensed table-bordered">
+      <tbody>
+      <tr>
+        <th>{{ "DUR"|upper|popup }} ({{ stats.total.constant.dur }})</th>
+        <th>{{ "WT"|upper|popup }} ({{ stats.total.constant.wt }})</th>
+      </tr>
+      <tr>
+        <td class="combat-card-entry"><span class="hidden-print">{{ status.damage ?: 0 }}</span></td>
+        <td class="combat-card-entry"><span class="hidden-print">{{ status.wounds ?: 0 }}</span></td>
+      </tr>
+      </tbody>
+
+      <tbody>
+      <tr>
+        <th>{{ "LUC"|upper|popup }} ({{ stats.total.constant.luc }})</th>
+        <th>{{ "TT"|upper|popup }} ({{ stats.total.constant.tt }})</th>
+      </tr>
+      <tr>
+        <td class="combat-card-entry"><span class="hidden-print">{{ status.stress ?: 0 }}</span></td>
+        <td class="combat-card-entry"><span class="hidden-print">{{ status.trauma ?: 0 }}</span></td>
+      </tr>
+      </tbody>
+
+      <tbody>
+      <tr>
+        <th colspan="2">Armor: {{ armor.energy ?: '—'}} / {{ armor.kinetic ?: '—'}}</th>
+      </tr>
+     </tbody>
+      <tbody>
+      <tr>
+        <th colspan="2">Fray: {{ skills.fray.constant.total }}
+          {% if skills.fray.constant.total != skills.fray.conditional.total %}
+            ({{ skills.fray.conditional.total }})
+          {% endif %}</th>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="combat-card-stats col-sm-5">
+    <table>
+      {% for attack in attacks %}
+
+      {% set damage %}
+        {% if attack.damage.dice or attack.damage.effects %}
+          {% if attack.damage.dice %}
+            DV {{ attack.damage.dice }}d10
+            {%- if attack.damage.mod %} {{ attack.damage.mod_operation }} {{ attack.damage.mod }}{% endif -%}
+            {%- if attack.damage.special %} + {{ attack.damage.special }}{% endif -%}
+            {%- if attack.damage.ap == 999 %}, ignores armor
+            {%- elseif attack.damage.ap == '.5' %}, AP halved
+            {%- elseif attack.damage.ap != 0 %} {{ attack.damage.ap }}AP{% endif %}
+          {% endif %}
+          {% if attack.damage.effects %}{% if attack.damage.dice %}+ {% endif %}{{ attack.damage.effects|safe_join(' + ') }}{% endif %}
+        {% else %}
+          No damage
+        {% endif %}
+      {% endset %}
+
+        <tbody>
+        <tr>
+          <td>{{ attack.build.weapon }}</td>
+          <td>
+          </td>
+          <td>{{ attack.linked_skill|title }}: <strong>{{ attack.skill }}</strong></td>
+          <td rowspan="2" class="combat-card-entry">
+            {{ damage }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {% if attack.build.ammo %}{{ attack.build.ammo_mods|safe_join(' ') }} {{ attack.build.ammo }}{% endif %}
+          </td>
+          <td>
+            {{ attack.rounds }}
+          </td>
+          <td>
+            {{ attack.modes|safe_join(', ') }}
+          </td>
+          <td>{{ attack.effects|safe_join(', ') }}</td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+  </div>
+</article>

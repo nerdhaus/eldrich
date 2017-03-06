@@ -137,6 +137,23 @@ class Node extends PreprocessBase implements PreprocessInterface {
     }
     $variables->armor = ArmorCalculator::total($node);
 
+    if ($node->hasField('field_status') && $status = $node->field_status->entity) {
+      $variables->status = [
+        'damage' => $status->field_damage->value,
+        'wounds' => $status->field_wounds->value,
+        'stress' => $status->field_stress->value,
+        'trauma' => $status->field_trauma->value,
+      ];
+    }
+    else {
+      $variables->status = [
+        'damage' => 0,
+        'wounds' => 0,
+        'stress' => 0,
+        'trauma' => 0,
+      ];
+    }
+
     // $variables->threat = ThreatCalculator::total($variables->stats, $variables->skills, $variables->armor, $variables->attacks);
   }
 

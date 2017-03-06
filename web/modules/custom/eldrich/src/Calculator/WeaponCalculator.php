@@ -169,17 +169,17 @@ class WeaponCalculator {
     }
 
     if (!$weapon->field_magazine_size->isEmpty()) {
-      $item['rounds'] = operation_calculate_result($item['rounds'], $weapon->field_magazine_size->operation, $weapon->field_magazine_size->value);
+      $item['rounds'] = operation_calculate_result($item['rounds'], $weapon->field_magazine_size->operator, $weapon->field_magazine_size->value);
     }
     if (!$weapon->field_damage_dice->isEmpty()) {
-      $item['damage']['dice'] = operation_calculate_result($item['damage']['dice'], $weapon->field_damage_dice->operation, $weapon->field_damage_dice->value);
+      $item['damage']['dice'] = operation_calculate_result($item['damage']['dice'], $weapon->field_damage_dice->operator, $weapon->field_damage_dice->value);
     }
     if (!$weapon->field_ap_modifier->isEmpty()) {
-      if ($weapon->field_ap_modifier->operation == '/') {
+      if ($weapon->field_ap_modifier->operator == '/') {
         $item['damage']['ap'] = '.5';
       }
       else {
-        $item['damage']['ap'] = operation_calculate_result($item['damage']['ap'], $weapon->field_ap_modifier->operation, $weapon->field_ap_modifier->value);
+        $item['damage']['ap'] = operation_calculate_result($item['damage']['ap'], $weapon->field_ap_modifier->operator, $weapon->field_ap_modifier->value);
       }
     }
 
@@ -187,14 +187,14 @@ class WeaponCalculator {
     // DV / 2 + 3 but we don't care enough to do full math handling. If we
     // encounter a multiplication or division operator, just roll with it.
     if (!$weapon->field_damage_modifier->isEmpty()) {
-      switch ($weapon->field_damage_modifier->operation) {
+      switch ($weapon->field_damage_modifier->operator) {
         case '':
         case '+':
         case '-':
-          $item['damage']['mod'] = operation_calculate_result($item['damage']['mod'], $weapon->field_damage_modifier->operation, $weapon->field_damage_modifier->value);
+          $item['damage']['mod'] = operation_calculate_result($item['damage']['mod'], $weapon->field_damage_modifier->operator, $weapon->field_damage_modifier->value);
           break;
         default:
-          $item['damage']['multiplier'] = operation_calculate_result($item['damage']['multiplier'], $weapon->field_damage_modifier->operation, $weapon->field_damage_modifier->value);
+          $item['damage']['multiplier'] = operation_calculate_result($item['damage']['multiplier'], $weapon->field_damage_modifier->operator, $weapon->field_damage_modifier->value);
       }
     }
 
@@ -464,14 +464,16 @@ class WeaponCalculator {
       }
     }
 
+
     if (!$weapon->field_magazine_size->isEmpty()) {
-      $item['rounds'] = operation_calculate_result($item['rounds'], $weapon->field_magazine_size->operation, $weapon->field_magazine_size->value);
+      $mag = $weapon->field_magazine_size[0]->getValue();
+      $item['rounds'] = operation_calculate_result($item['rounds'], $weapon->field_magazine_size->operator, $weapon->field_magazine_size->value);
     }
     if (!$weapon->field_damage_dice->isEmpty()) {
-      $item['damage']['dice'] = operation_calculate_result($item['damage']['dice'], $weapon->field_damage_dice->operation, $weapon->field_damage_dice->value);
+      $item['damage']['dice'] = operation_calculate_result($item['damage']['dice'], $weapon->field_damage_dice->operator, $weapon->field_damage_dice->value);
     }
     if (!$weapon->field_ap_modifier->isEmpty()) {
-      $item['damage']['ap'] = operation_calculate_result($item['damage']['ap'], $weapon->field_ap_modifier->operation, $weapon->field_ap_modifier->value);
+      $item['damage']['ap'] = operation_calculate_result($item['damage']['ap'], $weapon->field_ap_modifier->operator, $weapon->field_ap_modifier->value);
     }
 
     // The mod is trickier, since in theory we could get to strange stuff like
@@ -482,10 +484,10 @@ class WeaponCalculator {
         case '':
         case '+':
         case '-':
-          $item['damage']['mod'] = operation_calculate_result($item['damage']['mod'], $weapon->field_damage_modifier->operation, $weapon->field_damage_modifier->value);
+          $item['damage']['mod'] = operation_calculate_result($item['damage']['mod'], $weapon->field_damage_modifier->operator, $weapon->field_damage_modifier->value);
           break;
         default:
-          $item['damage']['multiplier'] = operation_calculate_result($item['damage']['multiplier'], $weapon->field_damage_modifier->operation, $weapon->field_damage_modifier->value);
+          $item['damage']['multiplier'] = operation_calculate_result($item['damage']['multiplier'], $weapon->field_damage_modifier->operator, $weapon->field_damage_modifier->value);
       }
     }
 

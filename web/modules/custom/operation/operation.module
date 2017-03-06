@@ -18,6 +18,7 @@ function operation_parse_string($string) {
 
 
 function operation_calculate_result($input, $operation, $value, $mode = PHP_ROUND_HALF_UP) {
+  $op = $operation;
   switch ($operation) {
     case '':
     case '+':
@@ -36,7 +37,7 @@ function operation_calculate_result($input, $operation, $value, $mode = PHP_ROUN
       $value = $input ** $value;
       break;
     case '%':
-      $value = $input * 100 / $value;
+      $value = $input * $value / 100;
       break;
   }
 
