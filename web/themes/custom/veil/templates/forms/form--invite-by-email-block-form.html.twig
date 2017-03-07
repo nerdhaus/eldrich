@@ -14,10 +14,12 @@
 #}
 <form{{ attributes }}>
   <div class="modal-body">
-    {{ element|without('send_invitation', 'cancel') }}
+    {{ element }}
   </div>
+  {# sadly, 'without' isn't working so SOL
   <div class="modal-footer">
     {{ element.cancel }}
     {{ element.send_invitation }}
   </div><!-- /.modal-footer -->
+  #}
 </form>
