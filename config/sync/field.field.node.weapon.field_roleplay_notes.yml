@@ -1,0 +1,26 @@
+uuid: 05e332fc-5c98-4715-8fa1-f219d1a4972f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_roleplay_notes
+    - node.type.weapon
+  module:
+    - custom_add_another
+    - text
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.weapon.field_roleplay_notes
+field_name: field_roleplay_notes
+entity_type: node
+bundle: weapon
+label: 'GM Notes'
+description: 'These notes will only be visible to GMs and the author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
