@@ -14,6 +14,8 @@ dependencies:
     - field.field.node.augmentation.field_gear_type
     - field.field.node.augmentation.field_mobility_system
     - field.field.node.augmentation.field_morph_types
+    - field.field.node.augmentation.field_plot_seeds
+    - field.field.node.augmentation.field_roleplay_notes
     - field.field.node.augmentation.field_short_name
     - field.field.node.augmentation.field_skills
     - field.field.node.augmentation.field_sources
@@ -62,6 +64,8 @@ hidden:
   field_conditional: true
   field_mobility_system: true
   field_morph_types: true
+  field_plot_seeds: true
+  field_roleplay_notes: true
   field_short_name: true
   field_skills: true
   field_sources: true

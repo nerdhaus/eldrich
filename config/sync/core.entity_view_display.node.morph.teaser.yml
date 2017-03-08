@@ -17,6 +17,8 @@ dependencies:
     - field.field.node.morph.field_mobility_system
     - field.field.node.morph.field_morph_type
     - field.field.node.morph.field_movement_speed
+    - field.field.node.morph.field_plot_seeds
+    - field.field.node.morph.field_roleplay_notes
     - field.field.node.morph.field_short_name
     - field.field.node.morph.field_skills
     - field.field.node.morph.field_sources
@@ -70,6 +72,8 @@ hidden:
   field_mobility_system: true
   field_morph_type: true
   field_movement_speed: true
+  field_plot_seeds: true
+  field_roleplay_notes: true
   field_short_name: true
   field_skills: true
   field_sources: true

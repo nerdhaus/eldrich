@@ -129,7 +129,7 @@ content:
       size: '60'
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_quantity_autocomplete
+    type: entity_reference_quantity_select
   field_delivery_mechanism:
     weight: 11
     settings: {  }
@@ -185,7 +185,7 @@ content:
       size: '60'
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_quantity_autocomplete
+    type: entity_reference_quantity_select
   path:
     type: path
     weight: 7

@@ -136,7 +136,7 @@ content:
       size: '60'
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_quantity_autocomplete
+    type: entity_reference_quantity_select
   field_stages:
     weight: 8
     settings:

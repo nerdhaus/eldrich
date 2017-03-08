@@ -5,14 +5,21 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.armor.field_armor
+    - field.field.node.armor.field_based_on
     - field.field.node.armor.field_blueprints
+    - field.field.node.armor.field_chat
+    - field.field.node.armor.field_conditional
     - field.field.node.armor.field_cost
     - field.field.node.armor.field_description
     - field.field.node.armor.field_gear_type
     - field.field.node.armor.field_is_mod
+    - field.field.node.armor.field_plot_seeds
+    - field.field.node.armor.field_roleplay_notes
     - field.field.node.armor.field_short_name
+    - field.field.node.armor.field_skills
     - field.field.node.armor.field_sources
     - field.field.node.armor.field_special_effect
+    - field.field.node.armor.field_stats
     - field.field.node.armor.field_uses_mods
     - node.type.armor
   module:
@@ -50,11 +57,18 @@ content:
 hidden:
   field_armor: true
   field_attribution: true
+  field_based_on: true
   field_blueprints: true
+  field_chat: true
+  field_conditional: true
   field_is_mod: true
+  field_plot_seeds: true
+  field_roleplay_notes: true
   field_short_name: true
+  field_skills: true
   field_sources: true
   field_special_effect: true
+  field_stats: true
   field_uses_mods: true
   links: true
   related_gear: true

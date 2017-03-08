@@ -13,6 +13,8 @@ dependencies:
     - field.field.node.armor.field_description
     - field.field.node.armor.field_gear_type
     - field.field.node.armor.field_is_mod
+    - field.field.node.armor.field_plot_seeds
+    - field.field.node.armor.field_roleplay_notes
     - field.field.node.armor.field_short_name
     - field.field.node.armor.field_skills
     - field.field.node.armor.field_sources
@@ -79,6 +81,18 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_plot_seeds:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_roleplay_notes:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_skills:
     weight: 13
     label: above

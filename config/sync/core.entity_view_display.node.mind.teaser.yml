@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.mind.field_cost
     - field.field.node.mind.field_description
     - field.field.node.mind.field_gear_type
+    - field.field.node.mind.field_plot_seeds
+    - field.field.node.mind.field_roleplay_notes
     - field.field.node.mind.field_short_name
     - field.field.node.mind.field_skills
     - field.field.node.mind.field_sources
@@ -52,6 +54,8 @@ hidden:
   field_based_on: true
   field_blueprints: true
   field_chat: true
+  field_plot_seeds: true
+  field_roleplay_notes: true
   field_short_name: true
   field_skills: true
   field_sources: true

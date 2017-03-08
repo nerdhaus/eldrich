@@ -20,8 +20,10 @@ dependencies:
     - field.field.node.weapon.field_is_mod
     - field.field.node.weapon.field_linked_skill
     - field.field.node.weapon.field_magazine_size
+    - field.field.node.weapon.field_plot_seeds
     - field.field.node.weapon.field_range
     - field.field.node.weapon.field_reach
+    - field.field.node.weapon.field_roleplay_notes
     - field.field.node.weapon.field_short_name
     - field.field.node.weapon.field_skill_bonus
     - field.field.node.weapon.field_sources
@@ -80,8 +82,10 @@ hidden:
   field_is_mod: true
   field_linked_skill: true
   field_magazine_size: true
+  field_plot_seeds: true
   field_range: true
   field_reach: true
+  field_roleplay_notes: true
   field_short_name: true
   field_skill_bonus: true
   field_sources: true

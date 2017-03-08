@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.gear.field_cost
     - field.field.node.gear.field_description
     - field.field.node.gear.field_gear_type
+    - field.field.node.gear.field_plot_seeds
+    - field.field.node.gear.field_roleplay_notes
     - field.field.node.gear.field_short_name
     - field.field.node.gear.field_sources
     - field.field.node.gear.field_special_effect
@@ -55,6 +57,18 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+  field_plot_seeds:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_roleplay_notes:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_sources:
     weight: 4
     label: above

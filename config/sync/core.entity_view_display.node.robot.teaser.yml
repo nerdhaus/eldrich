@@ -18,6 +18,8 @@ dependencies:
     - field.field.node.robot.field_image
     - field.field.node.robot.field_mobility_system
     - field.field.node.robot.field_movement_speed
+    - field.field.node.robot.field_plot_seeds
+    - field.field.node.robot.field_roleplay_notes
     - field.field.node.robot.field_short_name
     - field.field.node.robot.field_skills
     - field.field.node.robot.field_sources
@@ -67,6 +69,8 @@ hidden:
   field_image: true
   field_mobility_system: true
   field_movement_speed: true
+  field_plot_seeds: true
+  field_roleplay_notes: true
   field_short_name: true
   field_skills: true
   field_sources: true

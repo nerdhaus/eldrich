@@ -9,7 +9,9 @@ dependencies:
     - field.field.node.sleight.field_description
     - field.field.node.sleight.field_exsurgent
     - field.field.node.sleight.field_is_active
+    - field.field.node.sleight.field_plot_seeds
     - field.field.node.sleight.field_psi_skill
+    - field.field.node.sleight.field_roleplay_notes
     - field.field.node.sleight.field_skills
     - field.field.node.sleight.field_sleight_duration
     - field.field.node.sleight.field_sleight_level
@@ -45,7 +47,9 @@ hidden:
   field_conditional: true
   field_exsurgent: true
   field_is_active: true
+  field_plot_seeds: true
   field_psi_skill: true
+  field_roleplay_notes: true
   field_skills: true
   field_sleight_duration: true
   field_sleight_range: true

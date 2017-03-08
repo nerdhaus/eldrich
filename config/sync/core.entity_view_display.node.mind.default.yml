@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.mind.field_cost
     - field.field.node.mind.field_description
     - field.field.node.mind.field_gear_type
+    - field.field.node.mind.field_plot_seeds
+    - field.field.node.mind.field_roleplay_notes
     - field.field.node.mind.field_short_name
     - field.field.node.mind.field_skills
     - field.field.node.mind.field_sources
@@ -62,6 +64,18 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_plot_seeds:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_roleplay_notes:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_skills:
     weight: 3
     label: inline

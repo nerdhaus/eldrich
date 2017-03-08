@@ -17,6 +17,8 @@ dependencies:
     - field.field.node.morph.field_mobility_system
     - field.field.node.morph.field_morph_type
     - field.field.node.morph.field_movement_speed
+    - field.field.node.morph.field_plot_seeds
+    - field.field.node.morph.field_roleplay_notes
     - field.field.node.morph.field_short_name
     - field.field.node.morph.field_skills
     - field.field.node.morph.field_sources
@@ -110,6 +112,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_formatter
+  field_plot_seeds:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_roleplay_notes:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_skills:
     weight: 11
     label: inline

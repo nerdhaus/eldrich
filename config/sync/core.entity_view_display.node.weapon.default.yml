@@ -20,8 +20,10 @@ dependencies:
     - field.field.node.weapon.field_is_mod
     - field.field.node.weapon.field_linked_skill
     - field.field.node.weapon.field_magazine_size
+    - field.field.node.weapon.field_plot_seeds
     - field.field.node.weapon.field_range
     - field.field.node.weapon.field_reach
+    - field.field.node.weapon.field_roleplay_notes
     - field.field.node.weapon.field_short_name
     - field.field.node.weapon.field_skill_bonus
     - field.field.node.weapon.field_sources
@@ -139,12 +141,24 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: operation_formatter
+  field_plot_seeds:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
   field_range:
     weight: 10
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: weapon_range_formatter
+  field_roleplay_notes:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_skill_bonus:
     weight: 12
     label: inline

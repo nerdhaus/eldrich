@@ -9,6 +9,8 @@ dependencies:
     - field.field.node.mind.field_cost
     - field.field.node.mind.field_description
     - field.field.node.mind.field_gear_type
+    - field.field.node.mind.field_plot_seeds
+    - field.field.node.mind.field_roleplay_notes
     - field.field.node.mind.field_short_name
     - field.field.node.mind.field_skills
     - field.field.node.mind.field_sources
@@ -28,6 +30,8 @@ third_party_settings:
     group_gm_resources:
       children:
         - field_chat
+        - field_roleplay_notes
+        - field_plot_seeds
       parent_name: ''
       weight: 11
       format_type: details
@@ -129,7 +133,7 @@ content:
       size: '60'
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_quantity_autocomplete
+    type: entity_reference_quantity_select
   field_description:
     weight: 10
     settings:
@@ -142,6 +146,20 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_plot_seeds:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+  field_roleplay_notes:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
   field_short_name:
     weight: 1
     settings:
@@ -164,7 +182,7 @@ content:
       size: '60'
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_quantity_autocomplete
+    type: entity_reference_quantity_select
   field_stats:
     weight: 12
     settings:

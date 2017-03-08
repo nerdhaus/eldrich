@@ -17,6 +17,8 @@ dependencies:
     - field.field.node.robot.field_image
     - field.field.node.robot.field_mobility_system
     - field.field.node.robot.field_movement_speed
+    - field.field.node.robot.field_plot_seeds
+    - field.field.node.robot.field_roleplay_notes
     - field.field.node.robot.field_short_name
     - field.field.node.robot.field_skills
     - field.field.node.robot.field_sources
@@ -41,6 +43,8 @@ third_party_settings:
     group_gm_resources:
       children:
         - field_chat
+        - field_roleplay_notes
+        - field_plot_seeds
       parent_name: ''
       weight: 13
       format_type: details
@@ -248,6 +252,20 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_widget
+  field_plot_seeds:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+  field_roleplay_notes:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
   field_short_name:
     weight: 1
     settings:

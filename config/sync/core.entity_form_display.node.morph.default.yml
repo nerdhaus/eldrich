@@ -16,6 +16,8 @@ dependencies:
     - field.field.node.morph.field_mobility_system
     - field.field.node.morph.field_morph_type
     - field.field.node.morph.field_movement_speed
+    - field.field.node.morph.field_plot_seeds
+    - field.field.node.morph.field_roleplay_notes
     - field.field.node.morph.field_short_name
     - field.field.node.morph.field_skills
     - field.field.node.morph.field_sources
@@ -42,6 +44,8 @@ third_party_settings:
     group_gm_resources:
       children:
         - field_chat
+        - field_roleplay_notes
+        - field_plot_seeds
       parent_name: ''
       weight: 13
       format_type: details
@@ -171,7 +175,7 @@ content:
       size: '60'
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_quantity_autocomplete
+    type: entity_reference_quantity_select
   field_cp_cost:
     weight: 7
     settings:
@@ -223,6 +227,20 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_widget
+  field_plot_seeds:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+  field_roleplay_notes:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
   field_short_name:
     weight: 1
     settings:
@@ -245,7 +263,7 @@ content:
       size: '60'
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_quantity_autocomplete
+    type: entity_reference_quantity_select
   field_stat_cap:
     weight: 14
     settings:

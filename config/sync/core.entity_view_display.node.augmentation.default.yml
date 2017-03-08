@@ -14,6 +14,8 @@ dependencies:
     - field.field.node.augmentation.field_gear_type
     - field.field.node.augmentation.field_mobility_system
     - field.field.node.augmentation.field_morph_types
+    - field.field.node.augmentation.field_plot_seeds
+    - field.field.node.augmentation.field_roleplay_notes
     - field.field.node.augmentation.field_short_name
     - field.field.node.augmentation.field_skills
     - field.field.node.augmentation.field_sources
@@ -70,6 +72,18 @@ content:
     settings:
       link: false
     third_party_settings: {  }
+  field_plot_seeds:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_roleplay_notes:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_skills:
     weight: 12
     label: inline

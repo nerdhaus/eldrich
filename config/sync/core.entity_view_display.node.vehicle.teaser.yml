@@ -19,6 +19,8 @@ dependencies:
     - field.field.node.vehicle.field_mobility_system
     - field.field.node.vehicle.field_movement_speed
     - field.field.node.vehicle.field_passengers
+    - field.field.node.vehicle.field_plot_seeds
+    - field.field.node.vehicle.field_roleplay_notes
     - field.field.node.vehicle.field_short_name
     - field.field.node.vehicle.field_skill_bonus
     - field.field.node.vehicle.field_sources
@@ -69,6 +71,8 @@ hidden:
   field_mobility_system: true
   field_movement_speed: true
   field_passengers: true
+  field_plot_seeds: true
+  field_roleplay_notes: true
   field_short_name: true
   field_skill_bonus: true
   field_sources: true
