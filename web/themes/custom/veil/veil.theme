@@ -12,7 +12,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 
 function veil_form_invite_by_email_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $form['#attributes']['class'][] = 'form-horizontal';
+  $form['#theme'] = array('invite_email_form');
+
   $form['email']['#attributes']['class'][] = 'form-control';
   $form['email_subject']['#attributes']['class'][] = 'form-control';
   $form['send_invitation']['#attributes']['class'][] = 'btn btn-primary';
@@ -26,7 +27,6 @@ function veil_form_invite_by_email_block_form_alter(&$form, FormStateInterface $
     ],
   ];
 }
-
 
 function veil_form_comment_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (isset($form['field_character']['widget'])) {
