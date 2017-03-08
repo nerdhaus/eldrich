@@ -92,13 +92,12 @@ function eldrich_entity_presave(EntityInterface $entity) {
  * Implements hook_form_alter().
  */
 function eldrich_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-
   // If this is a subsequent step of a multi-step form, the prepopulate values
   // have done their work, and the user may have modified them: bail.
-  if (!empty($form_state->rebuild_info)) {
-    return;
-  }
   if (isset($_REQUEST['source']) || isset($_REQUEST['campaign'])) {
+    if (!empty($form_state->rebuild_info)) {
+      return;
+    }
     $form['#after_build'][] = 'eldrich_prepopulator_after_build';
   }
 }
