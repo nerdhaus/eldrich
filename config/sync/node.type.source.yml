@@ -13,7 +13,7 @@ third_party_settings:
   hide_revision_field:
     hide: true
     personalizable: false
-name: Source
+name: Book
 type: source
 description: 'An Eclipse Phase sourcebook or pre-fab adventure.'
 help: ''
