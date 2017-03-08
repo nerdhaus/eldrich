@@ -60,22 +60,28 @@ class AllowedSourcesArgumentDefaults extends ArgumentDefaultPluginBase implement
       return 'all';
     }
 
-    $player_owned_open = $this->query->orConditionGroup()
+    $inspiration = \Drupal::entityQuery('node')
+      ->condition('type', 'inspiration');
+    $conditions = $inspiration->orConditionGroup()
       ->condition('field_allow_others.value', TRUE)
+      ->condition('uid', $this->currentUser->id());
+    $inspiration_nids = $inspiration->condition($conditions)->execute();
+
+
+    $campaigns = \Drupal::entityQuery('node')
+      ->condition('type', 'campaign');
+    $conditions = $inspiration->orConditionGroup()
       ->condition('field_pcs.entity.uid', $this->currentUser->id())
       ->condition('uid', $this->currentUser->id());
+    $campaign_nids = $inspiration->condition($conditions)->execute();
 
-    $nids = \Drupal::entityQuery('node')
-      ->condition('type', ['campaign', 'inspiration'], 'IN')
-      ->condition($player_owned_open)
-      ->execute();
-
+    $nids = array_merge($campaign_nids, $inspiration_nids);
 
     if (in_array('contributor', $roles)) {
-      $books = \Drupal::entityQuery('node')
+      $book_nids = \Drupal::entityQuery('node')
         ->condition('type', 'source')
         ->execute();
-      $nids = array_merge($nids, $books);
+      $nids = array_merge($nids, $book_nids);
     }
 
     $value = join('+', $nids);
