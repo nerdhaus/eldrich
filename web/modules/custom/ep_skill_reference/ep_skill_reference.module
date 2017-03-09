@@ -6,50 +6,65 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
-
-/**
- * Implements hook_help().
- */
-function ep_skill_reference_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_name) {
-    // Main module help for the ep module.
-    case 'help.page.ep':
-      $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Reference field for EP Skills with extra properties for skill values.') . '</p>';
-      return $output;
-
-    default:
-  }
-}
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Field\FieldItemInterface;
 
 function ep_skill_reference_parse($value) {
   // First scrub CRs, multiple spaces, and a couple of common typos that
   // come from copying and pasting text out of PDFs.
 
+  if (is_array($value)) {
+    $value = join('\r', $value);
+  }
   str_replace('n ltration', 'nfiltration', $value);
-  preg_replace('([A-Za-z ] \([Nn]ative\)', 'Native \1', $value);
-  preg_replace('\s+', '\s', $value);
+  // preg_replace('([A-Za-z ]) \([Nn]ative\)', 'Native \1', $value);
+  // preg_replace('\s+', '\s', $value);
   str_replace('\r', ',', $value);
 
   // SKILL NAME: FIELD NAME 50 (SPECIALIZATION STRING 60)
   $pattern = "/(?<skill>[A-Za-z ]+)(\:\s+?(?<field>[A-Za-z ]+))?\s+?(?<points>[0-9]+)?\s*(\((?<specialization>([a-zA-Z ]+))(\s?[0-9]+)?\))?/";
-  preg_match($pattern, $value, $matches);
-
+  preg_match_all($pattern, $value, $matches, PREG_SET_ORDER);
 
   $results = [];
   foreach ($matches as $match) {
-    if (!empty($matches['skill'])
-      && !empty($matches['points'])
-      && $entity = parent::transform(trim($matches['skill']), $migrateExecutable, $row, $destinationProperty)) {
-      $results[] = array(
-        'raw_skill' => $matches['skill'],
-        'target_id' => $entity,
-        'field' => trim($matches['field']),
-        'specialization' => trim($matches['specialization']),
-        'points' => trim($matches['points']),
-      );
+    if (!empty($match['skill'])
+      && !empty($match['points'])
+      && $entity = ep_skill_reference_get_skill(trim($match['skill']))) {
+      $match['target_id'] = $entity;
+      $results[] = $match;
     }
   }
   return $results;
+}
+
+
+function ep_skill_reference_format_skill(FieldItemInterface $item) {
+  // Matches the style used in NPC File Prime.
+  // Skill Name: Field 00 (Specialization)
+
+  $output = FALSE;
+  if ($skill = $item->entity) {
+    $output = $item->entity->label();
+    if (!empty($item->field)) {
+      $output .= ': ' . ucwords($item->field);
+    }
+    if (!empty($item->points)) {
+      $output .= ' ' . $item->points;
+    }
+    if (!empty($item->specialization)) {
+      $output .= ' (' . ucwords($item->specialization) . ' (' . ($item->points + 10) . ')';
+    }
+  }
+  return $output;
+}
+
+
+// This is hard-coded, but who really cares, right?
+function ep_skill_reference_get_skill($name) {
+  $skill = \Drupal::entityQuery('node')
+    ->condition('type', 'skill')
+    ->condition('title', $name)
+    ->execute();
+
+  return reset($skill);
 }
