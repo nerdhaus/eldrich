@@ -13,7 +13,7 @@ third_party_settings:
   hide_revision_field:
     hide: true
     personalizable: false
-name: Network
+name: 'Rep Network'
 type: network
 description: 'A social reputation network used by Eclipse Phase characters'
 help: ''

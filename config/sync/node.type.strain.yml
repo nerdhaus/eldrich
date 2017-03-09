@@ -13,7 +13,7 @@ third_party_settings:
   hide_revision_field:
     hide: true
     personalizable: false
-name: Strain
+name: 'Exsurgent Strain'
 type: strain
 description: 'A unique variety of the deadly Exsurgent virus'
 help: ''
