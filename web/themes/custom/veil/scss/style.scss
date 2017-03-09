@@ -57,9 +57,6 @@
 
 @import "custom/custom";
 
-/**
- * Place your custom styles here.
- */
 
 .footer {
   border-top: 1px solid $navbar-inverse-bg;
@@ -89,86 +86,34 @@
 /**
  * Statblock tables should have centered text, no margins between header and body,
  * inverted headers, and horizontal padding between cells.
- *
  */
-table.table-statblock thead th {
-  text-align: center;
-  border-width: 1px;
-}
+table.table-statblock {
 
-table.table-statblock tr td {
-  text-align: center;
-  border-width: 1px;
-}
-
-table.table-statblock .empty {
-  background-color: transparent;
-}
-
-table.table-statblock .summary-row td {
-  font-weight: bolder;
-}
-
-.eldrich-icon-big {
-  font-size: 200%;
+  thead th {
+    text-align: center;
+    border-width: 1px;
+  }
+  tr td {
+    text-align: center;
+    border-width: 1px;
+  }
+  .empty {
+    background-color: transparent;
+  }
+  .summary-row td {
+    font-weight: bolder;
+  }
 }
 
 
-div.panel.teaser {
-  margin-bottom: 15px;
-}
+/*** CUSTOM LIST STYLES ***/
 
-
-/* Probably should just start using SASS. */
-.views-row:nth-child(even) .clearblock:before {
-  content: " ";
-  display: table;
-}
-
-.views-row:nth-child(even) .clearblock:after {
-  content: " ";
-  display: table;
-  clear: both;
-}
-
-div:target {
-  background-color: #7a8288;
-}
-
-span.skill-combat {
-  font-weight: bold;
-}
-
-.list-hanging li {
+.list-hanging  li {
   padding-left: 30px;
   text-indent: -30px;
-}
 
-.list-hanging li strong, .list-hanging li span.label {
-  margin-right: 5px;
-}
-
-.skill-col-total {
-  font-weight: bolder;
-}
-
-
-thead, h3.popover-title {
-  color: #1c1e22;
-  background-color: #7a8288;
-  text-shadow: none;
-  font-weight: bold;
-}
-
-.panel-charsheet {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-/* Don't print link hrefs */
-@media print {
-  a[href]:after {
-    content: none
+  strong, span.label {
+    margin-right: 5px;
   }
 }
 
@@ -186,6 +131,60 @@ thead, h3.popover-title {
 
   li:last-child a:after {
     content: "";
+  }
+}
+
+
+
+span.skill-combat {
+  font-weight: bold;
+}
+
+div:target {
+  background-color: #7a8288;
+}
+
+
+.skill-col-total {
+  font-weight: bolder;
+}
+
+.eldrich-icon-big {
+  font-size: 200%;
+}
+
+div.panel.teaser {
+  margin-bottom: 15px;
+}
+
+
+/* Probably should just start using SASS. */
+.views-row:nth-child(even) .clearblock:before {
+  content: " ";
+  display: table;
+}
+.views-row:nth-child(even) .clearblock:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+thead, h3.popover-title {
+  color: #1c1e22;
+  background-color: #7a8288;
+  text-shadow: none;
+  font-weight: bold;
+}
+
+.panel-charsheet {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* Don't print link hrefs */
+@media print {
+  a[href]:after {
+    content: none
   }
 }
 
@@ -216,4 +215,68 @@ td.skill-great {
 
 .new-page {
   page-break-before: always;
+}
+
+
+
+/*** Header sizing, styling, coloration ***/
+
+article {
+  h3, h4 {
+    color: white;
+    border-bottom: 1px solid $text-color;
+    padding: 10px 0;
+  }
+}
+
+
+/*** TABBED PANEL STYLING ***/
+
+.panel.with-nav-tabs .nav-tabs{
+  border-bottom: none;
+}
+.panel.with-nav-tabs .nav-justified{
+  margin-bottom: -1px;
+}
+
+.with-nav-tabs.panel-primary {
+  .nav-tabs > li > a,
+  .nav-tabs > li > a:hover,
+  .nav-tabs > li > a:focus {
+    color: #fff;
+  }
+
+  .nav-tabs > .open > a,
+  .nav-tabs > .open > a:hover,
+  .nav-tabs > .open > a:focus,
+  .nav-tabs > li > a:hover,
+  .nav-tabs > li > a:focus {
+    color: #fff;
+    background-color: #3071a9;
+    border-color: transparent;
+  }
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active > a:hover,
+  .nav-tabs > li.active > a:focus {
+    color: #428bca;
+    background-color: #fff;
+    border-color: #428bca;
+    border-bottom-color: transparent;
+  }
+  .nav-tabs > li.dropdown .dropdown-menu {
+    background-color: #428bca;
+    border-color: #3071a9;
+  }
+  .nav-tabs > li.dropdown .dropdown-menu > li > a {
+    color: #fff;
+  }
+  .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
+  .nav-tabs > li.dropdown .dropdown-menu > li > a:focus {
+    background-color: #3071a9;
+  }
+  .nav-tabs > li.dropdown .dropdown-menu > .active > a,
+  .nav-tabs > li.dropdown .dropdown-menu > .active > a:hover,
+  .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
+    background-color: #4a9fe9;
+  }
 }

@@ -1,0 +1,18 @@
+<div class="panel with-nav-tabs panel-primary">
+  <div class="panel-heading">
+    <ul class="nav nav-tabs">
+      {% foreach tab in tabs -%}
+      <li><a href="#{{ tab.id }}" data-toggle="tab">{{ tab.title }}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+  <div class="panel-body">
+    <div class="tab-content">
+      {% foreach tab in tabs -%}
+      <div class="tab-pane fade in active" id="{{ tab.id }}">
+        {{ tab.content }}
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+</div>
