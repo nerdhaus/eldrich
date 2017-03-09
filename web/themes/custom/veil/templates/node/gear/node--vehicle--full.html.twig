@@ -14,9 +14,8 @@
   {% if content.field_gear_type|field_value %}<li><strong>Type:</strong> {{ content.field_gear_type|field_value }}</li>{% endif %}
   {% if content.field_cost|field_value %}<li><strong>Cost:</strong> {{ content.field_cost|field_value }}</li>{% endif %}
   {% if content.field_stats|field_value %}<li><strong>Durability:</strong> {{ content.field_stats|field_raw('dur') }}</li>{% endif %}
-  {% if mobility|length %}<li><strong>Mobility:</strong> ({{ mobility.build|safe_join(', ') }})</li>{% endif %}
   {% if content.field_linked_skill|field_value %}<li><strong>Linked Skill:</strong> {{ content.field_linked_skill|field_value }}</li>{% endif %}
   {% if content.field_skill_bonus|field_value %}<li><strong>Handling Bonus:</strong> {{ content.field_skill_bonus|field_value }}</li>{% endif %}
-  {% if content.field_passengers|field_value %}<li><strong>Passengers:</strong> {{ content.field_passengers|field_value }}</li>{% endif %}
+  {% if content.field_passengers|field_raw('value') > 1 %}<li><strong>Passengers:</strong> {{ content.field_passengers|field_value }}</li>{% endif %}
 {% endblock %}
 {% block stats %}{% endblock %}
