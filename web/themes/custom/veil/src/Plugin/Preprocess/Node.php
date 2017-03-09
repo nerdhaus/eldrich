@@ -48,6 +48,11 @@ class Node extends PreprocessBase implements PreprocessInterface {
       'vehicle',
       'weapon'
     ]);
+    $variables->is_source = in_array($node->bundle(), [
+      'source',
+      'campaign',
+      'inspiration'
+    ]);
     $variables->is_game = in_array($node->bundle(), [
       'campaign',
       'session',
@@ -63,6 +68,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
     $variables->is_character = in_array($node->bundle(), ['npc', 'pc']);
     $variables->is_fluff = in_array($node->bundle(), [
       'location',
+      'network',
       'faction',
       'strain'
     ]);
@@ -76,6 +82,28 @@ class Node extends PreprocessBase implements PreprocessInterface {
 
     // Prepare our weird component entities
     $this->prepChildFields($node, $variables);
+
+    // Prepare commentary — IC chatter, GM notes, Plot Seeds
+    $this->prepChatter($node, $variables);
+  }
+
+  public function prepChatter(NodeInterface $node, Variables $variables) {
+    if ($variables->is_gear || $variables->is_mob || $variables->is_fluff) {
+      $chatter = [];
+      $fields = ['field_gm_notes', 'field_gm_only', 'field_plot_seeds'];
+      foreach ($fields as $field) {
+        if (isset($variables->content['$field'])) {
+          $chatter[$field] = $variables->content[$field];
+        }
+      }
+
+      if (gm_mode($node) == 'secret_notes') {
+        $access = \Drupal::currentUser()->hasPermission('access gm content');
+      }
+      else {
+        $access = TRUE;
+      }
+    }
   }
 
   public function prepChildFields(NodeInterface $node, Variables $variables) {

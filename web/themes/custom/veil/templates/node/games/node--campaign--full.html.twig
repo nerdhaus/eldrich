@@ -48,7 +48,7 @@ view_mode ? view_mode|clean_class
 %}
 
 <article{{ attributes.addClass(classes) }}>
-  <section class="row">
+  <section class="main-body row">
     {% block content %}
     <div class="col-sm-12">
       {{ content.field_image }}
@@ -78,23 +78,16 @@ view_mode ? view_mode|clean_class
 {% if content.sub_content_sessions or content.sub_content_world or content.sub_content_npcs or content.sub_content_gear %}
 <section class="row">
   {% if content.sub_content_sessions %}
-    <div class="col-sm-6">
+    <div class="col-sm-8">
       {{ content.sub_content_sessions }}
     </div>
   {% endif %}
-  {% if content.sub_content_world %}
-    <div class="col-sm-6">
-      {{ content.sub_content_world }}
-    </div>
-  {% endif %}
-  {% if content.sub_content_npcs %}
-    <div class="col-sm-6">
-      {{ content.sub_content_npcs }}
-    </div>
-  {% endif %}
-  {% if content.sub_content_gear %}
-    <div class="col-sm-6">
-      {{ content.sub_content_gear }}
+
+  {% if content.group_sourced_data %}
+    <div class="col-sm-8">
+      <div class="panel-group" id="sourced-accordion" role="tablist" aria-multiselectable="true">
+        {{ content.group_sourced_data }}
+      </div>
     </div>
   {% endif %}
 </section>

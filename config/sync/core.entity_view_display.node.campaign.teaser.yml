@@ -51,6 +51,12 @@ hidden:
   field_short_name: true
   field_useful_resources: true
   links: true
+  sourced_content_entity_view_1: true
+  sourced_content_factions: true
+  sourced_content_gear: true
+  sourced_content_locations: true
+  sourced_content_npcs: true
+  sourced_content_weird: true
   sub_content_gear: true
   sub_content_npcs: true
   sub_content_sessions: true

@@ -14,10 +14,34 @@ dependencies:
     - image.style.square
     - node.type.source
   module:
+    - field_group
     - image
     - link
     - text
     - user
+third_party_settings:
+  field_group:
+    group_sourced_data:
+      children:
+        - sourced_content_overview
+        - sourced_content_gear
+        - sourced_content_factions
+        - sourced_content_locations
+        - sourced_content_npcs
+        - sourced_content_weird
+      parent_name: ''
+      weight: 7
+      format_type: html_element
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        effect: none
+        speed: fast
+        attributes: ''
+        classes: ''
+        id: ''
+      label: 'Sourced Data'
 id: node.source.default
 targetEntityType: node
 bundle: source
@@ -30,7 +54,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_buy:
-    weight: 103
+    weight: 5
     label: hidden
     settings:
       trim_length: 80
@@ -42,7 +66,7 @@ content:
     type: link
   field_code:
     type: string
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       link_to_entity: false
@@ -62,7 +86,7 @@ content:
     third_party_settings: {  }
     type: text_default
   field_download:
-    weight: 102
+    weight: 4
     label: hidden
     settings:
       trim_length: 80
@@ -73,7 +97,7 @@ content:
     third_party_settings: {  }
     type: link
   field_home:
-    weight: 104
+    weight: 6
     label: above
     settings:
       trim_length: 80
@@ -90,6 +114,34 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  sourced_content_entity_view_1:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_factions:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_gear:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_locations:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_npcs:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_overview:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_weird:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_weight: true
   links: true

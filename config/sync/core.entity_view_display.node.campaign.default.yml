@@ -14,12 +14,36 @@ dependencies:
     - image.style.hero_banner
     - node.type.campaign
   module:
+    - field_group
     - file
     - image
     - options
     - text
     - url_embed
     - user
+third_party_settings:
+  field_group:
+    group_sourced_data:
+      children:
+        - sourced_content_overview
+        - sourced_content_locations
+        - sourced_content_gear
+        - sourced_content_factions
+        - sourced_content_npcs
+        - sourced_content_weird
+      parent_name: ''
+      weight: 7
+      format_type: html_element
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        effect: none
+        speed: fast
+        attributes: ''
+        classes: ''
+        id: ''
+      label: 'Sourced Data'
 id: node.campaign.default
 targetEntityType: node
 bundle: campaign
@@ -74,6 +98,34 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: url_embed
+  sourced_content_entity_view_1:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_factions:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_gear:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_locations:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_npcs:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_overview:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_weird:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
   sub_content_gear:
     weight: 7
     settings: {  }

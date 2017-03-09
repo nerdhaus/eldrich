@@ -50,7 +50,7 @@ view_mode ? view_mode|clean_class
       {{ content.field_image }}
     </div>
   </section>
-  <section class="row">
+  <section class="main-body row">
     <div class="col-sm-{{ content.field_video|field_value ? '6' : '12' }}">
       {{ content.body }}
       {% if content.field_resources|field_value|length %}
@@ -67,31 +67,23 @@ view_mode ? view_mode|clean_class
       </div>
     </div>
     {% endif %}
-  </section>
+
     <section class="row">
       <div class="col-sm-12">
-        {{ content|without('body', 'field_image', 'field_video', 'field_resources') }}
+        {{ content|without('body', 'field_image', 'field_video', 'field_resources', 'group_sourced_data') }}
       </div>
     </section>
+  </section>
+
+  {% if content.group_sourced_data %}
+  <section class="row">
+    <div class="col-sm-8">
+      <div class="panel-group" id="sourced-accordion" role="tablist" aria-multiselectable="true">
+      {{ content.group_sourced_data }}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
   {% endblock %}
 </article>
-
-{% if content.sub_content_world or content.sub_content_npcs or content.sub_content_gear %}
-  <section class="row">
-    {% if content.sub_content_world %}
-      <div class="col-sm-6">
-        {{ content.sub_content_world }}
-      </div>
-    {% endif %}
-    {% if content.sub_content_npcs %}
-      <div class="col-sm-6">
-        {{ content.sub_content_npcs }}
-      </div>
-    {% endif %}
-    {% if content.sub_content_gear %}
-      <div class="col-sm-6">
-        {{ content.sub_content_gear }}
-      </div>
-    {% endif %}
-  </section>
-{% endif %}

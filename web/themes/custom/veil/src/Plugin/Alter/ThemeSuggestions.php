@@ -46,7 +46,11 @@ class ThemeSuggestions extends PluginBase implements AlterInterface {
 
       case 'views_view':
         // Eh, no one ever regretted this.
-        $suggestions[] = 'views_view__' . $variables->view->display_handler->pluginId;
+        $display = $variables->view->current_display;
+        $view_id = $variables->view->id();
+
+        $suggestions[] = 'views_view__' . $view_id;
+        $suggestions[] = 'views_view__' . $view_id . '__' . $display;
 
         // The dirtiest damn thing you've ever seen.
         // Too lazy to write a display handler, and I don't want to let
@@ -57,6 +61,15 @@ class ThemeSuggestions extends PluginBase implements AlterInterface {
           && ($variables->view->pager->options['items_per_page'] != 1)) {
           $suggestions[] = 'views_view__' . 'bootstrap_panel';
         }
+        break;
+
+      case 'eva_display_entity_view':
+        $display = $variables->view->current_display;
+        $view_id = $variables->view->id();
+
+        $suggestions[] = 'eva_display_entity_view__' . $view_id;
+        $suggestions[] = 'eva_display_entity_view__' . $view_id . '__' . $display;
+
         break;
     }
   }

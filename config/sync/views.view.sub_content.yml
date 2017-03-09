@@ -614,6 +614,7 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: standard
+      enabled: false
     cache_metadata:
       max-age: 0
       contexts:
@@ -933,6 +934,7 @@ display:
           separator: ', '
           field_api_classes: 0
           plugin_id: field
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -1425,6 +1427,7 @@ display:
           separator: ', '
           field_api_classes: 0
           plugin_id: field
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:

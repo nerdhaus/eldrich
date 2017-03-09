@@ -1,6 +1,6 @@
 uuid: 09ef0985-e675-4d81-9a59-8eaebd6be04d
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.full
@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.source.field_cover_art
     - field.field.node.source.field_description
     - field.field.node.source.field_download
+    - field.field.node.source.field_home
     - field.field.node.source.field_source_type
     - field.field.node.source.field_weight
     - image.style.square
@@ -27,13 +28,6 @@ content:
     type: text_default
     weight: 101
     settings: {  }
-    third_party_settings: {  }
-  field_code:
-    type: string
-    weight: 4
-    label: hidden
-    settings:
-      link_to_entity: false
     third_party_settings: {  }
   field_cover_art:
     weight: 0
@@ -56,8 +50,33 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  sourced_content_entity_view_1:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_factions:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_gear:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_locations:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_npcs:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  sourced_content_weird:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_buy: true
+  field_code: true
   field_download: true
   field_home: true
   field_weight: true

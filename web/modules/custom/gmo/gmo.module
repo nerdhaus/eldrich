@@ -114,3 +114,9 @@ function gmo_node_access(NodeInterface $node, $op, AccountInterface $account) {
   // No opinion.
   return AccessResult::neutral()->setCacheMaxAge(0);
 }
+
+
+function gm_mode(NodeInterface $node) {
+  $mode = $node->get('field_gm_only')->getValue();
+
+}

@@ -221,62 +221,10 @@ td.skill-great {
 
 /*** Header sizing, styling, coloration ***/
 
-article {
+article .main-body {
   h3, h4 {
     color: white;
     border-bottom: 1px solid $text-color;
     padding: 10px 0;
-  }
-}
-
-
-/*** TABBED PANEL STYLING ***/
-
-.panel.with-nav-tabs .nav-tabs{
-  border-bottom: none;
-}
-.panel.with-nav-tabs .nav-justified{
-  margin-bottom: -1px;
-}
-
-.with-nav-tabs.panel-primary {
-  .nav-tabs > li > a,
-  .nav-tabs > li > a:hover,
-  .nav-tabs > li > a:focus {
-    color: #fff;
-  }
-
-  .nav-tabs > .open > a,
-  .nav-tabs > .open > a:hover,
-  .nav-tabs > .open > a:focus,
-  .nav-tabs > li > a:hover,
-  .nav-tabs > li > a:focus {
-    color: #fff;
-    background-color: #3071a9;
-    border-color: transparent;
-  }
-  .nav-tabs > li.active > a,
-  .nav-tabs > li.active > a:hover,
-  .nav-tabs > li.active > a:focus {
-    color: #428bca;
-    background-color: #fff;
-    border-color: #428bca;
-    border-bottom-color: transparent;
-  }
-  .nav-tabs > li.dropdown .dropdown-menu {
-    background-color: #428bca;
-    border-color: #3071a9;
-  }
-  .nav-tabs > li.dropdown .dropdown-menu > li > a {
-    color: #fff;
-  }
-  .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
-  .nav-tabs > li.dropdown .dropdown-menu > li > a:focus {
-    background-color: #3071a9;
-  }
-  .nav-tabs > li.dropdown .dropdown-menu > .active > a,
-  .nav-tabs > li.dropdown .dropdown-menu > .active > a:hover,
-  .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
-    background-color: #4a9fe9;
   }
 }
