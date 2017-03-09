@@ -22,3 +22,34 @@ function ep_skill_reference_help($route_name, RouteMatchInterface $route_match) 
     default:
   }
 }
+
+function ep_skill_reference_parse($value) {
+  // First scrub CRs, multiple spaces, and a couple of common typos that
+  // come from copying and pasting text out of PDFs.
+
+  str_replace('n ltration', 'nfiltration', $value);
+  preg_replace('([A-Za-z ] \([Nn]ative\)', 'Native \1', $value);
+  preg_replace('\s+', '\s', $value);
+  str_replace('\r', ',', $value);
+
+  // SKILL NAME: FIELD NAME 50 (SPECIALIZATION STRING 60)
+  $pattern = "/(?<skill>[A-Za-z ]+)(\:\s+?(?<field>[A-Za-z ]+))?\s+?(?<points>[0-9]+)?\s*(\((?<specialization>([a-zA-Z ]+))(\s?[0-9]+)?\))?/";
+  preg_match($pattern, $value, $matches);
+
+
+  $results = [];
+  foreach ($matches as $match) {
+    if (!empty($matches['skill'])
+      && !empty($matches['points'])
+      && $entity = parent::transform(trim($matches['skill']), $migrateExecutable, $row, $destinationProperty)) {
+      $results[] = array(
+        'raw_skill' => $matches['skill'],
+        'target_id' => $entity,
+        'field' => trim($matches['field']),
+        'specialization' => trim($matches['specialization']),
+        'points' => trim($matches['points']),
+      );
+    }
+  }
+  return $results;
+}

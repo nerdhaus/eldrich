@@ -19,24 +19,6 @@ class SkillReferenceParser extends EntityLookup {
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrateExecutable, Row $row, $destinationProperty) {
-    // Parse the format: SKILL NAME: FIELD NAME 99 (SPECIALIZATION STRING)
-    $pattern = "/(?<skill>[A-Za-z ]+)(\:\s+?(?<field>[A-Za-z ]+))?\s+?(?<points>[0-9]+)?\s*(\((?<specialization>([a-zA-Z ]+))\))?/";
-    $results = [];
-    $matches = [];
-    preg_match($pattern, $value, $matches);
-
-    if (!empty($matches['skill'])
-      && !empty($matches['points'])
-      && $entity = parent::transform(trim($matches['skill']), $migrateExecutable, $row, $destinationProperty)) {
-
-      $results = array(
-        'raw_skill' => $matches['skill'],
-        'target_id' => $entity,
-        'field' => trim($matches['field']),
-        'specialization' => trim($matches['specialization']),
-        'points' => trim($matches['points']),
-      );
-    }
-    return $results;
+    return ep_skill_reference_parse($value);
   }
 }
