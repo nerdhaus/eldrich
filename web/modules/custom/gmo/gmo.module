@@ -116,7 +116,11 @@ function gmo_node_access(NodeInterface $node, $op, AccountInterface $account) {
 }
 
 
-function gm_mode(NodeInterface $node) {
-  $mode = $node->get('field_gm_only')->getValue();
-
+function gmo_hide_notes(NodeInterface $node, AccountInterface $currentUser) {
+  if ($node->hasField('field_gm_only')) {
+    if ($node->field_gm_only->value) {
+      return !$currentUser->hasPermission('access gm content');
+    }
+  }
+  return FALSE;
 }
