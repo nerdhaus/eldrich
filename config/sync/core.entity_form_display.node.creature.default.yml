@@ -314,10 +314,7 @@ content:
     type: entity_reference_autocomplete
   field_sources:
     weight: 21
-    settings:
-      match_operator: CONTAINS
-      size: '60'
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
     type: entity_reference_quantity_select
   field_stats:

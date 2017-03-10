@@ -1,0 +1,200 @@
+uuid: 27a233dd-2dc2-433f-a03e-2d661bb05078
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.instance.quick
+    - core.entity_form_mode.node.quick
+    - field.field.node.npc.field_based_on
+    - field.field.node.npc.field_description
+    - field.field.node.npc.field_equipped_armor
+    - field.field.node.npc.field_equipped_weapons
+    - field.field.node.npc.field_gear
+    - field.field.node.npc.field_gm_only
+    - field.field.node.npc.field_identity
+    - field.field.node.npc.field_image
+    - field.field.node.npc.field_morph
+    - field.field.node.npc.field_motivations
+    - field.field.node.npc.field_owned_blueprints
+    - field.field.node.npc.field_plot_seeds
+    - field.field.node.npc.field_quote
+    - field.field.node.npc.field_roleplay_notes
+    - field.field.node.npc.field_skills
+    - field.field.node.npc.field_sleights
+    - field.field.node.npc.field_sources
+    - field.field.node.npc.field_stats
+    - field.field.node.npc.field_traits
+    - node.type.npc
+  module:
+    - eldrich
+    - ep_skill_reference
+    - ep_statblock
+    - field_group
+    - field_states_ui
+    - inline_entity_form
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_stats:
+      children:
+        - field_stats
+        - field_skills
+        - field_traits
+        - field_sleights
+      parent_name: ''
+      weight: 6
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: 'Stats and Abilities'
+id: node.npc.quick
+targetEntityType: node
+bundle: npc
+mode: quick
+content:
+  created:
+    type: datetime_timestamp
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+  field_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_gear:
+    weight: 10
+    settings:
+      types: {  }
+      delimiter: ', '
+      short_name: true
+    third_party_settings: {  }
+    type: entity_reference_override_text
+  field_identity:
+    weight: 7
+    settings:
+      form_mode: quick
+      override_labels: true
+      label_singular: Identity
+      label_plural: Identities
+      collapsible: true
+      collapsed: false
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
+    type: inline_entity_form_simple
+  field_morph:
+    weight: 9
+    settings:
+      form_mode: quick
+      label_singular: ''
+      label_plural: ''
+      override_labels: false
+      collapsible: false
+      collapsed: false
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
+    type: inline_entity_form_simple
+  field_skills:
+    weight: 13
+    settings:
+      mode: points
+      delimiter: ', '
+    third_party_settings: {  }
+    type: skill_reference_longtext_widget
+  field_sleights:
+    weight: 15
+    settings:
+      types:
+        - sleight
+      short_name: '1'
+      delimiter: ', '
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
+    type: entity_reference_override_text
+  field_stats:
+    weight: 12
+    settings:
+      display_style: mind
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
+    type: stat_block_table
+  field_traits:
+    weight: 14
+    settings:
+      types:
+        - trait
+      short_name: '1'
+      delimiter: ', '
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
+    type: entity_reference_override_text
+  path:
+    type: path
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_based_on: true
+  field_equipped_armor: true
+  field_equipped_weapons: true
+  field_gm_only: true
+  field_image: true
+  field_motivations: true
+  field_owned_blueprints: true
+  field_plot_seeds: true
+  field_quote: true
+  field_roleplay_notes: true
+  field_sources: true

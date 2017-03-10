@@ -1,0 +1,37 @@
+uuid: 6cde36a9-4312-494f-b817-068cd6fafba5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.instance.quick
+    - eck.eck_type.instance.morph
+    - field.field.instance.morph.field_augmentations
+    - field.field.instance.morph.field_description
+    - field.field.instance.morph.field_mobility_system
+    - field.field.instance.morph.field_model
+    - field.field.instance.morph.field_movement_speed
+    - field.field.instance.morph.field_skills
+    - field.field.instance.morph.field_stats
+    - field.field.instance.morph.field_traits
+id: instance.morph.quick
+targetEntityType: instance
+bundle: morph
+mode: quick
+content:
+  field_model:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+hidden:
+  field_augmentations: true
+  field_description: true
+  field_mobility_system: true
+  field_movement_speed: true
+  field_skills: true
+  field_stats: true
+  field_traits: true
+  title: true

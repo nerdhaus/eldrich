@@ -128,10 +128,11 @@ class EntityReferenceOverrideTextWidget extends WidgetBase {
     $values = explode(',', $value);
     foreach ($values as $key => $value) {
       $split = explode($delimiter, $value);
-      $values[$key] = [
-        'title' => trim($split[0]),
-        'override' => trim($split[1]),
+      $values[$key]['title'] = trim($split[0]);
+      if ($isset($split[1])) {
+        $values[$key]['override'] = trim($split[1]);
       ];
+      }
     }
 
     foreach ($values as $key => $data) {
@@ -144,7 +145,7 @@ class EntityReferenceOverrideTextWidget extends WidgetBase {
       if ($short_name) {
         $or = $query->orConditionGroup()
           ->condition('title', $data['title'])
-          ->condition('title', $data['field_short_name']);
+          ->condition('field_short_name', $data['title']);
         $query->condition($or);
       }
       else {

@@ -1,34 +1,32 @@
-uuid: f5280ad1-4051-48a8-bae1-d16bad132f27
+uuid: 2d9205ed-909c-404d-b969-e483cac6b67a
 langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.morph_instance
-    - field.field.node.npc.field_based_on
-    - field.field.node.npc.field_description
-    - field.field.node.npc.field_equipped_armor
-    - field.field.node.npc.field_equipped_weapons
-    - field.field.node.npc.field_gear
-    - field.field.node.npc.field_gm_only
-    - field.field.node.npc.field_identity
-    - field.field.node.npc.field_image
-    - field.field.node.npc.field_morph
-    - field.field.node.npc.field_motivations
-    - field.field.node.npc.field_owned_blueprints
-    - field.field.node.npc.field_plot_seeds
-    - field.field.node.npc.field_quote
-    - field.field.node.npc.field_roleplay_notes
-    - field.field.node.npc.field_skills
-    - field.field.node.npc.field_sleights
-    - field.field.node.npc.field_sources
-    - field.field.node.npc.field_stats
-    - field.field.node.npc.field_traits
+    - core.entity_form_mode.node.quick
+    - entity_browser.browser.muse_instance
+    - field.field.node.pc.field_based_on
+    - field.field.node.pc.field_description
+    - field.field.node.pc.field_equipped_armor
+    - field.field.node.pc.field_equipped_weapons
+    - field.field.node.pc.field_gear
+    - field.field.node.pc.field_identity
+    - field.field.node.pc.field_image
+    - field.field.node.pc.field_morph
+    - field.field.node.pc.field_motivations
+    - field.field.node.pc.field_muse
+    - field.field.node.pc.field_owned_blueprints
+    - field.field.node.pc.field_quote
+    - field.field.node.pc.field_skills
+    - field.field.node.pc.field_sleights
+    - field.field.node.pc.field_stats
+    - field.field.node.pc.field_status
+    - field.field.node.pc.field_traits
     - image.style.thumbnail
-    - node.type.npc
+    - node.type.pc
   module:
     - entity_browser
     - entity_reference_override
-    - entity_reference_quantity
     - ep_skill_reference
     - ep_statblock
     - field_group
@@ -47,7 +45,7 @@ third_party_settings:
         - field_equipped_weapons
         - field_equipped_armor
       parent_name: ''
-      weight: 11
+      weight: 13
       format_type: details
       format_settings:
         id: ''
@@ -55,45 +53,6 @@ third_party_settings:
         open: false
         required_fields: true
       label: Gear
-    group_abilities:
-      children: {  }
-      parent_name: ''
-      weight: 8
-      format_type: details
-      format_settings:
-        open: false
-        required_fields: true
-        classes: ''
-        id: ''
-      label: Abilities
-    group_attribution:
-      children:
-        - field_sources
-        - field_based_on
-      parent_name: ''
-      weight: 14
-      format_type: details
-      format_settings:
-        id: ''
-        classes: ''
-        open: false
-        required_fields: true
-      label: Attribution
-    group_stats:
-      children:
-        - field_stats
-        - field_skills
-        - field_traits
-        - field_sleights
-      parent_name: ''
-      weight: 6
-      format_type: details
-      format_settings:
-        id: ''
-        classes: ''
-        open: false
-        required_fields: true
-      label: 'Stats and Abilities'
     group_basic:
       children:
         - field_quote
@@ -109,48 +68,30 @@ third_party_settings:
         open: true
         required_fields: true
       label: 'Basic Info'
-    group_gm_information:
-      children: {  }
-      parent_name: ''
-      weight: 13
-      format_type: details
-      format_settings:
-        id: ''
-        classes: ''
-        open: false
-        required_fields: true
-      label: 'GM Information'
-    group_gm_resources:
+    group_stats:
       children:
-        - field_gm_only
-        - field_roleplay_notes
-        - field_plot_seeds
+        - field_stats
+        - field_skills
+        - field_traits
+        - field_sleights
       parent_name: ''
-      weight: 12
+      weight: 8
       format_type: details
       format_settings:
         id: ''
         classes: ''
         open: false
         required_fields: true
-      label: 'GM Resources'
-id: node.npc.default
+      label: 'Stats and Abilities'
+id: node.pc.quick
 targetEntityType: node
-bundle: npc
-mode: default
+bundle: pc
+mode: quick
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     settings: {  }
-    third_party_settings: {  }
-  field_based_on:
-    type: entity_reference_autocomplete_tags
-    weight: 22
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_description:
     weight: 18
@@ -195,25 +136,24 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
-  field_gm_only:
-    weight: 1
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
   field_identity:
-    weight: 10
+    weight: 11
     settings:
       form_mode: default
       override_labels: true
       label_singular: Identity
       label_plural: Identities
       collapsible: true
-      collapsed: false
       allow_new: true
-      allow_existing: false
       match_operator: CONTAINS
-    third_party_settings: {  }
+      collapsed: false
+      allow_existing: false
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
     type: inline_entity_form_complex
   field_image:
     weight: 17
@@ -231,7 +171,7 @@ content:
     third_party_settings: {  }
     type: image_widget_crop
   field_morph:
-    weight: 9
+    weight: 10
     settings:
       entity_browser: morph_instance
       field_widget_display: label
@@ -255,6 +195,23 @@ content:
       delimiter: ', '
     third_party_settings: {  }
     type: multi_text_string_widget
+  field_muse:
+    weight: 12
+    settings:
+      entity_browser: muse_instance
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_edit
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
+    type: entity_browser_entity_reference
   field_owned_blueprints:
     weight: 18
     settings:
@@ -263,13 +220,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
-  field_plot_seeds:
-    weight: 3
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
   field_quote:
     weight: 15
     settings:
@@ -277,13 +227,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_roleplay_notes:
-    weight: 2
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
   field_skills:
     weight: 13
     settings:
@@ -300,11 +243,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
-  field_sources:
-    weight: 21
-    settings: {  }
-    third_party_settings: {  }
-    type: entity_reference_quantity_select
   field_stats:
     weight: 12
     settings:
@@ -316,6 +254,22 @@ content:
           list: ''
           add: Add
     type: stat_block_table
+  field_status:
+    weight: 14
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      override_labels: false
+      collapsed: false
+    third_party_settings:
+      field_states_ui:
+        form:
+          type: ''
+          list: ''
+          add: Add
+    type: inline_entity_form_simple
   field_traits:
     weight: 14
     settings:
@@ -333,13 +287,13 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 5
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 6
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -350,10 +304,11 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_based_on: true

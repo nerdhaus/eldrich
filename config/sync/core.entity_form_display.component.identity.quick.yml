@@ -1,0 +1,44 @@
+uuid: 108d84ea-aec1-46cc-a8db-9eca3c6c59ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.component.quick
+    - eck.eck_type.component.identity
+    - field.field.component.identity.field_aliases
+    - field.field.component.identity.field_background
+    - field.field.component.identity.field_credits
+    - field.field.component.identity.field_faction
+    - field.field.component.identity.field_notes
+    - field.field.component.identity.field_rep
+  module:
+    - entity_reference_quantity
+id: component.identity.quick
+targetEntityType: component
+bundle: identity
+mode: quick
+content:
+  field_background:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_faction:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_rep:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_reference_quantity_select
+hidden:
+  field_aliases: true
+  field_credits: true
+  field_notes: true
