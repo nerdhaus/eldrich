@@ -13,3 +13,17 @@ field.formatter.settings.eldrich_popup_formatter:
     length:
       label: 'Show title as'
       type: string
+field.widget.settings.entity_reference_override_longtext_widget:
+  type: field.widget.settings.entity_reference_override_longtext_widget
+  mapping:
+    types:
+      type: sequence
+      sequence:
+        type: string
+        label: 'Content Types'
+    delimiter:
+      type: string
+      label: 'String delimiter'
+    short_name:
+      type: boolean
+      label: 'Search short name'
