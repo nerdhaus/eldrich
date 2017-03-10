@@ -49,8 +49,8 @@ class MobilityCalculator {
       $move = static::defaultData();
       $move['entity'] = $entity->field_mobility_system->entity;
 
-      if (!$entity->field_movement_speed->isEmpty()) {
-        $speed = $entity->field_movement_speed->getValue()[0];
+      if ($move['entity']->field_movement_speed) {
+        $speed = $move['entity']->field_movement_speed->getValue()[0];
       }
       elseif ($move['entity']->field_speed) {
         $speed = $move['entity']->field_speed->getValue()[0];
