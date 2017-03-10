@@ -24,6 +24,57 @@ class SkillReferenceLongtextWidget extends WidgetBase {
   /**
    * {@inheritdoc}
    */
+  public function settingsForm(array $form, FormStateInterface $form_state) {
+    $options = [
+      'points' => t('Points spent'),
+      'targets' => t('Skill totals (pre-morph)')
+    ];
+    $element['mode'] = [
+      '#title' => $this->t('Input mode'),
+      '#type' => 'select',
+      '#default_value' => $this->getSetting('mode'),
+      '#options' => $options,
+    ];
+    $element['delimiter'] = [
+      '#title' => $this->t('Skill delimiter'),
+      '#type' => 'textfield',
+      '#default_value' => $this->getSetting('delimiter'),
+    ];
+
+    return $element;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function defaultSettings() {
+    return array(
+        'mode' => 'points',
+        'delimiter' => ', ',
+      ) + parent::defaultSettings();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsSummary() {
+    $mode = $this->getSetting('mode');
+    $delimiter = $this->getSetting('delimiter');
+
+    $summary = [];
+    if (!empty($mode)) {
+      $summary[] = $this->t('Process values as @mode', ['@mode' => $mode]);
+    }
+    if (!empty($delimiter)) {
+      $summary[] = $this->t("Separated by '@delimiter'", ['@delimiter' => $delimiter]);
+    }
+    return $summary;
+  }
+
+
+  /**
+   * {@inheritdoc}
+   */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     $default = [];
     foreach ($items as $item) {
