@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "09b18f4dc34b21aedff9b1b608e7f6ff",
+    "content-hash": "cd712997e3334e762d6def5ece5f87c9",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1854,7 +1854,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/csv_serialization-8.x-1.0.zip",
-                "reference": null,
+                "reference": "8.x-1.0",
                 "shasum": "90023afb1a9296598c3d8ac9c8c81df4d00a2663"
             },
             "require": {
@@ -2935,6 +2935,49 @@
             "homepage": "https://www.drupal.org/project/flag",
             "support": {
                 "source": "http://cgit.drupalcode.org/flag"
+            }
+        },
+        {
+            "name": "drupal/form_mode_manager",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/form_mode_manager",
+                "reference": "8.x-1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/form_mode_manager-8.x-1.0-alpha1.zip",
+                "reference": null,
+                "shasum": "ad3a4253452bd64c793b369ba4c1617f2b4a0983"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1482256683"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "woprrr",
+                    "homepage": "https://www.drupal.org/user/858604"
+                }
+            ],
+            "description": "Allow use of form mode in all entities",
+            "homepage": "https://www.drupal.org/project/form_mode_manager",
+            "support": {
+                "source": "http://cgit.drupalcode.org/form_mode_manager"
             }
         },
         {
@@ -4994,7 +5037,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-beta9.zip",
-                "reference": null,
+                "reference": "8.x-5.0-beta9",
                 "shasum": "cc1a31b22ae3daca5c2cc05ca729092a90f3835d"
             },
             "require": {
@@ -9921,7 +9964,8 @@
         "drupal/options_widget_placeholder": 5,
         "drupal/field_states_ui": 5,
         "drupal/jsonapi": 15,
-        "drupal/file_table_formatter": 20
+        "drupal/file_table_formatter": 20,
+        "drupal/form_mode_manager": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,

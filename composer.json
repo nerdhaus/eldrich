@@ -90,7 +90,8 @@
         "drupal/file_table_formatter": "1.x-dev",
         "drupal/override_node_options": "^2.0",
         "drupal/human_decimal": "^1.0",
-        "drupal/csv_serialization": "^1.0"
+        "drupal/csv_serialization": "^1.0",
+        "drupal/form_mode_manager": "^1.0@alpha"
     },
     "require-dev": {
         "behat/mink": "~1.7",
