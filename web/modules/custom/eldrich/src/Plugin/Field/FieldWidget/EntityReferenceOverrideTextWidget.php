@@ -129,9 +129,8 @@ class EntityReferenceOverrideTextWidget extends WidgetBase {
     foreach ($values as $key => $value) {
       $split = explode($delimiter, $value);
       $values[$key]['title'] = trim($split[0]);
-      if ($isset($split[1])) {
+      if (isset($split[1])) {
         $values[$key]['override'] = trim($split[1]);
-      ];
       }
     }
 
