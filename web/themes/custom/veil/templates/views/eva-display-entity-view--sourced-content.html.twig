@@ -55,7 +55,7 @@ dom_id ? 'js-view-dom-id-' ~ dom_id,
         </a>
       </h4>
     </div>
-    <div id="{{ display_id|clean_class }}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="{{ display_id|clean_class }}-heading">
+    <div id="{{ display_id|clean_class }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ display_id|clean_class }}-heading">
       {{ rows }}
     </div>
     {% if pager.quantity %}
