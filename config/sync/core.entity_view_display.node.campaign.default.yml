@@ -25,7 +25,6 @@ third_party_settings:
   field_group:
     group_sourced_data:
       children:
-        - sourced_content_overview
         - sourced_content_locations
         - sourced_content_gear
         - sourced_content_factions
@@ -84,7 +83,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: file_table
+    type: file_default
   field_pcs:
     weight: 3
     label: above

@@ -29,3 +29,4 @@ permissions:
   19: 'edit any instance entities'
   20: 'access morph_instance entity browser pages'
   21: 'access muse_instance entity browser pages'
+  22: 'use user.default form mode'
