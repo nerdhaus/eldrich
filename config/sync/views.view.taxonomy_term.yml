@@ -2519,7 +2519,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_stats }}{% if field_stat_variance and field_stats %}, {% endif %}{{ field_stat_variance }}'
+            text: '{{ field_stats }}{% if field_stat_variance|length and field_stats|length %}, {% endif %}{{ field_stat_variance }}'
             make_link: false
             path: ''
             absolute: false
@@ -2555,7 +2555,7 @@ display:
           empty: ''
           hide_empty: false
           empty_zero: false
-          hide_alter_empty: true
+          hide_alter_empty: false
           click_sort_column: cog
           type: stat_block_simple
           settings:

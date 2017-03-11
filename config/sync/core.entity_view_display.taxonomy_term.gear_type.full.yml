@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.full
+    - field.field.taxonomy_term.gear_type.field_featured
     - field.field.taxonomy_term.gear_type.field_icon
     - field.field.taxonomy_term.gear_type.field_plural
     - field.field.taxonomy_term.gear_type.field_short_name
@@ -22,8 +23,12 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+  gear_tree_list:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
   taxonomy_term_category_items:
-    weight: 10
+    weight: 2
     settings: {  }
     third_party_settings: {  }
 hidden:

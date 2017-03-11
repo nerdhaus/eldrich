@@ -28,4 +28,5 @@ hidden:
   field_plural: true
   field_short_name: true
   field_sources: true
+  gear_tree_list: true
   taxonomy_term_category_items: true

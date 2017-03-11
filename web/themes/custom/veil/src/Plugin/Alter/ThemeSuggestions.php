@@ -64,12 +64,11 @@ class ThemeSuggestions extends PluginBase implements AlterInterface {
         break;
 
       case 'eva_display_entity_view':
+      case 'views_tree':
         $display = $variables->view->current_display;
         $view_id = $variables->view->id();
-
-        $suggestions[] = 'eva_display_entity_view__' . $view_id;
-        $suggestions[] = 'eva_display_entity_view__' . $view_id . '__' . $display;
-
+        $suggestions[] = $hook . '__' . $view_id;
+        $suggestions[] = $hook . '__' . $view_id . '__' . $display;
         break;
     }
   }

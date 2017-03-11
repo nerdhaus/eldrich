@@ -32,24 +32,37 @@
   {% endif %}
   {{ title_suffix }}
 
-  {{ content|without('taxonomy_term_category_items') }}
-
   {% if page %}
-    <section class="entity-children">
-    {# Kinda funky, but we're hiding the normal terms list and showing a custom
-     table view for certain specific categories. #}
+    <div class="row">
 
-    {% set key = name|field_raw('value')|lower %}
+      <div class="col-sm-8">
+        {{ content|without('taxonomy_term_category_items', 'gear_tree_list') }}
+      </div>
 
-    {% if key == "weapons" %}
-      {{ drupal_view('taxonomy_term', 'weapon_table', term.id) }}
-      {{ drupal_view('taxonomy_term', 'ammo_mods_table', term.id) }}
-    {% elseif key == "morphs" %}
-      {{ drupal_view('taxonomy_term', 'morphs_table', term.id) }}
-    {% else %}
-      {# Show the usual EVA-powered item list #}
-      {{ content.taxonomy_term_category_items }}
-    {% endif %}
-    </section>
+      <div class="col-sm-4 pull-right">
+        {{ content.gear_tree_list }}
+      </div>
+
+      <div class="clearfix visible-xs"></div>
+
+      <div class="col-sm-8">
+        <section class="entity-children">
+          {% set key = name|field_raw('value')|lower %}
+
+          {% if key == "weapons" %}
+            {{ drupal_view('taxonomy_term', 'weapon_table', term.id) }}
+            {{ drupal_view('taxonomy_term', 'ammo_mods_table', term.id) }}
+          {% elseif key == "morphs" %}
+            {{ drupal_view('taxonomy_term', 'morphs_table', term.id) }}
+          {% else %}
+            {# Show the usual EVA-powered item list #}
+            {{ content.taxonomy_term_category_items }}
+          {% endif %}
+        </section>
+      </div>
+
+    </div>
+  {% else %}
+    {{ content|without('taxonomy_term_category_items', 'gear_tree_list') }}
   {% endif %}
 </div>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd712997e3334e762d6def5ece5f87c9",
+    "content-hash": "e88cbcc4e7f589bc88f3b3a21c3756c2",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2948,7 +2948,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/form_mode_manager-8.x-1.0-alpha1.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha1",
                 "shasum": "ad3a4253452bd64c793b369ba4c1617f2b4a0983"
             },
             "require": {
@@ -5025,6 +5025,52 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/views_taxonomy_term_name_depth"
             }
+        },
+        {
+            "name": "drupal/views_tree",
+            "version": "dev-2.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/views_tree",
+                "reference": "05b05bb633ea9b8f39d5f7da7b076ef3f036994a"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.x-dev",
+                    "datestamp": "1471434239"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Crell",
+                    "homepage": "https://www.drupal.org/user/26398"
+                },
+                {
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
+                },
+                {
+                    "name": "geerlingguy",
+                    "homepage": "https://www.drupal.org/user/389011"
+                }
+            ],
+            "description": "A Views style plugin to display a tree of elements using the adjacency model.",
+            "homepage": "https://www.drupal.org/project/views_tree",
+            "support": {
+                "source": "http://cgit.drupalcode.org/views_tree"
+            },
+            "time": "2016-08-17 11:47:01"
         },
         {
             "name": "drupal/webform",
@@ -9965,7 +10011,8 @@
         "drupal/field_states_ui": 5,
         "drupal/jsonapi": 15,
         "drupal/file_table_formatter": 20,
-        "drupal/form_mode_manager": 15
+        "drupal/form_mode_manager": 15,
+        "drupal/views_tree": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -97,6 +97,7 @@ module:
   user: 0
   verf: 0
   views_taxonomy_term_name_depth: 0
+  views_tree: 0
   views_ui: 0
   menu_link_content: 1
   pathauto: 1
