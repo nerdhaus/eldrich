@@ -56,39 +56,44 @@ view_mode ? view_mode|clean_class
     <div class="col-sm-12">
       <hr>
     </div>
-    <div class="col-sm-7">
-        {{ content.body }}
+    <div class="col-sm-8">
+      {{ content.body }}
+      {{ content.sub_content_sessions }}
     </div>
-    <div class="col-sm-5">
-      <ul class="list-unstyled list-hanging">
-        {% if content.field_pcs|field_value|length -%}
-          <li><strong>Players:</strong> {{ content.field_pcs|field_value|safe_join(', ') }}</li>
-        {%- endif %}
-        {% if content.field_resources|field_value|length -%}
-          <li><strong>Resources:</strong> {{ content.field_resources|field_value|safe_join(', ') }}</li>
-        {%- endif %}
+    <div class="col-sm-4">
+      <ul class="list-group">
+        {% if content.field_pcs|field_value|length %}
+          <li class="list-group-item active"><strong class="list-group-item-heading">Players</strong></li>
+          {% for item in content.field_pcs|field_value %}
+            <li class="list-group-item">{{ item }}</li>
+          {% endfor %}
+        {% endif %}
+        {% if content.field_resources|field_value|length %}
+          <li class="list-group-item active"><strong class="list-group-item-heading">Links and Resources</strong></li>
+          {% for item in content.field_resources|field_value %}
+            <li class="list-group-item">{{ item }}</li>
+          {% endfor %}
+        {% endif %}
+        {% if content.field_official_downloads|field_value|length %}
+          <li class="list-group-item active"><strong class="list-group-item-heading">Downloads</strong></li>
+          {% for item in content.field_official_downloads|field_value %}
+            <li class="list-group-item">{{ item }}</li>
+          {% endfor %}
+        {% endif %}
       </ul>
-      {{ content.field_official_downloads }}
+
     </div>
     {% endblock %}
   </section>
 </article>
 <hr>
 
-{% if content.sub_content_sessions or content.sub_content_world or content.sub_content_npcs or content.sub_content_gear %}
+{% if content.group_sourced_data %}
 <section class="row">
-  {% if content.sub_content_sessions %}
-    <div class="col-sm-8">
-      {{ content.sub_content_sessions }}
-    </div>
-  {% endif %}
-
-  {% if content.group_sourced_data %}
     <div class="col-sm-8">
       <div class="panel-group" id="sourced-accordion" role="tablist" aria-multiselectable="true">
         {{ content.group_sourced_data }}
       </div>
     </div>
-  {% endif %}
 </section>
 {% endif %}
