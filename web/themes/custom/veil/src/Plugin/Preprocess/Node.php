@@ -326,7 +326,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
       $variables->tools['scratchpad'] = [
         '#type' => 'link',
         '#title' => t('Combat Scratchpad'),
-        '#url' => Url::fromRoute('views.game_tools.scratchpads', ['nodes' => join(',', $nids)]),
+        '#url' => Url::fromRoute('view.game_tools.scratchpads', ['ids' => join(',', $nids)]),
         '#attributes' => [
           'class' => ['btn', 'btn-default']
         ]

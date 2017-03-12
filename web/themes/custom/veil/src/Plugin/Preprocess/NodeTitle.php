@@ -100,7 +100,7 @@ class NodeTitle extends PreprocessBase implements PreprocessInterface {
         $actions['scratchpad'] = [
           '#type' => 'link',
           '#title' => t('Combat Scratchpad'),
-          '#url' => Url::fromRoute('views.game_tools.scratchpads', ['nodes' => join(',', $nids)])
+          '#url' => Url::fromRoute('view.game_tools.scratchpads', ['ids' => join(',', $nids)])
         ];
       }
     }

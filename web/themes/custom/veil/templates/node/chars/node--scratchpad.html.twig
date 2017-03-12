@@ -47,6 +47,11 @@
 {% endif %}
 
 <article class="eldrich-scratchpad row">
+  {% if not page %}
+  <section class="eldrich-scratchpad-title col-sm-12">
+    <h4>{{ label }}</h4>
+  </section>
+  {% endif %}
 
   <section class="eldrich-scratchpad-status col-sm-4">
 
