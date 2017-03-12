@@ -1,6 +1,50 @@
 {#
 
-Template for ranged attack information on a given combat card.
+Template for the ranged attack information on a given combat scratchpad.
 
 #}
-{% extends "@veil/partials/attack-details.html.twig" %}
+
+{% set special = attack.damage.special %}
+{% set mod = attack.damage.mod %}
+
+{% if special == "SOM/10" %}
+  {% set mod = mod + (stats.total.conditional.som / 10)|round(0, 'ceil') %}
+  {% set special = '' %}
+{% elseif special == "WIL/10" %}
+  {% set mod = mod + (stats.total.conditional.wil / 10)|round(0, 'ceil') %}
+  {% set special = '' %}
+{% endif %}
+
+<div class="row attack-detail">
+  <div class="attack-description col-xs-8">
+    {{ attack.build.weapon }} {% if attack.skill %}<strong>({{ attack.skill }})</strong>{% endif %}
+    {% if attack.build.mods %}
+      w/ {{ attack.build.mods|safe_join(', ') }}
+    {% endif %}
+    {% if attack.build.ammo %}
+      using {{ attack.build.ammo_mods|safe_join(' ') }} {{ attack.build.ammo }}
+    {% endif %}
+  </div>
+
+  <div class="attack-damage col-xs-4">
+    {% if attack.damage.dice or attack.damage.effects %}
+      {% if attack.damage.dice %}
+        <strong>{{ attack.damage.dice }}d10
+          {%- if mod %} {{ attack.damage.mod_operation }} {{ mod }}{% endif -%}
+          {%- if special %} + {{ special }}{% endif -%}
+          {%- if attack.damage.ap == 999 %}, ignores armor
+          {%- elseif attack.damage.ap == '.5' %}, AP halved
+          {%- elseif attack.damage.ap != 0 %} {{ attack.damage.ap }}AP
+          {%- endif %}
+        </strong>
+      {% endif %}
+      {% if attack.damage.effects -%}
+        {% if attack.damage.dice %}+ {% endif %}{{ attack.damage.effects|safe_join(' + ') }}
+      {% endif %}
+    {% else %}
+      <strong>No damage</strong>
+    {% endif %}
+    <br />
+    {{ attack.modes|keys|safe_join(', ')|upper }}, <strong>{{ attack.rounds }}</strong> rounds
+  </div>
+</div>

@@ -1,0 +1,101 @@
+{#
+/**
+ * @file
+ * Combat Scratchpad view. used for PCs, NPCs, Creatures, Robots ans Vehicles.
+ *
+ * This template is meant to display essential per-attack information, including
+ * damage/extra effects/attack target/firing modes/rounds/etc. It also shows the
+ * entity's key survivability stats: DUR, LUC, WT, TT, Armor, Fray, etc.
+ *
+ * In addition, the design is meant for printing: GMs can run off a set of these
+ * and use them to keep notes for NPCs in combat.
+ *
+ * Calculated variables:
+ * - stats: A nested collection of character attributes.
+ *   Individual stat values are in: stats.total.constant.statname
+ *   and stats.total.conditional.statname
+ *   @see \Drupal\eldrich\Calculator\StatTreeCalculator
+ * - skills: A nested collection of character skills.
+ *   Individual skill values are in: skills.skillname.constant.points
+ *   and skills.skillname.conditional.points
+ *   @see \Drupal\eldrich\Calculator\SkillTreeCalculator
+ * - attacks:
+ *   @see \Drupal\eldrich\Calculator\WeaponCalculator
+ * - armor:
+ *   @see \Drupal\eldrich\Calculator\ArmorCalculator
+ * - threat:
+ *   @see \Drupal\eldrich\Calculator\ThreatCalculator
+ * - mobility:
+ *   @see \Drupal\eldrich\Calculator\MobilityCalculator
+
+ * @ingroup templates
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+{% set dur = {constant: stats.total.constant.dur, conditional: stats.total.conditional.dur} %}
+{% set wt = {constant: stats.total.constant.wt, conditional: stats.total.conditional.wt} %}
+{% set luc = {constant: stats.total.constant.luc, conditional: stats.total.conditional.luc} %}
+{% set tt = {constant: stats.total.constant.tt, conditional: stats.total.conditional.tt} %}
+{% set fray = {constant: skills.fray.constant.total, conditional: skills.fray.conditional.total} %}
+{% set spd = {constant: stats.total.constant.spd, conditional: stats.total.conditional.spd} %}
+{% if mobility|length %}
+  {% set move = (mobility|first.walk ~ ' / ' ~ mobility|first.run) %}
+{% else %}
+  {% set move = '—' %}
+{% endif %}
+
+<article class="eldrich-scratchpad row">
+
+  <section class="eldrich-scratchpad-status col-sm-4">
+
+    <table class="table table-bordered table-condensed eldrich-scratchpad-status">
+      <tr class="status-header">
+        <th>Damage</th>
+        <th>Wounds</th>
+        <th>Stress</th>
+        <th>Trauma</th>
+      </tr>
+      <tr class="status-box">
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+      </tr>
+      <tr class="status-footer">
+        <td>{{ dur.constant ?: '—' }}{% if dur.constant != dur.conditional %} ({{ dur.conditional }}{% endif %}</td>
+        <td>{{ wt.constant ?: '—' }}{% if wt.constant != wt.conditional %} ({{ wt.conditional }}{% endif %}</td>
+        <td>{{ luc.constant ?: '—' }}{% if luc.constant != luc.conditional %} ({{ luc.conditional }}{% endif %}</td>
+        <td>{{ tt.constant ?: '—' }}{% if tt.constant != tt.conditional %} ({{ tt.conditional }}{% endif %}</td>
+      </tr>
+    </table>
+
+    <table class="table table-bordered table-condensed eldrich-scratchpad-status">
+      <tr class="status-header">
+        <th>Armor</th>
+        <th>Fray</th>
+        <th>Move</th>
+        <th>Speed</th>
+      </tr>
+      <tr class="status-footer">
+        <td>{{ armor.energy ?: '—' }} / {{ armor.kinetic ?: '—' }}</td>
+        <td>{{ fray.constant ?: '—' }}{% if fray.constant != fray.conditional %} ({{ fray.conditional }}){% endif %}</td>
+        <td>{{ move }}</td>
+        <td>{{ spd.constant }}{% if spd.constant != spd.conditional %} ({{ spd.conditional }}){% endif %}</td>
+      </tr>
+    </table>
+
+  </section>
+
+  <section class="eldrich-scratchpad-attacks col-sm-8">
+    {% for attack in attacks %}
+      {% if attack.category|lower == 'ranged' %}
+        {% include '@veil/partials/attack-details--ranged.html.twig' %}
+      {% else %}
+        {% include '@veil/partials/attack-details.html.twig' %}
+      {% endif %}
+    {% endfor %}
+  </section>
+
+</article>

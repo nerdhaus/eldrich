@@ -1,0 +1,45 @@
+// Eldrich.Host
+// Combat scratchpad styling
+// -------------------------
+
+article.eldrich-scratchpad {
+  table.eldrich-scratchpad-status {
+
+    width: 100%;
+    padding-bottom: 5px;
+    text-align: center;
+
+    tr.status-header {
+      background-color: $table-bg-hover;
+      color: $text-color;
+    }
+
+    th {
+      width:25%;
+      text-align: center;
+    }
+
+    .status-box {
+      height: 4em;
+    }
+
+    @media print {
+      table {
+        border: 2px solid #000 !important;
+      }
+    }
+  }
+
+  div.attack-detail:not(:first-of-type) {
+    padding-top: 5px;
+  }
+
+  div.attack-detail:not(:last-of-type) {
+    padding-bottom: 5px;
+    border-bottom: 1px solid $text-muted;
+  }
+
+  padding-bottom: 30px;
+  page-break-inside: avoid;
+
+}

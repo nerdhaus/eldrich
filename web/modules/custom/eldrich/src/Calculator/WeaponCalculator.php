@@ -466,7 +466,6 @@ class WeaponCalculator {
 
 
     if (!$weapon->field_magazine_size->isEmpty()) {
-      $mag = $weapon->field_magazine_size[0]->getValue();
       $item['rounds'] = operation_calculate_result($item['rounds'], $weapon->field_magazine_size->operator, $weapon->field_magazine_size->value);
     }
     if (!$weapon->field_damage_dice->isEmpty()) {

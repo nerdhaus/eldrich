@@ -97,6 +97,11 @@ class NodeTitle extends PreprocessBase implements PreprocessInterface {
           '#title' => t('Skill Table'),
           '#url' =>Url::fromRoute('ep_game_tools.campaign_tools_controller_skillsheet', ['nodes' => join(',', $nids)]),
         ];
+        $actions['scratchpad'] = [
+          '#type' => 'link',
+          '#title' => t('Combat Scratchpad'),
+          '#url' => Url::fromRoute('views.game_tools.scratchpads', ['nodes' => join(',', $nids)])
+        ];
       }
     }
 
@@ -111,8 +116,8 @@ class NodeTitle extends PreprocessBase implements PreprocessInterface {
     if ($variables->is_character or $variables->is_mob) {
       $actions['scratchpad'] = [
         '#type' => 'link',
-        '#title' => t('Combat Card'),
-        '#url' =>Url::fromRoute('eldrich.combatcard', ['node' => $node->id()]),
+        '#title' => t('Combat Scratchpad'),
+        '#url' =>Url::fromRoute('eldrich.scratchpad', ['node' => $node->id()]),
       ];
     }
 

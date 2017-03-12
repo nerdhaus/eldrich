@@ -7,11 +7,11 @@ eldrich.charsheet:
     _entity_access: 'node.view'
     node: \d+
 
-eldrich.combatcard:
-  path: '/node/{node}/card'
+eldrich.scratchpad:
+  path: '/node/{node}/scratchpad'
   defaults:
     _controller: '\Drupal\eldrich\Controller\CharacterViewController::combatCard'
-    _title: 'Combat Card'
+    _title: 'Combat Scratchpad'
   requirements:
     _entity_access: 'node.view'
     node: \d+

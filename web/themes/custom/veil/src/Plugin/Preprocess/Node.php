@@ -295,8 +295,8 @@ class Node extends PreprocessBase implements PreprocessInterface {
     if ($variables->is_character or $variables->is_mob) {
       $variables->scratchpad_link = [
         '#type' => 'link',
-        '#title' => t('View combat scratchpad'),
-        '#url' => Url::fromRoute('eldrich.combatcard', ['node' => $node->id()]),
+        '#title' => t('Combat Scratchpad'),
+        '#url' => Url::fromRoute('eldrich.scratchpad', ['node' => $node->id()]),
       ];
     }
   }
@@ -319,6 +319,14 @@ class Node extends PreprocessBase implements PreprocessInterface {
         '#type' => 'link',
         '#title' => t('Skills Sheet'),
         '#url' => Url::fromRoute('ep_game_tools.campaign_tools_controller_skillsheet', ['nodes' => join(',', $nids)]),
+        '#attributes' => [
+          'class' => ['btn', 'btn-default']
+        ]
+      ];
+      $variables->tools['scratchpad'] = [
+        '#type' => 'link',
+        '#title' => t('Combat Scratchpad'),
+        '#url' => Url::fromRoute('views.game_tools.scratchpads', ['nodes' => join(',', $nids)]),
         '#attributes' => [
           'class' => ['btn', 'btn-default']
         ]
