@@ -36,6 +36,7 @@ class Node extends PreprocessBase implements PreprocessInterface {
   public function preprocessVariables(Variables $variables) {
     /** @var NodeInterface $node */
     $node = $variables->node;
+    $variables->plain_label = $node->label();
 
     $variables->is_gear = in_array($node->bundle(), [
       'gear',

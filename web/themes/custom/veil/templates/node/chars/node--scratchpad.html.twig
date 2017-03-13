@@ -49,7 +49,7 @@
 <article class="eldrich-scratchpad row">
   {% if not page %}
   <section class="eldrich-scratchpad-title col-sm-12">
-    <h4>{{ label }}</h4>
+    <h4>{{ plain_label }}</h4>
   </section>
   {% endif %}
 
@@ -63,10 +63,22 @@
         <th>Trauma</th>
       </tr>
       <tr class="status-box">
-        <td>&nbsp</td>
-        <td>&nbsp</td>
-        <td>&nbsp</td>
-        <td>&nbsp</td>
+        <td>
+          <span class="hidden-print">{% if status.damage %}{{ status.damage }}{% else %}&nbsp;{% endif %}</span>
+          <span class="visible-print">&nbsp;</span>
+        </td>
+        <td>
+          <span class="hidden-print">{% if status.wounds %}{{ status.wounds }}{% else %}&nbsp;{% endif %}</span>
+          <span class="visible-print">&nbsp;</span>
+        </td>
+        <td>
+          <span class="hidden-print">{% if status.stress %}{{ status.stress }}{% else %}&nbsp;{% endif %}</span>
+          <span class="visible-print">&nbsp;</span>
+        </td>
+        <td>
+          <span class="hidden-print">{% if status.trauma %}{{ status.trauma }}{% else %}&nbsp;{% endif %}</span>
+          <span class="visible-print">&nbsp;</span>
+        </td>
       </tr>
       <tr class="status-footer">
         <td>{{ dur.constant ?: '—' }}{% if dur.constant != dur.conditional %} ({{ dur.conditional }}{% endif %}</td>
