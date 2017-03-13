@@ -25,8 +25,20 @@ class CharacterViewController extends NodeViewController {
    * {@inheritdoc}
    */
   public function combatCard(EntityInterface $node) {
+    $response = [];
     if (in_array($node->bundle(), ['pc', 'npc', 'creature', 'robot'])) {
-      return parent::view($node, 'scratchpad');
+      $response['primary'] = parent::view($node, 'scratchpad');
+
+      if ($node->field_gear) {
+        foreach ($node->field_gear as $fi) {
+          if ($gear = $fi->entity) {
+            if (in_array($gear->bundle(), ['creature', 'robot'])) {
+              $response[$gear->bundle()][] = parent::view($gear, 'scratchpad');
+            }
+          }
+        }
+      }
+      return $response;
     }
     else {
       throw new ResourceNotFoundException();
