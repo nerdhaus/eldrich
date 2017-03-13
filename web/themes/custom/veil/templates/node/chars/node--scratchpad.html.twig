@@ -40,6 +40,7 @@
 {% set tt = {constant: stats.total.constant.tt, conditional: stats.total.conditional.tt} %}
 {% set fray = {constant: skills.fray.constant.total, conditional: skills.fray.conditional.total} %}
 {% set spd = {constant: stats.total.constant.spd, conditional: stats.total.conditional.spd} %}
+
 {% if mobility|length %}
   {% set move = (mobility|first.walk ~ ' / ' ~ mobility|first.run) %}
 {% else %}
@@ -107,7 +108,7 @@
 
   <section class="eldrich-scratchpad-attacks col-sm-8">
     {% for attack in attacks %}
-      {% if attack.category|lower == 'ranged' %}
+      {% if attack.range %}
         {% include '@veil/partials/attack-details--ranged.html.twig' %}
       {% else %}
         {% include '@veil/partials/attack-details.html.twig' %}

@@ -6,6 +6,7 @@ Template for the individual attack information on a given combat scratchpad.
 
 {% set special = attack.damage.special %}
 {% set mod = attack.damage.mod %}
+{% set som = stats.total.conditional.som %}
 
 {% if special == "SOM/10" %}
   {% set mod = mod + (stats.total.conditional.som / 10)|round(0, 'ceil') %}
@@ -13,6 +14,20 @@ Template for the individual attack information on a given combat scratchpad.
 {% elseif special == "WIL/10" %}
   {% set mod = mod + (stats.total.conditional.wil / 10)|round(0, 'ceil') %}
   {% set special = '' %}
+{% endif %}
+
+{# A few specific weapons that can be hurled #}
+{% if 'renade' in attack.build.weapon %}
+  {% if 'ini' in attack.build.weapon %}
+    {# mini grenades #}
+    {% set range = {'short': som/2, 'medium': som/2, 'long': som, 'extreme': som*3} %}
+  {% else %}
+    {# standard grenades #}
+    {% set range = {'short': som/5, 'medium': som, 'long': som*2, 'extreme': som*3} %}
+  {% endif %}
+{% elseif 'lade' in attack.skill %}
+  {# blade weapons #}
+  {% set range = {'short': som/5, 'medium': som/2, 'long': som, 'extreme': som*2} %}
 {% endif %}
 
 <div class="row attack-detail">

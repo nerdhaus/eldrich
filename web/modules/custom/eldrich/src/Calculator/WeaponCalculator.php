@@ -24,6 +24,7 @@ use Drupal\Core\Link;
  *   - A link to the weapon's ammo, if applicable
  *   - An array of links to the ammo mods, if applicable
  *   - A formatted string representing its attack damage
+ *   - A key-value array of ranges for short, medium, long, and extreme.
  *
  * - The ID of the weapon's linked skill.
  * - The numerical skill bonus from any mods/ammo/etc
@@ -144,6 +145,7 @@ class WeaponCalculator {
       ],
       'rounds' => 0,
       'modes' => [],
+      'range' => [],
       'effects' => [],
       'build' => [],
     ];
@@ -464,6 +466,11 @@ class WeaponCalculator {
       }
     }
 
+    if (!$weapon->field_range->isEmpty()) {
+      foreach (['short', 'medium', 'long', 'extreme'] as $range) {
+        $item['range'][$range] = $weapon->field_range->$range;
+      }
+    }
 
     if (!$weapon->field_magazine_size->isEmpty()) {
       $item['rounds'] = operation_calculate_result($item['rounds'], $weapon->field_magazine_size->operator, $weapon->field_magazine_size->value);
