@@ -18,7 +18,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.insert_key = true
   config.ssh.forward_agent = true
 
-
   config.vm.synced_folder "./", "/vagrant", id: "vagrant-root",
     owner: "ubuntu",
     group: "www-data",
@@ -26,4 +25,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "shell", path: "config/server/setup.sh"
   config.vm.provision "shell", path: "config/server/composer.sh", privileged: false
+
+  if Vagrant.has_plugin?('vagrant-exec')
+    config.exec.commands '*', directory: '/vagrant/web'
+  end
+
 end
