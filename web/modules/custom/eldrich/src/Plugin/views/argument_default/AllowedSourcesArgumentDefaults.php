@@ -70,10 +70,10 @@ class AllowedSourcesArgumentDefaults extends ArgumentDefaultPluginBase implement
 
     $campaigns = \Drupal::entityQuery('node')
       ->condition('type', 'campaign');
-    $conditions = $inspiration->orConditionGroup()
+    $conditions = $campaigns->orConditionGroup()
       ->condition('field_pcs.entity.uid', $this->currentUser->id())
       ->condition('uid', $this->currentUser->id());
-    $campaign_nids = $inspiration->condition($conditions)->execute();
+    $campaign_nids = $campaigns->condition($conditions)->execute();
 
     $nids = array_merge($campaign_nids, $inspiration_nids);
 
