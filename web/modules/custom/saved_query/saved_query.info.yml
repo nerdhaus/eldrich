@@ -1,0 +1,5 @@
+name: Saved Query
+type: module
+description: Provides an entity to save EntityQuery conditions and properties.
+core: 8.x
+package: Custom

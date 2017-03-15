@@ -1,0 +1,22 @@
+add saved query entities:
+  title: 'Create new Saved query entities'
+
+administer saved query entities:
+  title: 'Administer Saved query entities'
+  description: 'Allow to access the administration form to configure Saved query entities.'
+  restrict access: true
+
+delete saved query entities:
+  title: 'Delete Saved query entities'
+
+edit saved query entities:
+  title: 'Edit Saved query entities'
+
+access saved query overview:
+  title: 'Access the Saved query overview page'
+
+view published saved query entities:
+  title: 'View published Saved query entities'
+
+view unpublished saved query entities:
+  title: 'View unpublished Saved query entities'
