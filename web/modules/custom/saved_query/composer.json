@@ -1,0 +1,14 @@
+{
+  "name": "drupal/saved_query",
+  "type": "drupal-module",
+  "description": "Provides an entity to save EntityQuery conditions and properties.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/saved_query",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/saved_query",
+    "source": "http://cgit.drupalcode.org/saved_query"
+  },
+  "require": { }
+}

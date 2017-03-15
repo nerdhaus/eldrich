@@ -1,0 +1,22 @@
+{#
+/**
+ * @file saved_query.html.twig
+ * Default theme implementation to present Saved query data.
+ *
+ * This template is used when viewing Saved query pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_saved_query()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('saved_query') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>
