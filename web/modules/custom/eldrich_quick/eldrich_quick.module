@@ -1,0 +1,14 @@
+<?php
+
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter() on behalf of eldrich_quick.module.
+ */
+function eldrich_quick_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Change form id here
+  $node = $form_state->getFormObject()->getEntity();
+  $node_type = $node->type->entity;
+
+}

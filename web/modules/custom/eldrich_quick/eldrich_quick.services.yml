@@ -1,0 +1,6 @@
+services:
+  eldrich_quick.edit_route_subscriber:
+    class: Drupal\eldrich_quick\Routing\QuickEditRouteSubscriber
+    tags:
+      - { name: event_subscriber }
+

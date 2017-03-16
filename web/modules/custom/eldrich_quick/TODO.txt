@@ -1,0 +1,24 @@
+# Eldrich Quick
+
+This little puppy handles the "streamlined" version of assorted node creation and editing forms. It assumes:
+
+1. Content types are already set up
+2. Form modes are already set up, including one named 'quick'
+3. Eldrich module is already installed, and its point-balancing helpers exist
+
+Quick Edit/Add forms for Eldrich Host focus on streamlining the arduous allocation of skill points, traits, sleights,
+and so on when first setting up a character. The big differences are:
+
+1. Optional/nonessential fields are hidden
+2. Only a single morph or identity is handled by the form
+3. Equipped armor/weapons aren't handled — just regular gear and blueprints.
+4. Textareas are used to add Traits, Sleights, Augmentations, and Skills.
+5. Input skills are treated as final skill levels, not raw points allocated to a character.
+
+# Skill/Point allocation
+
+Number 5 in that list is a doosie. By default in Eldrich Black, skill levels are stored as "points spent" on a particular skill. Those points are added to the character's base attributes, augmented by bonuses from traits and sleights, and then bonuses from the morph are applied on top of that. The result is the *effective* skill level. It's neat. It makes recalculating when you resleeve super easy. However, it makes entering points during initial character creation (especially with NPCs) a giant pain in the ass. You can't just say, "Ehhhh, this guy needs a Fray of 60" — you have to figure out how all the bonuses are totaling up and so on.
+
+Easy mode lets you enter the values of the skills and does the math later. There are, however, some caveats. If you use it to *edit* an existing character, easy mode is bad at accounting for morph and/or attribute increases. It will let you bump up REF from 15 to 20, for example, but will take you at your word when you say that 'Fray' should stay at 40. It will math out a new underlying point value for your stored fray skill to make sure the final result is 40.
+
+That means that the best way to roll, realistically speaking, is to create a character with Easy Mode and after that edit it in "standard" mode.

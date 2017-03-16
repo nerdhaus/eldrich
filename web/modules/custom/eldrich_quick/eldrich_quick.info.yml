@@ -1,0 +1,5 @@
+name: Eldrich Quick
+type: module
+description: Streamlined editing for complex Eldrich Host content
+core: 8.x
+package: Custom
