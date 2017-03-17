@@ -8,6 +8,8 @@ use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\user\UserInterface;
+use Drupal\Core\Entity\Query\QueryInterface;
+use Drupal\Component\Serialization\Yaml;
 
 /**
  * Defines the Saved query entity.
@@ -40,8 +42,6 @@ use Drupal\user\UserInterface;
  *     "label" = "name",
  *     "uuid" = "uuid",
  *     "uid" = "user_id",
- *     "langcode" = "langcode",
- *     "status" = "status",
  *   },
  *   links = {
  *     "canonical" = "/admin/structure/saved_query/{saved_query}",
@@ -85,21 +85,6 @@ class SavedQuery extends ContentEntityBase implements SavedQueryInterface {
   /**
    * {@inheritdoc}
    */
-  public function getCreatedTime() {
-    return $this->get('created')->value;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function setCreatedTime($timestamp) {
-    $this->set('created', $timestamp);
-    return $this;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function getOwner() {
     return $this->get('user_id')->entity;
   }
@@ -128,18 +113,90 @@ class SavedQuery extends ContentEntityBase implements SavedQueryInterface {
   }
 
   /**
-   * {@inheritdoc}
+   * Sets entity type a query should apply to.
+   *
+   * @param string $entityTypeId
+   *   ID of the entity type to be used.
+   *
+   * @return \Drupal\saved_query\Entity\SavedQueryInterface
+   *   The called Saved query entity.
    */
-  public function isPublished() {
-    return (bool) $this->getEntityKey('status');
+  public function setEntityType($entityTypeId) {
+    $this->set('entity_type', $entityTypeId);
+    return $this;
   }
 
   /**
-   * {@inheritdoc}
+   * Returns an (optionally nested) array of query criteria.
+   *
+   * @return array
+   *   These are not actually core QueryCondition objects, just the data used
+   *   to create them.
    */
-  public function setPublished($published) {
-    $this->set('status', $published ? TRUE : FALSE);
+  public function getConditions() {
+    $raw_conditions = $this->get('conditions')->value;
+    $conditions = Yaml::decode($raw_conditions);
+    if (!is_array($conditions)) {
+      return [];
+    }
+    return $conditions;
+  }
+
+  /**
+   * Sets the published status of a Saved query.
+   *
+   * @param array $conditions
+   *   An (optionally nested) array of query conditions.
+   *
+   * @return \Drupal\saved_query\Entity\SavedQueryInterface
+   *   The called Saved query entity.
+   */
+  public function setConditions($conditions) {
+    $this->set('conditions', Yaml::encode($conditions));
     return $this;
+  }
+
+  /**
+   * Returns the Saved query published status indicator.
+   *
+   * @return int
+   *   The number of records to be returned. -1 implies no limit.
+   */
+  public function getLimit() {
+    return $this->get('limit')->value;
+  }
+
+  /**
+   * Sets the published status of a Saved query.
+   *
+   * @param int $limit
+   *   The number of records that should be returned.
+   *
+   * @return \Drupal\saved_query\Entity\SavedQueryInterface
+   *   The called Saved query entity.
+   */
+  public function setLimit($limit) {
+    $this->set('limit', $limit);
+    return $this;
+  }
+
+  /**
+   * Returns a ready-to-execute EntityQueryInterface instance.
+   *
+   * @return \Drupal\Core\Entity\Query\QueryInterface
+   *   The query object that can query the given entity type.
+   */
+  public function getQuery() {
+    $query = \Drupal::entityQuery($this->getEntityTypeId());
+    if ($limit = $this->getLimit()) {
+      $query->pager(['limit' => $limit]);
+    }
+
+    foreach ($this->getConditions() as $key => $condition) {
+      $query->condition($condition['field'], $condition['value'], $condition['operator'] ?: '=');
+    }
+
+    return $query;
   }
 
   /**
@@ -154,59 +211,34 @@ class SavedQuery extends ContentEntityBase implements SavedQueryInterface {
       ->setRevisionable(TRUE)
       ->setSetting('target_type', 'user')
       ->setSetting('handler', 'default')
-      ->setTranslatable(TRUE)
-      ->setDisplayOptions('view', array(
-        'label' => 'hidden',
-        'type' => 'author',
-        'weight' => 0,
-      ))
-      ->setDisplayOptions('form', array(
-        'type' => 'entity_reference_autocomplete',
-        'weight' => 5,
-        'settings' => array(
-          'match_operator' => 'CONTAINS',
-          'size' => '60',
-          'autocomplete_type' => 'tags',
-          'placeholder' => '',
-        ),
-      ))
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setTranslatable(TRUE);
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))
-      ->setDescription(t('The name of the Saved query entity.'))
+      ->setDescription(t('The name of the saved query.'))
       ->setSettings(array(
         'max_length' => 50,
         'text_processing' => 0,
       ))
-      ->setDefaultValue('')
-      ->setDisplayOptions('view', array(
-        'label' => 'above',
-        'type' => 'string',
-        'weight' => -4,
+      ->setDefaultValue('');
+
+    $fields['entity_type'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Entity Type'))
+      ->setDescription(t('The entity type to be queried.'))
+      ->setSettings(array(
+        'max_length' => 50,
+        'text_processing' => 0,
       ))
-      ->setDisplayOptions('form', array(
-        'type' => 'string_textfield',
-        'weight' => -4,
-      ))
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setDefaultValue('node');
 
-    $fields['status'] = BaseFieldDefinition::create('boolean')
-      ->setLabel(t('Publishing status'))
-      ->setDescription(t('A boolean indicating whether the Saved query is published.'))
-      ->setDefaultValue(TRUE);
+    $fields['limit'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Query Limit'))
+      ->setDescription(t('The maximum number of rows to return.'));
 
-    $fields['created'] = BaseFieldDefinition::create('created')
-      ->setLabel(t('Created'))
-      ->setDescription(t('The time that the entity was created.'));
-
-    $fields['changed'] = BaseFieldDefinition::create('changed')
-      ->setLabel(t('Changed'))
-      ->setDescription(t('The time that the entity was last edited.'));
+    $fields['conditions'] = BaseFieldDefinition::create('text_long')
+      ->setLabel(t('Query Limit'))
+      ->setDescription(t('The maximum number of rows to return.'));
 
     return $fields;
   }
-
 }

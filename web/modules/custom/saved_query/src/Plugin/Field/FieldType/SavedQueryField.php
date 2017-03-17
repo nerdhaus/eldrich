@@ -54,9 +54,8 @@ class SavedQueryField extends FieldItemBase {
     $schema = [
       'columns' => [
         'value' => [
-          'type' => $field_definition->getSetting('is_ascii') === TRUE ? 'varchar_ascii' : 'varchar',
-          'length' => (int) $field_definition->getSetting('max_length'),
-          'binary' => $field_definition->getSetting('case_sensitive'),
+          'type' => 'varchar',
+          'binary' => FALSE,
         ],
       ],
     ];

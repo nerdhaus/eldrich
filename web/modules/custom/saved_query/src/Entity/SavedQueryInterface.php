@@ -5,6 +5,8 @@ namespace Drupal\saved_query\Entity;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityChangedInterface;
 use Drupal\user\EntityOwnerInterface;
+use Drupal\core\Entity\EntityType;
+
 
 /**
  * Provides an interface for defining Saved query entities.
@@ -13,14 +15,6 @@ use Drupal\user\EntityOwnerInterface;
  */
 interface SavedQueryInterface extends  ContentEntityInterface, EntityChangedInterface, EntityOwnerInterface {
 
-  // Add get/set methods for your configuration properties here.
-
-  /**
-   * Gets the Saved query name.
-   *
-   * @return string
-   *   Name of the Saved query.
-   */
   public function getName();
 
   /**
@@ -35,43 +29,69 @@ interface SavedQueryInterface extends  ContentEntityInterface, EntityChangedInte
   public function setName($name);
 
   /**
-   * Gets the Saved query creation timestamp.
+   * Gets the saved query's target entity type.
    *
-   * @return int
-   *   Creation timestamp of the Saved query.
+   * @return EntityType
+   *   Name of the saved entity type.
    */
-  public function getCreatedTime();
+  public function getEntityType();
 
   /**
-   * Sets the Saved query creation timestamp.
+   * Sets entity type a query should apply to.
    *
-   * @param int $timestamp
-   *   The Saved query creation timestamp.
+   * @param string $entityTypeId
+   *   ID of the entity type to be used.
    *
    * @return \Drupal\saved_query\Entity\SavedQueryInterface
    *   The called Saved query entity.
    */
-  public function setCreatedTime($timestamp);
+  public function setEntityType($entityTypeId);
 
   /**
-   * Returns the Saved query published status indicator.
+   * Returns an (optionally nested) array of query criteria.
    *
-   * Unpublished Saved query are only visible to restricted users.
-   *
-   * @return bool
-   *   TRUE if the Saved query is published.
+   * @return array
+   *   These are not actually core QueryCondition objects, just the data used
+   *   to create them.
    */
-  public function isPublished();
+  public function getConditions();
 
   /**
    * Sets the published status of a Saved query.
    *
-   * @param bool $published
-   *   TRUE to set this Saved query to published, FALSE to set it to unpublished.
+   * @param array $conditions
+   *   An (optionally nested) array of query conditions.
    *
    * @return \Drupal\saved_query\Entity\SavedQueryInterface
    *   The called Saved query entity.
    */
-  public function setPublished($published);
+  public function setConditions($conditions);
 
+  /**
+   * Returns the Saved query published status indicator.
+   *
+   * @return int
+   *   The number of records to be returned. -1 implies no limit.
+   */
+  public function getLimit();
+
+  /**
+   * Sets the published status of a Saved query.
+   *
+   * @param int $limit
+   *   The number of records that should be returned.
+   *
+   * @return \Drupal\saved_query\Entity\SavedQueryInterface
+   *   The called Saved query entity.
+   */
+  public function setLimit($limit);
+
+
+  /**
+   * Returns a ready-to-execute EntityQueryInterface instance.
+   *
+   * @return \Drupal\Core\Entity\Query\QueryInterface
+   *   The query object that can query the given entity type.
+   */
+  public function getQuery();
 }

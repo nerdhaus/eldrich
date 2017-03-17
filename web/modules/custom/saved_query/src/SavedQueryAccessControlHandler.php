@@ -21,10 +21,7 @@ class SavedQueryAccessControlHandler extends EntityAccessControlHandler {
     /** @var \Drupal\saved_query\Entity\SavedQueryInterface $entity */
     switch ($operation) {
       case 'view':
-        if (!$entity->isPublished()) {
-          return AccessResult::allowedIfHasPermission($account, 'view unpublished saved query entities');
-        }
-        return AccessResult::allowedIfHasPermission($account, 'view published saved query entities');
+        return AccessResult::allowedIfHasPermission($account, 'view saved query entities');
 
       case 'update':
         return AccessResult::allowedIfHasPermission($account, 'edit saved query entities');
@@ -43,5 +40,4 @@ class SavedQueryAccessControlHandler extends EntityAccessControlHandler {
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
     return AccessResult::allowedIfHasPermission($account, 'add saved query entities');
   }
-
 }
