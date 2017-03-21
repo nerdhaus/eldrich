@@ -28,16 +28,19 @@
  * @ingroup templates
  */
 #}
-{% set skillArray = [] %}
+{% set output = [] %}
+{% set active = [] %}
+{% set all = [] %}
 {% for skill in skills %}
   {# Bail out if no points have been explicitly assigned to the skill #}
-  {%- if skill.constant.points or skill.constant.bonus or skill.conditional.bonus %}
-    {% set skillMarkup %}
-    <span class="skill skill-{{ skill.type|lower }} skill-aptitude-{{ skill.aptitude }}"><a href="{{ skill.url }}">{{ skill.name }}{% if skill.field %}: {{ skill.field }}{% endif %}</a>
-    {{ skill.constant.total }}{% if skill.constant.total != skill.conditional.total %} ({{ skill.conditional.total }}){% endif -%}
-    {%- if skill.specialization %} ({{ skill.specialization }}){% endif -%}</span>
+  {% if ((mode is empty) or (mode == 'knowledge' and skill.type|lower == 'knowledge') or (mode != 'knowledge' and skill.type|lower != 'knowledge'))
+     and (skill.constant.points or skill.constant.bonus or skill.conditional.bonus) %}
+    {% set skillMarkup -%}
+      <span class="skill skill-{{ skill.type|lower }} skill-aptitude-{{ skill.aptitude }}"><a href="{{ skill.url }}">{{ skill.name }}{% if skill.field %}: {{ skill.field }}{%- endif -%}</a>
+    {{ skill.constant.total }}{% if skill.constant.total != skill.conditional.total %} ({{ skill.conditional.total }}){%- endif -%}
+    {%- if skill.specialization -%} ({{ skill.specialization }}){% endif %}</span>
     {%- endset %}
-    {% set skillArray = skillArray|merge([skillMarkup])  %}
+    {% set output = output|merge([skillMarkup]) %}
   {% endif %}
 {% endfor %}
-{{ skillArray|safe_join(', ') }}
+{{- output|safe_join(', ') -}}
