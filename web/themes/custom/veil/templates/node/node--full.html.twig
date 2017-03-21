@@ -101,8 +101,8 @@ view_mode ? view_mode|clean_class
       {% set knowledgeSkills %}{% include directory ~ '/templates/partials/skills.html.twig' with {'mode': 'knowledge'} %}{% endset %}
 
       {% if content.field_morph_model|field_value %}<li><strong>Morph:</strong> {{ content.field_morph_model|field_value }}{% if mobility|length %} ({{ mobility.build|safe_join(', ') }}){% endif %}</li>{% endif %}
-      {% if activeSkills|length %}<li><strong>Active Skills:</strong> {{ activeSkills }}</li>{% endif %}
-      {% if knowledgeSkills|length %}<li><strong>Knowledge Skills:</strong> {{ knowledgeSkills }}</li>{% endif %}
+      {% if activeSkills|trim|length %}<li><strong>Active Skills:</strong> {{ activeSkills }}</li>{% endif %}
+      {% if knowledgeSkills|trim|length %}<li><strong>Knowledge Skills:</strong> {{ knowledgeSkills }}</li>{% endif %}
       {% if content.field_augmentations|field_value|length %}<li><strong>Augmentations:</strong> {{ content.field_augmentations|field_value|safe_join(', ') }}</li>{% endif %}
 
       {% if content.field_traits|field_value|length %}

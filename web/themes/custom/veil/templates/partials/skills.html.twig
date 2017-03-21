@@ -38,7 +38,7 @@
     {% set skillMarkup -%}
       <span class="skill skill-{{ skill.type|lower }} skill-aptitude-{{ skill.aptitude }}"><a href="{{ skill.url }}">{{ skill.name }}{% if skill.field %}: {{ skill.field }}{%- endif -%}</a>
     {{ skill.constant.total }}{% if skill.constant.total != skill.conditional.total %} ({{ skill.conditional.total }}){%- endif -%}
-    {%- if skill.specialization -%} ({{ skill.specialization }}){% endif %}</span>
+    {%- if skill.specialization %} ({{ skill.specialization }}){% endif %}</span>
     {%- endset %}
     {% set output = output|merge([skillMarkup]) %}
   {% endif %}
