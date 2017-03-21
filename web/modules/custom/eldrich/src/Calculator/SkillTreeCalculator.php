@@ -95,9 +95,8 @@ class SkillTreeCalculator {
     if (!empty($entity->field_skills)) {
       foreach ($entity->field_skills as $instance) {
         $key = strtolower($instance->entity->label());
-
-        // TODO: We shouldn't treat ALL exotic weapons the same, but for now it's easier.
-        if ($instance->entity->field_is_field->value && !strpos($instance->entity->label(), 'xotic')) {
+        // TODO: This is a PITA later, when we check on the appropriate skill for
+        if ($instance->entity->field_is_field->value) {
           $key .= ':' . strtolower($instance->field);
         }
 

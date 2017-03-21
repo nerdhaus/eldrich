@@ -89,7 +89,6 @@
  * inverted headers, and horizontal padding between cells.
  */
 table.table-statblock {
-
   thead th {
     text-align: center;
     border-width: 1px;
@@ -103,6 +102,17 @@ table.table-statblock {
   }
   .summary-row td {
     font-weight: bolder;
+  }
+}
+
+@media print {
+  table.table-statblock.table-bordered {
+    border: 2px solid black !important;
+
+    th,
+    td {
+      border: 1px solid black !important;
+    }
   }
 }
 
