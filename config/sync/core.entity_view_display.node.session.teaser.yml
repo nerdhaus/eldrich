@@ -24,7 +24,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      date_format: 'l n/t'
+      date_format: 'l n/j'
     third_party_settings: {  }
   field_session_promo:
     type: text_trimmed
