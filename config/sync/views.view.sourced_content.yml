@@ -9,6 +9,7 @@ dependencies:
     - field.storage.node.field_distance
     - field.storage.node.field_faction_type
     - field.storage.node.field_gear_type
+    - field.storage.node.field_gm_only
     - field.storage.node.field_location_type
     - field.storage.node.field_parent_faction
     - field.storage.node.field_parent_location
@@ -44,6 +45,7 @@ dependencies:
     - eck
     - eldrich
     - eva
+    - human_decimal
     - node
     - user
 id: sourced_content
@@ -693,10 +695,79 @@ display:
           separator: ', '
           field_api_classes: 0
           plugin_id: field
+        field_gm_only:
+          id: field_gm_only
+          table: node__field_gm_only
+          field: field_gm_only
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'GM Only'
+          exclude: 0
+          alter:
+            alter_text: 1
+            text: '<span class="badge"><small>{{ field_gm_only }}</small></span>'
+            make_link: 0
+            path: ''
+            absolute: 0
+            external: 0
+            replace_spaces: 0
+            path_case: none
+            trim_whitespace: 0
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: 0
+            max_length: '0'
+            word_boundary: 1
+            ellipsis: 1
+            more_link: 0
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: 0
+            trim: 0
+            preserve_tags: ''
+            html: 0
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: 1
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: 0
+          empty: ''
+          hide_empty: 0
+          empty_zero: 0
+          hide_alter_empty: 1
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: custom
+            format_custom_true: Secret
+            format_custom_false: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: 0
+          plugin_id: field
       style:
         type: table
         options:
           grouping:
+            -
+              field: ''
+              rendered: 1
+              rendered_strip: 0
             -
               field: ''
               rendered: 1
@@ -729,12 +800,13 @@ display:
             field_faction_type: field_faction_type
             type: field_faction_type
             field_parent_faction: field_parent_faction
+            field_gm_only: title
           info:
             title:
               sortable: 1
               default_sort_order: asc
               align: ''
-              separator: ''
+              separator: ' '
               empty_column: 0
               responsive: ''
             field_faction_type:
@@ -753,6 +825,13 @@ display:
               responsive: ''
             field_parent_faction:
               sortable: 1
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 0
+              responsive: ''
+            field_gm_only:
+              sortable: 0
               default_sort_order: asc
               align: ''
               separator: ''
@@ -780,6 +859,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_faction_type'
+        - 'config:field.storage.node.field_gm_only'
         - 'config:field.storage.node.field_parent_faction'
     deleted: false
   gear:
@@ -1478,8 +1558,8 @@ display:
           label: Distance
           exclude: 0
           alter:
-            alter_text: 0
-            text: ''
+            alter_text: 1
+            text: '{{ field_distance }} AU'
             make_link: 0
             path: ''
             absolute: 0
@@ -1517,12 +1597,73 @@ display:
           empty_zero: 0
           hide_alter_empty: 1
           click_sort_column: value
-          type: number_decimal
+          type: human_decimal
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: 0
+          plugin_id: field
+        field_gm_only:
+          id: field_gm_only
+          table: node__field_gm_only
+          field: field_gm_only
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'GM Only'
+          exclude: 0
+          alter:
+            alter_text: 1
+            text: '<span class="badge"><small>{{ field_gm_only }}</small></span>'
+            make_link: 0
+            path: ''
+            absolute: 0
+            external: 0
+            replace_spaces: 0
+            path_case: none
+            trim_whitespace: 0
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: 0
+            max_length: '0'
+            word_boundary: 1
+            ellipsis: 1
+            more_link: 0
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: 0
+            trim: 0
+            preserve_tags: ''
+            html: 0
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: 0
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: 0
+          empty: ''
+          hide_empty: 0
+          empty_zero: 0
+          hide_alter_empty: 1
+          click_sort_column: value
+          type: boolean
           settings:
-            thousand_separator: ''
-            prefix_suffix: 1
-            decimal_separator: .
-            scale: '2'
+            format: custom
+            format_custom_true: Secret
+            format_custom_false: ''
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1562,6 +1703,10 @@ display:
               field: ''
               rendered: 1
               rendered_strip: 0
+            -
+              field: ''
+              rendered: 1
+              rendered_strip: 0
           row_class: ''
           default_row_class: 1
           override: 1
@@ -1575,12 +1720,13 @@ display:
             field_parent_location: field_parent_location
             field_population: field_population
             field_distance: field_distance
+            field_gm_only: title
           info:
             title:
               sortable: 1
               default_sort_order: asc
               align: ''
-              separator: ''
+              separator: ' '
               empty_column: 0
               responsive: ''
             field_location_type:
@@ -1611,6 +1757,13 @@ display:
               separator: ''
               empty_column: 1
               responsive: priority-medium
+            field_gm_only:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 0
+              responsive: ''
           default: title
           empty_table: 0
       row:
@@ -1633,6 +1786,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_distance'
+        - 'config:field.storage.node.field_gm_only'
         - 'config:field.storage.node.field_location_type'
         - 'config:field.storage.node.field_parent_location'
         - 'config:field.storage.node.field_population'
@@ -1958,6 +2112,71 @@ display:
           empty_zero: 0
           hide_alter_empty: 0
           plugin_id: custom
+        field_gm_only:
+          id: field_gm_only
+          table: node__field_gm_only
+          field: field_gm_only
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: 0
+          alter:
+            alter_text: 1
+            text: '<span class="badge"><small>{{ field_gm_only }}</small></span>'
+            make_link: 0
+            path: ''
+            absolute: 0
+            external: 0
+            replace_spaces: 0
+            path_case: none
+            trim_whitespace: 0
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: 0
+            max_length: '0'
+            word_boundary: 1
+            ellipsis: 1
+            more_link: 0
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: 0
+            trim: 0
+            preserve_tags: ''
+            html: 0
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: 1
+          empty: ''
+          hide_empty: 0
+          empty_zero: 0
+          hide_alter_empty: 1
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: custom
+            format_custom_true: Secret
+            format_custom_false: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: 0
+          plugin_id: field
       relationships:
         field_identity:
           id: field_identity
@@ -1992,6 +2211,10 @@ display:
               field: ''
               rendered: 1
               rendered_strip: 0
+            -
+              field: ''
+              rendered: 1
+              rendered_strip: 0
           row_class: ''
           default_row_class: 1
           override: 1
@@ -2004,12 +2227,13 @@ display:
             field_creature_type: field_creature_type
             field_faction: field_creature_type
             nothing: field_creature_type
+            field_gm_only: title
           info:
             title:
               sortable: 1
               default_sort_order: asc
               align: ''
-              separator: ''
+              separator: ' '
               empty_column: 0
               responsive: ''
             field_creature_type:
@@ -2027,6 +2251,13 @@ display:
               empty_column: 0
               responsive: ''
             nothing:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 0
+              responsive: ''
+            field_gm_only:
               sortable: 0
               default_sort_order: asc
               align: ''
@@ -2056,6 +2287,7 @@ display:
       tags:
         - 'config:field.storage.component.field_faction'
         - 'config:field.storage.node.field_creature_type'
+        - 'config:field.storage.node.field_gm_only'
     deleted: false
   overview:
     display_plugin: entity_view

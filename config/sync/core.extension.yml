@@ -48,6 +48,7 @@ module:
   form_mode_manager: 0
   gmo: 0
   google_analytics: 0
+  hal: 0
   hide_revision_field: 0
   human_decimal: 0
   ief_table_view_mode: 0
@@ -79,6 +80,7 @@ module:
   path: 0
   quick_pages: 0
   range: 0
+  rest: 0
   search: 0
   serialization: 0
   shortcut: 0
