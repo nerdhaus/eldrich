@@ -17,8 +17,8 @@
 {% endblock %}
 
 {% block properties %}
-  {% if content.field_is_field.value %}
-    <p>This skill is a <em>field.</em> It requires a particular area of expertise to be selected.
+  {% if content.field_is_field|field_raw('value') %}
+    <p>{{ label }} is a <em>field.</em> It requires a particular area of expertise to be selected.
     {% if content.field_example_fields|field_value %}
       Examples include {{ content.field_example_fields|field_value|safe_join(', ') }}.
     {% endif %}
