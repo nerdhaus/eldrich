@@ -26,12 +26,10 @@ class SavedQueryField extends FieldItemBase {
   /**
    * {@inheritdoc}
    */
-  public static function defaultStorageSettings() {
+  public static function defaultFieldSettings() {
     return [
-      'max_length' => 255,
-      'is_ascii' => FALSE,
-      'case_sensitive' => FALSE,
-    ] + parent::defaultStorageSettings();
+      'target_field' => '',
+    ] + parent::defaultFieldSettings();
   }
 
   /**
@@ -39,11 +37,21 @@ class SavedQueryField extends FieldItemBase {
    */
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
     // Prevent early t() calls by using the TranslatableMarkup.
-    $properties['value'] = DataDefinition::create('string')
-      ->setLabel(new TranslatableMarkup('Text value'))
-      ->setSetting('case_sensitive', $field_definition->getSetting('case_sensitive'))
+    $properties['entity_type'] = DataDefinition::create('string')
+      ->setLabel(new TranslatableMarkup('Entity Type'))
       ->setRequired(TRUE);
-
+    $properties['conditions'] = DataDefinition::create('varchar')
+      ->setLabel(new TranslatableMarkup('Conditions'))
+      ->setRequired(TRUE);
+    $properties['limit'] = DataDefinition::create('integer')
+      ->setLabel(new TranslatableMarkup('Result limit'))
+      ->setRequired(FALSE);
+    $properties['interval'] = DataDefinition::create('integer')
+      ->setLabel(new TranslatableMarkup('Refresh Interval'))
+      ->setRequired(FALSE);
+    $properties['refreshed'] = DataDefinition::create('integer')
+      ->setLabel(new TranslatableMarkup('Last Refresh'))
+      ->setRequired(FALSE);
     return $properties;
   }
 
@@ -53,9 +61,21 @@ class SavedQueryField extends FieldItemBase {
   public static function schema(FieldStorageDefinitionInterface $field_definition) {
     $schema = [
       'columns' => [
-        'value' => [
+        'entity_type' => [
           'type' => 'varchar',
           'binary' => FALSE,
+        ],
+        'conditions' => [
+          'type' => 'varchar',
+        ],
+        'limit' => [
+          'type' => 'integer',
+        ],
+        'interval' => [
+          'type' => 'integer',
+        ],
+        'refreshed' => [
+          'type' => 'integer',
         ],
       ],
     ];
@@ -68,48 +88,21 @@ class SavedQueryField extends FieldItemBase {
    */
   public function getConstraints() {
     $constraints = parent::getConstraints();
-
-    if ($max_length = $this->getSetting('max_length')) {
-      $constraint_manager = \Drupal::typedDataManager()->getValidationConstraintManager();
-      $constraints[] = $constraint_manager->create('ComplexData', [
-        'value' => [
-          'Length' => [
-            'max' => $max_length,
-            'maxMessage' => t('%name: may not be longer than @max characters.', [
-              '%name' => $this->getFieldDefinition()->getLabel(),
-              '@max' => $max_length
-            ]),
-          ],
-        ],
-      ]);
-    }
-
     return $constraints;
   }
 
   /**
    * {@inheritdoc}
-   */
-  public static function generateSampleValue(FieldDefinitionInterface $field_definition) {
-    $random = new Random();
-    $values['value'] = $random->word(mt_rand(1, $field_definition->getSetting('max_length')));
-    return $values;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function storageSettingsForm(array &$form, FormStateInterface $form_state, $has_data) {
+   *
+  public function fieldSettingsForm(array $form, FormStateInterface $form_state) {
     $elements = [];
 
-    $elements['max_length'] = [
+    $elements['target_field'] = [
       '#type' => 'number',
-      '#title' => t('Maximum length'),
-      '#default_value' => $this->getSetting('max_length'),
+      '#title' => t('Target Field'),
+      '#default_value' => $this->getSetting('target_field'),
       '#required' => TRUE,
-      '#description' => t('The maximum length of the field in characters.'),
-      '#min' => 1,
-      '#disabled' => $has_data,
+      '#description' => t('The Entity Reference field this query is intended to populate.'),
     ];
 
     return $elements;
@@ -119,8 +112,9 @@ class SavedQueryField extends FieldItemBase {
    * {@inheritdoc}
    */
   public function isEmpty() {
-    $value = $this->get('value')->getValue();
-    return $value === NULL || $value === '';
+    $type = $this->get('entity_type')->getValue();
+    $conditions = $this->get('conditions')->getValue();
+    return empty($type) || empty($conditions);
   }
 
 }

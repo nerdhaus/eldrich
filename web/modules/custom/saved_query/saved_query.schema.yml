@@ -1,9 +1,0 @@
-field.widget.settings.skill_reference_longtext_widget:
-  type: field.widget.settings.skill_reference_longtext_widget
-  mapping:
-    delimiter:
-      type: string
-      label: 'String delimiter'
-    mode:
-      type: string
-      label: 'Edit mode'
