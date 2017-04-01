@@ -27,7 +27,7 @@ class QuickEditController extends NodeController {
       'type' => $node_type->id(),
     ));
 
-    $form = $this->entityFormBuilder()->getForm($node);
+    $form = $this->entityFormBuilder()->getForm($node, 'quick');
 
     return $form;
   }
