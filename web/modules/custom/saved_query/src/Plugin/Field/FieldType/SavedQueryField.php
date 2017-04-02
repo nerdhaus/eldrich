@@ -9,6 +9,8 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\TypedData\DataDefinition;
+use Drupal\Core\Entity\Query\QueryInterface;
+use Drupal\Component\Serialization\Yaml;
 
 /**
  * Plugin implementation of the 'saved_query_field' field type.
@@ -87,22 +89,26 @@ class SavedQueryField extends FieldItemBase {
    * {@inheritdoc}
    */
   public function getConstraints() {
+    // Ensure constraints are valid yml
     $constraints = parent::getConstraints();
     return $constraints;
   }
 
   /**
    * {@inheritdoc}
-   *
+   */
   public function fieldSettingsForm(array $form, FormStateInterface $form_state) {
     $elements = [];
 
+    $options = []; // Get the entity reference fields attached to this bundle
+
     $elements['target_field'] = [
-      '#type' => 'number',
+      '#type' => 'select',
       '#title' => t('Target Field'),
       '#default_value' => $this->getSetting('target_field'),
-      '#required' => TRUE,
+      '#options' => $options,
       '#description' => t('The Entity Reference field this query is intended to populate.'),
+      '#required' => TRUE,
     ];
 
     return $elements;
@@ -117,4 +123,56 @@ class SavedQueryField extends FieldItemBase {
     return empty($type) || empty($conditions);
   }
 
+  /**
+   * Returns an (optionally nested) array of query criteria.
+   *
+   * @return array
+   *   These are not actually core QueryCondition objects, just the data used
+   *   to create them.
+   */
+  public function getConditions() {
+    $raw_conditions = $this->get('conditions');
+    $conditions = Yaml::decode($raw_conditions);
+    if (!is_array($conditions)) {
+      return [];
+    }
+    return $conditions;
+  }
+
+  /**
+   * Sets the conditions for the saved query from a YAML structure.
+   *
+   * @param array $conditions
+   *   An (optionally nested) array of query conditions.
+   */
+  public function setConditions($conditions) {
+    $this->set('conditions', Yaml::encode($conditions));
+  }
+
+  /**
+   * Returns a ready-to-execute EntityQueryInterface instance.
+   *
+   * @return \Drupal\Core\Entity\Query\QueryInterface
+   *   The query object that can query the given entity type.
+   */
+  public function getQuery() {
+    $query = \Drupal::entityQuery($this->get('entity_type'));
+    if ($limit = $this->get('limit')) {
+      $query->pager(['limit' => $limit]);
+    }
+
+    foreach ($this->getConditions() as $key => $condition) {
+      if ($key == 'and') {
+        // TODO: AndConditionGroups
+      }
+      elseif ($key == 'or') {
+        // TODO: OrConditionGroups
+      }
+      else {
+        $query->condition($condition['field'], $condition['value'], $condition['operator'] ?: '=');
+      }
+    }
+
+    return $query;
+  }
 }

@@ -1,0 +1,7 @@
+field.storage_settings.saved_query:
+  type: field.storage_settings.string
+  label: 'Saved query settings'
+  mapping:
+    target_field:
+      type: string
+      label: 'Target Field'

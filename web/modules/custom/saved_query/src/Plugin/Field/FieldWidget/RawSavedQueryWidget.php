@@ -18,67 +18,44 @@ use Drupal\Core\Form\FormStateInterface;
  * )
  */
 class RawSavedQueryWidget extends WidgetBase {
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function defaultSettings() {
-    return [
-      'size' => 60,
-      'placeholder' => '',
-    ] + parent::defaultSettings();
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsForm(array $form, FormStateInterface $form_state) {
-    $elements = [];
-
-    $elements['size'] = [
-      '#type' => 'number',
-      '#title' => t('Size of textfield'),
-      '#default_value' => $this->getSetting('size'),
-      '#required' => TRUE,
-      '#min' => 1,
-    ];
-    $elements['placeholder'] = [
-      '#type' => 'textfield',
-      '#title' => t('Placeholder'),
-      '#default_value' => $this->getSetting('placeholder'),
-      '#description' => t('Text that will be shown inside the field until a value is entered. This hint is usually a sample value or a brief description of the expected format.'),
-    ];
-
-    return $elements;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsSummary() {
-    $summary = [];
-
-    $summary[] = t('Textfield size: @size', ['@size' => $this->getSetting('size')]);
-    if (!empty($this->getSetting('placeholder'))) {
-      $summary[] = t('Placeholder: @placeholder', ['@placeholder' => $this->getSetting('placeholder')]);
-    }
-
-    return $summary;
-  }
-
   /**
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
-    $element['value'] = $element + [
-      '#type' => 'textfield',
-      '#default_value' => isset($items[$delta]->value) ? $items[$delta]->value : NULL,
-      '#size' => $this->getSetting('size'),
-      '#placeholder' => $this->getSetting('placeholder'),
-      '#maxlength' => $this->getFieldSetting('max_length'),
+
+    $element['entity_type'] = [
+      '#title' => t('Entity type'),
+      '#type' => 'select',
+      '#default_value' => isset($items[$delta]->entity_type) ? $items[$delta]->entity_type : NULL,
+    ];
+    $element['conditions'] = [
+      '#title' => t('Conditions'),
+      '#type' => 'textarea',
+      '#default_value' => isset($items[$delta]->conditions) ? $items[$delta]->conditions : NULL,
+    ];
+    $element['limit'] = [
+      '#title' => t('Result limit'),
+      '#type' => 'number',
+      '#default_value' => isset($items[$delta]->limit) ? $items[$delta]->limit : NULL,
+    ];
+    $element['interval'] = [
+      '#title' => t('Refresh interval'),
+      '#type' => 'number',
+      '#default_value' => isset($items[$delta]->interval) ? $items[$delta]->interval : NULL,
+    ];
+    $element['refreshed'] = [
+      '#title' => t('Last refreshed'),
+      '#type' => 'number',
+      '#default_value' => isset($items[$delta]->refreshed) ? $items[$delta]->refreshed : NULL,
     ];
 
     return $element;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function massageFormValues(array $values, array $form, FormStateInterface $form_state) {
+    return $values;
+  }
 }
