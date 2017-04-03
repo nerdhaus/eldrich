@@ -139,14 +139,14 @@ class SavedQueryField extends FieldItemBase {
     return $conditions;
   }
 
-  /**
-   * Sets the conditions for the saved query from a YAML structure.
-   *
-   * @param array $conditions
-   *   An (optionally nested) array of query conditions.
-   */
-  public function setConditions($conditions) {
-    $this->set('conditions', Yaml::encode($conditions));
+  public function preSave() {
+    if (is_array($this->conditions)) {
+      $this->conditions = Yaml::encode($this->conditions);
+    }
+  }
+
+  public function postSave() {
+    $this->conditions = Yaml::decode($this->conditions);
   }
 
   /**
