@@ -20,35 +20,6 @@ use Drupal\Core\Form\FormStateInterface;
  * )
  */
 class PreviewSavedQueryFormatter extends FormatterBase {
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function defaultSettings() {
-    return [
-      // Implement default settings.
-    ] + parent::defaultSettings();
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsForm(array $form, FormStateInterface $form_state) {
-    return [
-      // Implement settings form.
-    ] + parent::settingsForm($form, $form_state);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsSummary() {
-    $summary = [];
-    // Implement settings summary.
-
-    return $summary;
-  }
-
   /**
    * {@inheritdoc}
    */
@@ -56,7 +27,11 @@ class PreviewSavedQueryFormatter extends FormatterBase {
     $elements = [];
 
     foreach ($items as $delta => $item) {
-      $elements[$delta] = ['#markup' => $this->viewValue($item)];
+      $elements[$delta] = [
+        '#prefix' => '<pre>',
+        '#markup' => $this->viewValue($item),
+        '#suffix' => '</pre>'
+      ];
     }
 
     return $elements;
@@ -72,9 +47,21 @@ class PreviewSavedQueryFormatter extends FormatterBase {
    *   The textual output generated.
    */
   protected function viewValue(FieldItemInterface $item) {
-    // The text value has no text format assigned to it, so the user input
-    // should equal the output, including newlines.
-    return nl2br(Html::escape($item->value));
-  }
+    // Shamelessly stolen from Devel's dpq() function.
 
+    $query = $item->getQuery();
+
+    if (method_exists($query, 'preExecute')) {
+      $query->preExecute();
+    }
+    $sql = (string) $query;
+    $quoted = array();
+    $connection = Database::getConnection();
+    foreach ((array) $query->arguments() as $key => $val) {
+      $quoted[$key] = is_null($val) ? 'NULL' : $connection->quote($val);
+    }
+    $sql = strtr($sql, $quoted);
+
+    return nl2br(Html::escape($sql));
+  }
 }

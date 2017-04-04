@@ -1,24 +1,72 @@
 <?php
 
+use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+
+
 /**
  * @file
  * Contains saved_query.module.
  */
 
-use Drupal\Core\Routing\RouteMatchInterface;
+function saved_query_find_candidates($limit = 0) {
+  $results = [];
+  foreach (saved_query_candidate_fields() as $entity_type => $field_name) {
+    $query = \Drupal::entityQuery($this->get($entity_type));
+    $now = time();
 
-/**
- * Implements hook_help().
- */
-function saved_query_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_name) {
-    // Main module help for the saved_query module.
-    case 'help.page.saved_query':
-      $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Provides an entity to save EntityQuery conditions and properties.') . '</p>';
-      return $output;
+    // TODO: Use a select query and subtract interval from now.
+    $query
+      ->condition("$field_name.interval", 0, '>')
+      ->condition("$field_name.refreshed", $now, '<')
+      ->condition('status', 1);
 
-    default:
+    if ($limit) {
+      $query->pager(['limit' => $limit]);
+    }
+    $results[$entity_type][$field_name] = $query->execute();
   }
+  return $results;
+}
+
+
+function saved_query_update_references($entity_type, $ids, $field) {
+  $manager = \Drupal::entityManager()->getStorage($entity_type);
+  $entities = $manager->loadMultiple($ids);
+  foreach ($entities as $entity) {
+    saved_query_update_single_entity($entity, $field);
+  }
+}
+
+function saved_query_update_single_entity(FieldableEntityInterface $entity, $field) {
+  $query_field = $entity->get($field)[0];
+  $target_field = $entity->getFieldDefinition($field)->getSetting('target_field');
+
+  if ($query = $query_field->getQuery()) {
+    $matches = $query->execute();
+    $reference_data = [];
+    foreach ($matches as $id => $match) {
+      $reference_data[] = ['target_id' => $id];
+    }
+    if ($reference_data) {
+      $entity->set($target_field, $reference_data);
+      $entity->save();
+    }
+  }
+}
+
+
+function saved_query_candidate_fields() {
+  $candidate_fields = [];
+
+  $field_map = \Drupal::entityManager()->getFieldMap();
+  foreach ($field_map as $entity_type_id => $field) {
+    foreach ($field as $field_name => $info) {
+      if ($info['type'] == 'saved_query_field') {
+        $candidate_fields[$entity_type_id][] = $field_name;
+      }
+    }
+  }
+
+  return $candidate_fields;
 }
