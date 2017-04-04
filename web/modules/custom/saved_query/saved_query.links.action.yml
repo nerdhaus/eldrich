@@ -1,5 +1,0 @@
-entity.saved_query.add_form:
-  route_name: entity.saved_query.add_form
-  title: 'Add Saved query'
-  appears_on:
-    - entity.saved_query.collection
