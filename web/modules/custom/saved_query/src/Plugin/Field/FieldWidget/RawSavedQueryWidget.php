@@ -32,6 +32,10 @@ class RawSavedQueryWidget extends WidgetBase {
         $entity_type_options[$key] = $data->getLabel(); // Lazy for the moment.
       }
     }
+
+    $element['#type'] = 'fieldset';
+    $element['#collapsible'] = TRUE;
+
     $element['entity_type'] = [
       '#title' => t('Entity type'),
       '#options' => $entity_type_options,
@@ -81,6 +85,17 @@ class RawSavedQueryWidget extends WidgetBase {
    * {@inheritdoc}
    */
   public function massageFormValues(array $values, array $form, FormStateInterface $form_state) {
+    // In a more complex widget, this would be responsible for turning
+    // incoming form values into a structured array like:
+    //
+    // $values['conditions'] = array(
+    //   "entity_field" => "value",
+    //   "entity_field_2" => array(
+    //     "value" => 1,
+    //     "operator" => ">",
+    //   ),
+    // );
+
     return $values;
   }
 }

@@ -145,7 +145,7 @@ class SavedQueryField extends FieldItemBase {
    *   to create them.
    */
   public function getConditions() {
-    $conditions = $this->get('conditions');
+    $conditions = $this->conditions;
     if (!is_array($conditions)) {
       $conditions = Json::decode($conditions);
       if (!is_array($conditions)) {
@@ -160,7 +160,7 @@ class SavedQueryField extends FieldItemBase {
   }
 
   public function getSorts() {
-    $sorts = $this->get('sorts');
+    $sorts = $this->sorts;
     if (!is_array($sorts)) {
       $sorts = Json::decode($sorts);
       if (!is_array($sorts)) {
@@ -191,10 +191,10 @@ class SavedQueryField extends FieldItemBase {
    *   The query object that can query the given entity type.
    */
   public function getQuery() {
-    $query = \Drupal::entityQuery($this->get('entity_type'));
+    $query = \Drupal::entityQuery($this->entity_type);
     $token = \Drupal::token();
 
-    if ($limit = $this->get('limit')) {
+    if ($limit = $this->limit) {
       $query->pager(['limit' => $limit]);
     }
 

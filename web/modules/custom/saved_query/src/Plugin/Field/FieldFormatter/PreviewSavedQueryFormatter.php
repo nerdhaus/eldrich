@@ -47,21 +47,7 @@ class PreviewSavedQueryFormatter extends FormatterBase {
    *   The textual output generated.
    */
   protected function viewValue(FieldItemInterface $item) {
-    // Shamelessly stolen from Devel's dpq() function.
-
-    $query = $item->getQuery();
-
-    if (method_exists($query, 'preExecute')) {
-      $query->preExecute();
-    }
-    $sql = (string) $query;
-    $quoted = array();
-    $connection = Database::getConnection();
-    foreach ((array) $query->arguments() as $key => $val) {
-      $quoted[$key] = is_null($val) ? 'NULL' : $connection->quote($val);
-    }
-    $sql = strtr($sql, $quoted);
-
-    return nl2br(Html::escape($sql));
+    $value = print_r($item->getValue(), TRUE);
+    return nl2br(Html::escape($value));
   }
 }
