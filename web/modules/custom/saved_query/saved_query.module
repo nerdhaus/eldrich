@@ -17,7 +17,7 @@ function saved_query_find_candidates($limit = 0) {
       $query = \Drupal::entityQuery($entity_type);
       $now = time();
 
-      // TODO: Use a select query and subtract interval from now.
+      // TODO: Use a select query and subtract interval from $now, filtering out already-refreshed entities.
       $query
         ->condition("$field_name.interval", 0, '>')
         ->condition('status', 1);
@@ -53,6 +53,7 @@ function saved_query_update_single_entity(FieldableEntityInterface $entity, $fie
       $reference_data[] = ['target_id' => $id];
     }
     if ($reference_data) {
+      // TODO: Preserve existing values, if entities are already referenced.
       $entity->set($target_field, $reference_data);
       $entity->save();
     }
