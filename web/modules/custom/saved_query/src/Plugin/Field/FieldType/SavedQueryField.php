@@ -195,7 +195,7 @@ class SavedQueryField extends FieldItemBase {
     $token = \Drupal::token();
 
     if ($limit = $this->limit) {
-      $query->pager(['limit' => $limit]);
+      $query->range(0, $limit);
     }
 
     foreach ($this->getConditions() as $key => $condition) {
@@ -208,11 +208,11 @@ class SavedQueryField extends FieldItemBase {
       else {
         if (is_array($condition)) {
           $value = $token->replace($condition['value']);
-          $query->condition($key, $value, $condition['operator'] ?: '=');
+          $query->condition($key, $condition['value'], $condition['operator'] ?: '=');
         }
         else {
           $value = $token->replace($condition);
-          $query->condition($key, $value);
+          $query->condition($key, $condition);
         }
       }
     }

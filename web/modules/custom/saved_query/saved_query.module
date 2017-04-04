@@ -11,26 +11,30 @@ use Drupal\Core\Field\FieldDefinitionInterface;
 
 function saved_query_find_candidates($limit = 0) {
   $results = [];
-  foreach (saved_query_candidate_fields() as $entity_type => $field_name) {
-    $query = \Drupal::entityQuery($this->get($entity_type));
-    $now = time();
+  $fields = saved_query_candidate_fields();
+  foreach ($fields as $entity_type => $field_names) {
+    foreach ($field_names as $field_name) {
+      $query = \Drupal::entityQuery($entity_type);
+      $now = time();
 
-    // TODO: Use a select query and subtract interval from now.
-    $query
-      ->condition("$field_name.interval", 0, '>')
-      ->condition("$field_name.refreshed", $now, '<')
-      ->condition('status', 1);
+      // TODO: Use a select query and subtract interval from now.
+      $query
+        ->condition("$field_name.interval", 0, '>')
+        ->condition('status', 1);
 
-    if ($limit) {
-      $query->pager(['limit' => $limit]);
+      if ($limit) {
+        $query->range(0, $limit);
+      }
+      if ($nids = $query->execute()) {
+        $results[$entity_type][$field_name] = $nids;
+      }
     }
-    $results[$entity_type][$field_name] = $query->execute();
   }
   return $results;
 }
 
 
-function saved_query_update_references($entity_type, $ids, $field) {
+function saved_query_update_references($entity_type, $field, $ids) {
   $manager = \Drupal::entityManager()->getStorage($entity_type);
   $entities = $manager->loadMultiple($ids);
   foreach ($entities as $entity) {
