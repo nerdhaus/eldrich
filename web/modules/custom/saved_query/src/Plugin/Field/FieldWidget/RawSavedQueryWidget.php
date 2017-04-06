@@ -5,7 +5,7 @@ namespace Drupal\saved_query\Plugin\Field\FieldWidget;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Component\Serialization\Json;
+use Drupal\Component\Serialization\Yaml;
 
 
 /**
@@ -46,12 +46,12 @@ class RawSavedQueryWidget extends WidgetBase {
     $element['conditions'] = [
       '#title' => t('Conditions'),
       '#type' => 'textarea',
-      '#default_value' => isset($items[$delta]->conditions) ? $items[$delta]->conditions : NULL,
+      '#default_value' => isset($items[$delta]->conditions) ? Yaml::encode($items[$delta]->conditions) : NULL,
     ];
     $element['sorts'] = [
       '#title' => t('Sorts'),
       '#type' => 'textarea',
-      '#default_value' => isset($items[$delta]->sorts) ? $items[$delta]->sorts : NULL,
+      '#default_value' => isset($items[$delta]->sorts) ? Yaml::encode($items[$delta]->sorts) : NULL,
     ];
     $element['limit'] = [
       '#title' => t('Result limit'),
@@ -71,6 +71,10 @@ class RawSavedQueryWidget extends WidgetBase {
       '#options' => $intervals,
       '#type' => 'select',
       '#default_value' => isset($items[$delta]->interval) ? $items[$delta]->interval : NULL,
+    ];
+    $element['refresh_now'] = [
+      '#title' => t('Refresh on save'),
+      '#type' => 'checkbox',
     ];
     $element['refreshed'] = [
       '#title' => t('Last refreshed'),
@@ -94,8 +98,29 @@ class RawSavedQueryWidget extends WidgetBase {
     //     "value" => 1,
     //     "operator" => ">",
     //   ),
+    //   'or' => array(
+    //     "entity_field_a" => "value",
+    //     "entity_field_b" => "value",
+    //   );
     // );
+    //
+    // AND / OR conditions are not yet handled, but won't confuse the query builder.
+    // Sorts are handled similarly, though the structure is simpler:
+    //
+    // $values['sorts'] = array(
+    //   "entity_field" => "ASC",
+    //   "entity_field_2" => "DESC"
+    // );
+    //
+    // ORDER BY RANDOM() isn't supported, because you're a bad person.
 
-    return $values;
+    foreach (['conditions', 'sorts'] as $serialized) {
+      if (!empty($values[$serialized])) {
+        $values[$serialized] = Yaml::decode($values[$serialized]);
+      }
+      else {
+        unset($values[$serialized]);
+      }
+    }
   }
 }

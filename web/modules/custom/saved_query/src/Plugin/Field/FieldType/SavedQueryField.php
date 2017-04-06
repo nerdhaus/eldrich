@@ -42,11 +42,11 @@ class SavedQueryField extends FieldItemBase {
     $properties['entity_type'] = DataDefinition::create('string')
       ->setLabel(new TranslatableMarkup('Entity Type'));
 
-    $properties['sorts'] = DataDefinition::create('string')
-      ->setLabel(new TranslatableMarkup('Sorts'));
+    $properties['raw_sorts'] = DataDefinition::create('string')
+      ->setLabel(new TranslatableMarkup('Raw Sorts'));
 
-    $properties['conditions'] = DataDefinition::create('string')
-      ->setLabel(new TranslatableMarkup('Conditions'));
+    $properties['raw_conditions'] = DataDefinition::create('string')
+      ->setLabel(new TranslatableMarkup('Raw Conditions'));
 
     $properties['limit'] = DataDefinition::create('integer')
       ->setLabel(new TranslatableMarkup('Result limit'));
@@ -57,8 +57,22 @@ class SavedQueryField extends FieldItemBase {
     $properties['refreshed'] = DataDefinition::create('integer')
       ->setLabel(new TranslatableMarkup('Last Refresh'));
 
+    $properties['conditions'] = DataDefinition::create('string')
+      ->setLabel(new TranslatableMarkup('Conditions'))
+      ->setComputed(TRUE)
+      ->setReadOnly(FALSE)
+      ->setClass('\Drupal\saved_query\QuerySerialized')
+      ->setSetting('source property', 'conditions');
+
+    $properties['sorts'] = DataDefinition::create('string')
+      ->setComputed(TRUE)
+      ->setReadOnly(FALSE)
+      ->setClass('\Drupal\saved_query\QuerySerialized')
+      ->setSetting('source property', 'sorts');
+
     return $properties;
   }
+
 
   /**
    * {@inheritdoc}
