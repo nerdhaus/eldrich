@@ -73,11 +73,11 @@ class SavedQueryField extends FieldItemBase {
         ],
         'conditions' => [
           'type' => 'varchar',
-          'length' => 1024
+          'length' => 2048
         ],
         'sorts' => [
           'type' => 'varchar',
-          'length' => 1024
+          'length' => 2048
         ],
         'limit' => ['type' => 'int'],
         'interval' => ['type' => 'int'],
@@ -92,7 +92,7 @@ class SavedQueryField extends FieldItemBase {
    * {@inheritdoc}
    */
   public function getConstraints() {
-    // Ensure constraints are valid yml
+    // TODO: Ensure conditions and sorts serialize properly
     $constraints = parent::getConstraints();
     return $constraints;
   }

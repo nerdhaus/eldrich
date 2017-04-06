@@ -9,7 +9,31 @@ use Drupal\Core\Field\FieldDefinitionInterface;
  * Contains saved_query.module.
  */
 
-function saved_query_find_candidates($limit = 0) {
+/**
+ * Returns a list of defined saved_query_field fields.
+ * @return array
+ */
+function saved_query_candidate_fields() {
+  $candidate_fields = [];
+
+  $field_map = \Drupal::entityManager()->getFieldMap();
+  foreach ($field_map as $entity_type_id => $field) {
+    foreach ($field as $field_name => $info) {
+      if ($info['type'] == 'saved_query_field') {
+        $candidate_fields[$entity_type_id][] = $field_name;
+      }
+    }
+  }
+
+  return $candidate_fields;
+}
+
+/**
+ * Finds a list of entities with saved_query_fields scheduled for refresh.
+ * @param int $limit
+ * @return array
+ */
+function saved_query_find_candidates($limit) {
   $results = [];
   $fields = saved_query_candidate_fields();
   foreach ($fields as $entity_type => $field_names) {
@@ -25,8 +49,8 @@ function saved_query_find_candidates($limit = 0) {
       if ($limit) {
         $query->range(0, $limit);
       }
-      if ($nids = $query->execute()) {
-        $results[$entity_type][$field_name] = $nids;
+      if ($ids = $query->execute()) {
+        $results[$entity_type][$field_name] = $ids;
       }
     }
   }
@@ -34,6 +58,14 @@ function saved_query_find_candidates($limit = 0) {
 }
 
 
+/**
+ * Given an entity type, field, and a set of IDs, run the reference updater
+ * for each entity.
+ *
+ * @param string $entity_type
+ * @param string $field
+ * @param array $ids
+ */
 function saved_query_update_references($entity_type, $field, $ids) {
   $manager = \Drupal::entityManager()->getStorage($entity_type);
   $entities = $manager->loadMultiple($ids);
@@ -42,6 +74,13 @@ function saved_query_update_references($entity_type, $field, $ids) {
   }
 }
 
+/**
+ * Do the actual work of loading a query from the saved_query_field, running it,
+ * and updating the destination entity_reference field with the results.
+ *
+ * @param \Drupal\Core\Entity\FieldableEntityInterface $entity
+ * @param string $field
+ */
 function saved_query_update_single_entity(FieldableEntityInterface $entity, $field) {
   $query_field = $entity->get($field)[0];
   $target_field = $entity->getFieldDefinition($field)->getSetting('target_field');
@@ -58,20 +97,4 @@ function saved_query_update_single_entity(FieldableEntityInterface $entity, $fie
       $entity->save();
     }
   }
-}
-
-
-function saved_query_candidate_fields() {
-  $candidate_fields = [];
-
-  $field_map = \Drupal::entityManager()->getFieldMap();
-  foreach ($field_map as $entity_type_id => $field) {
-    foreach ($field as $field_name => $info) {
-      if ($info['type'] == 'saved_query_field') {
-        $candidate_fields[$entity_type_id][] = $field_name;
-      }
-    }
-  }
-
-  return $candidate_fields;
 }
