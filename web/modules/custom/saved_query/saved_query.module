@@ -10,47 +10,32 @@ use Drupal\Core\Field\FieldDefinitionInterface;
  */
 
 /**
- * Returns a list of defined saved_query_field fields.
- * @return array
- */
-function saved_query_candidate_fields() {
-  $candidate_fields = [];
-
-  $field_map = \Drupal::entityManager()->getFieldMap();
-  foreach ($field_map as $entity_type_id => $field) {
-    foreach ($field as $field_name => $info) {
-      if ($info['type'] == 'saved_query_field') {
-        $candidate_fields[$entity_type_id][] = $field_name;
-      }
-    }
-  }
-
-  return $candidate_fields;
-}
-
-/**
  * Finds a list of entities with saved_query_fields scheduled for refresh.
  * @param int $limit
  * @return array
  */
 function saved_query_find_candidates($limit) {
   $results = [];
-  $fields = saved_query_candidate_fields();
-  foreach ($fields as $entity_type => $field_names) {
-    foreach ($field_names as $field_name) {
-      $query = \Drupal::entityQuery($entity_type);
-      $now = time();
 
-      // TODO: Use a select query and subtract interval from $now, filtering out already-refreshed entities.
-      $query
-        ->condition("$field_name.interval", 0, '>')
-        ->condition('status', 1);
+  $field_map = \Drupal::entityManager()->getFieldMap();
 
-      if ($limit) {
-        $query->range(0, $limit);
-      }
-      if ($ids = $query->execute()) {
-        $results[$entity_type][$field_name] = $ids;
+  foreach ($field_map as $entity_type_id => $field) {
+    foreach ($field as $field_name => $info) {
+      if ($info['type'] == 'saved_query_field') {
+        $now = time();
+        $type_info = \Drupal::entityTypeManager()->getDefinition($entity_type_id);
+
+        $query = \Drupal::entityQuery($entity_type_id);
+
+        // TODO: Use a select query and subtract interval from $now, filtering out already-refreshed entities.
+        $query->condition("$field_name.interval", 0, '>');
+
+        if ($limit) {
+          $query->range(0, $limit);
+        }
+        if ($ids = $query->execute()) {
+          $results[$entity_type_id][$field_name] = $ids;
+        }
       }
     }
   }

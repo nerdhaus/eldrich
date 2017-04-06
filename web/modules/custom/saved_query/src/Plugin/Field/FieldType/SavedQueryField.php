@@ -85,11 +85,11 @@ class SavedQueryField extends FieldItemBase {
           'default' => 'node',
           'length' => 64
         ],
-        'conditions' => [
+        'raw_conditions' => [
           'type' => 'varchar',
           'length' => 2048
         ],
-        'sorts' => [
+        'raw_sorts' => [
           'type' => 'varchar',
           'length' => 2048
         ],
@@ -152,53 +152,6 @@ class SavedQueryField extends FieldItemBase {
   }
 
   /**
-   * Returns an (optionally nested) array of query criteria.
-   *
-   * @return array
-   *   These are not actually core QueryCondition objects, just the data used
-   *   to create them.
-   */
-  public function getConditions() {
-    $conditions = $this->conditions;
-    if (!is_array($conditions)) {
-      $conditions = Json::decode($conditions);
-      if (!is_array($conditions)) {
-        return [];
-      }
-    }
-    return $conditions;
-  }
-
-  public function setConditions(Array $conditions) {
-    $this->set('conditions', Json::encode($conditions));
-  }
-
-  public function getSorts() {
-    $sorts = $this->sorts;
-    if (!is_array($sorts)) {
-      $sorts = Json::decode($sorts);
-      if (!is_array($sorts)) {
-        return [];
-      }
-    }
-    return $sorts;
-  }
-
-  public function setSorts(Array $sorts) {
-    $this->set('sorts', Json::encode($sorts));
-  }
-
-
-  public function preSave() {
-    if (is_array($this->conditions)) {
-      $this->conditions = Json::encode($this->conditions);
-    }
-    if (is_array($this->sorts)) {
-      $this->sorts = Json::encode($this->sorts);
-    }
-  }
-
-  /**
    * Returns a ready-to-execute EntityQueryInterface instance.
    *
    * @return \Drupal\Core\Entity\Query\QueryInterface
@@ -212,7 +165,7 @@ class SavedQueryField extends FieldItemBase {
       $query->range(0, $limit);
     }
 
-    foreach ($this->getConditions() as $key => $condition) {
+    foreach ($this->conditions as $key => $condition) {
       if (strtolower($key) == 'and') {
         // TODO: AndConditionGroups
       }
@@ -231,7 +184,7 @@ class SavedQueryField extends FieldItemBase {
       }
     }
 
-    foreach ($this->getSorts() as $field => $direction) {
+    foreach ($this->sorts as $field => $direction) {
       $query->sort($field, $direction);
     }
 
