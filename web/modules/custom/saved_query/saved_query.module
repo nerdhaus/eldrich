@@ -3,7 +3,6 @@
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Field\FieldDefinitionInterface;
 
-
 /**
  * @file
  * Contains saved_query.module.
@@ -11,30 +10,26 @@ use Drupal\Core\Field\FieldDefinitionInterface;
 
 /**
  * Finds a list of entities with saved_query_fields scheduled for refresh.
- * @param int $limit
  * @return array
  */
-function saved_query_find_candidates($limit) {
+function saved_query_find_candidates() {
   $results = [];
 
   $field_map = \Drupal::entityManager()->getFieldMap();
-
   foreach ($field_map as $entity_type_id => $field) {
     foreach ($field as $field_name => $info) {
       if ($info['type'] == 'saved_query_field') {
-        $now = time();
-        $type_info = \Drupal::entityTypeManager()->getDefinition($entity_type_id);
 
-        $query = \Drupal::entityQuery($entity_type_id);
+        $table = $entity_type_id . '__' . $field_name;
+        $ids = db_query(
+          "SELECT entity_id FROM {$table} t " .
+          "WHERE t." .$field_name. "_refreshed < (:now - t." .$field_name. "_interval) " .
+          "AND t." .$field_name. "_interval > 0 AND t.deleted = 0;",
+            array(':now' => time())
+        );
 
-        // TODO: Use a select query and subtract interval from $now, filtering out already-refreshed entities.
-        $query->condition("$field_name.interval", 0, '>');
-
-        if ($limit) {
-          $query->range(0, $limit);
-        }
-        if ($ids = $query->execute()) {
-          $results[$entity_type_id][$field_name] = $ids;
+        if ($ids) {
+          $results[$entity_type_id][$field_name] = $ids->fetchCol();
         }
       }
     }
@@ -51,11 +46,11 @@ function saved_query_find_candidates($limit) {
  * @param string $field
  * @param array $ids
  */
-function saved_query_update_references($entity_type, $field, $ids) {
-  $manager = \Drupal::entityManager()->getStorage($entity_type);
+function saved_query_update_references($entity_type_id, $field_name, $ids) {
+  $manager = \Drupal::entityManager()->getStorage($entity_type_id);
   $entities = $manager->loadMultiple($ids);
   foreach ($entities as $entity) {
-    saved_query_update_single_entity($entity, $field);
+    saved_query_update_single_entity($entity, $field_name);
   }
 }
 
@@ -67,19 +62,35 @@ function saved_query_update_references($entity_type, $field, $ids) {
  * @param string $field
  */
 function saved_query_update_single_entity(FieldableEntityInterface $entity, $field) {
-  $query_field = $entity->get($field)[0];
-  $target_field = $entity->getFieldDefinition($field)->getSetting('target_field');
+  if ($entity->hasField($field)) {
+    $query_field = $entity->get($field)[0];
+    $target_field = $entity->getFieldDefinition($field)->getSetting('target_field');
 
-  if ($query = $query_field->getQuery()) {
-    $matches = $query->execute();
-    $reference_data = [];
-    foreach ($matches as $id => $match) {
-      $reference_data[] = ['target_id' => $id];
+    if ($entity->hasField($target_field) && ($query = $query_field->getQuery())) {
+      $ids = $query->execute();
+      $references = [];
+
+      foreach ($ids as $id) {
+        $references[] = ['target_id' => $id];
+      }
+
+      if ($references) {
+        $entity->set($target_field, $references);
+        $entity->{$field}->refreshed = time();
+        $entity->{$field}->refresh_now = FALSE;
+
+        $entity->save();
+      }
     }
-    if ($reference_data) {
-      // TODO: Preserve existing values, if entities are already referenced.
-      $entity->set($target_field, $reference_data);
-      $entity->save();
+  }
+}
+
+function saved_query_cron() {
+  // TODO: Move to a queue
+  $data = saved_query_find_candidates();
+  foreach ($data as $entity_type_id => $fields) {
+    foreach ($fields as $field_name => $ids) {
+      saved_query_update_references($entity_type_id, $field_name, $ids);
     }
   }
 }

@@ -16,9 +16,16 @@ use Drupal\Core\TypedData\TypedData;
  * A computed property for processing text with a format.
  *
  * Required settings (below the definition's 'settings' key) are:
- *  - text source: The text property containing the to be processed text.
+ *  - source property: The name of the property containing the serialized data.
  */
 class QuerySerialized extends TypedData {
+
+  /**
+   * The unserialized data.
+   *
+   * @var array
+   */
+  protected $data;
 
   /**
    * {@inheritdoc}
@@ -35,29 +42,31 @@ class QuerySerialized extends TypedData {
    * Implements \Drupal\Core\TypedData\TypedDataInterface::getValue().
    */
   public function getValue($langcode = NULL) {
-    $item = $this->getParent();
-    $value = $item->{($this->definition->getSetting('source property'))};
+    if (!isset($this->data)) {
+      $item = $this->getParent();
+      $value = $item->{($this->definition->getSetting('source property'))};
 
-    return unserialize($value);
+      if (empty($value)) {
+        $this->data = [];
+      }
+      else {
+        $this->data = unserialize($value);
+      }
+    }
+    return $this->data;
   }
 
   /**
    * {@inheritdoc}
    */
   public function setValue($value, $notify = TRUE) {
-    $item = $this->getParent();
-    $source = $this->definition->getSetting('source property');
+    if (is_array($value)) {
+      $this->data = $value;
 
-    if (!isset($value)) {
-      $item->{$source} = NULL;
-    }
-    elseif (is_array($value)) {
-      $item->{$source} = serialize($value);
-    }
-
-    // Notify the parent of any changes.
-    if ($notify && isset($this->parent)) {
-      $this->parent->onChange($this->name);
+      // Notify the parent of any changes.
+      if ($notify && isset($this->parent)) {
+        $this->parent->onChange($this->name);
+      }
     }
   }
 }

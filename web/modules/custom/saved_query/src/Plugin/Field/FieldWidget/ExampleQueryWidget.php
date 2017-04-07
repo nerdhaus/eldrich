@@ -20,11 +20,13 @@ use Drupal\Component\Serialization\Yaml;
  *   multiple_values = FALSE
  * )
  */
-class RawSavedQueryWidget extends WidgetBase {
+class ExampleQueryWidget extends WidgetBase {
   /**
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
+
+    $title = empty($items[$delta]->conditions['title']) ? '' :$items[$delta]->conditions['title']['value'];
 
     $element['#type'] = 'fieldset';
     $element['#collapsible'] = TRUE;
@@ -33,29 +35,27 @@ class RawSavedQueryWidget extends WidgetBase {
       '#type' => 'value',
       '#value' => 'node',
     ];
+    $element['refresh_now'] = [
+      '#type' => 'value',
+      '#value' => TRUE,
+    ];
     $element['interval'] = [
       '#type' => 'value',
       '#value' => 360 * 2,
     ];
 
-    $element['age'] = [
-      '#title' => t('Conditions'),
-      '#type' => 'textarea',
-      '#default_value' => isset($items[$delta]->conditions) ? Yaml::encode($items[$delta]->conditions) : NULL,
+    $element['title'] = [
+      '#title' => t('Title Contains'),
+      '#type' => 'textfield',
+      '#default_value' => $title,
     ];
-    $element['age'] = [
-      '#title' => t('Conditions'),
-      '#type' => 'textarea',
-      '#default_value' => isset($items[$delta]->conditions) ? Yaml::encode($items[$delta]->conditions) : NULL,
-    ];
-
 
     $element['sorts'] = [
       '#title' => t('Sort By'),
       '#type' => 'select',
       '#options' => array(
         'date-asc' => t('Chronological'),
-        'date-dec' => t('Blog-style'),
+        'date-desc' => t('Blog-style'),
         'title-asc' => t('Alphabetical'),
       ),
       '#default_value' => isset($items[$delta]->sorts) ? Yaml::encode($items[$delta]->sorts) : NULL,
@@ -102,13 +102,38 @@ class RawSavedQueryWidget extends WidgetBase {
     //
     // ORDER BY RANDOM() isn't supported, because you're a bad person.
 
-    foreach (['conditions', 'sorts'] as $serialized) {
-      if (!empty($values[$serialized])) {
-        $values[$serialized] = Yaml::decode($values[$serialized]);
+    foreach ($values as &$item) {
+      foreach ($item as $key => $value) {
+        if (empty($value)) {
+          unset($item[$key]);
+        }
+      }
+
+      if (!empty($item['title'])) {
+        $item['conditions']['title'] = array(
+          'value' => $item['title'],
+          'operator' => 'CONTAINS',
+        );
       }
       else {
-        unset($values[$serialized]);
+        $item['conditions'] = [];
+      }
+      unset($item['title']);
+
+      switch ($item['sorts']) {
+        case 'date-asc':
+          $item['sorts'] = ['created' => 'ASC'];
+          break;
+        case 'date-desc':
+          $item['sorts'] = ['created' => 'DESC'];
+          break;
+        case 'title-asc':
+          $item['sorts'] = ['title' => 'ASC'];
+          break;
+        default:
+          unset($item['sorts']);
       }
     }
+    return $values;
   }
 }

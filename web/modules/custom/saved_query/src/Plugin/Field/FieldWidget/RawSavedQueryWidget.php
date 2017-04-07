@@ -46,12 +46,12 @@ class RawSavedQueryWidget extends WidgetBase {
     $element['conditions'] = [
       '#title' => t('Conditions'),
       '#type' => 'textarea',
-      '#default_value' => isset($items[$delta]->conditions) ? Yaml::encode($items[$delta]->conditions) : NULL,
+      '#default_value' => empty($items[$delta]->conditions) ? NULL : Yaml::encode($items[$delta]->conditions),
     ];
     $element['sorts'] = [
       '#title' => t('Sorts'),
       '#type' => 'textarea',
-      '#default_value' => isset($items[$delta]->sorts) ? Yaml::encode($items[$delta]->sorts) : NULL,
+      '#default_value' => empty($items[$delta]->sorts) ? NULL : Yaml::encode($items[$delta]->sorts),
     ];
     $element['limit'] = [
       '#title' => t('Result limit'),
@@ -118,13 +118,17 @@ class RawSavedQueryWidget extends WidgetBase {
     //
     // ORDER BY RANDOM() isn't supported, because you're a bad person.
 
-    foreach (['conditions', 'sorts'] as $serialized) {
-      if (!empty($values[$serialized])) {
-        $values[$serialized] = Yaml::decode($values[$serialized]);
-      }
-      else {
-        unset($values[$serialized]);
+    foreach ($values as &$item) {
+      foreach ($item as $key => $value) {
+        if (empty($value)) {
+          unset($item[$key]);
+        }
+        elseif (in_array($key, ['conditions', 'sorts'])) {
+          $item[$key] = Yaml::decode($value);
+        }
       }
     }
+
+    return $values;
   }
 }
