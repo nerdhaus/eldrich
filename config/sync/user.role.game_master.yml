@@ -90,3 +90,6 @@ permissions:
   - 'use component.quick form mode'
   - 'use instance.quick form mode'
   - 'use node.quick form mode'
+  - 'create encounter content'
+  - 'delete own encounter content'
+  - 'edit own encounter content'
