@@ -11,6 +11,7 @@ dependencies:
     - field.storage.node.field_gear_type
     - field.storage.node.field_gm_only
     - field.storage.node.field_location_type
+    - field.storage.node.field_npcs
     - field.storage.node.field_parent_faction
     - field.storage.node.field_parent_location
     - field.storage.node.field_population
@@ -21,6 +22,7 @@ dependencies:
     - node.type.creature
     - node.type.derangement
     - node.type.drug
+    - node.type.encounter
     - node.type.faction
     - node.type.gear
     - node.type.inspiration

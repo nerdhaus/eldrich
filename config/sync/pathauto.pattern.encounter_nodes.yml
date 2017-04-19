@@ -1,0 +1,22 @@
+uuid: d11f3c0c-5b7e-4481-9b47-6dbc284dca6a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: encounter_nodes
+label: 'Encounter nodes'
+type: 'canonical_entities:node'
+pattern: 'games/[node:field_campaign:entity:field_short_name]/[node:title]'
+selection_criteria:
+  cce35154-e833-4ab3-b14c-cb47d0c0341f:
+    id: node_type
+    bundles:
+      encounter: encounter
+    negate: false
+    context_mapping:
+      node: node
+    uuid: cce35154-e833-4ab3-b14c-cb47d0c0341f
+selection_logic: and
+weight: -5
+relationships: {  }

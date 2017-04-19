@@ -304,9 +304,19 @@ class Node extends PreprocessBase implements PreprocessInterface {
 
   public function addCampaignTools(NodeInterface $node, Variables $variables) {
     $nids = [];
-    foreach ($node->field_pcs as $field) {
-      $nids[$field->target_id] = $field->target_id;
+
+    if ($node->hasField('field_pcs')) {
+      foreach ($node->field_pcs as $field) {
+        $nids[$field->target_id] = $field->target_id;
+      }
     }
+
+    if ($node->hasField('field_npcs')) {
+      foreach ($node->field_npcs as $field) {
+        $nids[$field->target_id] = $field->target_id;
+      }
+    }
+
     if (count($nids)) {
       $variables->tools['initiative'] = [
         '#type' => 'link',
@@ -334,5 +344,4 @@ class Node extends PreprocessBase implements PreprocessInterface {
       ];
     }
   }
-
 }

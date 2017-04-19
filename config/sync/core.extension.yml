@@ -81,6 +81,7 @@ module:
   quick_pages: 0
   range: 0
   rest: 0
+  saved_query: 0
   search: 0
   serialization: 0
   shortcut: 0

@@ -78,6 +78,12 @@ class NodeTitle extends PreprocessBase implements PreprocessInterface {
           '#url' => Url::fromRoute('node.add', ['node_type' => 'session'], ['query' => ['campaign' => $node->id()]]),
         ];
 
+        $actions['encounter'] = [
+          '#type' => 'link',
+          '#title' => t('Add an Encounter'),
+          '#url' => Url::fromRoute('node.add', ['node_type' => 'encounter'], ['query' => ['campaign' => $node->id()]]),
+        ];
+
         $actions['invite'] = [
           '#markup' => '<a href="#" data-toggle="modal" data-target="#inviteModal">' . t('Invite a Player') . '</a>',
         ];

@@ -1,0 +1,45 @@
+uuid: c5a7fbef-0e20-46ae-ac1b-835b6cc08db7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.encounter.field_campaign
+    - field.field.node.encounter.field_description
+    - field.field.node.encounter.field_gm_only
+    - field.field.node.encounter.field_npcs
+    - field.field.node.encounter.field_pcs
+    - node.type.encounter
+  module:
+    - text
+    - user
+id: node.encounter.default
+targetEntityType: node
+bundle: encounter
+mode: default
+content:
+  field_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_npcs:
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: scratchpad
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+  field_pcs:
+    type: entity_reference_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: scratchpad
+      link: false
+    third_party_settings: {  }
+hidden:
+  field_campaign: true
+  field_gm_only: true
+  links: true

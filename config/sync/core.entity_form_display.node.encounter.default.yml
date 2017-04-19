@@ -1,0 +1,91 @@
+uuid: cb9dc9bf-e9b0-4bdd-9629-27e4383193c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.encounter.field_campaign
+    - field.field.node.encounter.field_description
+    - field.field.node.encounter.field_gm_only
+    - field.field.node.encounter.field_npcs
+    - field.field.node.encounter.field_pcs
+    - node.type.encounter
+  module:
+    - path
+    - text
+id: node.encounter.default
+targetEntityType: node
+bundle: encounter
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+  field_campaign:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_description:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_gm_only:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_npcs:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_pcs:
+    weight: 10
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  path:
+    type: path
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

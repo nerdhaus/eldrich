@@ -80,8 +80,11 @@ view_mode ? view_mode|clean_class
             <li class="list-group-item">{{ item }}</li>
           {% endfor %}
         {% endif %}
+      {% if content.sub_content_encounters %}
+        <li class="list-group-item active"><strong class="list-group-item-heading">Encounters</strong></li>
+        {{ content.sub_content_encounters }}
+      {% endif %}
       </ul>
-
     </div>
     {% endblock %}
   </section>

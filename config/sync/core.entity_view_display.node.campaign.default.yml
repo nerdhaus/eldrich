@@ -31,7 +31,7 @@ third_party_settings:
         - sourced_content_npcs
         - sourced_content_weird
       parent_name: ''
-      weight: 7
+      weight: 8
       format_type: html_element
       format_settings:
         element: div
@@ -123,6 +123,10 @@ content:
     third_party_settings: {  }
   sourced_content_weird:
     weight: 16
+    settings: {  }
+    third_party_settings: {  }
+  sub_content_encounters:
+    weight: 7
     settings: {  }
     third_party_settings: {  }
   sub_content_gear:

@@ -1,0 +1,29 @@
+uuid: 0b30addd-9f96-4009-ba27-f025e96221eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gm_only
+    - node.type.encounter
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.encounter.field_gm_only
+field_name: field_gm_only
+entity_type: node
+bundle: encounter
+label: 'Hide from players'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,38 @@
+uuid: 52be71b1-1fb0-40a9-bdbd-0e92259ef123
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_npcs
+    - node.type.creature
+    - node.type.encounter
+    - node.type.npc
+    - node.type.robot
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: 'Add NPC'
+    custom_remove: 'Remove NPC'
+id: node.encounter.field_npcs
+field_name: field_npcs
+entity_type: node
+bundle: encounter
+label: NPCs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      creature: creature
+      npc: npc
+      robot: robot
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: creature
+field_type: entity_reference
