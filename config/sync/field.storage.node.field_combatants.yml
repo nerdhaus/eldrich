@@ -1,0 +1,20 @@
+uuid: 3dfd9e04-12d6-426f-a604-ba3ab177ae9e
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_override
+    - node
+id: node.field_combatants
+field_name: field_combatants
+entity_type: node
+type: entity_reference_override
+settings:
+  target_type: node
+module: entity_reference_override
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

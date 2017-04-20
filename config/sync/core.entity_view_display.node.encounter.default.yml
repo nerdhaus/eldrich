@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.encounter.field_campaign
+    - field.field.node.encounter.field_combatants
     - field.field.node.encounter.field_description
     - field.field.node.encounter.field_gm_only
-    - field.field.node.encounter.field_npcs
-    - field.field.node.encounter.field_pcs
+    - field.field.node.encounter.field_maps
     - node.type.encounter
   module:
+    - entity_reference_override
+    - image
     - text
     - user
 id: node.encounter.default
@@ -17,30 +19,31 @@ targetEntityType: node
 bundle: encounter
 mode: default
 content:
+  field_combatants:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: scratchpad
+      override_action: title
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_override_entity
+    region: content
   field_description:
-    weight: 1
+    weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_npcs:
-    weight: 3
+  field_maps:
+    weight: 1
     label: hidden
     settings:
-      view_mode: scratchpad
-      link: false
+      image_style: ''
+      image_link: file
     third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
-  field_pcs:
-    type: entity_reference_entity_view
-    weight: 2
-    label: hidden
-    settings:
-      view_mode: scratchpad
-      link: false
-    third_party_settings: {  }
+    type: image
     region: content
 hidden:
   field_campaign: true

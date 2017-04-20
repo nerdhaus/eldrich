@@ -4,12 +4,15 @@ status: true
 dependencies:
   config:
     - field.field.node.encounter.field_campaign
+    - field.field.node.encounter.field_combatants
     - field.field.node.encounter.field_description
     - field.field.node.encounter.field_gm_only
-    - field.field.node.encounter.field_npcs
-    - field.field.node.encounter.field_pcs
+    - field.field.node.encounter.field_maps
+    - image.style.thumbnail
     - node.type.encounter
   module:
+    - entity_reference_override
+    - image
     - path
     - text
 id: node.encounter.default
@@ -29,6 +32,15 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
+  field_combatants:
+    weight: 10
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_override_autocomplete
+    region: content
   field_description:
     weight: 3
     settings:
@@ -44,23 +56,13 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
-  field_npcs:
-    weight: 11
+  field_maps:
+    weight: 9
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_pcs:
-    weight: 10
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: image_image
     region: content
   path:
     type: path

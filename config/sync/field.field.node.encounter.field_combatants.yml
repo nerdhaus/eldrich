@@ -1,27 +1,29 @@
-uuid: 52be71b1-1fb0-40a9-bdbd-0e92259ef123
+uuid: 85178c85-55d8-461d-9905-a7572a910ff8
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_npcs
+    - field.storage.node.field_combatants
     - node.type.creature
     - node.type.encounter
     - node.type.npc
+    - node.type.pc
     - node.type.robot
   module:
     - custom_add_another
+    - entity_reference_override
 third_party_settings:
   custom_add_another:
-    custom_add_another: 'Add NPC'
-    custom_remove: 'Remove NPC'
-id: node.encounter.field_npcs
-field_name: field_npcs
+    custom_add_another: 'Add Combatant'
+    custom_remove: ''
+id: node.encounter.field_combatants
+field_name: field_combatants
 entity_type: node
 bundle: encounter
-label: NPCs
+label: Combatants
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -30,9 +32,11 @@ settings:
     target_bundles:
       creature: creature
       npc: npc
+      pc: pc
       robot: robot
     sort:
       field: _none
     auto_create: false
     auto_create_bundle: creature
-field_type: entity_reference
+  override_label: 'Custom name'
+field_type: entity_reference_override
