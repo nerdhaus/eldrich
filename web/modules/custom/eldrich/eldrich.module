@@ -71,9 +71,6 @@ function eldrich_entity_presave(EntityInterface $entity) {
           }
         }
         break;
-      case 'muse':
-        // If the muse doesn't have any data, pre-populate it as a Standard Muse
-        break;
     }
   }
 
@@ -87,6 +84,26 @@ function eldrich_entity_presave(EntityInterface $entity) {
     }
   }
 }
+
+
+/**
+ * Preload standard muse values into new muse instances.
+ */
+function eldrich_entity_prepare_form(EntityInterface $entity, $operation, FormStateInterface $form_state) {
+  if ($entity->bundle() == 'muse' && $entity->isNew()) {
+    // Load a standard muse and prepopulate this muse's values with it.
+    $result = \Drupal::entityQuery('node')
+      ->condition('type', 'mind')
+      ->condition('title', 'Standard Muse')
+      ->execute();
+    $muse = \Drupal::entityTypeManager()->getStorage('node')->load(reset($id));
+
+    $entity->title = $muse->label();
+    $entity->field_skills = $muse->entity->field_skills->getValue();
+    $entity->field_stats = $muse->field_stats->getValue();
+  }
+}
+
 
 /**
  * Implements hook_form_alter().
