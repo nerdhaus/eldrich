@@ -2290,7 +2290,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_browser",
-                "reference": "72e11e062f7cbcc6755e3a5d37a824f519b8bc00"
+                "reference": "f588c4313ce1a81a735bbde01a14029961c9f2d5"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2309,8 +2309,8 @@
                     "dev-8.x-1.x": "8.1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-rc2+0-dev",
-                    "datestamp": "1487581683"
+                    "version": "8.x-1.0+0-dev",
+                    "datestamp": "1492677846"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2357,7 +2357,7 @@
                 "issues": "http://drupal.org/project/issues/entity_browser",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "time": "2017-04-10 14:08:32"
+            "time": "2017-04-20 08:41:58"
         },
         {
             "name": "drupal/entity_embed",
@@ -2425,7 +2425,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_reference_override",
-                "reference": "10f647aae014c75e27dd27a14c8147adba20fcb0"
+                "reference": "9d3878a1464eeaff18e571e88b31baf894ad69d9"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2466,7 +2466,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_reference_override"
             },
-            "time": "2017-01-12 01:55:36"
+            "time": "2017-04-20 21:59:45"
         },
         {
             "name": "drupal/entity_reference_quantity",
@@ -8353,16 +8353,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.33.1",
+            "version": "v1.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "a87f959f4b691da66aada267a2dfdb260d0bb58a"
+                "reference": "dd6ca96227917e1e85b41c7c3cc6507b411e0927"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a87f959f4b691da66aada267a2dfdb260d0bb58a",
-                "reference": "a87f959f4b691da66aada267a2dfdb260d0bb58a",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/dd6ca96227917e1e85b41c7c3cc6507b411e0927",
+                "reference": "dd6ca96227917e1e85b41c7c3cc6507b411e0927",
                 "shasum": ""
             },
             "require": {
@@ -8411,7 +8411,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-04-18T21:43:11+00:00"
+            "time": "2017-04-20T17:39:48+00:00"
         },
         {
             "name": "webflo/drupal-finder",
