@@ -2425,7 +2425,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_reference_override",
-                "reference": "9d3878a1464eeaff18e571e88b31baf894ad69d9"
+                "reference": "54c428f0e1c7c468b90b696214f333c142794907"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2440,7 +2440,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1484186288"
+                    "datestamp": "1492725842"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2466,7 +2466,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_reference_override"
             },
-            "time": "2017-04-20 21:59:45"
+            "time": "2017-04-20 23:10:05"
         },
         {
             "name": "drupal/entity_reference_quantity",
@@ -5444,16 +5444,16 @@
         },
         {
             "name": "eluceo/ical",
-            "version": "0.11.1",
+            "version": "0.11.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/markuspoerschke/iCal.git",
-                "reference": "effd686dc59b8e7cf3c49c9f180106bf478d3f9b"
+                "reference": "7819b6b634e1e4e4bb1c63d9017b47fc7563f9af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/markuspoerschke/iCal/zipball/effd686dc59b8e7cf3c49c9f180106bf478d3f9b",
-                "reference": "effd686dc59b8e7cf3c49c9f180106bf478d3f9b",
+                "url": "https://api.github.com/repos/markuspoerschke/iCal/zipball/7819b6b634e1e4e4bb1c63d9017b47fc7563f9af",
+                "reference": "7819b6b634e1e4e4bb1c63d9017b47fc7563f9af",
                 "shasum": ""
             },
             "require": {
@@ -5493,7 +5493,7 @@
                 "ics",
                 "php calendar"
             ],
-            "time": "2017-04-04T17:59:11+00:00"
+            "time": "2017-04-20T22:16:50+00:00"
         },
         {
             "name": "embed/embed",
