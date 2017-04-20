@@ -24,6 +24,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
   field_skills:
     weight: 4
     settings:
@@ -32,6 +33,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: skill_reference_autocomplete
+    region: content
   field_stats:
     weight: 3
     settings:
@@ -43,6 +45,7 @@ content:
           list: ''
           add: Add
     type: stat_block_table
+    region: content
   title:
     type: string_textfield
     weight: -5
@@ -50,4 +53,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden: {  }

@@ -12,7 +12,7 @@ _core:
   default_config_hash: f3Dd5TnUiFDjFZp9yEGJInwt6cUzs7O6SvLTFTATSlU
 id: bootstrap_tools
 theme: bootstrap
-region: '-1'
+region: navigation
 weight: -5
 provider: null
 plugin: 'system_menu_block:tools'

@@ -25,18 +25,21 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+    region: content
   field_session_promo:
     weight: 104
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_session_recap:
     weight: 105
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
 hidden:
   field_campaign: true
   links: true

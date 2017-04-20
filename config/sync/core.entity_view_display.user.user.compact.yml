@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_canon_preferences
     - field.field.user.user.field_personal_links
     - field.field.user.user.field_profile
     - field.field.user.user.user_picture
@@ -26,6 +27,7 @@ content:
     settings:
       trim_length: 400
     third_party_settings: {  }
+    region: content
   user_picture:
     type: image
     weight: 0
@@ -34,7 +36,9 @@ content:
       image_link: content
     third_party_settings: {  }
     label: hidden
+    region: content
 hidden:
+  field_canon_preferences: true
   field_personal_links: true
   member_for: true
   user_content_characters: true

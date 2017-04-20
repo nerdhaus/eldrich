@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.derangement.field_usage
     - node.type.derangement
   module:
-    - entity_reference_quantity
+    - eldrich
     - text
     - user
 id: node.derangement.default
@@ -23,6 +23,7 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_derangement_level:
     weight: 1
     label: inline
@@ -30,12 +31,14 @@ content:
       link: true
     third_party_settings: {  }
     type: eldrich_popup_formatter
+    region: content
   field_description:
     weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_sources:
     weight: 102
     label: above
@@ -47,12 +50,14 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
+    region: content
   field_usage:
     weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
 hidden:
   field_attribution: true
   links: true

@@ -46,6 +46,7 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
+    region: content
   field_chat:
     weight: 11
     label: hidden
@@ -54,6 +55,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: comment_default
+    region: content
   field_cost:
     weight: 2
     label: inline
@@ -63,12 +65,14 @@ content:
       template: ' (min. {{ quantity }})'
     third_party_settings: {  }
     type: eldrich_popup_formatter
+    region: content
   field_description:
     weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_gear:
     weight: 15
     label: inline
@@ -77,6 +81,7 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
+    region: content
   field_gear_type:
     weight: 0
     label: inline
@@ -84,6 +89,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_image:
     weight: 17
     label: above
@@ -92,6 +98,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
   field_linked_skill:
     weight: 12
     label: inline
@@ -100,6 +107,7 @@ content:
       override_action: suffix
     third_party_settings: {  }
     type: entity_reference_override_label
+    region: content
   field_passengers:
     weight: 10
     label: inline
@@ -108,18 +116,21 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
   field_plot_seeds:
     weight: 16
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_roleplay_notes:
     weight: 2
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_skill_bonus:
     weight: 13
     label: inline
@@ -128,6 +139,7 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
   field_sources:
     weight: 16
     label: above
@@ -139,10 +151,13 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
+    region: content
   related_gear:
     weight: 10
+    region: content
   related_lists_gear_siblings:
     weight: 10
+    region: content
 hidden:
   field_armor: true
   field_based_on: true

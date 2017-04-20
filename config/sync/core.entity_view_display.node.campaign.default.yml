@@ -54,22 +54,27 @@ content:
     weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
   campaign_characters:
     weight: 10
+    region: content
   campaign_gear:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+    region: content
   campaign_sessions:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_campaign_status:
     weight: 2
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
+    region: content
   field_image:
     weight: 0
     label: hidden
@@ -78,12 +83,14 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
   field_official_downloads:
     weight: 5
     label: above
     settings: {  }
     third_party_settings: {  }
     type: file_default
+    region: content
   field_pcs:
     weight: 3
     label: above
@@ -91,60 +98,74 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_resources:
     weight: 4
     label: above
     settings: {  }
     third_party_settings: {  }
     type: url_embed
+    region: content
   sourced_content_entity_view_1:
     weight: 7
     settings: {  }
     third_party_settings: {  }
+    region: content
   sourced_content_factions:
     weight: 14
     settings: {  }
     third_party_settings: {  }
+    region: content
   sourced_content_gear:
     weight: 13
     settings: {  }
     third_party_settings: {  }
+    region: content
   sourced_content_locations:
     weight: 11
     settings: {  }
     third_party_settings: {  }
+    region: content
   sourced_content_npcs:
     weight: 15
     settings: {  }
     third_party_settings: {  }
+    region: content
   sourced_content_overview:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+    region: content
   sourced_content_weird:
     weight: 16
     settings: {  }
     third_party_settings: {  }
+    region: content
   sub_content_encounters:
     weight: 7
     settings: {  }
     third_party_settings: {  }
+    region: content
   sub_content_gear:
     weight: 7
     settings: {  }
     third_party_settings: {  }
+    region: content
   sub_content_npcs:
     weight: 8
     settings: {  }
     third_party_settings: {  }
+    region: content
   sub_content_sessions:
     weight: 6
     settings: {  }
     third_party_settings: {  }
+    region: content
   sub_content_world:
     weight: 9
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_npcs: true
   field_short_name: true

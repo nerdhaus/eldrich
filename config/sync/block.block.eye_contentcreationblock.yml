@@ -13,7 +13,7 @@ third_party_settings:
     classes: ''
 id: eye_contentcreationblock
 theme: eye
-region: '-1'
+region: header
 weight: 5
 provider: null
 plugin: content_creation_block

@@ -45,6 +45,7 @@ content:
       template: ' (min. {{ quantity }})'
       link: false
     third_party_settings: {  }
+    region: content
   field_description:
     type: text_trimmed
     weight: 1
@@ -52,6 +53,7 @@ content:
     settings:
       trim_length: 400
     third_party_settings: {  }
+    region: content
   field_gear_type:
     type: entity_reference_label
     weight: 0
@@ -59,6 +61,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+    region: content
 hidden:
   field_armor: true
   field_augmentations: true

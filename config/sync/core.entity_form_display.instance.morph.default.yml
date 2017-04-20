@@ -32,6 +32,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
+    region: content
   field_description:
     weight: 8
     settings:
@@ -39,6 +40,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
   field_mobility_system:
     weight: 3
     settings:
@@ -47,6 +49,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_model:
     weight: 1
     settings:
@@ -55,11 +58,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_movement_speed:
     weight: 4
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_widget
+    region: content
   field_skills:
     weight: 7
     settings:
@@ -68,6 +73,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: skill_reference_autocomplete
+    region: content
   field_stats:
     weight: 2
     settings:
@@ -79,6 +85,7 @@ content:
           list: ''
           add: Add
     type: stat_block_table
+    region: content
   field_traits:
     weight: 5
     settings:
@@ -87,6 +94,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
+    region: content
   title:
     type: string_textfield
     weight: 0
@@ -94,4 +102,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden: {  }

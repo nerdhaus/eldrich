@@ -24,6 +24,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_background:
     weight: 1
     label: inline
@@ -31,6 +32,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_credits:
     weight: 3
     label: inline
@@ -39,6 +41,7 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
   field_faction:
     weight: 2
     label: inline
@@ -46,12 +49,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_notes:
     weight: 5
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_rep:
     weight: 4
     label: inline
@@ -62,4 +67,5 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_popup_formatter
+    region: content
 hidden: {  }

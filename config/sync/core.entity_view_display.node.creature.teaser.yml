@@ -44,6 +44,7 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
 hidden:
   field_armor: true
   field_attribution: true

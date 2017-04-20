@@ -25,12 +25,14 @@ content:
       placeholder: ''
       rows: 5
     third_party_settings: {  }
+    region: content
   field_featured:
     weight: 7
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
   field_icon:
     weight: 5
     settings:
@@ -38,6 +40,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_plural:
     weight: 3
     settings:
@@ -45,6 +48,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_short_name:
     weight: 4
     settings:
@@ -52,6 +56,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_sources:
     weight: 6
     settings:
@@ -60,6 +65,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_quantity_select
+    region: content
   name:
     type: string_textfield
     weight: 0
@@ -67,9 +73,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   path:
     type: path
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden: {  }

@@ -32,12 +32,14 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
+    region: content
   field_description:
     weight: 7
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_mobility_system:
     weight: 3
     label: hidden
@@ -48,6 +50,7 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_popup_formatter
+    region: content
   field_model:
     weight: 0
     label: hidden
@@ -55,12 +58,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_movement_speed:
     weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_formatter
+    region: content
   field_skills:
     weight: 6
     label: hidden
@@ -68,6 +73,7 @@ content:
       link: '1'
     third_party_settings: {  }
     type: skill_reference_label
+    region: content
   field_stats:
     weight: 1
     label: hidden
@@ -77,6 +83,7 @@ content:
       delimiter: ', '
     third_party_settings: {  }
     type: stat_block_simple
+    region: content
   field_traits:
     weight: 4
     label: hidden
@@ -85,5 +92,6 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
+    region: content
 hidden:
   title: true

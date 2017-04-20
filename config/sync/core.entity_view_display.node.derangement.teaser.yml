@@ -24,12 +24,14 @@ content:
     settings:
       link: false
     third_party_settings: {  }
+    region: content
   field_description:
     type: text_default
     weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_attribution: true
   field_sources: true

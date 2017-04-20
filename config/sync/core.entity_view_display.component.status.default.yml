@@ -23,12 +23,14 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
   field_notes:
     weight: 6
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_rez_points:
     weight: 5
     label: inline
@@ -37,6 +39,7 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
   field_stress:
     weight: 0
     label: inline
@@ -45,6 +48,7 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
   field_trauma:
     weight: 1
     label: inline
@@ -53,6 +57,7 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
   field_wounds:
     weight: 4
     label: inline
@@ -61,4 +66,5 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
 hidden: {  }

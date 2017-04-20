@@ -26,6 +26,7 @@ content:
       timezone_override: ''
       date_format: 'l n/j'
     third_party_settings: {  }
+    region: content
   field_session_promo:
     type: text_trimmed
     weight: 1
@@ -33,6 +34,7 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   field_session_recap:
     type: text_trimmed
     weight: 2
@@ -40,9 +42,11 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   links:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_campaign: true

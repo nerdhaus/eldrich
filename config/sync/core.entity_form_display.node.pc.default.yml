@@ -92,6 +92,7 @@ content:
     weight: 4
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_description:
     weight: 18
     settings:
@@ -99,6 +100,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
   field_equipped_armor:
     weight: 20
     settings:
@@ -113,6 +115,7 @@ content:
       allow_existing: false
     third_party_settings: {  }
     type: inline_entity_form_complex
+    region: content
   field_equipped_weapons:
     weight: 19
     settings:
@@ -127,6 +130,7 @@ content:
       allow_existing: false
     third_party_settings: {  }
     type: inline_entity_form_complex
+    region: content
   field_gear:
     weight: 17
     settings:
@@ -135,6 +139,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
+    region: content
   field_identity:
     weight: 11
     settings:
@@ -154,6 +159,7 @@ content:
           list: ''
           add: Add
     type: inline_entity_form_complex
+    region: content
   field_image:
     weight: 17
     settings:
@@ -169,6 +175,7 @@ content:
       show_crop_area: false
     third_party_settings: {  }
     type: image_widget_crop
+    region: content
   field_morph:
     weight: 10
     settings:
@@ -186,6 +193,7 @@ content:
           list: ''
           add: Add
     type: entity_browser_entity_reference
+    region: content
   field_motivations:
     weight: 16
     settings:
@@ -194,6 +202,7 @@ content:
       delimiter: ', '
     third_party_settings: {  }
     type: multi_text_string_widget
+    region: content
   field_muse:
     weight: 12
     settings:
@@ -211,6 +220,7 @@ content:
           list: ''
           add: Add
     type: entity_browser_entity_reference
+    region: content
   field_owned_blueprints:
     weight: 18
     settings:
@@ -219,6 +229,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
+    region: content
   field_quote:
     weight: 15
     settings:
@@ -226,6 +237,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_skills:
     weight: 13
     settings:
@@ -234,6 +246,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: skill_reference_autocomplete
+    region: content
   field_sleights:
     weight: 15
     settings:
@@ -242,6 +255,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_stats:
     weight: 12
     settings:
@@ -253,6 +267,7 @@ content:
           list: ''
           add: Add
     type: stat_block_table
+    region: content
   field_status:
     weight: 14
     settings:
@@ -269,6 +284,7 @@ content:
           list: ''
           add: Add
     type: inline_entity_form_simple
+    region: content
   field_traits:
     weight: 14
     settings:
@@ -277,23 +293,27 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
+    region: content
   path:
     type: path
     weight: 7
     settings: {  }
     third_party_settings: {  }
+    region: content
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 5
     third_party_settings: {  }
+    region: content
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 6
     third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: 0
@@ -301,6 +321,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 3
@@ -309,5 +330,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden:
   field_based_on: true

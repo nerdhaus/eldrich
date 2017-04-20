@@ -29,6 +29,7 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   field_image:
     type: image
     weight: 0
@@ -37,6 +38,7 @@ content:
       image_style: square_small
       image_link: content
     third_party_settings: {  }
+    region: content
 hidden:
   field_allow_others: true
   field_plot_seeds: true

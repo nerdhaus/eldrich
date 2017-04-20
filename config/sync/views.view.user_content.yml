@@ -7,10 +7,8 @@ dependencies:
     - field.storage.node.field_faction_type
     - field.storage.node.field_gear_type
     - field.storage.node.field_gm_only
-    - field.storage.node.field_image
     - field.storage.node.field_location_type
     - field.storage.node.field_sources
-    - image.style.square_small
     - node.type.armor
     - node.type.augmentation
     - node.type.creature
@@ -31,7 +29,6 @@ dependencies:
   module:
     - entity_reference_quantity
     - eva
-    - image
     - node
     - user
 id: user_content

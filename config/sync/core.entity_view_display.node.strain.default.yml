@@ -33,30 +33,35 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: comment_default
+    region: content
   field_description:
     weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_infectiousness:
     weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_plot_seeds:
     weight: 16
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_roleplay_notes:
     weight: 2
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_source:
     weight: 102
     label: above
@@ -64,6 +69,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_quantity_label
+    region: content
   field_sources:
     weight: 103
     label: inline
@@ -75,6 +81,7 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
+    region: content
   field_stages:
     weight: 4
     label: hidden
@@ -83,6 +90,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_vectors:
     weight: 0
     label: inline
@@ -93,6 +101,7 @@ content:
       template: ' ({{ quantity }})'
     third_party_settings: {  }
     type: eldrich_popup_formatter
+    region: content
 hidden:
   field_based_on: true
   field_gm_only: true

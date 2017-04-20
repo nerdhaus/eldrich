@@ -21,6 +21,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
   field_notes:
     weight: 5
     settings:
@@ -28,28 +29,33 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
   field_rez_points:
     weight: 6
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
   field_stress:
     weight: 0
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
   field_trauma:
     weight: 1
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
   field_wounds:
     weight: 3
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
 hidden: {  }

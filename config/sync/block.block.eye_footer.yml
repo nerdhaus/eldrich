@@ -12,7 +12,7 @@ _core:
   default_config_hash: h06zhb3xV9_2_3Zy9NsyylL7YBaEDlMwMEqNwAn8kMo
 id: eye_footer
 theme: eye
-region: '-1'
+region: header
 weight: 0
 provider: null
 plugin: 'system_menu_block:footer'

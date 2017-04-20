@@ -36,6 +36,7 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_action_type:
     weight: 2
     label: inline
@@ -43,6 +44,7 @@ content:
       link: true
     third_party_settings: {  }
     type: eldrich_popup_formatter
+    region: content
   field_conditional:
     weight: 9
     label: above
@@ -52,12 +54,14 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
   field_description:
     weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_is_active:
     weight: 1
     label: hidden
@@ -67,12 +71,14 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
   field_plot_seeds:
     weight: 16
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_psi_skill:
     weight: 5
     label: inline
@@ -80,12 +86,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_roleplay_notes:
     weight: 2
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_skills:
     weight: 8
     label: inline
@@ -93,6 +101,7 @@ content:
       link: '1'
     third_party_settings: {  }
     type: skill_reference_label
+    region: content
   field_sleight_duration:
     weight: 4
     label: inline
@@ -100,6 +109,7 @@ content:
       link: true
     third_party_settings: {  }
     type: eldrich_popup_formatter
+    region: content
   field_sleight_level:
     weight: 0
     label: inline
@@ -107,6 +117,7 @@ content:
       link: true
     third_party_settings: {  }
     type: eldrich_popup_formatter
+    region: content
   field_sleight_range:
     weight: 3
     label: inline
@@ -114,6 +125,7 @@ content:
       link: true
     third_party_settings: {  }
     type: eldrich_popup_formatter
+    region: content
   field_sources:
     weight: 102
     label: above
@@ -125,12 +137,14 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
+    region: content
   field_stats:
     weight: 7
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: stat_block_simple
+    region: content
   field_strain:
     weight: 6
     label: inline
@@ -138,6 +152,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   field_exsurgent: true
   links: true

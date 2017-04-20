@@ -21,12 +21,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_speed:
     weight: -1
     label: above
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_formatter
+    region: content
   field_weight:
     weight: 0
     label: above
@@ -35,6 +37,7 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
   title:
     label: hidden
     type: string
@@ -42,5 +45,6 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
 hidden:
   id: true

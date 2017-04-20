@@ -19,6 +19,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_weight:
     weight: -1
     label: above
@@ -27,6 +28,7 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
   title:
     label: hidden
     type: string
@@ -34,5 +36,6 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
 hidden:
   id: true

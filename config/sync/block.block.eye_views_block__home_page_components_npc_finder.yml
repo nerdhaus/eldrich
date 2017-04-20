@@ -16,7 +16,7 @@ third_party_settings:
     classes: col-md-6
 id: eye_views_block__home_page_components_npc_finder
 theme: eye
-region: '-1'
+region: header
 weight: -7
 provider: null
 plugin: 'views_block:home_page_components-npc_finder'

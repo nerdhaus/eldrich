@@ -13,7 +13,7 @@ third_party_settings:
     classes: col-sm-4
 id: eye_campaigninvite
 theme: eye
-region: '-1'
+region: header
 weight: -5
 provider: null
 plugin: 'invite_by_email_block:campaign_invite'

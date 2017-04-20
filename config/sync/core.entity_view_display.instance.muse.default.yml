@@ -22,6 +22,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_skills:
     weight: 3
     label: inline
@@ -29,12 +30,14 @@ content:
       link: '1'
     third_party_settings: {  }
     type: skill_reference_label
+    region: content
   field_stats:
     weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: stat_block_table
+    region: content
   title:
     type: string
     weight: 0
@@ -42,4 +45,5 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
 hidden: {  }

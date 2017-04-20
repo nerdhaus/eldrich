@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.npc.field_morph
     - field.field.node.npc.field_motivations
     - field.field.node.npc.field_owned_blueprints
+    - field.field.node.npc.field_plot_seeds
     - field.field.node.npc.field_quote
     - field.field.node.npc.field_roleplay_notes
     - field.field.node.npc.field_skills
@@ -39,6 +40,7 @@ content:
     settings:
       trim_length: 400
     third_party_settings: {  }
+    region: content
   field_image:
     type: image_url
     weight: 0
@@ -48,6 +50,7 @@ content:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
+    region: content
 hidden:
   field_based_on: true
   field_equipped_armor: true
@@ -59,6 +62,7 @@ hidden:
   field_morph: true
   field_motivations: true
   field_owned_blueprints: true
+  field_plot_seeds: true
   field_quote: true
   field_roleplay_notes: true
   field_skills: true

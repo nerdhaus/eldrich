@@ -22,24 +22,28 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_invite_email_body:
     weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_invite_email_subject:
     weight: 1
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   invitee:
     label: hidden
     type: author
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   reg_code:
     label: above
     type: string
@@ -47,6 +51,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
   type:
     label: above
     type: string
@@ -54,10 +59,12 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
   user_id:
     label: hidden
     type: author
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden: {  }

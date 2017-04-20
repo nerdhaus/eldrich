@@ -23,14 +23,17 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   gear_tree_list:
     weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
   taxonomy_term_category_items:
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_featured: true
   field_icon: true

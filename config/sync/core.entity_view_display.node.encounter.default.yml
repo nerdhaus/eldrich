@@ -23,6 +23,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_npcs:
     weight: 3
     label: hidden
@@ -31,6 +32,7 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_pcs:
     type: entity_reference_entity_view
     weight: 2
@@ -39,6 +41,7 @@ content:
       view_mode: scratchpad
       link: false
     third_party_settings: {  }
+    region: content
 hidden:
   field_campaign: true
   field_gm_only: true

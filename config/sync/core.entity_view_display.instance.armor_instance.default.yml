@@ -18,6 +18,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_armor_mods:
     weight: -3
     label: inline
@@ -25,5 +26,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
 hidden:
   title: true

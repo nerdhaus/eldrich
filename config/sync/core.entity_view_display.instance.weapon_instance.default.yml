@@ -20,6 +20,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_ammo_mods:
     weight: -1
     label: inline
@@ -27,6 +28,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_weapon:
     weight: -4
     label: inline
@@ -34,6 +36,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_weapon_mods:
     weight: -3
     label: inline
@@ -41,5 +44,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
 hidden:
   title: true

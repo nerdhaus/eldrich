@@ -25,6 +25,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
   field_name:
     weight: 0
     settings:
@@ -32,6 +33,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_stress_incurred:
     weight: 2
     settings:
@@ -39,11 +41,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_timeframe:
     weight: 1
     settings: {  }
     third_party_settings: {  }
     type: range
+    region: content
 hidden:
   field_delta: true
   field_virus: true

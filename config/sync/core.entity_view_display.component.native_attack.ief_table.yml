@@ -30,6 +30,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   field_ap_modifier: true
   field_area_effect: true

@@ -24,6 +24,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_name:
     weight: 0
     label: hidden
@@ -31,6 +32,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_stress_incurred:
     weight: 3
     label: inline
@@ -38,6 +40,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_timeframe:
     weight: 1
     label: inline
@@ -49,6 +52,7 @@ content:
       to_prefix_suffix: false
     third_party_settings: {  }
     type: integer_range_time_field_formatter
+    region: content
 hidden:
   field_delta: true
   field_virus: true

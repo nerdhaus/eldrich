@@ -38,6 +38,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_equipped_armor:
     weight: 2
     label: above
@@ -46,6 +47,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_equipped_weapons:
     weight: 3
     label: above
@@ -54,6 +56,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_gear:
     weight: 1
     label: inline
@@ -62,6 +65,7 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
+    region: content
   field_identity:
     weight: 4
     label: hidden
@@ -70,6 +74,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_image:
     weight: 14
     label: above
@@ -79,6 +84,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image_url
+    region: content
   field_morph:
     weight: 6
     label: hidden
@@ -87,6 +93,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_motivations:
     weight: 11
     label: above
@@ -94,6 +101,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_muse:
     weight: 9
     label: hidden
@@ -102,6 +110,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_owned_blueprints:
     weight: 4
     label: inline
@@ -110,6 +119,7 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
+    region: content
   field_quote:
     weight: 1
     label: hidden
@@ -117,6 +127,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_skills:
     type: skill_reference_label
     weight: 0
@@ -124,6 +135,7 @@ content:
     settings:
       link: '1'
     third_party_settings: {  }
+    region: content
   field_sleights:
     weight: 2
     label: inline
@@ -131,6 +143,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_status:
     weight: 10
     label: hidden
@@ -139,6 +152,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_traits:
     weight: 1
     label: inline
@@ -147,6 +161,7 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
+    region: content
 hidden:
   field_based_on: true
   field_stats: true

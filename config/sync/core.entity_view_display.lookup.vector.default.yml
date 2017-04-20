@@ -19,6 +19,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_lookup_code:
     weight: -4
     label: above
@@ -26,6 +27,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   title:
     label: hidden
     type: string
@@ -33,4 +35,5 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
 hidden: {  }

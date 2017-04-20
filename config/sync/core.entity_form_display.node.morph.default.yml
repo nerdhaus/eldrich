@@ -136,11 +136,13 @@ content:
     weight: 5
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_armor:
     weight: 15
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
+    region: content
   field_augmentations:
     weight: 17
     settings:
@@ -149,6 +151,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
+    region: content
   field_based_on:
     type: entity_reference_autocomplete_tags
     weight: 22
@@ -157,17 +160,20 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   field_blueprints:
     weight: 8
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
   field_chat:
     weight: 21
     settings: {  }
     third_party_settings: {  }
     type: comment_default
+    region: content
   field_cost:
     weight: 6
     settings:
@@ -176,12 +182,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_quantity_select
+    region: content
   field_cp_cost:
     weight: 7
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
   field_description:
     weight: 10
     settings:
@@ -189,11 +197,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
   field_gear_type:
     weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   field_image:
     weight: 11
     settings:
@@ -209,11 +219,13 @@ content:
       show_crop_area: false
     third_party_settings: {  }
     type: image_widget_crop
+    region: content
   field_mobility_system:
     weight: 16
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   field_morph_type:
     weight: 3
     settings:
@@ -222,11 +234,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_movement_speed:
     weight: 17
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_widget
+    region: content
   field_plot_seeds:
     weight: 3
     settings:
@@ -234,6 +248,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
   field_roleplay_notes:
     weight: 2
     settings:
@@ -241,6 +256,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
   field_short_name:
     weight: 1
     settings:
@@ -248,6 +264,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_skills:
     weight: 18
     settings:
@@ -256,6 +273,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: skill_reference_autocomplete
+    region: content
   field_sources:
     weight: 21
     settings:
@@ -264,18 +282,21 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_quantity_select
+    region: content
   field_stat_cap:
     weight: 14
     settings:
       display_style: all
     third_party_settings: {  }
     type: stat_block_table
+    region: content
   field_stat_variance:
     weight: 13
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
   field_stats:
     weight: 12
     settings:
@@ -287,6 +308,7 @@ content:
           list: ''
           add: Add
     type: stat_block_table
+    region: content
   field_traits:
     weight: 16
     settings:
@@ -295,23 +317,27 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_override_autocomplete
+    region: content
   path:
     type: path
     weight: 8
     settings: {  }
     third_party_settings: {  }
+    region: content
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 6
     third_party_settings: {  }
+    region: content
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 7
     third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: 0
@@ -319,6 +345,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 4
@@ -327,4 +354,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden: {  }

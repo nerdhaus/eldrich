@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.register
+    - field.field.user.user.field_canon_preferences
     - field.field.user.user.field_personal_links
     - field.field.user.user.field_profile
     - field.field.user.user.user_picture
@@ -11,6 +12,7 @@ dependencies:
   module:
     - image
     - link
+    - path
     - text
     - user
 _core:
@@ -24,8 +26,10 @@ content:
     weight: -10
     settings: {  }
     third_party_settings: {  }
+    region: content
   contact:
     weight: 5
+    region: content
   field_personal_links:
     weight: 8
     settings:
@@ -33,6 +37,7 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
   field_profile:
     weight: 7
     settings:
@@ -40,23 +45,28 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
   google_analytics:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+    region: content
   language:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   path:
     type: path
     weight: 30
     settings: {  }
     third_party_settings: {  }
+    region: content
   timezone:
     weight: 6
     settings: {  }
     third_party_settings: {  }
+    region: content
   user_picture:
     type: image_image
     settings:
@@ -64,4 +74,6 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     weight: -1
-hidden: {  }
+    region: content
+hidden:
+  field_canon_preferences: true

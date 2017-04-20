@@ -19,6 +19,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_notes:
     weight: 5
     settings:
@@ -26,5 +27,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
 hidden:
   field_creature: true

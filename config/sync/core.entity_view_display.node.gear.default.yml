@@ -34,6 +34,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: comment_default
+    region: content
   field_cost:
     weight: 2
     label: inline
@@ -44,12 +45,14 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_popup_formatter
+    region: content
   field_description:
     weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_gear_type:
     type: entity_reference_label
     weight: 0
@@ -57,18 +60,21 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+    region: content
   field_plot_seeds:
     weight: 16
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_roleplay_notes:
     weight: 2
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_sources:
     weight: 4
     label: above
@@ -80,10 +86,12 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
+    region: content
   related_gear:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_based_on: true
   field_blueprints: true

@@ -102,11 +102,13 @@ content:
     weight: 4
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_armor:
     weight: 10
     settings: {  }
     third_party_settings: {  }
     type: armor_widget
+    region: content
   field_based_on:
     type: entity_reference_autocomplete_tags
     weight: 22
@@ -115,17 +117,20 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   field_blueprints:
     weight: 7
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
   field_chat:
     weight: 21
     settings: {  }
     third_party_settings: {  }
     type: comment_default
+    region: content
   field_cost:
     weight: 6
     settings:
@@ -134,6 +139,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_quantity_select
+    region: content
   field_description:
     weight: 10
     settings:
@@ -141,11 +147,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
   field_gear_type:
     weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   field_plot_seeds:
     weight: 3
     settings:
@@ -153,6 +161,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
   field_roleplay_notes:
     weight: 2
     settings:
@@ -160,6 +169,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
   field_short_name:
     weight: 1
     settings:
@@ -167,6 +177,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_skills:
     weight: 13
     settings:
@@ -175,6 +186,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: skill_reference_autocomplete
+    region: content
   field_sources:
     weight: 21
     settings:
@@ -183,6 +195,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_quantity_select
+    region: content
   field_stats:
     weight: 12
     settings:
@@ -194,23 +207,27 @@ content:
           list: ''
           add: Add
     type: stat_block_table
+    region: content
   path:
     type: path
     weight: 7
     settings: {  }
     third_party_settings: {  }
+    region: content
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 5
     third_party_settings: {  }
+    region: content
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 6
     third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: 0
@@ -218,6 +235,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 3
@@ -226,4 +244,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden: {  }

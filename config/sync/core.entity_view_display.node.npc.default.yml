@@ -40,6 +40,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_gear:
     weight: 8
     label: inline
@@ -48,6 +49,7 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
+    region: content
   field_image:
     weight: 15
     label: hidden
@@ -57,6 +59,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image_url
+    region: content
   field_morph:
     weight: 4
     label: inline
@@ -64,6 +67,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_motivations:
     weight: 3
     label: inline
@@ -71,6 +75,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_owned_blueprints:
     weight: 9
     label: inline
@@ -79,12 +84,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_override_label
+    region: content
   field_plot_seeds:
     weight: 16
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_quote:
     weight: 0
     label: inline
@@ -92,12 +99,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_roleplay_notes:
     weight: 2
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_sleights:
     weight: 10
     label: inline
@@ -105,6 +114,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_sources:
     weight: 12
     label: inline
@@ -116,6 +126,7 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
+    region: content
   field_traits:
     weight: 7
     label: inline
@@ -124,6 +135,7 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
+    region: content
 hidden:
   field_based_on: true
   field_equipped_armor: true

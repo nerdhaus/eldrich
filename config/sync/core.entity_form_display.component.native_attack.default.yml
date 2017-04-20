@@ -50,33 +50,39 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: operation_widget
+    region: content
   field_area_effect:
     weight: 9
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+    region: content
   field_damage_dice:
     weight: 5
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: operation_widget
+    region: content
   field_damage_effects:
     weight: 8
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+    region: content
   field_damage_modifier:
     weight: 6
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: operation_widget
+    region: content
   field_firing_modes:
     weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+    region: content
   field_linked_skill:
     weight: 3
     settings:
@@ -85,12 +91,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_magazine_size:
     weight: 7
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
   field_name:
     weight: 0
     settings:
@@ -98,6 +106,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_notes:
     weight: 1
     settings:
@@ -105,11 +114,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
   field_range:
     weight: 6
     settings: {  }
     third_party_settings: {  }
     type: weapon_range_widget
+    region: content
   field_special_effect:
     weight: 2
     settings:
@@ -117,5 +128,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
 hidden:
   field_creature: true

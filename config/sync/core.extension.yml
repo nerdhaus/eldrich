@@ -81,14 +81,12 @@ module:
   quick_pages: 0
   range: 0
   rest: 0
-  saved_query: 0
   search: 0
   serialization: 0
   shortcut: 0
   simple_block: 0
   subpathauto: 0
   system: 0
-  system_stream_wrapper: 0
   taxonomy: 0
   text: 0
   token: 0
@@ -113,3 +111,4 @@ theme:
   bootstrap: 0
   veil: 0
   eye: 0
+profile: standard

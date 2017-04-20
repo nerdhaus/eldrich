@@ -23,6 +23,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_background:
     type: string
     weight: 1
@@ -30,6 +31,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
 hidden:
   field_credits: true
   field_faction: true

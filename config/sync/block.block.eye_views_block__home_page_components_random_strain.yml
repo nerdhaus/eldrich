@@ -16,7 +16,7 @@ third_party_settings:
     classes: col-md-4
 id: eye_views_block__home_page_components_random_strain
 theme: eye
-region: '-1'
+region: header
 weight: -2
 provider: null
 plugin: 'views_block:home_page_components-random_strain'

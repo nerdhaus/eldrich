@@ -10,7 +10,7 @@ _core:
   default_config_hash: iggZSiUKz4mYP1YPJ8SsUfFu79HIgOTt6IDy3Up59aM
 id: eye_powered
 theme: eye
-region: '-1'
+region: header
 weight: 1
 provider: null
 plugin: system_powered_by_block

@@ -30,6 +30,7 @@ content:
     settings:
       trim_length: 400
     third_party_settings: {  }
+    region: content
 hidden:
   field_attribution: true
   field_based_on: true

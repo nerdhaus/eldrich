@@ -41,6 +41,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_text
+    region: content
   field_chat:
     weight: 11
     label: hidden
@@ -49,6 +50,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: comment_default
+    region: content
   field_conditional:
     weight: 14
     label: above
@@ -58,6 +60,7 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
   field_cost:
     weight: 2
     label: inline
@@ -68,12 +71,14 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_popup_formatter
+    region: content
   field_description:
     weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_gear_type:
     weight: 0
     label: inline
@@ -81,18 +86,21 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_plot_seeds:
     weight: 16
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_roleplay_notes:
     weight: 2
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_skills:
     weight: 13
     label: above
@@ -100,6 +108,7 @@ content:
       link: true
     third_party_settings: {  }
     type: skill_reference_label
+    region: content
   field_sources:
     weight: 6
     label: above
@@ -111,6 +120,7 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
+    region: content
   field_special_effect:
     weight: 3
     label: inline
@@ -118,16 +128,19 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_stats:
     weight: 12
     label: above
     settings: {  }
     third_party_settings: {  }
     type: stat_block_table
+    region: content
   related_gear:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_based_on: true
   field_blueprints: true

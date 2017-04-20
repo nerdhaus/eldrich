@@ -12,7 +12,7 @@ _core:
   default_config_hash: f3Dd5TnUiFDjFZp9yEGJInwt6cUzs7O6SvLTFTATSlU
 id: eye_tools
 theme: eye
-region: '-1'
+region: header
 weight: 3
 provider: null
 plugin: 'system_menu_block:tools'

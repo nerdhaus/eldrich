@@ -35,12 +35,14 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: comment_default
+    region: content
   field_description:
     weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_faction_type:
     weight: 0
     label: inline
@@ -51,6 +53,7 @@ content:
       template: ' ({{ quantity }})'
     third_party_settings: {  }
     type: eldrich_popup_formatter
+    region: content
   field_locations:
     weight: 3
     label: inline
@@ -58,6 +61,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_memes:
     weight: 8
     label: inline
@@ -65,6 +69,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_parent_faction:
     weight: 1
     label: inline
@@ -72,18 +77,21 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_plot_seeds:
     weight: 16
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_roleplay_notes:
     weight: 2
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_short_name:
     weight: 11
     label: above
@@ -91,6 +99,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_sources:
     weight: 7
     label: inline
@@ -102,10 +111,12 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
+    region: content
   world_faction_children:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_based_on: true
   field_gm_only: true

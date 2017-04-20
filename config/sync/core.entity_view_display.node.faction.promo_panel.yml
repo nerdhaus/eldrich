@@ -4,12 +4,16 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.promo_panel
+    - field.field.node.faction.field_based_on
+    - field.field.node.faction.field_chat
     - field.field.node.faction.field_description
     - field.field.node.faction.field_faction_type
     - field.field.node.faction.field_gm_only
     - field.field.node.faction.field_locations
     - field.field.node.faction.field_memes
     - field.field.node.faction.field_parent_faction
+    - field.field.node.faction.field_plot_seeds
+    - field.field.node.faction.field_roleplay_notes
     - field.field.node.faction.field_short_name
     - field.field.node.faction.field_sources
     - node.type.faction
@@ -29,6 +33,7 @@ content:
       trim_length: 600
     third_party_settings: {  }
     type: text_trimmed
+    region: content
   field_faction_type:
     weight: 0
     label: inline
@@ -39,6 +44,7 @@ content:
       template: ' ({{ quantity }})'
     third_party_settings: {  }
     type: eldrich_popup_formatter
+    region: content
   field_sources:
     weight: 4
     label: hidden
@@ -50,11 +56,16 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
+    region: content
 hidden:
+  field_based_on: true
+  field_chat: true
   field_gm_only: true
   field_locations: true
   field_memes: true
   field_parent_faction: true
+  field_plot_seeds: true
+  field_roleplay_notes: true
   field_short_name: true
   links: true
   world_faction_children: true

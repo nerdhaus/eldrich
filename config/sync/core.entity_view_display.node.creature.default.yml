@@ -52,6 +52,7 @@ content:
       override_action: suffix
     third_party_settings: {  }
     type: entity_reference_override_label
+    region: content
   field_chat:
     weight: 11
     label: hidden
@@ -60,6 +61,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: comment_default
+    region: content
   field_cost:
     weight: 19
     label: above
@@ -69,6 +71,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_quantity_label
+    region: content
   field_creature_type:
     weight: 0
     label: inline
@@ -76,12 +79,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_description:
     weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_equipped_weapons:
     weight: 12
     label: above
@@ -90,6 +95,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_gear:
     weight: 9
     label: inline
@@ -98,6 +104,7 @@ content:
       override_action: suffix
     third_party_settings: {  }
     type: entity_reference_override_label
+    region: content
   field_image:
     weight: 15
     label: above
@@ -107,6 +114,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image_url
+    region: content
   field_mobility_system:
     weight: 4
     label: inline
@@ -117,12 +125,14 @@ content:
       template: ' ({{ quantity }})'
     third_party_settings: {  }
     type: eldrich_popup_formatter
+    region: content
   field_movement_speed:
     weight: 5
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_formatter
+    region: content
   field_native_abilities:
     weight: 17
     label: above
@@ -130,6 +140,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_native_attacks:
     weight: 16
     label: above
@@ -137,18 +148,21 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_plot_seeds:
     weight: 20
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_roleplay_notes:
     weight: 2
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_skills:
     weight: 6
     label: inline
@@ -156,6 +170,7 @@ content:
       link: '1'
     third_party_settings: {  }
     type: skill_reference_label
+    region: content
   field_sleights:
     weight: 18
     label: above
@@ -163,6 +178,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_sources:
     weight: 13
     label: above
@@ -174,6 +190,7 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
+    region: content
   field_strain:
     weight: 10
     label: inline
@@ -181,6 +198,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_traits:
     weight: 7
     label: inline
@@ -189,6 +207,7 @@ content:
       override_action: suffix
     third_party_settings: {  }
     type: entity_reference_override_label
+    region: content
 hidden:
   field_armor: true
   field_based_on: true

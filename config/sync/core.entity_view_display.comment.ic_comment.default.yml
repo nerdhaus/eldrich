@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - comment.type.ic_comment
+    - field.field.comment.ic_comment.comment_body
     - field.field.comment.ic_comment.field_body
     - field.field.comment.ic_comment.field_character
     - field.field.comment.ic_comment.field_obscure_id
@@ -18,6 +19,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_character:
     weight: 0
     label: hidden
@@ -25,6 +27,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
 hidden:
   comment_body: true
   field_obscure_id: true

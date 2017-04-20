@@ -22,6 +22,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: email_default
+    region: content
   field_invite_email_body:
     weight: 2
     settings:
@@ -29,6 +30,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
   field_invite_email_subject:
     weight: 1
     settings:
@@ -36,6 +38,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
   invitee:
     type: entity_reference_autocomplete
     weight: 5
@@ -44,6 +47,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   reg_code:
     type: string_textfield
     weight: -4
@@ -51,6 +55,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   type:
     type: string_textfield
     weight: -4
@@ -58,6 +63,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   user_id:
     type: entity_reference_autocomplete
     weight: 5
@@ -66,4 +72,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden: {  }

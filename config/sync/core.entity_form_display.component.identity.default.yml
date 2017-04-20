@@ -26,6 +26,7 @@ content:
       delimiter: ', '
     third_party_settings: {  }
     type: multi_text_string_long_widget
+    region: content
   field_background:
     weight: 1
     settings:
@@ -33,12 +34,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_credits:
     weight: 4
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
   field_faction:
     weight: 2
     settings:
@@ -47,6 +50,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_notes:
     weight: 5
     settings:
@@ -54,9 +58,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
   field_rep:
     weight: 3
     settings: {  }
     third_party_settings: {  }
     type: entity_reference_quantity_select
+    region: content
 hidden: {  }

@@ -13,7 +13,7 @@ third_party_settings:
     classes: ''
 id: contentcreationblock
 theme: veil
-region: '-1'
+region: navigation
 weight: -6
 provider: null
 plugin: content_creation_block

@@ -15,7 +15,7 @@ third_party_settings:
     classes: col-sm-2
 id: eye_useraccountmenu
 theme: eye
-region: '-1'
+region: header
 weight: -1
 provider: null
 plugin: 'system_menu_block:account'

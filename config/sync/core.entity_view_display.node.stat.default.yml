@@ -25,6 +25,7 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_aptitude_ranges:
     type: string
     weight: 4
@@ -32,6 +33,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
   field_calculation:
     weight: 5
     label: inline
@@ -39,6 +41,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_code:
     type: string
     weight: 1
@@ -46,12 +49,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
   field_description:
     weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_is_aptitude:
     weight: 2
     label: hidden
@@ -61,6 +66,7 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
   field_is_ego_stat:
     weight: 3
     label: hidden
@@ -70,6 +76,10 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  related_skills:
+    weight: 10
+    region: content
 hidden:
   field_weight: true
   links: true

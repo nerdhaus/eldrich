@@ -64,13 +64,16 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   contact:
     weight: 5
+    region: content
   field_canon_preferences:
     type: options_buttons
     weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_personal_links:
     type: link_default
     weight: 4
@@ -78,6 +81,7 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
+    region: content
   field_profile:
     type: text_textarea
     weight: 3
@@ -85,23 +89,28 @@ content:
       rows: 8
       placeholder: ''
     third_party_settings: {  }
+    region: content
   google_analytics:
     weight: 5
     settings: {  }
     third_party_settings: {  }
+    region: content
   language:
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
   path:
     type: path
     weight: 4
     settings: {  }
     third_party_settings: {  }
+    region: content
   timezone:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+    region: content
   user_picture:
     type: image_image
     weight: 2
@@ -109,4 +118,5 @@ content:
       preview_image_style: thumbnail
       progress_indicator: throbber
     third_party_settings: {  }
+    region: content
 hidden: {  }

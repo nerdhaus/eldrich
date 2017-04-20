@@ -12,7 +12,7 @@ _core:
   default_config_hash: GT_zYl7I9VAILH8OxMRe-VDvFadCDHxRcnmBc5xEmf0
 id: eye_main_menu
 theme: eye
-region: '-1'
+region: header
 weight: -6
 provider: null
 plugin: 'system_menu_block:main'

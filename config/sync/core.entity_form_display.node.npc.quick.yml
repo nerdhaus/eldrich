@@ -61,6 +61,7 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_description:
     weight: 1
     settings:
@@ -68,6 +69,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
   field_gear:
     weight: 10
     settings:
@@ -76,6 +78,7 @@ content:
       short_name: true
     third_party_settings: {  }
     type: entity_reference_override_text
+    region: content
   field_identity:
     weight: 7
     settings:
@@ -92,6 +95,7 @@ content:
           list: ''
           add: Add
     type: inline_entity_form_simple
+    region: content
   field_morph:
     weight: 9
     settings:
@@ -108,6 +112,7 @@ content:
           list: ''
           add: Add
     type: inline_entity_form_simple
+    region: content
   field_skills:
     weight: 13
     settings:
@@ -115,6 +120,7 @@ content:
       delimiter: ', '
     third_party_settings: {  }
     type: skill_reference_longtext_widget
+    region: content
   field_sleights:
     weight: 15
     settings:
@@ -129,6 +135,7 @@ content:
           list: ''
           add: Add
     type: entity_reference_override_text
+    region: content
   field_stats:
     weight: 12
     settings:
@@ -140,6 +147,7 @@ content:
           list: ''
           add: Add
     type: stat_block_table
+    region: content
   field_traits:
     weight: 14
     settings:
@@ -154,23 +162,27 @@ content:
           list: ''
           add: Add
     type: entity_reference_override_text
+    region: content
   path:
     type: path
     weight: 8
     settings: {  }
     third_party_settings: {  }
+    region: content
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 4
     third_party_settings: {  }
+    region: content
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 5
     third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: 0
@@ -178,6 +190,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 2
@@ -186,6 +199,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden:
   field_based_on: true
   field_equipped_armor: true

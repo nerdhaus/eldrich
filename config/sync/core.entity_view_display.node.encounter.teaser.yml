@@ -25,6 +25,7 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   field_npcs:
     type: entity_reference_label
     weight: 1
@@ -32,6 +33,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+    region: content
 hidden:
   field_campaign: true
   field_gm_only: true

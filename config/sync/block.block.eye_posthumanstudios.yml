@@ -15,7 +15,7 @@ third_party_settings:
     classes: col-sm-5
 id: eye_posthumanstudios
 theme: eye
-region: '-1'
+region: header
 weight: -11
 provider: null
 plugin: 'simple_block:posthuman_credit'

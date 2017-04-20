@@ -10,7 +10,7 @@ _core:
   default_config_hash: iggZSiUKz4mYP1YPJ8SsUfFu79HIgOTt6IDy3Up59aM
 id: bootstrap_powered
 theme: bootstrap
-region: '-1'
+region: navigation
 weight: -4
 provider: null
 plugin: system_powered_by_block

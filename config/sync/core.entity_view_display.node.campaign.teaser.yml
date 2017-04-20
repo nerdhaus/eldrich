@@ -29,6 +29,7 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   field_image:
     type: image_url
     weight: 0
@@ -38,6 +39,10 @@ content:
       image_style: square_small
       image_link: content
     third_party_settings: {  }
+    region: content
+  sub_content_encounters:
+    weight: 10
+    region: content
 hidden:
   campaign_characters: true
   campaign_gear: true

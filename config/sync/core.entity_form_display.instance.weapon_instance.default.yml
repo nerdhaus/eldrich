@@ -21,11 +21,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_ammo_mods:
     weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+    region: content
   field_weapon:
     weight: 3
     settings:
@@ -34,10 +36,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_weapon_mods:
     weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+    region: content
 hidden:
   title: true

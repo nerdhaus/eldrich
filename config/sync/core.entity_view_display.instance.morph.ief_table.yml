@@ -25,6 +25,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   title:
     type: string
     weight: 0
@@ -32,6 +33,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
 hidden:
   field_augmentations: true
   field_description: true

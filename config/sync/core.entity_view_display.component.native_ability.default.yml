@@ -19,11 +19,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_notes:
     weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
 hidden:
   field_creature: true

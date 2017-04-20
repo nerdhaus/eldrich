@@ -48,6 +48,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: armor_text
+    region: content
   field_augmentations:
     weight: 10
     label: inline
@@ -56,6 +57,7 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
+    region: content
   field_chat:
     weight: 11
     label: hidden
@@ -64,6 +66,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: comment_default
+    region: content
   field_cost:
     weight: 1
     label: inline
@@ -74,12 +77,14 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_popup_formatter
+    region: content
   field_description:
     weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_gear_type:
     type: entity_reference_label
     weight: 0
@@ -87,6 +92,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+    region: content
   field_image:
     weight: 12
     label: above
@@ -96,6 +102,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image_url
+    region: content
   field_mobility_system:
     weight: 7
     label: inline
@@ -106,24 +113,28 @@ content:
       template: ' ({{ quantity }})'
     third_party_settings: {  }
     type: eldrich_popup_formatter
+    region: content
   field_movement_speed:
     weight: 8
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: mobility_speed_formatter
+    region: content
   field_plot_seeds:
     weight: 16
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_roleplay_notes:
     weight: 2
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_skills:
     weight: 11
     label: inline
@@ -131,6 +142,7 @@ content:
       link: '1'
     third_party_settings: {  }
     type: skill_reference_label
+    region: content
   field_sources:
     weight: 4
     label: above
@@ -142,6 +154,7 @@ content:
       length: full
     third_party_settings: {  }
     type: eldrich_citation_formatter
+    region: content
   field_stat_variance:
     weight: 5
     label: inline
@@ -150,6 +163,7 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
   field_stats:
     weight: 4
     label: inline
@@ -177,6 +191,7 @@ content:
       delimiter: ', '
     third_party_settings: {  }
     type: stat_block_simple
+    region: content
   field_traits:
     weight: 9
     label: inline
@@ -185,12 +200,15 @@ content:
       override_action: title-append
     third_party_settings: {  }
     type: entity_reference_override_label
+    region: content
   related_gear:
     weight: 10
+    region: content
   related_lists_gear_siblings:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_based_on: true
   field_blueprints: true
