@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_combatants
     - node.type.creature
     - node.type.encounter
+    - node.type.mind
     - node.type.npc
     - node.type.pc
     - node.type.robot
@@ -31,6 +32,7 @@ settings:
   handler_settings:
     target_bundles:
       creature: creature
+      mind: mind
       npc: npc
       pc: pc
       robot: robot
