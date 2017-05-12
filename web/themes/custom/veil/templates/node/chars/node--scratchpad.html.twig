@@ -39,6 +39,7 @@
 {% set luc = {constant: stats.total.constant.luc, conditional: stats.total.conditional.luc} %}
 {% set tt = {constant: stats.total.constant.tt, conditional: stats.total.conditional.tt} %}
 {% set fray = {constant: skills.fray.constant.total, conditional: skills.fray.conditional.total} %}
+{% set init = {constant: stats.total.constant.init, conditional: stats.total.conditional.init} %}
 {% set spd = {constant: stats.total.constant.spd, conditional: stats.total.conditional.spd} %}
 
 {% if mobility|length %}
@@ -50,7 +51,7 @@
 <article class="eldrich-scratchpad row">
   {% if not page %}
   <section class="eldrich-scratchpad-title col-sm-12">
-    <h4>{{ plain_label }}</h4>
+    <h4>{{ label }}</h4>
   </section>
   {% endif %}
 
@@ -93,14 +94,14 @@
       <tr class="status-header">
         <th>Armor</th>
         <th>Fray</th>
-        <th>Move</th>
         <th>Speed</th>
+        <th>Init</th>
       </tr>
       <tr class="status-footer">
         <td>{{ armor.energy ?: '—' }} / {{ armor.kinetic ?: '—' }}</td>
         <td>{{ fray.constant ?: '—' }}{% if fray.constant != fray.conditional %} ({{ fray.conditional }}){% endif %}</td>
-        <td>{{ move }}</td>
         <td>{{ spd.constant }}{% if spd.constant != spd.conditional %} ({{ spd.conditional }}){% endif %}</td>
+        <td>{{ init.constant }}{% if init.constant != init.conditional %} ({{ init.conditional }}){% endif %}</td>
       </tr>
     </table>
 
