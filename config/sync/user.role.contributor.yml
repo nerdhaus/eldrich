@@ -93,7 +93,6 @@ permissions:
   - 'edit own trait content'
   - 'edit own vehicle content'
   - 'edit own weapon content'
-  - 'override pc authored by option'
   - 'skip comment approval'
   - 'use component.default form mode'
   - 'use component.quick form mode'
