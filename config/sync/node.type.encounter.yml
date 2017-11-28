@@ -13,6 +13,15 @@ third_party_settings:
   hide_revision_field:
     hide: false
     personalizable: true
+    personalization:
+      35:
+        hide: false
+      37:
+        hide: false
+      49:
+        hide: false
+      50:
+        hide: false
 name: Encounter
 type: encounter
 description: 'Resources to plan and manage one or more multi-character scenes in game session.'
