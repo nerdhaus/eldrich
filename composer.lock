@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7471245d614eae68cf602831dcadbdb6",
+    "content-hash": "f5798834d37c49f14651774d9bf5159e",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5335,87 +5335,6 @@
             "time": "2016-08-17T11:47:01+00:00"
         },
         {
-            "name": "drupal/webform",
-            "version": "5.0.0-beta24",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/webform",
-                "reference": "8.x-5.0-beta24"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-beta24.zip",
-                "reference": "8.x-5.0-beta24",
-                "shasum": "bb2df75e466c6bd6fbf552bff183574bd628f33f"
-            },
-            "require": {
-                "drupal/core": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-5.x": "5.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-5.0-beta24",
-                    "datestamp": "1510867685",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Jacob Rockowitz (jrockowitz)",
-                    "homepage": "https://www.drupal.org/u/jrockowitz",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Liam Morland",
-                    "homepage": "https://www.drupal.org/user/493050"
-                },
-                {
-                    "name": "fenstrat",
-                    "homepage": "https://www.drupal.org/user/362649"
-                },
-                {
-                    "name": "jrockowitz",
-                    "homepage": "https://www.drupal.org/user/371407"
-                },
-                {
-                    "name": "podarok",
-                    "homepage": "https://www.drupal.org/user/116002"
-                },
-                {
-                    "name": "quicksketch",
-                    "homepage": "https://www.drupal.org/user/35821"
-                },
-                {
-                    "name": "sanchiz",
-                    "homepage": "https://www.drupal.org/user/1671246"
-                },
-                {
-                    "name": "tedbow",
-                    "homepage": "https://www.drupal.org/user/240860"
-                },
-                {
-                    "name": "torotil",
-                    "homepage": "https://www.drupal.org/user/865256"
-                }
-            ],
-            "description": "Enables the creation of webforms and questionnaires.",
-            "homepage": "https://drupal.org/project/webform",
-            "support": {
-                "source": "http://cgit.drupalcode.org/webform",
-                "issues": "https://drupal.org/project/issues/webform"
-            }
-        },
-        {
             "name": "drush/drush",
             "version": "8.1.15",
             "source": {
@@ -10420,7 +10339,6 @@
         "drupal/image_effects": 15,
         "drupal/custom_add_another": 10,
         "drupal/veoa": 5,
-        "drupal/webform": 10,
         "drupal/themable_forms": 15,
         "drupal/multi_text": 20,
         "drupal/options_widget_placeholder": 5,

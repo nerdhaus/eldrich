@@ -78,7 +78,6 @@
         "drupal/custom_add_another": "^1.0@beta",
         "drupal/filelist_formatter": "^1.1",
         "drupal/veoa": "^1.0@RC",
-        "drupal/webform": "^5.0@beta",
         "nubs/random-name-generator": "^2.1",
         "drupal/themable_forms": "^1.0@alpha",
         "drupal/multi_text": "1.x-dev",
