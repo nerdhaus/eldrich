@@ -1,0 +1,17 @@
+diff --git a/core/modules/views/src/Plugin/views/field/EntityField.php b/core/modules/views/src/Plugin/views/field/EntityField.php
+index ee2882c..1fe6dad 100644
+--- a/core/modules/views/src/Plugin/views/field/EntityField.php
++++ b/core/modules/views/src/Plugin/views/field/EntityField.php
+@@ -1052,6 +1052,12 @@ protected function getTableMapping() {
+    */
+   public function getValue(ResultRow $values, $field = NULL) {
+     $entity = $this->getEntity($values);
++
++    // Ensure the object is not NULL before attempting to translate it.
++    if ($entity === NULL) {
++      return NULL;
++    }
++
+     // Retrieve the translated object.
+     $translated_entity = $this->getEntityFieldRenderer()->getEntityTranslation($entity, $values);
+ 
