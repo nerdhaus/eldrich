@@ -21,7 +21,6 @@
         "cweagans/composer-patches": "~1.0",
         "drupal/core": "~8.0",
         "drush/drush": "~8.0",
-        "drupal/console": "^1.2",
         "drupal/devel": "1.x-dev",
         "drupal/eck": "1.x-dev",
         "drupal/embed": "^1.0",
@@ -91,8 +90,7 @@
         "drupal/human_decimal": "^1.0",
         "drupal/csv_serialization": "^1.0",
         "drupal/form_mode_manager": "^1.0@alpha",
-        "drupal/views_tree": "2.x-dev",
-        "drupal/console-launcher": "^1.2"
+        "drupal/views_tree": "2.x-dev"
     },
     "require-dev": {
         "behat/mink": "~1.7",
