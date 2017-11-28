@@ -1,0 +1,9 @@
+local_tasks:
+  component:
+    position: secondary
+  instance:
+    position: secondary
+  node:
+    position: secondary
+  user:
+    position: secondary

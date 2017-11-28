@@ -1,0 +1,4 @@
+form_modes:
+  user:
+    to_exclude:
+      register: register

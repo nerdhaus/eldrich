@@ -4,26 +4,17 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.storage.node.field_cost
-    - field.storage.node.field_gear_type
     - node.type.armor
-    - node.type.augmentation
-    - node.type.creature
     - node.type.drug
     - node.type.encounter
-    - node.type.faction
     - node.type.gear
-    - node.type.location
     - node.type.mind
     - node.type.morph
-    - node.type.npc
     - node.type.robot
     - node.type.session
-    - node.type.strain
     - node.type.vehicle
     - node.type.weapon
   module:
-    - eldrich
     - eva
     - node
     - user
