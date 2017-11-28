@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5798834d37c49f14651774d9bf5159e",
+    "content-hash": "c198761f0a2696210a27204fb67cee98",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2628,17 +2628,17 @@
         },
         {
             "name": "drupal/eva",
-            "version": "1.1.0-rc1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/eva",
-                "reference": "8.x-1.1-rc1"
+                "reference": "8.x-1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/eva-8.x-1.1-rc1.zip",
-                "reference": "8.x-1.1-rc1",
-                "shasum": "db7e60769b91ff32b1501d57a7bccf35d8e57979"
+                "url": "https://ftp.drupal.org/files/projects/eva-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "1043929d76af3aa3bd591fc9bfe19f3712da49cb"
             },
             "require": {
                 "drupal/core": "*"
@@ -2649,8 +2649,12 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.1-rc1",
-                    "datestamp": "1485617284"
+                    "version": "8.x-1.2",
+                    "datestamp": "1503938043",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3987,35 +3991,40 @@
         },
         {
             "name": "drupal/migrate_plus",
-            "version": "3.0.0-beta1",
+            "version": "4.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/migrate_plus",
-                "reference": "8.x-3.0-beta1"
+                "reference": "8.x-4.0-beta1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/migrate_plus-8.x-3.0-beta1.zip",
-                "reference": "8.x-3.0-beta1",
-                "shasum": "7bae5c758a432053863b7b19c94fc1b829debf00"
+                "url": "https://ftp.drupal.org/files/projects/migrate_plus-8.x-4.0-beta1.zip",
+                "reference": "8.x-4.0-beta1",
+                "shasum": "e64bac006e3ef9ae697b0f2c4b3744af0524e208"
             },
             "require": {
-                "drupal/core": "^8.2"
+                "drupal/core": "^8.3"
+            },
+            "require-dev": {
+                "drupal/migrate_example_advanced_setup": "*",
+                "drupal/migrate_example_setup": "*"
             },
             "suggest": {
-                "drupal/core": "Required by drupal/migrate_example_advanced",
-                "drupal/migrate_example_advanced_setup": "Required by drupal/migrate_example_advanced",
-                "drupal/migrate_example_setup": "Required by drupal/migrate_example",
                 "sainsburys/guzzle-oauth2-plugin": "3.0 required for the OAuth2 authentication plugin"
             },
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-3.x": "3.x-dev"
+                    "dev-4.x": "4.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.0-beta1",
-                    "datestamp": "1476307739"
+                    "version": "8.x-4.0-beta1",
+                    "datestamp": "1494450185",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -4027,6 +4036,10 @@
                     "name": "Mike Ryan",
                     "homepage": "https://www.drupal.org/u/mikeryan",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "mikeryan",
+                    "homepage": "https://www.drupal.org/user/4420"
                 }
             ],
             "description": "Enhancements to core migration support.",
@@ -4088,30 +4101,37 @@
         },
         {
             "name": "drupal/migrate_tools",
-            "version": "3.0.0-beta1",
+            "version": "4.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/migrate_tools",
-                "reference": "8.x-3.0-beta1"
+                "reference": "8.x-4.0-beta2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/migrate_tools-8.x-3.0-beta1.zip",
-                "reference": "8.x-3.0-beta1",
-                "shasum": "1511d1da1444743fa2defa54a17e62264e8ab836"
+                "url": "https://ftp.drupal.org/files/projects/migrate_tools-8.x-4.0-beta2.zip",
+                "reference": "8.x-4.0-beta2",
+                "shasum": "8d7442253e100078e28f18fff062e3431153c0b2"
             },
             "require": {
-                "drupal/core": "^8.2",
+                "drupal/core": "^8.3",
                 "drupal/migrate_plus": "*"
+            },
+            "require-dev": {
+                "drupal/coder": "^8"
             },
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-3.x": "3.x-dev"
+                    "dev-4.x": "4.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.0-beta1",
-                    "datestamp": "1476313439"
+                    "version": "8.x-4.0-beta2",
+                    "datestamp": "1511790485",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -4120,8 +4140,16 @@
             ],
             "authors": [
                 {
+                    "name": "heddn",
+                    "homepage": "https://www.drupal.org/user/1463982"
+                },
+                {
                     "name": "mikeryan",
                     "homepage": "https://www.drupal.org/user/4420"
+                },
+                {
+                    "name": "moshe weitzman",
+                    "homepage": "https://www.drupal.org/user/23"
                 }
             ],
             "description": "Tools to assist in developing and running migrations.",
@@ -5235,17 +5263,17 @@
         },
         {
             "name": "drupal/views_taxonomy_term_name_depth",
-            "version": "1.2.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/views_taxonomy_term_name_depth",
-                "reference": "8.x-1.2"
+                "reference": "8.x-3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_taxonomy_term_name_depth-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "b23bf3018fa611c8d46683f0265c06bafb112732"
+                "url": "https://ftp.drupal.org/files/projects/views_taxonomy_term_name_depth-8.x-3.0.zip",
+                "reference": "8.x-3.0",
+                "shasum": "ba79dea02a84a01741d1a77659ef9399ffe08a42"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -5253,11 +5281,15 @@
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-1.x": "1.x-dev"
+                    "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1475849039"
+                    "version": "8.x-3.0",
+                    "datestamp": "1503191644",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -5266,20 +5298,12 @@
             ],
             "authors": [
                 {
-                    "name": "harika gujjula",
-                    "homepage": "https://www.drupal.org/user/2978505"
-                },
-                {
                     "name": "manojapare",
                     "homepage": "https://www.drupal.org/user/2825053"
                 },
                 {
                     "name": "rakesh.gectcr",
                     "homepage": "https://www.drupal.org/user/1177822"
-                },
-                {
-                    "name": "rockingguyster",
-                    "homepage": "https://www.drupal.org/user/1858184"
                 }
             ],
             "description": "The module provides the Views plugin for Contextual filter with Taxonomy Term Name Depth.",
