@@ -88,6 +88,16 @@ view_mode ? view_mode|clean_class
     {% block content %}
       {{ content.field_description|field_value }}
       {{ content.field_usage|field_value }}
+      {% if content.field_roleplay_notes|field_value|length %}
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <p class="panel-title">GM Notes <span class="glyphicon glyphicon-eye-open pull-right"></span></p>
+          </div>
+          <div class="panel-body">
+            {{ content.field_roleplay_notes|field_value }}
+          </div>
+        </div>
+      {% endif %}
     {% endblock %}
 
   {% block stats %}
