@@ -24,11 +24,11 @@ use Drupal\Core\Entity\FieldableEntityInterface;
  *   - Skill type
  *   - No Defaulting
  *   - constant
- *     - default
- *     - points
- *     - baseline
- *     - bonus
- *     - total
+ *     - default    base aptitude
+ *     - points     spent points
+ *     - baseline   apt + points (i.e., ego skill)
+ *     - bonus      morph + gear
+ *     - total      final total
  *   - conditional
  *     - default
  *     - points
