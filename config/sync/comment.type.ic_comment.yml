@@ -1,8 +1,0 @@
-uuid: 93dc5cd4-e63d-485d-8ba4-e0112a10e09a
-langcode: en
-status: true
-dependencies: {  }
-id: ic_comment
-label: 'In-Character Comment'
-target_entity_type_id: node
-description: 'Allows users to post comments as one of their Eclipse Phase characters.'

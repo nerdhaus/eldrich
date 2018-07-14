@@ -1,8 +1,0 @@
-uuid: 125dbeed-c674-4c09-849e-f88ed2e5d772
-langcode: en
-status: null
-dependencies: {  }
-id: gm_invite
-label: 'GM Invite'
-description: 'Allows the site owner and trusted administrators to invite new GMs to Eldrich Host.'
-data: 'a:4:{s:11:"use_default";i:0;s:16:"subject_editable";i:1;s:10:"html_email";i:0;s:11:"target_role";s:11:"game_master";}'

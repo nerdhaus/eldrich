@@ -1,9 +1,0 @@
-uuid: 3f066ce9-1f17-4033-9ff9-fadb2eb4ec72
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.component
-name: Weapon
-type: weapon_data
-description: 'Damage, range, and usage stats for weapons, ammo, and mods.'

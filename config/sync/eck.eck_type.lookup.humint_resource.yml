@@ -1,9 +1,0 @@
-uuid: bf066a1f-b54b-4ff9-9ac8-2c071fa8f767
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.lookup
-name: 'Resource levels'
-type: humint_resource
-description: ''

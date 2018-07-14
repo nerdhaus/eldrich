@@ -1,6 +1,0 @@
-uuid: dde1367f-f991-4861-b96c-50cd8a57e82f
-langcode: en
-status: true
-dependencies: {  }
-id: gm_invite
-sending_methods: invite_by_email||0

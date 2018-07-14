@@ -1,9 +1,0 @@
-uuid: cb86d903-a1e6-4445-9fd6-4a53e9f683f5
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.component
-name: Identity
-type: identity
-description: 'Background, faction affiliation, reputation, and cash assets for a given character.'

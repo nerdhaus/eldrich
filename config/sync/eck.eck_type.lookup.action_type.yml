@@ -1,9 +1,0 @@
-uuid: c89fa0fc-39b6-4938-a70a-f4f6ba8aaabb
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.lookup
-name: 'Action Type'
-type: action_type
-description: ''

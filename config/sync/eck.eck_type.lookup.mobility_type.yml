@@ -1,9 +1,0 @@
-uuid: 67a6af96-1bfc-4922-98a2-75d2fea360ab
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.lookup
-name: 'Mobility Type'
-type: mobility_type
-description: ''

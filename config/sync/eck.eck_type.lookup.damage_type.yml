@@ -1,9 +1,0 @@
-uuid: a9240b2b-3193-4f22-8428-dbd8f70ebeca
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.lookup
-name: 'Damage Type'
-type: damage_type
-description: ''

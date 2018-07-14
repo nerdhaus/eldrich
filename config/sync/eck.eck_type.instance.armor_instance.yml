@@ -1,9 +1,0 @@
-uuid: 4f90defe-1c83-4ea3-89da-4d88e6b437db
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.instance
-name: Armor
-type: armor_instance
-description: 'A specific piece of worn armor, including all of its mods.'

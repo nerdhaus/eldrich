@@ -1,9 +1,0 @@
-uuid: 3360c9e9-0125-4055-8e96-a6147f5881a8
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.component
-name: 'Native Ability'
-type: native_ability
-description: 'A unique ability or skill possessed by a given creature. These are unique, and cannot be reused by other creatures.'

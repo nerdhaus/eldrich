@@ -1,9 +1,0 @@
-uuid: db9c174b-1367-4c17-9974-9a728cfd47b8
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.lookup
-name: 'Firing Mode'
-type: firing_modes
-description: ''

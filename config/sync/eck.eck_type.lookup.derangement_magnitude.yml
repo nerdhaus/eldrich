@@ -1,9 +1,0 @@
-uuid: 446997b5-6f2d-412b-8dd9-20aa492c344f
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.lookup
-name: 'Derangement Magnitude'
-type: derangement_magnitude
-description: ''

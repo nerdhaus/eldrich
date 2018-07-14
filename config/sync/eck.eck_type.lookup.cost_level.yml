@@ -1,9 +1,0 @@
-uuid: e6a00271-b5fb-45ab-8940-b52e507db94d
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.lookup
-name: 'Cost Levels'
-type: cost_level
-description: ''

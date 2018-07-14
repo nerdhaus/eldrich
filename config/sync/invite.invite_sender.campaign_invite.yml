@@ -1,6 +1,0 @@
-uuid: 8e351d13-e4b6-43d6-8b3c-cbb00d944931
-langcode: en
-status: true
-dependencies: {  }
-id: campaign_invite
-sending_methods: invite_by_email||0

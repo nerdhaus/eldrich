@@ -1,9 +1,0 @@
-uuid: 8c50dc93-2420-4b7c-bcb9-c01a60b652b6
-langcode: en
-status: true
-dependencies: {  }
-id: games_landing
-label: 'Games Landing'
-logic: and
-conditions: {  }
-allow_other_conditions: false

@@ -1,9 +1,0 @@
-uuid: e5c9f698-6f8b-4369-a4c4-a5ba3a280aa8
-langcode: en
-status: true
-dependencies: {  }
-id: world_landing
-label: 'World Landing'
-logic: and
-conditions: {  }
-allow_other_conditions: false

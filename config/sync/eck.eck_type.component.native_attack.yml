@@ -1,9 +1,0 @@
-uuid: fbeb8d93-0b07-4ad0-9a66-00266271a83b
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.component
-name: 'Native Attack'
-type: native_attack
-description: 'A creature''s native weapons or attacks. These are unique to the creatures that have them, and cannot be reused.'

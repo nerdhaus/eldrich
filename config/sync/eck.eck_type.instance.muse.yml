@@ -1,9 +1,0 @@
-uuid: c31156ad-b511-442a-9064-31ba88a441b9
-langcode: en
-status: true
-dependencies:
-  config:
-    - eck.eck_entity_type.instance
-name: Muse
-type: muse
-description: 'A specific muse used by a character.'

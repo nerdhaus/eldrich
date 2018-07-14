@@ -1,9 +1,0 @@
-uuid: ab28c4ff-0e43-4cc7-be18-f114aef84b39
-langcode: en
-status: true
-dependencies: {  }
-name: 'Gear Type'
-vid: gear_type
-description: ''
-hierarchy: 0
-weight: 0
